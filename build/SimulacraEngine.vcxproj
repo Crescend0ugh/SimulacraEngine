@@ -304,6 +304,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\avsom\CLionProjects\SimulacraEngine\main.cpp" />
     <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\vec3.h" />
     <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\color.h" />
+    <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\ray.h" />
+    <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\hittable.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\avsom\CLionProjects\SimulacraEngine\build\ZERO_CHECK.vcxproj">

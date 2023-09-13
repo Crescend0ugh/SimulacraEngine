@@ -1,4 +1,4 @@
 # ninja log v5
-3	355	7161040331491885	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	c431c566b6e53733
-355	432	7161040332197086	SimulacraEngine.exe	ec5cd21ed93eb461
-2	235	7161089764535637	build.ninja	6e38e3799279e907
+2	343	7161605227147711	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	c431c566b6e53733
+343	421	7161605227899088	SimulacraEngine.exe	ec5cd21ed93eb461
+2	235	7161673514767513	build.ninja	6e38e3799279e907

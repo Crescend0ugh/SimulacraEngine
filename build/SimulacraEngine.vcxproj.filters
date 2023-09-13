@@ -12,6 +12,12 @@
     <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Source\hittable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\avsom\CLionProjects\SimulacraEngine\CMakeLists.txt" />
