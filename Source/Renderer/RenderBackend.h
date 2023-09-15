@@ -10,7 +10,7 @@
 class RenderBackend {
 
 private:
-    uint32_t
+
 };
 
 

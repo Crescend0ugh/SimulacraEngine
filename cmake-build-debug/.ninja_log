@@ -1,5 +1,5 @@
 # ninja log v5
 2	382	7163605220067305	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	c25dbc6193620a82
 382	550	7163605221715158	SimulacraEngine.exe	7153849f6e226ee8
-2	235	7163627689350085	build.ninja	6e38e3799279e907
+2	235	7164579222243359	build.ninja	6e38e3799279e907
 6	123	7163605217480436	CMakeFiles/SimulacraEngine.dir/Source/Vulkan/RenderBackend.cpp.obj	dc472e300ae1d2cb
