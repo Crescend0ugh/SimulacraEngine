@@ -31,7 +31,7 @@ static void CreateSurface()
 
 static void EnumeratePhysicalDevices() {
     uint32_t numDevices = 0;
-    vkEnumeratePhysicalDevices()
+//    vkEnumeratePhysicalDevices()
 }
 
 

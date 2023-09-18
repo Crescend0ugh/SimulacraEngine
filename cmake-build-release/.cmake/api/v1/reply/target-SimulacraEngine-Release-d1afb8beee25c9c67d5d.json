@@ -199,7 +199,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Source/types.h",
+			"path" : "Source/EngineTypes.h",
 			"sourceGroupIndex" : 1
 		},
 		{
