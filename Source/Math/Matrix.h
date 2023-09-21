@@ -6,19 +6,27 @@
 #ifndef SIMULACRAENGINE_MATRIX_H
 #define SIMULACRAENGINE_MATRIX_H
 
-#include <xmmintrin.h>
+#include <x86intrin.h>
+#include "../EngineTypes.h"
+#include "../EngineDefines.h"
+
 
 /***
  * @brief A MxN matrix of arbitrary size
  */
-class MatrixX {
+struct SMatrix {
 
 public:
-    inline MatrixX();
-    inline MatrixX(int NRows, int NColumns);
+    SIM_FORCE_INLINE      SMatrix();
+    SIM_FORCE_INLINE      SMatrix(int NRows, int NColumns);
 
-    inline void SetSize(int NRows, int NColumns);
-   // inline void SetZero();
+
+    SIM_FORCE_INLINE void SetSize(int NumberOfRows, int NColumns);
+    SIM_FORCE_INLINE void SetData(float* Data);
+
+    SIM_FORCE_INLINE bool Equals(SMatrix m, float epsilon = 1e-7) const;
+
+   // SIM_FORCE_INLINE void SetZero();
 
    static void Test();
 private:
@@ -35,6 +43,8 @@ private:
 
 
 };
+
+#include "Matrix.inl"
 
 
 #endif //SIMULACRAENGINE_MATRIX_H

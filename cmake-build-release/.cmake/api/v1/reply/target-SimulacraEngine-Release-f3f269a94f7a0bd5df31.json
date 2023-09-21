@@ -132,7 +132,10 @@
 				8,
 				10,
 				11,
-				13
+				13,
+				14,
+				15,
+				16
 			]
 		}
 	],
@@ -211,6 +214,21 @@
 		{
 			"backtrace" : 1,
 			"path" : "Source/Math/Vector.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Source/EngineDefines.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Source/Math/Matrix.inl",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Source/Math/Vector.inl",
 			"sourceGroupIndex" : 1
 		}
 	],
