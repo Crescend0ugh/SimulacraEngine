@@ -10,25 +10,35 @@
 #include "../EngineTypes.h"
 #include "../EngineDefines.h"
 
+struct SMatrix2
+{
+
+};
+
+struct SMatrix3
+{
+
+};
 
 /***
  * @brief A MxN matrix of arbitrary size
  */
-struct SMatrix {
+struct SMatrixX
+{
 
 public:
-    SIM_FORCE_INLINE      SMatrix();
-    SIM_FORCE_INLINE      SMatrix(int NRows, int NColumns);
-
+    SIM_FORCE_INLINE      SMatrixX();
+    SIM_FORCE_INLINE      SMatrixX(int NRows, int NColumns);
 
     SIM_FORCE_INLINE void SetSize(int NumberOfRows, int NColumns);
-    SIM_FORCE_INLINE void SetData(float* Data);
+    SIM_FORCE_INLINE void SetData(float *Data);
 
-    SIM_FORCE_INLINE bool Equals(SMatrix m, float epsilon = 1e-7) const;
+    SIM_FORCE_INLINE bool Equals(SMatrixX m, float epsilon = 1e-7) const;
 
-   // SIM_FORCE_INLINE void SetZero();
+    // SIM_FORCE_INLINE void SetZero();
 
-   static void Test();
+    static void Test();
+
 private:
 
 
@@ -37,8 +47,8 @@ private:
 
 
 
-    int   NumRows;
-    int   NumColumns;
+    int NumRows;
+    int NumColumns;
     float *pData;
 
 

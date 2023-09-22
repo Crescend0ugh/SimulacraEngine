@@ -8,47 +8,132 @@
 
 #include "Vector.h"
 
-SVector::SVector(int length)
+SVector2::SVector2(float f)
+{
+
+}
+
+SVector2::SVector2(float inX, float inY)
+{
+
+}
+
+bool SVector2::operator==(const SVector2 v) const
+{
+    return false;
+}
+
+bool SVector2::operator!=(const SVector2 v) const
+{
+    return false;
+}
+
+bool SVector2::Equals(const SVector2 v) const
+{
+    return false;
+}
+
+float SVector2::operator[](int index) const
+{
+    return 0;
+}
+
+float &SVector2::operator[](int index)
+{
+    return <#initializer#>;
+}
+
+float &SVector2::Get() const
+{
+    return <#initializer#>;
+}
+
+SVector2 SVector2::operator+(SVector2 v) const
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator+=(SVector2 v)
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator-(SVector2 v) const
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator-=(SVector2 v)
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator*(const float f) const
+{
+    return SVector2(0);
+}
+
+float SVector2::operator*(SVector2 v) const
+{
+    return 0;
+}
+
+SVector2 SVector2::operator*=(const float f)
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator/(const float scale) const
+{
+    return SVector2(0);
+}
+
+SVector2 SVector2::operator/=(const float scale)
+{
+    return SVector2(0);
+}
+
+SVectorX::SVectorX(int length)
 {
     pData = nullptr;
     Size = length;
 }
 
 
-SVector::SVector(int length, float *data)
+SVectorX::SVectorX(int length, float *data)
 {
     this->Size = length;
     this->pData = data;
     //SetSize(Size);
 }
 
-void SVector::SetSize(int length)
+void SVectorX::SetSize(int length)
 {
     Size = length;
 }
 
 
-SVector::SVector()
+SVectorX::SVectorX()
 {
     Size = 0;
     pData = nullptr;
 }
 
 
-float SVector::operator[](const int index) const
+float SVectorX::operator[](const int index) const
 {
     return pData[index];
 }
 
 
-float &SVector::operator[](const int index)
+float &SVectorX::operator[](const int index)
 {
     return pData[index];
 }
 
-SVector SVector::operator+(const SVector v) const
+SVectorX SVectorX::operator+(const SVectorX v) const
 {
-    SVector t;
+    SVectorX t;
     t.SetSize(this->Size);
     for (int i = 0; i < Size; i++)
     {
@@ -58,7 +143,7 @@ SVector SVector::operator+(const SVector v) const
     return t;
 }
 
-SVector& SVector::operator+=(const SVector v)
+SVectorX& SVectorX::operator+=(const SVectorX v)
 {
     for (int i = 0; i < Size; ++i)
     {
@@ -68,9 +153,9 @@ SVector& SVector::operator+=(const SVector v)
     return *this;
 }
 
-SVector SVector::operator-(const SVector v) const
+SVectorX SVectorX::operator-(const SVectorX v) const
 {
-    SVector t;
+    SVectorX t;
     t.SetSize(this->Size);
 
 
@@ -83,7 +168,7 @@ SVector SVector::operator-(const SVector v) const
     return t;
 }
 
-SVector& SVector::operator-=(const SVector v)
+SVectorX& SVectorX::operator-=(const SVectorX v)
 {
     for (int i = 0; i < Size; ++i)
     {
@@ -93,10 +178,10 @@ SVector& SVector::operator-=(const SVector v)
     return *this;
 }
 
-SVector SVector::operator*(const float scale) const
+SVectorX SVectorX::operator*(const float scale) const
 {
 
-    SVector t;
+    SVectorX t;
     t.SetSize(this->Size);
     for (int i = 0; i < Size; i++)
     {
@@ -106,7 +191,7 @@ SVector SVector::operator*(const float scale) const
     return t;
 }
 
-SVector& SVector::operator*=(const float scale)
+SVectorX& SVectorX::operator*=(const float scale)
 {
     for (int i = 0; i < Size; i++)
     {
@@ -116,7 +201,7 @@ SVector& SVector::operator*=(const float scale)
     return *this;
 }
 
-float SVector::operator*(const SVector v) const
+float SVectorX::operator*(const SVectorX v) const
 {
     float sum = 0.0f;
     for (int i = 0; i < Size; i++)
@@ -128,9 +213,9 @@ float SVector::operator*(const SVector v) const
 }
 
 
-SVector SVector::operator/(const float scale) const
+SVectorX SVectorX::operator/(const float scale) const
 {
-    SVector t;
+    SVectorX t;
     t.SetSize(this->Size);
     for (int i = 0; i < Size; i++)
     {
@@ -140,7 +225,7 @@ SVector SVector::operator/(const float scale) const
     return t;
 }
 
-SVector& SVector::operator/=(const float scale)
+SVectorX& SVectorX::operator/=(const float scale)
 {
     for (int i = 0; i < Size; i++)
     {
@@ -150,34 +235,34 @@ SVector& SVector::operator/=(const float scale)
     return *this;
 }
 
-float SVector::Get(const int index) const
+float SVectorX::Get(const int index) const
 {
     return pData[index];
 }
 
-float &SVector::Get(const int index)
+float &SVectorX::Get(const int index)
 {
     return pData[index];
 }
 
-bool SVector::operator==(const SVector o) const
+bool SVectorX::operator==(const SVectorX o) const
 {
     return false;
 }
 
-bool SVector::operator!=(const SVector o) const
+bool SVectorX::operator!=(const SVectorX o) const
 {
     return false;
 }
 
-bool SVector::Equals(const SVector o) const
+bool SVectorX::Equals(const SVectorX o) const
 {
     return false;
 }
 
-SVector SVector::operator%(SVector v) const
+SVectorX SVectorX::operator%(SVectorX v) const
 {
-    SVector t;
+    SVectorX t;
     t.SetSize(this->Size);
     for (int i = 0; i < Size; i++)
     {
@@ -187,7 +272,7 @@ SVector SVector::operator%(SVector v) const
     return t;
 }
 
-SVector &SVector::operator%=(const SVector v)
+SVectorX &SVectorX::operator%=(const SVectorX v)
 {
     return *this;
 }

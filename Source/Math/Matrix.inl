@@ -18,7 +18,7 @@
  * @param epsilon Error Tolerance.
  * @return true if two matrices are equal, within specified tolerance, otherwise false
  */
-bool SMatrix::Equals(SMatrix m, float epsilon) const
+bool SMatrixX::Equals(SMatrixX m, float epsilon) const
 {
     //Checks if dimensions are same
     /// \TODO Should probably add a helper function to do this
