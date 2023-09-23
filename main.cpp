@@ -1,15 +1,12 @@
+#define GlFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
 
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <iostream>
-#include "Source/Math/Vector.h"
 
 
 int main()
 {
-    std::cout << sizeof(SVectorX) << std::endl;
 
-    float data[] ={9.0f, 2.0f, 5.0f};
-    float* t = data;
-    SVectorX sVectorX = SVectorX(3, t);
-    float ans = sVectorX*sVectorX;
-    std::cout << ans << std::endl;
 }

@@ -14,27 +14,27 @@ private:
 
     void CreateInstance();
 
-    CreateSurface();
-
-    EnumeratePhysicalDevices();
-
-    SelectPhysicalDevices();
-
-    CreateLogicalDeviceAndQueues();
-
-    CreateSemaphores();
-
-    CreatrCommandPool();
-
-    CreateCommandBuffer();
-
-    CreateSwapChain();
-
-    CreateRenderPass();
-
-    CreatePipelineCache();
-
-    CreateFrameBuffers();
+//    CreateSurface();
+//
+//    EnumeratePhysicalDevices();
+//
+//    SelectPhysicalDevices();
+//
+//    CreateLogicalDeviceAndQueues();
+//
+//    CreateSemaphores();
+//
+//    CreatrCommandPool();
+//
+//    CreateCommandBuffer();
+//
+//    CreateSwapChain();
+//
+//    CreateRenderPass();
+//
+//    CreatePipelineCache();
+//
+//    CreateFrameBuffers();
 
 };
 
