@@ -333,3 +333,78 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-g0q0wu
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_df2dc && [1/2] Building C object CMakeFiles/cmTC_df2dc.dir/src.c.obj
+[2/2] Linking C executable cmTC_df2dc.exe
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the include file dinput.h exists passed with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-bcz1p7
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_ee2ac && [1/2] Building C object CMakeFiles/cmTC_ee2ac.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_ee2ac.exe
+
+
+
+Determining if the include file xinput.h exists passed with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-83ek9t
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_f4a2d && [1/2] Building C object CMakeFiles/cmTC_f4a2d.dir/CheckIncludeFile.c.obj
+[2/2] Linking C executable cmTC_f4a2d.exe
+
+
+
+Performing C SOURCE FILE Test _GLFW_HAS_DEP succeeded with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-972wne
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_2e0f2 && [1/2] Building C object CMakeFiles/cmTC_2e0f2.dir/src.c.obj
+[2/2] Linking C executable cmTC_2e0f2.exe
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test _GLFW_HAS_ASLR succeeded with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-lnrte1
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_18805 && [1/2] Building C object CMakeFiles/cmTC_18805.dir/src.c.obj
+[2/2] Linking C executable cmTC_18805.exe
+
+
+Source file was:
+int main(void) { return 0; }
+
+Performing C SOURCE FILE Test _GLFW_HAS_64ASLR succeeded with the following output:
+Change Dir: C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/CMakeScratch/TryCompile-tiigto
+
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe cmTC_99983 && [1/2] Building C object CMakeFiles/cmTC_99983.dir/src.c.obj
+[2/2] Linking C executable cmTC_99983.exe
+
+
+Source file was:
+int main(void) { return 0; }
+

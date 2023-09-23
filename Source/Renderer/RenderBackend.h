@@ -10,6 +10,31 @@
 class RenderBackend {
 
 private:
+    void Init();
+
+    void CreateInstance();
+
+    CreateSurface();
+
+    EnumeratePhysicalDevices();
+
+    SelectPhysicalDevices();
+
+    CreateLogicalDeviceAndQueues();
+
+    CreateSemaphores();
+
+    CreatrCommandPool();
+
+    CreateCommandBuffer();
+
+    CreateSwapChain();
+
+    CreateRenderPass();
+
+    CreatePipelineCache();
+
+    CreateFrameBuffers();
 
 };
 

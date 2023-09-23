@@ -22,12 +22,10 @@ struct SVector2
     SVector2(float inX, float inY);
 
 
+
     SIM_FORCE_INLINE bool operator==(const SVector2 v) const;
     SIM_FORCE_INLINE bool operator!=(const SVector2 v) const;
-    SIM_FORCE_INLINE bool Equals(const SVector2 v) const;
-
-    SIM_FORCE_INLINE float operator[](int index) const;
-    SIM_FORCE_INLINE float &operator[](int index);
+    SIM_FORCE_INLINE bool Equals(const SVector2 v, const float epsilon = SIM_SMALL_NUMBER ) const;
 
     SIM_FORCE_INLINE SVector2 operator+(SVector2 v) const;
     SIM_FORCE_INLINE SVector2 operator+=(SVector2 v);
@@ -57,7 +55,7 @@ public:
 
     SIM_FORCE_INLINE SVectorX();
 
-    SIM_FORCE_INLINE SVectorX(int length);
+    SIM_FORCE_INLINE explicit SVectorX(int length);
 
     SIM_FORCE_INLINE SVectorX(int length, float *data);
 
@@ -82,7 +80,7 @@ public:
     SIM_FORCE_INLINE SVectorX& operator-=(const SVectorX v);
 
     SIM_FORCE_INLINE SVectorX  operator*(const float scale) const;
-    SIM_FORCE_INLINE float    operator*(const SVectorX v) const;
+    SIM_FORCE_INLINE float    operator*(const SVectorX &v) const;
     SIM_FORCE_INLINE SVectorX& operator*=(const float scale);
 
     SIM_FORCE_INLINE SVectorX  operator/(const float scale) const;
@@ -95,8 +93,8 @@ public:
 
 
 private:
-    int Size;
     float *pData;
+    int Size;
 
 
 };

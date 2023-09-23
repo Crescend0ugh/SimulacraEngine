@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples",
+		"source" : "C:/glfw-3.3.8/examples"
+	}
+}

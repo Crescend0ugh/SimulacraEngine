@@ -6,7 +6,11 @@
 #define SIMULACRAENGINE_VECTOR_INL
 
 
-#include "Vector.h"
+
+#endif //SIMULACRAENGINE_VECTOR_INL
+
+
+
 
 SVector2::SVector2(float f)
 {
@@ -15,7 +19,8 @@ SVector2::SVector2(float f)
 
 SVector2::SVector2(float inX, float inY)
 {
-
+    X = inX;
+    Y = inY;
 }
 
 bool SVector2::operator==(const SVector2 v) const
@@ -28,25 +33,14 @@ bool SVector2::operator!=(const SVector2 v) const
     return false;
 }
 
-bool SVector2::Equals(const SVector2 v) const
+bool SVector2::Equals(const SVector2 v, const float epsilon) const
 {
-    return false;
+
+    return std::abs(this->X-v.X)>epsilon && std::abs(this->Y-v.Y)>epsilon;
+
 }
 
-float SVector2::operator[](int index) const
-{
-    return 0;
-}
 
-float &SVector2::operator[](int index)
-{
-    return <#initializer#>;
-}
-
-float &SVector2::Get() const
-{
-    return <#initializer#>;
-}
 
 SVector2 SVector2::operator+(SVector2 v) const
 {
@@ -201,12 +195,12 @@ SVectorX& SVectorX::operator*=(const float scale)
     return *this;
 }
 
-float SVectorX::operator*(const SVectorX v) const
+float SVectorX::operator*(const SVectorX &v) const
 {
     float sum = 0.0f;
     for (int i = 0; i < Size; i++)
     {
-        sum = v.pData[i] * this->pData[i];
+        sum += v.pData[i] * this->pData[i];
     }
 
     return sum;
@@ -276,5 +270,3 @@ SVectorX &SVectorX::operator%=(const SVectorX v)
 {
     return *this;
 }
-
-#endif //SIMULACRAENGINE_VECTOR_INL
