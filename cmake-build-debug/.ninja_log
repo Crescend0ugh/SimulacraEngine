@@ -1,9 +1,9 @@
 # ninja log v5
 39	1197	7171366264307806	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/window.c.obj	8e41bed1951378e7
-3	556	7171389614775878	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	8bff430f2581159a
-7	330	7171389612522746	CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj	74e39f2ceb722352
-1	223	7171860885853739	build.ninja	6e38e3799279e907
-556	633	7171389615515840	SimulacraEngine.exe	1a5a4330bbd3cff0
+5	267	7172353263971728	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	8bff430f2581159a
+4	371	7171862669759957	CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj	74e39f2ceb722352
+1	223	7172732751765872	build.ninja	6e38e3799279e907
+268	352	7172353264791011	SimulacraEngine.exe	1a5a4330bbd3cff0
 27	1532	7171366267671455	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj	dcd4eada20791995
 1121	1812	7171366270482050	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/wgl_context.c.obj	63f5d6a9bfec18f2
 55	1222	7171366264570198	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_joystick.c.obj	b801eaeca602115e
@@ -21,8 +21,3 @@
 1127	1741	7171366269773792	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/osmesa_context.c.obj	5d7eb50208a9a5f9
 1133	1792	7171366270276180	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/egl_context.c.obj	cb95ee26f235231f
 1812	1954	7171366271907360	C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a	5592b6d317ab383f
-9	332	7171862213468482	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	8bff430f2581159a
-4	371	7171862669759957	CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj	74e39f2ceb722352
-372	592	7171862671955605	SimulacraEngine.exe	1a5a4330bbd3cff0
-4	255	7171863555809070	CMakeFiles/SimulacraEngine.dir/main.cpp.obj	8bff430f2581159a
-256	359	7171863556829427	SimulacraEngine.exe	1a5a4330bbd3cff0

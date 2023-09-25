@@ -11,7 +11,7 @@
 						1
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.25"
@@ -32,7 +32,7 @@
 						4
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-Release-d7bc816e46402a9a5ee8.json",
+					"jsonFile" : "directory-Debug-d7bc816e46402a9a5ee8.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
@@ -48,7 +48,7 @@
 				{
 					"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-Release-905053adca4e4cd6e6ab.json",
+					"jsonFile" : "directory-Debug-905053adca4e4cd6e6ab.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
@@ -64,7 +64,7 @@
 				},
 				{
 					"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples",
-					"jsonFile" : "directory-Release-9f20083e005b0f127278.json",
+					"jsonFile" : "directory-Debug-9f20083e005b0f127278.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
@@ -87,7 +87,7 @@
 				},
 				{
 					"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests",
-					"jsonFile" : "directory-Release-441a7e57aa10273869f4.json",
+					"jsonFile" : "directory-Debug-441a7e57aa10273869f4.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.0"
@@ -120,7 +120,7 @@
 					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -190,231 +190,231 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SimulacraEngine::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SimulacraEngine-Release-5bc7316fcb6eceab7f0b.json",
+					"jsonFile" : "target-SimulacraEngine-Debug-ee6f6b26e077e5009a60.json",
 					"name" : "SimulacraEngine",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "boing::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-boing-Release-7de8970c158d372eefbe.json",
+					"jsonFile" : "target-boing-Debug-e6d6843f4258b2b73030.json",
 					"name" : "boing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "clipboard::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-clipboard-Release-8460a5f2e86c48b311a2.json",
+					"jsonFile" : "target-clipboard-Debug-bfa22ba72135cf6a0871.json",
 					"name" : "clipboard",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "cursor::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-cursor-Release-ca5a0953bd7b2f9da04e.json",
+					"jsonFile" : "target-cursor-Debug-4a254c6d72114c6758ae.json",
 					"name" : "cursor",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "empty::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-empty-Release-20bb4afbf08618c57b9e.json",
+					"jsonFile" : "target-empty-Debug-582069f2a9ebd7a65fc3.json",
 					"name" : "empty",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "events::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-events-Release-9b8d2315fdc8079dec67.json",
+					"jsonFile" : "target-events-Debug-0e159ee3577f2cabfd6c.json",
 					"name" : "events",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "gamma::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-gamma-Release-04a4f7e6e8fa4a7949d6.json",
+					"jsonFile" : "target-gamma-Debug-6752feeecf3d876fa2b6.json",
 					"name" : "gamma",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gears::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-gears-Release-72f4d5083a93c547f167.json",
+					"jsonFile" : "target-gears-Debug-620de7db7f3d54221801.json",
 					"name" : "gears",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "glfw::@e0bcc1e8a34ccf585bfd",
-					"jsonFile" : "target-glfw-Release-85ee9664f3934a5ff6ed.json",
+					"jsonFile" : "target-glfw-Debug-3247b124bec28b5a54b1.json",
 					"name" : "glfw",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "glfwinfo::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-glfwinfo-Release-59121df9fbdc7f86ca55.json",
+					"jsonFile" : "target-glfwinfo-Debug-2b4ba997bb470eedfe2c.json",
 					"name" : "glfwinfo",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "heightmap::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-heightmap-Release-afd7d1464e5c56fc7b89.json",
+					"jsonFile" : "target-heightmap-Debug-538dea7b5fe42eb93f64.json",
 					"name" : "heightmap",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "icon::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-icon-Release-b6a81cbcee1db15db12a.json",
+					"jsonFile" : "target-icon-Debug-34f8f61d41bdbc1dfc33.json",
 					"name" : "icon",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "iconify::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-iconify-Release-9341e9c6f338bc66447d.json",
+					"jsonFile" : "target-iconify-Debug-52d3c290778c75ba4b58.json",
 					"name" : "iconify",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "inputlag::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-inputlag-Release-28f80bd3d0bdad087f60.json",
+					"jsonFile" : "target-inputlag-Debug-2f27cf12a8530e78f81a.json",
 					"name" : "inputlag",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "joysticks::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-joysticks-Release-9126047e2b3187c06d2e.json",
+					"jsonFile" : "target-joysticks-Debug-38fbf7dc01a3aadd6653.json",
 					"name" : "joysticks",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "monitors::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-monitors-Release-95fb2cfd3590e43d7e8b.json",
+					"jsonFile" : "target-monitors-Debug-0cab9251100e7312e360.json",
 					"name" : "monitors",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "msaa::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-msaa-Release-ed24f807eb0b5a68f2a8.json",
+					"jsonFile" : "target-msaa-Debug-cc8792df9b19ad3b1a49.json",
 					"name" : "msaa",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "offscreen::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-offscreen-Release-53324d401415d72e90ba.json",
+					"jsonFile" : "target-offscreen-Debug-1122957c2316040a1b0f.json",
 					"name" : "offscreen",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "opacity::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-opacity-Release-4b829cefd52caa8b397d.json",
+					"jsonFile" : "target-opacity-Debug-800d60c4d1ca923d2b0f.json",
 					"name" : "opacity",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "particles::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-particles-Release-e9d40c06bcf013d37b69.json",
+					"jsonFile" : "target-particles-Debug-18098cce7fcbe0a50231.json",
 					"name" : "particles",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "reopen::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-reopen-Release-cea1e03555c0dae816eb.json",
+					"jsonFile" : "target-reopen-Debug-22d8ee44003867519386.json",
 					"name" : "reopen",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "sharing::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-sharing-Release-084855bcc024ba6a1135.json",
+					"jsonFile" : "target-sharing-Debug-a7a8dd3e916cf68696b3.json",
 					"name" : "sharing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "simple::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-simple-Release-8a7884ebbb863c49120e.json",
+					"jsonFile" : "target-simple-Debug-db17ab0dbc2defd1279a.json",
 					"name" : "simple",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "splitview::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-splitview-Release-b9793fb0559717fa9aea.json",
+					"jsonFile" : "target-splitview-Debug-bee2445cba32f7664248.json",
 					"name" : "splitview",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "tearing::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-tearing-Release-aadedfd4d0d18a6d3867.json",
+					"jsonFile" : "target-tearing-Debug-9d11894dc7b1c7976eac.json",
 					"name" : "tearing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "threads::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-threads-Release-3640d7b03c9efddcc20c.json",
+					"jsonFile" : "target-threads-Debug-6ceebaaa42fa8816a83b.json",
 					"name" : "threads",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "timeout::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-timeout-Release-27aba41895c309d5b978.json",
+					"jsonFile" : "target-timeout-Debug-a17e768bbd68b860ded5.json",
 					"name" : "timeout",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "title::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-title-Release-c5e0474d10bba75efa85.json",
+					"jsonFile" : "target-title-Debug-09b2c773847201c361b1.json",
 					"name" : "title",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "triangle-vulkan::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-triangle-vulkan-Release-265131d2148ab2e2c935.json",
+					"jsonFile" : "target-triangle-vulkan-Debug-9f6ac5d592a5749116b2.json",
 					"name" : "triangle-vulkan",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "uninstall::@385ee0595062b34c2272",
-					"jsonFile" : "target-uninstall-Release-0b0378e1cde098cc6843.json",
+					"jsonFile" : "target-uninstall-Debug-0b0378e1cde098cc6843.json",
 					"name" : "uninstall",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "update_mappings::@e0bcc1e8a34ccf585bfd",
-					"jsonFile" : "target-update_mappings-Release-b12d153302fd91c2e766.json",
+					"jsonFile" : "target-update_mappings-Debug-b12d153302fd91c2e766.json",
 					"name" : "update_mappings",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "wave::@ecf37bd064fee6629d1c",
-					"jsonFile" : "target-wave-Release-e735c51169ca512c56e0.json",
+					"jsonFile" : "target-wave-Debug-33b3b81e8de776683049.json",
 					"name" : "wave",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "windows::@60fe5a84d0a7aa37630e",
-					"jsonFile" : "target-windows-Release-eea011b2b667b6703561.json",
+					"jsonFile" : "target-windows-Debug-84a01e49de3d4e0dffa0.json",
 					"name" : "windows",
 					"projectIndex" : 1
 				}
@@ -424,7 +424,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release",
+		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug",
 		"source" : "C:/Users/avsom/CLionProjects/SimulacraEngine"
 	},
 	"version" : 

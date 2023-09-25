@@ -3,6 +3,8 @@
 //
 
 
+#include <windows.h>
+#include "../win32/WindowsApplication.h"
 #include <vulkan/vulkan.h>
 #include <iostream>
 #include <GLFW/glfw3.h>
@@ -11,16 +13,27 @@
 #include "../EngineTypes.h"
 
 
+bool CreateGameWindow()
+{
+
+}
+
+static bool VK_Init(){
+
+
+    CreateGameWindow();
+}
 
  void RenderBackend::Init()
 {
+
     std::printf("------ RenderBackend::Init() ------\n");
 
-//    if( !VK_Init() )
-//    {
-//        std::printf("Unable to initialize Vulkan");
-//        std::terminate();
-//    }
+    if( !VK_Init() )
+    {
+        std::printf("Unable to initialize Vulkan");
+        std::terminate();
+    }
 //
 //    CreateInstance();
 //
@@ -46,6 +59,23 @@
 //
 //    CreateFrameBuffers();
 
+
+}
+
+bool RenderBackend::SetScreenParams()
+{
+
+}
+
+bool RenderBackend::CreateWindowClasses()
+{
+    WNDCLASS wc;
+    wc.lpfnWndProc = MainWindowProcedure;
+    wc.hInstance = win32.hInstance;
+}
+
+bool RenderBackend::CreateGameWindow()
+{
 
 }
 
