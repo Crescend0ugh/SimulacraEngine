@@ -7,11 +7,13 @@
 
 #endif //SIMULACRAENGINE_PRECOMPILED_H
 
-//Math
-#include "../Math/Vector.h"
+
 
 //Sys
 #include "SimEngineDefines.h"
 #include "SimEngineAsserts.h"
 #include "SimEngineTypes.h"
 
+//Math
+#include "../Math/Vector.h"
+#include "../Math/Matrix.h"
