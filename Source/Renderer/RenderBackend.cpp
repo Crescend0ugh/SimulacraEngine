@@ -7,22 +7,20 @@
 #include "../win32/WindowsApplication.h"
 #include <vulkan/vulkan.h>
 #include <iostream>
-#include <GLFW/glfw3.h>
+#include "../win32/win32Defines.h"
 #include "RenderBackend.h"
-#include "../EngineDefines.h"
-#include "../EngineTypes.h"
 
+#include "../Core/Sys/SimEngineDefines.h"
+#include "../Core/Sys/SimEngineTypes.h"
 
-bool CreateGameWindow()
-{
-
-}
 
 static bool VK_Init(){
 
 
-    CreateGameWindow();
+    return true;
 }
+
+
 
  void RenderBackend::Init()
 {
@@ -34,6 +32,8 @@ static bool VK_Init(){
         std::printf("Unable to initialize Vulkan");
         std::terminate();
     }
+    CreateWindowClasses();
+    CreateGameWindow();
 //
 //    CreateInstance();
 //
@@ -62,22 +62,45 @@ static bool VK_Init(){
 
 }
 
-bool RenderBackend::SetScreenParams()
-{
 
-}
 
 bool RenderBackend::CreateWindowClasses()
 {
+
     WNDCLASS wc;
     wc.lpfnWndProc = MainWindowProcedure;
     wc.hInstance = win32.hInstance;
+    wc.lpszClassName = WIN32_WINDOW_CLASS_NAME;
+
+    if( RegisterClass(&wc))
+    {
+        return true;
+    }
+
+    else
+    {
+        std::cout << "Failed to register class!\n";
+        return false;
+    }
 }
 
-bool RenderBackend::CreateGameWindow()
+void RenderBackend::CreateGameWindow()
 {
+    win32.hWnd = CreateWindowEx(
+            0,
+            WIN32_WINDOW_CLASS_NAME,
+            "Hello Window!",
+            WS_OVERLAPPEDWINDOW,
+            CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+            nullptr,
+            nullptr,
+            win32.hInstance,
+            nullptr
+            );
 
+  //  ShowWindow( Windows.hWnd, SW_SHOW );
 }
+
 
 //void RenderBackend::CreateInstance()
 //{

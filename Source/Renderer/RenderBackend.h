@@ -33,14 +33,16 @@ struct DisplayParams
 
 class RenderBackend {
 
-private:
-    void Init();
+public:
+   void Init();
 
-    bool SetScreenParams();
+private:
+
+
 
     bool CreateWindowClasses();
 
-    bool CreateGameWindow();
+    void CreateGameWindow();
 };
 
 

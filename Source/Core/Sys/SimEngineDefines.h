@@ -2,15 +2,16 @@
 // Created by avsom on 9/20/2023.
 //
 
-#ifndef SIMULACRAENGINE_ENGINEDEFINES_H
-#define SIMULACRAENGINE_ENGINEDEFINES_H
+#ifndef SIMULACRAENGINE_SIMENGINEDEFINES_H
+#define SIMULACRAENGINE_SIMENGINEDEFINES_H
 
 
 
 
-
+//-------------------------------
 #define SIM_SMALL_NUMBER 1e-5
 #define SIM_VERY_SMALL_NUMBER 1e-7
+
 
 #define PI          3.14159265358979323846
 #define HALF_PI 	1.57079632679489661923
@@ -23,5 +24,6 @@
 #define SIM_INLINE         inline
 #define SIM_FORCE_INLINE __forceinline
 
+#define alloca16
 
-#endif //SIMULACRAENGINE_ENGINEDEFINES_H
+#endif //SIMULACRAENGINE_SIMENGINEDEFINES_H

@@ -5,8 +5,8 @@
 #ifndef SIMULACRAENGINE_VECTOR_H
 #define SIMULACRAENGINE_VECTOR_H
 
-#include "../EngineDefines.h"
-#include "../EngineTypes.h"
+#include "../Sys/SimEngineDefines.h"
+#include "../Sys/SimEngineTypes.h"
 #include "x86intrin.h"
 
 
@@ -61,6 +61,7 @@ public:
 
     SIM_FORCE_INLINE void SetSize(int length);
 
+//    SIM_FORCE_INLINE void SetData();
 
     SIM_FORCE_INLINE bool     operator==(const SVectorX o) const;
     SIM_FORCE_INLINE bool     operator!=(const SVectorX o) const;

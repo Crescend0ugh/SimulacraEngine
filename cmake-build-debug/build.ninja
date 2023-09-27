@@ -49,33 +49,13 @@ cmake_ninja_workdir = C$:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-
 
 build cmake_object_order_depends_target_SimulacraEngine: phony || cmake_object_order_depends_target_glfw
 
-build CMakeFiles/SimulacraEngine.dir/main.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/main.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\main.cpp.obj.d
+build CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/win_main.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/win_main.cpp || cmake_object_order_depends_target_SimulacraEngine
+  DEFINES = -D_DEBUG=1
+  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Core\Platforms\Windows\win_main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir
-
-build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/RenderBackend_VK.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\RenderBackend_VK.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan
-
-build CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/RenderBackend.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\RenderBackend.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Renderer
-
-build CMakeFiles/SimulacraEngine.dir/Source/win/WindowProcedure.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/win/WindowProcedure.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\win\WindowProcedure.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\win
+  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Platforms\Windows
 
 
 # =============================================================================
@@ -85,7 +65,7 @@ build CMakeFiles/SimulacraEngine.dir/Source/win/WindowProcedure.cpp.obj: CXX_COM
 #############################################
 # Link the executable SimulacraEngine.exe
 
-build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Debug CMakeFiles/SimulacraEngine.dir/main.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/win/WindowProcedure.cpp.obj | C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib || C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a
+build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Debug CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/win_main.cpp.obj | C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib || C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a
   FLAGS = -g
   LINK_LIBRARIES = C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a  C:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir

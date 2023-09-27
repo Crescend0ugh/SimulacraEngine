@@ -17,6 +17,7 @@ struct Win32Vars
 {
     HWND hWnd;
     HINSTANCE hInstance;
+    int nCmdShow;
 
 };
 
