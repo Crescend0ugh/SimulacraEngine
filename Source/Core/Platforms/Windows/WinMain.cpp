@@ -7,10 +7,9 @@
 
 
 
-
+#include "../../Sys/Precompiled.h"
 #include <windows.h>
 #include <iostream>
-
 #include "WindowsApplication.h"
 
 
@@ -24,7 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 #if defined(_DEBUG)
 std::cout<< "DEBUG MODE\n";
 
+    idassert(0>1);
 #endif //DEBUG
     return 0;
-
 }

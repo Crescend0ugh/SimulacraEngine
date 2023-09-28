@@ -84,6 +84,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\\CMakeFiles\progress.marks
@@ -128,77 +173,469 @@ SimulacraEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/build
 .PHONY : SimulacraEngine/fast
 
-Source/Renderer/RenderBackend.obj: Source/Renderer/RenderBackend.cpp.obj
-.PHONY : Source/Renderer/RenderBackend.obj
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\CMakeFiles\uninstall.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named update_mappings
+
+# Build rule for target.
+update_mappings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 update_mappings
+.PHONY : update_mappings
+
+# fast build rule for target.
+update_mappings/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\update_mappings.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings.dir/build
+.PHONY : update_mappings/fast
+
+#=============================================================================
+# Target rules for targets named glfw
+
+# Build rule for target.
+glfw: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 glfw
+.PHONY : glfw
+
+# fast build rule for target.
+glfw/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/build
+.PHONY : glfw/fast
+
+#=============================================================================
+# Target rules for targets named boing
+
+# Build rule for target.
+boing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 boing
+.PHONY : boing
+
+# fast build rule for target.
+boing/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/boing.dir/build
+.PHONY : boing/fast
+
+#=============================================================================
+# Target rules for targets named gears
+
+# Build rule for target.
+gears: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gears
+.PHONY : gears
+
+# fast build rule for target.
+gears/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/gears.dir/build
+.PHONY : gears/fast
+
+#=============================================================================
+# Target rules for targets named heightmap
+
+# Build rule for target.
+heightmap: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 heightmap
+.PHONY : heightmap
+
+# fast build rule for target.
+heightmap/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/heightmap.dir/build
+.PHONY : heightmap/fast
+
+#=============================================================================
+# Target rules for targets named offscreen
+
+# Build rule for target.
+offscreen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 offscreen
+.PHONY : offscreen
+
+# fast build rule for target.
+offscreen/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/build
+.PHONY : offscreen/fast
+
+#=============================================================================
+# Target rules for targets named particles
+
+# Build rule for target.
+particles: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 particles
+.PHONY : particles
+
+# fast build rule for target.
+particles/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/particles.dir/build
+.PHONY : particles/fast
+
+#=============================================================================
+# Target rules for targets named sharing
+
+# Build rule for target.
+sharing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sharing
+.PHONY : sharing
+
+# fast build rule for target.
+sharing/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/sharing.dir/build
+.PHONY : sharing/fast
+
+#=============================================================================
+# Target rules for targets named simple
+
+# Build rule for target.
+simple: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 simple
+.PHONY : simple
+
+# fast build rule for target.
+simple/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/simple.dir/build
+.PHONY : simple/fast
+
+#=============================================================================
+# Target rules for targets named splitview
+
+# Build rule for target.
+splitview: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 splitview
+.PHONY : splitview
+
+# fast build rule for target.
+splitview/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/splitview.dir/build
+.PHONY : splitview/fast
+
+#=============================================================================
+# Target rules for targets named wave
+
+# Build rule for target.
+wave: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 wave
+.PHONY : wave
+
+# fast build rule for target.
+wave/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/wave.dir/build
+.PHONY : wave/fast
+
+#=============================================================================
+# Target rules for targets named clipboard
+
+# Build rule for target.
+clipboard: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 clipboard
+.PHONY : clipboard
+
+# fast build rule for target.
+clipboard/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/clipboard.dir/build
+.PHONY : clipboard/fast
+
+#=============================================================================
+# Target rules for targets named events
+
+# Build rule for target.
+events: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 events
+.PHONY : events
+
+# fast build rule for target.
+events/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/events.dir/build
+.PHONY : events/fast
+
+#=============================================================================
+# Target rules for targets named msaa
+
+# Build rule for target.
+msaa: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 msaa
+.PHONY : msaa
+
+# fast build rule for target.
+msaa/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/msaa.dir/build
+.PHONY : msaa/fast
+
+#=============================================================================
+# Target rules for targets named glfwinfo
+
+# Build rule for target.
+glfwinfo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 glfwinfo
+.PHONY : glfwinfo
+
+# fast build rule for target.
+glfwinfo/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/glfwinfo.dir/build
+.PHONY : glfwinfo/fast
+
+#=============================================================================
+# Target rules for targets named iconify
+
+# Build rule for target.
+iconify: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 iconify
+.PHONY : iconify
+
+# fast build rule for target.
+iconify/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/iconify.dir/build
+.PHONY : iconify/fast
+
+#=============================================================================
+# Target rules for targets named monitors
+
+# Build rule for target.
+monitors: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 monitors
+.PHONY : monitors
+
+# fast build rule for target.
+monitors/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/monitors.dir/build
+.PHONY : monitors/fast
+
+#=============================================================================
+# Target rules for targets named reopen
+
+# Build rule for target.
+reopen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 reopen
+.PHONY : reopen
+
+# fast build rule for target.
+reopen/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/reopen.dir/build
+.PHONY : reopen/fast
+
+#=============================================================================
+# Target rules for targets named cursor
+
+# Build rule for target.
+cursor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 cursor
+.PHONY : cursor
+
+# fast build rule for target.
+cursor/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cursor.dir/build
+.PHONY : cursor/fast
+
+#=============================================================================
+# Target rules for targets named empty
+
+# Build rule for target.
+empty: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 empty
+.PHONY : empty
+
+# fast build rule for target.
+empty/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/empty.dir/build
+.PHONY : empty/fast
+
+#=============================================================================
+# Target rules for targets named gamma
+
+# Build rule for target.
+gamma: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gamma
+.PHONY : gamma
+
+# fast build rule for target.
+gamma/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gamma.dir/build
+.PHONY : gamma/fast
+
+#=============================================================================
+# Target rules for targets named icon
+
+# Build rule for target.
+icon: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 icon
+.PHONY : icon
+
+# fast build rule for target.
+icon/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/icon.dir/build
+.PHONY : icon/fast
+
+#=============================================================================
+# Target rules for targets named inputlag
+
+# Build rule for target.
+inputlag: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 inputlag
+.PHONY : inputlag
+
+# fast build rule for target.
+inputlag/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/build
+.PHONY : inputlag/fast
+
+#=============================================================================
+# Target rules for targets named joysticks
+
+# Build rule for target.
+joysticks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 joysticks
+.PHONY : joysticks
+
+# fast build rule for target.
+joysticks/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/joysticks.dir/build
+.PHONY : joysticks/fast
+
+#=============================================================================
+# Target rules for targets named opacity
+
+# Build rule for target.
+opacity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 opacity
+.PHONY : opacity
+
+# fast build rule for target.
+opacity/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/opacity.dir/build
+.PHONY : opacity/fast
+
+#=============================================================================
+# Target rules for targets named tearing
+
+# Build rule for target.
+tearing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tearing
+.PHONY : tearing
+
+# fast build rule for target.
+tearing/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/build
+.PHONY : tearing/fast
+
+#=============================================================================
+# Target rules for targets named threads
+
+# Build rule for target.
+threads: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 threads
+.PHONY : threads
+
+# fast build rule for target.
+threads/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/build
+.PHONY : threads/fast
+
+#=============================================================================
+# Target rules for targets named timeout
+
+# Build rule for target.
+timeout: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 timeout
+.PHONY : timeout
+
+# fast build rule for target.
+timeout/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/timeout.dir/build
+.PHONY : timeout/fast
+
+#=============================================================================
+# Target rules for targets named title
+
+# Build rule for target.
+title: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 title
+.PHONY : title
+
+# fast build rule for target.
+title/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/title.dir/build
+.PHONY : title/fast
+
+#=============================================================================
+# Target rules for targets named triangle-vulkan
+
+# Build rule for target.
+triangle-vulkan: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 triangle-vulkan
+.PHONY : triangle-vulkan
+
+# fast build rule for target.
+triangle-vulkan/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/triangle-vulkan.dir/build
+.PHONY : triangle-vulkan/fast
+
+#=============================================================================
+# Target rules for targets named windows
+
+# Build rule for target.
+windows: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 windows
+.PHONY : windows
+
+# fast build rule for target.
+windows/fast:
+	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/windows.dir/build
+.PHONY : windows/fast
+
+Source/Core/Platforms/Windows/WinMain.obj: Source/Core/Platforms/Windows/WinMain.cpp.obj
+.PHONY : Source/Core/Platforms/Windows/WinMain.obj
 
 # target to build an object file
-Source/Renderer/RenderBackend.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.obj
-.PHONY : Source/Renderer/RenderBackend.cpp.obj
+Source/Core/Platforms/Windows/WinMain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.obj
+.PHONY : Source/Core/Platforms/Windows/WinMain.cpp.obj
 
-Source/Renderer/RenderBackend.i: Source/Renderer/RenderBackend.cpp.i
-.PHONY : Source/Renderer/RenderBackend.i
+Source/Core/Platforms/Windows/WinMain.i: Source/Core/Platforms/Windows/WinMain.cpp.i
+.PHONY : Source/Core/Platforms/Windows/WinMain.i
 
 # target to preprocess a source file
-Source/Renderer/RenderBackend.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.i
-.PHONY : Source/Renderer/RenderBackend.cpp.i
+Source/Core/Platforms/Windows/WinMain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.i
+.PHONY : Source/Core/Platforms/Windows/WinMain.cpp.i
 
-Source/Renderer/RenderBackend.s: Source/Renderer/RenderBackend.cpp.s
-.PHONY : Source/Renderer/RenderBackend.s
+Source/Core/Platforms/Windows/WinMain.s: Source/Core/Platforms/Windows/WinMain.cpp.s
+.PHONY : Source/Core/Platforms/Windows/WinMain.s
 
 # target to generate assembly for a file
-Source/Renderer/RenderBackend.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/RenderBackend.cpp.s
-.PHONY : Source/Renderer/RenderBackend.cpp.s
+Source/Core/Platforms/Windows/WinMain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.s
+.PHONY : Source/Core/Platforms/Windows/WinMain.cpp.s
 
-Source/Renderer/Vulkan/RenderBackend_VK.obj: Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.obj
+Source/Core/Sys/Precompiled.obj: Source/Core/Sys/Precompiled.cpp.obj
+.PHONY : Source/Core/Sys/Precompiled.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.cpp.obj
+Source/Core/Sys/Precompiled.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.obj
+.PHONY : Source/Core/Sys/Precompiled.cpp.obj
 
-Source/Renderer/Vulkan/RenderBackend_VK.i: Source/Renderer/Vulkan/RenderBackend_VK.cpp.i
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.i
-
-# target to preprocess a source file
-Source/Renderer/Vulkan/RenderBackend_VK.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.i
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.cpp.i
-
-Source/Renderer/Vulkan/RenderBackend_VK.s: Source/Renderer/Vulkan/RenderBackend_VK.cpp.s
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.s
-
-# target to generate assembly for a file
-Source/Renderer/Vulkan/RenderBackend_VK.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/RenderBackend_VK.cpp.s
-.PHONY : Source/Renderer/Vulkan/RenderBackend_VK.cpp.s
-
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
+Source/Core/Sys/Precompiled.i: Source/Core/Sys/Precompiled.cpp.i
+.PHONY : Source/Core/Sys/Precompiled.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/main.cpp.i
-.PHONY : main.cpp.i
+Source/Core/Sys/Precompiled.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.i
+.PHONY : Source/Core/Sys/Precompiled.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Source/Core/Sys/Precompiled.s: Source/Core/Sys/Precompiled.cpp.s
+.PHONY : Source/Core/Sys/Precompiled.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/main.cpp.s
-.PHONY : main.cpp.s
+Source/Core/Sys/Precompiled.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.s
+.PHONY : Source/Core/Sys/Precompiled.cpp.s
 
 # Help Target
 help:
@@ -207,17 +644,50 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... uninstall
+	@echo ... update_mappings
 	@echo ... SimulacraEngine
-	@echo ... Source/Renderer/RenderBackend.obj
-	@echo ... Source/Renderer/RenderBackend.i
-	@echo ... Source/Renderer/RenderBackend.s
-	@echo ... Source/Renderer/Vulkan/RenderBackend_VK.obj
-	@echo ... Source/Renderer/Vulkan/RenderBackend_VK.i
-	@echo ... Source/Renderer/Vulkan/RenderBackend_VK.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... boing
+	@echo ... clipboard
+	@echo ... cursor
+	@echo ... empty
+	@echo ... events
+	@echo ... gamma
+	@echo ... gears
+	@echo ... glfw
+	@echo ... glfwinfo
+	@echo ... heightmap
+	@echo ... icon
+	@echo ... iconify
+	@echo ... inputlag
+	@echo ... joysticks
+	@echo ... monitors
+	@echo ... msaa
+	@echo ... offscreen
+	@echo ... opacity
+	@echo ... particles
+	@echo ... reopen
+	@echo ... sharing
+	@echo ... simple
+	@echo ... splitview
+	@echo ... tearing
+	@echo ... threads
+	@echo ... timeout
+	@echo ... title
+	@echo ... triangle-vulkan
+	@echo ... wave
+	@echo ... windows
+	@echo ... Source/Core/Platforms/Windows/WinMain.obj
+	@echo ... Source/Core/Platforms/Windows/WinMain.i
+	@echo ... Source/Core/Platforms/Windows/WinMain.s
+	@echo ... Source/Core/Sys/Precompiled.obj
+	@echo ... Source/Core/Sys/Precompiled.i
+	@echo ... Source/Core/Sys/Precompiled.s
 .PHONY : help
 
 

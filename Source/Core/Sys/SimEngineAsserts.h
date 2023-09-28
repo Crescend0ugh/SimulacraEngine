@@ -9,7 +9,7 @@
 
 #if defined(_DEBUG)
 
-#else //DEBUG
+#else //DEBUG   
 
 
 
@@ -19,5 +19,14 @@
 
 
 
-#define assert_sizeof( type,size ) static_assert(sizeof(type) == size);
-#define is_aligned_16(type)
+#define assert_is_aligned(type, value)
+
+#define assert_sizeof( type,size ) static_assert(sizeof(type) == size)
+
+
+
+#define is_aligned_4(type) assert_is_aligned(type, 4)
+#define is_aligned_8(type) assert_is_aligned(type, 8)
+#define is_aligned_16(type) assert_is_aligned(type, 16)
+#define is_aligned_32(type) assert_is_aligned(type, 32)
+#define is_aligned_64(type) assert_is_aligned(type, 64)

@@ -80,6 +80,7 @@ public:
     SIM_FORCE_INLINE SVectorX  operator-(const SVectorX v) const;
     SIM_FORCE_INLINE SVectorX& operator-=(const SVectorX v);
 
+
     SIM_FORCE_INLINE SVectorX  operator*(const float scale) const;
     SIM_FORCE_INLINE float    operator*(const SVectorX &v) const;
     SIM_FORCE_INLINE SVectorX& operator*=(const float scale);
@@ -100,6 +101,8 @@ private:
 
 };
 
-#include "Vector.inl"
+
+
+
 
 #endif //SIMULACRAENGINE_VECTOR_H

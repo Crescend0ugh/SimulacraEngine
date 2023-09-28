@@ -11,10 +11,12 @@
 
 
 
+#include "Vector.h"
 
 SVector2::SVector2(float f)
 {
-
+    X = f;
+    Y = f;
 }
 
 SVector2::SVector2(float inX, float inY)
