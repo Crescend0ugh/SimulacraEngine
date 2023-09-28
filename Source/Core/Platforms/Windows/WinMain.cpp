@@ -22,8 +22,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     win32.nCmdShow = nCmdShow;
 #if defined(_DEBUG)
 std::cout<< "DEBUG MODE\n";
-
-    idassert(0>1);
+    float lol[4] = {1,2,3,4};
+    float* test = lol;
+    SVectorX testVec = SVectorX(4, lol);
+    assert_2_byte_aligned(std::addressof(testVec));
 #endif //DEBUG
     return 0;
 }

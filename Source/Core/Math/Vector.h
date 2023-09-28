@@ -104,5 +104,4 @@ private:
 
 
 
-
 #endif //SIMULACRAENGINE_VECTOR_H

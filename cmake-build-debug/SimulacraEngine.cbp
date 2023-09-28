@@ -1601,6 +1601,9 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/glfw_config.h">
 			<Option target="glfw"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Math/Vector.inl">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/WinMain.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>

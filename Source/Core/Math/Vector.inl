@@ -11,8 +11,6 @@
 
 
 
-#include "Vector.h"
-
 SVector2::SVector2(float f)
 {
     X = f;

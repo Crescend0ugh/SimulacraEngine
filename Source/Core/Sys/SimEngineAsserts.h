@@ -9,8 +9,11 @@
 
 #if defined(_DEBUG)
 
+
+
 #else //DEBUG   
 
+#
 
 
 #endif //DEBUG
@@ -19,9 +22,8 @@
 
 
 
-#define assert_is_aligned(type, value)
-
-#define assert_sizeof( type,size ) static_assert(sizeof(type) == size)
+#define assert_2_byte_aligned( ptr ) assert( ( ((UINT_PTR)(ptr)) &  1 ) == 0 )
+#define assert_sizeof( type , size ) static_assert(sizeof(type) == size)
 
 
 
