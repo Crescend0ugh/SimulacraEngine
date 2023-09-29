@@ -20,18 +20,20 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     std::cout << "------ Windows Initialized ------\n";
     win32.hInstance = hInstance;
     win32.nCmdShow = nCmdShow;
+
+
+    std::cout<< "Build Mode: ";
 #if defined(_DEBUG)
     std::cout<< "DEBUG MODE\n";
 
+#elif defined(_NDEBUG)
+    std::cout<< "RELEASE MODE\n";
 
-
-    float lol[4] = {1,2,3,4};
-    float* test = lol;
+#endif
 
     SVector2 vector = SVector2(4,8);
 
 
 
-#endif //DEBUG
     return 0;
 }

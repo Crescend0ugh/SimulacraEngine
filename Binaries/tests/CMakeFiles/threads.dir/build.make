@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/depend.make
@@ -72,7 +72,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.d
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj: C:/glfw-3.3.8/tests/threads.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.obj -MF CMakeFiles\threads.dir\threads.c.obj.d -o CMakeFiles\threads.dir\threads.c.obj -c C:\glfw-3.3.8\tests\threads.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/threads.c.i: cmake_force
@@ -87,7 +87,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.d
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C:/glfw-3.3.8/deps/tinycthread.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj -MF CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\tinycthread.c.obj.d -o CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\tinycthread.c.obj -c C:\glfw-3.3.8\deps\tinycthread.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.i: cmake_force
@@ -102,7 +102,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.d
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/glfw-3.3.8/deps/glad_gl.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj -MF CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d -o CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj -c C:\glfw-3.3.8\deps\glad_gl.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.i: cmake_force
@@ -130,7 +130,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/threads.exe: C:/User
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/threads.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/linkLibs.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/threads.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/objects1.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/threads.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable threads.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable threads.exe"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\threads.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +142,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.d
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/depend
 

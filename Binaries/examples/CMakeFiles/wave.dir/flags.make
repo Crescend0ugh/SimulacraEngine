@@ -7,7 +7,7 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles/wave.dir/includes_C.rsp
 
-C_FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+C_FLAGS = -O3 -DNDEBUG -std=gnu99 -fdiagnostics-color=always
 
 RC_DEFINES = 
 

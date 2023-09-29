@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Utility rule file for update_mappings.
 
@@ -66,7 +66,7 @@ include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/upd
 include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings.dir/progress.make
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
 	cd /d C:\glfw-3.3.8\src && "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -P C:/glfw-3.3.8/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings
@@ -82,6 +82,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mapp
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\src C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\update_mappings.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\src C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\update_mappings.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/update_mappings.dir/depend
 

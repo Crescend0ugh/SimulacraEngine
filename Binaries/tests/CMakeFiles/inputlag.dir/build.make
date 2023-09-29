@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/depend.make
@@ -72,7 +72,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj: C:/glfw-3.3.8/tests/inputlag.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.obj -MF CMakeFiles\inputlag.dir\inputlag.c.obj.d -o CMakeFiles\inputlag.dir\inputlag.c.obj -c C:\glfw-3.3.8\tests\inputlag.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/inputlag.c.i: cmake_force
@@ -87,7 +87,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C:/glfw-3.3.8/deps/getopt.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj -MF CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d -o CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\getopt.c.obj -c C:\glfw-3.3.8\deps\getopt.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.i: cmake_force
@@ -102,7 +102,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/glfw-3.3.8/deps/glad_gl.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj -MF CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d -o CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj -c C:\glfw-3.3.8\deps\glad_gl.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.i: cmake_force
@@ -130,7 +130,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/inputlag.exe: C:/Use
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/inputlag.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/linkLibs.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/inputlag.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/objects1.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/inputlag.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable inputlag.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable inputlag.exe"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\inputlag.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +142,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/depend
 

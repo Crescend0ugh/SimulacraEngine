@@ -24,6 +24,6 @@
 #define SIM_INLINE         inline
 #define SIM_FORCE_INLINE __forceinline
 
-#define alloca16
+#define AllocAligned16
 
 #endif //SIMULACRAENGINE_SIMENGINEDEFINES_H

@@ -15,6 +15,11 @@
 #include "SimEngineAsserts.h"
 #include "SimEngineTypes.h"
 
+//Mem
+#include "../Memory/Public/StackAllocator.h"
+#include "../Memory/Public/DoubleEndedStackAllocator.h"
+#include "../Memory/Public/PoolAllocator.h"
+
 //Math
 #include "../Math/Vector.h"
 #include "../Math/Matrix.h"

@@ -6,7 +6,7 @@ C_DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
 
 C_INCLUDES = @CMakeFiles/glfw.dir/includes_C.rsp
 
-C_FLAGS = -g -std=gnu99 -fdiagnostics-color=always -Wall
+C_FLAGS = -O3 -DNDEBUG -std=gnu99 -fdiagnostics-color=always -Wall
 
 # Custom flags: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/context.c.obj_FLAGS = -Wdeclaration-after-statement
 

@@ -48,6 +48,30 @@ public:
 
 struct SVector
 {
+    struct
+    {
+        float X;
+        float Y;
+        float Z;
+    };
+
+    explicit SVector(float f);
+    SVector(float InX, float InY, float InZ);
+    SVector(float InArr[3]);
+
+    SIM_FORCE_INLINE bool operator==(const SVector O) const;
+    SIM_FORCE_INLINE bool operator!=(const SVector O) const;
+    SIM_FORCE_INLINE bool Equals(const SVector O) const;
+    SIM_FORCE_INLINE bool Equals(const SVector O, float Epsilon);
+
+    SIM_FORCE_INLINE float operator[](const int index) const;
+    SIM_FORCE_INLINE float &operator[](const int index);
+    SIM_FORCE_INLINE float Get(const int index) const;
+    SIM_FORCE_INLINE float &Get(const int index);
+
+    SIM_FORCE_INLINE SVector operator+(const SVector v) const;
+    SIM_FORCE_INLINE SVector& operator+=(const SVector v);
+
 
 };
 

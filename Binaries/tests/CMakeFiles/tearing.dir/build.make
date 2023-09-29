@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/depend.make
@@ -72,7 +72,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.d
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj: C:/glfw-3.3.8/tests/tearing.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.obj -MF CMakeFiles\tearing.dir\tearing.c.obj.d -o CMakeFiles\tearing.dir\tearing.c.obj -c C:\glfw-3.3.8\tests\tearing.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/tearing.c.i: cmake_force
@@ -87,7 +87,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.d
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/glfw-3.3.8/deps/glad_gl.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj -MF CMakeFiles\tearing.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d -o CMakeFiles\tearing.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj -c C:\glfw-3.3.8\deps\glad_gl.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.i: cmake_force
@@ -113,7 +113,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/tearing.exe: C:/User
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/tearing.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/linkLibs.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/tearing.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/objects1.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/tearing.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable tearing.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable tearing.exe"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\tearing.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -125,6 +125,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.d
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\tests C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/depend
 

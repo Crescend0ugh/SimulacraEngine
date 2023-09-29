@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/depend.make
@@ -72,7 +72,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscr
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj: C:/glfw-3.3.8/examples/offscreen.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.obj -MF CMakeFiles\offscreen.dir\offscreen.c.obj.d -o CMakeFiles\offscreen.dir\offscreen.c.obj -c C:\glfw-3.3.8\examples\offscreen.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/offscreen.c.i: cmake_force
@@ -85,14 +85,14 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscr
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/glfw.rc.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/flags.make
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/glfw.rc.obj: C:/glfw-3.3.8/examples/glfw.rc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building RC object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/glfw.rc.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building RC object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/glfw.rc.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) C:\glfw-3.3.8\examples\glfw.rc CMakeFiles\offscreen.dir\glfw.rc.obj
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/flags.make
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/includes_C.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/glfw-3.3.8/deps/glad_gl.c
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj -MF CMakeFiles\offscreen.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d -o CMakeFiles\offscreen.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj -c C:\glfw-3.3.8\deps\glad_gl.c
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.i: cmake_force
@@ -120,7 +120,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/offscreen.exe: C:
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/offscreen.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/linkLibs.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/offscreen.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/objects1.rsp
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/offscreen.exe: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable offscreen.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable offscreen.exe"
 	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\offscreen.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -132,6 +132,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscr
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\examples C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8\examples C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/depend
 

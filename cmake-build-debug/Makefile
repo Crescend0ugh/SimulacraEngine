@@ -589,6 +589,78 @@ windows/fast:
 	$(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/windows.dir/build
 .PHONY : windows/fast
 
+Source/Core/Memory/Private/DoubleEndedStackAllocator.obj: Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.obj
+
+# target to build an object file
+Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.obj
+
+Source/Core/Memory/Private/DoubleEndedStackAllocator.i: Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.i
+
+# target to preprocess a source file
+Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.i
+
+Source/Core/Memory/Private/DoubleEndedStackAllocator.s: Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.s
+
+# target to generate assembly for a file
+Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/DoubleEndedStackAllocator.cpp.s
+
+Source/Core/Memory/Private/PoolAllocator.obj: Source/Core/Memory/Private/PoolAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/PoolAllocator.obj
+
+# target to build an object file
+Source/Core/Memory/Private/PoolAllocator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/PoolAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/PoolAllocator.cpp.obj
+
+Source/Core/Memory/Private/PoolAllocator.i: Source/Core/Memory/Private/PoolAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/PoolAllocator.i
+
+# target to preprocess a source file
+Source/Core/Memory/Private/PoolAllocator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/PoolAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/PoolAllocator.cpp.i
+
+Source/Core/Memory/Private/PoolAllocator.s: Source/Core/Memory/Private/PoolAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/PoolAllocator.s
+
+# target to generate assembly for a file
+Source/Core/Memory/Private/PoolAllocator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/PoolAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/PoolAllocator.cpp.s
+
+Source/Core/Memory/Private/StackAllocator.obj: Source/Core/Memory/Private/StackAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/StackAllocator.obj
+
+# target to build an object file
+Source/Core/Memory/Private/StackAllocator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj
+.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.obj
+
+Source/Core/Memory/Private/StackAllocator.i: Source/Core/Memory/Private/StackAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/StackAllocator.i
+
+# target to preprocess a source file
+Source/Core/Memory/Private/StackAllocator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.i
+.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.i
+
+Source/Core/Memory/Private/StackAllocator.s: Source/Core/Memory/Private/StackAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/StackAllocator.s
+
+# target to generate assembly for a file
+Source/Core/Memory/Private/StackAllocator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.s
+.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.s
+
 Source/Core/Platforms/Windows/WinMain.obj: Source/Core/Platforms/Windows/WinMain.cpp.obj
 .PHONY : Source/Core/Platforms/Windows/WinMain.obj
 
@@ -682,6 +754,15 @@ help:
 	@echo ... triangle-vulkan
 	@echo ... wave
 	@echo ... windows
+	@echo ... Source/Core/Memory/Private/DoubleEndedStackAllocator.obj
+	@echo ... Source/Core/Memory/Private/DoubleEndedStackAllocator.i
+	@echo ... Source/Core/Memory/Private/DoubleEndedStackAllocator.s
+	@echo ... Source/Core/Memory/Private/PoolAllocator.obj
+	@echo ... Source/Core/Memory/Private/PoolAllocator.i
+	@echo ... Source/Core/Memory/Private/PoolAllocator.s
+	@echo ... Source/Core/Memory/Private/StackAllocator.obj
+	@echo ... Source/Core/Memory/Private/StackAllocator.i
+	@echo ... Source/Core/Memory/Private/StackAllocator.s
 	@echo ... Source/Core/Platforms/Windows/WinMain.obj
 	@echo ... Source/Core/Platforms/Windows/WinMain.i
 	@echo ... Source/Core/Platforms/Windows/WinMain.s

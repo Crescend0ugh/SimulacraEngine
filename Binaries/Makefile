@@ -59,7 +59,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,14 +131,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\\CMakeFiles\progress.marks
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\\CMakeFiles\progress.marks
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/clean
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/clean
 .PHONY : clean
 
 # The main clean target
@@ -147,22 +147,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/preinstall
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/preinstall
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/rule:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/rule
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/rule
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -171,7 +171,7 @@ uninstall: C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/unin
 
 # fast build rule for target.
 uninstall/fast:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\CMakeFiles\uninstall.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/build
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(MAKE) $(MAKESILENT) -f C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\CMakeFiles\uninstall.dir\build.make C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 # Help Target
@@ -198,6 +198,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -55,7 +55,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release
 
 # Utility rule file for uninstall.
 
@@ -81,6 +81,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/c
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/clean
 
 C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8 C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\CMakeFiles\uninstall.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\avsom\CLionProjects\SimulacraEngine C:\glfw-3.3.8 C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-release C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\CMakeFiles\uninstall.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : C:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/CMakeFiles/uninstall.dir/depend
 
