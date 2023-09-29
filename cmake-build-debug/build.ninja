@@ -56,6 +56,8 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.o
   INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Platforms\Windows
+  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
+  TARGET_PDB = SimulacraEngine.pdb
 
 build CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.obj: CXX_COMPILER__SimulacraEngine_Debug C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Sys/Precompiled.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_DEBUG=1
@@ -64,6 +66,8 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.obj: CXX_CO
   INCLUDES = -IC:/glfw-3.3.8/include -isystem C:/VulkanSDK/1.3.243.0/Include
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Sys
+  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
+  TARGET_PDB = SimulacraEngine.pdb
 
 
 # =============================================================================
@@ -79,9 +83,10 @@ build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Debug CMakeFil
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
   TARGET_FILE = SimulacraEngine.exe
   TARGET_IMPLIB = libSimulacraEngine.dll.a
-  TARGET_PDB = SimulacraEngine.exe.dbg
+  TARGET_PDB = SimulacraEngine.pdb
 
 
 #############################################
@@ -258,6 +263,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -266,6 +273,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/input.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -274,6 +283,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -282,6 +293,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/vulkan.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -290,6 +303,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -298,6 +313,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -306,6 +323,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_joystick.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -314,6 +333,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -322,6 +343,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_time.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -330,6 +353,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_thread.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -338,6 +363,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/win32_window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -346,6 +373,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/wgl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -354,6 +383,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/egl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -362,6 +393,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_Debug C$:/glfw-3.3.8/src/osmesa_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
@@ -370,6 +403,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/CMakeFiles/glfw
   INCLUDES = -IC:/glfw-3.3.8/include -IC:/glfw-3.3.8/src -IC:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 
 # =============================================================================
@@ -384,8 +419,9 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/src/libglfw3.a: C_S
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.a
-  TARGET_PDB = glfw3.a.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\libglfw3.pdb
 
 
 #############################################
@@ -480,12 +516,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\boing.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/boing.dir/glfw.rc.obj: RC_COMPILER__boing_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_boing
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\boing.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/boing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__boing_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_boing
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -493,6 +533,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\boing.pdb
 
 
 # =============================================================================
@@ -509,9 +551,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/boing.exe:
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\boing.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\boing.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libboing.dll.a
-  TARGET_PDB = boing.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\boing.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target gears
@@ -528,12 +571,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\gears.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/gears.dir/glfw.rc.obj: RC_COMPILER__gears_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_gears
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\gears.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/gears.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__gears_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_gears
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -541,6 +588,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\gears.pdb
 
 
 # =============================================================================
@@ -557,9 +606,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/gears.exe:
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\gears.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\gears.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libgears.dll.a
-  TARGET_PDB = gears.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\gears.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target heightmap
@@ -576,12 +626,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\heightmap.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/heightmap.dir/glfw.rc.obj: RC_COMPILER__heightmap_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_heightmap
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\heightmap.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/heightmap.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__heightmap_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_heightmap
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -589,6 +643,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\heightmap.pdb
 
 
 # =============================================================================
@@ -605,9 +661,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/heightmap.
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\heightmap.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\heightmap.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libheightmap.dll.a
-  TARGET_PDB = heightmap.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\heightmap.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target offscreen
@@ -624,12 +681,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\offscreen.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/glfw.rc.obj: RC_COMPILER__offscreen_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_offscreen
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\offscreen.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/offscreen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__offscreen_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_offscreen
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -637,6 +698,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\offscreen.pdb
 
 
 # =============================================================================
@@ -652,9 +715,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/offscreen.
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\offscreen.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\offscreen.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\liboffscreen.dll.a
-  TARGET_PDB = offscreen.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\offscreen.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target particles
@@ -671,12 +735,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/particles.dir/glfw.rc.obj: RC_COMPILER__particles_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_particles
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/particles.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C_COMPILER__particles_Debug C$:/glfw-3.3.8/deps/tinycthread.c || cmake_object_order_depends_target_particles
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps\tinycthread.c.obj.d
@@ -684,6 +752,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/particles.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__particles_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_particles
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -691,6 +761,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/particles.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__particles_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_particles
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -698,6 +770,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 
 # =============================================================================
@@ -714,9 +788,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/particles.
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\particles.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libparticles.dll.a
-  TARGET_PDB = particles.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\particles.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target sharing
@@ -733,12 +808,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\sharing.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/sharing.dir/glfw.rc.obj: RC_COMPILER__sharing_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_sharing
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\sharing.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/sharing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__sharing_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_sharing
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -746,6 +825,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\sharing.pdb
 
 
 # =============================================================================
@@ -762,9 +843,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/sharing.ex
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\sharing.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\sharing.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libsharing.dll.a
-  TARGET_PDB = sharing.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\sharing.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target simple
@@ -781,12 +863,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\simple.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/simple.dir/glfw.rc.obj: RC_COMPILER__simple_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_simple
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\simple.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/simple.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__simple_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_simple
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -794,6 +880,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\simple.pdb
 
 
 # =============================================================================
@@ -810,9 +898,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/simple.exe
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\simple.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\simple.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libsimple.dll.a
-  TARGET_PDB = simple.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\simple.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target splitview
@@ -829,12 +918,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\splitview.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/splitview.dir/glfw.rc.obj: RC_COMPILER__splitview_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_splitview
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\splitview.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/splitview.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__splitview_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_splitview
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -842,6 +935,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\splitview.pdb
 
 
 # =============================================================================
@@ -858,9 +953,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/splitview.
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\splitview.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\splitview.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libsplitview.dll.a
-  TARGET_PDB = splitview.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\splitview.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target wave
@@ -877,12 +973,16 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\wave.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/wave.dir/glfw.rc.obj: RC_COMPILER__wave_Debug C$:/glfw-3.3.8/examples/glfw.rc || cmake_object_order_depends_target_wave
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\glfw.rc.obj.d
   INCLUDES = -I C:/glfw-3.3.8/deps -I C:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\wave.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles/wave.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__wave_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_wave
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -890,6 +990,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/CMakeFiles
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\wave.pdb
 
 
 # =============================================================================
@@ -906,9 +1008,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/examples/wave.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\CMakeFiles\wave.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\wave.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\libwave.dll.a
-  TARGET_PDB = wave.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\wave.pdb
 
 
 #############################################
@@ -995,6 +1098,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\clipboard.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/clipboard.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__clipboard_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_clipboard
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1002,6 +1107,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\clipboard.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/clipboard.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__clipboard_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_clipboard
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1009,6 +1116,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\clipboard.pdb
 
 
 # =============================================================================
@@ -1024,9 +1133,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/clipboard.exe
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\clipboard.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\clipboard.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libclipboard.dll.a
-  TARGET_PDB = clipboard.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\clipboard.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target events
@@ -1043,6 +1153,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ev
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\events.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/events.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__events_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_events
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1050,6 +1162,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ev
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\events.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/events.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__events_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_events
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1057,6 +1171,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ev
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\events.pdb
 
 
 # =============================================================================
@@ -1072,9 +1188,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/events.exe: C
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\events.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\events.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libevents.dll.a
-  TARGET_PDB = events.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\events.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target msaa
@@ -1091,6 +1208,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ms
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\msaa.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/msaa.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__msaa_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_msaa
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1098,6 +1217,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ms
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\msaa.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/msaa.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__msaa_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_msaa
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1105,6 +1226,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ms
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\msaa.pdb
 
 
 # =============================================================================
@@ -1120,9 +1243,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/msaa.exe: C_E
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\msaa.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\msaa.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libmsaa.dll.a
-  TARGET_PDB = msaa.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\msaa.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target glfwinfo
@@ -1139,6 +1263,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/glfwinfo.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__glfwinfo_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_glfwinfo
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1146,6 +1272,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/glfwinfo.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__glfwinfo_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_glfwinfo
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1153,6 +1281,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/glfwinfo.dir/C_/glfw-3.3.8/deps/glad_vulkan.c.obj: C_COMPILER__glfwinfo_Debug C$:/glfw-3.3.8/deps/glad_vulkan.c || cmake_object_order_depends_target_glfwinfo
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps\glad_vulkan.c.obj.d
@@ -1160,6 +1290,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gl
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.pdb
 
 
 # =============================================================================
@@ -1175,9 +1307,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/glfwinfo.exe:
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\glfwinfo.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libglfwinfo.dll.a
-  TARGET_PDB = glfwinfo.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\glfwinfo.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target iconify
@@ -1194,6 +1327,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ic
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\iconify.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/iconify.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__iconify_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_iconify
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1201,6 +1336,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ic
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\iconify.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/iconify.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__iconify_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_iconify
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1208,6 +1345,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ic
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\iconify.pdb
 
 
 # =============================================================================
@@ -1223,9 +1362,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/iconify.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\iconify.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\iconify.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libiconify.dll.a
-  TARGET_PDB = iconify.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\iconify.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target monitors
@@ -1242,6 +1382,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/mo
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\monitors.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/monitors.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__monitors_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_monitors
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1249,6 +1391,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/mo
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\monitors.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/monitors.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__monitors_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_monitors
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1256,6 +1400,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/mo
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\monitors.pdb
 
 
 # =============================================================================
@@ -1271,9 +1417,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/monitors.exe:
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\monitors.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\monitors.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libmonitors.dll.a
-  TARGET_PDB = monitors.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\monitors.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target reopen
@@ -1290,6 +1437,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/re
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\reopen.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/reopen.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__reopen_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_reopen
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1297,6 +1446,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/re
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\reopen.pdb
 
 
 # =============================================================================
@@ -1312,9 +1463,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/reopen.exe: C
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\reopen.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\reopen.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libreopen.dll.a
-  TARGET_PDB = reopen.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\reopen.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target cursor
@@ -1331,6 +1483,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cu
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\cursor.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cursor.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__cursor_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_cursor
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1338,6 +1492,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/cu
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\cursor.pdb
 
 
 # =============================================================================
@@ -1353,9 +1509,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/cursor.exe: C
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\cursor.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\cursor.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libcursor.dll.a
-  TARGET_PDB = cursor.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\cursor.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target empty
@@ -1372,6 +1529,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/em
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\empty.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/empty.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C_COMPILER__empty_Debug C$:/glfw-3.3.8/deps/tinycthread.c || cmake_object_order_depends_target_empty
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\C_\glfw-3.3.8\deps\tinycthread.c.obj.d
@@ -1379,6 +1538,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/em
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\empty.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/empty.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__empty_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_empty
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1386,6 +1547,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/em
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\empty.pdb
 
 
 # =============================================================================
@@ -1402,9 +1565,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/empty.exe: C_
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\empty.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\empty.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libempty.dll.a
-  TARGET_PDB = empty.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\empty.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target gamma
@@ -1421,6 +1585,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ga
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\gamma.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/gamma.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__gamma_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_gamma
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1428,6 +1594,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ga
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\gamma.pdb
 
 
 # =============================================================================
@@ -1444,9 +1612,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/gamma.exe: C_
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\gamma.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\gamma.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libgamma.dll.a
-  TARGET_PDB = gamma.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\gamma.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target icon
@@ -1463,6 +1632,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ic
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\icon.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/icon.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__icon_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_icon
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1470,6 +1641,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ic
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\icon.pdb
 
 
 # =============================================================================
@@ -1486,9 +1659,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/icon.exe: C_E
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\icon.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\icon.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libicon.dll.a
-  TARGET_PDB = icon.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\icon.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target inputlag
@@ -1505,6 +1679,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/in
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\inputlag.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__inputlag_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_inputlag
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1512,6 +1688,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/in
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\inputlag.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/inputlag.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__inputlag_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_inputlag
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1519,6 +1697,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/in
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\inputlag.pdb
 
 
 # =============================================================================
@@ -1535,9 +1715,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/inputlag.exe:
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\inputlag.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\inputlag.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libinputlag.dll.a
-  TARGET_PDB = inputlag.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\inputlag.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target joysticks
@@ -1554,6 +1735,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/jo
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\joysticks.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/joysticks.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__joysticks_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_joysticks
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1561,6 +1744,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/jo
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\joysticks.pdb
 
 
 # =============================================================================
@@ -1577,9 +1762,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/joysticks.exe
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\joysticks.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\joysticks.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libjoysticks.dll.a
-  TARGET_PDB = joysticks.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\joysticks.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target opacity
@@ -1596,6 +1782,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/op
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\opacity.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/opacity.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__opacity_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_opacity
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1603,6 +1791,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/op
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\opacity.pdb
 
 
 # =============================================================================
@@ -1619,9 +1809,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/opacity.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\opacity.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\opacity.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libopacity.dll.a
-  TARGET_PDB = opacity.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\opacity.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target tearing
@@ -1638,6 +1829,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/te
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\tearing.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tearing.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__tearing_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_tearing
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1645,6 +1838,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/te
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\tearing.pdb
 
 
 # =============================================================================
@@ -1661,9 +1856,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/tearing.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\tearing.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\tearing.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libtearing.dll.a
-  TARGET_PDB = tearing.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\tearing.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target threads
@@ -1680,6 +1876,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/th
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\threads.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/tinycthread.c.obj: C_COMPILER__threads_Debug C$:/glfw-3.3.8/deps/tinycthread.c || cmake_object_order_depends_target_threads
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\tinycthread.c.obj.d
@@ -1687,6 +1885,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/th
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\threads.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/threads.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__threads_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_threads
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1694,6 +1894,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/th
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\threads.pdb
 
 
 # =============================================================================
@@ -1710,9 +1912,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/threads.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\threads.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\threads.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libthreads.dll.a
-  TARGET_PDB = threads.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\threads.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target timeout
@@ -1729,6 +1932,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ti
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\timeout.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/timeout.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__timeout_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_timeout
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1736,6 +1941,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ti
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\timeout.pdb
 
 
 # =============================================================================
@@ -1752,9 +1959,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/timeout.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\timeout.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\timeout.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libtimeout.dll.a
-  TARGET_PDB = timeout.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\timeout.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target title
@@ -1771,6 +1979,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ti
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\title.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/title.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__title_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_title
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1778,6 +1988,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/ti
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\title.pdb
 
 
 # =============================================================================
@@ -1794,9 +2006,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/title.exe: C_
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\title.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\title.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libtitle.dll.a
-  TARGET_PDB = title.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\title.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target triangle-vulkan
@@ -1813,6 +2026,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tr
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\triangle-vulkan.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/triangle-vulkan.dir/C_/glfw-3.3.8/deps/glad_vulkan.c.obj: C_COMPILER__triangle-vulkan_Debug C$:/glfw-3.3.8/deps/glad_vulkan.c || cmake_object_order_depends_target_triangle-vulkan
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\C_\glfw-3.3.8\deps\glad_vulkan.c.obj.d
@@ -1820,6 +2035,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/tr
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\triangle-vulkan.pdb
 
 
 # =============================================================================
@@ -1836,9 +2053,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/triangle-vulk
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\triangle-vulkan.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\triangle-vulkan.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libtriangle-vulkan.dll.a
-  TARGET_PDB = triangle-vulkan.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\triangle-vulkan.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target windows
@@ -1855,6 +2073,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/wi
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\windows.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/windows.dir/C_/glfw-3.3.8/deps/getopt.c.obj: C_COMPILER__windows_Debug C$:/glfw-3.3.8/deps/getopt.c || cmake_object_order_depends_target_windows
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\C_\glfw-3.3.8\deps\getopt.c.obj.d
@@ -1862,6 +2082,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/wi
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\windows.pdb
 
 build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/windows.dir/C_/glfw-3.3.8/deps/glad_gl.c.obj: C_COMPILER__windows_Debug C$:/glfw-3.3.8/deps/glad_gl.c || cmake_object_order_depends_target_windows
   DEP_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\C_\glfw-3.3.8\deps\glad_gl.c.obj.d
@@ -1869,6 +2091,8 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/CMakeFiles/wi
   INCLUDES = -IC:/glfw-3.3.8/deps -IC:/glfw-3.3.8/include
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir
   OBJECT_FILE_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\C_\glfw-3.3.8\deps
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\windows.pdb
 
 
 # =============================================================================
@@ -1885,9 +2109,10 @@ build C$:/Users/avsom/CLionProjects/SimulacraEngine/Binaries/tests/windows.exe: 
   OBJECT_DIR = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\CMakeFiles\windows.dir\
   TARGET_FILE = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\windows.exe
   TARGET_IMPLIB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\libwindows.dll.a
-  TARGET_PDB = windows.exe.dbg
+  TARGET_PDB = C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\windows.pdb
 
 
 #############################################
@@ -2128,14 +2353,14 @@ build all: phony SimulacraEngine.exe C$:/Users/avsom/CLionProjects/SimulacraEngi
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindVulkan.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt C$:/glfw-3.3.8/CMakeLists.txt C$:/glfw-3.3.8/cmake_uninstall.cmake.in C$:/glfw-3.3.8/examples/CMakeLists.txt C$:/glfw-3.3.8/src/CMakeLists.txt C$:/glfw-3.3.8/src/glfw3.pc.in C$:/glfw-3.3.8/src/glfw3Config.cmake.in C$:/glfw-3.3.8/src/glfw_config.h.in C$:/glfw-3.3.8/tests/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindVulkan.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt C$:/glfw-3.3.8/CMakeLists.txt C$:/glfw-3.3.8/cmake_uninstall.cmake.in C$:/glfw-3.3.8/examples/CMakeLists.txt C$:/glfw-3.3.8/src/CMakeLists.txt C$:/glfw-3.3.8/src/glfw3.pc.in C$:/glfw-3.3.8/src/glfw3Config.cmake.in C$:/glfw-3.3.8/src/glfw_config.h.in C$:/glfw-3.3.8/tests/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindVulkan.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt C$:/glfw-3.3.8/CMakeLists.txt C$:/glfw-3.3.8/cmake_uninstall.cmake.in C$:/glfw-3.3.8/examples/CMakeLists.txt C$:/glfw-3.3.8/src/CMakeLists.txt C$:/glfw-3.3.8/src/glfw3.pc.in C$:/glfw-3.3.8/src/glfw3Config.cmake.in C$:/glfw-3.3.8/src/glfw_config.h.in C$:/glfw-3.3.8/tests/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindDoxygen.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindThreads.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FindVulkan.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt C$:/glfw-3.3.8/CMakeLists.txt C$:/glfw-3.3.8/cmake_uninstall.cmake.in C$:/glfw-3.3.8/examples/CMakeLists.txt C$:/glfw-3.3.8/src/CMakeLists.txt C$:/glfw-3.3.8/src/glfw3.pc.in C$:/glfw-3.3.8/src/glfw3Config.cmake.in C$:/glfw-3.3.8/src/glfw_config.h.in C$:/glfw-3.3.8/tests/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -7,7 +7,7 @@
 
 #include "../Sys/SimEngineDefines.h"
 #include "../Sys/SimEngineTypes.h"
-#include "x86intrin.h"
+
 
 
 struct SVector2
@@ -17,6 +17,8 @@ struct SVector2
         float X;
         float Y;
     };
+
+public:
 
     explicit SVector2(float f);
     SVector2(float inX, float inY);
@@ -101,6 +103,7 @@ private:
 
 };
 
+#include "Vector.inl"
 
 
 

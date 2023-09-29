@@ -21,11 +21,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     win32.hInstance = hInstance;
     win32.nCmdShow = nCmdShow;
 #if defined(_DEBUG)
-std::cout<< "DEBUG MODE\n";
+    std::cout<< "DEBUG MODE\n";
+
+
+
     float lol[4] = {1,2,3,4};
     float* test = lol;
-    SVectorX testVec = SVectorX(4, lol);
-    assert_2_byte_aligned(std::addressof(testVec));
+
+    SVector2 vector = SVector2(4,8);
+
+
+
 #endif //DEBUG
     return 0;
 }
