@@ -5,23 +5,45 @@
 #ifndef SIMULACRAENGINE_STACKALLOCATOR_H
 #define SIMULACRAENGINE_STACKALLOCATOR_H
 
-#include "../../Sys/SimEngineTypes.h"
 
 /***
  * @brief The stack allocator
  */
-class StackAllocator
+
+
+class StackAllocator : public Allocator
 {
 public:
 
+    struct Marker
+    {
+        uint32 *Address;
+    };
+
+public:
     StackAllocator();
-    /***
-     * @brief Constructs a new stack allocator with given size
-     * @param Size Size in bytes
-     */
-    explicit StackAllocator(uint32 Size);
+
+    explicit StackAllocator(uint32 StackSizeBytes);
+
+    ~StackAllocator();
+
+    void *Alloc(uint32 SizeBytes);
+
+    void *Alloc(uint32 SizeBytes, uint16 Alignment = 16);
+
+    void FreeToMarker();
+
+    void Clear();
+
+private:
+
+    uint8 Size;
+    uint8* MemoryBlock;
+
+private:
+
+    void Initialize();
 
 };
-
 
 #endif //SIMULACRAENGINE_STACKALLOCATOR_H

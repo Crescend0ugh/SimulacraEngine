@@ -30,6 +30,7 @@
 #define assert_128_byte_aligned( ptr ) assert( ( ((UINT_PTR)(ptr)) &  127 ) == 0 )
 
 
-#define assert_2_byte_aligned( ptr ) assert( ( ((UINT_PTR)(ptr)) &  1 ) == 0 )
+
+
 #define assert_sizeof( type , size ) static_assert(sizeof(type) == size)
 

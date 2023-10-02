@@ -4,8 +4,7 @@
 
 #include <windows.h>
 #include "WindowsApplication.h"
-#include "../../Sys/SimEngineTypes.h"
-#include "../../Sys/SimEngineDefines.h"
+#include "../../Sys/Precompiled.h"
 
 
 SIM_FORCE_INLINE void OnPositionChanged();

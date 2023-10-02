@@ -24,6 +24,9 @@
 #define SIM_INLINE         inline
 #define SIM_FORCE_INLINE __forceinline
 
-#define AllocAligned16
+
+//========================================================================================================
+
+#define Align( Address, Alignment ) (void*) ( (UINT_PTR)Address & ~(Alignment-1) );
 
 #endif //SIMULACRAENGINE_SIMENGINEDEFINES_H

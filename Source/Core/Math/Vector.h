@@ -5,8 +5,7 @@
 #ifndef SIMULACRAENGINE_VECTOR_H
 #define SIMULACRAENGINE_VECTOR_H
 
-#include "../Sys/SimEngineDefines.h"
-#include "../Sys/SimEngineTypes.h"
+
 
 
 
@@ -71,6 +70,7 @@ struct SVector
 
     SIM_FORCE_INLINE SVector operator+(const SVector v) const;
     SIM_FORCE_INLINE SVector& operator+=(const SVector v);
+
 
 
 };

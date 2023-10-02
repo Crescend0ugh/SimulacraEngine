@@ -6,7 +6,7 @@
 #ifndef SIMULACRAENGINE_MATRIX_H
 #define SIMULACRAENGINE_MATRIX_H
 
-#include <x86intrin.h>
+
 #include "../Sys/SimEngineTypes.h"
 #include "../Sys/SimEngineDefines.h"
 

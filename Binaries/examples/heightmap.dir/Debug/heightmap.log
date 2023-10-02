@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2066,5): warning : The referenced project 'C:\Users\avsom\CLionProjects\SimulacraEngine\ZERO_CHECK.vcxproj' does not exist.
+  Building Custom Rule C:/glfw-3.3.8/examples/CMakeLists.txt
+  heightmap.c
+  glad_gl.c
+  Generating Code...
+  heightmap.vcxproj -> C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\examples\Debug\heightmap.exe

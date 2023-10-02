@@ -1,0 +1,19 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\Source",
+    "\\Source\\Core",
+    "\\Source\\Core\\Math",
+    "\\Source\\Core\\Memory",
+    "\\Source\\Core\\Platforms",
+    "\\Source\\Core\\Platforms\\Windows"
+  ],
+  "SelectedNode": "\\CMakeLists.txt",
+  "PreviewInSolutionExplorer": false
+}

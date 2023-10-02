@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2066,5): warning : The referenced project 'C:\Users\avsom\CLionProjects\SimulacraEngine\ZERO_CHECK.vcxproj' does not exist.
+  Building Custom Rule C:/glfw-3.3.8/tests/CMakeLists.txt
+  icon.c
+  glad_gl.c
+  Generating Code...
+  icon.vcxproj -> C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\tests\Debug\icon.exe

@@ -12,6 +12,9 @@ C:/Program Files/CMake/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacr
 C:/Program Files/CMake/share/cmake-3.27/Modules/Compiler/MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Compiler/MSVC-CXX.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.27/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.27/Modules/FindVulkan.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/Windows-MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.27/Modules/Platform/Windows-MSVC-CXX.cmake

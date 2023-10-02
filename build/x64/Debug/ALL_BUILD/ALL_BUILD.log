@@ -1,0 +1,2 @@
+﻿  Building Custom Rule C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2066,5): warning : The referenced project 'C:\Users\avsom\CLionProjects\SimulacraEngine\ZERO_CHECK.vcxproj' does not exist.

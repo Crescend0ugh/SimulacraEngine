@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\avsom\CLionProjects\SimulacraEngine\CMakeFiles\93983300d9986b652a47f3720d1e4494\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\glfw-3.3.8\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\glfw-3.3.8\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\glfw-3.3.8\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\avsom\CLionProjects\SimulacraEngine\Binaries\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{02DC69A7-73B1-3FA4-AFB2-65618D83B273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3EF9FBC6-7043-33F3-9837-ED8ABBAFC0E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

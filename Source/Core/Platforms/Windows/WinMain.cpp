@@ -10,6 +10,7 @@
 #include "../../Sys/Precompiled.h"
 #include <windows.h>
 #include <iostream>
+#include <chrono>
 #include "WindowsApplication.h"
 
 
@@ -22,6 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     win32.nCmdShow = nCmdShow;
 
 
+
     std::cout<< "Build Mode: ";
 #if defined(_DEBUG)
     std::cout<< "DEBUG MODE\n";
@@ -30,8 +32,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     std::cout<< "RELEASE MODE\n";
 
 #endif
-
-    SVector2 vector = SVector2(4,8);
 
 
 

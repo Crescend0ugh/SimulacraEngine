@@ -6,11 +6,6 @@
 #define SIMULACRAENGINE_VECTOR_INL
 
 
-
-#endif //SIMULACRAENGINE_VECTOR_INL
-
-
-
 SIM_FORCE_INLINE SVector2::SVector2(float f)
 {
     X = f;
@@ -35,8 +30,7 @@ SIM_FORCE_INLINE bool SVector2::operator!=(const SVector2 v) const
 
 SIM_FORCE_INLINE bool SVector2::Equals(const SVector2 v, const float epsilon) const
 {
-
-    return std::abs(this->X-v.X)>epsilon && std::abs(this->Y-v.Y)>epsilon;
+    return std::abs(this->X - v.X) > epsilon && std::abs(this->Y - v.Y) > epsilon;
 
 }
 
@@ -94,7 +88,7 @@ SIM_FORCE_INLINE SVectorX::SVectorX(int length)
 }
 
 
-SIM_FORCE_INLINE SVectorX::SVectorX(int length, float *data)
+SIM_FORCE_INLINE SVectorX::SVectorX(int length, float* data)
 {
     this->Size = length;
     this->pData = data;
@@ -120,7 +114,7 @@ SIM_FORCE_INLINE float SVectorX::operator[](const int index) const
 }
 
 
-SIM_FORCE_INLINE float &SVectorX::operator[](const int index)
+SIM_FORCE_INLINE float& SVectorX::operator[](const int index)
 {
     return pData[index];
 }
@@ -195,7 +189,7 @@ SIM_FORCE_INLINE SVectorX& SVectorX::operator*=(const float scale)
     return *this;
 }
 
-SIM_FORCE_INLINE float SVectorX::operator*(const SVectorX &v) const
+SIM_FORCE_INLINE float SVectorX::operator*(const SVectorX& v) const
 {
     float sum = 0.0f;
     for (int i = 0; i < Size; i++)
@@ -234,7 +228,7 @@ SIM_FORCE_INLINE float SVectorX::Get(const int index) const
     return pData[index];
 }
 
-SIM_FORCE_INLINE float &SVectorX::Get(const int index)
+SIM_FORCE_INLINE float& SVectorX::Get(const int index)
 {
     return pData[index];
 }
@@ -266,7 +260,11 @@ SIM_FORCE_INLINE SVectorX SVectorX::operator%(SVectorX v) const
     return t;
 }
 
-SIM_FORCE_INLINE SVectorX &SVectorX::operator%=(const SVectorX v)
+SIM_FORCE_INLINE SVectorX& SVectorX::operator%=(const SVectorX v)
 {
     return *this;
 }
+#endif //SIMULACRAENGINE_VECTOR_INL
+
+
+

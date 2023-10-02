@@ -1,0 +1,7 @@
+﻿  WinMain.cpp
+C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Math\Vector.inl(33,17): error C2039: 'abs': is not a member of 'std'
+predefined C++ types (compiler internal)(342): message : see declaration of 'std'
+C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Math\Vector.inl(33,20): error C3861: 'abs': identifier not found
+C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Math\Vector.inl(33,54): error C2039: 'abs': is not a member of 'std'
+predefined C++ types (compiler internal)(342): message : see declaration of 'std'
+C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Math\Vector.inl(33,57): error C3861: 'abs': identifier not found
