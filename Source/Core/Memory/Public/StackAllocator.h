@@ -10,39 +10,24 @@
  * @brief The stack allocator
  */
 
-
 class StackAllocator : public Allocator
 {
 public:
 
     struct Marker
     {
-        uint32 *Address;
+        
     };
 
-public:
-    StackAllocator();
+    StackAllocator(void* AllocatorMemory, size_t AllocatorSize);
+    ~StackAllocator() override;
 
-    explicit StackAllocator(uint32 StackSizeBytes);
 
-    ~StackAllocator();
+    void *Allocate(size_t AllocationSize, uint8 Alignment) override;
+    void Deallocate(void *p) override;
 
-    void *Alloc(uint32 SizeBytes);
 
-    void *Alloc(uint32 SizeBytes, uint16 Alignment = 16);
 
-    void FreeToMarker();
-
-    void Clear();
-
-private:
-
-    uint8 Size;
-    uint8* MemoryBlock;
-
-private:
-
-    void Initialize();
 
 };
 
