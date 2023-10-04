@@ -9,10 +9,10 @@
 
 
 /***
- *@brief Allocates memory by holding a pointer to the first free address in the managed memory block
+ * @brief Allocates memory by holding a pointer to the first free address in the managed memory block
  * @note Individual deallocations are not possible, instead the entire memory block is cleared
  */
-class LinearAllocator : public Allocator
+class LinearAllocator
 {
 
 public:
@@ -31,13 +31,8 @@ public:
       * @param Alignment The alignment of the allocated block
       * @return void* The address of the allocated block
       */
-    void *Allocate(size_t AllocationSize, uint8 Alignment) override;
+    void *Allocate(size_t AllocationSize, uint8 Alignment);
 
-    /***
-     * This function is overridden for completion
-     * @warning Using this function will terminate the program
-     */
-    void Deallocate(void *p) override;
 
     /***
      * @brief Clears all the memory in the block managed by the allocator
@@ -52,7 +47,8 @@ private:
     /***
      * The pointer to the first free address in the managed memory
      */
-    void* CurrentPosition;
+    uintptr_t    CurrentPosition;
+    SMemoryBlock ManagedMemory;
 };
 
 

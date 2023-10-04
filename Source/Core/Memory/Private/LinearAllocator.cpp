@@ -1,8 +1,9 @@
 
 #include "../../Sys/Precompiled.h"
-#include "../Public/LinearAllocator.h"
 
-LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBlock) : Allocator(AllocatorSize, AllocatorMemoryBlock), CurrentPosition(AllocatorMemoryBlock)
+
+LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBlock) :  CurrentPosition(reinterpret_cast<uintptr_t>(AllocatorMemoryBlock)),
+                                                                                      ManagedMemory(AllocatorSize, AllocatorMemoryBlock)
 {
     assert(AllocatorSize > 0);
 }
@@ -10,37 +11,37 @@ LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBloc
 LinearAllocator::~LinearAllocator()
 {
 
-    assert( NumAllocations == 0 && MemoryUsed == 0);
+    assert( ManagedMemory.NumAllocations == 0 && ManagedMemory.MemoryUsed == 0);
 }
 
 
 void *LinearAllocator::Allocate(size_t AllocationSize, uint8 Alignment)
 {
     assert(AllocationSize != 0);
-    uint8 Adjustment = AlignForward(CurrentPosition, Alignment);
+    uint8 Adjustment = AlignForwardAdjustment(CurrentPosition, Alignment);
 
-    if(MemoryUsed + Adjustment + AllocationSize > MemoryBlockLength)
+
+    if(Adjustment + ManagedMemory.MemoryUsed + AllocationSize > ManagedMemory.MemoryBlockSize)
     {
+        assert(false && "Allocation exceeded remaining memory");
         return nullptr;
     }
 
     uintptr_t aligned_address = (uintptr_t)CurrentPosition + Adjustment;
-    CurrentPosition = (void*)(aligned_address + AllocationSize);
-    MemoryUsed += AllocationSize + Adjustment;
-    NumAllocations++;
+    CurrentPosition = (aligned_address + AllocationSize);
+    ManagedMemory.MemoryUsed += AllocationSize + Adjustment;
+    ManagedMemory.NumAllocations++;
 
     return (void*)aligned_address;
+
 }
 
-void LinearAllocator::Deallocate(void *p)
-{
-    assert(false && "Use Clear() for Linear Allocator");
-}
+
 
 void LinearAllocator::Clear()
 {
-    NumAllocations = 0;
-    MemoryUsed = 0;
-    CurrentPosition = MemoryBlock;
+    ManagedMemory.NumAllocations = 0;
+    ManagedMemory.MemoryUsed = 0;
+    CurrentPosition = reinterpret_cast<uintptr_t>(ManagedMemory.MemoryBlockPointer);
 }
 

@@ -10,23 +10,53 @@
  * @brief The stack allocator
  */
 
-class StackAllocator : public Allocator
+class StackAllocator
 {
 public:
 
-    struct Marker
+    /***
+     * @param AllocatorSize
+     * @param AllocatorMemoryBlock
+     */
+    StackAllocator(size_t AllocatorSize, void* AllocatorMemoryBlock);
+    ~StackAllocator();
+
+    /***
+     * @param AllocationSize
+     * @param Alignment
+     * @return void *
+     */
+    void *Allocate(size_t AllocationSize, uint8 Alignment);
+
+    void Deallocate(void* Ptr);
+
+
+
+
+
+
+
+
+
+
+
+public:
+
+    struct Header
     {
-        
+        #if defined(_DEBUG)
+
+        void* PrevAddress;
+
+        #endif
+
+        uint8 adjustment;
     };
 
-    StackAllocator(void* AllocatorMemory, size_t AllocatorSize);
-    ~StackAllocator() override;
+private:
 
-
-    void *Allocate(size_t AllocationSize, uint8 Alignment) override;
-    void Deallocate(void *p) override;
-
-
+    void* CurrentPosition;
+    SMemoryBlock ManagedMemory;
 
 
 };
