@@ -38,11 +38,18 @@ public:
     size_t GetNumAllocations()  const { return NumAllocations; };
 
 
+private:
+
     void*  MemoryBlockPointer;
     size_t MemoryBlockSize;
     size_t MemoryUsed;
     size_t NumAllocations;
 
+
+    friend class LinearAllocator;
+    friend class StackAllocator;
+    friend class PoolAllocator;
+    friend class DEStackAllocator;
 
 
 };

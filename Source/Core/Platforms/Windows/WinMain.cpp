@@ -94,8 +94,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 
 
 
-
-
+    LinearAllocator allocator1 = LinearAllocator(100, allocator.Allocate(100, 1));
+    std::cout << allocator1.GetManagedMemory().GetSize() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetNumAllocations() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetMemoryUsed() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetMemoryRemaining() << "\n";
+    allocator.Clear();
+    allocator.Allocate(100,1);
+    std::cout << "-------------------------------------------------------------------------------\n";
+    std::cout << allocator1.GetManagedMemory().GetSize() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetNumAllocations() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetMemoryUsed() << "\n";
+    std::cout << allocator1.GetManagedMemory().GetMemoryRemaining() << "\n";
 
 
     return 0;
