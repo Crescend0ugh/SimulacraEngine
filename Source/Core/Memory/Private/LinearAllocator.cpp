@@ -12,6 +12,7 @@ LinearAllocator::~LinearAllocator()
 {
 
     assert( ManagedMemory.NumAllocations == 0 && ManagedMemory.MemoryUsed == 0);
+    ManagedMemory.MemoryBlockPointer = nullptr;
 }
 
 
@@ -43,5 +44,10 @@ void LinearAllocator::Clear()
     ManagedMemory.NumAllocations = 0;
     ManagedMemory.MemoryUsed = 0;
     CurrentPosition = reinterpret_cast<uintptr_t>(ManagedMemory.MemoryBlockPointer);
+}
+
+const SMemoryBlock &LinearAllocator::GetManagedMemory() const
+{
+    return ManagedMemory;
 }
 

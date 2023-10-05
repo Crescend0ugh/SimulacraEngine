@@ -9,6 +9,7 @@
 #define SIMULACRAENGINE_ALIGNMENTUTILS_H
 
 
+#include <vector>
 
 SIM_INLINE uint8 AlignForwardAdjustment(uintptr_t Address, uint8 Alignment)
 {
@@ -29,8 +30,10 @@ SIM_INLINE uint8 AlignForwardAdjustmentWithHeader(uintptr_t Address, uint8 Align
 
     if(Adjustment < HeaderSize)
     {
-        Adjustment += 
     }
+
+
+    return Adjustment;
 }
 
 

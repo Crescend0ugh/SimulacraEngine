@@ -39,7 +39,7 @@ public:
      */
     void Clear();
 
-
+    const SMemoryBlock &GetManagedMemory() const;
 
 
 private:
@@ -49,6 +49,8 @@ private:
      */
     uintptr_t    CurrentPosition;
     SMemoryBlock ManagedMemory;
+
+
 };
 
 
