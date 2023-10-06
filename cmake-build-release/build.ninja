@@ -83,6 +83,7 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj: 
 
 build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj | C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib
   FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -static
   LINK_LIBRARIES = C:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   POST_BUILD = cd .

@@ -30,7 +30,13 @@ SIM_INLINE uint8 AlignForwardAdjustmentWithHeader(uintptr_t Address, uint8 Align
 
     if(Adjustment < HeaderSize)
     {
+        HeaderSize -= Adjustment;
+
+        Adjustment += Alignment * (HeaderSize/Alignment);
+
+        if(HeaderSize % Alignment > 0) Adjustment += Alignment;
     }
+
 
 
     return Adjustment;
