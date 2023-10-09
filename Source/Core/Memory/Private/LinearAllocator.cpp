@@ -28,12 +28,12 @@ void *LinearAllocator::Allocate(size_t AllocationSize, uint8 Alignment)
         return nullptr;
     }
 
-    uintptr_t aligned_address = (uintptr_t)CurrentPosition + Adjustment;
-    CurrentPosition = (aligned_address + AllocationSize);
+    uintptr_t AlignedAddress = reinterpret_cast<uintptr_t>(CurrentPosition) + Adjustment;
+    CurrentPosition = (AlignedAddress + AllocationSize);
     ManagedMemory.MemoryUsed += AllocationSize + Adjustment;
     ManagedMemory.NumAllocations++;
 
-    return (void*)aligned_address;
+    return (void*)AlignedAddress;
 
 }
 

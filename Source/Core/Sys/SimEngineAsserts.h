@@ -7,13 +7,31 @@
 
 #endif //SIMULACRAENGINE_SIMENGINEASSERTS_H
 
+
+
+bool AssertFailed( const char *file, int line, const char *expression );
+
 #if defined(_DEBUG)
+
+#undef assert
+
+
+#define debugBreak() asm { int 3 }
+
+#define assert(condition) \
+if(!(condition)) \
+{ \
+std::cerr << "Assertion failed at " << __FILE__ << ":" << __LINE__ << ", " << "Condition Failed: " << #condition<< "\n"; \
+abort(); \
+} \
+
 
 
 
 #else //DEBUG   
 
 #undef assert
+
 #define assert(x) ((void*)0)
 
 

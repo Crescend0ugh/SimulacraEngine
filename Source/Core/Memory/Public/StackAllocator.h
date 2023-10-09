@@ -30,19 +30,12 @@ public:
 
     void Deallocate(void* Ptr);
 
-
-
-
-
-
-
-
-
+    const SMemoryBlock &GetManagedMemory() const {return ManagedMemory; };
 
 
 public:
 
-    struct Header
+    struct AllocationHeader
     {
         #if defined(_DEBUG)
 
@@ -50,12 +43,12 @@ public:
 
         #endif
 
-        uint8 adjustment;
+        uint8 Adjustment;
     };
 
 private:
 
-    void* CurrentPosition;
+    uintptr_t CurrentPosition;
     SMemoryBlock ManagedMemory;
 
 

@@ -2,12 +2,11 @@ cmake_minimum_required(VERSION 3.25)
 project(SimulacraEngine)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 
 find_package(Vulkan REQUIRED)
 
-add_executable(SimulacraEngine Source/Core/Platforms/Windows/WinMain.cpp Source/Core/Memory/Private/LinearAllocator.cpp Source/Core/Memory/AllocatorTests.cpp Source/Core/Memory/AllocatorTests.h)
+add_executable(SimulacraEngine Source/Core/Platforms/Windows/WinMain.cpp Source/Core/Memory/Private/LinearAllocator.cpp Source/Core/Memory/AllocatorTests.cpp Source/Core/Memory/AllocatorTests.h Source/Core/Memory/Private/StackAllocator.cpp)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)

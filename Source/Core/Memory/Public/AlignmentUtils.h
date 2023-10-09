@@ -14,12 +14,13 @@
 SIM_INLINE uint8 AlignForwardAdjustment(uintptr_t Address, uint8 Alignment)
 {
 
+    uint8 Adjustment;
 
     const size_t Mask = Alignment-1;
 
     assert((Alignment & Mask) == 0);
 
-    const uint8 Adjustment = (Address - ((Address + Mask) & ~Mask));
+    Adjustment = (Address - ((Address + Mask) & ~Mask));
 
     return Adjustment;
 }
