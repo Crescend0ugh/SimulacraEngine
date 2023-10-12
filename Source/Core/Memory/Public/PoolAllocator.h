@@ -6,9 +6,17 @@
 #define SIMULACRAENGINE_POOLALLOCATOR_H
 
 
+
 class PoolAllocator
 {
 
+
+
+
+
+private:
+
+    SMemoryBlock ManagedMemoryBlock;
 };
 
 

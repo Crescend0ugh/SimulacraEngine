@@ -2,8 +2,8 @@
 #include "../../Sys/Precompiled.h"
 
 
-LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBlock) :  CurrentPosition(reinterpret_cast<uintptr_t>(AllocatorMemoryBlock)),
-                                                                                      ManagedMemory(AllocatorSize, AllocatorMemoryBlock)
+LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBlock) : CurrentPosition(reinterpret_cast<uintptr_t>(AllocatorMemoryBlock)),
+                                                                                     ManagedMemoryBlock(AllocatorSize, AllocatorMemoryBlock)
 {
     assert(AllocatorSize > 0);
 }
@@ -11,8 +11,8 @@ LinearAllocator::LinearAllocator(size_t AllocatorSize, void *AllocatorMemoryBloc
 LinearAllocator::~LinearAllocator()
 {
 
-    assert( ManagedMemory.NumAllocations == 0 && ManagedMemory.MemoryUsed == 0);
-    ManagedMemory.MemoryBlockPointer = nullptr;
+    assert(ManagedMemoryBlock.NumAllocations == 0 && ManagedMemoryBlock.MemoryUsed == 0);
+    ManagedMemoryBlock.MemoryBlockPointer = nullptr;
 }
 
 
@@ -22,7 +22,7 @@ void *LinearAllocator::Allocate(size_t AllocationSize, uint8 Alignment)
     uint8 Adjustment = AlignForwardAdjustment(CurrentPosition, Alignment);
 
 
-    if(Adjustment + ManagedMemory.MemoryUsed + AllocationSize > ManagedMemory.MemoryBlockSize)
+    if(Adjustment + ManagedMemoryBlock.MemoryUsed + AllocationSize > ManagedMemoryBlock.MemoryBlockSize)
     {
         assert(false && "Allocation exceeded remaining memory");
         return nullptr;
@@ -30,8 +30,8 @@ void *LinearAllocator::Allocate(size_t AllocationSize, uint8 Alignment)
 
     uintptr_t AlignedAddress = reinterpret_cast<uintptr_t>(CurrentPosition) + Adjustment;
     CurrentPosition = (AlignedAddress + AllocationSize);
-    ManagedMemory.MemoryUsed += AllocationSize + Adjustment;
-    ManagedMemory.NumAllocations++;
+    ManagedMemoryBlock.MemoryUsed += AllocationSize + Adjustment;
+    ManagedMemoryBlock.NumAllocations++;
 
     return (void*)AlignedAddress;
 
@@ -41,13 +41,13 @@ void *LinearAllocator::Allocate(size_t AllocationSize, uint8 Alignment)
 
 void LinearAllocator::Clear()
 {
-    ManagedMemory.NumAllocations = 0;
-    ManagedMemory.MemoryUsed = 0;
-    CurrentPosition = reinterpret_cast<uintptr_t>(ManagedMemory.MemoryBlockPointer);
+    ManagedMemoryBlock.NumAllocations = 0;
+    ManagedMemoryBlock.MemoryUsed = 0;
+    CurrentPosition = reinterpret_cast<uintptr_t>(ManagedMemoryBlock.MemoryBlockPointer);
 }
 
 const SMemoryBlock &LinearAllocator::GetManagedMemory() const
 {
-    return ManagedMemory;
+    return ManagedMemoryBlock;
 }
 

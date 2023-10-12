@@ -1,7 +1,7 @@
 # ninja log v5
-1	284	7185513599049765	build.ninja	81950bc69ee2cddd
-1299	1587	7185416282426513	SimulacraEngine.exe	5a843d0e82da8ddb
-4	1299	7185416279600717	CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.obj	aeef8619d794dfb8
-21	461	7185416271214765	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj	6e41e27cbf697a5a
-17	511	7185416271704883	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj	c2afde16dc0184be
-12	462	7185416271204763	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj	63611da163430a28
+1	284	7187785962496881	build.ninja	81950bc69ee2cddd
+1294	1938	7187739183793806	SimulacraEngine.exe	2f96c81f5299d2ad
+5	1294	7187739181772406	CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WinMain.cpp.obj	aeef8619d794dfb8
+15	543	7187739174251257	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj	6e41e27cbf697a5a
+11	543	7187739174251257	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj	c2afde16dc0184be
+20	542	7187739174251257	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj	63611da163430a28

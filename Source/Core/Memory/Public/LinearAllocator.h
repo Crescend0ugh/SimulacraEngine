@@ -48,7 +48,7 @@ private:
      * The pointer to the first free address in the managed memory
      */
     uintptr_t    CurrentPosition;
-    SMemoryBlock ManagedMemory;
+    SMemoryBlock ManagedMemoryBlock;
 
 
 };

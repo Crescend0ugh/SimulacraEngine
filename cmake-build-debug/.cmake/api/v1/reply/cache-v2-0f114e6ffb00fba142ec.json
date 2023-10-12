@@ -43,7 +43,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "Release"
+			"value" : "Debug"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release"
+			"value" : "c:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -1247,11 +1247,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/Users/avsom/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake"
+			"type" : "UNINITIALIZED",
+			"value" : "C:\\Users\\avsom\\.clion-vcpkg\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release"
+			"value" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"
 		},
 		{
 			"name" : "SimulacraEngine_IS_TOP_LEVEL",

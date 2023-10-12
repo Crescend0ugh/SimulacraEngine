@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(Vulkan REQUIRED)
 
-add_executable(SimulacraEngine Source/Core/Platforms/Windows/WinMain.cpp Source/Core/Memory/Private/LinearAllocator.cpp Source/Core/Memory/AllocatorTests.cpp Source/Core/Memory/AllocatorTests.h Source/Core/Memory/Private/StackAllocator.cpp)
+add_executable(SimulacraEngine Source/Core/Platforms/Windows/WinMain.cpp Source/Core/Memory/Private/LinearAllocator.cpp Source/Core/Memory/AllocatorTests.cpp Source/Core/Memory/AllocatorTests.h Source/Core/Memory/Private/StackAllocator.cpp Source/Renderer/Vulkan/Vk_Renderer.h Source/Renderer/Vulkan/Vk_Renderer.cpp Source/Renderer/Renderer.cpp Source/Renderer/Renderer.h)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
