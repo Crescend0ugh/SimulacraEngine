@@ -61,3 +61,13 @@ void Vk_Renderer::CreateLogicalDevice()
 
 }
 
+bool Vk_Renderer::Initialize()
+{
+    return false;
+}
+
+bool Vk_Renderer::Deintialize()
+{
+    return false;
+}
+
