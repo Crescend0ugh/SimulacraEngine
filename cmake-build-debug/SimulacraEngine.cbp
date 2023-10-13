@@ -101,6 +101,9 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Memory/Private/StackAllocator.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/SimulacraWindows.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/WindowsProcedure.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
