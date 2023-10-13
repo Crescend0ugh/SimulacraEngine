@@ -11,7 +11,7 @@ class Vk_Renderer
 {
 
 public:
-    bool Initialize()
+    bool Initialize();
     bool Deintialize();
 
 
@@ -22,7 +22,11 @@ protected:
     void CreateSurface();
     void CreatePhysicalDevice();
     void CreateLogicalDevice();
+    
+private:
 
-}
+
+
+};
 
 #endif //SIMULACRAENGINE_VK_RENDERER_H
