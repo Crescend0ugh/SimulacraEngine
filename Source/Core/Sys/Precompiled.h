@@ -16,7 +16,7 @@
 #include "SimEngineTypes.h"
 
 //Mem
-#include "../Memory/Public/AlignmentUtils.h"
+#include "../Memory/Public/Alignment.h"
 #include "../Memory/Public/MemoryBlock.h"
 #include "../Memory/Public/LinearAllocator.h"
 #include "../Memory/Public/StackAllocator.h"

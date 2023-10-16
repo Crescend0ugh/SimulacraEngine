@@ -105,6 +105,14 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProced
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Platforms\Windows
 
+build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj: CXX_COMPILER__SimulacraEngine_Release C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SimEngineVulkan.cpp || cmake_object_order_depends_target_SimulacraEngine
+  DEFINES = -D_NDEBUG=1
+  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\SimEngineVulkan.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -isystem C:/VulkanSDK/1.3.243.0/Include
+  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SimulacraEngine
@@ -113,7 +121,7 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProced
 #############################################
 # Link the executable SimulacraEngine.exe
 
-build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/WinMain.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Vk_Renderer.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProcedure.cpp.obj | C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib
+build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/WinMain.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Vk_Renderer.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProcedure.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj | C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir

@@ -5,6 +5,7 @@
 #ifndef SIMULACRAENGINE_VK_RENDERER_H
 #define SIMULACRAENGINE_VK_RENDERER_H
 
+#include <vulkan/vulkan.h>
 
 
 class Vk_Renderer
@@ -24,6 +25,10 @@ protected:
     void CreateLogicalDevice();
     
 private:
+
+    VkInstance Instance;
+    VkPhysicalDevice PhysicalDevice;
+    VkDevice Device;
 
 
 
