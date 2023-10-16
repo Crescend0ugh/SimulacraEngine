@@ -77,7 +77,7 @@ void Vk_Renderer::CreatePhysicalDevice()
         std::cout << "-------------------------------------------------\n";
 
         std::cout << "Device Name: " << Properties.deviceName << "\n";
-        std::cout << "Device Type: " << Properties.deviceType << "\n";
+        std::cout << "Device Type: " << PhysicalDeviceTypeToString(Properties.deviceType) << "\n";
 
 
 
@@ -94,7 +94,7 @@ void Vk_Renderer::CreatePhysicalDevice()
 
     std::cout << "-------------------------------------------------\n";
     std::cout << "Device Name: " << PhysicalDeviceProperties.deviceName << "\n";
-    std::cout << "Device Type: " << PhysicalDeviceProperties.deviceType << "\n";
+    std::cout << "Device Type: " << PhysicalDeviceTypeToString(PhysicalDeviceProperties.deviceType) << "\n";
     std::cout << "-------------------------------------------------\n";
 
 

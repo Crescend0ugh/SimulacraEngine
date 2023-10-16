@@ -12,6 +12,7 @@
 
 //================================                 =======================================
 
+const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType);
 bool IsDeviceSuitable(VkPhysicalDevice PhysicalDevice);
 uint32 GetDeviceScore(VkPhysicalDevice PhysicalDevice);
 uint32 FindQueueFamilies(VkPhysicalDevice Device);

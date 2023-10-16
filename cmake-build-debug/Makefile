@@ -272,6 +272,30 @@ Source/Renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.s
 .PHONY : Source/Renderer/Renderer.cpp.s
 
+Source/Renderer/Vulkan/SimEngineVulkan.obj: Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.obj
+
+# target to build an object file
+Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj
+
+Source/Renderer/Vulkan/SimEngineVulkan.i: Source/Renderer/Vulkan/SimEngineVulkan.cpp.i
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.i
+
+# target to preprocess a source file
+Source/Renderer/Vulkan/SimEngineVulkan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.i
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.cpp.i
+
+Source/Renderer/Vulkan/SimEngineVulkan.s: Source/Renderer/Vulkan/SimEngineVulkan.cpp.s
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.s
+
+# target to generate assembly for a file
+Source/Renderer/Vulkan/SimEngineVulkan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.s
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkan.cpp.s
+
 Source/Renderer/Vulkan/Vk_Renderer.obj: Source/Renderer/Vulkan/Vk_Renderer.cpp.obj
 .PHONY : Source/Renderer/Vulkan/Vk_Renderer.obj
 
@@ -323,6 +347,9 @@ help:
 	@echo ... Source/Renderer/Renderer.obj
 	@echo ... Source/Renderer/Renderer.i
 	@echo ... Source/Renderer/Renderer.s
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.obj
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.i
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.s
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.obj
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.i
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.s
