@@ -1,10 +1,4 @@
 # ninja log v5
 1544	2606	7190512485895102	SimulacraEngine.exe	a0b18c53362cbd8f
-9	1247	7190419131788082	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.obj	f95c0c6be87d786f
-3	125	7190833350244139	build.ninja	81950bc69ee2cddd
+3	125	7192212934356745	build.ninja	81950bc69ee2cddd
 4	1728	7190422931907134	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/WinMain.cpp.obj	2904a720d3efec3c
-3	347	7189997992197397	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj	63611da163430a28
-6	375	7189997992467482	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj	c2afde16dc0184be
-13	413	7189997992862596	CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj	6e41e27cbf697a5a
-6	1544	7190512485059878	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Vk_Renderer.cpp.obj	dbd4cb86a2293009
-23	892	7190411309539568	CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProcedure.cpp.obj	8c4afbb5e5fd1926

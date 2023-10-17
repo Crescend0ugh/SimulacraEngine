@@ -1,0 +1,14 @@
+//
+// Created by avsom on 10/17/2023.
+//
+
+#ifndef SIMULACRAENGINE_SIMENGINEVULKANDEBUG_H
+#define SIMULACRAENGINE_SIMENGINEVULKANDEBUG_H
+
+#include <vulkan/vulkan.h>
+
+
+
+
+
+#endif //SIMULACRAENGINE_SIMENGINEVULKANDEBUG_H

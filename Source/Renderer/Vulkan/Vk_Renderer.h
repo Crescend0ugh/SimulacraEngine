@@ -12,6 +12,8 @@ class Vk_Renderer
 {
 
 public:
+
+
     bool Initialize();
     bool Deintialize();
 

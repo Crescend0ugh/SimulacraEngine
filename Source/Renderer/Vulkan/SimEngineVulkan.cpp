@@ -4,15 +4,6 @@
 
 #include "SimEngineVulkan.h"
 
-struct QueueFamilyIndices
-{
-    uint32 GraphicsQueue      = -1;
-    uint32 ComputeQueue       = -1;
-    uint32 TransferQueue      = -1;
-    uint32 SparseBindingQueue = -1;
-    uint32 ProtectedQueue     = -1;
-    uint32 VideoDecodeQueue   = -1;
-};
 
 
 const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType)
@@ -20,28 +11,61 @@ const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType)
     switch (DeviceType)
     {
         case VK_PHYSICAL_DEVICE_TYPE_OTHER :
-            return "Other";
+            { return "Other"; }
         case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU :
-            return "Integrated GPU";
+            { return "Integrated GPU"; }
         case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
-            return "Discrete GPU";
+            { return "Discrete GPU"; }
         case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
-            return "Virtual GPU";
+            { return "Virtual GPU"; }
         case VK_PHYSICAL_DEVICE_TYPE_CPU :
-            return "CPU";
+            { return "CPU"; }
         case VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM:
-            return nullptr;
+            { return nullptr; }
     }
     return nullptr;
 }
 
-uint32 FindQueueFamilies(VkPhysicalDevice Device)
+
+QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
 {
+    QueueFamilyIndices Indices;
+
+    uint32 QueueFamilyCount = 0;
+    vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, nullptr );
+
+    std::vector<VkQueueFamilyProperties> QueueFamilyProperties(QueueFamilyCount);
+    vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, QueueFamilyProperties.data() );
+
+    int Index = 0;
+    for(const auto& QueueFamily : QueueFamilyProperties )
+    {
+        switch (QueueFamily.queueFlags)
+        {
+            case VK_QUEUE_GRAPHICS_BIT:
+            { Indices.GraphicsQueueFamily = Index; }
+
+            case VK_QUEUE_COMPUTE_BIT:
+            { Indices.ComputeQueueFamily = Index; }
+
+            case VK_QUEUE_TRANSFER_BIT:
+            { Indices.TransferQueueFamily = Index; }
+
+            case VK_QUEUE_SPARSE_BINDING_BIT:
+            { Indices.SparseBindingQueueFamily = Index; }
+
+            case VK_QUEUE_PROTECTED_BIT:
+            { Indices.ProtectedQueueFamily = Index; }
+
+            case VK_QUEUE_VIDEO_DECODE_BIT_KHR:
+            { Indices.VideoDecodeQueueFamily = Index; }
+        }
+    }
 
 
-
-    return 0;
+    return Indices;
 }
+
 
 bool IsDeviceSuitable(VkPhysicalDevice PhysicalDevice)
 {
@@ -55,6 +79,7 @@ bool IsDeviceSuitable(VkPhysicalDevice PhysicalDevice)
 
     return true;
 };
+
 
 uint32 GetDeviceScore(VkPhysicalDevice PhysicalDevice)
 {
@@ -78,6 +103,7 @@ uint32 GetDeviceScore(VkPhysicalDevice PhysicalDevice)
 
 
 }
+
 
 VkPhysicalDevice PickMostSuitableDevice(std::vector<VkPhysicalDevice> PhysicalDevices)
 {
