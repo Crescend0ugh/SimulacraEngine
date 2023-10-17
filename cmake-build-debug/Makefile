@@ -152,78 +152,6 @@ Source/Core/Launch/WinMain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/WinMain.cpp.s
 .PHONY : Source/Core/Launch/WinMain.cpp.s
 
-Source/Core/Memory/AllocatorTests.obj: Source/Core/Memory/AllocatorTests.cpp.obj
-.PHONY : Source/Core/Memory/AllocatorTests.obj
-
-# target to build an object file
-Source/Core/Memory/AllocatorTests.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.obj
-.PHONY : Source/Core/Memory/AllocatorTests.cpp.obj
-
-Source/Core/Memory/AllocatorTests.i: Source/Core/Memory/AllocatorTests.cpp.i
-.PHONY : Source/Core/Memory/AllocatorTests.i
-
-# target to preprocess a source file
-Source/Core/Memory/AllocatorTests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.i
-.PHONY : Source/Core/Memory/AllocatorTests.cpp.i
-
-Source/Core/Memory/AllocatorTests.s: Source/Core/Memory/AllocatorTests.cpp.s
-.PHONY : Source/Core/Memory/AllocatorTests.s
-
-# target to generate assembly for a file
-Source/Core/Memory/AllocatorTests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/AllocatorTests.cpp.s
-.PHONY : Source/Core/Memory/AllocatorTests.cpp.s
-
-Source/Core/Memory/Private/LinearAllocator.obj: Source/Core/Memory/Private/LinearAllocator.cpp.obj
-.PHONY : Source/Core/Memory/Private/LinearAllocator.obj
-
-# target to build an object file
-Source/Core/Memory/Private/LinearAllocator.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.obj
-.PHONY : Source/Core/Memory/Private/LinearAllocator.cpp.obj
-
-Source/Core/Memory/Private/LinearAllocator.i: Source/Core/Memory/Private/LinearAllocator.cpp.i
-.PHONY : Source/Core/Memory/Private/LinearAllocator.i
-
-# target to preprocess a source file
-Source/Core/Memory/Private/LinearAllocator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.i
-.PHONY : Source/Core/Memory/Private/LinearAllocator.cpp.i
-
-Source/Core/Memory/Private/LinearAllocator.s: Source/Core/Memory/Private/LinearAllocator.cpp.s
-.PHONY : Source/Core/Memory/Private/LinearAllocator.s
-
-# target to generate assembly for a file
-Source/Core/Memory/Private/LinearAllocator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/LinearAllocator.cpp.s
-.PHONY : Source/Core/Memory/Private/LinearAllocator.cpp.s
-
-Source/Core/Memory/Private/StackAllocator.obj: Source/Core/Memory/Private/StackAllocator.cpp.obj
-.PHONY : Source/Core/Memory/Private/StackAllocator.obj
-
-# target to build an object file
-Source/Core/Memory/Private/StackAllocator.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.obj
-.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.obj
-
-Source/Core/Memory/Private/StackAllocator.i: Source/Core/Memory/Private/StackAllocator.cpp.i
-.PHONY : Source/Core/Memory/Private/StackAllocator.i
-
-# target to preprocess a source file
-Source/Core/Memory/Private/StackAllocator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.i
-.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.i
-
-Source/Core/Memory/Private/StackAllocator.s: Source/Core/Memory/Private/StackAllocator.cpp.s
-.PHONY : Source/Core/Memory/Private/StackAllocator.s
-
-# target to generate assembly for a file
-Source/Core/Memory/Private/StackAllocator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Memory/Private/StackAllocator.cpp.s
-.PHONY : Source/Core/Memory/Private/StackAllocator.cpp.s
-
 Source/Core/Platforms/Windows/WindowsProcedure.obj: Source/Core/Platforms/Windows/WindowsProcedure.cpp.obj
 .PHONY : Source/Core/Platforms/Windows/WindowsProcedure.obj
 
@@ -296,6 +224,30 @@ Source/Renderer/Vulkan/SimEngineVulkan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkan.cpp.s
 .PHONY : Source/Renderer/Vulkan/SimEngineVulkan.cpp.s
 
+Source/Renderer/Vulkan/SimEngineVulkanDebug.obj: Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.obj
+
+# target to build an object file
+Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.obj
+
+Source/Renderer/Vulkan/SimEngineVulkanDebug.i: Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.i
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.i
+
+# target to preprocess a source file
+Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.i
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.i
+
+Source/Renderer/Vulkan/SimEngineVulkanDebug.s: Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.s
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.s
+
+# target to generate assembly for a file
+Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.s
+.PHONY : Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.s
+
 Source/Renderer/Vulkan/Vk_Renderer.obj: Source/Renderer/Vulkan/Vk_Renderer.cpp.obj
 .PHONY : Source/Renderer/Vulkan/Vk_Renderer.obj
 
@@ -332,15 +284,6 @@ help:
 	@echo ... Source/Core/Launch/WinMain.obj
 	@echo ... Source/Core/Launch/WinMain.i
 	@echo ... Source/Core/Launch/WinMain.s
-	@echo ... Source/Core/Memory/AllocatorTests.obj
-	@echo ... Source/Core/Memory/AllocatorTests.i
-	@echo ... Source/Core/Memory/AllocatorTests.s
-	@echo ... Source/Core/Memory/Private/LinearAllocator.obj
-	@echo ... Source/Core/Memory/Private/LinearAllocator.i
-	@echo ... Source/Core/Memory/Private/LinearAllocator.s
-	@echo ... Source/Core/Memory/Private/StackAllocator.obj
-	@echo ... Source/Core/Memory/Private/StackAllocator.i
-	@echo ... Source/Core/Memory/Private/StackAllocator.s
 	@echo ... Source/Core/Platforms/Windows/WindowsProcedure.obj
 	@echo ... Source/Core/Platforms/Windows/WindowsProcedure.i
 	@echo ... Source/Core/Platforms/Windows/WindowsProcedure.s
@@ -350,6 +293,9 @@ help:
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.obj
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.i
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.s
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkanDebug.obj
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkanDebug.i
+	@echo ... Source/Renderer/Vulkan/SimEngineVulkanDebug.s
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.obj
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.i
 	@echo ... Source/Renderer/Vulkan/Vk_Renderer.s

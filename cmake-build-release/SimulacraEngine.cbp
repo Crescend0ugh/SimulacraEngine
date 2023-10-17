@@ -89,21 +89,6 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Launch/WinMain.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Memory/AllocatorTests.cpp">
-			<Option target="SimulacraEngine"/>
-		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Memory/AllocatorTests.h">
-			<Option target="SimulacraEngine"/>
-		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Memory/Private/LinearAllocator.cpp">
-			<Option target="SimulacraEngine"/>
-		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Memory/Private/StackAllocator.cpp">
-			<Option target="SimulacraEngine"/>
-		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/SimEngineWindows.h">
-			<Option target="SimulacraEngine"/>
-		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platforms/Windows/WindowsProcedure.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
@@ -117,6 +102,12 @@
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SimEngineVulkan.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SimEngineVulkanDebug.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Vk_Renderer.cpp">

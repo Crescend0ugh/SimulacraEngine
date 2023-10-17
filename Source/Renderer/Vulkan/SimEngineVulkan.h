@@ -7,6 +7,7 @@
 
 #include <vulkan/vulkan.h>
 #include "../../Core/Sys/Precompiled.h"
+#include "SimEngineVulkanDebug.h"
 
 struct QueueFamilyIndices
 {
@@ -50,14 +51,7 @@ VkPhysicalDevice PickMostSuitableDevice(std::vector<VkPhysicalDevice> PhysicalDe
 
 
 
-//================================ Debug Utilities =======================================
 
-/**
- *
- * @param DeviceType
- * @return A const char array describing the device type
- */
-const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType);
 
 
 

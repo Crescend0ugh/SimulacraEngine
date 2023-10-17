@@ -6,25 +6,6 @@
 
 
 
-const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType)
-{
-    switch (DeviceType)
-    {
-        case VK_PHYSICAL_DEVICE_TYPE_OTHER :
-            { return "Other"; }
-        case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU :
-            { return "Integrated GPU"; }
-        case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
-            { return "Discrete GPU"; }
-        case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
-            { return "Virtual GPU"; }
-        case VK_PHYSICAL_DEVICE_TYPE_CPU :
-            { return "CPU"; }
-        case VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM:
-            { return nullptr; }
-    }
-    return nullptr;
-}
 
 
 QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
@@ -34,34 +15,16 @@ QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
     uint32 QueueFamilyCount = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, nullptr );
 
-    std::vector<VkQueueFamilyProperties> QueueFamilyProperties(QueueFamilyCount);
-    vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, QueueFamilyProperties.data() );
+    std::vector<VkQueueFamilyProperties> QueueFamilies(QueueFamilyCount);
+    vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, QueueFamilies.data() );
 
-    int Index = 0;
-    for(const auto& QueueFamily : QueueFamilyProperties )
+    std::cout << "\nQueue Families available on device: \n\n";
+
+    
+    for(const auto& QueueFamily : QueueFamilies )
     {
-        switch (QueueFamily.queueFlags)
-        {
-            case VK_QUEUE_GRAPHICS_BIT:
-            { Indices.GraphicsQueueFamily = Index; }
-
-            case VK_QUEUE_COMPUTE_BIT:
-            { Indices.ComputeQueueFamily = Index; }
-
-            case VK_QUEUE_TRANSFER_BIT:
-            { Indices.TransferQueueFamily = Index; }
-
-            case VK_QUEUE_SPARSE_BINDING_BIT:
-            { Indices.SparseBindingQueueFamily = Index; }
-
-            case VK_QUEUE_PROTECTED_BIT:
-            { Indices.ProtectedQueueFamily = Index; }
-
-            case VK_QUEUE_VIDEO_DECODE_BIT_KHR:
-            { Indices.VideoDecodeQueueFamily = Index; }
-        }
+        std::cout << QueueFamilyToString(QueueFamily);
     }
-
 
     return Indices;
 }
@@ -75,7 +38,7 @@ bool IsDeviceSuitable(VkPhysicalDevice PhysicalDevice)
     VkPhysicalDeviceFeatures PhysicalDeviceFeatures;
     vkGetPhysicalDeviceFeatures(PhysicalDevice, &PhysicalDeviceFeatures);
 
-    
+
 
     return true;
 };
