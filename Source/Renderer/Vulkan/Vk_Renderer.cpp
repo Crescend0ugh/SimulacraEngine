@@ -110,13 +110,23 @@ void Vk_Renderer::CreateSurface()
 void Vk_Renderer::CreateLogicalDevice()
 {
     QueueFamilyIndices Indices = FindQueueFamilies(PhysicalDevice);
-    float QueuePriority = 1.0f;
+
 
     VkDeviceQueueCreateInfo QueueCreateInfo{};
     QueueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
-    QueueCreateInfo.pQueuePriorities = &QueuePriority;
     QueueCreateInfo.queueFamilyIndex = Indices.GraphicsQueueFamily;
     QueueCreateInfo.queueCount = 1;
+
+    float QueuePriority = 1.0f;
+    QueueCreateInfo.pQueuePriorities = &QueuePriority;
+
+    VkPhysicalDeviceFeatures DeviceFeatures{};
+
+    VkDeviceCreateInfo CreateInfo {};
+    CreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+    CreateInfo.pQueueCreateInfos = &QueueCreateInfo;
+    CreateInfo.queueCreateInfoCount = 1;
+    CreateInfo.pEnabledFeatures = &DeviceFeatures;
 
 
 }
