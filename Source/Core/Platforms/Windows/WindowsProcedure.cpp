@@ -9,22 +9,15 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     switch (uMsg)
     {
         case WM_DESTROY:
+            DestroyWindow(hwnd);
             PostQuitMessage(0);
-            return 0;
-
+            break;
         case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hwnd, &ps);
-
-            // All painting occurs here, between BeginPaint and EndPaint.
-
-            FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
-
-            EndPaint(hwnd, &ps);
-        }
-            return 0;
-
+            ValidateRect(hwnd, NULL);
+            break;
+        default:
+            return DefWindowProc(hwnd, uMsg, wParam, lParam);
+            break;
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }

@@ -11,12 +11,12 @@
 
 struct QueueFamilyIndices
 {
-    uint32 GraphicsQueueFamily      = 0;
-    uint32 ComputeQueueFamily       = 0;
-    uint32 TransferQueueFamily      = 0;
-    uint32 SparseBindingQueueFamily = 0;
-    uint32 ProtectedQueueFamily     = 0;
-    uint32 VideoDecodeQueueFamily   = 0;
+    uint32 GraphicsQueueFamily      = -1;
+    uint32 ComputeQueueFamily       = -1;
+    uint32 TransferQueueFamily      = -1;
+    uint32 SparseBindingQueueFamily = -1;
+    uint32 ProtectedQueueFamily     = -1;
+    uint32 VideoDecodeQueueFamily   = -1;
 
 
 };

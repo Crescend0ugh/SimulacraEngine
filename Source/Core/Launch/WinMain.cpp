@@ -26,11 +26,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 
     Renderer* rd = new Renderer();
     rd->Initialize();
-
     Vk_Renderer* Renderer = new Vk_Renderer;
     Renderer->Initialize();
+    rd->RenderLoop();
+
+
+
 
     return 0;
+
+
 }
 
 

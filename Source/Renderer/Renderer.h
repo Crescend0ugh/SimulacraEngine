@@ -17,6 +17,8 @@ public:
     bool Initialize();
     bool Deinitialize();
 
+    void RenderLoop();
+
 protected:
 
 

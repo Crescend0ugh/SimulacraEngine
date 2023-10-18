@@ -10,6 +10,7 @@
 #include <iostream>
 #include "../../Core/Sys/Precompiled.h"
 #include "SimEngineVulkan.h"
+#include "../../Core/Platforms/Windows/SimEngineWindows.h"
 
 #define APPLICATION_NAME "TestApplicationName"
 #define ENGINE_NAME "SimulacraEngine"
@@ -103,6 +104,20 @@ void Vk_Renderer::CreatePhysicalDevice()
 
 void Vk_Renderer::CreateSurface()
 {
+    VkSurfaceKHR Surface;
+
+    VkWin32SurfaceCreateInfoKHR CreateInfo {};
+    CreateInfo.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+    CreateInfo.hwnd = Win32Vars.Hwnd;
+    CreateInfo.hinstance = Win32Vars.HInstance;
+
+    VkResult Result = vkCreateWin32SurfaceKHR(Instance, &CreateInfo, nullptr, &Surface);
+
+    if(Result != VK_SUCCESS)
+    {
+        std::cout << "Failed to create window surface\n";
+    }
+
 
 }
 
@@ -129,11 +144,15 @@ void Vk_Renderer::CreateLogicalDevice()
     CreateInfo.pEnabledFeatures = &DeviceFeatures;
 
 
+    vkCreateDevice(PhysicalDevice, &CreateInfo, nullptr, &Device);
+
+
 }
 
 bool Vk_Renderer::Initialize()
 {
     CreateInstance();
+    CreateSurface();
     CreatePhysicalDevice();
     CreateLogicalDevice();
     return true;

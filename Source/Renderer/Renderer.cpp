@@ -44,8 +44,7 @@ void CreateGameWindow()
     );
 
 
-    ShowWindow(hwnd, Win32Vars.NCmdShow);
-
+    ShowWindow(hwnd, SW_SHOW);
 }
 
 
@@ -59,4 +58,14 @@ bool Renderer::Initialize()
 bool Renderer::Deinitialize()
 {
     return false;
+}
+
+void Renderer::RenderLoop()
+{
+    MSG message;
+
+    while (GetMessage(&message, NULL, 0, 0)) {
+        TranslateMessage(&message);
+        DispatchMessage(&message);
+    }
 }
