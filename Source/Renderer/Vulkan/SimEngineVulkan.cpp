@@ -25,6 +25,7 @@ QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
     {
         std::cout << QueueFamilyToString(QueueFamily);
 
+
         if (QueueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT)
             Indices.GraphicsQueueFamily = CurrentIndex ;
         if (QueueFamily.queueFlags & VK_QUEUE_COMPUTE_BIT)

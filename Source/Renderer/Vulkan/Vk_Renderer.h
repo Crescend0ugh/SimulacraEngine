@@ -31,8 +31,8 @@ private:
     VkInstance Instance;
     VkPhysicalDevice PhysicalDevice;
     VkDevice Device;
-
-
+    VkSurfaceKHR Surface;
+    VkQueue PresentQueue;
 
 };
 

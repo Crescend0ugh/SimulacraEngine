@@ -104,7 +104,7 @@ void Vk_Renderer::CreatePhysicalDevice()
 
 void Vk_Renderer::CreateSurface()
 {
-    VkSurfaceKHR Surface;
+
 
     VkWin32SurfaceCreateInfoKHR CreateInfo {};
     CreateInfo.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
@@ -115,10 +115,10 @@ void Vk_Renderer::CreateSurface()
 
     if(Result != VK_SUCCESS)
     {
-        std::cout << "Failed to create window surface\n";
+        std::cout << "Failed to create Surface\n";
     }
 
-
+    std::cout << "Successfully created Win32 Surface\n\n";
 }
 
 
@@ -163,6 +163,7 @@ bool Vk_Renderer::Deintialize()
 
 
     vkDestroyDevice(Device, nullptr);
+    vkDestroySurfaceKHR(Instance, Surface, nullptr);
     vkDestroyInstance(Instance, nullptr);
 
     return false;
