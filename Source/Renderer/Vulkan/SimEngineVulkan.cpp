@@ -8,7 +8,7 @@
 
 
 
-QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
+QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface)
 {
     QueueFamilyIndices Indices;
 
@@ -27,17 +27,26 @@ QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice)
 
 
         if (QueueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT)
+        {
             Indices.GraphicsQueueFamily = CurrentIndex ;
+            VkBool32 HasSurfaceSupport;
+            vkGetPhysicalDeviceSurfaceSupportKHR(PhysicalDevice, CurrentIndex, Surface, &HasSurfaceSupport);
+            if(HasSurfaceSupport)
+            {
+                Indices.PresentQueueFamily = CurrentIndex;
+            }
+        }
+
         if (QueueFamily.queueFlags & VK_QUEUE_COMPUTE_BIT)
-            Indices.ComputeQueueFamily = CurrentIndex ;
+        { Indices.ComputeQueueFamily = CurrentIndex ; }
         if (QueueFamily.queueFlags & VK_QUEUE_TRANSFER_BIT)
-            Indices.TransferQueueFamily = CurrentIndex ;
+        { Indices.TransferQueueFamily = CurrentIndex ; }
         if (QueueFamily.queueFlags & VK_QUEUE_SPARSE_BINDING_BIT)
-            Indices.SparseBindingQueueFamily = CurrentIndex ;
+        { Indices.SparseBindingQueueFamily = CurrentIndex ; }
         if (QueueFamily.queueFlags & VK_QUEUE_PROTECTED_BIT)
-            Indices.ProtectedQueueFamily = CurrentIndex ;
+        { Indices.ProtectedQueueFamily = CurrentIndex ; }
         if (QueueFamily.queueFlags & VK_QUEUE_VIDEO_DECODE_BIT_KHR)
-            Indices.VideoDecodeQueueFamily = CurrentIndex ;
+        { Indices.VideoDecodeQueueFamily = CurrentIndex ; }
 
         CurrentIndex++;
     }

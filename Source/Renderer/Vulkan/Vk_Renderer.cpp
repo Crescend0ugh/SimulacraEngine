@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <vulkan/vulkan_win32.h>
 #include <iostream>
+#include <set>
 #include "../../Core/Sys/Precompiled.h"
 #include "SimEngineVulkan.h"
 #include "../../Core/Platforms/Windows/SimEngineWindows.h"
@@ -30,8 +31,11 @@ void Vk_Renderer::CreateInstance()
     VkInstanceCreateInfo CreateInfo{};
     CreateInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     CreateInfo.pApplicationInfo = &ApplicationInfo;
-    std::vector<const char*> EnabledExtensions = { VK_KHR_SURFACE_EXTENSION_NAME };
+    std::vector<const char*> EnabledExtensions;
+    EnabledExtensions.push_back(VK_KHR_SURFACE_EXTENSION_NAME);
     EnabledExtensions.push_back(VK_KHR_WIN32_SURFACE_EXTENSION_NAME);
+
+
     CreateInfo.enabledExtensionCount = EnabledExtensions.size();
     CreateInfo.ppEnabledExtensionNames = EnabledExtensions.data();
 
@@ -89,7 +93,6 @@ void Vk_Renderer::CreatePhysicalDevice()
 
     std::cout << "Selected Device: \n";
     PhysicalDevice = PickMostSuitableDevice(PhysicalDevices);
-
     VkPhysicalDeviceProperties PhysicalDeviceProperties{};
     vkGetPhysicalDeviceProperties(PhysicalDevice, &PhysicalDeviceProperties);
 
@@ -124,28 +127,49 @@ void Vk_Renderer::CreateSurface()
 
 void Vk_Renderer::CreateLogicalDevice()
 {
-    QueueFamilyIndices Indices = FindQueueFamilies(PhysicalDevice);
+    QueueFamilyIndices Indices = FindQueueFamilies(PhysicalDevice, Surface);
 
-
-    VkDeviceQueueCreateInfo QueueCreateInfo{};
-    QueueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
-    QueueCreateInfo.queueFamilyIndex = Indices.GraphicsQueueFamily;
-    QueueCreateInfo.queueCount = 1;
+    std::set<uint32> UniqueQueueFamilyIndices = {Indices.GraphicsQueueFamily, Indices.PresentQueueFamily };
+    std::vector<VkDeviceQueueCreateInfo> QueueCreateInfos;
+    std::cout << "Graphics Index: "       + std::to_string(Indices.GraphicsQueueFamily) << "\n";
+    std::cout << "Present Index: "        + std::to_string(Indices.PresentQueueFamily) << "\n";
+    std::cout << "Compute Index: "        + std::to_string(Indices.ComputeQueueFamily) << "\n";
+    std::cout << "Transfer Index: "       + std::to_string(Indices.TransferQueueFamily) << "\n";
+    std::cout << "Sparse Binding Index: " + std::to_string(Indices.SparseBindingQueueFamily) << "\n";
+    std::cout << "Video Decode Index: "   + std::to_string(Indices.VideoDecodeQueueFamily) << "\n";
 
     float QueuePriority = 1.0f;
-    QueueCreateInfo.pQueuePriorities = &QueuePriority;
+
+    for (uint32 QueueFamily : UniqueQueueFamilyIndices) {
+        VkDeviceQueueCreateInfo QueueCreateInfo{};
+        QueueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+        QueueCreateInfo.queueFamilyIndex = QueueFamily ;
+        QueueCreateInfo.queueCount = 1;
+        QueueCreateInfo.pQueuePriorities = &QueuePriority;
+        QueueCreateInfos.push_back(QueueCreateInfo);
+    }
 
     VkPhysicalDeviceFeatures DeviceFeatures{};
 
+
     VkDeviceCreateInfo CreateInfo {};
     CreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
-    CreateInfo.pQueueCreateInfos = &QueueCreateInfo;
-    CreateInfo.queueCreateInfoCount = 1;
+    CreateInfo.queueCreateInfoCount = QueueCreateInfos.size();
+    CreateInfo.pQueueCreateInfos = QueueCreateInfos.data();
     CreateInfo.pEnabledFeatures = &DeviceFeatures;
+    CreateInfo.enabledExtensionCount = 0;
 
+    VkResult Result = vkCreateDevice(PhysicalDevice, &CreateInfo, nullptr, &Device);
 
-    vkCreateDevice(PhysicalDevice, &CreateInfo, nullptr, &Device);
+    if(Result != VK_SUCCESS)
+    {
+        std::cout << "\nFailed to create device\n\n";
+    }
 
+    std::cout << "\nSuccessfully created device\n\n";
+
+    vkGetDeviceQueue(Device, Indices.GraphicsQueueFamily, 0, &GraphicsQueue);
+    vkGetDeviceQueue(Device, Indices.PresentQueueFamily, 0, &PresentQueue);
 
 }
 
@@ -167,5 +191,13 @@ bool Vk_Renderer::Deintialize()
     vkDestroyInstance(Instance, nullptr);
 
     return false;
+}
+
+void Vk_Renderer::CreateSwapChain()
+{
+    VkSwapchainCreateInfoKHR CreateInfo {};
+    CreateInfo.sType = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
+    CreateInfo.pNext = nullptr;
+
 }
 

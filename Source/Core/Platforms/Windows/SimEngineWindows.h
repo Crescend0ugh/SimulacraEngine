@@ -14,6 +14,9 @@ struct SWin32Vars
     HWND Hwnd;
     HINSTANCE HInstance;
     int NCmdShow;
+
+
+
 };
 
 

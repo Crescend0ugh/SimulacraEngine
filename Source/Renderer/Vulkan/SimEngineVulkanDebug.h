@@ -7,6 +7,8 @@
 
 #include <vulkan/vulkan.h>
 #include "../../Core/Sys/Precompiled.h"
+#include "SimEngineVulkan.h"
+
 
 //================================ Debug Utilities =======================================
 
@@ -17,11 +19,9 @@
  */
 const char* PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType);
 
-
 std::string QueueFlagsToString(VkQueueFlags QueueFlags);
 
 std::string QueueFamilyToString(VkQueueFamilyProperties QueueFamily);
-
 
 
 #endif //SIMULACRAENGINE_SIMENGINEVULKANDEBUG_H

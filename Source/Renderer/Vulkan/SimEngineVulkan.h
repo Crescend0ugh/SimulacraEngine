@@ -18,6 +18,7 @@ struct QueueFamilyIndices
     uint32 ProtectedQueueFamily     = -1;
     uint32 VideoDecodeQueueFamily   = -1;
 
+    uint32 PresentQueueFamily       = -1;
 
 };
 
@@ -26,7 +27,7 @@ struct QueueFamilyIndices
 
 
 
-QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice);
+QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface);
 
 /**
  * @param PhysicalDevice

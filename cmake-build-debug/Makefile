@@ -200,6 +200,30 @@ Source/Renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.s
 .PHONY : Source/Renderer/Renderer.cpp.s
 
+Source/Renderer/Vulkan/SVkPhysicalDevice.obj: Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.obj
+
+# target to build an object file
+Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.obj
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.obj
+
+Source/Renderer/Vulkan/SVkPhysicalDevice.i: Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.i
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.i
+
+# target to preprocess a source file
+Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.i
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.i
+
+Source/Renderer/Vulkan/SVkPhysicalDevice.s: Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.s
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.s
+
+# target to generate assembly for a file
+Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.s
+.PHONY : Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.s
+
 Source/Renderer/Vulkan/SimEngineVulkan.obj: Source/Renderer/Vulkan/SimEngineVulkan.cpp.obj
 .PHONY : Source/Renderer/Vulkan/SimEngineVulkan.obj
 
@@ -290,6 +314,9 @@ help:
 	@echo ... Source/Renderer/Renderer.obj
 	@echo ... Source/Renderer/Renderer.i
 	@echo ... Source/Renderer/Renderer.s
+	@echo ... Source/Renderer/Vulkan/SVkPhysicalDevice.obj
+	@echo ... Source/Renderer/Vulkan/SVkPhysicalDevice.i
+	@echo ... Source/Renderer/Vulkan/SVkPhysicalDevice.s
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.obj
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.i
 	@echo ... Source/Renderer/Vulkan/SimEngineVulkan.s

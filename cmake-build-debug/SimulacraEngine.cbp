@@ -98,6 +98,12 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Renderer.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SVkPhysicalDevice.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SVkPhysicalDevice.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/SimEngineVulkan.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>

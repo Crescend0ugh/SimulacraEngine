@@ -8,6 +8,7 @@
 #include <vulkan/vulkan.h>
 
 
+
 class Vk_Renderer
 {
 
@@ -25,13 +26,14 @@ protected:
     void CreateSurface();
     void CreatePhysicalDevice();
     void CreateLogicalDevice();
-    
+    void CreateSwapChain();
 private:
 
     VkInstance Instance;
+    VkSurfaceKHR Surface;
     VkPhysicalDevice PhysicalDevice;
     VkDevice Device;
-    VkSurfaceKHR Surface;
+    VkQueue GraphicsQueue;
     VkQueue PresentQueue;
 
 };
