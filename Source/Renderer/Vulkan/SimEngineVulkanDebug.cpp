@@ -73,5 +73,18 @@ std::string QueueFamilyToString(VkQueueFamilyProperties QueueFamily)
     return ReturnString;
 }
 
+std::string QueueFamilyIndicesToString(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface) {
+    std::string ReturnString;
+    QueueFamilyIndices Indices = FindQueueFamilies(PhysicalDevice, Surface);
+    ReturnString += "Graphics Index: "       + std::to_string(Indices.GraphicsQueueFamily) + "\n";
+    ReturnString += "Present Index: "        + std::to_string(Indices.PresentQueueFamily) + "\n";
+    ReturnString += "Compute Index: "        + std::to_string(Indices.ComputeQueueFamily) + "\n";
+    ReturnString += "Transfer Index: "       + std::to_string(Indices.TransferQueueFamily) + "\n";
+    ReturnString += "Sparse Binding Index: " + std::to_string(Indices.SparseBindingQueueFamily) + "\n";
+    ReturnString += "Video Decode Index: "   + std::to_string(Indices.VideoDecodeQueueFamily) + "\n";
+
+    return ReturnString;
+}
+
 
 

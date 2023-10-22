@@ -1,0 +1,12 @@
+//
+// Created by avsom on 10/22/2023.
+//
+
+#ifndef SIMULACRAENGINE_SVKDEVICES_H
+#define SIMULACRAENGINE_SVKDEVICES_H
+
+
+
+
+
+#endif //SIMULACRAENGINE_SVKDEVICES_H

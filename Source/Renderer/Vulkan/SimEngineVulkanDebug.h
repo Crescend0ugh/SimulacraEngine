@@ -23,5 +23,6 @@ std::string QueueFlagsToString(VkQueueFlags QueueFlags);
 
 std::string QueueFamilyToString(VkQueueFamilyProperties QueueFamily);
 
+std::string QueueFamilyIndicesToString(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface);
 
 #endif //SIMULACRAENGINE_SIMENGINEVULKANDEBUG_H

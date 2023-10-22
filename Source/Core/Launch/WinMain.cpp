@@ -13,7 +13,7 @@
 #include "../../Renderer/Vulkan/Vk_Renderer.h"
 #include <windows.h>
 #include <iostream>
-#include <chrono>
+
 
 SWin32Vars Win32Vars;
 
@@ -29,8 +29,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     Vk_Renderer* Renderer = new Vk_Renderer;
     Renderer->Initialize();
     rd->RenderLoop();
-
-
 
 
     return 0;

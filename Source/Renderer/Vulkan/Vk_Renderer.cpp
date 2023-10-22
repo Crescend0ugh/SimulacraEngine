@@ -116,6 +116,7 @@ void Vk_Renderer::CreateSurface()
 
     VkResult Result = vkCreateWin32SurfaceKHR(Instance, &CreateInfo, nullptr, &Surface);
 
+
     if(Result != VK_SUCCESS)
     {
         std::cout << "Failed to create Surface\n";
@@ -131,12 +132,7 @@ void Vk_Renderer::CreateLogicalDevice()
 
     std::set<uint32> UniqueQueueFamilyIndices = {Indices.GraphicsQueueFamily, Indices.PresentQueueFamily };
     std::vector<VkDeviceQueueCreateInfo> QueueCreateInfos;
-    std::cout << "Graphics Index: "       + std::to_string(Indices.GraphicsQueueFamily) << "\n";
-    std::cout << "Present Index: "        + std::to_string(Indices.PresentQueueFamily) << "\n";
-    std::cout << "Compute Index: "        + std::to_string(Indices.ComputeQueueFamily) << "\n";
-    std::cout << "Transfer Index: "       + std::to_string(Indices.TransferQueueFamily) << "\n";
-    std::cout << "Sparse Binding Index: " + std::to_string(Indices.SparseBindingQueueFamily) << "\n";
-    std::cout << "Video Decode Index: "   + std::to_string(Indices.VideoDecodeQueueFamily) << "\n";
+    std::cout << QueueFamilyIndicesToString(PhysicalDevice, Surface);
 
     float QueuePriority = 1.0f;
 
@@ -150,14 +146,17 @@ void Vk_Renderer::CreateLogicalDevice()
     }
 
     VkPhysicalDeviceFeatures DeviceFeatures{};
-
+    const std::vector<const char*> DeviceExtensions = {
+            VK_KHR_SWAPCHAIN_EXTENSION_NAME
+    };
 
     VkDeviceCreateInfo CreateInfo {};
     CreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+    CreateInfo.ppEnabledExtensionNames = DeviceExtensions.data();
     CreateInfo.queueCreateInfoCount = QueueCreateInfos.size();
     CreateInfo.pQueueCreateInfos = QueueCreateInfos.data();
     CreateInfo.pEnabledFeatures = &DeviceFeatures;
-    CreateInfo.enabledExtensionCount = 0;
+    CreateInfo.enabledExtensionCount = static_cast<uint32>(DeviceExtensions.size());
 
     VkResult Result = vkCreateDevice(PhysicalDevice, &CreateInfo, nullptr, &Device);
 

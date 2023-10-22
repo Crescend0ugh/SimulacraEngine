@@ -5,7 +5,7 @@
 #ifndef SIMULACRAENGINE_VK_RENDERER_H
 #define SIMULACRAENGINE_VK_RENDERER_H
 
-#include <vulkan/vulkan.h>
+#include "SimEngineVulkan.h"
 
 
 
@@ -29,12 +29,12 @@ protected:
     void CreateSwapChain();
 private:
 
-    VkInstance Instance;
-    VkSurfaceKHR Surface;
+    VkInstance       Instance;
+    VkSurfaceKHR     Surface;
     VkPhysicalDevice PhysicalDevice;
-    VkDevice Device;
-    VkQueue GraphicsQueue;
-    VkQueue PresentQueue;
+    VkDevice         Device;
+    VkQueue          GraphicsQueue;
+    VkQueue          PresentQueue;
 
 };
 

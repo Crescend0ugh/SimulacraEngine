@@ -4,19 +4,18 @@
 
 #ifndef SIMULACRAENGINE_SVKPHYSICALDEVICE_H
 #define SIMULACRAENGINE_SVKPHYSICALDEVICE_H
-#include <vulkan/vulkan.h>
-
-struct SVkPhysicalDevice
-{
-    SVkPhysicalDevice() {};
-    SVkPhysicalDevice(VkPhysicalDevice PhysicalDevice) { SPhysicalDevice = PhysicalDevice; }
+#include "SimEngineVulkan.h"
 
 
 
-    VkPhysicalDevice SPhysicalDevice;
+bool IsDeviceSuitable(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface);
 
+bool CheckDeviceExtensionSupport(VkPhysicalDevice PhysicalDevice);
 
-};
+uint32 GetDeviceScore(VkPhysicalDevice PhysicalDevice);
 
+VkPhysicalDevice PickMostSuitableDevice(std::vector<VkPhysicalDevice> PhysicalDevices);
+
+VkPhysicalDevice PickSuitableDevice(std::vector<VkPhysicalDevice> PhysicalDevices);
 
 #endif //SIMULACRAENGINE_SVKPHYSICALDEVICE_H
