@@ -4,8 +4,8 @@
 
 #include <vector>
 #include <iostream>
-#include "SVkQueues.h"
-#include "SimEngineVulkanDebug.h"
+#include "../Public/SVkQueue.h"
+#include "../Public/SimEngineVulkanDebug.h"
 
 QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface)
 {

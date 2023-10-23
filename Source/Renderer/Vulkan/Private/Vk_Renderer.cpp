@@ -4,14 +4,14 @@
 
 
 #include <vector>
-#include "Vk_Renderer.h"
+#include "../Public/Vk_Renderer.h"
 #include <windows.h>
 #include <vulkan/vulkan_win32.h>
 #include <iostream>
 #include <set>
-#include "../../Core/Sys/Precompiled.h"
-#include "SimEngineVulkan.h"
-#include "../../Core/Platforms/Windows/SimEngineWindows.h"
+#include "../../../Core/Sys/Precompiled.h"
+#include "../Public/SimEngineVulkan.h"
+#include "../../../Core/Platforms/Windows/SimEngineWindows.h"
 
 #define APPLICATION_NAME "TestApplicationName"
 #define ENGINE_NAME "SimulacraEngine"

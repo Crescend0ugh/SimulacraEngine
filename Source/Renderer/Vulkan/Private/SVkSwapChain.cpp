@@ -2,7 +2,7 @@
 // Created by avsom on 10/22/2023.
 //
 
-#include "SVkSwapChain.h"
+#include "../Public/SVkSwapChain.h"
 
 
 SwapChainSupportInfo QuerySwapChainSupport(VkPhysicalDevice PhysicalDevice, VkSurfaceKHR Surface) {

@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#include "SimEngineVulkanDebug.h"
+#include "../Public/SimEngineVulkanDebug.h"
 
 const char *PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType)
 {
