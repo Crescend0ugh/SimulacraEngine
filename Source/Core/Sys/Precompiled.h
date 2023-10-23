@@ -21,7 +21,7 @@
 #include "SimEngineTypes.h"
 
 //Platforms
-#include "../Core/Platforms/SimulacraPlatforms.h"
+
 
 //Mem
 #include "../Memory/Public/Alignment.h"
@@ -37,3 +37,6 @@
 
 //Containers
 #include "../Containers/Array.h"
+
+//Templates
+#include "../Templates/SimulacraIsPointer.h"
