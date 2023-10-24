@@ -1,12 +1,4 @@
 # ninja log v5
 488	735	7196913584931223	SimulacraEngine.exe	6bf0901d1986473d
-5	412	7197497298259949	build.ninja	6e38e3799279e907
-4	1245	7196541494940797	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Renderer.cpp.obj	1476fc1010ffe583
-7	1335	7196541495835184	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/WinMain.cpp.obj	f173a6b4d0188d92
-10	612	7196913481067751	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SimEngineVulkanDebug.cpp.obj	4159f254c36edc2
-18	1628	7196913491217038	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Vk_Renderer.cpp.obj	82a1cd5e086f7e48
-17	930	7196540897421379	CMakeFiles/SimulacraEngine.dir/Source/Core/Platforms/Windows/WindowsProcedure.cpp.obj	7fcdaab985ff3fea
-20	609	7196541488578987	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkSwapChain.cpp.obj	bc6ba2b956a70f2
-21	649	7196913481439889	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkQueues.cpp.obj	b8f86151a80d7dec
-4	487	7196913582480905	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/SVkPhysicalDevice.cpp.obj	79359500bf5beb05
+5	412	7198101301747584	build.ninja	6e38e3799279e907
 5	1364	7196913488591870	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	b536e9caede529b0
