@@ -2,3 +2,8 @@
 488	735	7196913584931223	SimulacraEngine.exe	6bf0901d1986473d
 5	412	7198101301747584	build.ninja	6e38e3799279e907
 5	1364	7196913488591870	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	b536e9caede529b0
+11	511	7198839980960001	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanRHI.cpp.obj	ab75402c9f777887
+5	1909	7198839994949283	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	b536e9caede529b0
+1910	2074	7198839996568285	SimulacraEngine.exe	d042ccf57c0bf0de
+15	524	7199129955997066	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanRHI.cpp.obj	ab75402c9f777887
+524	685	7199129957599949	SimulacraEngine.exe	d042ccf57c0bf0de

@@ -5,3 +5,21 @@
 
 
 #include "SimulacraVulkanDevice.h"
+
+SVulkanDevice::SVulkanDevice() {
+
+}
+
+SVulkanDevice::~SVulkanDevice() {
+
+}
+
+void SVulkanDevice::CreatePhysicalDevice()
+{
+
+}
+
+void SVulkanDevice::CreateDevice()
+{
+
+}

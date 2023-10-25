@@ -10,16 +10,59 @@
 
 class SVulkanDevice {
 
+public:
+
+    SVulkanDevice();
+
+    ~SVulkanDevice();
+
+    void CreatePhysicalDevice();
+
+    void CreateDevice();
+
+
+
+
+    const VkDevice GetHandle() const
+    {
+        return Device;
+    }
+
+    const VkPhysicalDevice GetPhysicalHandle() const
+    {
+        return PhysicalDevice;
+    }
+
+    SVulkanQueue *GetGraphicsQueue() const
+    {
+        return GraphicsQueue;
+    }
+
+    SVulkanQueue *GetPresentQueue() const
+    {
+        return PresentQueue;
+    }
+
+    SVulkanQueue *GetComputeQueue() const
+    {
+        return ComputeQueue;
+    }
+
+    SVulkanQueue *GetTransferQueue() const
+    {
+        return TransferQueue;
+    }
+
 
 private:
 
     VkDevice         Device;
     VkPhysicalDevice PhysicalDevice;
 
-    SVulkanQueue GraphicsQueue;
-    SVulkanQueue PresentQueue;
-    SVulkanQueue ComputeQueue;
-    SVulkanQueue TransferQueue;
+    SVulkanQueue* GraphicsQueue;
+    SVulkanQueue* PresentQueue;
+    SVulkanQueue* ComputeQueue;
+    SVulkanQueue* TransferQueue;
 
 };
 

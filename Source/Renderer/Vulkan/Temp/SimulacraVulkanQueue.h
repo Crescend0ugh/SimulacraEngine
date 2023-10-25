@@ -8,21 +8,38 @@
 
 #include "SimEngineVulkan.h"
 
+struct SVulkanDevice;
+
 class SVulkanQueue
 {
 
 public:
+    SVulkanQueue(SVulkanDevice* InDevice, uint32 InFamilyIndex);
+    ~SVulkanQueue();
 
 
+
+
+    const VkQueue GetHandle() const {
+        return Queue;
+    }
+
+    uint32 GetFamilyIndex() const {
+        return FamilyIndex;
+    }
+
+    uint32 GetQueueIndex() const {
+        return QueueIndex;
+    }
 
 
 
 
 private:
 
-    VkQueue       Queue;
-    uint32        FamilyIndex;
-    uint32        QueueIndex;
+    VkQueue        Queue;
+    uint32         FamilyIndex;
+    uint32         QueueIndex;
     SVulkanDevice* Device;
 
 };

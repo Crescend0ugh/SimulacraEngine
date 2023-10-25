@@ -3,3 +3,17 @@
 //
 
 #include "SimulacraVulkanQueue.h"
+
+SVulkanQueue::SVulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
+{
+
+    Queue = VK_NULL_HANDLE;
+    FamilyIndex = InFamilyIndex;
+    QueueIndex = 0;
+    Device = InDevice;
+    vkGetDeviceQueue(InDevice->GetHandle(), FamilyIndex, QueueIndex, &Queue);
+}
+
+SVulkanQueue::~SVulkanQueue() {
+
+}
