@@ -6,7 +6,8 @@
 
 #include "SimulacraVulkanDevice.h"
 
-SVulkanDevice::SVulkanDevice() {
+SVulkanDevice::SVulkanDevice()
+{
 
 }
 
@@ -23,3 +24,4 @@ void SVulkanDevice::CreateDevice()
 {
 
 }
+

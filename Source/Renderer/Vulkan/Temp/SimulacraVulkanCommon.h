@@ -12,7 +12,7 @@
 
 
 template <class T>
-static void CreateZeroVulkanStruct(T& Struct, int32 VkStructureType)
+static void SetZeroVulkanStruct(T& Struct, int32 VkStructureType)
 {
     static_assert(!TIsPointer<T>::Value);
     static_assert(__builtin_offsetof(T, sType) == 0);

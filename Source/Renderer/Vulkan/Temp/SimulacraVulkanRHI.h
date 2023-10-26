@@ -23,7 +23,7 @@ protected:
     SVulkanDevice Device;
 
     void CreateInstance();
-    void SelectDevice();
+    void SelectDevice(VkInstance InInstance);
     void CreateDevice(SVulkanDevice* Device);
 
 
