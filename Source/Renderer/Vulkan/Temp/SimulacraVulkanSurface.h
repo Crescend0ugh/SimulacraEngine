@@ -5,7 +5,7 @@
 #ifndef SIMULACRAENGINE_SIMULACRAVULKANSURFACE_H
 #define SIMULACRAENGINE_SIMULACRAVULKANSURFACE_H
 
-#include "SimEngineVulkan.h"
+#include "SimulacraVulkan.h"
 
 class SVulkanSurface {
 

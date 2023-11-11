@@ -95,10 +95,10 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Templates/SimulacraIsPointer.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanRHI.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SVulkanRHI.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanRHI.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SVulkanRHI.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">

@@ -2,14 +2,16 @@
 // Created by avsom on 10/23/2023.
 //
 
-#include "SimulacraVulkanRHI.h"
-#include "SimulacraVulkanCommon.h"
 
-void SimulacraVulkanRHI::CreateInstance() {
+#include "SimulacraVulkan.h"
+#include "SVulkanRHI.h"
+
+
+void SVulkanRHI::CreateInstance() {
 
 }
 
-void SimulacraVulkanRHI::SelectDevice(VkInstance InInstance)
+VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 {
     VkResult Result;
     uint32 PhysicalDeviceCount = 0;
@@ -21,16 +23,32 @@ void SimulacraVulkanRHI::SelectDevice(VkInstance InInstance)
     std::vector<VkPhysicalDevice> PhysicalDevices;
     PhysicalDevices.reserve(PhysicalDeviceCount);
     vkEnumeratePhysicalDevices(InInstance, &PhysicalDeviceCount, PhysicalDevices.data());
+    return PhysicalDevices[0];
 
+}
+
+void SVulkanRHI::CreateDevice(SVulkanDevice *Device)
+{
+
+    VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance);
+    Device = new SVulkanDevice(this, PhysicalDevice);
+
+    VkDeviceCreateInfo DeviceInfo;
+    SetZeroVulkanStruct(DeviceInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
 
 }
 
-void SimulacraVulkanRHI::CreateDevice(SVulkanDevice *Device)
+SVulkanRHI::SVulkanRHI():
+        Device(nullptr, nullptr)
 {
-    VkDeviceCreateInfo DeviceInfo;
-    SetZeroVulkanStruct(DeviceInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
-    DeviceInfo.p
 
+}
+
+void SVulkanRHI::Init() {
+
+}
+
+void SVulkanRHI::Shutdown() {
 
 }

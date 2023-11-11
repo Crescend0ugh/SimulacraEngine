@@ -4,7 +4,7 @@
 
 #ifndef SIMULACRAENGINE_SIMULACRAVULKANSWAPCHAIN_H
 #define SIMULACRAENGINE_SIMULACRAVULKANSWAPCHAIN_H
-#include "SimEngineVulkan.h"
+#include "SimulacraVulkan.h"
 
 class SVulkanSwapchain {
 

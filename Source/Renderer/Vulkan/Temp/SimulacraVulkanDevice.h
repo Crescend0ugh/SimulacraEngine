@@ -5,14 +5,16 @@
 #ifndef SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H
 #define SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H
 
-
 #include "SimulacraVulkanQueue.h"
+#include "SVulkanRHI.h"
+
+class SVulkanRHI;
 
 class SVulkanDevice {
 
 public:
 
-    SVulkanDevice();
+    SVulkanDevice(SVulkanRHI* RHI, VkPhysicalDevice InPhysicalDevice);
 
     ~SVulkanDevice();
 
@@ -56,13 +58,18 @@ public:
 
 private:
 
+    SVulkanRHI* RHI;
+
     VkDevice         Device;
     VkPhysicalDevice PhysicalDevice;
 
-    SVulkanQueue* GraphicsQueue;
-    SVulkanQueue* PresentQueue;
-    SVulkanQueue* ComputeQueue;
-    SVulkanQueue* TransferQueue;
+
+    std::vector<VkQueueFamilyProperties> QueueFamilyProperties;
+    SVulkanQueue*                        GraphicsQueue;
+    SVulkanQueue*                        PresentQueue;
+    SVulkanQueue*                        ComputeQueue;
+    SVulkanQueue*                        TransferQueue;
+    bool HasAsyncComputeQueue;
 
 };
 
