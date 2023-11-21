@@ -10,7 +10,7 @@ add_executable(SimulacraEngine Source/Core/Launch/Win_Main.cpp
         Source/Core/Templates/SimulacraIsPointer.h
         Source/Renderer/Vulkan/Temp/SVulkanRHI.cpp
         Source/Renderer/Vulkan/Temp/SVulkanRHI.h
-        Source/Core/Containers/ArrayList.h)
+        Source/Core/Containers/ArrayList.h Source/Renderer/Vulkan/Temp/SimulacraVulkanDevice.cpp)
 
 
 

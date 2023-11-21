@@ -23,7 +23,7 @@ protected:
     std::vector<char*> ExtensionLayers;
 
 
-    SVulkanDevice Device;
+    SVulkanDevice& Device;
 
     void CreateInstance();
 

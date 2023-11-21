@@ -31,7 +31,6 @@ void SVulkanRHI::CreateDevice(SVulkanDevice *Device)
 {
 
     VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance);
-    Device = new SVulkanDevice(this, PhysicalDevice);
 
     VkDeviceCreateInfo DeviceInfo;
     SetZeroVulkanStruct(DeviceInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
@@ -40,7 +39,7 @@ void SVulkanRHI::CreateDevice(SVulkanDevice *Device)
 }
 
 SVulkanRHI::SVulkanRHI():
-        Device(nullptr, nullptr)
+        Device(nullptr)
 {
 
 }
