@@ -6,6 +6,9 @@
 
 #include "SimulacraVulkanDevice.h"
 
+
+class SVulkanDevice;
+
 SVulkanDevice::SVulkanDevice(SVulkanRHI* InRHI, VkPhysicalDevice InPhysicalDevice):
 PhysicalDevice(InPhysicalDevice),
 RHI(InRHI)
@@ -43,11 +46,14 @@ void SVulkanDevice::CreateDevice()
     {
         VkQueueFamilyProperties& CurrentFamilyProperties = QueueFamilyProperties[CurrentFamilyIndex];
 
+
+        bool CanUseQueue = false;
         if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT)
         {
             if(GraphicsQueueFamilyIndex == -1)
             {
                 GraphicsQueueFamilyIndex = CurrentFamilyIndex;
+                CanUseQueue = true;
             }
         }
 
@@ -56,6 +62,7 @@ void SVulkanDevice::CreateDevice()
             if(ComputeQueueFamilyIndex == -1)
             {
                 ComputeQueueFamilyIndex = CurrentFamilyIndex;
+                CanUseQueue = true;
             }
         }
 
@@ -64,6 +71,7 @@ void SVulkanDevice::CreateDevice()
             if(TransferQueueFamilyIndex == -1)
             {
                 TransferQueueFamilyIndex = CurrentFamilyIndex;
+                CanUseQueue = true;
             }
         }
 

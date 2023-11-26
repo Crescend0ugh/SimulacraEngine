@@ -1,0 +1,5 @@
+# ninja log v5
+14	999	7225835876880871	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	643de3f263d00b60
+10	511	7226902256554159	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp.obj	c5aac8effef5583
+3	513	7226902256588931	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SVulkanRHI.cpp.obj	9ec8b65f0e78b6ba
+6	517	7226902256629230	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanDevice.cpp.obj	e11ccbe07c58993f

@@ -12,7 +12,7 @@
 
 #include "SimulacraVulkanCommon.h"
 #include "SVulkanRHI.h"
-#include "SimulacraVulkanDevice.h"
+
 #include "SimulacraVulkanQueue.h"
 
 #endif //SIMULACRAENGINE_SIMULACRAVULKAN_H

@@ -8,6 +8,7 @@
 
 #include "SimulacraVulkanDevice.h"
 
+class SVulkanDevice;
 
 class SVulkanRHI {
 
@@ -23,14 +24,15 @@ protected:
     std::vector<char*> ExtensionLayers;
 
 
-    SVulkanDevice& Device;
+
 
     void CreateInstance();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
     void CreateDevice(SVulkanDevice* Device);
 
-
+private:
+    SVulkanDevice* Device;
 };
 
 

@@ -39,7 +39,8 @@ void SVulkanRHI::CreateDevice(SVulkanDevice *Device)
 }
 
 SVulkanRHI::SVulkanRHI():
-        Device(nullptr)
+Instance(VK_NULL_HANDLE),
+Device(nullptr)
 {
 
 }

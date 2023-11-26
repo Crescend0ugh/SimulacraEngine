@@ -9,6 +9,7 @@
 #include "SVulkanRHI.h"
 
 class SVulkanRHI;
+class SVulkanQueue;
 
 class SVulkanDevice {
 
@@ -69,7 +70,8 @@ private:
     SVulkanQueue*                        PresentQueue;
     SVulkanQueue*                        ComputeQueue;
     SVulkanQueue*                        TransferQueue;
-    bool HasAsyncComputeQueue;
+    bool HasAsyncComputeQueue = false;
+    bool PresentOnComputeQueue = false;
 
 };
 
