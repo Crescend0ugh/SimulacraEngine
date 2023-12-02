@@ -12,10 +12,12 @@ class SVulkanDevice;
 
 class SVulkanRHI {
 
+    void Shutdown();
+
+public:
     SVulkanRHI();
 
     void Init();
-    void Shutdown();
 
 protected:
 
@@ -29,7 +31,7 @@ protected:
     void CreateInstance();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
-    void CreateDevice(SVulkanDevice* Device);
+    void CreateDevice();
 
 private:
     SVulkanDevice* Device;

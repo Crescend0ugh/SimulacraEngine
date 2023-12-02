@@ -10,6 +10,7 @@
 #include "../Sys/Precompiled.h"
 #include "../Platforms/Windows/SimEngineWindows.h"
 #include "../../Renderer/Renderer.h"
+#include "../../Renderer/Vulkan/Temp/SVulkanRHI.h"
 #include <windows.h>
 #include <iostream>
 
@@ -34,6 +35,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 std::cout << TIsPointer<int*>::Value << "\n";
     return 0;
 
+    SVulkanRHI* RHI = new SVulkanRHI();
+    RHI->Init();
 
 }
 

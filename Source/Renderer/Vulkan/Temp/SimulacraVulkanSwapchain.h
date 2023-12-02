@@ -8,6 +8,12 @@
 
 class SVulkanSwapchain {
 
+
+    VkSurfaceFormatKHR ChooseSurfaceFormat();
+    VkPresentModeKHR ChoosePresentMode();
+    VkExtent2D ChooseExtent();
+
+
 private:
 
     VkSwapchainKHR Swapchain;

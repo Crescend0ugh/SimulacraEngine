@@ -13,7 +13,6 @@ SVulkanDevice::SVulkanDevice(SVulkanRHI* InRHI, VkPhysicalDevice InPhysicalDevic
 PhysicalDevice(InPhysicalDevice),
 RHI(InRHI)
 {
-
 }
 
 SVulkanDevice::~SVulkanDevice() {
