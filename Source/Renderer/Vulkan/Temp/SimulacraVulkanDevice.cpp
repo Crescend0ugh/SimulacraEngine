@@ -38,7 +38,6 @@ void SVulkanDevice::CreateDevice()
     int32 GraphicsQueueFamilyIndex = -1;
     int32 ComputeQueueFamilyIndex = -1;
     int32 TransferQueueFamilyIndex = -1;
-    std::cout<< "Found %d Queue Families \n", QueueFamilyProperties.size();
     uint32 NumPriorities = 0;
 
     for(int CurrentFamilyIndex = 0; CurrentFamilyIndex < QueueFamilyProperties.size(); CurrentFamilyIndex++)
@@ -99,7 +98,15 @@ void SVulkanDevice::CreateDevice()
     }
 
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
+    if(Result != VK_SUCCESS)
+    {
+        std::cout<< "Couldn't create Vulkan Device\n";
+    }
 
+    else
+    {
+        std::cout<< "Created Vulkan Device\n";
+    }
 
     GraphicsQueue = new SVulkanQueue(this, GraphicsQueueFamilyIndex);
 

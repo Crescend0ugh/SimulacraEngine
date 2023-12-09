@@ -22,16 +22,18 @@ public:
 protected:
 
     VkInstance         Instance;
-    std::vector<char*> ExtensionNames;
-    std::vector<char*> ExtensionLayers;
+    std::vector<char*> InstanceExtensions;
+    std::vector<char*> InstanceLayers;
 
 
 
 
     void CreateInstance();
+    void InitInstance();
+    void CreateDevice();
+    void InitDevice();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
-    void CreateDevice();
 
 private:
     SVulkanDevice* Device;

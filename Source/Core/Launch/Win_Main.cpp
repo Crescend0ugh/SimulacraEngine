@@ -29,14 +29,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
 
 
 
-   int NotPointer = 1;
-   int* Pointer = &NotPointer;
-
-std::cout << TIsPointer<int*>::Value << "\n";
-    return 0;
-
     SVulkanRHI* RHI = new SVulkanRHI();
     RHI->Init();
+
+    return 0;
+
 
 }
 

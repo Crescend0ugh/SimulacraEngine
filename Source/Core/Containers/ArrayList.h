@@ -8,7 +8,18 @@
 template <typename T>
 class SArrayList
 {
+    SArrayList(int NumberOfElements);
+
+    SArrayList();
+
+    T* GetData();
+
+
+    
+private:
+    T* P;
 
 };
 
 #endif //SIMULACRAENGINE_ARRAYLIST_H
+

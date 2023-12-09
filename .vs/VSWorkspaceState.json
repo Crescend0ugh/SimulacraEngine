@@ -6,11 +6,8 @@
     ]
   },
   "ExpandedNodes": [
-    "",
-    "\\Source",
-    "\\Source\\Renderer",
-    "\\Source\\Renderer\\Vulkan",
-    "\\Source\\Renderer\\Vulkan\\Temp"
+    ""
   ],
+  "SelectedNode": "\\C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\CMakeLists.txt\\SimulacraEngine.exe",
   "PreviewInSolutionExplorer": false
 }

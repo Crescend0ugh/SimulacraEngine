@@ -224,6 +224,54 @@ Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp.s
 .PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp.s
 
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.obj: Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.obj
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.obj
+
+# target to build an object file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.obj
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.obj
+
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.i: Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.i
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.i
+
+# target to preprocess a source file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.i
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.i
+
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.s: Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.s
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.s
+
+# target to generate assembly for a file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.s
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp.s
+
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.obj: Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.obj
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.obj
+
+# target to build an object file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.obj
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.obj
+
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.i: Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.i
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.i
+
+# target to preprocess a source file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.i
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.i
+
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.s: Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.s
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.s
+
+# target to generate assembly for a file
+Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.s
+.PHONY : Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -245,6 +293,12 @@ help:
 	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.obj
 	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.i
 	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.s
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.obj
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.i
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.s
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.obj
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.i
+	@echo ... Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.s
 .PHONY : help
 
 
