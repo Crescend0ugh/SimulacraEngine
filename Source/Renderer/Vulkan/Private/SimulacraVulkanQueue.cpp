@@ -2,7 +2,7 @@
 // Created by avsom on 10/23/2023.
 //
 
-#include "SimulacraVulkanQueue.h"
+#include "../Public/SimulacraVulkanQueue.h"
 
 SVulkanQueue::SVulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
 {

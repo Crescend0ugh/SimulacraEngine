@@ -4,7 +4,7 @@
 
 
 
-#include "SimulacraVulkanDevice.h"
+#include "../Public/SimulacraVulkanDevice.h"
 
 
 class SVulkanDevice;

@@ -14,12 +14,13 @@ class SVulkanSwapchain {
     VkExtent2D ChooseExtent();
 
 
+    void TestCreateVulkanWindow();
 private:
 
     VkSwapchainKHR Swapchain;
     SVulkanDevice* Device;
     VkSurfaceKHR Surface;
-
+    void* WindowHandle;
     
 
 };

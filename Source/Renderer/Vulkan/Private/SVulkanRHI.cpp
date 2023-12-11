@@ -3,8 +3,9 @@
 //
 
 
-#include "SimulacraVulkan.h"
-#include "SVulkanRHI.h"
+#include "../Public/SimulacraVulkan.h"
+#include "../Public/SVulkanRHI.h"
+#include <windows.h>
 
 
 void SVulkanRHI::CreateInstance() {
@@ -86,6 +87,9 @@ Device(nullptr)
 
 void SVulkanRHI::Init() {
     InitInstance();
+
+
+
 }
 
 void SVulkanRHI::Shutdown() {

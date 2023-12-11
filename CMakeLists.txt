@@ -8,11 +8,11 @@ find_package(Vulkan REQUIRED)
 
 add_executable(SimulacraEngine Source/Core/Launch/Win_Main.cpp
         Source/Core/Templates/SimulacraIsPointer.h
-        Source/Renderer/Vulkan/Temp/SVulkanRHI.cpp
-        Source/Renderer/Vulkan/Temp/SVulkanRHI.h
-        Source/Core/Containers/ArrayList.h Source/Renderer/Vulkan/Temp/SimulacraVulkanDevice.cpp Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp
-        Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp
-        Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp)
+        Source/Renderer/Vulkan/Private/SVulkanRHI.cpp
+        Source/Renderer/Vulkan/Public/SVulkanRHI.h
+        Source/Core/Containers/ArrayList.h Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp
+        Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp
+        Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp Source/Renderer/Vulkan/Public/SimulacraVulkanPlatform.h Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.h)
 
 
 

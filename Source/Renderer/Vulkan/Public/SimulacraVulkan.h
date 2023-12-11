@@ -10,6 +10,7 @@
 #include <vulkan/vulkan.h>
 
 
+#include "SimulacraVulkanPlatform.h"
 #include "SimulacraVulkanCommon.h"
 #include "SVulkanRHI.h"
 
