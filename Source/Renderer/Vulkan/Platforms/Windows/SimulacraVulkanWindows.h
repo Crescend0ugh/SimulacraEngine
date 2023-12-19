@@ -6,9 +6,9 @@
 #define SIMULACRAENGINE_SIMULACRAVULKANWINDOWS_H
 
 
-#include "../../Public/SimulacraVulkanPlatform.h"
+
 #define VK_USE_PLATFORM_WIN32_KHR
-#include <vulkan/vulkan.h>
+#include "../../Public/SimulacraVulkan.h"
 
 
 
@@ -16,7 +16,9 @@
 
 class SimulacraVulkanWindows : public SimulacraVulkanPlatform
 {
-    static void CreateSurface(VkSurfaceKHR* Surface);
+    static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);
+    static void GetPlatformExtensions();
+    static void GetPlatformLayers();
 };
 
 

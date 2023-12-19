@@ -95,34 +95,34 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Templates/SimulacraIsPointer.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SVulkanRHI.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SVulkanRHI.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanDevice.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanDevice.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanQueue.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanSurface.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Public/SimulacraVulkanPlatform.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Temp/SimulacraVulkanSwapchain.h">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Public/SimulacraVulkanRHI.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">

@@ -6,7 +6,7 @@
 #define SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H
 
 #include "SimulacraVulkanQueue.h"
-#include "SVulkanRHI.h"
+#include "SimulacraVulkanRHI.h"
 
 class SVulkanRHI;
 class SVulkanQueue;

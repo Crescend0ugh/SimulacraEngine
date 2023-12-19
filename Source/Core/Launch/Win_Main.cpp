@@ -10,7 +10,7 @@
 #include "../Sys/Precompiled.h"
 #include "../Platforms/Windows/SimEngineWindows.h"
 #include "../../Renderer/Renderer.h"
-#include "../../Renderer/Vulkan/Public/SVulkanRHI.h"
+#include "../../Renderer/Vulkan/Public/SimulacraVulkanRHI.h"
 #include <windows.h>
 #include <iostream>
 
