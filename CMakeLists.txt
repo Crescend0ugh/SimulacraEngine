@@ -12,7 +12,7 @@ add_executable(SimulacraEngine Source/Core/Launch/Win_Main.cpp
         Source/Renderer/Vulkan/Public/SimulacraVulkanRHI.h
         Source/Core/Containers/ArrayList.h Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp
         Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp
-        Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp Source/Renderer/Vulkan/Public/SimulacraVulkanPlatform.h Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.h)
+        Source/Renderer/Vulkan/Private/SimulacraVulkanWindow.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp Source/Renderer/Vulkan/Public/SimulacraVulkanPlatform.h Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.h)
 
 
 

@@ -57,9 +57,9 @@ build CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj: CXX_CO
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Launch
 
-build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SVulkanRHI.cpp.obj: CXX_COMPILER__SimulacraEngine_Release C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SVulkanRHI.cpp || cmake_object_order_depends_target_SimulacraEngine
+build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj: CXX_COMPILER__SimulacraEngine_Release C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_NDEBUG=1
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\Private\SVulkanRHI.cpp.obj.d
+  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\Private\SimulacraVulkanRHI.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
   INCLUDES = -isystem C:/VulkanSDK/1.3.243.0/Include
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
@@ -89,9 +89,9 @@ build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVul
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\Private
 
-build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj: CXX_COMPILER__SimulacraEngine_Release C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp || cmake_object_order_depends_target_SimulacraEngine
+build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanWindow.cpp.obj: CXX_COMPILER__SimulacraEngine_Release C$:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan/Private/SimulacraVulkanWindow.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_NDEBUG=1
-  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\Private\SimulacraVulkanSurface.cpp.obj.d
+  DEP_FILE = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Vulkan\Private\SimulacraVulkanWindow.cpp.obj.d
   FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
   INCLUDES = -isystem C:/VulkanSDK/1.3.243.0/Include
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
@@ -121,7 +121,7 @@ build CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/Si
 #############################################
 # Link the executable SimulacraEngine.exe
 
-build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SVulkanRHI.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj | C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib
+build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanWindow.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj | C$:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/VulkanSDK/1.3.243.0/Lib/vulkan-1.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir

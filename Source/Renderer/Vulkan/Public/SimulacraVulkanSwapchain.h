@@ -8,19 +8,25 @@
 
 class SVulkanSwapchain {
 
-
-    VkSurfaceFormatKHR ChooseSurfaceFormat();
-    VkPresentModeKHR ChoosePresentMode();
-    VkExtent2D ChooseExtent();
+public:
+    SVulkanSwapchain(SVulkanDevice* InDevice, void* InWinowHandle);
 
 
-    void TestCreateVulkanWindow();
+    VkSurfaceFormatKHR            ChooseSurfaceFormat();
+    VkPresentModeKHR              ChoosePresentMode();
+    VkExtent2D                    ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilities);
+    VkSurfaceTransformFlagBitsKHR ChoosePreTransform(VkSurfaceCapabilitiesKHR InCapabilities);
+    VkCompositeAlphaFlagBitsKHR   ChooseAlphaCompositingMode(VkSurfaceCapabilitiesKHR InCapabilities);
+    uint32                        ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount);
+
+
+
+
 private:
 
     VkSwapchainKHR Swapchain;
     SVulkanDevice* Device;
-    VkSurfaceKHR Surface;
-    void* WindowHandle;
+    void*          WindowHandle;
     
 
 };

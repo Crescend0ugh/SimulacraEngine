@@ -26,7 +26,7 @@ public:
 
     SIM_FORCE_INLINE bool operator==(const SVector2 v) const;
     SIM_FORCE_INLINE bool operator!=(const SVector2 v) const;
-    SIM_FORCE_INLINE bool Equals(const SVector2 v, const float epsilon = SIM_SMALL_NUMBER ) const;
+    SIM_FORCE_INLINE bool Equals(const SVector2 v, const float epsilon = 1e-5 ) const;
 
     SIM_FORCE_INLINE SVector2 operator+(SVector2 v) const;
     SIM_FORCE_INLINE SVector2 operator+=(SVector2 v);

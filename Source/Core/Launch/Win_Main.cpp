@@ -32,6 +32,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
     SVulkanRHI* RHI = new SVulkanRHI();
     RHI->Init();
 
+
+
     return 0;
 
 

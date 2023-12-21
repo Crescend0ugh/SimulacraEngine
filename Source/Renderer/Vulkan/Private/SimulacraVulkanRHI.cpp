@@ -5,6 +5,7 @@
 
 #include "../Public/SimulacraVulkan.h"
 #include "../Public/SimulacraVulkanRHI.h"
+#include "../Public/SimulacraVulkanSwapchain.h"
 #include <windows.h>
 
 

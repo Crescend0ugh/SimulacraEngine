@@ -1,9 +1,11 @@
 # ninja log v5
-1353	1463	7238445523410262	SimulacraEngine.exe	4d586be00d1d8aa9
-5	412	7238447212036117	build.ninja	6e38e3799279e907
-9	1251	7238445521332561	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	b536e9caede529b0
-25	501	7238445513822958	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj	d19a0294d707cbfb
-20	524	7238445514059529	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	6e017173cbd8b806
-4	541	7238445514221560	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	2a20026924f4c74d
-16	615	7238445514907717	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	755231e5c31242bf
-12	1353	7238445522349766	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SVulkanRHI.cpp.obj	765ad2fd7e2023a9
+5	412	7249007577786299	build.ninja	6e38e3799279e907
+1148	1274	7248999533055116	SimulacraEngine.exe	64f86606e6b0653
+4	486	7248423517134912	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	6e017173cbd8b806
+15	525	7248122257588348	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj	d19a0294d707cbfb
+3	1303	7248122265357631	CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj	b536e9caede529b0
+7	768	7248993680756126	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	2a20026924f4c74d
+4	521	7248458828477217	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	755231e5c31242bf
+7	52	7246619369201147	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj	a52a8bf44797cc9a
+22	1319	7248122265523904	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj	cc50b27f20536ac2
+4	1148	7248999531819785	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj	3ebb499b856b2a8
