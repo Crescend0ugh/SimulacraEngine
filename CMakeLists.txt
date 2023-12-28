@@ -4,17 +4,10 @@ project(SimulacraEngine)
 set(CMAKE_CXX_STANDARD 17)
 
 
+
 find_package(Vulkan REQUIRED)
 
-add_executable(SimulacraEngine Source/Core/Launch/Win_Main.cpp
-        Source/Core/Templates/SimulacraIsPointer.h
-        Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp
-        Source/Renderer/Vulkan/Public/SimulacraVulkanRHI.h
-        Source/Core/Containers/ArrayList.h Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp
-        Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp
-        Source/Renderer/Vulkan/Private/SimulacraVulkanWindow.cpp Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp Source/Renderer/Vulkan/Public/SimulacraVulkanPlatform.h Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.h)
-
-
+add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/Core/SimulacraConsoleManager.cpp)
 
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)

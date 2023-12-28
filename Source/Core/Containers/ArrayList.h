@@ -5,19 +5,16 @@
 #ifndef SIMULACRAENGINE_ARRAYLIST_H
 #define SIMULACRAENGINE_ARRAYLIST_H
 
-template <typename T>
+template <typename InElementType>
 class SArrayList
 {
-    SArrayList(int NumberOfElements);
-
-    SArrayList();
-
-    T* GetData();
+    typedef InElementType ElementType;
 
 
     
 private:
-    T* P;
+
+    ElementType* ArrayData;
 
 };
 

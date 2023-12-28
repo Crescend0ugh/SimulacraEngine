@@ -24,12 +24,6 @@
 
 
 //Mem
-#include "../Memory/Public/Alignment.h"
-#include "../Memory/Public/MemoryBlock.h"
-#include "../Memory/Public/LinearAllocator.h"
-#include "../Memory/Public/StackAllocator.h"
-#include "../Memory/Public/DoubleEndedStackAllocator.h"
-#include "../Memory/Public/PoolAllocator.h"
 
 //Math
 #include "../Math/Vector.h"
@@ -40,3 +34,4 @@
 
 //Templates
 #include "../Templates/SimulacraIsPointer.h"
+

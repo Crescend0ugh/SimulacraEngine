@@ -5,11 +5,12 @@
 #ifndef SIMULACRAENGINE_SIMULACRAISPOINTER_H
 #define SIMULACRAENGINE_SIMULACRAISPOINTER_H
 
-template <typename T>
-struct TIsPointer { static const bool Value = false; };
 
 template <typename T>
-struct TIsPointer<T*> { static const bool Value = true; };
+struct TIsPointer { static constexpr bool Value = false; };
+
+template <typename T>
+struct TIsPointer<T*> { static constexpr bool Value = true; };
 
 
 

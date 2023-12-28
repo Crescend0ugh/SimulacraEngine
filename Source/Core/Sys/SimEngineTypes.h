@@ -5,7 +5,7 @@
 #ifndef SIMULACRAENGINE_SIMENGINETYPES_H
 #define SIMULACRAENGINE_SIMENGINETYPES_H
 
-
+#include "SimEngineAsserts.h"
 
 
 typedef unsigned char byte;
@@ -22,16 +22,15 @@ typedef signed int int32;
 typedef unsigned int uint32;
 typedef long long int64;
 typedef unsigned long long uint64;
-//
-//
-//assert_sizeof(int8, 1);
-//assert_sizeof(uint8,1);
-//assert_sizeof(int16, 2);
-//assert_sizeof(uint16,2);
-//assert_sizeof(int32, 4);
-//assert_sizeof(uint32,4);
-//assert_sizeof(int64, 8);
-//assert_sizeof(uint64,8);
+
+assert_sizeof(int8, 1);
+assert_sizeof(uint8,1);
+assert_sizeof(int16, 2);
+assert_sizeof(uint16,2);
+assert_sizeof(int32, 4);
+assert_sizeof(uint32,4);
+assert_sizeof(int64, 8);
+assert_sizeof(uint64,8);
 
 
 
