@@ -14,7 +14,7 @@
 
 
 
-class VulkanWindowsPlatform : public VulkanPlatform
+class VulkanWindowsPlatform : public IVulkanPlatform
 {
 public:
     static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);

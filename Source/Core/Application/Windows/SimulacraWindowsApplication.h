@@ -7,7 +7,9 @@
 
 #include "../../Sys/Precompiled.h"
 #include "../SimulacraApplication.h"
+#include "SimulacraWindowsWindow.h"
 #include <windows.h>
+#include <vector>
 
 class SWindowsApplication
 {
@@ -15,11 +17,14 @@ class SWindowsApplication
 
 public:
 
+    static SWindowsWindow* CreateWindowsWindow();
 
     SWindowsApplication(HINSTANCE InHInstance);
     ~SWindowsApplication();
 
     bool RegisterWindowClass(HINSTANCE InHInstance);
+    void PumpMessages();
+
 
 
 
@@ -28,7 +33,12 @@ public:
 
 private:
 
+    //The handle to the module
     HINSTANCE HInstance;
+
+    //Windows owned by the application
+    std::vector<SWindowsWindow> Windows;
+
 
 
 

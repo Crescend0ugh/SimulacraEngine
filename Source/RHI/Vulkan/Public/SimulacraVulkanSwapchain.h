@@ -27,8 +27,8 @@ public:
 private:
 
     VkSwapchainKHR Swapchain;
-    VulkanDevice* Device;
-    VkSurfaceKHR Surface;
+    VulkanDevice*  Device;
+    VkSurfaceKHR   Surface;
     void*          WindowHandle;
     
 

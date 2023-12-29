@@ -6,8 +6,9 @@
 #define SIMULACRAENGINE_SIMULACRAVULKANPLATFORM_H
 
 
-class VulkanPlatform
+class IVulkanPlatform
 {
+public:
 
 };
 

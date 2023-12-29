@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.25"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SimulacraEngine::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SimulacraEngine-Debug-0ebbd99c8182053ba259.json",
+					"jsonFile" : "target-SimulacraEngine-Release-eddd772b8f3ea5cdb945.json",
 					"name" : "SimulacraEngine",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug",
+		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release",
 		"source" : "C:/Users/avsom/CLionProjects/SimulacraEngine"
 	},
 	"version" : 
