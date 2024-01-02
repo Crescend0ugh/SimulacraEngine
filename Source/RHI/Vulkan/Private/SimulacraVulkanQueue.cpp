@@ -4,7 +4,7 @@
 
 #include "../Public/SimulacraVulkanQueue.h"
 
-VulkanQueue::VulkanQueue(VulkanDevice *InDevice, uint32 InFamilyIndex)
+VulkanQueue::VulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
 {
 
     Queue = VK_NULL_HANDLE;

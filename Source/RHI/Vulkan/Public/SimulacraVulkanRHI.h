@@ -2,20 +2,23 @@
 // Created by avsom on 10/23/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANRHI_H
-#define SIMULACRAENGINE_SIMULACRAVULKANRHI_H
+#pragma once
+
 
 
 #include "SimulacraVulkanDevice.h"
+#include "SimulacraVulkanSwapchain.h"
 
-class VulkanDevice;
+class SVulkanSwapchain;
 
-class VulkanRHI {
+class SVulkanDevice;
+
+class SVulkanRHI {
 
     void Shutdown();
 
 public:
-    VulkanRHI();
+    SVulkanRHI();
 
     void Init();
 
@@ -26,18 +29,18 @@ protected:
     std::vector<char*> InstanceLayers;
 
 
-
-
     void CreateInstance();
     void InitInstance();
     void CreateDevice();
+    void CreateSwapchain();
     void InitDevice();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
 
 private:
-    VulkanDevice* Device;
+    SVulkanDevice* Device;
+    SVulkanSwapchain* Swapchain;
 };
 
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANRHI_H
+

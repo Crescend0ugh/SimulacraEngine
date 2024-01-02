@@ -9,7 +9,7 @@
 #include <windows.h>
 
 
-void VulkanRHI::CreateInstance() {
+void SVulkanRHI::CreateInstance() {
 
     VkApplicationInfo ApplicationInfo;
     SetZeroVulkanStruct(ApplicationInfo, VK_STRUCTURE_TYPE_APPLICATION_INFO);
@@ -43,7 +43,7 @@ void VulkanRHI::CreateInstance() {
 
 }
 
-VkPhysicalDevice VulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
+VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 {
     VkResult Result;
     uint32 PhysicalDeviceCount = 0;
@@ -63,7 +63,7 @@ VkPhysicalDevice VulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 
 }
 
-void VulkanRHI::CreateDevice()
+void SVulkanRHI::CreateDevice()
 {
 
     VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance);
@@ -71,32 +71,42 @@ void VulkanRHI::CreateDevice()
     VkDeviceCreateInfo DeviceInfo;
     SetZeroVulkanStruct(DeviceInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
-    Device = new VulkanDevice(this, PhysicalDevice);
+    Device = new SVulkanDevice(this, PhysicalDevice);
 
 
     
 
 }
 
-VulkanRHI::VulkanRHI(): Instance(VK_NULL_HANDLE),
-                        Device(nullptr)
+void SVulkanRHI::CreateSwapchain()
+{
+    Swapchain = new SVulkanSwapchain(Instance, Device, nullptr);
+}
+
+
+
+SVulkanRHI::SVulkanRHI(): Instance(VK_NULL_HANDLE),
+                          Device(nullptr)
 {
     CreateInstance();
     CreateDevice();
+    CreateSwapchain();
 }
 
-void VulkanRHI::Init() {
+void SVulkanRHI::Init() {
     InitInstance();
 
 
 
 }
 
-void VulkanRHI::Shutdown() {
+void SVulkanRHI::Shutdown() {
 
 }
 
-void VulkanRHI::InitInstance() {
+void SVulkanRHI::InitInstance() {
     Device->CreatePhysicalDevice();
     Device->CreateDevice();
+
 }
+

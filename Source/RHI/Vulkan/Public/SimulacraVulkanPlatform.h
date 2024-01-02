@@ -2,15 +2,17 @@
 // Created by avsom on 12/9/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANPLATFORM_H
-#define SIMULACRAENGINE_SIMULACRAVULKANPLATFORM_H
+#pragma once
 
 
-class IVulkanPlatform
+
+class SVulkanPlatformBase
 {
+
 public:
+
+
 
 };
 
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANPLATFORM_H

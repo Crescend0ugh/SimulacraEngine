@@ -2,8 +2,8 @@
 // Created by avsom on 12/9/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANWINDOWSPLATFORM_H
-#define SIMULACRAENGINE_SIMULACRAVULKANWINDOWSPLATFORM_H
+#pragma once
+
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-class VulkanWindowsPlatform : public IVulkanPlatform
+class VulkanWindowsPlatform : public SVulkanPlatformBase
 {
 public:
     static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);
@@ -24,4 +24,4 @@ public:
 
 typedef VulkanWindowsPlatform SVulkanPlatform;
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANWINDOWSPLATFORM_H
+

@@ -2,23 +2,23 @@
 // Created by avsom on 10/23/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H
-#define SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H
+#pragma once
+
 
 #include <vector>
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanRHI.h"
 
-class VulkanRHI;
+class SVulkanRHI;
 class VulkanQueue;
 
-class VulkanDevice {
+class SVulkanDevice {
 
 public:
 
-    VulkanDevice(VulkanRHI* RHI, VkPhysicalDevice InPhysicalDevice);
+    SVulkanDevice(SVulkanRHI* RHI, VkPhysicalDevice InPhysicalDevice);
 
-    ~VulkanDevice();
+    ~SVulkanDevice();
 
     void CreatePhysicalDevice();
 
@@ -60,7 +60,7 @@ public:
 
 private:
 
-    VulkanRHI* RHI;
+    SVulkanRHI* RHI;
 
     VkDevice         Device;
     VkPhysicalDevice PhysicalDevice;
@@ -77,4 +77,3 @@ private:
 };
 
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANDEVICE_H

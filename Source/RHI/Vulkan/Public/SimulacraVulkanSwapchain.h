@@ -2,17 +2,23 @@
 // Created by avsom on 10/23/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANSWAPCHAIN_H
-#define SIMULACRAENGINE_SIMULACRAVULKANSWAPCHAIN_H
+#pragma once
+
 #include "SimulacraVulkan.h"
 #include "../Platforms/Windows/SimulacraVulkanWindowsPlatform.h"
 
+class SVulkanDevice;
 
-class VulkanSwapchain {
+class SVulkanSwapchain {
 
 public:
-    VulkanSwapchain(VkInstance InInstance, VulkanDevice *InDevice, void *InWindowHandle);
+    SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
 
+    void AcquireImage();
+    void Present();
+
+
+protected:
 
     VkSurfaceFormatKHR            ChooseSurfaceFormat();
     VkPresentModeKHR              ChoosePresentMode();
@@ -24,15 +30,19 @@ public:
 
 
 
+
 private:
 
+
+
     VkSwapchainKHR Swapchain;
-    VulkanDevice*  Device;
+    SVulkanDevice* Device;
     VkSurfaceKHR   Surface;
     void*          WindowHandle;
-    
+
+    std::vector<VkImage>      Images;
+    std::vector<VkImageView>  ImageViews;
 
 };
 
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANSWAPCHAIN_H

@@ -6,7 +6,7 @@
 
 void VulkanWindowsPlatform::CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance)
 {
-    VkWin32SurfaceCreateInfoKHR Win32SurfaceCreateInfo{};
+    VkWin32SurfaceCreateInfoKHR Win32SurfaceCreateInfo;
     SetZeroVulkanStruct(Win32SurfaceCreateInfo, VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR);
 
     Win32SurfaceCreateInfo.hinstance = GetModuleHandle(nullptr);
@@ -24,6 +24,11 @@ void VulkanWindowsPlatform::CreateSurface(void *InWindowHandle, VkSurfaceKHR *Ou
     }
 
 
+
+}
+
+void VulkanWindowsPlatform::GetPlatformExtensions()
+{
 
 }
 

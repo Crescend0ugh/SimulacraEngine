@@ -7,8 +7,8 @@
 #define SIMULACRAENGINE_MATRIX_H
 
 
-#include "../Sys/SimEngineTypes.h"
-#include "../Sys/SimEngineDefines.h"
+#include "../Sys/SimulacraEngineTypes.h"
+#include "../Sys/SimulacraEngineDefines.h"
 
 struct SMatrix2
 {

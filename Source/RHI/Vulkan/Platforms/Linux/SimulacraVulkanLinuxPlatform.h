@@ -2,8 +2,7 @@
 // Created by avsom on 12/29/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAVULKANLINUXPLATFORM_H
-#define SIMULACRAENGINE_SIMULACRAVULKANLINUXPLATFORM_H
+#pragma once
 
 #include "../../Public/SimulacraVulkan.h"
 
@@ -18,7 +17,8 @@ class SVulkanLinuxPlatform : IVulkanPlatform
 
 };
 
+#ifdef USE_LINUX
 typedef SVulkanLinuxPlatform SVulkanPlatform;
+#endif
 
 
-#endif //SIMULACRAENGINE_SIMULACRAVULKANLINUXPLATFORM_H

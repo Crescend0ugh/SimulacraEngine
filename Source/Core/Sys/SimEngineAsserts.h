@@ -2,10 +2,8 @@
 // Created by avsom on 9/26/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMENGINEASSERTS_H
-#define SIMULACRAENGINE_SIMENGINEASSERTS_H
+#pragma once
 
-#endif //SIMULACRAENGINE_SIMENGINEASSERTS_H
 
 
 bool AssertFailed( const char *file, int line, const char *expression );
@@ -23,7 +21,6 @@ if(!(expression)) \
 std::cerr << "Assertion failed at " << __FILE__ << ":" << __LINE__ << ", " << "Condition Failed: " << #expression<< "\n"; \
 abort(); \
 }
-
 
 
 

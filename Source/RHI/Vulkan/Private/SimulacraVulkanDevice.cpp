@@ -8,51 +8,21 @@
 #include "../Public/SimulacraVulkanDevice.h"
 
 
-class VulkanDevice;
-
-std::string QueueFlagsToString(VkQueueFlags QueueFlags) {
+class SVulkanDevice;
 
 
-    std::string ReturnString;
-
-    if (QueueFlags & VK_QUEUE_GRAPHICS_BIT)
-        ReturnString += "| Graphics | ";
-    if (QueueFlags & VK_QUEUE_COMPUTE_BIT)
-        ReturnString += "| Compute | ";
-    if (QueueFlags & VK_QUEUE_TRANSFER_BIT)
-        ReturnString += "| Transfer | ";
-    if (QueueFlags & VK_QUEUE_SPARSE_BINDING_BIT)
-        ReturnString += "| Sparse Binding | ";
-    if (QueueFlags & VK_QUEUE_PROTECTED_BIT)
-        ReturnString += "| Protected | ";
-    if (QueueFlags & VK_QUEUE_VIDEO_DECODE_BIT_KHR)
-        ReturnString += "| Video Decode | ";
-
-    return ReturnString;
-}
-
-std::string QueueFamilyToString(VkQueueFamilyProperties QueueFamily) {
-    std::string ReturnString;
 
 
-    ReturnString += "Queue Count: " + std::to_string(QueueFamily.queueCount) + "\n";
-    ReturnString += "Queue Flags: " + QueueFlagsToString(QueueFamily.queueFlags) + "\n";
-    ReturnString += "___________________________________________________________________\n";
-
-    return ReturnString;
-}
-
-
-VulkanDevice::VulkanDevice(VulkanRHI *InRHI, VkPhysicalDevice InPhysicalDevice) :
+SVulkanDevice::SVulkanDevice(SVulkanRHI *InRHI, VkPhysicalDevice InPhysicalDevice) :
         PhysicalDevice(InPhysicalDevice),
         RHI(InRHI) {
 }
 
-VulkanDevice::~VulkanDevice() {
+SVulkanDevice::~SVulkanDevice() {
 
 }
 
-void VulkanDevice::CreatePhysicalDevice() {
+void SVulkanDevice::CreatePhysicalDevice() {
     uint32 QueueFamilyCount = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, nullptr);
 
@@ -67,7 +37,7 @@ void VulkanDevice::CreatePhysicalDevice() {
 
 }
 
-void VulkanDevice::CreateDevice() {
+void SVulkanDevice::CreateDevice() {
     VkDeviceCreateInfo DeviceCreateInfo;
     SetZeroVulkanStruct(DeviceCreateInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 

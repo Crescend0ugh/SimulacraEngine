@@ -2,8 +2,8 @@
 // Created by avsom on 10/23/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAISPOINTER_H
-#define SIMULACRAENGINE_SIMULACRAISPOINTER_H
+#pragma once
+
 
 
 template <typename T>
@@ -14,4 +14,3 @@ struct TIsPointer<T*> { static constexpr bool Value = true; };
 
 
 
-#endif //SIMULACRAENGINE_SIMULACRAISPOINTER_H

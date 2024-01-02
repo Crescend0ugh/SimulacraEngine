@@ -4,8 +4,7 @@
 
 #include "../../Core/Sys/SimEngineAsserts.h"
 
-#ifndef SIMULACRAENGINE_ARRAY_H
-#define SIMULACRAENGINE_ARRAY_H
+#pragma once
 
 template<class T_, int NumElements > class SimArray {
 public:
@@ -23,4 +22,3 @@ public:
 private:
     T_				ptr[NumElements];
 };
-#endif //SIMULACRAENGINE_ARRAY_H

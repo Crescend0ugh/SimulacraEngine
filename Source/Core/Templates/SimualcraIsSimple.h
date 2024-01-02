@@ -2,12 +2,12 @@
 // Created by avsom on 12/26/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMUALCRAISSIMPLE_H
-#define SIMULACRAENGINE_SIMUALCRAISSIMPLE_H
+#pragma once
+
 
 
 #include <string>
-#include "../Sys/SimEngineTypes.h"
+#include "../Sys/SimulacraEngineTypes.h"
 
 /**
  * @brief Checks if the type is a simple data type (integer, float, string, bool)
@@ -52,4 +52,3 @@ struct TIsSimple<bool> { static constexpr bool Value = true; };
 template<>
 struct TIsSimple<std::string> { static constexpr bool Value = true; };
 
-#endif //SIMULACRAENGINE_SIMUALCRAISSIMPLE_H
