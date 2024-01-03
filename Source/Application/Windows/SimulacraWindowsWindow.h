@@ -38,7 +38,9 @@ public:
 
     void  Maximize() override;
 
-    void* GetHandle() override { return HWnd; };
+    void* GetHandle() override { return &HWnd; };
+
+    HWND GetHWnd () { return HWnd; }
 
 
 private:

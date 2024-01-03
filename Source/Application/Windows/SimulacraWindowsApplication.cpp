@@ -10,6 +10,7 @@
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+
     switch (uMsg)
     {
         case WM_DESTROY:
@@ -18,10 +19,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
         case WM_PAINT:
         {
-
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hwnd, &ps);
 
+            // All painting occurs here, between BeginPaint and EndPaint.
 
             FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
 
@@ -41,8 +42,7 @@ SWindowsApplication::SWindowsApplication()
     RegisterWindowClass();
     CreateWindowsWindow();
 
-    Windows[0]->Show();
-    PumpMessages();
+    ShowWindow(Windows[0]->GetHWnd(), SW_SHOW);
 
 }
 
@@ -87,17 +87,12 @@ void SWindowsApplication::PumpMessages()
 {
     MSG msg;
 
-    while(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+    while(PeekMessage(&msg, Windows[0]->GetHWnd(), 0, 0, PM_REMOVE))
     {
         // Translate the message and dispatch it to WindowProc()
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-}
-
-void SWindowsApplication::ProcessMessage()
-{
-
 }
 
 SWindowBase* SWindowsApplication::GetWindowsWindow(int32 Index)

@@ -20,7 +20,6 @@ public:
 
 protected:
 
-    virtual void ProcessMessage() = 0;
 
 
 private:

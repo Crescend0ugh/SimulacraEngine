@@ -26,6 +26,7 @@ void SWindowsWindow::Move(int32 InX, int32 InY)
 
 void SWindowsWindow::Show()
 {
+
     ::ShowWindow(HWnd, SW_SHOW);
 
 }
@@ -59,20 +60,20 @@ void SWindowsWindow::Init(HINSTANCE InHInstance)
     HMENU       HMenu;
     HINSTANCE   HInstance = InHInstance;
 
-    HWnd = CreateWindowEx(
-            WindowExStyle,
-            ClassName,
-            WindowName,
-            WindowStyle,
-            XPos,
-            YPos,
-            Width,
-            Height,
-            HWndParent,
-            HMenu,
-            HInstance,
-            nullptr
-            );
+    HWND hwnd = CreateWindowEx(
+            0,                              // Optional window styles.
+            SWindowsWindow::WindowClassName.data(),                     // Window class
+            L"Learn to Program Windows",    // Window text
+            WS_OVERLAPPEDWINDOW,            // Window style
+
+            // Size and position
+            CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+
+            NULL,       // Parent window
+            NULL,       // Menu
+            HInstance,  // Instance handle
+            NULL        // Additional application data
+    );
 
 
 }

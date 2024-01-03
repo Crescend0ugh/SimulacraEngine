@@ -32,7 +32,6 @@ public:
 
 protected:
 
-    void ProcessMessage();
     void PumpMessages() override;
 
 

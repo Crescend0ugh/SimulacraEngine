@@ -33,8 +33,8 @@
 //Mem
 
 //Math
-#include "../Math/Vector.h"
-#include "../Math/Matrix.h"
+#include "../Math/SimulacraVector.h"
+#include "../Math/SimulacraMatrix.h"
 
 //Containers
 #include "../Containers/Array.h"
