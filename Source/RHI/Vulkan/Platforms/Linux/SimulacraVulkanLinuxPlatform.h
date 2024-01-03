@@ -7,7 +7,7 @@
 #include "../../Public/SimulacraVulkan.h"
 
 
-class SVulkanLinuxPlatform : IVulkanPlatform
+class SVulkanLinuxPlatform : SVulkanPlatformBase
 {
     static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);
     static void GetPlatformExtensions();

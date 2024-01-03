@@ -2,14 +2,13 @@
 // Created by avsom on 12/23/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAWINDOWSWINDOW_H
-#define SIMULACRAENGINE_SIMULACRAWINDOWSWINDOW_H
+#pragma once
 
 #include <memory>
 #include <windows.h>
 #include "../SimulacraWindow.h"
 
-class SWindowsWindow : IWindow
+class SWindowsWindow : public SWindowBase
 {
 
 public:
@@ -29,17 +28,17 @@ public:
 
     void Init(HINSTANCE InHInstance);
 
-    void Move(int32 InX, int32 InY) override;
+    void  Move(int32 InX, int32 InY) override;
 
-    void Show() override;
+    void  Show() override;
 
-    void Hide() override;
+    void  Hide() override;
 
-    void Minimize() override;
+    void  Minimize() override;
 
-    void Maximize() override;
+    void  Maximize() override;
 
-    HWND GetHWnd() const { return HWnd; }
+    void* GetHandle() override { return HWnd; };
 
 
 private:
@@ -57,4 +56,3 @@ private:
 
 typedef SWindowsWindow SWindow;
 
-#endif //SIMULACRAENGINE_SIMULACRAWINDOWSWINDOW_H

@@ -4,11 +4,18 @@
 
 #pragma once
 
-
-
 #include "../Core/Sys/Precompiled.h"
 
-class IWindow
+struct SWindowDetails
+{
+    int32 SizeX;
+    int32 SizeY;
+    int32 PositionX;
+    int32 PositionY;
+
+};
+
+class SWindowBase
 {
 
 public:
@@ -24,6 +31,8 @@ public:
     virtual void Minimize() = 0;
 
     virtual void Maximize() = 0;
+
+    virtual void* GetHandle() = 0;
 
 
 private:

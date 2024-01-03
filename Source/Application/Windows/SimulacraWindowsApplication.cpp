@@ -7,6 +7,7 @@
 #include "SimulacraWindowsWindow.h"
 #include "SimulacraWindowsApplication.h"
 
+
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)
@@ -97,4 +98,9 @@ void SWindowsApplication::PumpMessages()
 void SWindowsApplication::ProcessMessage()
 {
 
+}
+
+SWindowBase* SWindowsApplication::GetWindowsWindow(int32 Index)
+{
+    return Windows[Index];
 }

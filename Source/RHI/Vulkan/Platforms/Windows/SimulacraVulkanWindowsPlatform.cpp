@@ -20,7 +20,7 @@ void VulkanWindowsPlatform::CreateSurface(void *InWindowHandle, VkSurfaceKHR *Ou
 
     else
     {
-        std::cout << "Created Win32 Surface\n";
+        std::cout << "====== Created Win32 Surface ====== \n";
     }
 
 

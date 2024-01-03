@@ -73,7 +73,8 @@ void SVulkanRHI::CreateDevice()
 
     Device = new SVulkanDevice(this, PhysicalDevice);
 
-
+    Device->CreatePhysicalDevice();
+    Device->CreateDevice();
     
 
 }
@@ -81,6 +82,7 @@ void SVulkanRHI::CreateDevice()
 void SVulkanRHI::CreateSwapchain()
 {
     Swapchain = new SVulkanSwapchain(Instance, Device, nullptr);
+
 }
 
 
@@ -88,14 +90,14 @@ void SVulkanRHI::CreateSwapchain()
 SVulkanRHI::SVulkanRHI(): Instance(VK_NULL_HANDLE),
                           Device(nullptr)
 {
-    CreateInstance();
-    CreateDevice();
-    CreateSwapchain();
+
 }
 
 void SVulkanRHI::Init() {
-    InitInstance();
-
+    CreateInstance();
+    CreateDevice();
+    CreateSwapchain();
+    CreateViewport();
 
 
 }
@@ -104,9 +106,9 @@ void SVulkanRHI::Shutdown() {
 
 }
 
-void SVulkanRHI::InitInstance() {
-    Device->CreatePhysicalDevice();
-    Device->CreateDevice();
+
+void SVulkanRHI::CreateViewport()
+{
 
 }
 

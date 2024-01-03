@@ -27,6 +27,7 @@ public:
 
     bool RegisterWindowClass();
 
+    SWindowBase* GetWindowsWindow(int32 Index);
 
 
 protected:

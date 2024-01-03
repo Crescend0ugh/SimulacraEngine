@@ -128,197 +128,341 @@ SimulacraEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/build
 .PHONY : SimulacraEngine/fast
 
-Source/Core/Launch/Win_Main.obj: Source/Core/Launch/Win_Main.cpp.obj
-.PHONY : Source/Core/Launch/Win_Main.obj
+Source/Application/SimulacraApplication.obj: Source/Application/SimulacraApplication.cpp.obj
+.PHONY : Source/Application/SimulacraApplication.obj
 
 # target to build an object file
-Source/Core/Launch/Win_Main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.obj
-.PHONY : Source/Core/Launch/Win_Main.cpp.obj
+Source/Application/SimulacraApplication.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraApplication.cpp.obj
+.PHONY : Source/Application/SimulacraApplication.cpp.obj
 
-Source/Core/Launch/Win_Main.i: Source/Core/Launch/Win_Main.cpp.i
-.PHONY : Source/Core/Launch/Win_Main.i
+Source/Application/SimulacraApplication.i: Source/Application/SimulacraApplication.cpp.i
+.PHONY : Source/Application/SimulacraApplication.i
 
 # target to preprocess a source file
-Source/Core/Launch/Win_Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.i
-.PHONY : Source/Core/Launch/Win_Main.cpp.i
+Source/Application/SimulacraApplication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraApplication.cpp.i
+.PHONY : Source/Application/SimulacraApplication.cpp.i
 
-Source/Core/Launch/Win_Main.s: Source/Core/Launch/Win_Main.cpp.s
-.PHONY : Source/Core/Launch/Win_Main.s
+Source/Application/SimulacraApplication.s: Source/Application/SimulacraApplication.cpp.s
+.PHONY : Source/Application/SimulacraApplication.s
 
 # target to generate assembly for a file
-Source/Core/Launch/Win_Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launch/Win_Main.cpp.s
-.PHONY : Source/Core/Launch/Win_Main.cpp.s
+Source/Application/SimulacraApplication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraApplication.cpp.s
+.PHONY : Source/Application/SimulacraApplication.cpp.s
 
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.obj: Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.obj
+Source/Application/SimulacraWindow.obj: Source/Application/SimulacraWindow.cpp.obj
+.PHONY : Source/Application/SimulacraWindow.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.obj
+Source/Application/SimulacraWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.obj
+.PHONY : Source/Application/SimulacraWindow.cpp.obj
 
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.i: Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.i
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.i
+Source/Application/SimulacraWindow.i: Source/Application/SimulacraWindow.cpp.i
+.PHONY : Source/Application/SimulacraWindow.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.i
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.i
+Source/Application/SimulacraWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.i
+.PHONY : Source/Application/SimulacraWindow.cpp.i
 
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.s: Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.s
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.s
+Source/Application/SimulacraWindow.s: Source/Application/SimulacraWindow.cpp.s
+.PHONY : Source/Application/SimulacraWindow.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.s
-.PHONY : Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.cpp.s
+Source/Application/SimulacraWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.s
+.PHONY : Source/Application/SimulacraWindow.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.obj
+Source/Application/Windows/SimulacraWindowsApplication.obj: Source/Application/Windows/SimulacraWindowsApplication.cpp.obj
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
+Source/Application/Windows/SimulacraWindowsApplication.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.obj
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.i: Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.i
+Source/Application/Windows/SimulacraWindowsApplication.i: Source/Application/Windows/SimulacraWindowsApplication.cpp.i
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.i
+Source/Application/Windows/SimulacraWindowsApplication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.i
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.s: Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.s
+Source/Application/Windows/SimulacraWindowsApplication.s: Source/Application/Windows/SimulacraWindowsApplication.cpp.s
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.cpp.s
+Source/Application/Windows/SimulacraWindowsApplication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.s
+.PHONY : Source/Application/Windows/SimulacraWindowsApplication.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.obj
+Source/Application/Windows/SimulacraWindowsWindow.obj: Source/Application/Windows/SimulacraWindowsWindow.cpp.obj
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
+Source/Application/Windows/SimulacraWindowsWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.obj
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.i: Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.i
+Source/Application/Windows/SimulacraWindowsWindow.i: Source/Application/Windows/SimulacraWindowsWindow.cpp.i
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
+Source/Application/Windows/SimulacraWindowsWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.i
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.s: Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.s
+Source/Application/Windows/SimulacraWindowsWindow.s: Source/Application/Windows/SimulacraWindowsWindow.cpp.s
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
+Source/Application/Windows/SimulacraWindowsWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.s
+.PHONY : Source/Application/Windows/SimulacraWindowsWindow.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.obj
+Source/Core/Launcher/Win_Main.obj: Source/Core/Launcher/Win_Main.cpp.obj
+.PHONY : Source/Core/Launcher/Win_Main.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
+Source/Core/Launcher/Win_Main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj
+.PHONY : Source/Core/Launcher/Win_Main.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.i: Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.i
+Source/Core/Launcher/Win_Main.i: Source/Core/Launcher/Win_Main.cpp.i
+.PHONY : Source/Core/Launcher/Win_Main.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.i
+Source/Core/Launcher/Win_Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.i
+.PHONY : Source/Core/Launcher/Win_Main.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.s: Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.s
+Source/Core/Launcher/Win_Main.s: Source/Core/Launcher/Win_Main.cpp.s
+.PHONY : Source/Core/Launcher/Win_Main.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.cpp.s
+Source/Core/Launcher/Win_Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.s
+.PHONY : Source/Core/Launcher/Win_Main.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.obj
+Source/Core/Sys/Precompiled.obj: Source/Core/Sys/Precompiled.cpp.obj
+.PHONY : Source/Core/Sys/Precompiled.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
+Source/Core/Sys/Precompiled.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.obj
+.PHONY : Source/Core/Sys/Precompiled.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.i: Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.i
+Source/Core/Sys/Precompiled.i: Source/Core/Sys/Precompiled.cpp.i
+.PHONY : Source/Core/Sys/Precompiled.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.i
+Source/Core/Sys/Precompiled.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.i
+.PHONY : Source/Core/Sys/Precompiled.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.s: Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.s
+Source/Core/Sys/Precompiled.s: Source/Core/Sys/Precompiled.cpp.s
+.PHONY : Source/Core/Sys/Precompiled.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.cpp.s
+Source/Core/Sys/Precompiled.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Core/Sys/Precompiled.cpp.s
+.PHONY : Source/Core/Sys/Precompiled.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.obj
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.obj: Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.obj
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.i: Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.i
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.i: Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.i
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.i
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.i
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.s: Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.s
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.s: Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.s
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.cpp.s
+Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.s
+.PHONY : Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.s
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.obj: Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.obj
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj: Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj
 
 # target to build an object file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.i: Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.i
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.i: Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.i
 
 # target to preprocess a source file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.i
 
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.s: Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.s
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.s: Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.s
 
 # target to generate assembly for a file
-Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
-.PHONY : Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
+Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj: Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.i: Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.s: Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.obj: Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.i: Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.s: Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.obj: Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.i: Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.s: Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.obj: Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.i: Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.s: Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.obj: Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.i: Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.s: Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.obj: Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.i: Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.s: Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s
 
 # Help Target
 help:
@@ -329,30 +473,48 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... SimulacraEngine
-	@echo ... Source/Core/Launch/Win_Main.obj
-	@echo ... Source/Core/Launch/Win_Main.i
-	@echo ... Source/Core/Launch/Win_Main.s
-	@echo ... Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.obj
-	@echo ... Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.i
-	@echo ... Source/Renderer/Vulkan/Platforms/Windows/SimulacraVulkanWindows.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanDevice.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanPlatform.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanQueue.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanRHI.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSurface.s
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.obj
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.i
-	@echo ... Source/Renderer/Vulkan/Private/SimulacraVulkanSwapchain.s
+	@echo ... Source/Application/SimulacraApplication.obj
+	@echo ... Source/Application/SimulacraApplication.i
+	@echo ... Source/Application/SimulacraApplication.s
+	@echo ... Source/Application/SimulacraWindow.obj
+	@echo ... Source/Application/SimulacraWindow.i
+	@echo ... Source/Application/SimulacraWindow.s
+	@echo ... Source/Application/Windows/SimulacraWindowsApplication.obj
+	@echo ... Source/Application/Windows/SimulacraWindowsApplication.i
+	@echo ... Source/Application/Windows/SimulacraWindowsApplication.s
+	@echo ... Source/Application/Windows/SimulacraWindowsWindow.obj
+	@echo ... Source/Application/Windows/SimulacraWindowsWindow.i
+	@echo ... Source/Application/Windows/SimulacraWindowsWindow.s
+	@echo ... Source/Core/Launcher/Win_Main.obj
+	@echo ... Source/Core/Launcher/Win_Main.i
+	@echo ... Source/Core/Launcher/Win_Main.s
+	@echo ... Source/Core/Sys/Precompiled.obj
+	@echo ... Source/Core/Sys/Precompiled.i
+	@echo ... Source/Core/Sys/Precompiled.s
+	@echo ... Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.obj
+	@echo ... Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.i
+	@echo ... Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanQueue.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanQueue.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanQueue.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanRHI.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanRHI.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanRHI.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanResource.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanResource.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanResource.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.s
 .PHONY : help
 
 

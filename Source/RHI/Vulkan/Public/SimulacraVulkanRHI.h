@@ -30,10 +30,9 @@ protected:
 
 
     void CreateInstance();
-    void InitInstance();
     void CreateDevice();
     void CreateSwapchain();
-    void InitDevice();
+    void CreateViewport();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
 
