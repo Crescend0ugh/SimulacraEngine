@@ -6,6 +6,7 @@
 
 #include "../../Application/SimulacraApplication.h"
 #include "../../Application/Windows/SimulacraWindowsApplication.h"
+#include "../../RHI/Vulkan/Public/SimulacraVulkanRHI.h"
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
@@ -13,9 +14,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     SApplicationBase* Application = SApplication::CreateApplication();
 
-    while(true)
-        Application->PumpMessages();
 
 
+
+    delete Application;
     return 0;
 }

@@ -23,11 +23,10 @@ public:
 
     SWindowsApplication();
 
-    ~SWindowsApplication();
+    ~SWindowsApplication() override;
 
     bool RegisterWindowClass();
 
-    SWindowBase* GetWindowsWindow(int32 Index);
 
 
 protected:

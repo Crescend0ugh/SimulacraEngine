@@ -16,6 +16,8 @@ class SApplicationBase
 
 public:
 
+    virtual ~SApplicationBase() = default;
+
     virtual void PumpMessages() = 0;
 
 protected:

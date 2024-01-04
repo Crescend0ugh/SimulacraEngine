@@ -1,4 +1,16 @@
 # ninja log v5
-1	146	7259733278771502	build.ninja	6e38e3799279e907
-1741	1834	7258395019127699	SimulacraEngine.exe	1f3fe5564c828ad1
-9	1741	7258395018238440	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	dfb835a42027d65c
+1	146	7260716730694618	build.ninja	6e38e3799279e907
+1966	2127	7260715897343391	SimulacraEngine.exe	b66a5624158e6a8d
+4	1965	7260715895743802	CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.obj	6c3850820ef160f1
+5	1679	7260651148453579	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	dfb835a42027d65c
+15	566	7260648283813383	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.obj	106a69014b0ff139
+15	589	7260651137542430	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraApplication.cpp.obj	d4a4da35d5160abe
+22	1472	7260648292877714	CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.obj	c46078d912271e23
+20	883	7260635788857945	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj	989fc3897163d45c
+13	1995	7260635799989009	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanRHI.cpp.obj	7403693a8828912b
+10	59	7260631110631564	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj	45859e1be4f91025
+30	845	7260635788482490	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj	54eacbda158c38a5
+27	884	7260635788847778	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	2fc2e8e848c62dba
+16	1020	7260635790231800	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	56d7db3d7cb96a02
+33	1073	7260635790742487	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	c4c4eebcd794b263
+36	1961	7260635799642271	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	bc8a27aaa89ed07d

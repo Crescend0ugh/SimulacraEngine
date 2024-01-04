@@ -7,14 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(Vulkan REQUIRED)
 
-add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/Application/Windows/SimulacraWindowsWindow.cpp Source/Application/Windows/SimulacraWindowsApplication.cpp Source/Application/SimulacraWindow.cpp Source/Application/SimulacraApplication.cpp Source/Core/Math/SimulacraMathUtils.h
-        Source/Core/Math/SimulacraMathSSE.h
-        Source/Core/Platform/Windows/SimulacraWindowsPlatform.h
-        Source/Core/Platform/Mac/SimulacraMacPlatform.h
-        Source/Core/Platform/Mac/SimulacraMacPlatform.h
-        Source/Core/Platform/Mac/SimulacraMacPlatform.h
-        Source/sse_mathfun.h)
-
+add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/Application/Windows/SimulacraWindowsApplication.cpp Source/Application/Windows/SimulacraWindowsWindow.cpp Source/Application/SimulacraApplication.cpp Source/Application/SimulacraWindow.cpp Source/Core/Math/SimulacraMathSSE.h Source/Core/Math/SimulacraMathUtils.h Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp)
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
 endif ()

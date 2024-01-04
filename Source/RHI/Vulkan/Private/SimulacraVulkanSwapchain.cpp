@@ -5,6 +5,7 @@
 #include <functional>
 #include <algorithm>
 #include "../Public/SimulacraVulkanSwapchain.h"
+#include "../../../Core/Math/SimulacraMathUtils.h"
 
 
 SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle)
@@ -150,7 +151,7 @@ VkCompositeAlphaFlagBitsKHR SVulkanSwapchain::ChooseAlphaCompositingMode(VkSurfa
 
 uint32 SVulkanSwapchain::ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount)
 {
-    return std::clamp(DesiredMinImageCount, InCapabilities.minImageCount, InCapabilities.maxImageCount);
+    return SMath::Clamp(DesiredMinImageCount, InCapabilities.minImageCount, InCapabilities.maxImageCount);
 }
 
 

@@ -48,33 +48,33 @@ void SWindowsWindow::Maximize()
 
 void SWindowsWindow::Init(HINSTANCE InHInstance)
 {
-    uint32      WindowExStyle;
+    uint32      WindowExStyle = 0;
     const char* ClassName = WindowClassName.data();
-    const char* WindowName;
+    const char* WindowName = "SimulacraWindow";
     uint32      WindowStyle = WS_OVERLAPPEDWINDOW;
     int         XPos = CW_USEDEFAULT;
     int         YPos = CW_USEDEFAULT;
     int         Width = CW_USEDEFAULT;
     int         Height = CW_USEDEFAULT;
-    HWND        HWndParent;
-    HMENU       HMenu;
+    HWND        HWndParent = nullptr;
+    HMENU       HMenu = nullptr;
     HINSTANCE   HInstance = InHInstance;
 
     HWND hwnd = CreateWindowEx(
-            0,                              // Optional window styles.
-            SWindowsWindow::WindowClassName.data(),                     // Window class
-            L"Learn to Program Windows",    // Window text
-            WS_OVERLAPPEDWINDOW,            // Window style
-
-            // Size and position
-            CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
-
-            NULL,       // Parent window
-            NULL,       // Menu
-            HInstance,  // Instance handle
-            NULL        // Additional application data
+            WindowExStyle,
+            ClassName,
+            WindowName,
+            WindowStyle,
+            XPos,
+            YPos,
+            Width,
+            Height,
+            HWndParent,
+            HMenu,
+            HInstance,
+            nullptr
     );
 
-
+    HWnd = hwnd;
 }
 

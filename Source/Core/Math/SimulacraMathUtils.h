@@ -64,16 +64,16 @@ namespace SMath
 
     /**
      *
-     * @tparam T
-     * @param  X   The value to clamp
-     * @param  Min The min value possible
-     * @param  Max The max value possible
-     * @return
+     * @tparam T        A real number type
+     * @param  X        Value being clamped
+     * @param  MinValue The min value possible
+     * @param  MaxValue The max value possible
+     * @return          X clamped between the Min and Max values
      */
     template<typename T>
-    static SIM_FORCE_INLINE T Clamp(T X, T Min, T Max)
+    static constexpr SIM_FORCE_INLINE T Clamp(const T X, const T MinValue, const T MaxValue)
     {
-        return Max(Min(X, Max), Min);
+        return Max(Min(X, MaxValue), MinValue);
     }
 
     /**
@@ -91,9 +91,9 @@ namespace SMath
 
     /**
      *
-     * @tparam T
-     * @param X
-     * @return
+     * @tparam T A real number type
+     * @param  X Value being cubed
+     * @return   X to the 3rd power
      */
     template< class T >
     static constexpr SIM_FORCE_INLINE T Cube(const T X )

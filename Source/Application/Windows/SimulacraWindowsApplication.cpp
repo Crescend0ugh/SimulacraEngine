@@ -73,10 +73,6 @@ SWindowsWindow *SWindowsApplication::CreateWindowsWindow()
     return Window;
 }
 
-SWindowsApplication::~SWindowsApplication()
-{
-
-}
 
 SApplicationBase *SWindowsApplication::CreateApplication()
 {
@@ -95,7 +91,9 @@ void SWindowsApplication::PumpMessages()
     }
 }
 
-SWindowBase* SWindowsApplication::GetWindowsWindow(int32 Index)
+SWindowsApplication::~SWindowsApplication()
 {
-    return Windows[Index];
+
 }
+
+
