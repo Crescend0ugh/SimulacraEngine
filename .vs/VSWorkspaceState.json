@@ -6,8 +6,11 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Source",
+    "\\Source\\Core",
+    "\\Source\\Core\\Launcher"
   ],
-  "SelectedNode": "\\CMakeLists.txt",
+  "SelectedNode": "\\Source\\Core\\Launcher\\Win_Main.cpp",
   "PreviewInSolutionExplorer": false
 }

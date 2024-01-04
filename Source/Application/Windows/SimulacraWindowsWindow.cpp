@@ -14,37 +14,7 @@ SWindowsWindow::SWindowsWindow()
     HWnd = nullptr;
 }
 
-SWindowsWindow::~SWindowsWindow()
-= default;
-
-
-
-void SWindowsWindow::Move(int32 InX, int32 InY)
-{
-    ::MoveWindow(HWnd, InX, InY, CW_USEDEFAULT, CW_USEDEFAULT, FALSE);
-}
-
-void SWindowsWindow::Show()
-{
-
-    ::ShowWindow(HWnd, SW_SHOW);
-
-}
-
-void SWindowsWindow::Hide()
-{
-    ::ShowWindow(HWnd, SW_HIDE);
-}
-
-void SWindowsWindow::Minimize()
-{
-    ::ShowWindow(HWnd, SW_MINIMIZE);
-}
-
-void SWindowsWindow::Maximize()
-{
-    ::ShowWindow(HWnd, SW_MAXIMIZE);
-}
+SWindowsWindow::~SWindowsWindow() = default;
 
 void SWindowsWindow::Init(HINSTANCE InHInstance)
 {
@@ -76,5 +46,38 @@ void SWindowsWindow::Init(HINSTANCE InHInstance)
     );
 
     HWnd = hwnd;
+
+}
+
+void SWindowsWindow::Move(int32 InX, int32 InY)
+{
+    ::MoveWindow(HWnd, InX, InY, CW_USEDEFAULT, CW_USEDEFAULT, FALSE);
+}
+
+void SWindowsWindow::Show()
+{
+
+    ::ShowWindow(HWnd, SW_SHOW);
+
+}
+
+void SWindowsWindow::Hide()
+{
+    ::ShowWindow(HWnd, SW_HIDE);
+}
+
+void SWindowsWindow::Minimize()
+{
+    ::ShowWindow(HWnd, SW_MINIMIZE);
+}
+
+void SWindowsWindow::Maximize()
+{
+    ::ShowWindow(HWnd, SW_MAXIMIZE);
+}
+
+void *SWindowsWindow::GetHandle()
+{
+    return HWnd;
 }
 

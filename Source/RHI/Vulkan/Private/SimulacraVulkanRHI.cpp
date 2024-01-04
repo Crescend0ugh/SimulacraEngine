@@ -5,7 +5,9 @@
 
 #include "../Public/SimulacraVulkan.h"
 #include "../Public/SimulacraVulkanRHI.h"
+#include "../Platforms/Windows/SimulacraVulkanWindowsPlatform.h"
 #include "../Public/SimulacraVulkanSwapchain.h"
+#include "../../../../Source/Core/SimulacraGameViewport.h"
 #include <windows.h>
 
 
@@ -19,13 +21,13 @@ void SVulkanRHI::CreateInstance() {
     ApplicationInfo.engineVersion = VK_MAKE_VERSION(0,1,0);
     ApplicationInfo.apiVersion = VK_API_VERSION_1_3;
 
-
+    SVulkanPlatform::GetPlatformExtensions(InstanceExtensions);
 
     VkInstanceCreateInfo InstanceCreateInfo;
     SetZeroVulkanStruct(InstanceCreateInfo, VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO);
-    InstanceCreateInfo.enabledExtensionCount = 0;
+    InstanceCreateInfo.enabledExtensionCount = InstanceExtensions.size();
     InstanceCreateInfo.enabledLayerCount = 0;
-    InstanceCreateInfo.ppEnabledExtensionNames = nullptr;
+    InstanceCreateInfo.ppEnabledExtensionNames = InstanceExtensions.data();
     InstanceCreateInfo.ppEnabledLayerNames = nullptr;
 
     VkResult Result =  vkCreateInstance(&InstanceCreateInfo, nullptr, &Instance);
@@ -68,9 +70,6 @@ void SVulkanRHI::CreateDevice()
 
     VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance);
 
-    VkDeviceCreateInfo DeviceInfo;
-    SetZeroVulkanStruct(DeviceInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
-
     Device = new SVulkanDevice(this, PhysicalDevice);
 
     Device->CreatePhysicalDevice();
@@ -81,7 +80,7 @@ void SVulkanRHI::CreateDevice()
 
 void SVulkanRHI::CreateSwapchain()
 {
-    Swapchain = new SVulkanSwapchain(Instance, Device, nullptr);
+    Swapchain = new SVulkanSwapchain(Instance, Device, SGameViewport::GetWindow()->GetHandle());
 
 }
 

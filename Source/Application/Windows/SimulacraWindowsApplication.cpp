@@ -6,6 +6,7 @@
 
 #include "SimulacraWindowsWindow.h"
 #include "SimulacraWindowsApplication.h"
+#include "../../Core/SimulacraGameViewport.h"
 
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -42,7 +43,10 @@ SWindowsApplication::SWindowsApplication()
     RegisterWindowClass();
     CreateWindowsWindow();
 
-    ShowWindow(Windows[0]->GetHWnd(), SW_SHOW);
+    SGameViewport::SetWindow(Windows[0]);
+
+
+    ShowWindow((HWND)Windows[0]->GetHandle(), SW_SHOW);
 
 }
 
@@ -76,6 +80,7 @@ SWindowsWindow *SWindowsApplication::CreateWindowsWindow()
 
 SApplicationBase *SWindowsApplication::CreateApplication()
 {
+
     return new SWindowsApplication();
 }
 
@@ -83,7 +88,7 @@ void SWindowsApplication::PumpMessages()
 {
     MSG msg;
 
-    while(PeekMessage(&msg, Windows[0]->GetHWnd(), 0, 0, PM_REMOVE))
+    while(PeekMessage(&msg, (HWND)Windows[0]->GetHandle(), 0, 0, PM_REMOVE))
     {
         // Translate the message and dispatch it to WindowProc()
         TranslateMessage(&msg);

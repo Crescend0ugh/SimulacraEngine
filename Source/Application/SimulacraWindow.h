@@ -21,6 +21,11 @@ class SWindowBase
 public:
 
 
+    virtual ~SWindowBase() = default;
+
+    virtual void* GetHandle() = 0;
+
+protected:
 
     virtual void Move(int32 InX, int32 InY) = 0;
 
@@ -31,8 +36,6 @@ public:
     virtual void Minimize() = 0;
 
     virtual void Maximize() = 0;
-
-    virtual void* GetHandle() = 0;
 
 
 private:

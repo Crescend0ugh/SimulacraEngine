@@ -19,7 +19,7 @@ SVulkanDevice::SVulkanDevice(SVulkanRHI *InRHI, VkPhysicalDevice InPhysicalDevic
 }
 
 SVulkanDevice::~SVulkanDevice() {
-
+        vkDestroyDevice(Device, nullptr);
 }
 
 void SVulkanDevice::CreatePhysicalDevice() {
@@ -41,7 +41,7 @@ void SVulkanDevice::CreateDevice() {
     VkDeviceCreateInfo DeviceCreateInfo;
     SetZeroVulkanStruct(DeviceCreateInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
-    std::vector<VkDeviceQueueCreateInfo> QueueFamilyInfos;
+        std::vector<VkDeviceQueueCreateInfo> QueueFamilyInfos;
     int32 GraphicsQueueFamilyIndex = -1;
     int32 ComputeQueueFamilyIndex = -1;
     int32 TransferQueueFamilyIndex = -1;
@@ -98,6 +98,8 @@ void SVulkanDevice::CreateDevice() {
 
     }
 
+    DeviceCreateInfo.pQueueCreateInfos = QueueFamilyInfos.data();
+    DeviceCreateInfo.queueCreateInfoCount = 1;
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
     if (Result != VK_SUCCESS) {
         std::cout << "Couldn't create Vulkan Device\n";

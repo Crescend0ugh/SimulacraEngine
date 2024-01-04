@@ -9,7 +9,9 @@
 #include <windows.h>
 #include <vector>
 
-
+/**
+ * A Windows application
+ */
 class SWindowsApplication : public SApplicationBase
 {
 
@@ -19,7 +21,6 @@ public:
 
 public:
 
-    SWindowsWindow *CreateWindowsWindow();
 
     SWindowsApplication();
 
@@ -27,6 +28,9 @@ public:
 
     bool RegisterWindowClass();
 
+    SWindowsWindow *CreateWindowsWindow();
+
+    SWindowBase* GetWindow(int Index) override { return Windows[Index];}
 
 
 protected:

@@ -27,8 +27,9 @@ void VulkanWindowsPlatform::CreateSurface(void *InWindowHandle, VkSurfaceKHR *Ou
 
 }
 
-void VulkanWindowsPlatform::GetPlatformExtensions()
+void VulkanWindowsPlatform::GetPlatformExtensions(std::vector<const char*>& OutExtensions)
 {
-
+    OutExtensions.push_back(VK_KHR_SURFACE_EXTENSION_NAME);
+    OutExtensions.push_back(VK_KHR_WIN32_SURFACE_EXTENSION_NAME);
 }
 

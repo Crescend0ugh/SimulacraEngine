@@ -14,11 +14,11 @@
 
 
 
-class VulkanWindowsPlatform : public SVulkanPlatformBase
+class VulkanWindowsPlatform
 {
 public:
     static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);
-    static void GetPlatformExtensions();
+    static void GetPlatformExtensions(std::vector<const char*>& OutExtensions);
     static void GetPlatformLayers();
 };
 

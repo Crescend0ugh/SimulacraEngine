@@ -14,10 +14,11 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     Swapchain = nullptr;
     Device = InDevice;
     Surface = nullptr;
-    WindowHandle = nullptr;
+    WindowHandle = InWindowHandle;
 
 
     SVulkanPlatform::CreateSurface(WindowHandle, &Surface, InInstance);
+
     VkSurfaceCapabilitiesKHR Capabilities;
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Device->GetPhysicalHandle(), Surface, &Capabilities);
 
@@ -70,7 +71,7 @@ VkSurfaceFormatKHR SVulkanSwapchain::ChooseSurfaceFormat()
 
 
     vkGetPhysicalDeviceSurfaceFormatsKHR(Device->GetPhysicalHandle(), Surface, &NumFormats, nullptr);
-    if (NumFormats > 0)
+    if (NumFormats == 0)
     {
         std::cout << "Couldn't find surface formats";
     }

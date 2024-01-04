@@ -25,8 +25,8 @@ public:
 protected:
 
     VkInstance         Instance;
-    std::vector<char*> InstanceExtensions;
-    std::vector<char*> InstanceLayers;
+    std::vector<const char *> InstanceExtensions;
+    std::vector<const char*> InstanceLayers;
 
 
     void CreateInstance();
