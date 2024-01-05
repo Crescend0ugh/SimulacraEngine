@@ -88,7 +88,7 @@ void SVulkanRHI::CreateSwapchain()
 
 void SVulkanRHI::CreateViewport()
 {
-
+    Viewport = new SVulkanViewport(Device, Swapchain);
 }
 
 
@@ -104,10 +104,17 @@ void SVulkanRHI::Init() {
     CreateDevice();
     CreateSwapchain();
     CreateViewport();
+    CreatePipeline();
+    
 
 }
 
 void SVulkanRHI::Shutdown() {
+
+}
+
+void SVulkanRHI::CreatePipeline()
+{
 
 }
 

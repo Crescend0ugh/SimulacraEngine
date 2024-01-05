@@ -13,16 +13,27 @@ class SVulkanViewport
 
 public:
 
+    SVulkanViewport(SVulkanDevice* InDevice, SVulkanSwapchain* InSwapchain);
+    ~SVulkanViewport();
+
+protected:
+
+
+    void GetImagesFromSwapchain();
+    void CreateImageViews();
+
+
+
 
 private:
 
     SVulkanDevice    *Device;
     SVulkanSwapchain *Swapchain;
-    void             *WindowHandle;
-    VkSurfaceKHR     SurfaceKHR;
 
+    uint32                   BufferCount = 3;
     std::vector<VkImage>     Images;
     std::vector<VkImageView> ImageViews;
+    VkFormat                 ImageFormat;
 
 
 };

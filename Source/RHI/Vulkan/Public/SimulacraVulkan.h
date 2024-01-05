@@ -18,9 +18,11 @@
 #include "../Platforms/Windows/SimulacraVulkanWindowsPlatform.h"
 #include "../Platforms/Linux/SimulacraVulkanLinuxPlatform.h"
 
+// Vulkan classes
 #include "SimulacraVulkanRHI.h"
 #include "SimulacraVulkanDevice.h"
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanSwapchain.h"
 #include "SimulacraVulkanViewport.h"
+#include "SimulacraVulkanPipeline.h"
 

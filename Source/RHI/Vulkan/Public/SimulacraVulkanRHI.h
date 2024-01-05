@@ -26,15 +26,16 @@ public:
 
 protected:
 
-    VkInstance         Instance;
+    VkInstance                Instance;
     std::vector<const char *> InstanceExtensions;
-    std::vector<const char*> InstanceLayers;
+    std::vector<const char*>  InstanceLayers;
 
 
     void CreateInstance();
     void CreateDevice();
     void CreateSwapchain();
     void CreateViewport();
+    void CreatePipeline();
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
 

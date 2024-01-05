@@ -320,6 +320,30 @@ Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s
 .PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.s
 
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.obj: Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.i: Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.s: Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.s
+
 Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj: Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj
 .PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj
 
@@ -464,6 +488,30 @@ Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s
 .PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.s
 
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.obj: Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.obj
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.obj
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.obj
+
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.i: Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.i
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.i
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.i
+
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.s: Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.s
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.s
+.PHONY : Source/RHI/Vulkan/Public/SimulacraVulkanShader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -497,6 +545,9 @@ help:
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.i
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.s
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.obj
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.i
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.s
@@ -515,6 +566,9 @@ help:
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.obj
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.i
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanViewport.s
+	@echo ... Source/RHI/Vulkan/Public/SimulacraVulkanShader.obj
+	@echo ... Source/RHI/Vulkan/Public/SimulacraVulkanShader.i
+	@echo ... Source/RHI/Vulkan/Public/SimulacraVulkanShader.s
 .PHONY : help
 
 

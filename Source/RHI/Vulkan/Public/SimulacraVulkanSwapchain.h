@@ -8,6 +8,7 @@
 #include "../Platforms/Windows/SimulacraVulkanWindowsPlatform.h"
 
 class SVulkanDevice;
+class SVulkanViewport;
 
 class SVulkanSwapchain {
 
@@ -15,7 +16,12 @@ public:
 
     SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
     ~SVulkanSwapchain() = default;
+    const VkSwapchainKHR* GetHandle() { return &Swapchain; }
 
+
+
+
+    friend class SVulkanViewport;
 
 protected:
 
@@ -30,6 +36,8 @@ protected:
 
 
 
+
+
 private:
 
 
@@ -39,8 +47,7 @@ private:
     VkSurfaceKHR   Surface;
     void*          WindowHandle;
 
-    std::vector<VkImage>      Images;
-    std::vector<VkImageView>  ImageViews;
+
 
 };
 
