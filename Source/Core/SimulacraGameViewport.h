@@ -47,7 +47,7 @@ private:
     SGameViewport() = default;
 
     static SGameViewport *GameViewport;
-    static SWindowBase *Window;
+    static SWindowBase   *Window;
 
 
 

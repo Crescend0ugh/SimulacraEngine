@@ -11,18 +11,19 @@
 class SVulkanDevice;
 
 
-
-
 SVulkanDevice::SVulkanDevice(SVulkanRHI *InRHI, VkPhysicalDevice InPhysicalDevice) :
         PhysicalDevice(InPhysicalDevice),
-        RHI(InRHI) {
+        RHI(InRHI)
+{
 }
 
-SVulkanDevice::~SVulkanDevice() {
-        vkDestroyDevice(Device, nullptr);
+SVulkanDevice::~SVulkanDevice()
+{
+    vkDestroyDevice(Device, nullptr);
 }
 
-void SVulkanDevice::CreatePhysicalDevice() {
+void SVulkanDevice::CreatePhysicalDevice()
+{
     uint32 QueueFamilyCount = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, nullptr);
 
@@ -30,45 +31,48 @@ void SVulkanDevice::CreatePhysicalDevice() {
     QueueFamilyProperties.resize(QueueFamilyCount);
     vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, QueueFamilyProperties.data());
 
-//    for (const auto &i: QueueFamilyProperties)
-//    {
-//        std::cout << QueueFamilyToString(i) << "\n";
-//    }
-
 }
 
-void SVulkanDevice::CreateDevice() {
+void SVulkanDevice::CreateDevice()
+{
     VkDeviceCreateInfo DeviceCreateInfo;
     SetZeroVulkanStruct(DeviceCreateInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
-        std::vector<VkDeviceQueueCreateInfo> QueueFamilyInfos;
+    std::vector<VkDeviceQueueCreateInfo> QueueFamilyInfos;
     int32 GraphicsQueueFamilyIndex = -1;
     int32 ComputeQueueFamilyIndex = -1;
     int32 TransferQueueFamilyIndex = -1;
     uint32 NumPriorities = 0;
 
-    for (int CurrentFamilyIndex = 0; CurrentFamilyIndex < QueueFamilyProperties.size(); CurrentFamilyIndex++) {
+    for (int CurrentFamilyIndex = 0; CurrentFamilyIndex < QueueFamilyProperties.size(); CurrentFamilyIndex++)
+    {
         VkQueueFamilyProperties &CurrentFamilyProperties = QueueFamilyProperties[CurrentFamilyIndex];
 
 
         bool CanUseQueue = false;
-        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT) {
+        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT)
+        {
 
-            if (GraphicsQueueFamilyIndex == -1) {
+            if (GraphicsQueueFamilyIndex == -1)
+            {
                 GraphicsQueueFamilyIndex = CurrentFamilyIndex;
                 CanUseQueue = true;
             }
         }
 
-        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT) {
-            if (ComputeQueueFamilyIndex == -1) {
+        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT)
+        {
+            if (ComputeQueueFamilyIndex == -1)
+            {
                 ComputeQueueFamilyIndex = CurrentFamilyIndex;
                 CanUseQueue = true;
             }
         }
 
-        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT) {
-            if (TransferQueueFamilyIndex == -1) {
+        if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT)
+        {
+            if (TransferQueueFamilyIndex == -1)
+            {
                 TransferQueueFamilyIndex = CurrentFamilyIndex;
                 CanUseQueue = true;
             }
@@ -76,11 +80,16 @@ void SVulkanDevice::CreateDevice() {
 
 
         uint32 QueueIndex = QueueFamilyInfos.size();
+
         QueueFamilyInfos.push_back({});
+
         VkDeviceQueueCreateInfo &CurrentQueue = QueueFamilyInfos[QueueIndex];
+
         SetZeroVulkanStruct(CurrentQueue, VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO);
+
         CurrentQueue.queueFamilyIndex = CurrentFamilyIndex;
-        CurrentQueue.queueCount = CurrentFamilyProperties.queueCount;
+        CurrentQueue.queueCount       = CurrentFamilyProperties.queueCount;
+
         NumPriorities += CurrentFamilyProperties.queueCount;
 
     }
@@ -89,7 +98,8 @@ void SVulkanDevice::CreateDevice() {
     std::cout << "\n";
     std::vector<float> QueuePriorities(NumPriorities);
     float *CurrentPriority = QueuePriorities.data();
-    for (int32 Index = 0; Index < QueueFamilyInfos.size(); ++Index) {
+    for (int32 Index = 0; Index < QueueFamilyInfos.size(); ++Index)
+    {
         VkDeviceQueueCreateInfo &CurrentQueue = QueueFamilyInfos[Index];
         CurrentQueue.pQueuePriorities = CurrentPriority;
 
@@ -98,12 +108,17 @@ void SVulkanDevice::CreateDevice() {
 
     }
 
+    DeviceExtensions.push_back(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
+    DeviceCreateInfo.enabledExtensionCount = DeviceExtensions.size();
+    DeviceCreateInfo.ppEnabledExtensionNames = DeviceExtensions.data();
     DeviceCreateInfo.pQueueCreateInfos = QueueFamilyInfos.data();
     DeviceCreateInfo.queueCreateInfoCount = 1;
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
-    if (Result != VK_SUCCESS) {
+    if (Result != VK_SUCCESS)
+    {
         std::cout << "Couldn't create Vulkan Device\n";
-    } else {
+    } else
+    {
         std::cout << "Created Vulkan Device\n";
     }
 
@@ -111,14 +126,16 @@ void SVulkanDevice::CreateDevice() {
     GraphicsQueue = new VulkanQueue(this, GraphicsQueueFamilyIndex);
     std::cout << "Created Graphics Queue\n";
 
-    if (ComputeQueueFamilyIndex != -1) {
+    if (ComputeQueueFamilyIndex != -1)
+    {
         ComputeQueue = new VulkanQueue(this, ComputeQueueFamilyIndex);
         std::cout << "Created Compute Queue\n";
 
     }
 
 
-    if (TransferQueueFamilyIndex != -1) {
+    if (TransferQueueFamilyIndex != -1)
+    {
         TransferQueue = new VulkanQueue(this, TransferQueueFamilyIndex);
         std::cout << "Created Transfer Queue\n";
 

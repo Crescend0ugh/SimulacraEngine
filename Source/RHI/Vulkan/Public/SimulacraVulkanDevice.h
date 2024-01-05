@@ -5,26 +5,22 @@
 #pragma once
 
 
-#include <vector>
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanRHI.h"
 
 class SVulkanRHI;
 class VulkanQueue;
 
-class SVulkanDevice {
+class SVulkanDevice
+{
 
 public:
 
-    SVulkanDevice(SVulkanRHI* RHI, VkPhysicalDevice InPhysicalDevice);
-
+    SVulkanDevice(SVulkanRHI *RHI, VkPhysicalDevice InPhysicalDevice);
     ~SVulkanDevice();
 
     void CreatePhysicalDevice();
-
     void CreateDevice();
-
-
 
 
     const VkDevice GetHandle() const
@@ -60,18 +56,22 @@ public:
 
 private:
 
-    SVulkanRHI* RHI;
+    SVulkanRHI *RHI;
 
-    VkDevice         Device;
     VkPhysicalDevice PhysicalDevice;
+    VkDevice         Device;
 
+    std::vector<const char *> DeviceExtensions;
+    std::vector<const char *> DeviceLayers;
 
     std::vector<VkQueueFamilyProperties> QueueFamilyProperties;
-    VulkanQueue*                        GraphicsQueue;
-    VulkanQueue*                        PresentQueue;
-    VulkanQueue*                        ComputeQueue;
-    VulkanQueue*                        TransferQueue;
-    bool HasAsyncComputeQueue = false;
+
+    VulkanQueue *GraphicsQueue;
+    VulkanQueue *PresentQueue;
+    VulkanQueue *ComputeQueue;
+    VulkanQueue *TransferQueue;
+
+    bool HasAsyncComputeQueue  = false;
     bool PresentOnComputeQueue = false;
 
 };

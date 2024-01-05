@@ -7,10 +7,10 @@
 VulkanQueue::VulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
 {
 
-    Queue = VK_NULL_HANDLE;
+    Queue       = VK_NULL_HANDLE;
     FamilyIndex = InFamilyIndex;
-    QueueIndex = 0;
-    Device = InDevice;
+    QueueIndex  = 0;
+    Device      = InDevice;
     vkGetDeviceQueue(InDevice->GetHandle(), FamilyIndex, QueueIndex, &Queue);
 }
 

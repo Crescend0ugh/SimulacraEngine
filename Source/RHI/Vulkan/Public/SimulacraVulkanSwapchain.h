@@ -12,10 +12,9 @@ class SVulkanDevice;
 class SVulkanSwapchain {
 
 public:
-    SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
 
-    void AcquireImage();
-    void Present();
+    SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
+    ~SVulkanSwapchain() = default;
 
 
 protected:

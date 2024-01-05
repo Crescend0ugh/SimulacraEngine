@@ -65,6 +65,7 @@ VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 
 }
 
+//TODO move physical device creation to the SVulkanDevice class
 void SVulkanRHI::CreateDevice()
 {
 
@@ -85,6 +86,11 @@ void SVulkanRHI::CreateSwapchain()
 }
 
 
+void SVulkanRHI::CreateViewport()
+{
+
+}
+
 
 SVulkanRHI::SVulkanRHI(): Instance(VK_NULL_HANDLE),
                           Device(nullptr)
@@ -93,11 +99,11 @@ SVulkanRHI::SVulkanRHI(): Instance(VK_NULL_HANDLE),
 }
 
 void SVulkanRHI::Init() {
+
     CreateInstance();
     CreateDevice();
     CreateSwapchain();
     CreateViewport();
-
 
 }
 
@@ -105,9 +111,4 @@ void SVulkanRHI::Shutdown() {
 
 }
 
-
-void SVulkanRHI::CreateViewport()
-{
-
-}
 

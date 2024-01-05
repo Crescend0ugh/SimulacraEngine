@@ -1,0 +1,8 @@
+Launching Vulkan Application:
+- Layers overridden by "Validation" configuration.
+- Application: vkcube
+- Executable: C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\SimulacraEngine.exe
+- Working Directory: C:\VulkanSDK\1.3.243.0\Bin
+- Command-line Arguments: --suppress_popups
+- Log file: C:\Users\avsom\CLionProjects\SimulacraEngine\VulkanLayersOutput.txt
+Process terminated

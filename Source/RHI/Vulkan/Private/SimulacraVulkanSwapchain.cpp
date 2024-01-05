@@ -11,10 +11,10 @@
 SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle)
 {
 
-    Swapchain = nullptr;
-    Device = InDevice;
-    Surface = nullptr;
+    Device       = InDevice;
     WindowHandle = InWindowHandle;
+    Surface      = nullptr;
+    Swapchain    = nullptr;
 
 
     SVulkanPlatform::CreateSurface(WindowHandle, &Surface, InInstance);
@@ -23,12 +23,12 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Device->GetPhysicalHandle(), Surface, &Capabilities);
 
 
-    uint32 MinImageCount = ChooseMinImageCount(Capabilities, 3);
-    VkSurfaceFormatKHR SurfaceFormat = ChooseSurfaceFormat();
-    VkExtent2D ImageExtent = ChooseExtent(Capabilities);
-    VkPresentModeKHR PresentMode = ChoosePresentMode();
-    VkSurfaceTransformFlagBitsKHR PreTransform = ChoosePreTransform(Capabilities);
-    VkCompositeAlphaFlagBitsKHR CompositeAlpha = ChooseAlphaCompositingMode(Capabilities);
+    uint32                        MinImageCount  = ChooseMinImageCount(Capabilities, 3);
+    VkSurfaceFormatKHR            SurfaceFormat  = ChooseSurfaceFormat();
+    VkExtent2D                    ImageExtent    = ChooseExtent(Capabilities);
+    VkPresentModeKHR              PresentMode    = ChoosePresentMode();
+    VkSurfaceTransformFlagBitsKHR PreTransform   = ChoosePreTransform(Capabilities);
+    VkCompositeAlphaFlagBitsKHR   CompositeAlpha = ChooseAlphaCompositingMode(Capabilities);
 
 
     VkSwapchainCreateInfoKHR SwapchainCreateInfo;
@@ -39,8 +39,7 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     SwapchainCreateInfo.imageColorSpace = SurfaceFormat.colorSpace;
     SwapchainCreateInfo.imageExtent = ImageExtent;
     SwapchainCreateInfo.imageArrayLayers = 1;
-    SwapchainCreateInfo.imageUsage =
-            VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_TRANSFER_DST_BIT;
+    SwapchainCreateInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
     SwapchainCreateInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
     SwapchainCreateInfo.preTransform = PreTransform;
     SwapchainCreateInfo.compositeAlpha = CompositeAlpha;
@@ -58,12 +57,11 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
         std::cout << "Created swapchain\n";
     }
 
-    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain, &MinImageCount, nullptr);
-    Images.resize(MinImageCount);
-    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain, &MinImageCount, Images.data());
+
 
 
 }
+
 
 VkSurfaceFormatKHR SVulkanSwapchain::ChooseSurfaceFormat()
 {
@@ -120,7 +118,7 @@ VkExtent2D SVulkanSwapchain::ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilitie
     //TODO provide actual surface dimensions
 
 
-    Width = InCapabilities.currentExtent.width == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.width;
+    Width  = InCapabilities.currentExtent.width  == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.width;
     Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.height;
 
 

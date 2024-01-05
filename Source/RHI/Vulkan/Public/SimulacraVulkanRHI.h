@@ -6,8 +6,10 @@
 
 
 
-#include "SimulacraVulkanDevice.h"
-#include "SimulacraVulkanSwapchain.h"
+#include "SimulacraVulkan.h"
+
+class SVulkanViewport;
+
 
 class SVulkanSwapchain;
 
@@ -37,8 +39,10 @@ protected:
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
 
 private:
+
     SVulkanDevice* Device;
     SVulkanSwapchain* Swapchain;
+    SVulkanViewport* Viewport;
 };
 
 

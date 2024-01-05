@@ -8,18 +8,21 @@
 #include "SimulacraVulkan.h"
 #include "SimulacraVulkanSwapchain.h"
 
-class SVulkanViewport {
+class SVulkanViewport
+{
 
 public:
 
 
-
 private:
 
-    SVulkanDevice*    Device;
-    VkSurfaceKHR      SurfaceKHR;
-    SVulkanSwapchain* Swapchain;
-    void*             WindowHandle;
+    SVulkanDevice    *Device;
+    SVulkanSwapchain *Swapchain;
+    void             *WindowHandle;
+    VkSurfaceKHR     SurfaceKHR;
+
+    std::vector<VkImage>     Images;
+    std::vector<VkImageView> ImageViews;
 
 
 };

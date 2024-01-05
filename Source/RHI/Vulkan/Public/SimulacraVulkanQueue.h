@@ -8,7 +8,7 @@
 
 #include "SimulacraVulkan.h"
 
-struct SVulkanDevice;
+class SVulkanDevice;
 
 class VulkanQueue
 {

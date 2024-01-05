@@ -22,7 +22,7 @@ add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp
         Source/RHI/Vulkan/Private/SimulacraVulkanSwapchain.cpp
         Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp
         Source/Core/SimulacraGameViewport.cpp
-        Source/Core/SimulacraGameViewport.h)
+        Source/Core/SimulacraGameViewport.h Source/RHI/Vulkan/Public/SimulacraVulkanExtensions.h Source/RHI/Vulkan/Public/SimulacraVulkanLayers.h)
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
 endif ()

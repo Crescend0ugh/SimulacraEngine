@@ -6,17 +6,5 @@
 
 
 
-class SVulkanPlatformBase
-{
-
-public:
-
-    CreateSurface();
-    GetPlatformExtensions();
-    GetPlatformLayers();
-
-
-
-};
 
 
