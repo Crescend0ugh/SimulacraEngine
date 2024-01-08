@@ -6,14 +6,15 @@
 
 #include "../Public/SimulacraVulkanPipeline.h"
 
-SVulkanPipeline::SVulkanPipeline()
+SVulkanPipeline::SVulkanPipeline(SVulkanDevice* InDevice) : Device(InDevice), Pipeline(VK_NULL_HANDLE), FragShaderModule(VK_NULL_HANDLE), VertShaderModule(VK_NULL_HANDLE)
 {
-
+    CreateGraphicsPipeline();
 }
 
 SVulkanPipeline::~SVulkanPipeline()
 {
-
+    vkDestroyShaderModule(Device->GetHandle(), VertShaderModule, nullptr);
+    vkDestroyShaderModule(Device->GetHandle(), FragShaderModule, nullptr);
 }
 
 void SVulkanPipeline::CreateShaderModule(VkShaderModule& OutShaderModule, const std::string &Filename)
@@ -32,13 +33,44 @@ void SVulkanPipeline::CreateShaderModule(VkShaderModule& OutShaderModule, const 
     }
     else
     {
-        std::cout << "Created shader module\n"
+        std::cout << "Created shader module\n";
     }
 
 }
 
 void SVulkanPipeline::CreateGraphicsPipeline()
 {
+    CreateShaderModule(VertShaderModule, "../Shaders/vert.spv");
+    CreateShaderModule(FragShaderModule, "../Shaders/frag.spv");
+
+    VkPipelineShaderStageCreateInfo VertShaderStageCreateInfo;
+    SetZeroVulkanStruct(VertShaderStageCreateInfo, VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
+
+    VertShaderStageCreateInfo.stage  = VK_SHADER_STAGE_VERTEX_BIT;
+    VertShaderStageCreateInfo.module = VertShaderModule;
+    VertShaderStageCreateInfo.pName  = "main";
+
+
+    VkPipelineShaderStageCreateInfo FragShaderStageCreateInfo;
+    SetZeroVulkanStruct(FragShaderStageCreateInfo, VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO);
+
+    FragShaderStageCreateInfo.stage  = VK_SHADER_STAGE_FRAGMENT_BIT;
+    FragShaderStageCreateInfo.module = FragShaderModule;
+    FragShaderStageCreateInfo.pName  = "main";
+
+    VkPipelineShaderStageCreateInfo ShaderStages[] = {VertShaderStageCreateInfo, FragShaderStageCreateInfo};
+
+    std::vector<VkDynamicState> DynamicStates = {
+            VK_DYNAMIC_STATE_VIEWPORT,
+            VK_DYNAMIC_STATE_SCISSOR
+    };
+
+    VkPipelineDynamicStateCreateInfo DynamicState;
+    SetZeroVulkanStruct(DynamicState, VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO);
+    DynamicState.dynamicStateCount = DynamicStates.size();
+    DynamicState.pDynamicStates = DynamicStates.data();
+
+
 
 }
 
@@ -47,7 +79,7 @@ std::vector<char> SVulkanPipeline::ReadFile(const std::string &Filename)
     std::ifstream File(Filename, std::ios::ate | std::ios::binary);
 
     if (!File.is_open()) {
-        throw std::runtime_error("failed to open file!");
+        throw std::runtime_error("failed to open file: !" + Filename);
     }
 
     uint32 FileSize = (uint32) File.tellg();

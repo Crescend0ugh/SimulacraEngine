@@ -11,6 +11,8 @@
 class SVulkanViewport;
 class SVulkanSwapchain;
 class SVulkanDevice;
+class SVulkanPipeline;
+
 
 
 
@@ -46,6 +48,7 @@ private:
     SVulkanDevice* Device;
     SVulkanSwapchain* Swapchain;
     SVulkanViewport* Viewport;
+    SVulkanPipeline* Pipeline;
 };
 
 

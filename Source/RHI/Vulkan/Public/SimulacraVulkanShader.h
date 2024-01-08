@@ -8,12 +8,16 @@
 
 class SVulkanShader
 {
+
 public:
 
-protected:
+    SVulkanShader(const void* ShaderCode, uint32 ShaderCodeSize);
+    ~SVulkanShader();
+
 
 private:
 
+    VkShaderModule ShaderModule;
 
 
 };

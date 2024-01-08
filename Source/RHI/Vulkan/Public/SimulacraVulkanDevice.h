@@ -24,8 +24,18 @@ public:
     SVulkanDevice(SVulkanRHI *RHI, VkPhysicalDevice InPhysicalDevice);
     ~SVulkanDevice();
 
+    // Function for doing stuff before device creation like querying device features and extensions
+    void PreCreateDevice();
+
+    // Function for doing stuff after creation of device like freeing unused extensions
+    void PostCreateDevice();
+
+    // Creates the physical device
     void CreatePhysicalDevice();
+
+    // Creates the logical device
     void CreateLogicalDevice();
+
 
 
     const VkDevice GetHandle() const
