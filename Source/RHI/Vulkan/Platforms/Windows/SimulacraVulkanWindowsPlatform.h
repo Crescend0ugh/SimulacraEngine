@@ -8,20 +8,24 @@
 
 
 #define VK_USE_PLATFORM_WIN32_KHR
+
 #include "../../Public/SimulacraVulkan.h"
 
 
 
-
-
-class VulkanWindowsPlatform
+class SVulkanWindowsPlatform
 {
 public:
     static void CreateSurface(void *InWindowHandle, VkSurfaceKHR *OutSurface, VkInstance InInstance);
-    static void GetPlatformExtensions(std::vector<const char*>& OutExtensions);
-    static void GetPlatformLayers();
+
+    static void GetInstanceExtensions(SVulkanInstanceExtensions& OutExtensions);
+    static void GetDeviceExtensions  (SVulkanDeviceExtensions&   OutExtensions);
+
+    static void GetInstanceLayers(SVulkanInstanceLayers& OutLayers);
+    static void GetDeviceLayers  (SVulkanDeviceLayers&   OutLayers);
+
 };
 
-typedef VulkanWindowsPlatform SVulkanPlatform;
+typedef SVulkanWindowsPlatform SVulkanPlatform;
 
 

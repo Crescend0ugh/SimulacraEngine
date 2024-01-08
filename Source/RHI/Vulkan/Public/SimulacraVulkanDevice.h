@@ -5,11 +5,16 @@
 #pragma once
 
 
-#include "SimulacraVulkanQueue.h"
-#include "SimulacraVulkanRHI.h"
+#include "SimulacraVulkan.h"
 
 class SVulkanRHI;
-class VulkanQueue;
+class SVulkanQueue;
+
+
+struct SVulkanPhysicalDeviceFeatures
+{
+
+};
 
 class SVulkanDevice
 {
@@ -20,7 +25,7 @@ public:
     ~SVulkanDevice();
 
     void CreatePhysicalDevice();
-    void CreateDevice();
+    void CreateLogicalDevice();
 
 
     const VkDevice GetHandle() const
@@ -33,22 +38,22 @@ public:
         return PhysicalDevice;
     }
 
-    VulkanQueue *GetGraphicsQueue() const
+    SVulkanQueue *GetGraphicsQueue() const
     {
         return GraphicsQueue;
     }
 
-    VulkanQueue *GetPresentQueue() const
+    SVulkanQueue *GetPresentQueue() const
     {
         return PresentQueue;
     }
 
-    VulkanQueue *GetComputeQueue() const
+    SVulkanQueue *GetComputeQueue() const
     {
         return ComputeQueue;
     }
 
-    VulkanQueue *GetTransferQueue() const
+    SVulkanQueue *GetTransferQueue() const
     {
         return TransferQueue;
     }
@@ -56,20 +61,23 @@ public:
 
 private:
 
+    void QuerySupportedExtensions();
+    void QuerySupportedFeatures();
+
     SVulkanRHI *RHI;
 
     VkPhysicalDevice PhysicalDevice;
     VkDevice         Device;
 
-    std::vector<const char *> DeviceExtensions;
-    std::vector<const char *> DeviceLayers;
+    SVulkanDeviceExtensions DeviceExtensions;
+    SVulkanDeviceLayers     DeviceLayers;
 
     std::vector<VkQueueFamilyProperties> QueueFamilyProperties;
 
-    VulkanQueue *GraphicsQueue;
-    VulkanQueue *PresentQueue;
-    VulkanQueue *ComputeQueue;
-    VulkanQueue *TransferQueue;
+    SVulkanQueue *GraphicsQueue;
+    SVulkanQueue *PresentQueue;
+    SVulkanQueue *ComputeQueue;
+    SVulkanQueue *TransferQueue;
 
     bool HasAsyncComputeQueue  = false;
     bool PresentOnComputeQueue = false;

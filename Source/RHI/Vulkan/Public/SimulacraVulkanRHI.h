@@ -9,11 +9,11 @@
 #include "SimulacraVulkan.h"
 
 class SVulkanViewport;
-
-
 class SVulkanSwapchain;
-
 class SVulkanDevice;
+
+
+
 
 class SVulkanRHI {
 
@@ -26,9 +26,11 @@ public:
 
 protected:
 
+    void QuerySupportedExtensions();
+
     VkInstance                Instance;
-    std::vector<const char *> InstanceExtensions;
-    std::vector<const char*>  InstanceLayers;
+    SVulkanInstanceExtensions InstanceExtensions;
+    SVulkanInstanceLayers     InstanceLayers;
 
 
     void CreateInstance();

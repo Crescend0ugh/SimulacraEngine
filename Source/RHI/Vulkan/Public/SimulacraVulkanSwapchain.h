@@ -5,7 +5,6 @@
 #pragma once
 
 #include "SimulacraVulkan.h"
-#include "../Platforms/Windows/SimulacraVulkanWindowsPlatform.h"
 
 class SVulkanDevice;
 class SVulkanViewport;
@@ -16,7 +15,7 @@ public:
 
     SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
     ~SVulkanSwapchain() = default;
-    const VkSwapchainKHR* GetHandle() { return &Swapchain; }
+    VkSwapchainKHR GetHandle() { return Swapchain; }
 
 
 

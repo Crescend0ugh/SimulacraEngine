@@ -10,12 +10,12 @@
 
 class SVulkanDevice;
 
-class VulkanQueue
+class SVulkanQueue
 {
 
 public:
-    VulkanQueue(SVulkanDevice* InDevice, uint32 InFamilyIndex);
-    ~VulkanQueue();
+    SVulkanQueue(SVulkanDevice* InDevice, uint32 InFamilyIndex);
+    ~SVulkanQueue();
 
 
 

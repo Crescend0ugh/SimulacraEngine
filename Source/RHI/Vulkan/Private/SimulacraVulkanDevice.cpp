@@ -33,8 +33,9 @@ void SVulkanDevice::CreatePhysicalDevice()
 
 }
 
-void SVulkanDevice::CreateDevice()
+void SVulkanDevice::CreateLogicalDevice()
 {
+
     VkDeviceCreateInfo DeviceCreateInfo;
     SetZeroVulkanStruct(DeviceCreateInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
@@ -108,9 +109,17 @@ void SVulkanDevice::CreateDevice()
 
     }
 
-    DeviceExtensions.push_back(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
+    SVulkanDeviceExtension::GetRequiredExtensions(DeviceExtensions);
+
+    const char* EnabledExtensionNames[DeviceExtensions.size()];
+
+    for (int i = 0; i < DeviceExtensions.size(); ++i)
+    {
+        EnabledExtensionNames[i] = DeviceExtensions[i].GetExtensionName();
+    }
+
     DeviceCreateInfo.enabledExtensionCount = DeviceExtensions.size();
-    DeviceCreateInfo.ppEnabledExtensionNames = DeviceExtensions.data();
+    DeviceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
     DeviceCreateInfo.pQueueCreateInfos = QueueFamilyInfos.data();
     DeviceCreateInfo.queueCreateInfoCount = 1;
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
@@ -123,12 +132,12 @@ void SVulkanDevice::CreateDevice()
     }
 
 
-    GraphicsQueue = new VulkanQueue(this, GraphicsQueueFamilyIndex);
+    GraphicsQueue = new SVulkanQueue(this, GraphicsQueueFamilyIndex);
     std::cout << "Created Graphics Queue\n";
 
     if (ComputeQueueFamilyIndex != -1)
     {
-        ComputeQueue = new VulkanQueue(this, ComputeQueueFamilyIndex);
+        ComputeQueue = new SVulkanQueue(this, ComputeQueueFamilyIndex);
         std::cout << "Created Compute Queue\n";
 
     }
@@ -136,7 +145,7 @@ void SVulkanDevice::CreateDevice()
 
     if (TransferQueueFamilyIndex != -1)
     {
-        TransferQueue = new VulkanQueue(this, TransferQueueFamilyIndex);
+        TransferQueue = new SVulkanQueue(this, TransferQueueFamilyIndex);
         std::cout << "Created Transfer Queue\n";
 
     }

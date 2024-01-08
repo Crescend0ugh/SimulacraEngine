@@ -30,9 +30,9 @@ SVulkanViewport::~SVulkanViewport()
 
 void SVulkanViewport::GetImagesFromSwapchain()
 {
-    vkGetSwapchainImagesKHR(Device->GetHandle(), *Swapchain->GetHandle(), &BufferCount, nullptr);
+    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain->GetHandle(), &BufferCount, nullptr);
     Images.resize(BufferCount);
-    vkGetSwapchainImagesKHR(Device->GetHandle(), *Swapchain->GetHandle(), &BufferCount, Images.data());
+    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain->GetHandle(), &BufferCount, Images.data());
 }
 
 void SVulkanViewport::CreateImageViews()

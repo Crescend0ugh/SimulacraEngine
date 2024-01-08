@@ -13,6 +13,7 @@ void SVulkanLinuxPlatform::CreateSurface(void *InWindowHandle, VkSurfaceKHR *Out
 void SVulkanLinuxPlatform::GetPlatformExtensions(std::vector<const char*>& OutExtensions)
 {
     OutExtensions.push_back(VK_KHR_SURFACE_EXTENSION_NAME);
+
 }
 
 void SVulkanLinuxPlatform::GetPlatformLayers()

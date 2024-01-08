@@ -5,7 +5,7 @@
 #pragma once
 
 
-#include <string>
+#include "SimulacraVulkan.h"
 
 /**
  * @brief Queries the Queue Flags and returns the queue operations that are supported

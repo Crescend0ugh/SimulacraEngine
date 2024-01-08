@@ -16,11 +16,14 @@ public:
 
 protected:
 
-    void CreateShaderModule();
+    void CreateShaderModule(VkShaderModule& OutShaderModule, const std::string &Filename);
+    void CreateGraphicsPipeline();
+    static std::vector<char> ReadFile(const std::string& Filename);
 
 private:
 
     SVulkanDevice* Device;
-
-    std::vector<VkShaderModule> ShaderModules;
+    VkPipeline     Pipeline;
+    VkShaderModule VertShaderModule;
+    VkShaderModule FragShaderModule;
 };

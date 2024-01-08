@@ -4,7 +4,7 @@
 
 #include "../Public/SimulacraVulkanQueue.h"
 
-VulkanQueue::VulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
+SVulkanQueue::SVulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
 {
 
     Queue       = VK_NULL_HANDLE;
@@ -14,6 +14,6 @@ VulkanQueue::VulkanQueue(SVulkanDevice *InDevice, uint32 InFamilyIndex)
     vkGetDeviceQueue(InDevice->GetHandle(), FamilyIndex, QueueIndex, &Queue);
 }
 
-VulkanQueue::~VulkanQueue() {
+SVulkanQueue::~SVulkanQueue() {
 
 }

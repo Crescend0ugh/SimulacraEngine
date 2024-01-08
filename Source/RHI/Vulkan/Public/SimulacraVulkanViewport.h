@@ -6,7 +6,7 @@
 #define SIMULACRAENGINE_SIMULACRAVULKANVIEWPORT_H
 
 #include "SimulacraVulkan.h"
-#include "SimulacraVulkanSwapchain.h"
+
 
 class SVulkanViewport
 {

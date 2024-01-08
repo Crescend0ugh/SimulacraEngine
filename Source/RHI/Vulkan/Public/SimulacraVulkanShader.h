@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "SimulacraVulkan.h"
 
 class SVulkanShader
 {
@@ -12,4 +13,7 @@ public:
 protected:
 
 private:
+
+
+
 };
