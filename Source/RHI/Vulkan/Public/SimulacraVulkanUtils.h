@@ -11,17 +11,20 @@
 
 
 
-
+//Fills out the structure type field of a vulkan struct and zeros the rest of the memory
 template <class T>
 static void SetZeroVulkanStruct(T& Struct, VkStructureType VkStructureType)
 {
     static_assert(!TIsPointer<T>::Value);
     static_assert(__builtin_offsetof(T, sType) == 0);
     static_assert(sizeof(T::sType) == sizeof(VkStructureType));
+
+    //Zero the struct memory
+    memset((uint8*)&Struct, 0, sizeof(T));
+
+    //Set the structure type field
     Struct.sType = VkStructureType;
 
-    //The pointer to the mem address after the structure type
-    memset((uint8*)&Struct + sizeof(VkStructureType), 0, sizeof(T)-sizeof(VkStructureType));
 }
 
 

@@ -23,6 +23,7 @@ typedef std::vector<SVulkanInstanceExtension> SVulkanInstanceExtensions;
 typedef std::vector<SVulkanDeviceLayer>       SVulkanDeviceLayers;
 typedef std::vector<SVulkanInstanceLayer>     SVulkanInstanceLayers;
 class SVulkanRHI;
+class SVulkanInstance;
 class SVulkanDevice;
 class SVulkanQueue;
 class SVulkanSwapchain;
@@ -43,6 +44,7 @@ class SVulkanPipeline;
 #include "SimulacraVulkanExtensions.h"
 #include "SimulacraVulkanLayers.h"
 #include "SimulacraVulkanRHI.h"
+#include "SimulacraVulkanInstance.h"
 #include "SimulacraVulkanDevice.h"
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanSwapchain.h"

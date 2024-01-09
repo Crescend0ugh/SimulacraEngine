@@ -8,15 +8,6 @@
 
 #include "SimulacraVulkan.h"
 
-class SVulkanViewport;
-class SVulkanSwapchain;
-class SVulkanDevice;
-class SVulkanPipeline;
-
-
-
-
-
 class SVulkanRHI {
 
     void Shutdown();
@@ -30,7 +21,7 @@ protected:
 
     void QuerySupportedExtensions();
 
-    VkInstance                Instance;
+
     SVulkanInstanceExtensions InstanceExtensions;
     SVulkanInstanceLayers     InstanceLayers;
 
@@ -41,10 +32,12 @@ protected:
     void CreateViewport();
     void CreatePipeline();
 
+
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
 
 private:
 
+    SVulkanInstance* Instance;
     SVulkanDevice* Device;
     SVulkanSwapchain* Swapchain;
     SVulkanViewport* Viewport;

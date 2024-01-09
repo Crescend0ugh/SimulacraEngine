@@ -9,44 +9,8 @@
 
 void SVulkanRHI::CreateInstance() {
 
-    VkApplicationInfo ApplicationInfo;
-    SetZeroVulkanStruct(ApplicationInfo, VK_STRUCTURE_TYPE_APPLICATION_INFO);
-    ApplicationInfo.pApplicationName = "Vulkan Application";
-    ApplicationInfo.applicationVersion = VK_MAKE_VERSION(0,1,0);
-    ApplicationInfo.pEngineName = "Simulacra Engine";
-    ApplicationInfo.engineVersion = VK_MAKE_VERSION(0,1,0);
-    ApplicationInfo.apiVersion = VK_API_VERSION_1_3;
-
-    SVulkanInstanceExtension::GetRequiredExtensions(InstanceExtensions);
-
-    const char* EnabledExtensionNames[InstanceExtensions.size()];
-    for(int i = 0; i < InstanceExtensions.size(); i++)
-    {
-        EnabledExtensionNames[i] = InstanceExtensions[i].GetExtensionName();
-    }
-
-
-    VkInstanceCreateInfo InstanceCreateInfo;
-    SetZeroVulkanStruct(InstanceCreateInfo, VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO);
-    InstanceCreateInfo.enabledExtensionCount = InstanceExtensions.size();
-    InstanceCreateInfo.enabledLayerCount = 0;
-    InstanceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
-    InstanceCreateInfo.ppEnabledLayerNames = nullptr;
-
-    VkResult Result =  vkCreateInstance(&InstanceCreateInfo, nullptr, &Instance);
-
-    if(Result != VK_SUCCESS)
-    {
-        std::cout << "Couldn't create Vulkan Instance.\n";
-    }
-
-    else
-    {
-        std::cout << "======= Created Vulkan Instance! =======\n\n";
-    }
-
-
-}
+  Instance = new SVulkanInstance();
+  }
 
 VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 {
@@ -72,7 +36,7 @@ VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
 void SVulkanRHI::CreateDevice()
 {
 
-    VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance);
+    VkPhysicalDevice PhysicalDevice = SelectPhysicalDevice(Instance->GetHandle());
 
     Device = new SVulkanDevice(this, PhysicalDevice);
 
@@ -84,7 +48,7 @@ void SVulkanRHI::CreateDevice()
 
 void SVulkanRHI::CreateSwapchain()
 {
-    Swapchain = new SVulkanSwapchain(Instance, Device, SGameViewport::GetWindow()->GetHandle());
+    Swapchain = new SVulkanSwapchain(Instance->GetHandle(), Device, SGameViewport::GetWindow()->GetHandle());
 
 }
 

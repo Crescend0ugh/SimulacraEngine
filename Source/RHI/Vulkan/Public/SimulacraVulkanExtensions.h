@@ -31,24 +31,28 @@ class SVulkanExtension
 
 public:
 
-    SVulkanExtension(const char* InExtensionName);
+    explicit SVulkanExtension(const char* InExtensionName);
     SVulkanExtension(const char* InExtensionName, bool InSupport, EExtensionActivationPolicy InActivationPolicy);
 
-    const char* GetExtensionName() { return ExtensionName; }
+    const char * GetExtensionName() const
+    { return ExtensionName; }
 
-    static SVulkanExtension* FindExtensionByName(const std::vector<SVulkanExtension*>& Extensions, const char* ExtensionName)
+
+    template<class ExtensionType>
+    static const ExtensionType* FindExtensionByName(const std::vector<ExtensionType>& Extensions, const char* ExtensionName)
     {
-        for (SVulkanExtension* Extension : Extensions)
+        for (const ExtensionType& Extension : Extensions)
         {
-            if(strcmp(Extension->GetExtensionName(), ExtensionName) == 0)
+            if(strcmp(Extension.GetExtensionName(), ExtensionName) == 0)
             {
-                return Extension;
+                return &Extension;
             }
 
         }
 
         return nullptr;
     }
+
 
 
     bool IsSupported() const { return Supported; }
@@ -83,11 +87,23 @@ class SVulkanDeviceExtension : public SVulkanExtension
 
 public:
 
-    SVulkanDeviceExtension(const char* ExtensionName);
+    explicit SVulkanDeviceExtension(const char* ExtensionName);
     SVulkanDeviceExtension(const char* ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy);
     ~SVulkanDeviceExtension() = default;
 
-    typedef std::vector<SVulkanDeviceExtension>   SVulkanDeviceExtensions;
+    static SVulkanExtension* FindExtensionByName(const std::vector<SVulkanExtension*>& Extensions, const char* ExtensionName)
+    {
+        for (SVulkanExtension* Extension : Extensions)
+        {
+            if(strcmp(Extension->GetExtensionName(), ExtensionName) == 0)
+            {
+                return Extension;
+            }
+
+        }
+
+        return nullptr;
+    }
 
 public:
 
@@ -108,7 +124,7 @@ class SVulkanInstanceExtension : public SVulkanExtension
 
 public:
 
-    SVulkanInstanceExtension(const char* ExtensionName);
+    explicit SVulkanInstanceExtension(const char* ExtensionName);
     SVulkanInstanceExtension(const char* ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy);
     ~SVulkanInstanceExtension() = default;
 

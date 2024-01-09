@@ -11,7 +11,7 @@ class SVulkanPipeline
 
 public:
 
-    SVulkanPipeline(SVulkanDevice* InDevice);
+    explicit SVulkanPipeline(SVulkanDevice* InDevice);
     ~SVulkanPipeline();
 
 protected:
