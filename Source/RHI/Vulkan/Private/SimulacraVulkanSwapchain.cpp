@@ -23,12 +23,12 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Device->GetPhysicalHandle(), Surface, &Capabilities);
 
 
-    uint32                        MinImageCount  = ChooseMinImageCount(Capabilities, 3);
-    VkSurfaceFormatKHR            SurfaceFormat  = ChooseSurfaceFormat();
-    VkExtent2D                    ImageExtent    = ChooseExtent(Capabilities);
-    VkPresentModeKHR              PresentMode    = ChoosePresentMode();
-    VkSurfaceTransformFlagBitsKHR PreTransform   = ChoosePreTransform(Capabilities);
-    VkCompositeAlphaFlagBitsKHR   CompositeAlpha = ChooseAlphaCompositingMode(Capabilities);
+    MinImageCount  = ChooseMinImageCount(Capabilities, 3);
+    SurfaceFormat  = ChooseSurfaceFormat();
+    ImageExtent    = ChooseExtent(Capabilities);
+    PresentMode    = ChoosePresentMode();
+    PreTransform   = ChoosePreTransform(Capabilities);
+    CompositeAlpha = ChooseAlphaCompositingMode(Capabilities);
 
 
     VkSwapchainCreateInfoKHR SwapchainCreateInfo;

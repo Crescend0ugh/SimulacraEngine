@@ -21,6 +21,8 @@ protected:
 
     void GetImagesFromSwapchain();
     void CreateImageViews();
+    void CreateRenderPass();
+    VkFormat GetImageFormat() { return Swapchain->SurfaceFormat.format};
 
 
 
@@ -33,7 +35,6 @@ private:
     uint32                   BufferCount = 3;
     std::vector<VkImage>     Images;
     std::vector<VkImageView> ImageViews;
-    VkFormat                 ImageFormat;
 
 
 };

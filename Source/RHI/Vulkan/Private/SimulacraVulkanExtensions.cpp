@@ -4,17 +4,11 @@
 
 #include "../Public/SimulacraVulkanExtensions.h"
 
-SVulkanExtension::SVulkanExtension(const char *InExtensionName) :
-ExtensionName(InExtensionName),
-Loaded(false),
-Activated(true),
-ActivationPolicy(EExtensionActivationPolicy::AUTO_ACTIVATE)
-{
 
-}
 
 SVulkanExtension::SVulkanExtension(const char *InExtensionName, bool InSupport, EExtensionActivationPolicy InActivationPolicy) :
 ExtensionName(InExtensionName),
+Supported(InSupport),
 Loaded(false),
 Activated(InActivationPolicy == EExtensionActivationPolicy::AUTO_ACTIVATE),
 ActivationPolicy(InActivationPolicy)
@@ -46,10 +40,7 @@ void SVulkanExtension::SetActivated(bool Value)
 }
 
 
-SVulkanDeviceExtension::SVulkanDeviceExtension(const char *ExtensionName) : SVulkanExtension(ExtensionName)
-{
 
-}
 
 SVulkanDeviceExtension::SVulkanDeviceExtension(const char *ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy) : SVulkanExtension(ExtensionName, Support, ActivationPolicy)
 {
@@ -68,10 +59,7 @@ void SVulkanDeviceExtension::GetRequiredExtensions(SVulkanDeviceExtensions &OutE
 
 }
 
-SVulkanInstanceExtension::SVulkanInstanceExtension(const char *ExtensionName) : SVulkanExtension(ExtensionName)
-{
 
-}
 
 SVulkanInstanceExtension::SVulkanInstanceExtension(const char *ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy) : SVulkanExtension(ExtensionName, Support, ActivationPolicy)
 {

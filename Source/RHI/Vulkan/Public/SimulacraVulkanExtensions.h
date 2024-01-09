@@ -14,10 +14,13 @@ class SVulkanRHI;
 
 
 
-
+// Activation policy for extensions
 enum EExtensionActivationPolicy : uint8
 {
+    // Extension does not have to be manually activated in code in order to be used
     AUTO_ACTIVATE,
+
+    // Extension needs activated with SetActivated(true) in order to be used
     MANUALLY_ACTIVATE
 };
 
@@ -31,19 +34,19 @@ class SVulkanExtension
 
 public:
 
-    explicit SVulkanExtension(const char* InExtensionName);
-    SVulkanExtension(const char* InExtensionName, bool InSupport, EExtensionActivationPolicy InActivationPolicy);
+    explicit SVulkanExtension(const char* InExtensionName, bool InSupport = false, EExtensionActivationPolicy InActivationPolicy = EExtensionActivationPolicy::AUTO_ACTIVATE);
 
     const char * GetExtensionName() const
     { return ExtensionName; }
 
 
+
     template<class ExtensionType>
     static const ExtensionType* FindExtensionByName(const std::vector<ExtensionType>& Extensions, const char* ExtensionName)
     {
-        for (const ExtensionType& Extension : Extensions)
+        for (const ExtensionType &Extension: Extensions)
         {
-            if(strcmp(Extension.GetExtensionName(), ExtensionName) == 0)
+            if (strcmp(Extension.GetExtensionName(), ExtensionName) == 0)
             {
                 return &Extension;
             }
@@ -52,6 +55,9 @@ public:
 
         return nullptr;
     }
+
+
+
 
 
 
@@ -87,8 +93,7 @@ class SVulkanDeviceExtension : public SVulkanExtension
 
 public:
 
-    explicit SVulkanDeviceExtension(const char* ExtensionName);
-    SVulkanDeviceExtension(const char* ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy);
+    SVulkanDeviceExtension(const char* ExtensionName, bool Support = false, EExtensionActivationPolicy ActivationPolicy = EExtensionActivationPolicy::AUTO_ACTIVATE);
     ~SVulkanDeviceExtension() = default;
 
     static SVulkanExtension* FindExtensionByName(const std::vector<SVulkanExtension*>& Extensions, const char* ExtensionName)
@@ -124,8 +129,7 @@ class SVulkanInstanceExtension : public SVulkanExtension
 
 public:
 
-    explicit SVulkanInstanceExtension(const char* ExtensionName);
-    SVulkanInstanceExtension(const char* ExtensionName, bool Support, EExtensionActivationPolicy ActivationPolicy);
+    SVulkanInstanceExtension(const char* ExtensionName, bool Support = false, EExtensionActivationPolicy ActivationPolicy = EExtensionActivationPolicy::AUTO_ACTIVATE);
     ~SVulkanInstanceExtension() = default;
 
     typedef std::vector<SVulkanInstanceExtension> SVulkanInstanceExtensions;

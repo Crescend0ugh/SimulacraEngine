@@ -29,4 +29,15 @@ private:
     VkBuffer Buffer;
 };
 
+class SVulkanTexture
+{
+
+public:
+
+private:
+
+
+    VkImage Image;
+
+};
 

@@ -7,45 +7,53 @@
 #include "SimulacraVulkan.h"
 
 class SVulkanDevice;
+
 class SVulkanViewport;
 
-class SVulkanSwapchain {
+class SVulkanSwapchain
+{
 
 public:
 
     SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
+
     ~SVulkanSwapchain() = default;
-    VkSwapchainKHR GetHandle() { return Swapchain; }
 
-
+    VkSwapchainKHR GetHandle()
+    { return Swapchain; }
 
 
     friend class SVulkanViewport;
 
 protected:
 
-    VkSurfaceFormatKHR            ChooseSurfaceFormat();
-    VkPresentModeKHR              ChoosePresentMode();
-    VkExtent2D                    ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilities);
+    VkSurfaceFormatKHR ChooseSurfaceFormat();
+
+    VkPresentModeKHR ChoosePresentMode();
+
+    VkExtent2D ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilities);
+
     VkSurfaceTransformFlagBitsKHR ChoosePreTransform(VkSurfaceCapabilitiesKHR InCapabilities);
-    VkCompositeAlphaFlagBitsKHR   ChooseAlphaCompositingMode(VkSurfaceCapabilitiesKHR InCapabilities);
-    uint32                        ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount);
 
+    VkCompositeAlphaFlagBitsKHR ChooseAlphaCompositingMode(VkSurfaceCapabilitiesKHR InCapabilities);
 
+    uint32 ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount);
 
-
-
+    uint32                        MinImageCount;
+    VkSurfaceFormatKHR            SurfaceFormat;
+    VkExtent2D                    ImageExtent;
+    VkPresentModeKHR              PresentMode;
+    VkSurfaceTransformFlagBitsKHR PreTransform;
+    VkCompositeAlphaFlagBitsKHR   CompositeAlpha;
 
 
 private:
 
 
-
     VkSwapchainKHR Swapchain;
-    SVulkanDevice* Device;
-    VkSurfaceKHR   Surface;
-    void*          WindowHandle;
-
+    SVulkanDevice *Device;
+    VkSurfaceKHR Surface;
+    void *WindowHandle;
 
 
 };

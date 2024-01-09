@@ -5,10 +5,10 @@
 #pragma once
 
 
-
 #include "SimulacraVulkan.h"
 
-class SVulkanRHI {
+class SVulkanRHI
+{
 
     void Shutdown();
 
@@ -26,10 +26,19 @@ protected:
     SVulkanInstanceLayers     InstanceLayers;
 
 
+    // Creates the VkInstance
     void CreateInstance();
+
+    // Creates a VkDevice and VkPhysicalDevice
     void CreateDevice();
+
+    // Creates the swap chain
     void CreateSwapchain();
+
+    // Creates the viewport
     void CreateViewport();
+
+    //Creates the graphics pipeline
     void CreatePipeline();
 
 
@@ -37,11 +46,11 @@ protected:
 
 private:
 
-    SVulkanInstance* Instance;
-    SVulkanDevice* Device;
-    SVulkanSwapchain* Swapchain;
-    SVulkanViewport* Viewport;
-    SVulkanPipeline* Pipeline;
+    SVulkanInstance  *Instance;
+    SVulkanDevice    *Device;
+    SVulkanSwapchain *Swapchain;
+    SVulkanViewport  *Viewport;
+    SVulkanPipeline  *Pipeline;
 };
 
 

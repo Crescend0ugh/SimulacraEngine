@@ -137,6 +137,9 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanExtensions.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanInstance.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
@@ -159,6 +162,9 @@
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanInstance.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">
