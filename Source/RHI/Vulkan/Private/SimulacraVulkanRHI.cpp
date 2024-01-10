@@ -82,7 +82,7 @@ void SVulkanRHI::Shutdown() {
 
 void SVulkanRHI::CreatePipeline()
 {
-    Pipeline = new SVulkanPipeline(Device);
+    Pipeline = new SVulkanPipeline(Device, Swapchain);
 }
 
 

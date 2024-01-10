@@ -9,7 +9,6 @@ SVulkanViewport::SVulkanViewport(SVulkanDevice *InDevice, SVulkanSwapchain *InSw
         Device(InDevice),
         Swapchain(InSwapchain)
 {
-    ImageFormat = Swapchain->ChooseSurfaceFormat().format;
     GetImagesFromSwapchain();
     CreateImageViews();
 }
@@ -82,5 +81,12 @@ void SVulkanViewport::CreateRenderPass()
     ColorAttachmentReference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
     VkSubpassDescription Subpass{};
-    Subpass.
+    Subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    Subpass.colorAttachmentCount = 1;
+    Subpass.pColorAttachments = &ColorAttachmentReference;
+}
+
+VkFormat SVulkanViewport::GetImageFormat()
+{
+    Swapchain->SurfaceFormat.format;
 }

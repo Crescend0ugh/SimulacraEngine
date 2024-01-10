@@ -8,6 +8,7 @@
 #include "SimulacraVulkan.h"
 
 
+
 class SVulkanViewport
 {
 
@@ -22,7 +23,7 @@ protected:
     void GetImagesFromSwapchain();
     void CreateImageViews();
     void CreateRenderPass();
-    VkFormat GetImageFormat() { return Swapchain->SurfaceFormat.format};
+    VkFormat GetImageFormat();
 
 
 

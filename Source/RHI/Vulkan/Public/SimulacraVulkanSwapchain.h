@@ -24,6 +24,7 @@ public:
 
 
     friend class SVulkanViewport;
+    friend class SVulkanPipeline;
 
 protected:
 

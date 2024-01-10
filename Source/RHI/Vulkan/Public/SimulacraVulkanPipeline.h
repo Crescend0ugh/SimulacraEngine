@@ -11,18 +11,22 @@ class SVulkanPipeline
 
 public:
 
-    explicit SVulkanPipeline(SVulkanDevice* InDevice);
+    explicit SVulkanPipeline(SVulkanDevice *InDevice, SVulkanSwapchain *InSwapchain);
+
     ~SVulkanPipeline();
 
 protected:
 
-    void CreateShaderModule(VkShaderModule& OutShaderModule, const std::string &Filename);
+    void CreateShaderModule(VkShaderModule &OutShaderModule, const std::string &Filename);
+
     void CreateGraphicsPipeline();
-    static std::vector<char> ReadFile(const std::string& Filename);
+
+    static std::vector<char> ReadFile(const std::string &Filename);
 
 private:
 
-    SVulkanDevice* Device;
+    SVulkanDevice   *Device;
+    SVulkanSwapchain *Swapchain;
     VkPipeline     Pipeline;
     VkShaderModule VertShaderModule;
     VkShaderModule FragShaderModule;

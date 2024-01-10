@@ -6,7 +6,7 @@
 
 #include "../Public/SimulacraVulkanPipeline.h"
 
-SVulkanPipeline::SVulkanPipeline(SVulkanDevice *InDevice) : Device(InDevice), Pipeline(VK_NULL_HANDLE),
+SVulkanPipeline::SVulkanPipeline(SVulkanDevice *InDevice, SVulkanSwapchain* InSwapchain) : Device(InDevice), Swapchain(InSwapchain), Pipeline(VK_NULL_HANDLE),
                                                             FragShaderModule(VK_NULL_HANDLE),
                                                             VertShaderModule(VK_NULL_HANDLE)
 {
@@ -146,6 +146,7 @@ void SVulkanPipeline::CreateGraphicsPipeline()
     ColorBlendStateCreateInfo.blendConstants[3] = 0.0f;
 
     VkPipelineLayout PipelineLayout;
+    VkRenderPass     RenderPass;
 
     VkPipelineLayoutCreateInfo PipelineLayoutCreateInfo;
     SetZeroVulkanStruct(PipelineLayoutCreateInfo, VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO);
@@ -155,11 +156,66 @@ void SVulkanPipeline::CreateGraphicsPipeline()
     PipelineLayoutCreateInfo.pushConstantRangeCount = 0; // Optional
     PipelineLayoutCreateInfo.pPushConstantRanges = nullptr; // Optional
 
+    VkAttachmentDescription ColorAttachment;
+    ColorAttachment.format         = Swapchain->SurfaceFormat.format;
+    ColorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
+    ColorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    ColorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
+    ColorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    ColorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
+    ColorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    VkAttachmentReference ColorAttachmentReference;
+    ColorAttachmentReference.attachment = 0;
+    ColorAttachmentReference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+    VkSubpassDescription Subpass{};
+    Subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    Subpass.colorAttachmentCount = 1;
+    Subpass.pColorAttachments = &ColorAttachmentReference;
+
+    VkRenderPassCreateInfo RenderPassCreateInfo;
+    SetZeroVulkanStruct(RenderPassCreateInfo, VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO);
+    RenderPassCreateInfo.attachmentCount = 1;
+    RenderPassCreateInfo.pAttachments = &ColorAttachment;
+    RenderPassCreateInfo.subpassCount = 1;
+    RenderPassCreateInfo.pSubpasses = &Subpass;
+
+
     VkResult Result = vkCreatePipelineLayout(Device->GetHandle(), &PipelineLayoutCreateInfo, nullptr, &PipelineLayout);
     if(Result != VK_SUCCESS)
     {
         std::cout << "Failed to create pipeline layout\n";
     }
+
+    Result = vkCreateRenderPass(Device->GetHandle(), &RenderPassCreateInfo, nullptr, &RenderPass);
+
+    if(Result != VK_SUCCESS)
+    {
+        std::cout << "Failed to create render pass\n";
+    }
+
+    VkGraphicsPipelineCreateInfo GraphicsPipelineCreateInfo;
+    SetZeroVulkanStruct(PipelineLayoutCreateInfo, VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO);
+    GraphicsPipelineCreateInfo.stageCount = 2;
+    GraphicsPipelineCreateInfo.pStages = ShaderStages;
+    GraphicsPipelineCreateInfo.pVertexInputState = &VertexInputCreationInfo;
+    GraphicsPipelineCreateInfo.pInputAssemblyState = &InputAssemblyCreateInfo;
+    GraphicsPipelineCreateInfo.pViewportState = &ViewportStateCreateInfo;
+    GraphicsPipelineCreateInfo.pRasterizationState = &RasterizationStateCreateInfo;
+    GraphicsPipelineCreateInfo.pMultisampleState = &MultisampleStateCreateInfo;
+    GraphicsPipelineCreateInfo.pDepthStencilState = nullptr; // Optional
+    GraphicsPipelineCreateInfo.pColorBlendState = &ColorBlendStateCreateInfo;
+    GraphicsPipelineCreateInfo.pDynamicState = &DynamicStateCreateInfo;
+    GraphicsPipelineCreateInfo.layout = PipelineLayout;
+    GraphicsPipelineCreateInfo.renderPass = RenderPass;
+    GraphicsPipelineCreateInfo.subpass =0;
+    GraphicsPipelineCreateInfo.basePipelineHandle = VK_NULL_HANDLE;
+    GraphicsPipelineCreateInfo.basePipelineIndex = -1;
+
+    Result = vkCreateGraphicsPipelines(Device->GetHandle(), VK_NULL_HANDLE, 1, &GraphicsPipelineCreateInfo, nullptr, &Pipeline);
+
 
     vkDestroyShaderModule(Device->GetHandle(), VertShaderModule, nullptr);
     vkDestroyShaderModule(Device->GetHandle(), FragShaderModule, nullptr);
