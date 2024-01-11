@@ -17,12 +17,12 @@ public:
     SVulkanViewport(SVulkanDevice* InDevice, SVulkanSwapchain* InSwapchain);
     ~SVulkanViewport();
 
+    friend class SVulkanPipeline;
 protected:
 
 
     void GetImagesFromSwapchain();
     void CreateImageViews();
-    void CreateRenderPass();
     VkFormat GetImageFormat();
 
 

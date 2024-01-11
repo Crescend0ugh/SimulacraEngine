@@ -64,29 +64,8 @@ void SVulkanViewport::CreateImageViews()
     std::cout << "Created swap chain images\n";
 }
 
-void SVulkanViewport::CreateRenderPass()
-{
-    VkAttachmentDescription ColorAttachment;
-    ColorAttachment.format         = GetImageFormat();
-    ColorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
-    ColorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    ColorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
-    ColorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-    ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    ColorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
-    ColorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
-
-    VkAttachmentReference ColorAttachmentReference;
-    ColorAttachmentReference.attachment = 0;
-    ColorAttachmentReference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
-
-    VkSubpassDescription Subpass{};
-    Subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
-    Subpass.colorAttachmentCount = 1;
-    Subpass.pColorAttachments = &ColorAttachmentReference;
-}
 
 VkFormat SVulkanViewport::GetImageFormat()
 {
-    Swapchain->SurfaceFormat.format;
+    return Swapchain->SurfaceFormat.format;
 }
