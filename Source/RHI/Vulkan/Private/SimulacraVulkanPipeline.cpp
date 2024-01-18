@@ -209,6 +209,7 @@ void SVulkanPipeline::CreateRenderPass()
 
 void SVulkanPipeline::CreateFramebuffer()
 {
-    SwapchainFramebuffers.resize(Swapchain->MinImageCount)
+
 }
+
 

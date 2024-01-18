@@ -2,7 +2,4 @@
 // Created by avsom on 12/26/2023.
 //
 
-#ifndef SIMULACRAENGINE_SIMULACRAMAP_H
-#define SIMULACRAENGINE_SIMULACRAMAP_H
-
-#endif //SIMULACRAENGINE_SIMULACRAMAP_H
+#pragma once

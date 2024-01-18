@@ -40,6 +40,8 @@ protected:
 
     uint32 ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount);
 
+    void CreateFramebuffers();
+
     uint32                        MinImageCount;
     VkSurfaceFormatKHR            SurfaceFormat;
     VkExtent2D                    ImageExtent;
@@ -55,6 +57,7 @@ private:
     SVulkanDevice *Device;
     VkSurfaceKHR Surface;
     void *WindowHandle;
+    std::vector<VkFramebuffer> Framebuffers;
 
 
 };
