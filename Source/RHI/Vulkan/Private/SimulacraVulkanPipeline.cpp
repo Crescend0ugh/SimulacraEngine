@@ -8,13 +8,13 @@
 
 SVulkanPipeline::SVulkanPipeline(SVulkanDevice *InDevice, SVulkanSwapchain *InSwapchain) : Device(InDevice),
                                                                                            Swapchain(InSwapchain),
-                                                                                           Pipeline(VK_NULL_HANDLE),
+                                                                                           GraphicsPipeline(VK_NULL_HANDLE),
                                                                                            FragShaderModule(
                                                                                                    VK_NULL_HANDLE),
                                                                                            VertShaderModule(
                                                                                                    VK_NULL_HANDLE)
 {
-    CreateRenderPass();
+
     CreateGraphicsPipeline();
 }
 
@@ -140,12 +140,12 @@ void SVulkanPipeline::CreateGraphicsPipeline()
     PipelineInfo.pColorBlendState    = &ColorBlending;
     PipelineInfo.pDynamicState       = &DynamicState;
     PipelineInfo.layout              = PipelineLayout;
-    PipelineInfo.renderPass          = RenderPass;
+    PipelineInfo.renderPass          = Swapchain->RenderPass;
     PipelineInfo.subpass             = 0;
     PipelineInfo.basePipelineHandle  = VK_NULL_HANDLE;
     PipelineInfo.basePipelineIndex   = -1;
 
-    if (vkCreateGraphicsPipelines(Device->GetHandle(), VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &Pipeline) != VK_SUCCESS) {
+    if (vkCreateGraphicsPipelines(Device->GetHandle(), VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &GraphicsPipeline) != VK_SUCCESS) {
         throw std::runtime_error("failed to create graphics pipeline!");
     }
 
@@ -172,44 +172,28 @@ std::vector<char> SVulkanPipeline::ReadFile(const std::string &Filename)
     return Buffer;
 }
 
-void SVulkanPipeline::CreateRenderPass()
+void SVulkanPipeline::Bind(VkCommandBuffer CommandBuffer)
 {
-    VkAttachmentDescription ColorAttachment;
-    ColorAttachment.format         = Swapchain->SurfaceFormat.format;
-    ColorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
-    ColorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    ColorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
-    ColorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-    ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    ColorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
-    ColorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+    vkCmdBindPipeline(CommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, GraphicsPipeline);
+    VkViewport viewport{};
+    viewport.x = 0.0f;
+    viewport.y = 0.0f;
+    viewport.width = static_cast<float>(Swapchain->ImageExtent.width);
+    viewport.height = static_cast<float>(Swapchain->ImageExtent.height);
+    viewport.minDepth = 0.0f;
+    viewport.maxDepth = 1.0f;
+    vkCmdSetViewport(CommandBuffer, 0, 1, &viewport);
 
-    VkAttachmentReference ColorAttachmentReference;
-    ColorAttachmentReference.attachment = 0;
-    ColorAttachmentReference.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    VkRect2D scissor{};
+    scissor.offset = {0, 0};
+    scissor.extent = Swapchain->ImageExtent;
+    vkCmdSetScissor(CommandBuffer, 0, 1, &scissor);
 
-    VkSubpassDescription Subpass{};
-    Subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
-    Subpass.colorAttachmentCount = 1;
-    Subpass.pColorAttachments    = &ColorAttachmentReference;
-
-    VkRenderPassCreateInfo RenderPassInfo{};
-    RenderPassInfo.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
-    RenderPassInfo.attachmentCount = 1;
-    RenderPassInfo.pAttachments    = &ColorAttachment;
-    RenderPassInfo.subpassCount    = 1;
-    RenderPassInfo.pSubpasses      = &Subpass;
-
-    if (vkCreateRenderPass(Device->GetHandle(), &RenderPassInfo, nullptr, &RenderPass) != VK_SUCCESS)
-    {
-        throw std::runtime_error("failed to create render pass!");
-    }
+    vkCmdDraw(CommandBuffer, 3, 1, 0, 0);
 
 }
 
-void SVulkanPipeline::CreateFramebuffer()
-{
 
-}
+
 
 

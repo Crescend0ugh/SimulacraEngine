@@ -20,8 +20,8 @@ protected:
     void CreateShaderModule(VkShaderModule &OutShaderModule, const std::string &Filename);
 
     void CreateGraphicsPipeline();
-    void CreateRenderPass();
-    void CreateFramebuffer();
+
+    void Bind(VkCommandBuffer CommandBuffer);
 
     static std::vector<char> ReadFile(const std::string &Filename);
 
@@ -29,24 +29,27 @@ private:
 
     SVulkanDevice   *Device;
     SVulkanSwapchain *Swapchain;
-    VkPipeline     Pipeline;
-    VkRenderPass RenderPass;
+    VkPipeline       GraphicsPipeline;
+    VkRenderPass     RenderPass;
     VkPipelineLayout PipelineLayout;
     VkShaderModule VertShaderModule;
     VkShaderModule FragShaderModule;
-    std::vector<VkFramebuffer> SwapchainFramebuffers;
 };
-
 
 
 struct SVulkanPipelineVertexInput
 {
+};
+
+struct SVulkanPipelineInputAssembly
+{
+    VkPrimitiveTopology Topology;
+    VkBool32            PrimitiveRestartEnable;
 
 };
 
 
-
-class SVulkanGraphicsPipelineDesc
+class SVulkanGraphicsPipelineDescription
 {
 
 

@@ -22,11 +22,18 @@ public:
     VkSwapchainKHR GetHandle()
     { return Swapchain; }
 
+    void CreateImageViews();
+    void CreateFramebuffers();
+    void CreateRenderPass();
 
     friend class SVulkanViewport;
     friend class SVulkanPipeline;
 
-protected:
+private:
+
+    void AcquireNextImage();
+    void Present();
+
 
     VkSurfaceFormatKHR ChooseSurfaceFormat();
 
@@ -40,7 +47,6 @@ protected:
 
     uint32 ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount);
 
-    void CreateFramebuffers();
 
     uint32                        MinImageCount;
     VkSurfaceFormatKHR            SurfaceFormat;
@@ -50,14 +56,23 @@ protected:
     VkCompositeAlphaFlagBitsKHR   CompositeAlpha;
 
 
-private:
+    std::vector<VkImage>       Images;
+    std::vector<VkImageView>   ImageViews;
+    std::vector<VkFramebuffer> Framebuffers;
+
+
+    VkRenderPass RenderPass;
+    uint32 BufferCount = 3;
+
+    uint32 CurrImageIndex;
 
 
     VkSwapchainKHR Swapchain;
-    SVulkanDevice *Device;
-    VkSurfaceKHR Surface;
-    void *WindowHandle;
-    std::vector<VkFramebuffer> Framebuffers;
+    SVulkanDevice  *Device;
+    VkSurfaceKHR   Surface;
+    void           *WindowHandle;
+
+    std::vector<SVulkanSemaphore*> ImageAvailableSemaphores;
 
 
 };

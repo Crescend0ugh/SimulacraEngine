@@ -33,19 +33,19 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
 
     VkSwapchainCreateInfoKHR SwapchainCreateInfo;
     SetZeroVulkanStruct(SwapchainCreateInfo, VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR);
-    SwapchainCreateInfo.surface = Surface;
-    SwapchainCreateInfo.minImageCount = MinImageCount;
-    SwapchainCreateInfo.imageFormat = SurfaceFormat.format;
-    SwapchainCreateInfo.imageColorSpace = SurfaceFormat.colorSpace;
-    SwapchainCreateInfo.imageExtent = ImageExtent;
+    SwapchainCreateInfo.surface          = Surface;
+    SwapchainCreateInfo.minImageCount    = MinImageCount;
+    SwapchainCreateInfo.imageFormat      = SurfaceFormat.format;
+    SwapchainCreateInfo.imageColorSpace  = SurfaceFormat.colorSpace;
+    SwapchainCreateInfo.imageExtent      = ImageExtent;
     SwapchainCreateInfo.imageArrayLayers = 1;
-    SwapchainCreateInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    SwapchainCreateInfo.imageUsage       = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
     SwapchainCreateInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
-    SwapchainCreateInfo.preTransform = PreTransform;
-    SwapchainCreateInfo.compositeAlpha = CompositeAlpha;
-    SwapchainCreateInfo.presentMode = PresentMode;
-    SwapchainCreateInfo.clipped = VK_TRUE;
-    SwapchainCreateInfo.oldSwapchain = VK_NULL_HANDLE;
+    SwapchainCreateInfo.preTransform     = PreTransform;
+    SwapchainCreateInfo.compositeAlpha   = CompositeAlpha;
+    SwapchainCreateInfo.presentMode      = PresentMode;
+    SwapchainCreateInfo.clipped          = VK_TRUE;
+    SwapchainCreateInfo.oldSwapchain     = VK_NULL_HANDLE;
 
     VkResult Result = vkCreateSwapchainKHR(Device->GetHandle(), &SwapchainCreateInfo, nullptr, &Swapchain);
 
@@ -57,7 +57,14 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
         std::cout << "Created swapchain\n";
     }
 
+    CreateImageViews();
+    CreateRenderPass();
+    CreateFramebuffers();
 
+    for (SVulkanSemaphore* Semaphore : ImageAvailableSemaphores)
+    {
+        Semaphore = new SVulkanSemaphore(Device);
+    }
 
 
 }
@@ -118,7 +125,7 @@ VkExtent2D SVulkanSwapchain::ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilitie
     //TODO provide actual surface dimensions
 
 
-    Width  = InCapabilities.currentExtent.width  == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.width;
+    Width  = InCapabilities.currentExtent.width == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.width;
     Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.height;
 
 
@@ -151,6 +158,119 @@ VkCompositeAlphaFlagBitsKHR SVulkanSwapchain::ChooseAlphaCompositingMode(VkSurfa
 uint32 SVulkanSwapchain::ChooseMinImageCount(VkSurfaceCapabilitiesKHR InCapabilities, uint32 DesiredMinImageCount)
 {
     return SMath::Clamp(DesiredMinImageCount, InCapabilities.minImageCount, InCapabilities.maxImageCount);
+}
+
+void SVulkanSwapchain::CreateImageViews()
+{
+    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain, &BufferCount, nullptr);
+    Images.resize(BufferCount);
+    vkGetSwapchainImagesKHR(Device->GetHandle(), Swapchain, &BufferCount, Images.data());
+
+    ImageViews.resize(Images.size());
+
+    for (int i = 0; i < Images.size(); i++)
+    {
+        VkImageViewCreateInfo CreateInfo{};
+        SetZeroVulkanStruct(CreateInfo, VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO);
+        CreateInfo.image                           = Images[i];
+        CreateInfo.viewType                        = VK_IMAGE_VIEW_TYPE_2D;
+        CreateInfo.format                          = SurfaceFormat.format;
+        CreateInfo.components.r                    = VK_COMPONENT_SWIZZLE_IDENTITY;
+        CreateInfo.components.g                    = VK_COMPONENT_SWIZZLE_IDENTITY;
+        CreateInfo.components.b                    = VK_COMPONENT_SWIZZLE_IDENTITY;
+        CreateInfo.components.a                    = VK_COMPONENT_SWIZZLE_IDENTITY;
+        CreateInfo.subresourceRange.aspectMask     = VK_IMAGE_ASPECT_COLOR_BIT;
+        CreateInfo.subresourceRange.baseMipLevel   = 0;
+        CreateInfo.subresourceRange.levelCount     = 1;
+        CreateInfo.subresourceRange.baseArrayLayer = 0;
+        CreateInfo.subresourceRange.layerCount     = 1;
+        VkResult Result = vkCreateImageView(Device->GetHandle(), &CreateInfo, nullptr, &ImageViews[i]);
+        if (Result != VK_SUCCESS)
+        {
+            std::cout << "Failed to create Image View\n";
+        }
+    }
+
+    std::cout << "Created swap chain images\n";
+}
+
+void SVulkanSwapchain::CreateRenderPass()
+{
+
+    VkSubpassDependency Dependency {};
+    Dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+    Dependency.dstSubpass = 0;
+    Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    Dependency.srcAccessMask = 0;
+    Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
+    VkAttachmentDescription ColorAttachment;
+    ColorAttachment.format         = SurfaceFormat.format;
+    ColorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
+    ColorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    ColorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
+    ColorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    ColorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
+    ColorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    VkAttachmentReference ColorAttachmentReference;
+    ColorAttachmentReference.attachment = 0;
+    ColorAttachmentReference.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+    VkSubpassDescription Subpass{};
+    Subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    Subpass.colorAttachmentCount = 1;
+    Subpass.pColorAttachments    = &ColorAttachmentReference;
+
+    VkRenderPassCreateInfo RenderPassInfo{};
+    RenderPassInfo.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    RenderPassInfo.attachmentCount = 1;
+    RenderPassInfo.pAttachments    = &ColorAttachment;
+    RenderPassInfo.subpassCount    = 1;
+    RenderPassInfo.pSubpasses      = &Subpass;
+    RenderPassInfo.pDependencies = &Dependency;
+    RenderPassInfo.dependencyCount = 1;
+
+    if (vkCreateRenderPass(Device->GetHandle(), &RenderPassInfo, nullptr, &RenderPass) != VK_SUCCESS)
+    {
+        throw std::runtime_error("failed to create render pass!");
+    }
+
+}
+
+void SVulkanSwapchain::CreateFramebuffers()
+{
+    Framebuffers.resize(ImageViews.size());
+
+    for (size_t i = 0; i < ImageViews.size(); i++)
+    {
+        VkImageView attachments[] = {
+                ImageViews[i]
+        };
+
+        VkFramebufferCreateInfo FramebufferCreateInfo;
+        SetZeroVulkanStruct(FramebufferCreateInfo, VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO);
+        FramebufferCreateInfo.renderPass      = RenderPass;
+        FramebufferCreateInfo.attachmentCount = 1;
+        FramebufferCreateInfo.pAttachments    = attachments;
+        FramebufferCreateInfo.width           = ImageExtent.width;
+        FramebufferCreateInfo.height          = ImageExtent.height;
+        FramebufferCreateInfo.layers          = 1;
+
+        if (vkCreateFramebuffer(Device->GetHandle(), &FramebufferCreateInfo, nullptr, &Framebuffers[i]) != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to create framebuffer!");
+        }
+    }
+
+}
+
+void SVulkanSwapchain::AcquireNextImage()
+{
+    vkAcquireNextImageKHR(Device->GetHandle(), Swapchain, UINT64_MAX, ImageAvailableSemaphores[CurrImageIndex]->GetHandle(),VK_NULL_HANDLE, &CurrImageIndex);
+
 }
 
 

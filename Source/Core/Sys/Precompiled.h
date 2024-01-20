@@ -37,7 +37,7 @@
 #include "../Math/SimulacraMatrix.h"
 
 //Containers
-#include "../Containers/Array.h"
+#include "../Containers/SimulacraArray.h"
 
 //Templates
 #include "../Templates/SimulacraIsPointer.h"

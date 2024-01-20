@@ -1,6 +1,6 @@
 # ninja log v5
 1828	1909	7263786665131321	SimulacraEngine.exe	544ba1076ddcd108
-1	123	7265467570680528	build.ninja	81950bc69ee2cddd
+1	123	7273962930721221	build.ninja	81950bc69ee2cddd
 12	1623	7263786662293751	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	96f697435abc70b3
 38	881	7263785355019346	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.obj	14c92b9b094f0c57
 9	792	7263786653955761	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj	30e04c8b10e0ccf9
@@ -9,7 +9,6 @@
 21	791	7263786653955761	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanResource.cpp.obj	458b6788ee3b8eb4
 32	791	7263786653955761	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanShader.cpp.obj	d127417124b3a0cf
 18	794	7263786654005917	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj	e4c54318fc89190d
-44	894	7263786655009991	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanViewport.cpp.obj	2ee20685129bdc23
 15	831	7263786654367344	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanExtensions.cpp.obj	fd6fd3f2566190fd
 53	915	7263786655203893	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Platforms/Linux/SimulacraVulkanLinuxPlatform.cpp.obj	834ac09c2a0c2a44
 25	795	7263786654005917	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	2a6aeaf98eac7463

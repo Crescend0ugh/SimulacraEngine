@@ -61,7 +61,7 @@ class SArray
 
     inline int  GetSize()
     {
-        return 0;
+        return Size;
     }
 
     inline void Reserve()
@@ -71,7 +71,7 @@ class SArray
 
     inline int  GetCapacity()
     {
-        return 0;
+        return Capacity;
     }
 
     inline void Shrink()

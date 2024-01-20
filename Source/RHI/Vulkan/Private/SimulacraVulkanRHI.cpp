@@ -5,6 +5,7 @@
 
 #include "../Public/SimulacraVulkan.h"
 #include "../../../../Source/Core/SimulacraGameViewport.h"
+#include "../Public/SimulacraVulkanRHI.h"
 
 
 void SVulkanRHI::CreateInstance() {
@@ -53,10 +54,6 @@ void SVulkanRHI::CreateSwapchain()
 }
 
 
-void SVulkanRHI::CreateViewport()
-{
-    Viewport = new SVulkanViewport(Device, Swapchain);
-}
 
 
 SVulkanRHI::SVulkanRHI(): Instance(VK_NULL_HANDLE),
@@ -70,8 +67,8 @@ void SVulkanRHI::Init() {
     CreateInstance();
     CreateDevice();
     CreateSwapchain();
-    CreateViewport();
     CreatePipeline();
+    CreateCommandPool();
     
 
 }
@@ -85,4 +82,35 @@ void SVulkanRHI::CreatePipeline()
     Pipeline = new SVulkanPipeline(Device, Swapchain);
 }
 
+void SVulkanRHI::CreateCommandPool()
+{
+    CommandPool = new SVulkanCommandPool(Device, Device->GetGraphicsQueue()->GetFamilyIndex());
+}
 
+void SVulkanRHI::DrawFrame()
+{
+    uint32 ImageIndex;
+}
+
+
+SVulkanSemaphore::SVulkanSemaphore(SVulkanDevice *InDevice) : Device(InDevice), Semaphore(VK_NULL_HANDLE)
+{
+    VkSemaphoreCreateInfo SemaphoreCreateInfo;
+    SetZeroVulkanStruct(SemaphoreCreateInfo, VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO);
+    vkCreateSemaphore(Device->GetHandle(), &SemaphoreCreateInfo, nullptr, &Semaphore);
+}
+
+SVulkanSemaphore::~SVulkanSemaphore()
+{
+    vkDestroySemaphore(Device->GetHandle(), Semaphore, nullptr);
+}
+
+SVulkanFence::SVulkanFence(SVulkanDevice* InDevice) : Device(InDevice), Fence(VK_NULL_HANDLE)
+{
+    VkFenceCreateInfo FenceCreateInfo;
+}
+
+SVulkanFence::~SVulkanFence()
+{
+    vkDestroyFence(Device->GetHandle(), Fence, nullptr);
+}

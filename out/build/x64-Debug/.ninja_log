@@ -1,7 +1,0 @@
-# ninja log v5
-20	710	7260806713557138	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.obj	2f03539ead1b37d1
-15	713	7260806713577150	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraApplication.cpp.obj	9a65791ab9eadf04
-12	1156	7260806717997505	CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.obj	8665b9d73d1192bf
-4	1294	7260806719398683	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	bf4ea07ee9c6fada
-4	977	7260807639560445	CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.obj	a904b2877e6d28e4
-6	214	7260808582136634	build.ninja	8cde6dc8d351b67f

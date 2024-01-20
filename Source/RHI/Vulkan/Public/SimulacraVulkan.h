@@ -27,8 +27,11 @@ class SVulkanInstance;
 class SVulkanDevice;
 class SVulkanQueue;
 class SVulkanSwapchain;
-class SVulkanViewport;
 class SVulkanPipeline;
+class SVulkanCommandBuffer;
+class SVulkanCommandPool;
+class SVulkanSemaphore;
+class SVulkanFence;
 
 // Vulkan utilities
 #include "SimulacraVulkanDebugUtils.h"
@@ -48,6 +51,6 @@ class SVulkanPipeline;
 #include "SimulacraVulkanDevice.h"
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanSwapchain.h"
-#include "SimulacraVulkanViewport.h"
 #include "SimulacraVulkanPipeline.h"
+#include "SimulacraVulkanCommandBuffer.h"
 
