@@ -10,12 +10,15 @@
 class SVulkanRHI
 {
 
-    void Shutdown();
+
 
 public:
     SVulkanRHI();
 
     void Init();
+
+    void Shutdown();
+
 
 protected:
 
@@ -41,7 +44,8 @@ protected:
     //Creates the command pool
     void CreateCommandPool();
 
-    void DrawFrame();
+
+
 
 
     VkPhysicalDevice SelectPhysicalDevice(VkInstance InInstance);
@@ -53,6 +57,7 @@ private:
     SVulkanSwapchain   *Swapchain;
     SVulkanPipeline    *Pipeline;
     SVulkanCommandPool *CommandPool;
+    SVulkanCommandBuffer* ActiveCommandBuffer;
 
 };
 

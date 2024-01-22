@@ -19,6 +19,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
      RHI->Init();
 
 
+
     delete Application;
     std::cout << "Works\n";
     return 0;

@@ -60,11 +60,8 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     CreateImageViews();
     CreateRenderPass();
     CreateFramebuffers();
-
-    for (SVulkanSemaphore* Semaphore : ImageAvailableSemaphores)
-    {
-        Semaphore = new SVulkanSemaphore(Device);
-    }
+    ImageAvailableSemaphores = new SVulkanSemaphore(Device);
+    RenderFinishedSemaphores = new SVulkanSemaphore(Device);
 
 
 }
@@ -197,13 +194,6 @@ void SVulkanSwapchain::CreateImageViews()
 void SVulkanSwapchain::CreateRenderPass()
 {
 
-    VkSubpassDependency Dependency {};
-    Dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
-    Dependency.dstSubpass = 0;
-    Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-    Dependency.srcAccessMask = 0;
-    Dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-    Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
 
     VkAttachmentDescription ColorAttachment;
     ColorAttachment.format         = SurfaceFormat.format;
@@ -218,6 +208,20 @@ void SVulkanSwapchain::CreateRenderPass()
     VkAttachmentReference ColorAttachmentReference;
     ColorAttachmentReference.attachment = 0;
     ColorAttachmentReference.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+
+    VkSubpassDescription SubpassDescription{};
+    SubpassDescription.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    SubpassDescription.colorAttachmentCount = 1;
+    SubpassDescription.pColorAttachments    = &ColorAttachmentReference;
+
+    VkSubpassDependency Dependency{};
+    Dependency.srcSubpass    = VK_SUBPASS_EXTERNAL;
+    Dependency.dstSubpass    = 0;
+    Dependency.srcStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    Dependency.srcAccessMask = 0;
+    Dependency.dstStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
 
     VkSubpassDescription Subpass{};
     Subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
@@ -266,11 +270,4 @@ void SVulkanSwapchain::CreateFramebuffers()
     }
 
 }
-
-void SVulkanSwapchain::AcquireNextImage()
-{
-    vkAcquireNextImageKHR(Device->GetHandle(), Swapchain, UINT64_MAX, ImageAvailableSemaphores[CurrImageIndex]->GetHandle(),VK_NULL_HANDLE, &CurrImageIndex);
-
-}
-
 

@@ -15,13 +15,12 @@ public:
 
     ~SVulkanPipeline();
 
+
 protected:
 
     void CreateShaderModule(VkShaderModule &OutShaderModule, const std::string &Filename);
 
     void CreateGraphicsPipeline();
-
-    void Bind(VkCommandBuffer CommandBuffer);
 
     static std::vector<char> ReadFile(const std::string &Filename);
 

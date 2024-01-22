@@ -85,12 +85,10 @@ void SVulkanRHI::CreatePipeline()
 void SVulkanRHI::CreateCommandPool()
 {
     CommandPool = new SVulkanCommandPool(Device, Device->GetGraphicsQueue()->GetFamilyIndex());
+    ActiveCommandBuffer = new SVulkanCommandBuffer(Device, CommandPool);
+
 }
 
-void SVulkanRHI::DrawFrame()
-{
-    uint32 ImageIndex;
-}
 
 
 SVulkanSemaphore::SVulkanSemaphore(SVulkanDevice *InDevice) : Device(InDevice), Semaphore(VK_NULL_HANDLE)
@@ -98,6 +96,7 @@ SVulkanSemaphore::SVulkanSemaphore(SVulkanDevice *InDevice) : Device(InDevice), 
     VkSemaphoreCreateInfo SemaphoreCreateInfo;
     SetZeroVulkanStruct(SemaphoreCreateInfo, VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO);
     vkCreateSemaphore(Device->GetHandle(), &SemaphoreCreateInfo, nullptr, &Semaphore);
+
 }
 
 SVulkanSemaphore::~SVulkanSemaphore()

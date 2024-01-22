@@ -32,6 +32,7 @@ public:
         return QueueIndex;
     }
 
+    void Submit(SVulkanCommandBuffer* CommandBuffer, uint32 NumWaitSemaphores, VkSemaphore WaitSemaphores, uint32 NumSignalSemaphores, VkSemaphore SignalSemaphores);
 
 
 

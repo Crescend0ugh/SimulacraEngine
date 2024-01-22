@@ -10,10 +10,16 @@ class SVulkanDevice;
 
 class SVulkanViewport;
 
+
 class SVulkanSwapchain
 {
 
 public:
+
+
+    void AcquireNextImageIndex();
+    void Present();
+
 
     SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
 
@@ -26,13 +32,23 @@ public:
     void CreateFramebuffers();
     void CreateRenderPass();
 
-    friend class SVulkanViewport;
+    VkRenderPass GetRenderPass() { return RenderPass; }
+
+    VkFramebuffer GetCurrFrameBuffer() { return Framebuffers[CurrImageIndex]; }
+
+    VkSemaphore GetCurrImageAvailableSemaphore();
+    VkSemaphore GetCurrRenderFinishedSemaphore();
+
+
+    VkExtent2D GetSwapchainExtent() { return ImageExtent; }
+
     friend class SVulkanPipeline;
+
 
 private:
 
-    void AcquireNextImage();
-    void Present();
+
+
 
 
     VkSurfaceFormatKHR ChooseSurfaceFormat();
@@ -67,13 +83,14 @@ private:
     uint32 CurrImageIndex;
 
 
+
     VkSwapchainKHR Swapchain;
     SVulkanDevice  *Device;
     VkSurfaceKHR   Surface;
     void           *WindowHandle;
 
-    std::vector<SVulkanSemaphore*> ImageAvailableSemaphores;
-
+    SVulkanSemaphore* ImageAvailableSemaphores;
+    SVulkanSemaphore* RenderFinishedSemaphores;
 
 };
 

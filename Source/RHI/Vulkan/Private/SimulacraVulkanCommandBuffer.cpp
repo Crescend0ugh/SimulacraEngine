@@ -5,7 +5,7 @@
 #include "../Public/SimulacraVulkanCommandBuffer.h"
 
 
-SVulkanCommandBuffer::SVulkanCommandBuffer(SVulkanDevice *InDevice, SVulkanCommandPool* InCommandPool) : Device(InDevice), CommandPool(InCommandPool)
+SVulkanCommandBuffer::SVulkanCommandBuffer(SVulkanDevice *InDevice, SVulkanCommandPool* InCommandPool) : Device(InDevice), CommandPool(InCommandPool), CommandBuffer(VK_NULL_HANDLE)
 {
     VkCommandBufferAllocateInfo CommandBufferAllocateInfo;
     SetZeroVulkanStruct(CommandBufferAllocateInfo, VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO);
@@ -38,17 +38,19 @@ void SVulkanCommandBuffer::Begin()
 
 void SVulkanCommandBuffer::End()
 {
-    vkEndCommandBuffer(CommandBuffer);
+    if (vkEndCommandBuffer(CommandBuffer) != VK_SUCCESS) {
+        throw std::runtime_error("failed to record command buffer!");
+    }
 }
 
-void SVulkanCommandBuffer::BeginRenderPass()
+void SVulkanCommandBuffer::BeginRenderPass(VkRenderPass InRenderPass, VkFramebuffer InFrameBuffer, VkExtent2D InSwapchainExtent)
 {
     VkRenderPassBeginInfo RenderPassBeginInfo;
     SetZeroVulkanStruct(RenderPassBeginInfo, VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO);
-    RenderPassBeginInfo.renderPass;
-    RenderPassBeginInfo.framebuffer;
+    RenderPassBeginInfo.renderPass = InRenderPass;
+    RenderPassBeginInfo.framebuffer = InFrameBuffer;
     RenderPassBeginInfo.renderArea.offset = {0,0};
-    RenderPassBeginInfo.renderArea.extent;
+    RenderPassBeginInfo.renderArea.extent = InSwapchainExtent;
 
     VkClearValue ClearColor = {{{0.0f, 0.0f, 0.0f, 1.0f}}};
     RenderPassBeginInfo.clearValueCount = 1;
@@ -77,4 +79,3 @@ SVulkanCommandPool::~SVulkanCommandPool()
 {
     vkDestroyCommandPool(Device->GetHandle(), CommandPool, nullptr);
 }
-
