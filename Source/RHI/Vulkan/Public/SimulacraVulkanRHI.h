@@ -19,6 +19,8 @@ public:
 
     void Shutdown();
 
+    void DrawFrame();
+
 
 protected:
 
@@ -67,7 +69,7 @@ public:
     SVulkanSemaphore(SVulkanDevice* InDevice);
     ~SVulkanSemaphore();
 
-    VkSemaphore GetHandle() { return Semaphore; }
+    VkSemaphore& GetHandle() { return Semaphore; }
 
 private:
     VkSemaphore Semaphore;
@@ -81,7 +83,7 @@ public:
     SVulkanFence(SVulkanDevice* InDevice);
     ~SVulkanFence();
 
-    VkFence GetHandle() { return Fence; }
+    VkFence& GetHandle() { return Fence; }
 private:
 
     VkFence Fence;

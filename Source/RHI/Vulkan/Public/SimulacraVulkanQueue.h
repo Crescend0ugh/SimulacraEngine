@@ -20,7 +20,7 @@ public:
 
 
 
-    VkQueue GetHandle() const {
+    VkQueue& GetHandle()  {
         return Queue;
     }
 

@@ -73,10 +73,24 @@ void SVulkanPipeline::CreateGraphicsPipeline()
     InputAssembly.topology               = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
     InputAssembly.primitiveRestartEnable = VK_FALSE;
 
+    Viewport.x = 0.0f;
+    Viewport.y = 0.0f;
+    Viewport.width = (float) Swapchain->GetSwapchainExtent().width;
+    Viewport.height = (float) Swapchain->GetSwapchainExtent().height;
+    Viewport.minDepth = 0.0f;
+    Viewport.maxDepth = 1.0f;
+
+    Scissor.offset = {0,0};
+    Scissor.extent = Swapchain->GetSwapchainExtent();
+
     VkPipelineViewportStateCreateInfo ViewportState{};
     ViewportState.sType         = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
     ViewportState.viewportCount = 1;
     ViewportState.scissorCount  = 1;
+    ViewportState.pViewports = &Viewport;
+    ViewportState.scissorCount = 1;
+    ViewportState.pScissors = &Scissor;
+
 
     VkPipelineRasterizationStateCreateInfo Rasterizer{};
     Rasterizer.sType                   = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
@@ -128,6 +142,12 @@ void SVulkanPipeline::CreateGraphicsPipeline()
         throw std::runtime_error("failed to create pipeline layout!");
     }
 
+    else
+    {
+        std::cout << "Created pipeline layout\n";
+    }
+
+
     VkGraphicsPipelineCreateInfo PipelineInfo{};
     PipelineInfo.sType               = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     PipelineInfo.stageCount          = 2;
@@ -141,10 +161,9 @@ void SVulkanPipeline::CreateGraphicsPipeline()
     PipelineInfo.pColorBlendState    = &ColorBlending;
     PipelineInfo.pDynamicState       = &DynamicState;
     PipelineInfo.layout              = PipelineLayout;
-    PipelineInfo.renderPass          = Swapchain->RenderPass;
+    PipelineInfo.renderPass          = Swapchain->GetRenderPass();
     PipelineInfo.subpass             = 0;
     PipelineInfo.basePipelineHandle  = VK_NULL_HANDLE;
-    PipelineInfo.basePipelineIndex   = -1;
 
     if (vkCreateGraphicsPipelines(Device->GetHandle(), VK_NULL_HANDLE, 1, &PipelineInfo, nullptr, &GraphicsPipeline) != VK_SUCCESS) {
         throw std::runtime_error("failed to create graphics pipeline!");

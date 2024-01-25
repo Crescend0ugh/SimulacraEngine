@@ -18,6 +18,11 @@ SVulkanCommandBuffer::SVulkanCommandBuffer(SVulkanDevice *InDevice, SVulkanComma
         throw std::runtime_error("failed to allocate command buffers!");
     }
 
+    else
+    {
+        std::cout << "Allocated Command Buffer\n";
+    }
+
 }
 
 SVulkanCommandBuffer::~SVulkanCommandBuffer()
@@ -62,6 +67,23 @@ void SVulkanCommandBuffer::BeginRenderPass(VkRenderPass InRenderPass, VkFramebuf
 void SVulkanCommandBuffer::EndRenderPass()
 {
     vkCmdEndRenderPass(CommandBuffer);
+}
+
+void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline, uint32& ImageIndex)
+{
+    OutCommandBuffer->Begin();
+    OutCommandBuffer->BeginRenderPass(InSwapchain->GetRenderPass(), InSwapchain->GetFrameBuffer(ImageIndex), InSwapchain->GetSwapchainExtent());
+    OutCommandBuffer->BindPipeline(InPipeline);
+    vkCmdDraw(OutCommandBuffer->GetHandle(), 3, 1, 0, 0);
+    OutCommandBuffer->EndRenderPass();
+    OutCommandBuffer->End();
+}
+
+void SVulkanCommandBuffer::BindPipeline(SVulkanPipeline *Pipeline)
+{
+    vkCmdBindPipeline(CommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, Pipeline->GetHandle());
+    vkCmdSetViewport(CommandBuffer, 0, 1 , &Pipeline->GetViewport());
+    vkCmdSetScissor(CommandBuffer, 0, 1, &Pipeline->GetScissor());
 }
 
 SVulkanCommandPool::SVulkanCommandPool(SVulkanDevice* InDevice, uint32 InQueueFamilyIndex) : Device(InDevice), CommandPool(VK_NULL_HANDLE)

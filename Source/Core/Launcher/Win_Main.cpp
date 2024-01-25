@@ -18,7 +18,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
      SVulkanRHI* RHI = new SVulkanRHI();
      RHI->Init();
 
-
+     while(true)
+     {
+         RHI->DrawFrame();
+     }
 
     delete Application;
     std::cout << "Works\n";

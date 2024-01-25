@@ -62,7 +62,7 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     CreateFramebuffers();
     ImageAvailableSemaphores = new SVulkanSemaphore(Device);
     RenderFinishedSemaphores = new SVulkanSemaphore(Device);
-
+    InFlightFence            = new SVulkanFence(Device);
 
 }
 
@@ -193,52 +193,43 @@ void SVulkanSwapchain::CreateImageViews()
 
 void SVulkanSwapchain::CreateRenderPass()
 {
+    VkAttachmentDescription colorAttachment{};
+    colorAttachment.format = SurfaceFormat.format       ;
+    colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+    colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
 
+    VkAttachmentReference colorAttachmentRef{};
+    colorAttachmentRef.attachment = 0;
+    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
-    VkAttachmentDescription ColorAttachment;
-    ColorAttachment.format         = SurfaceFormat.format;
-    ColorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
-    ColorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    ColorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
-    ColorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-    ColorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    ColorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
-    ColorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+    VkSubpassDescription subpass{};
+    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.colorAttachmentCount = 1;
+    subpass.pColorAttachments = &colorAttachmentRef;
 
-    VkAttachmentReference ColorAttachmentReference;
-    ColorAttachmentReference.attachment = 0;
-    ColorAttachmentReference.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    VkSubpassDependency dependency{};
+    dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+    dependency.dstSubpass = 0;
+    dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.srcAccessMask = 0;
+    dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
 
+    VkRenderPassCreateInfo renderPassInfo{};
+    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    renderPassInfo.attachmentCount = 1;
+    renderPassInfo.pAttachments = &colorAttachment;
+    renderPassInfo.subpassCount = 1;
+    renderPassInfo.pSubpasses = &subpass;
+    renderPassInfo.dependencyCount = 1;
+    renderPassInfo.pDependencies = &dependency;
 
-    VkSubpassDescription SubpassDescription{};
-    SubpassDescription.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
-    SubpassDescription.colorAttachmentCount = 1;
-    SubpassDescription.pColorAttachments    = &ColorAttachmentReference;
-
-    VkSubpassDependency Dependency{};
-    Dependency.srcSubpass    = VK_SUBPASS_EXTERNAL;
-    Dependency.dstSubpass    = 0;
-    Dependency.srcStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-    Dependency.srcAccessMask = 0;
-    Dependency.dstStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-    Dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
-
-    VkSubpassDescription Subpass{};
-    Subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
-    Subpass.colorAttachmentCount = 1;
-    Subpass.pColorAttachments    = &ColorAttachmentReference;
-
-    VkRenderPassCreateInfo RenderPassInfo{};
-    RenderPassInfo.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
-    RenderPassInfo.attachmentCount = 1;
-    RenderPassInfo.pAttachments    = &ColorAttachment;
-    RenderPassInfo.subpassCount    = 1;
-    RenderPassInfo.pSubpasses      = &Subpass;
-    RenderPassInfo.pDependencies = &Dependency;
-    RenderPassInfo.dependencyCount = 1;
-
-    if (vkCreateRenderPass(Device->GetHandle(), &RenderPassInfo, nullptr, &RenderPass) != VK_SUCCESS)
-    {
+    if (vkCreateRenderPass(Device->GetHandle(), &renderPassInfo, nullptr, &RenderPass) != VK_SUCCESS) {
         throw std::runtime_error("failed to create render pass!");
     }
 

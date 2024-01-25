@@ -11,9 +11,18 @@ class SVulkanPipeline
 
 public:
 
-    explicit SVulkanPipeline(SVulkanDevice *InDevice, SVulkanSwapchain *InSwapchain);
+     SVulkanPipeline(SVulkanDevice *InDevice, SVulkanSwapchain *InSwapchain);
 
     ~SVulkanPipeline();
+
+    VkPipeline GetHandle()
+    { return GraphicsPipeline; }
+
+    VkRect2D& GetScissor() {return Scissor;}
+
+
+
+    VkViewport& GetViewport() { return Viewport; }
 
 
 protected:
@@ -24,15 +33,17 @@ protected:
 
     static std::vector<char> ReadFile(const std::string &Filename);
 
+
 private:
 
-    SVulkanDevice   *Device;
+    SVulkanDevice    *Device;
     SVulkanSwapchain *Swapchain;
     VkPipeline       GraphicsPipeline;
-    VkRenderPass     RenderPass;
+    VkViewport       Viewport;
+    VkRect2D         Scissor;
     VkPipelineLayout PipelineLayout;
-    VkShaderModule VertShaderModule;
-    VkShaderModule FragShaderModule;
+    VkShaderModule   VertShaderModule;
+    VkShaderModule   FragShaderModule;
 };
 
 

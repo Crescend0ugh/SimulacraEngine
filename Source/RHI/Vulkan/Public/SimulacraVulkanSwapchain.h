@@ -18,6 +18,7 @@ public:
 
 
     void AcquireNextImageIndex();
+
     void Present();
 
 
@@ -25,30 +26,49 @@ public:
 
     ~SVulkanSwapchain() = default;
 
-    VkSwapchainKHR GetHandle()
+    VkSwapchainKHR& GetHandle()
     { return Swapchain; }
 
     void CreateImageViews();
+
     void CreateFramebuffers();
+
     void CreateRenderPass();
 
-    VkRenderPass GetRenderPass() { return RenderPass; }
 
-    VkFramebuffer GetCurrFrameBuffer() { return Framebuffers[CurrImageIndex]; }
+    uint32& GetImageIndex()
+    {
+        return CurrImageIndex;
+    }
+    VkRenderPass GetRenderPass()
+    { return RenderPass; }
 
-    VkSemaphore GetCurrImageAvailableSemaphore();
-    VkSemaphore GetCurrRenderFinishedSemaphore();
+    VkFramebuffer GetFrameBuffer(uint32 Index)
+    { return Framebuffers[Index]; }
 
 
-    VkExtent2D GetSwapchainExtent() { return ImageExtent; }
+    SVulkanSemaphore *GetImageAvailableSemaphores() const
+    {
+        return ImageAvailableSemaphores;
+    }
+
+    SVulkanSemaphore *GetRenderFinishedSemaphores() const
+    {
+        return RenderFinishedSemaphores;
+    }
+
+    SVulkanFence *GetInFlightFence() const
+    {
+        return InFlightFence;
+    }
+
+    VkExtent2D GetSwapchainExtent()
+    { return ImageExtent; }
 
     friend class SVulkanPipeline;
 
 
 private:
-
-
-
 
 
     VkSurfaceFormatKHR ChooseSurfaceFormat();
@@ -78,10 +98,9 @@ private:
 
 
     VkRenderPass RenderPass;
-    uint32 BufferCount = 3;
+    uint32       BufferCount = 1;
 
     uint32 CurrImageIndex;
-
 
 
     VkSwapchainKHR Swapchain;
@@ -89,8 +108,9 @@ private:
     VkSurfaceKHR   Surface;
     void           *WindowHandle;
 
-    SVulkanSemaphore* ImageAvailableSemaphores;
-    SVulkanSemaphore* RenderFinishedSemaphores;
+    SVulkanSemaphore *ImageAvailableSemaphores;
+    SVulkanSemaphore *RenderFinishedSemaphores;
+    SVulkanFence     *InFlightFence;
 
 };
 
