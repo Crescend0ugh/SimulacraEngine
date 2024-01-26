@@ -134,6 +134,7 @@ void SVulkanDevice::CreateLogicalDevice()
 
     GraphicsQueue = new SVulkanQueue(this, GraphicsQueueFamilyIndex);
     std::cout << "Created Graphics Queue\n";
+    PresentQueue = GraphicsQueue;
 
     if (ComputeQueueFamilyIndex != -1)
     {
