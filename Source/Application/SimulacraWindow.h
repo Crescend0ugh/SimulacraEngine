@@ -25,6 +25,8 @@ public:
 
     virtual void* GetHandle() = 0;
 
+    virtual void GetSize(uint32& Width, uint32& Height) = 0;
+
 protected:
 
     virtual void Move(int32 InX, int32 InY) = 0;
@@ -36,7 +38,6 @@ protected:
     virtual void Minimize() = 0;
 
     virtual void Maximize() = 0;
-
 
 private:
 

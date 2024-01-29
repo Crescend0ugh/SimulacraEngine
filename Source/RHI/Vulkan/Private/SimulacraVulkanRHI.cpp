@@ -66,7 +66,7 @@ void SVulkanRHI::Init()
     CreateDevice();
     CreateSwapchain();
     CreatePipeline();
-    CreateCommandPool();
+
 
 
 }
@@ -81,57 +81,25 @@ void SVulkanRHI::CreatePipeline()
     Pipeline = new SVulkanPipeline(Device, Swapchain);
 }
 
-void SVulkanRHI::CreateCommandPool()
-{
-    CommandPool         = new SVulkanCommandPool(Device, Device->GetGraphicsQueue()->GetFamilyIndex());
-    ActiveCommandBuffer = new SVulkanCommandBuffer(Device, CommandPool);
-
-}
 
 void SVulkanRHI::DrawFrame()
 {
-    vkWaitForFences(Device->GetHandle(), 1, &Swapchain->GetInFlightFence()->GetHandle(), VK_TRUE, UINT64_MAX);
-    vkResetFences(Device->GetHandle(), 1, &Swapchain->GetInFlightFence()->GetHandle());
+    vkWaitForFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle(), VK_TRUE, UINT64_MAX);
+    vkResetFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle());
 
-    uint32 ImageIndex;
+    uint32_t imageIndex = Swapchain->GetImageIndex();
+    Swapchain->AcquireNextImage();
 
-    vkAcquireNextImageKHR(Device->GetHandle(), Swapchain->GetHandle(), UINT64_MAX,
-                          Swapchain->GetImageAvailableSemaphores()->GetHandle(), VK_NULL_HANDLE, &ImageIndex);
-    vkResetCommandBuffer(ActiveCommandBuffer->GetHandle(), 0);
-    SVulkanCommandBuffer::RecordCommandBuffer(ActiveCommandBuffer, Swapchain, Pipeline,  ImageIndex);
-    VkSubmitInfo SubmitInfo{};
-    SubmitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    vkResetCommandBuffer(Swapchain->GetCurrCommandBuffer()->GetHandle(), /*VkCommandBufferResetFlagBits*/ 0);
+    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(),Swapchain, Pipeline);
 
-    VkSemaphore          WaitSemaphores[] = {Swapchain->GetImageAvailableSemaphores()->GetHandle()};
-    VkPipelineStageFlags WaitStages[]     = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
-    SubmitInfo.waitSemaphoreCount = 1;
-    SubmitInfo.pWaitSemaphores    = WaitSemaphores;
-    SubmitInfo.pWaitDstStageMask  = WaitStages;
 
-    SubmitInfo.commandBufferCount = 1;
-    SubmitInfo.pCommandBuffers    = &ActiveCommandBuffer->GetHandle();
+    Device->GetGraphicsQueue()->Submit(Swapchain->GetCurrCommandBuffer(), 1, Swapchain->GetCurrImageAcquiredSemaphore(),
+                                       1, Swapchain->GetCurrRenderFinishedSemaphore(), Swapchain->GetCurrInFlightFence());
 
-    SubmitInfo.signalSemaphoreCount = 1;
-    SubmitInfo.pSignalSemaphores    = &Swapchain->GetRenderFinishedSemaphores()->GetHandle();
 
-    if (vkQueueSubmit(Device->GetGraphicsQueue()->GetHandle(), 1, &SubmitInfo,
-                      Swapchain->GetInFlightFence()->GetHandle()) != VK_SUCCESS)
-    {
-        throw std::runtime_error("failed to submit draw command buffer!");
-    }
 
-    VkPresentInfoKHR presentInfo{};
-    presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
-
-    presentInfo.waitSemaphoreCount = 1;
-    presentInfo.pWaitSemaphores = &Swapchain->GetRenderFinishedSemaphores()->GetHandle();
-
-    presentInfo.swapchainCount = 1;
-    presentInfo.pSwapchains = &Swapchain->GetHandle();
-
-    presentInfo.pImageIndices = &ImageIndex;
-
-    vkQueuePresentKHR(Device->GetPresentQueue()->GetHandle(), &presentInfo);
+    Swapchain->Present();
 
 }
 

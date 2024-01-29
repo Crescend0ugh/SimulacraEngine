@@ -6,6 +6,7 @@
 #include <algorithm>
 #include "../Public/SimulacraVulkanSwapchain.h"
 #include "../../../Core/Math/SimulacraMathUtils.h"
+#include "../../../Core/SimulacraGameViewport.h"
 
 
 SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle)
@@ -60,9 +61,23 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     CreateImageViews();
     CreateRenderPass();
     CreateFramebuffers();
-    ImageAvailableSemaphores = new SVulkanSemaphore(Device);
-    RenderFinishedSemaphores = new SVulkanSemaphore(Device);
-    InFlightFence            = new SVulkanFence(Device);
+
+
+    CommandPool = new SVulkanCommandPool(Device, Device->GetGraphicsQueue()->GetFamilyIndex());
+
+
+    ImageAcquiredSemaphores.resize(BufferCount);
+    RenderFinishedSemaphores.resize(BufferCount);
+    InFlightFences.resize(BufferCount);
+    CommandBuffers.resize(BufferCount);
+
+    for (int i = 0; i < BufferCount; i++)
+    {
+        ImageAcquiredSemaphores[i]  = new SVulkanSemaphore(Device);
+        RenderFinishedSemaphores[i] = new SVulkanSemaphore(Device);
+        InFlightFences[i]           = new SVulkanFence(Device);
+        CommandBuffers[i]           = new SVulkanCommandBuffer(Device, CommandPool);
+    }
 
 }
 
@@ -117,13 +132,14 @@ VkPresentModeKHR SVulkanSwapchain::ChoosePresentMode()
 VkExtent2D SVulkanSwapchain::ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilities)
 {
     uint32 Width, Height;
+    SGameViewport::GetWindow()->GetSize(Width, Height);
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Device->GetPhysicalHandle(), Surface, &InCapabilities);
     //TODO check if the platform supports checking windows extents
     //TODO provide actual surface dimensions
 
 
-    Width  = InCapabilities.currentExtent.width == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.width;
-    Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? 100 : InCapabilities.currentExtent.height;
+    Width  = InCapabilities.currentExtent.width == 0xFFFFFFFF ? Width : InCapabilities.currentExtent.width;
+    Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? Height : InCapabilities.currentExtent.height;
 
 
     return VkExtent2D{Width, Height};
@@ -194,43 +210,47 @@ void SVulkanSwapchain::CreateImageViews()
 void SVulkanSwapchain::CreateRenderPass()
 {
     VkAttachmentDescription colorAttachment{};
-    colorAttachment.format = SurfaceFormat.format       ;
-    colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
-    colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
-    colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    colorAttachment.format         = SurfaceFormat.format;
+    colorAttachment.samples        = VK_SAMPLE_COUNT_1_BIT;
+    colorAttachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    colorAttachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
+    colorAttachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
     colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-    colorAttachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+    colorAttachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
+    colorAttachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
 
     VkAttachmentReference colorAttachmentRef{};
     colorAttachmentRef.attachment = 0;
-    colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    colorAttachmentRef.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
     VkSubpassDescription subpass{};
-    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
     subpass.colorAttachmentCount = 1;
-    subpass.pColorAttachments = &colorAttachmentRef;
+    subpass.pColorAttachments    = &colorAttachmentRef;
 
     VkSubpassDependency dependency{};
-    dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
-    dependency.dstSubpass = 0;
-    dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.srcSubpass    = VK_SUBPASS_EXTERNAL;
+    dependency.dstSubpass    = 0;
+    dependency.srcStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
     dependency.srcAccessMask = 0;
-    dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.dstStageMask  = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
     dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
 
     VkRenderPassCreateInfo renderPassInfo{};
-    renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    renderPassInfo.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
     renderPassInfo.attachmentCount = 1;
-    renderPassInfo.pAttachments = &colorAttachment;
-    renderPassInfo.subpassCount = 1;
-    renderPassInfo.pSubpasses = &subpass;
+    renderPassInfo.pAttachments    = &colorAttachment;
+    renderPassInfo.subpassCount    = 1;
+    renderPassInfo.pSubpasses      = &subpass;
     renderPassInfo.dependencyCount = 1;
-    renderPassInfo.pDependencies = &dependency;
+    renderPassInfo.pDependencies   = &dependency;
 
-    if (vkCreateRenderPass(Device->GetHandle(), &renderPassInfo, nullptr, &RenderPass) != VK_SUCCESS) {
+    if (vkCreateRenderPass(Device->GetHandle(), &renderPassInfo, nullptr, &RenderPass) != VK_SUCCESS)
+    {
         throw std::runtime_error("failed to create render pass!");
+    } else
+    {
+        std::cout << "Created Render Pass\n";
     }
 
 }
@@ -258,7 +278,68 @@ void SVulkanSwapchain::CreateFramebuffers()
         {
             throw std::runtime_error("failed to create framebuffer!");
         }
+
+
     }
+
+    std::cout << "Created Framebuffers\n";
+
+}
+
+void SVulkanSwapchain::AcquireNextImage()
+{
+    if (vkAcquireNextImageKHR(Device->GetHandle(), Swapchain, UINT_FAST64_MAX,
+                              ImageAcquiredSemaphores[SemaphoreIndex]->GetHandle(), VK_NULL_HANDLE, &ImageIndex) !=
+        VK_SUCCESS)
+    {
+        throw std::runtime_error("Failed to acquire Image from swapchain\n");
+    }
+
+    SemaphoreIndex = (SemaphoreIndex + 1) % ImageAcquiredSemaphores.size();
+
+
+}
+
+void SVulkanSwapchain::Present()
+{
+
+    VkPresentInfoKHR PresentInfo;
+    SetZeroVulkanStruct(PresentInfo, VK_STRUCTURE_TYPE_PRESENT_INFO_KHR);
+
+    PresentInfo.waitSemaphoreCount = 1;
+    VkSemaphore WaitSemaphores = GetCurrRenderFinishedSemaphore()->GetHandle();
+    PresentInfo.pWaitSemaphores = &WaitSemaphores;
+
+    PresentInfo.swapchainCount = 1;
+    PresentInfo.pSwapchains    = &Swapchain;
+
+    PresentInfo.pImageIndices = &ImageIndex;
+
+
+    vkQueuePresentKHR(Device->GetPresentQueue()->GetHandle(), &PresentInfo);
+}
+
+void SVulkanSwapchain::DestroySwapchain()
+{
+    vkDeviceWaitIdle(Device->GetHandle());
+
+    //Destroy framebuffers
+    for( VkFramebuffer Framebuffer : Framebuffers)
+    {
+        vkDestroyFramebuffer(Device->GetHandle(), Framebuffer, nullptr);
+    }
+
+    //Destroy image views
+    for( VkImageView ImageView : ImageViews)
+    {
+        vkDestroyImageView(Device->GetHandle(), ImageView, nullptr);
+    }
+
+    vkDestroySwapchainKHR(Device->GetHandle(), Swapchain, nullptr);
+}
+
+void SVulkanSwapchain::CreateSwapchain()
+{
 
 }
 

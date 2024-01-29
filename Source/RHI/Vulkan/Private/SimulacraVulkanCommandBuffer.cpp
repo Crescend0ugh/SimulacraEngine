@@ -69,10 +69,12 @@ void SVulkanCommandBuffer::EndRenderPass()
     vkCmdEndRenderPass(CommandBuffer);
 }
 
-void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline, uint32& ImageIndex)
+void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline)
 {
+    vkResetCommandBuffer(OutCommandBuffer->GetHandle(), 0);
+
     OutCommandBuffer->Begin();
-    OutCommandBuffer->BeginRenderPass(InSwapchain->GetRenderPass(), InSwapchain->GetFrameBuffer(ImageIndex), InSwapchain->GetSwapchainExtent());
+    OutCommandBuffer->BeginRenderPass(InSwapchain->GetRenderPass(), InSwapchain->GetCurrFrameBuffer(), InSwapchain->GetSwapchainExtent());
     OutCommandBuffer->BindPipeline(InPipeline);
     vkCmdDraw(OutCommandBuffer->GetHandle(), 3, 1, 0, 0);
     OutCommandBuffer->EndRenderPass();

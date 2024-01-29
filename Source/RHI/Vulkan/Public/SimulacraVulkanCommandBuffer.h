@@ -36,7 +36,7 @@ public:
 
     void BindPipeline(SVulkanPipeline* Pipeline);
 
-    static void RecordCommandBuffer(SVulkanCommandBuffer* CommandBuffer, SVulkanSwapchain* Swapchain, SVulkanPipeline* Pipeline, uint32& ImageIndex);
+    static void RecordCommandBuffer(SVulkanCommandBuffer* CommandBuffer, SVulkanSwapchain* Swapchain, SVulkanPipeline* Pipeline);
 
 private:
 

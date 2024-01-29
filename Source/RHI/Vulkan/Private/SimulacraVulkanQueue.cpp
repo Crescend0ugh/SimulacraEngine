@@ -18,21 +18,26 @@ SVulkanQueue::~SVulkanQueue() {
 
 }
 
-void SVulkanQueue::Submit(SVulkanCommandBuffer *CommandBuffer, uint32 NumWaitSemaphores, VkSemaphore WaitSemaphores, uint32 NumSignalSemaphores, VkSemaphore SignalSemaphores)
+void SVulkanQueue::Submit(SVulkanCommandBuffer *CommandBuffer, uint32 NumWaitSemaphores,
+                          SVulkanSemaphore *InOutWaitSemaphores, uint32 NumSignalSemaphores,
+                          SVulkanSemaphore *InOutSignalSemaphores, SVulkanFence *InOutFence)
 {
 
-    const VkCommandBuffer CommandBuffers[] = {CommandBuffer->GetHandle()};
     VkSubmitInfo SubmitInfo;
     SetZeroVulkanStruct(SubmitInfo, VK_STRUCTURE_TYPE_SUBMIT_INFO);
-    VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+    VkPipelineStageFlags WaitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+    SubmitInfo.waitSemaphoreCount = 1;
+    SubmitInfo.pWaitSemaphores = &InOutWaitSemaphores->GetHandle();
+    SubmitInfo.pWaitDstStageMask = WaitStages;
 
     SubmitInfo.commandBufferCount = 1;
-    SubmitInfo.pCommandBuffers = CommandBuffers;
-    SubmitInfo.pWaitSemaphores = &WaitSemaphores;
-    SubmitInfo.waitSemaphoreCount = NumWaitSemaphores;
-    SubmitInfo.pWaitDstStageMask = waitStages;
-    SubmitInfo.signalSemaphoreCount = NumSignalSemaphores;
-    SubmitInfo.pSignalSemaphores = &SignalSemaphores;
-    vkQueueSubmit(Queue, 1, &SubmitInfo, VK_NULL_HANDLE);
+    SubmitInfo.pCommandBuffers = &CommandBuffer->GetHandle();
+
+    SubmitInfo.signalSemaphoreCount = 1;
+    SubmitInfo.pSignalSemaphores = &InOutSignalSemaphores->GetHandle();
+
+    if (vkQueueSubmit(Device->GetGraphicsQueue()->GetHandle(), 1, &SubmitInfo, InOutFence->GetHandle()) != VK_SUCCESS) {
+        throw std::runtime_error("failed to submit draw command buffer!");
+    }
 
 }

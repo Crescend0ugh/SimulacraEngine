@@ -49,6 +49,15 @@ void SWindowsWindow::Init(HINSTANCE InHInstance)
 
 }
 
+void SWindowsWindow::GetSize(uint32 &Width, uint32 &Height)
+{
+    RECT Area;
+    GetClientRect(HWnd, &Area);
+    Width = Area.right;
+    Height = Area.bottom;
+
+}
+
 void SWindowsWindow::Move(int32 InX, int32 InY)
 {
     ::MoveWindow(HWnd, InX, InY, CW_USEDEFAULT, CW_USEDEFAULT, FALSE);

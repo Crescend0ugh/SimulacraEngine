@@ -43,8 +43,7 @@ protected:
     //Creates the graphics pipeline
     void CreatePipeline();
 
-    //Creates the command pool
-    void CreateCommandPool();
+
 
 
 
@@ -60,6 +59,8 @@ private:
     SVulkanPipeline    *Pipeline;
     SVulkanCommandPool *CommandPool;
     SVulkanCommandBuffer* ActiveCommandBuffer;
+    std::vector<SVulkanCommandBuffer> CommandBuffers();
+
 
 };
 

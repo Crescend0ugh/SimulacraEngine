@@ -17,16 +17,17 @@ class SVulkanSwapchain
 public:
 
 
-    void AcquireNextImageIndex();
-
-    void Present();
 
 
     SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle);
 
     ~SVulkanSwapchain() = default;
 
-    VkSwapchainKHR& GetHandle()
+    void DestroySwapchain();
+
+    void CreateSwapchain();
+
+    VkSwapchainKHR &GetHandle()
     { return Swapchain; }
 
     void CreateImageViews();
@@ -35,35 +36,45 @@ public:
 
     void CreateRenderPass();
 
-
-    uint32& GetImageIndex()
-    {
-        return CurrImageIndex;
-    }
     VkRenderPass GetRenderPass()
     { return RenderPass; }
 
-    VkFramebuffer GetFrameBuffer(uint32 Index)
-    { return Framebuffers[Index]; }
-
-
-    SVulkanSemaphore *GetImageAvailableSemaphores() const
+    uint32 & GetImageIndex()
     {
-        return ImageAvailableSemaphores;
+        return ImageIndex;
     }
 
-    SVulkanSemaphore *GetRenderFinishedSemaphores() const
+    VkFramebuffer GetCurrFrameBuffer()
     {
-        return RenderFinishedSemaphores;
+        return Framebuffers[ImageIndex];
     }
 
-    SVulkanFence *GetInFlightFence() const
+    SVulkanSemaphore* GetCurrImageAcquiredSemaphore() const
     {
-        return InFlightFence;
+        return ImageAcquiredSemaphores[ImageIndex];
+    }
+
+    SVulkanSemaphore* GetCurrRenderFinishedSemaphore() const
+    {
+        return RenderFinishedSemaphores[ImageIndex];
+    }
+
+    SVulkanFence* GetCurrInFlightFence() const
+    {
+        return InFlightFences[ImageIndex];
+    }
+
+    SVulkanCommandBuffer* GetCurrCommandBuffer() const
+    {
+        return CommandBuffers[ImageIndex];
     }
 
     VkExtent2D GetSwapchainExtent()
     { return ImageExtent; }
+
+    void AcquireNextImage();
+
+    void Present();
 
     friend class SVulkanPipeline;
 
@@ -98,9 +109,11 @@ private:
 
 
     VkRenderPass RenderPass;
-    uint32       BufferCount = 1;
+    uint32       BufferCount = 3;
 
-    uint32 CurrImageIndex;
+    uint32 ImageIndex;
+    uint32 SemaphoreIndex;
+
 
 
     VkSwapchainKHR Swapchain;
@@ -108,10 +121,14 @@ private:
     VkSurfaceKHR   Surface;
     void           *WindowHandle;
 
-    SVulkanSemaphore *ImageAvailableSemaphores;
-    SVulkanSemaphore *RenderFinishedSemaphores;
-    SVulkanFence     *InFlightFence;
 
+
+    std::vector<SVulkanCommandBuffer*> CommandBuffers;
+    SVulkanCommandPool* CommandPool;
+
+    std::vector<SVulkanSemaphore *> ImageAcquiredSemaphores;
+    std::vector<SVulkanSemaphore *> RenderFinishedSemaphores;
+    std::vector<SVulkanFence *>     InFlightFences;
 };
 
 

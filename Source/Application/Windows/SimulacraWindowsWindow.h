@@ -16,8 +16,6 @@ public:
     static std::string WindowClassName;
 
 
-
-
 public:
 
 
@@ -39,6 +37,8 @@ public:
     void  Maximize() override;
 
     void* GetHandle() override;
+
+    void GetSize(uint32 &Width, uint32 &Height) override;
 
 
 private:
