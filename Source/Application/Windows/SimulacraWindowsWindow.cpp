@@ -90,3 +90,18 @@ void *SWindowsWindow::GetHandle()
     return HWnd;
 }
 
+bool SWindowsWindow::ShouldClose()
+{
+    return bShouldClose;
+}
+
+void SWindowsWindow::Resize(int32 InX, int32 InY, int32 InWidth, int32 InHeight)
+{
+
+}
+
+void SWindowsWindow::Restore()
+{
+
+}
+

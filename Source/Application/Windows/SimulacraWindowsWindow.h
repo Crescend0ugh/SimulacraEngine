@@ -19,6 +19,7 @@ public:
 public:
 
 
+    bool ShouldClose() override;
 
     SWindowsWindow();
 
@@ -39,6 +40,10 @@ public:
     void* GetHandle() override;
 
     void GetSize(uint32 &Width, uint32 &Height) override;
+
+    void Resize(int32 InX, int32 InY, int32 InWidth, int32 InHeight) override;
+
+    void Restore() override;
 
 
 private:

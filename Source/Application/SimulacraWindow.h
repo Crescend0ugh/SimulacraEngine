@@ -20,6 +20,7 @@ class SWindowBase
 
 public:
 
+    SWindowBase() = default;
 
     virtual ~SWindowBase() = default;
 
@@ -27,7 +28,9 @@ public:
 
     virtual void GetSize(uint32& Width, uint32& Height) = 0;
 
-protected:
+    virtual bool ShouldClose() = 0;
+
+    virtual void Resize(int32 InX, int32 InY, int32 InWidth, int32 InHeight) = 0;
 
     virtual void Move(int32 InX, int32 InY) = 0;
 
@@ -38,6 +41,17 @@ protected:
     virtual void Minimize() = 0;
 
     virtual void Maximize() = 0;
+
+    virtual void Restore() = 0;
+
+    
+
+
+
+    int32 Width;
+    int32 Height;
+
+    bool bShouldClose;
 
 private:
 
