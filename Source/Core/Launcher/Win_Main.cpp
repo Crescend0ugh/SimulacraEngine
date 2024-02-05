@@ -20,7 +20,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     SApplicationBase* Application = SApplication::CreateApplication();
      SVulkanRHI* RHI = new SVulkanRHI();
      RHI->Init();
-    std::cout << "1";
      while(true)
      {
          Application->PumpMessages();

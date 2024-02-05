@@ -29,6 +29,12 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
             EndPaint(hwnd, &ps);
         }
+
+        case WM_SIZING:
+        {
+
+        }
+
             return 0;
 
     }

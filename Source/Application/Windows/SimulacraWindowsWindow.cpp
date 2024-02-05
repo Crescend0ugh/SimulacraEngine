@@ -24,8 +24,8 @@ void SWindowsWindow::Init(HINSTANCE InHInstance)
     uint32      WindowStyle = WS_OVERLAPPEDWINDOW;
     int         XPos = CW_USEDEFAULT;
     int         YPos = CW_USEDEFAULT;
-    int         Width = CW_USEDEFAULT;
-    int         Height = CW_USEDEFAULT;
+    int         Width = 1000;
+    int         Height = 1000;
     HWND        HWndParent = nullptr;
     HMENU       HMenu = nullptr;
     HINSTANCE   HInstance = InHInstance;
@@ -102,6 +102,6 @@ void SWindowsWindow::Resize(int32 InX, int32 InY, int32 InWidth, int32 InHeight)
 
 void SWindowsWindow::Restore()
 {
-
+    ::ShowWindow(HWnd, SW_RESTORE);
 }
 

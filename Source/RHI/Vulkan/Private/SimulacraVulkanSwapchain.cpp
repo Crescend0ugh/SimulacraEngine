@@ -58,6 +58,7 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
         std::cout << "Created swapchain\n";
     }
 
+
     CreateImageViews();
     CreateRenderPass();
     CreateFramebuffers();
@@ -138,9 +139,10 @@ VkExtent2D SVulkanSwapchain::ChooseExtent(VkSurfaceCapabilitiesKHR InCapabilitie
     //TODO provide actual surface dimensions
 
 
-    Width  = InCapabilities.currentExtent.width == 0xFFFFFFFF ? Width : InCapabilities.currentExtent.width;
-    Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? Height : InCapabilities.currentExtent.height;
+    Width  = InCapabilities.currentExtent.width == 0xFFFFFFFF ? 200 : InCapabilities.currentExtent.width;
+    Height = InCapabilities.currentExtent.height == 0xFFFFFFFF ? 200 : InCapabilities.currentExtent.height;
 
+    std::cout << "WIDTH: " << Width << "  HEIGHT: " << Height << "\n";
 
     return VkExtent2D{Width, Height};
 
@@ -288,12 +290,23 @@ void SVulkanSwapchain::CreateFramebuffers()
 
 void SVulkanSwapchain::AcquireNextImage()
 {
-    if (vkAcquireNextImageKHR(Device->GetHandle(), Swapchain, UINT_FAST64_MAX,
-                              ImageAcquiredSemaphores[SemaphoreIndex]->GetHandle(), VK_NULL_HANDLE, &ImageIndex) !=
-        VK_SUCCESS)
+
     {
-        throw std::runtime_error("Failed to acquire Image from swapchain\n");
+        VkResult Result = vkAcquireNextImageKHR(Device->GetHandle(), Swapchain, UINT_FAST64_MAX,
+                                                ImageAcquiredSemaphores[SemaphoreIndex]->GetHandle(), VK_NULL_HANDLE,
+                                                &ImageIndex);
+
+        if (Result == VK_ERROR_OUT_OF_DATE_KHR || Result == VK_SUBOPTIMAL_KHR)
+        {
+            DestroySwapchain();
+            CreateSwapchain();
+        } else if (Result != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to present swap chain image!");
+        }
+
     }
+
 
     SemaphoreIndex = (SemaphoreIndex + 1) % ImageAcquiredSemaphores.size();
 
@@ -324,22 +337,64 @@ void SVulkanSwapchain::DestroySwapchain()
     vkDeviceWaitIdle(Device->GetHandle());
 
     //Destroy framebuffers
-    for( VkFramebuffer Framebuffer : Framebuffers)
+    for (VkFramebuffer Framebuffer: Framebuffers)
     {
         vkDestroyFramebuffer(Device->GetHandle(), Framebuffer, nullptr);
     }
 
     //Destroy image views
-    for( VkImageView ImageView : ImageViews)
+    for (VkImageView ImageView: ImageViews)
     {
         vkDestroyImageView(Device->GetHandle(), ImageView, nullptr);
     }
 
-    vkDestroySwapchainKHR(Device->GetHandle(), Swapchain, nullptr);
 }
 
+//TODO Properly recreate the swapchain
 void SVulkanSwapchain::CreateSwapchain()
 {
+    VkSurfaceCapabilitiesKHR Capabilities;
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Device->GetPhysicalHandle(), Surface, &Capabilities);
+
+
+    MinImageCount  = ChooseMinImageCount(Capabilities, 3);
+    SurfaceFormat  = ChooseSurfaceFormat();
+    ImageExtent    = ChooseExtent(Capabilities);
+    PresentMode    = ChoosePresentMode();
+    PreTransform   = ChoosePreTransform(Capabilities);
+    CompositeAlpha = ChooseAlphaCompositingMode(Capabilities);
+
+
+    VkSwapchainCreateInfoKHR SwapchainCreateInfo;
+    SetZeroVulkanStruct(SwapchainCreateInfo, VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR);
+    SwapchainCreateInfo.surface          = Surface;
+    SwapchainCreateInfo.minImageCount    = MinImageCount;
+    SwapchainCreateInfo.imageFormat      = SurfaceFormat.format;
+    SwapchainCreateInfo.imageColorSpace  = SurfaceFormat.colorSpace;
+    SwapchainCreateInfo.imageExtent      = ImageExtent;
+    SwapchainCreateInfo.imageArrayLayers = 1;
+    SwapchainCreateInfo.imageUsage       = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    SwapchainCreateInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
+    SwapchainCreateInfo.preTransform     = PreTransform;
+    SwapchainCreateInfo.compositeAlpha   = CompositeAlpha;
+    SwapchainCreateInfo.presentMode      = PresentMode;
+    SwapchainCreateInfo.clipped          = VK_TRUE;
+    VkSwapchainKHR Old = Swapchain;
+    SwapchainCreateInfo.oldSwapchain     = Old;
+
+    VkResult Result = vkCreateSwapchainKHR(Device->GetHandle(), &SwapchainCreateInfo, nullptr, &Swapchain);
+
+    if (Result != VK_SUCCESS)
+    {
+        std::cout << "Failed to create swapchain\n";
+    } else
+    {
+        std::cout << "Created swapchain\n";
+    }
+
+    CreateImageViews();
+    CreateRenderPass();
+    CreateFramebuffers();
 
 }
 

@@ -63,10 +63,16 @@ void SVulkanPipeline::CreateGraphicsPipeline()
 
     VkPipelineShaderStageCreateInfo ShaderStages[] = {VertShaderStageInfo, fragShaderStageInfo};
 
+
+    auto BindingDescription = SVertex::GetBindingDescription();
+    auto AttributeDescriptions = SVertex::GetAttributeDescriptions();
+
     VkPipelineVertexInputStateCreateInfo VertexInputInfo{};
     VertexInputInfo.sType                           = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    VertexInputInfo.vertexBindingDescriptionCount   = 0;
-    VertexInputInfo.vertexAttributeDescriptionCount = 0;
+    VertexInputInfo.vertexBindingDescriptionCount   = 1;
+    VertexInputInfo.pVertexBindingDescriptions = &BindingDescription;
+    VertexInputInfo.vertexAttributeDescriptionCount = AttributeDescriptions.size();
+    VertexInputInfo.pVertexAttributeDescriptions = AttributeDescriptions.data();
 
     VkPipelineInputAssemblyStateCreateInfo InputAssembly{};
     InputAssembly.sType                  = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;

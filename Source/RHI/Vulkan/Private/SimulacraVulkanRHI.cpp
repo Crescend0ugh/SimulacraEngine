@@ -85,10 +85,11 @@ void SVulkanRHI::CreatePipeline()
 void SVulkanRHI::DrawFrame()
 {
     vkWaitForFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle(), VK_TRUE, UINT64_MAX);
-    vkResetFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle());
 
     uint32_t imageIndex = Swapchain->GetImageIndex();
     Swapchain->AcquireNextImage();
+
+    vkResetFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle());
 
     vkResetCommandBuffer(Swapchain->GetCurrCommandBuffer()->GetHandle(), /*VkCommandBufferResetFlagBits*/ 0);
     SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(),Swapchain, Pipeline);

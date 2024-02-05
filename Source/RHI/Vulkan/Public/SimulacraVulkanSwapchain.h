@@ -8,7 +8,6 @@
 
 class SVulkanDevice;
 
-class SVulkanViewport;
 
 
 class SVulkanSwapchain

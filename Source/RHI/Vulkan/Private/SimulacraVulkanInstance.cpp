@@ -98,7 +98,6 @@ SVulkanInstanceExtensions SVulkanInstance::QueryExtensionSupport()
 
 
     SVulkanInstanceExtensions SupportedExtensions;
-    SupportedExtensions.reserve(ExtensionPropertiesCount);
     for (VkExtensionProperties& ExtensionProperties : SupportedInstanceExtensionProperties)
     {
         SupportedExtensions.emplace_back(ExtensionProperties.extensionName);

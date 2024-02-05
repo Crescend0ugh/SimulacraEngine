@@ -50,7 +50,7 @@ private:
 
     HWND HWnd;
 
-
+    float AspectRatio = 16.0f/9.0f;
 
 
 };

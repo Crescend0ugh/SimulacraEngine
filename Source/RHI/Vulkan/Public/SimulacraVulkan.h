@@ -32,6 +32,7 @@ class SVulkanCommandBuffer;
 class SVulkanCommandPool;
 class SVulkanSemaphore;
 class SVulkanFence;
+class SVertex;
 
 // Vulkan utilities
 #include "SimulacraVulkanDebugUtils.h"
@@ -51,6 +52,7 @@ class SVulkanFence;
 #include "SimulacraVulkanDevice.h"
 #include "SimulacraVulkanQueue.h"
 #include "SimulacraVulkanSwapchain.h"
+#include "SimulacraVulkanResource.h"
 #include "SimulacraVulkanPipeline.h"
 #include "SimulacraVulkanCommandBuffer.h"
 
