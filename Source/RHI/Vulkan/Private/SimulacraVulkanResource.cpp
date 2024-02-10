@@ -5,7 +5,7 @@
 #include "../Public/SimulacraVulkanResource.h"
 
 
-SBuffer::SBuffer(SVulkanDevice *InDevice)
+SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice) : Device(InDevice), BufferMemory(VK_NULL_HANDLE), Buffer(VK_NULL_HANDLE)
 {
     VkBufferCreateInfo BufferCreateInfo;
     SetZeroVulkanStruct(BufferCreateInfo, VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO);
@@ -22,12 +22,12 @@ SBuffer::SBuffer(SVulkanDevice *InDevice)
     }
 }
 
-SBuffer::~SBuffer()
+SVulkanBuffer::~SVulkanBuffer()
 {
     vkDestroyBuffer(Device->GetHandle(), Buffer, nullptr);
 }
 
-void SBuffer::AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties)
+void SVulkanBuffer::AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties)
 {
     VkMemoryRequirements MemoryRequirements;
     vkGetBufferMemoryRequirements(Device->GetHandle(), Buffer, &MemoryRequirements);
@@ -60,4 +60,18 @@ void SBuffer::AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties)
         std::cout << "Allocated buffer memory\n";
     }
 
+    vkBindBufferMemory(Device->GetHandle(), Buffer, BufferMemory, 0);
+
+    void* Data;
+    vkMapMemory(Device->GetHandle(), BufferMemory, 0,   sizeof(SVertex)*Vertices.size(), 0, &Data);
+    memcpy(Data, Vertices.data(), (size_t) sizeof(SVertex)*Vertices.size());
+    vkUnmapMemory(Device->GetHandle(), BufferMemory);
+
+}
+
+void SVulkanBuffer::BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *CommandBuffer)
+{
+    VkBuffer VertexBuffer[] = {Buffer->GetHandle()};
+    VkDeviceSize offsets[] = {0};
+    vkCmdBindVertexBuffers(CommandBuffer->GetHandle(), 0, 1, VertexBuffer, offsets);
 }

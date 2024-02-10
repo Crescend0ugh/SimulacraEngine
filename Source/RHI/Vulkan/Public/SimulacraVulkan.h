@@ -32,6 +32,7 @@ class SVulkanCommandBuffer;
 class SVulkanCommandPool;
 class SVulkanSemaphore;
 class SVulkanFence;
+class SVulkanBuffer;
 class SVertex;
 
 // Vulkan utilities

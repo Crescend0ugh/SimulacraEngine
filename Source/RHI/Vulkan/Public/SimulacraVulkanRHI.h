@@ -40,6 +40,8 @@ protected:
     // Creates the swap chain
     void CreateSwapchain();
 
+    void CreateVertexBuffer();
+
     //Creates the graphics pipeline
     void CreatePipeline();
 
@@ -59,6 +61,7 @@ private:
     SVulkanPipeline    *Pipeline;
     SVulkanCommandPool *CommandPool;
     SVulkanCommandBuffer* ActiveCommandBuffer;
+    SVulkanBuffer* VertexBuffer;
     std::vector<SVulkanCommandBuffer> CommandBuffers();
 
 
@@ -81,7 +84,7 @@ struct SVulkanFence
 {
 
 public:
-    SVulkanFence(SVulkanDevice* InDevice);
+    explicit SVulkanFence(SVulkanDevice* InDevice);
     ~SVulkanFence();
 
     VkFence& GetHandle() { return Fence; }

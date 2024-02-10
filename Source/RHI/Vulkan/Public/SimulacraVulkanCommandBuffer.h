@@ -23,7 +23,7 @@ public:
     SVulkanCommandPool *GetCommandPool()
     { return CommandPool; }
 
-    VkCommandBuffer& GetHandle()
+    VkCommandBuffer &GetHandle()
     { return CommandBuffer; }
 
     void Begin();
@@ -34,9 +34,12 @@ public:
 
     void EndRenderPass();
 
-    void BindPipeline(SVulkanPipeline* Pipeline);
+    void BindPipeline(SVulkanPipeline *Pipeline);
 
-    static void RecordCommandBuffer(SVulkanCommandBuffer* CommandBuffer, SVulkanSwapchain* Swapchain, SVulkanPipeline* Pipeline);
+    static void
+    RecordCommandBuffer(SVulkanCommandBuffer *CommandBuffer, SVulkanSwapchain *Swapchain, SVulkanPipeline *Pipeline, SVulkanBuffer* Buffer);
+
+    void BindVertexBuffer(SVulkanBuffer* InVertexBuffer);
 
 private:
 

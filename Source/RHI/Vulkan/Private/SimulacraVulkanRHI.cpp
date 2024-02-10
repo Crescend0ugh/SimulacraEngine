@@ -64,6 +64,7 @@ void SVulkanRHI::Init()
 
     CreateInstance();
     CreateDevice();
+    CreateVertexBuffer();
     CreateSwapchain();
     CreatePipeline();
 
@@ -86,13 +87,14 @@ void SVulkanRHI::DrawFrame()
 {
     vkWaitForFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle(), VK_TRUE, UINT64_MAX);
 
-    uint32_t imageIndex = Swapchain->GetImageIndex();
     Swapchain->AcquireNextImage();
 
     vkResetFences(Device->GetHandle(), 1, &Swapchain->GetCurrInFlightFence()->GetHandle());
 
     vkResetCommandBuffer(Swapchain->GetCurrCommandBuffer()->GetHandle(), /*VkCommandBufferResetFlagBits*/ 0);
-    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(),Swapchain, Pipeline);
+
+
+    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(),Swapchain, Pipeline, VertexBuffer);
 
 
     Device->GetGraphicsQueue()->Submit(Swapchain->GetCurrCommandBuffer(), 1, Swapchain->GetCurrImageAcquiredSemaphore(),
@@ -101,6 +103,16 @@ void SVulkanRHI::DrawFrame()
 
 
     Swapchain->Present();
+
+}
+
+void SVulkanRHI::CreateVertexBuffer()
+{
+    VertexBuffer = new SVulkanBuffer(Device);
+    VkMemoryRequirements MemoryRequirements;
+    vkGetBufferMemoryRequirements(Device->GetHandle(), VertexBuffer->GetHandle(), &MemoryRequirements);
+
+    VertexBuffer->AllocateMemory(MemoryRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
 
 }
 

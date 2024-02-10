@@ -69,14 +69,16 @@ void SVulkanCommandBuffer::EndRenderPass()
     vkCmdEndRenderPass(CommandBuffer);
 }
 
-void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline)
+void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline, SVulkanBuffer* InBuffer)
 {
     vkResetCommandBuffer(OutCommandBuffer->GetHandle(), 0);
 
     OutCommandBuffer->Begin();
     OutCommandBuffer->BeginRenderPass(InSwapchain->GetRenderPass(), InSwapchain->GetCurrFrameBuffer(), InSwapchain->GetSwapchainExtent());
     OutCommandBuffer->BindPipeline(InPipeline);
-    vkCmdDraw(OutCommandBuffer->GetHandle(), 3, 1, 0, 0);
+
+    SVulkanBuffer::BindBuffer(InBuffer, OutCommandBuffer);
+    vkCmdDraw(OutCommandBuffer->GetHandle(), Vertices.size(), 1, 0, 0);
     OutCommandBuffer->EndRenderPass();
     OutCommandBuffer->End();
 }
@@ -86,6 +88,14 @@ void SVulkanCommandBuffer::BindPipeline(SVulkanPipeline *Pipeline)
     vkCmdBindPipeline(CommandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, Pipeline->GetHandle());
     vkCmdSetViewport(CommandBuffer, 0, 1 , &Pipeline->GetViewport());
     vkCmdSetScissor(CommandBuffer, 0, 1, &Pipeline->GetScissor());
+}
+
+void SVulkanCommandBuffer::BindVertexBuffer(SVulkanBuffer *InVertexBuffer)
+{
+    VkBuffer VertexBuffer[] = {InVertexBuffer->GetHandle()};
+    VkDeviceSize offsets[] = {0};
+    vkCmdBindVertexBuffers(CommandBuffer, 0, 1, VertexBuffer, offsets);
+
 }
 
 SVulkanCommandPool::SVulkanCommandPool(SVulkanDevice* InDevice, uint32 InQueueFamilyIndex) : Device(InDevice), CommandPool(VK_NULL_HANDLE)

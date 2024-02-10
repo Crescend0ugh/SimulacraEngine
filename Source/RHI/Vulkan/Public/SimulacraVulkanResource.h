@@ -60,25 +60,26 @@ struct SVertex
 };
 
 const std::vector<SVertex> Vertices = {
-        {{0.0f,  -0.5f}, {1.0f, 0.0f, 0.0f}},
+        {{0.0f,  -0.5f}, {1.0f, 1.0f, 1.0f}},
         {{0.5f,  0.5f},  {0.0f, 1.0f, 0.0f}},
         {{-0.5f, 0.5f},  {0.0f, 0.0f, 1.0f}}
 };
 
 
-class SBuffer
+class SVulkanBuffer
 {
 public:
 
-    SBuffer(SVulkanDevice *InDevice);
+    SVulkanBuffer(SVulkanDevice *InDevice);
 
-    ~SBuffer();
+    ~SVulkanBuffer();
 
     VkBuffer GetHandle()
     { return Buffer; }
 
     void AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties);
 
+    static void BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *CommandBuffer);
 private:
 
     SVulkanDevice* Device;
