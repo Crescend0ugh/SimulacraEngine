@@ -344,6 +344,54 @@ Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.cpp.s
 .PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.cpp.s
 
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.obj: Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.i: Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.s: Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp.s
+
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.obj: Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.obj
+
+# target to build an object file
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.obj
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.obj
+
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.i: Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.i
+
+# target to preprocess a source file
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.i
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.i
+
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.s: Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.s
+
+# target to generate assembly for a file
+Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.s
+.PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp.s
+
 Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj: Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp.obj
 .PHONY : Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj
 
@@ -620,6 +668,12 @@ help:
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.obj
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.i
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommands.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommands.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanCommands.s
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.obj
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.i
+	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.s
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.obj
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.i
 	@echo ... Source/RHI/Vulkan/Private/SimulacraVulkanDevice.s

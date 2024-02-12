@@ -13,7 +13,9 @@ add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/RHI/Vulk
         Source/Core/Containers/SimulacraArray.h
         Source/RHI/Vulkan/Public/SimulacraVulkanCommandBuffer.h
         Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.cpp
-        Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp)
+        Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp
+        Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp
+        Source/RHI/Vulkan/Public/SimulacraVulkanCommands.h)
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
 endif ()

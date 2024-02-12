@@ -53,14 +53,14 @@ void SVulkanDevice::CreateLogicalDevice()
         std::cout << SVulkanDebug::QueueFamilyToString(CurrentFamilyProperties);
 
 
-        bool CanUseQueue = false;
+        bool FoundValidQueue = false;
         if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT)
         {
 
             if (GraphicsQueueFamilyIndex == -1)
             {
                 GraphicsQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue              = true;
+                FoundValidQueue          = true;
             }
         }
 
@@ -70,7 +70,7 @@ void SVulkanDevice::CreateLogicalDevice()
                 (CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT)
             {
                 ComputeQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue             = true;
+                FoundValidQueue         = true;
             }
         }
 
@@ -81,10 +81,14 @@ void SVulkanDevice::CreateLogicalDevice()
                 (CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT)
             {
                 TransferQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue              = true;
+                FoundValidQueue          = true;
             }
         }
 
+        if (!FoundValidQueue)
+        {
+            continue;
+        }
 
         uint32 QueueIndex = QueueFamilyInfos.size();
 
@@ -105,13 +109,13 @@ void SVulkanDevice::CreateLogicalDevice()
     std::cout << "\n";
     std::vector<float> QueuePriorities(NumPriorities);
     float              *CurrentPriority = QueuePriorities.data();
-    for (int32         Index            = 0; Index < QueueFamilyInfos.size(); ++Index)
+
+    for (int32 Index = 0; Index < QueueFamilyInfos.size(); ++Index)
     {
         VkDeviceQueueCreateInfo &CurrentQueue = QueueFamilyInfos[Index];
         CurrentQueue.pQueuePriorities = CurrentPriority;
 
         VkQueueFamilyProperties &CurrentProperties = QueueFamilyProperties[CurrentQueue.queueFamilyIndex];
-
 
     }
 
@@ -144,6 +148,8 @@ void SVulkanDevice::CreateLogicalDevice()
     std::cout << SVulkanDebug::GetQueueDebugString(PresentQueue) << "\n";
 
 
+    ComputeQueueFamilyIndex = ComputeQueueFamilyIndex == -1 ? GraphicsQueueFamilyIndex : ComputeQueueFamilyIndex;
+
     if (ComputeQueueFamilyIndex != -1)
     {
         ComputeQueue = new SVulkanQueue(this, ComputeQueueFamilyIndex);
@@ -151,6 +157,7 @@ void SVulkanDevice::CreateLogicalDevice()
         std::cout << SVulkanDebug::GetQueueDebugString(ComputeQueue) << "\n";
     }
 
+    TransferQueueFamilyIndex = TransferQueueFamilyIndex == -1 ? ComputeQueueFamilyIndex : TransferQueueFamilyIndex;
 
     if (TransferQueueFamilyIndex != -1)
     {

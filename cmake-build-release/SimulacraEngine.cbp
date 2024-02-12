@@ -140,6 +140,12 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanCommandBuffer.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanCommands.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanDebugUtils.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Private/SimulacraVulkanDevice.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
@@ -171,6 +177,9 @@
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanCommandBuffer.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanCommands.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanInstance.h">

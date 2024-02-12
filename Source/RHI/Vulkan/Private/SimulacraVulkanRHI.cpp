@@ -110,6 +110,7 @@ void SVulkanRHI::DrawFrame()
 void SVulkanRHI::CreateVertexBuffer()
 {
     VertexBuffer = new SVulkanBuffer(Device);
+    
     VkMemoryRequirements MemoryRequirements;
     vkGetBufferMemoryRequirements(Device->GetHandle(), VertexBuffer->GetHandle(), &MemoryRequirements);
 

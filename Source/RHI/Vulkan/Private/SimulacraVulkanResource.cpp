@@ -28,6 +28,48 @@ SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice) : Device(InDevice), Buffer
     }
 }
 
+SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags Properties,
+                             VkBufferUsageFlags InUsage)
+{
+
+    std::vector<uint32> QueueFamilyIndices;
+    QueueFamilyIndices.push_back(Device->GetGraphicsQueue()->GetFamilyIndex());
+
+    if (((InUsage & VK_BUFFER_USAGE_TRANSFER_SRC_BIT) == VK_BUFFER_USAGE_TRANSFER_SRC_BIT ||
+        (InUsage & VK_BUFFER_USAGE_TRANSFER_DST_BIT) == VK_BUFFER_USAGE_TRANSFER_DST_BIT) &&
+        Device->GetGraphicsQueue()->GetFamilyIndex() != Device->GetTransferQueue()->GetFamilyIndex())
+    {
+        QueueFamilyIndices.push_back(Device->GetTransferQueue()->GetFamilyIndex());
+    }
+    QueueFamilyIndices.shrink_to_fit();
+
+
+    VkBufferCreateInfo BufferCreateInfo;
+    SetZeroVulkanStruct(BufferCreateInfo, VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO);
+
+    BufferCreateInfo.size                  = InSize;
+    BufferCreateInfo.usage                 = InUsage;
+    BufferCreateInfo.sharingMode           = QueueFamilyIndices.size() > 1 ? VK_SHARING_MODE_CONCURRENT : VK_SHARING_MODE_EXCLUSIVE;
+    BufferCreateInfo.queueFamilyIndexCount = QueueFamilyIndices.size();
+    BufferCreateInfo.pQueueFamilyIndices   = QueueFamilyIndices.data();
+
+
+    if (vkCreateBuffer(Device->GetHandle(), &BufferCreateInfo, nullptr, &Buffer) != VK_SUCCESS)
+    {
+        throw std::runtime_error("failed to create buffer!");
+    } else
+    {
+        std::cout << "Created Buffer\n----------\n";
+    }
+
+    VkMemoryRequirements MemoryRequirements;
+    vkGetBufferMemoryRequirements(Device->GetHandle(), Buffer, &MemoryRequirements);
+
+
+    AllocateMemory(MemoryRequirements.memoryTypeBits, Properties);
+
+}
+
 SVulkanBuffer::~SVulkanBuffer()
 {
     vkDestroyBuffer(Device->GetHandle(), Buffer, nullptr);
@@ -82,43 +124,3 @@ void SVulkanBuffer::BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *Comm
     vkCmdBindVertexBuffers(CommandBuffer->GetHandle(), 0, 1, VertexBuffer, offsets);
 }
 
-SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags Properties,
-                             VkBufferUsageFlags InUsage)
-{
-
-    std::vector<uint32> QueueFamilyIndices;
-    QueueFamilyIndices.push_back(Device->GetGraphicsQueue()->GetFamilyIndex());
-
-    if ((InUsage & VK_BUFFER_USAGE_TRANSFER_SRC_BIT) == VK_BUFFER_USAGE_TRANSFER_SRC_BIT ||
-        (InUsage & VK_BUFFER_USAGE_TRANSFER_DST_BIT) == VK_BUFFER_USAGE_TRANSFER_DST_BIT &&
-        Device->GetGraphicsQueue()->GetFamilyIndex() != Device->GetTransferQueue()->GetFamilyIndex())
-    {
-        QueueFamilyIndices.push_back(Device->GetTransferQueue()->GetFamilyIndex());
-    }
-    QueueFamilyIndices.shrink_to_fit();
-
-
-    VkBufferCreateInfo BufferCreateInfo;
-    SetZeroVulkanStruct(BufferCreateInfo, VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO);
-
-    BufferCreateInfo.size                  = InSize;
-    BufferCreateInfo.usage                 = InUsage;
-    BufferCreateInfo.sharingMode           = VK_SHARING_MODE_CONCURRENT;
-    BufferCreateInfo.queueFamilyIndexCount = QueueFamilyIndices.size();
-    BufferCreateInfo.pQueueFamilyIndices   = QueueFamilyIndices.data();
-
-
-    if (vkCreateBuffer(Device->GetHandle(), &BufferCreateInfo, nullptr, &Buffer) != VK_SUCCESS)
-    {
-        throw std::runtime_error("failed to create buffer!");
-    } else
-    {
-        std::cout << "Created Buffer\n----------\n";
-    }
-
-    VkMemoryRequirements MemoryRequirements;
-    vkGetBufferMemoryRequirements(Device->GetHandle(), Buffer, &MemoryRequirements);
-
-
-    AllocateMemory(MemoryRequirements.memoryTypeBits, Properties);
-}
