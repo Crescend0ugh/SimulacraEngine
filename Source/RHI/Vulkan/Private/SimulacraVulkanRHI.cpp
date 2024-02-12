@@ -28,6 +28,7 @@ VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
     }
     std::vector<VkPhysicalDevice> PhysicalDevices(PhysicalDeviceCount);
     vkEnumeratePhysicalDevices(InInstance, &PhysicalDeviceCount, PhysicalDevices.data());
+
     return PhysicalDevices[0];
 
 }

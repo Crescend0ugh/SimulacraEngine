@@ -31,6 +31,7 @@ void SVulkanDevice::CreatePhysicalDevice()
     QueueFamilyProperties.resize(QueueFamilyCount);
     vkGetPhysicalDeviceQueueFamilyProperties(PhysicalDevice, &QueueFamilyCount, QueueFamilyProperties.data());
 
+
 }
 
 void SVulkanDevice::CreateLogicalDevice()
@@ -40,14 +41,16 @@ void SVulkanDevice::CreateLogicalDevice()
     SetZeroVulkanStruct(DeviceCreateInfo, VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO);
 
     std::vector<VkDeviceQueueCreateInfo> QueueFamilyInfos;
-    int32 GraphicsQueueFamilyIndex = -1;
-    int32 ComputeQueueFamilyIndex = -1;
-    int32 TransferQueueFamilyIndex = -1;
-    uint32 NumPriorities = 0;
+    int32                                GraphicsQueueFamilyIndex = -1;
+    int32                                ComputeQueueFamilyIndex  = -1;
+    int32                                TransferQueueFamilyIndex = -1;
+    uint32                               NumPriorities            = 0;
 
     for (int CurrentFamilyIndex = 0; CurrentFamilyIndex < QueueFamilyProperties.size(); CurrentFamilyIndex++)
     {
         VkQueueFamilyProperties &CurrentFamilyProperties = QueueFamilyProperties[CurrentFamilyIndex];
+
+        std::cout << SVulkanDebug::QueueFamilyToString(CurrentFamilyProperties);
 
 
         bool CanUseQueue = false;
@@ -57,25 +60,28 @@ void SVulkanDevice::CreateLogicalDevice()
             if (GraphicsQueueFamilyIndex == -1)
             {
                 GraphicsQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue = true;
+                CanUseQueue              = true;
             }
         }
 
         if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT)
         {
-            if (ComputeQueueFamilyIndex == -1)
+            if (ComputeQueueFamilyIndex == -1 &&
+                (CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT)
             {
                 ComputeQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue = true;
+                CanUseQueue             = true;
             }
         }
 
         if ((CurrentFamilyProperties.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT)
         {
-            if (TransferQueueFamilyIndex == -1)
+            if (TransferQueueFamilyIndex == -1 &&
+                (CurrentFamilyProperties.queueFlags & VK_QUEUE_COMPUTE_BIT) != VK_QUEUE_COMPUTE_BIT &&
+                (CurrentFamilyProperties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT)
             {
                 TransferQueueFamilyIndex = CurrentFamilyIndex;
-                CanUseQueue = true;
+                CanUseQueue              = true;
             }
         }
 
@@ -98,8 +104,8 @@ void SVulkanDevice::CreateLogicalDevice()
 
     std::cout << "\n";
     std::vector<float> QueuePriorities(NumPriorities);
-    float *CurrentPriority = QueuePriorities.data();
-    for (int32 Index = 0; Index < QueueFamilyInfos.size(); ++Index)
+    float              *CurrentPriority = QueuePriorities.data();
+    for (int32         Index            = 0; Index < QueueFamilyInfos.size(); ++Index)
     {
         VkDeviceQueueCreateInfo &CurrentQueue = QueueFamilyInfos[Index];
         CurrentQueue.pQueuePriorities = CurrentPriority;
@@ -111,17 +117,17 @@ void SVulkanDevice::CreateLogicalDevice()
 
     SVulkanDeviceExtension::GetRequiredExtensions(DeviceExtensions);
 
-    const char* EnabledExtensionNames[DeviceExtensions.size()];
+    const char *EnabledExtensionNames[DeviceExtensions.size()];
 
     for (int i = 0; i < DeviceExtensions.size(); ++i)
     {
         EnabledExtensionNames[i] = DeviceExtensions[i].GetExtensionName();
     }
 
-    DeviceCreateInfo.enabledExtensionCount = DeviceExtensions.size();
+    DeviceCreateInfo.enabledExtensionCount   = DeviceExtensions.size();
     DeviceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
-    DeviceCreateInfo.pQueueCreateInfos = QueueFamilyInfos.data();
-    DeviceCreateInfo.queueCreateInfoCount = 1;
+    DeviceCreateInfo.pQueueCreateInfos       = QueueFamilyInfos.data();
+    DeviceCreateInfo.queueCreateInfoCount    = 1;
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
     if (Result != VK_SUCCESS)
     {
@@ -133,21 +139,24 @@ void SVulkanDevice::CreateLogicalDevice()
 
 
     GraphicsQueue = new SVulkanQueue(this, GraphicsQueueFamilyIndex);
-    std::cout << "Created Graphics Queue\n";
+    std::cout << "Created Graphics Queue\n--------------------\n";
     PresentQueue = GraphicsQueue;
+    std::cout << SVulkanDebug::GetQueueDebugString(PresentQueue) << "\n";
+
 
     if (ComputeQueueFamilyIndex != -1)
     {
         ComputeQueue = new SVulkanQueue(this, ComputeQueueFamilyIndex);
-        std::cout << "Created Compute Queue\n";
-
+        std::cout << "Created Compute Queue\n--------------------\n";
+        std::cout << SVulkanDebug::GetQueueDebugString(ComputeQueue) << "\n";
     }
 
 
     if (TransferQueueFamilyIndex != -1)
     {
         TransferQueue = new SVulkanQueue(this, TransferQueueFamilyIndex);
-        std::cout << "Created Transfer Queue\n";
+        std::cout << "Created Transfer Queue\n--------------------\n";
+        std::cout << SVulkanDebug::GetQueueDebugString(TransferQueue) << "\n";
 
     }
 }
