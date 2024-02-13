@@ -59,10 +59,7 @@ private:
     SVulkanDevice      *Device;
     SVulkanSwapchain   *Swapchain;
     SVulkanPipeline    *Pipeline;
-    SVulkanCommandPool *CommandPool;
-    SVulkanCommandBuffer* ActiveCommandBuffer;
     SVulkanBuffer* VertexBuffer;
-    std::vector<SVulkanCommandBuffer> CommandBuffers();
 
 
 };

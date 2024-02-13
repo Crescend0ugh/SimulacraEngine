@@ -4,15 +4,17 @@
 
 #pragma once
 
+#include "SimulacraVulkan.h"
 
 class SVulkanCommands
 {
 
-    void BeginRenderPass();
+    virtual void CopyBuffer(SVulkanBuffer* SrcBuffer, SVulkanBuffer* DstBuffer, VkDeviceSize NumBytes) final;
+    virtual void CopyBufferToImage() final;
+    virtual void CopyImageToBuffer() final;
 
-    void BindVertexBuffer();
-    void CopyBuffer()
+    virtual void DrawPrimitives();
+    virtual void DrawIndexedPrimitives();
 
-    void Draw();
-    void DrawIndexed();
+
 };

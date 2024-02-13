@@ -117,6 +117,10 @@ void SVulkanDevice::CreateLogicalDevice()
 
         VkQueueFamilyProperties &CurrentProperties = QueueFamilyProperties[CurrentQueue.queueFamilyIndex];
 
+        for (int32 QueueIndex = 0; QueueIndex < (int32)CurrentProperties.queueCount; ++QueueIndex)
+        {
+            *CurrentPriority++ = 1.0f;
+        }
     }
 
     SVulkanDeviceExtension::GetRequiredExtensions(DeviceExtensions);
@@ -131,7 +135,7 @@ void SVulkanDevice::CreateLogicalDevice()
     DeviceCreateInfo.enabledExtensionCount   = DeviceExtensions.size();
     DeviceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
     DeviceCreateInfo.pQueueCreateInfos       = QueueFamilyInfos.data();
-    DeviceCreateInfo.queueCreateInfoCount    = 1;
+    DeviceCreateInfo.queueCreateInfoCount    = QueueFamilyInfos.size();
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
     if (Result != VK_SUCCESS)
     {
@@ -150,21 +154,17 @@ void SVulkanDevice::CreateLogicalDevice()
 
     ComputeQueueFamilyIndex = ComputeQueueFamilyIndex == -1 ? GraphicsQueueFamilyIndex : ComputeQueueFamilyIndex;
 
-    if (ComputeQueueFamilyIndex != -1)
-    {
         ComputeQueue = new SVulkanQueue(this, ComputeQueueFamilyIndex);
         std::cout << "Created Compute Queue\n--------------------\n";
         std::cout << SVulkanDebug::GetQueueDebugString(ComputeQueue) << "\n";
-    }
 
     TransferQueueFamilyIndex = TransferQueueFamilyIndex == -1 ? ComputeQueueFamilyIndex : TransferQueueFamilyIndex;
 
-    if (TransferQueueFamilyIndex != -1)
-    {
+
         TransferQueue = new SVulkanQueue(this, TransferQueueFamilyIndex);
         std::cout << "Created Transfer Queue\n--------------------\n";
         std::cout << SVulkanDebug::GetQueueDebugString(TransferQueue) << "\n";
 
-    }
+
 }
 

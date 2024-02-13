@@ -81,8 +81,11 @@ public:
     { return Buffer; }
 
     void AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties);
+    void MapMemory();
 
     static void BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *CommandBuffer);
+    static void CopyBuffer(SVulkanBuffer *SrcBuffer, SVulkanBuffer *DstBuffer, VkDeviceSize Size,
+                           SVulkanCommandPool *CommandPool);
 private:
 
     SVulkanDevice* Device;

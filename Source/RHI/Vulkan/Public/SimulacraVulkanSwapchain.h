@@ -63,6 +63,10 @@ public:
         return InFlightFences[ImageIndex];
     }
 
+    SVulkanCommandPool* GetCommandPool() const
+    {
+        return CommandPool;
+    }
     SVulkanCommandBuffer* GetCurrCommandBuffer() const
     {
         return CommandBuffers[ImageIndex];

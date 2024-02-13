@@ -65,10 +65,9 @@ void SVulkanRHI::Init()
 
     CreateInstance();
     CreateDevice();
-    CreateVertexBuffer();
     CreateSwapchain();
+    CreateVertexBuffer();
     CreatePipeline();
-
 
 
 }
@@ -95,12 +94,12 @@ void SVulkanRHI::DrawFrame()
     vkResetCommandBuffer(Swapchain->GetCurrCommandBuffer()->GetHandle(), /*VkCommandBufferResetFlagBits*/ 0);
 
 
-    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(),Swapchain, Pipeline, VertexBuffer);
+    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(), Swapchain, Pipeline, VertexBuffer);
 
 
     Device->GetGraphicsQueue()->Submit(Swapchain->GetCurrCommandBuffer(), 1, Swapchain->GetCurrImageAcquiredSemaphore(),
-                                       1, Swapchain->GetCurrRenderFinishedSemaphore(), Swapchain->GetCurrInFlightFence());
-
+                                       1, Swapchain->GetCurrRenderFinishedSemaphore(),
+                                       Swapchain->GetCurrInFlightFence());
 
 
     Swapchain->Present();
@@ -109,13 +108,18 @@ void SVulkanRHI::DrawFrame()
 
 void SVulkanRHI::CreateVertexBuffer()
 {
-    VertexBuffer = new SVulkanBuffer(Device);
-    
-    VkMemoryRequirements MemoryRequirements;
-    vkGetBufferMemoryRequirements(Device->GetHandle(), VertexBuffer->GetHandle(), &MemoryRequirements);
 
-    VertexBuffer->AllocateMemory(MemoryRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+    uint32 BufferSize = sizeof(SVertex)*Vertices.size();
 
+    SVulkanBuffer* StagingBuffer = new SVulkanBuffer(Device, BufferSize, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
+
+    StagingBuffer->MapMemory();
+
+    VertexBuffer = new SVulkanBuffer(Device,sizeof(SVertex)*Vertices.size(), VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT  );
+
+    std::cout << "TEST\n";
+    SVulkanBuffer::CopyBuffer(StagingBuffer, VertexBuffer, BufferSize, Swapchain->GetCommandPool() );
+    delete StagingBuffer;
 }
 
 

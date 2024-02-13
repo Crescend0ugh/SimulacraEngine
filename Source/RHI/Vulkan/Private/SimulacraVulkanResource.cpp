@@ -29,10 +29,12 @@ SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice) : Device(InDevice), Buffer
 }
 
 SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags Properties,
-                             VkBufferUsageFlags InUsage)
+                             VkBufferUsageFlags InUsage) : Device(InDevice)
 {
 
+
     std::vector<uint32> QueueFamilyIndices;
+
     QueueFamilyIndices.push_back(Device->GetGraphicsQueue()->GetFamilyIndex());
 
     if (((InUsage & VK_BUFFER_USAGE_TRANSFER_SRC_BIT) == VK_BUFFER_USAGE_TRANSFER_SRC_BIT ||
@@ -110,10 +112,7 @@ void SVulkanBuffer::AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties
 
     vkBindBufferMemory(Device->GetHandle(), Buffer, BufferMemory, 0);
 
-    void *Data;
-    vkMapMemory(Device->GetHandle(), BufferMemory, 0, sizeof(SVertex) * Vertices.size(), 0, &Data);
-    memcpy(Data, Vertices.data(), (size_t) sizeof(SVertex) * Vertices.size());
-    vkUnmapMemory(Device->GetHandle(), BufferMemory);
+
 
 }
 
@@ -122,5 +121,55 @@ void SVulkanBuffer::BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *Comm
     VkBuffer     VertexBuffer[] = {Buffer->GetHandle()};
     VkDeviceSize offsets[]      = {0};
     vkCmdBindVertexBuffers(CommandBuffer->GetHandle(), 0, 1, VertexBuffer, offsets);
+}
+
+void SVulkanBuffer::CopyBuffer(SVulkanBuffer *SrcBuffer, SVulkanBuffer *DstBuffer, VkDeviceSize Size,
+                               SVulkanCommandPool *CommandPool)
+{
+
+    SVulkanDevice*& Device = SrcBuffer->Device;
+    VkCommandBufferAllocateInfo CommandBufferAllocateInfo;
+    SetZeroVulkanStruct(CommandBufferAllocateInfo, VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO);
+
+    CommandBufferAllocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+    CommandBufferAllocateInfo.commandPool = CommandPool->GetHandle();
+    std::cout << "LOL\n";
+    CommandBufferAllocateInfo.commandBufferCount = 1;
+
+    VkCommandBuffer CommandBuffer;
+    vkAllocateCommandBuffers(Device->GetHandle(), &CommandBufferAllocateInfo, &CommandBuffer);
+
+    VkCommandBufferBeginInfo CommandBufferBeginInfo{};
+    CommandBufferBeginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+    CommandBufferBeginInfo.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
+
+    vkBeginCommandBuffer(CommandBuffer, &CommandBufferBeginInfo);
+
+    VkBufferCopy CopyRegion{};
+    CopyRegion.srcOffset = 0; // Optional
+    CopyRegion.dstOffset = 0; // Optional
+    CopyRegion.size      = Size;
+    vkCmdCopyBuffer(CommandBuffer, SrcBuffer->Buffer, DstBuffer->Buffer, 1, &CopyRegion);
+
+    vkEndCommandBuffer(CommandBuffer);
+
+    VkSubmitInfo SubmitInfo{};
+    SubmitInfo.sType              = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    SubmitInfo.commandBufferCount = 1;
+    SubmitInfo.pCommandBuffers    = &CommandBuffer;
+
+    vkQueueSubmit(Device->GetGraphicsQueue()->GetHandle(), 1, &SubmitInfo, VK_NULL_HANDLE);
+    vkQueueWaitIdle(Device->GetGraphicsQueue()->GetHandle());
+
+    vkFreeCommandBuffers(Device->GetHandle(), CommandPool->GetHandle(), 1, &CommandBuffer);
+
+}
+
+void SVulkanBuffer::MapMemory()
+{
+    void *Data;
+    vkMapMemory(Device->GetHandle(), BufferMemory, 0, sizeof(SVertex) * Vertices.size(), 0, &Data);
+    memcpy(Data, Vertices.data(), (size_t) sizeof(SVertex) * Vertices.size());
+    vkUnmapMemory(Device->GetHandle(), BufferMemory);
 }
 
