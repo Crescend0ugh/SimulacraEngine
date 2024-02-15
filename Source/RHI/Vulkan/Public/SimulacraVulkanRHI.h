@@ -42,6 +42,8 @@ protected:
 
     void CreateVertexBuffer();
 
+    void CreateIndexBuffer();
+
     //Creates the graphics pipeline
     void CreatePipeline();
 
@@ -59,7 +61,6 @@ private:
     SVulkanDevice      *Device;
     SVulkanSwapchain   *Swapchain;
     SVulkanPipeline    *Pipeline;
-    SVulkanBuffer* VertexBuffer;
 
 
 };

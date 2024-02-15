@@ -30,6 +30,7 @@ class SVulkanSwapchain;
 class SVulkanPipeline;
 class SVulkanCommandBuffer;
 class SVulkanCommandPool;
+class SVulkanCommands;
 class SVulkanSemaphore;
 class SVulkanFence;
 class SVulkanBuffer;
@@ -56,4 +57,5 @@ class SVertex;
 #include "SimulacraVulkanResource.h"
 #include "SimulacraVulkanPipeline.h"
 #include "SimulacraVulkanCommandBuffer.h"
+#include "SimulacraVulkanCommands.h"
 

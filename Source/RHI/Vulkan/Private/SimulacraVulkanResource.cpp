@@ -4,6 +4,8 @@
 
 #include "../Public/SimulacraVulkanResource.h"
 
+SVulkanBuffer* SVulkanBuffer::IndexBuffer  = nullptr;
+SVulkanBuffer* SVulkanBuffer::VertBuffer = nullptr;
 
 SVulkanBuffer::SVulkanBuffer(SVulkanDevice *InDevice) : Device(InDevice), BufferMemory(VK_NULL_HANDLE),
                                                         Buffer(VK_NULL_HANDLE)
@@ -165,13 +167,7 @@ void SVulkanBuffer::CopyBuffer(SVulkanBuffer *SrcBuffer, SVulkanBuffer *DstBuffe
 
 }
 
-void SVulkanBuffer::MapMemory()
-{
-    void *Data;
-    vkMapMemory(Device->GetHandle(), BufferMemory, 0, sizeof(SVertex) * Vertices.size(), 0, &Data);
-    memcpy(Data, Vertices.data(), (size_t) sizeof(SVertex) * Vertices.size());
-    vkUnmapMemory(Device->GetHandle(), BufferMemory);
-}
+
 
 VulkanBuffer::VulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags InProperties,
                            VkBufferUsageFlags InUsage) : Device(InDevice), Size(InSize)

@@ -69,7 +69,8 @@ void SVulkanCommandBuffer::EndRenderPass()
     vkCmdEndRenderPass(CommandBuffer);
 }
 
-void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandBuffer, SVulkanSwapchain* InSwapchain, SVulkanPipeline* InPipeline, SVulkanBuffer* InBuffer)
+void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer *OutCommandBuffer, SVulkanSwapchain *InSwapchain,
+                                               SVulkanPipeline *InPipeline)
 {
     vkResetCommandBuffer(OutCommandBuffer->GetHandle(), 0);
 
@@ -77,8 +78,10 @@ void SVulkanCommandBuffer::RecordCommandBuffer(SVulkanCommandBuffer* OutCommandB
     OutCommandBuffer->BeginRenderPass(InSwapchain->GetRenderPass(), InSwapchain->GetCurrFrameBuffer(), InSwapchain->GetSwapchainExtent());
     OutCommandBuffer->BindPipeline(InPipeline);
 
-    SVulkanBuffer::BindBuffer(InBuffer, OutCommandBuffer);
-    vkCmdDraw(OutCommandBuffer->GetHandle(), Vertices.size(), 1, 0, 0);
+    SVulkanCommands::BindVertexBuffer(SVulkanBuffer::VertBuffer, OutCommandBuffer);
+    SVulkanCommands::BindIndexBuffer(SVulkanBuffer::IndexBuffer, OutCommandBuffer, VK_INDEX_TYPE_UINT16);
+
+    vkCmdDrawIndexed(OutCommandBuffer->CommandBuffer, static_cast<uint16>(Indices.size()), 1, 0, 0, 0);
     OutCommandBuffer->EndRenderPass();
     OutCommandBuffer->End();
 }
@@ -90,13 +93,7 @@ void SVulkanCommandBuffer::BindPipeline(SVulkanPipeline *Pipeline)
     vkCmdSetScissor(CommandBuffer, 0, 1, &Pipeline->GetScissor());
 }
 
-void SVulkanCommandBuffer::BindVertexBuffer(SVulkanBuffer *InVertexBuffer)
-{
-    VkBuffer VertexBuffer[] = {InVertexBuffer->GetHandle()};
-    VkDeviceSize offsets[] = {0};
-    vkCmdBindVertexBuffers(CommandBuffer, 0, 1, VertexBuffer, offsets);
 
-}
 
 SVulkanCommandPool::SVulkanCommandPool(SVulkanDevice* InDevice, uint32 InQueueFamilyIndex) : Device(InDevice), CommandPool(VK_NULL_HANDLE)
 {

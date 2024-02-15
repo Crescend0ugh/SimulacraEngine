@@ -60,11 +60,15 @@ struct SVertex
 };
 
 const std::vector<SVertex> Vertices = {
-        {{0.0f,  -0.5f}, {1.0f, 1.0f, 1.0f}},
-        {{0.5f,  0.5f},  {0.0f, 1.0f, 0.0f}},
-        {{-0.5f, 0.5f},  {0.0f, 0.0f, 1.0f}}
+        {{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+        {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
+        {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
+        {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}
 };
 
+const std::vector<uint16> Indices = {
+        0, 1, 2, 2, 3, 0
+};
 
 class SVulkanBuffer
 {
@@ -77,15 +81,19 @@ public:
 
     ~SVulkanBuffer();
 
-    VkBuffer GetHandle()
+    VkBuffer& GetHandle()
     { return Buffer; }
 
+    VkDeviceMemory& GetMemory() { return BufferMemory; }
+
     void AllocateMemory(uint32 Type, VkMemoryPropertyFlags Properties);
-    void MapMemory();
 
     static void BindBuffer(SVulkanBuffer *Buffer, SVulkanCommandBuffer *CommandBuffer);
     static void CopyBuffer(SVulkanBuffer *SrcBuffer, SVulkanBuffer *DstBuffer, VkDeviceSize Size,
                            SVulkanCommandPool *CommandPool);
+
+    static SVulkanBuffer* IndexBuffer;
+    static SVulkanBuffer* VertBuffer;
 private:
 
     SVulkanDevice* Device;

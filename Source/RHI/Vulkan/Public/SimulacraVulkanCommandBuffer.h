@@ -36,10 +36,9 @@ public:
 
     void BindPipeline(SVulkanPipeline *Pipeline);
 
-    static void RecordCommandBuffer(SVulkanCommandBuffer *CommandBuffer, SVulkanSwapchain *Swapchain, SVulkanPipeline *Pipeline,
-                        SVulkanBuffer *Buffer);
+    static void RecordCommandBuffer(SVulkanCommandBuffer *CommandBuffer, SVulkanSwapchain *Swapchain,
+                                    SVulkanPipeline *Pipeline);
 
-    void BindVertexBuffer(SVulkanBuffer *InVertexBuffer);
 
 private:
 

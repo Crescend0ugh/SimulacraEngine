@@ -85,6 +85,7 @@ void SVulkanRHI::Init()
     CreateDevice();
     CreateSwapchain();
     CreateVertexBuffer();
+    CreateIndexBuffer();
     CreatePipeline();
 
 
@@ -112,7 +113,7 @@ void SVulkanRHI::DrawFrame()
     vkResetCommandBuffer(Swapchain->GetCurrCommandBuffer()->GetHandle(), /*VkCommandBufferResetFlagBits*/ 0);
 
 
-    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(), Swapchain, Pipeline, VertexBuffer);
+    SVulkanCommandBuffer::RecordCommandBuffer(Swapchain->GetCurrCommandBuffer(), Swapchain, Pipeline);
 
 
     Device->GetGraphicsQueue()->Submit(Swapchain->GetCurrCommandBuffer(), 1, Swapchain->GetCurrImageAcquiredSemaphore(),
@@ -131,12 +132,33 @@ void SVulkanRHI::CreateVertexBuffer()
 
     SVulkanBuffer* StagingBuffer = new SVulkanBuffer(Device, BufferSize, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
 
-    StagingBuffer->MapMemory();
+    void* data;
+    vkMapMemory(Device->GetHandle(), StagingBuffer->GetMemory(), 0, BufferSize, 0, &data);
+    memcpy(data, Vertices.data(), (size_t) BufferSize);
+    vkUnmapMemory(Device->GetHandle(), StagingBuffer->GetMemory());
+    SVulkanBuffer::VertBuffer = new SVulkanBuffer(Device,BufferSize, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT  );
 
-    VertexBuffer = new SVulkanBuffer(Device,sizeof(SVertex)*Vertices.size(), VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT  );
-
-    SVulkanBuffer::CopyBuffer(StagingBuffer, VertexBuffer, BufferSize, Swapchain->GetCommandPool() );
+    SVulkanBuffer::CopyBuffer(StagingBuffer, SVulkanBuffer::VertBuffer, BufferSize, Swapchain->GetCommandPool() );
     delete StagingBuffer;
+}
+
+void SVulkanRHI::CreateIndexBuffer()
+{
+    VkDeviceSize BufferSize = sizeof(Indices[0]) * Indices.size();
+
+    SVulkanBuffer* StagingBuffer = new SVulkanBuffer(Device, BufferSize, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
+
+
+    void* data;
+    vkMapMemory(Device->GetHandle(), StagingBuffer->GetMemory(), 0, BufferSize, 0, &data);
+    memcpy(data, Indices.data(), (size_t) BufferSize);
+    vkUnmapMemory(Device->GetHandle(), StagingBuffer->GetMemory());
+    SVulkanBuffer::IndexBuffer = new SVulkanBuffer(Device, BufferSize, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_INDEX_BUFFER_BIT);
+
+    SVulkanBuffer::CopyBuffer(StagingBuffer, SVulkanBuffer::IndexBuffer, BufferSize, Swapchain->GetCommandPool());
+
+   delete StagingBuffer;
+
 }
 
 
