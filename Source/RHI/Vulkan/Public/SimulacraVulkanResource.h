@@ -95,5 +95,24 @@ private:
 };
 
 
+class VulkanBuffer
+{
 
+    VulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags InProperties, VkBufferUsageFlags InUsage);
+
+    SIM_INLINE VkBuffer& GetHandle() { return Buffer; }
+    SIM_INLINE VkDeviceMemory& GetMemory() { return BufferMemory; }
+    SIM_INLINE VkDeviceSize GetSize() const { return Size; }
+
+    void Map(void*& OutData);
+    void Unmap();
+
+private:
+
+    SVulkanDevice* Device;
+    VkBuffer Buffer;
+    VkDeviceMemory BufferMemory;
+    VkDeviceSize Size;
+
+};
 

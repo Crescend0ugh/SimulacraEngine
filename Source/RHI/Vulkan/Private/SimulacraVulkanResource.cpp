@@ -173,3 +173,80 @@ void SVulkanBuffer::MapMemory()
     vkUnmapMemory(Device->GetHandle(), BufferMemory);
 }
 
+VulkanBuffer::VulkanBuffer(SVulkanDevice *InDevice, VkDeviceSize InSize, VkMemoryPropertyFlags InProperties,
+                           VkBufferUsageFlags InUsage) : Device(InDevice), Size(InSize)
+{
+    std::vector<uint32> QueueFamilyIndices;
+
+    QueueFamilyIndices.push_back(Device->GetGraphicsQueue()->GetFamilyIndex());
+
+    if (((InUsage & VK_BUFFER_USAGE_TRANSFER_SRC_BIT) == VK_BUFFER_USAGE_TRANSFER_SRC_BIT ||
+         (InUsage & VK_BUFFER_USAGE_TRANSFER_DST_BIT) == VK_BUFFER_USAGE_TRANSFER_DST_BIT) &&
+        Device->GetGraphicsQueue()->GetFamilyIndex() != Device->GetTransferQueue()->GetFamilyIndex())
+    {
+        QueueFamilyIndices.push_back(Device->GetTransferQueue()->GetFamilyIndex());
+    }
+    QueueFamilyIndices.shrink_to_fit();
+
+
+    VkBufferCreateInfo BufferCreateInfo;
+    SetZeroVulkanStruct(BufferCreateInfo, VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO);
+
+    BufferCreateInfo.size                  = InSize;
+    BufferCreateInfo.usage                 = InUsage;
+    BufferCreateInfo.sharingMode           = QueueFamilyIndices.size() > 1 ? VK_SHARING_MODE_CONCURRENT : VK_SHARING_MODE_EXCLUSIVE;
+    BufferCreateInfo.queueFamilyIndexCount = QueueFamilyIndices.size();
+    BufferCreateInfo.pQueueFamilyIndices   = QueueFamilyIndices.data();
+
+
+    if (vkCreateBuffer(Device->GetHandle(), &BufferCreateInfo, nullptr, &Buffer) != VK_SUCCESS)
+    {
+        throw std::runtime_error("failed to create buffer!");
+    } else
+    {
+        std::cout << "Created Buffer\n----------\n";
+    }
+
+
+    VkMemoryRequirements MemoryRequirements;
+    vkGetBufferMemoryRequirements(Device->GetHandle(), Buffer, &MemoryRequirements);
+
+    VkPhysicalDeviceMemoryProperties PhysicalDeviceMemoryProperties;
+    vkGetPhysicalDeviceMemoryProperties(Device->GetPhysicalHandle(), &PhysicalDeviceMemoryProperties);
+
+    uint32      MemoryTypeIndex;
+    for (uint32 i = 0; i < PhysicalDeviceMemoryProperties.memoryTypeCount; i++)
+    {
+        if (MemoryRequirements.memoryTypeBits & (1 << i) && (PhysicalDeviceMemoryProperties.memoryTypes[i].propertyFlags & InProperties) == InProperties)
+        {
+            MemoryTypeIndex = i;
+        }
+    }
+
+    VkMemoryAllocateInfo MemoryAllocateInfo;
+    SetZeroVulkanStruct(MemoryAllocateInfo, VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO);
+
+    MemoryAllocateInfo.allocationSize  = MemoryRequirements.size;
+    MemoryAllocateInfo.memoryTypeIndex = MemoryTypeIndex;
+
+
+    if (vkAllocateMemory(Device->GetHandle(), &MemoryAllocateInfo, nullptr, &BufferMemory) != VK_SUCCESS)
+    {
+        throw std::runtime_error("failed to allocate buffer memory!\n");
+    } else
+    {
+        std::cout << "Allocated buffer memory\n";
+    }
+
+    vkBindBufferMemory(Device->GetHandle(), Buffer, BufferMemory, 0);
+}
+
+void VulkanBuffer::Map(void*& OutData)
+{
+    vkMapMemory(Device->GetHandle(), BufferMemory, 0, sizeof(SVertex) * Vertices.size(), 0, &OutData);
+}
+
+void VulkanBuffer::Unmap()
+{
+    vkUnmapMemory(Device->GetHandle(), BufferMemory);
+}

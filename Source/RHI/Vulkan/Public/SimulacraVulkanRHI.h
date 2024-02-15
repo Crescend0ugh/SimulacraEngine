@@ -67,7 +67,7 @@ private:
 struct SVulkanSemaphore
 {
 public:
-    SVulkanSemaphore(SVulkanDevice* InDevice);
+    explicit SVulkanSemaphore(SVulkanDevice* InDevice);
     ~SVulkanSemaphore();
 
     VkSemaphore& GetHandle() { return Semaphore; }
@@ -81,7 +81,7 @@ struct SVulkanFence
 {
 
 public:
-    explicit SVulkanFence(SVulkanDevice *InDevice, VkFenceCreateFlags InFenceCreateFlags);
+    SVulkanFence(SVulkanDevice *InDevice, VkFenceCreateFlags InFenceCreateFlags);
     ~SVulkanFence();
 
     VkFence& GetHandle() { return Fence; }

@@ -1,6 +1,6 @@
 # ninja log v5
 1828	1909	7263786665131321	SimulacraEngine.exe	544ba1076ddcd108
-1	123	7294992873519034	build.ninja	81950bc69ee2cddd
+1	123	7296749495780780	build.ninja	81950bc69ee2cddd
 12	1623	7263786662293751	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	96f697435abc70b3
 38	881	7263785355019346	CMakeFiles/SimulacraEngine.dir/Source/Application/SimulacraWindow.cpp.obj	14c92b9b094f0c57
 9	792	7263786653955761	CMakeFiles/SimulacraEngine.dir/Source/RHI/Vulkan/Private/SimulacraVulkanPlatform.cpp.obj	30e04c8b10e0ccf9
