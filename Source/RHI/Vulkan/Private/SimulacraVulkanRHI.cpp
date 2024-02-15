@@ -29,7 +29,25 @@ VkPhysicalDevice SVulkanRHI::SelectPhysicalDevice(VkInstance InInstance)
     std::vector<VkPhysicalDevice> PhysicalDevices(PhysicalDeviceCount);
     vkEnumeratePhysicalDevices(InInstance, &PhysicalDeviceCount, PhysicalDevices.data());
 
-    return PhysicalDevices[0];
+    VkPhysicalDevice SelectedDevice = VK_NULL_HANDLE;
+
+    for (VkPhysicalDevice i: PhysicalDevices)
+    {
+        VkPhysicalDeviceProperties PhysicalDeviceProperties;
+        vkGetPhysicalDeviceProperties(i, &PhysicalDeviceProperties);
+        if (PhysicalDeviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU)
+        {
+            SelectedDevice = i;
+        }
+    }
+
+    if (SelectedDevice == VK_NULL_HANDLE)
+    {
+        SelectedDevice = PhysicalDevices[0];
+    }
+
+    std::cout << SVulkanDebug::PhysicalDeviceToString(SelectedDevice) << "\n\n";
+    return SelectedDevice;
 
 }
 
@@ -117,7 +135,6 @@ void SVulkanRHI::CreateVertexBuffer()
 
     VertexBuffer = new SVulkanBuffer(Device,sizeof(SVertex)*Vertices.size(), VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT,VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT  );
 
-    std::cout << "TEST\n";
     SVulkanBuffer::CopyBuffer(StagingBuffer, VertexBuffer, BufferSize, Swapchain->GetCommandPool() );
     delete StagingBuffer;
 }
@@ -136,11 +153,13 @@ SVulkanSemaphore::~SVulkanSemaphore()
     vkDestroySemaphore(Device->GetHandle(), Semaphore, nullptr);
 }
 
-SVulkanFence::SVulkanFence(SVulkanDevice *InDevice) : Device(InDevice), Fence(VK_NULL_HANDLE)
+SVulkanFence::SVulkanFence(SVulkanDevice *InDevice, VkFenceCreateFlags InFenceCreateFlags)
+        : Device(InDevice), Fence(VK_NULL_HANDLE)
 {
     VkFenceCreateInfo FenceCreateInfo;
     SetZeroVulkanStruct(FenceCreateInfo, VK_STRUCTURE_TYPE_FENCE_CREATE_INFO);
-    FenceCreateInfo.flags = VK_FENCE_CREATE_SIGNALED_BIT;
+    FenceCreateInfo.flags = InFenceCreateFlags;
+
 
     vkCreateFence(Device->GetHandle(), &FenceCreateInfo, nullptr, &Fence);
 }

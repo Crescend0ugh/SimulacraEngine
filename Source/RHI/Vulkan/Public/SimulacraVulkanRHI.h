@@ -81,7 +81,7 @@ struct SVulkanFence
 {
 
 public:
-    explicit SVulkanFence(SVulkanDevice* InDevice);
+    explicit SVulkanFence(SVulkanDevice *InDevice, VkFenceCreateFlags InFenceCreateFlags);
     ~SVulkanFence();
 
     VkFence& GetHandle() { return Fence; }

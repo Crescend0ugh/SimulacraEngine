@@ -9,7 +9,7 @@
 #include "../../../Core/SimulacraGameViewport.h"
 
 
-SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle)
+SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevice, void *InWindowHandle) : ImageIndex(0), SemaphoreIndex(0)
 {
 
     Device       = InDevice;
@@ -76,7 +76,7 @@ SVulkanSwapchain::SVulkanSwapchain(VkInstance InInstance, SVulkanDevice *InDevic
     {
         ImageAcquiredSemaphores[i]  = new SVulkanSemaphore(Device);
         RenderFinishedSemaphores[i] = new SVulkanSemaphore(Device);
-        InFlightFences[i]           = new SVulkanFence(Device);
+        InFlightFences[i]           = new SVulkanFence(Device, VK_FENCE_CREATE_SIGNALED_BIT);
         CommandBuffers[i]           = new SVulkanCommandBuffer(Device, CommandPool);
     }
 

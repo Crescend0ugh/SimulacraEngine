@@ -6,6 +6,7 @@
 
 #include "SimulacraVulkan.h"
 
+
 class SVulkanCommands
 {
 
@@ -13,8 +14,11 @@ class SVulkanCommands
     virtual void CopyBufferToImage() final;
     virtual void CopyImageToBuffer() final;
 
-    virtual void DrawPrimitives();
-    virtual void DrawIndexedPrimitives();
+    virtual void DrawPrimitive() final;
+    virtual void DrawIndexedPrimitive() final;
+    virtual void DrawPrimitivesIndirect() final;
+    virtual void DrawIndexedPrimitiveIndirect() final;
+
 
 
 };

@@ -37,6 +37,35 @@ namespace SVulkanDebug
         return ReturnString;
     }
 
+    SIM_FORCE_INLINE std::string PhysicalDeviceTypeToString(VkPhysicalDeviceType DeviceType)
+    {
+        std::string ReturnString;
+
+        switch (DeviceType)
+        {
+
+            case VK_PHYSICAL_DEVICE_TYPE_OTHER:
+                ReturnString = "OTHER";
+                break;
+            case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU:
+                ReturnString = "INTEGRATED";
+                break;
+            case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
+                ReturnString = "DISCRETE";
+                break;
+            case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
+                ReturnString = "VIRTUAL";
+                break;
+            case VK_PHYSICAL_DEVICE_TYPE_CPU:
+                ReturnString = "CPU";
+                break;
+            case VK_PHYSICAL_DEVICE_TYPE_MAX_ENUM:
+                ReturnString = "ERROR";
+                break;
+        }
+
+        return ReturnString;
+    }
 /**
  * @brief Returns the queue count and the queue operations supported by the inputted Queue Family
  * @param QueueFamily The Queue Family being debugged
@@ -47,7 +76,6 @@ namespace SVulkanDebug
         std::string ReturnString;
 
 
-
         ReturnString += "Queue Count: " + std::to_string(QueueFamily.queueCount) + "\n";
         ReturnString += "Queue Flags: " + QueueFlagsToString(QueueFamily.queueFlags) + "\n";
         ReturnString += "___________________________________________________________________\n";
@@ -56,5 +84,20 @@ namespace SVulkanDebug
     }
 
     std::string GetQueueDebugString(SVulkanQueue *Queue);
+
+    SIM_FORCE_INLINE std::string PhysicalDeviceToString(VkPhysicalDevice PhysicalDevice)
+    {
+        std::string ReturnString;
+
+        VkPhysicalDeviceProperties PhysicalDeviceProperties;
+        vkGetPhysicalDeviceProperties(PhysicalDevice, &PhysicalDeviceProperties);
+
+        ReturnString += "Device: ";
+        ReturnString += PhysicalDeviceProperties.deviceName;
+        ReturnString += "\n--------------------\n";
+        ReturnString += "Device Type: ";
+        ReturnString += PhysicalDeviceTypeToString(PhysicalDeviceProperties.deviceType);
+        return ReturnString;
+    }
 
 }

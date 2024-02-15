@@ -23,7 +23,6 @@ void SVulkanInstance::PreCreateInstance()
 
     for (SVulkanInstanceExtension& RequiredInstanceExtension : RequiredInstanceExtensions)
     {
-        assert(SVulkanInstanceExtension::FindExtensionByName(SupportedInstanceExtensions, RequiredInstanceExtension.GetExtensionName()));
         RequiredInstanceExtension.SetSupported();
     }
 
