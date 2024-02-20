@@ -1,0 +1,5 @@
+# ninja log v5
+1	1725	7300446296240298	CMakeFiles/SimulacraEngine.dir/Core/Launcher/Win_Main.cpp.obj	a39e5a2dd6542b28
+1	183	7301151683366290	build.ninja	4580af74ffbebd5a
+2	758	7301151695479378	RHI/Vulkan/CMakeFiles/SimulacraVulkan.dir/Private/SimulacraVulkanPlatform.cpp.obj	1d98f3706bfb7300
+760	873	7301151696633180	RHI/Vulkan/libSimulacraVulkan.a	daa5ff6dd7198b6b

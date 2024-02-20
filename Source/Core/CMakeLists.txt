@@ -1,0 +1,6 @@
+add_subdirectory(Containers)
+add_subdirectory(Math)
+add_subdirectory(Memory)
+add_subdirectory(Platform)
+add_subdirectory(Sys)
+add_subdirectory(Templates)

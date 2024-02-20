@@ -1,0 +1,2 @@
+add_library(SimulacraTemplates INTERFACE)
+target_include_directories(SimulacraTemplates INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

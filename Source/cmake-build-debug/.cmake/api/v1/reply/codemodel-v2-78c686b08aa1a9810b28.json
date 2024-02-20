@@ -1,0 +1,238 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						9,
+						13
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Application",
+					"jsonFile" : "directory-Application-Debug-3f164fa072234d0a0467.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Application"
+				},
+				{
+					"build" : "Core",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-Core-Debug-b3854b2db255c35a81c1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Core"
+				},
+				{
+					"build" : "Core/Containers",
+					"jsonFile" : "directory-Core.Containers-Debug-36099cd382b538fd61dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Containers"
+				},
+				{
+					"build" : "Core/Math",
+					"jsonFile" : "directory-Core.Math-Debug-8f90e8631930d0017536.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Math"
+				},
+				{
+					"build" : "Core/Memory",
+					"jsonFile" : "directory-Core.Memory-Debug-830f6b40816ead614013.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Memory"
+				},
+				{
+					"build" : "Core/Platform",
+					"jsonFile" : "directory-Core.Platform-Debug-53dd4fabc9f714f79fd5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Platform"
+				},
+				{
+					"build" : "Core/Sys",
+					"jsonFile" : "directory-Core.Sys-Debug-0f6f41391456b777d33d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Sys"
+				},
+				{
+					"build" : "Core/Templates",
+					"jsonFile" : "directory-Core.Templates-Debug-b6cf4e351f96391d6fbe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "Core/Templates"
+				},
+				{
+					"build" : "RHI",
+					"childIndexes" : 
+					[
+						10,
+						11,
+						12
+					],
+					"jsonFile" : "directory-RHI-Debug-065b0f09b8eaa886bf03.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "RHI"
+				},
+				{
+					"build" : "RHI/Vulkan",
+					"jsonFile" : "directory-RHI.Vulkan-Debug-846a4b7ab588e3d45474.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 0,
+					"source" : "RHI/Vulkan",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "RHI/D3D",
+					"jsonFile" : "directory-RHI.D3D-Debug-8f68752a0306ea3b8d73.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 0,
+					"source" : "RHI/D3D"
+				},
+				{
+					"build" : "RHI/Metal",
+					"jsonFile" : "directory-RHI.Metal-Debug-cdc39d2776e46cba46b1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 0,
+					"source" : "RHI/Metal"
+				},
+				{
+					"build" : "Renderer",
+					"jsonFile" : "directory-Renderer-Debug-a1210a772c5503ad3e44.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Renderer"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					],
+					"name" : "SimulacraEngine",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 10,
+					"id" : "SimulacraVulkan::@af896aa61371f7d22a0d",
+					"jsonFile" : "target-SimulacraVulkan-Debug-c6614a65659f12ac8d21.json",
+					"name" : "SimulacraVulkan",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Source/cmake-build-debug",
+		"source" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Source"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,2 @@
+add_library(SimulacraMath INTERFACE)
+target_include_directories(SimulacraMath INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
