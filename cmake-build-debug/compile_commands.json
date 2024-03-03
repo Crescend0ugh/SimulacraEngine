@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.243.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Launcher\\Win_Main.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Launcher\\Win_Main.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Launcher\\Win_Main.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Launcher\\Win_Main.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.243.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Logging\\SimulacraLogging.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Logging\\SimulacraLogging.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Logging\\SimulacraLogging.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Logging\\SimulacraLogging.cpp.obj"
+}
+]

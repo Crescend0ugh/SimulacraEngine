@@ -15,7 +15,8 @@ struct SVector2
     {
         float X;
         float Y;
-    };
+	 
+    };	
 
 public:
 

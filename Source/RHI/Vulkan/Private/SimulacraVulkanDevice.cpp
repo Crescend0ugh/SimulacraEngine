@@ -11,9 +11,14 @@
 class SVulkanDevice;
 
 
-SVulkanDevice::SVulkanDevice(SVulkanRHI *InRHI, VkPhysicalDevice InPhysicalDevice) :
-        PhysicalDevice(InPhysicalDevice),
-        RHI(InRHI)
+SVulkanDevice::SVulkanDevice(SVulkanRHI* InRHI, VkPhysicalDevice InPhysicalDevice) :
+    PhysicalDevice(InPhysicalDevice),
+    RHI(InRHI),
+    TransferQueue(nullptr),
+    PresentQueue(nullptr),
+    GraphicsQueue(nullptr),
+    ComputeQueue(nullptr),
+    Device(VK_NULL_HANDLE)
 {
 }
 
@@ -125,7 +130,7 @@ void SVulkanDevice::CreateLogicalDevice()
 
     SVulkanDeviceExtension::GetRequiredExtensions(DeviceExtensions);
 
-    const char *EnabledExtensionNames[DeviceExtensions.size()];
+    std::vector<const char *> EnabledExtensionNames(DeviceExtensions.size());
 
     for (int i = 0; i < DeviceExtensions.size(); ++i)
     {
@@ -133,7 +138,7 @@ void SVulkanDevice::CreateLogicalDevice()
     }
 
     DeviceCreateInfo.enabledExtensionCount   = DeviceExtensions.size();
-    DeviceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
+    DeviceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames.data();
     DeviceCreateInfo.pQueueCreateInfos       = QueueFamilyInfos.data();
     DeviceCreateInfo.queueCreateInfoCount    = QueueFamilyInfos.size();
     VkResult Result = vkCreateDevice(PhysicalDevice, &DeviceCreateInfo, nullptr, &Device);
