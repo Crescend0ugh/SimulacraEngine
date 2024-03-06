@@ -43,7 +43,7 @@ void SVulkanInstance::CreateInstance()
 
     SVulkanInstanceExtension::GetRequiredExtensions(InstanceExtensions);
 
-    std::vector <const char*> EnabledExtensionNames(InstanceExtensions.size());
+    const char* EnabledExtensionNames[InstanceExtensions.size()];
     for(int i = 0; i < InstanceExtensions.size(); i++)
     {
         EnabledExtensionNames[i] = InstanceExtensions[i].GetExtensionName();
@@ -55,7 +55,7 @@ void SVulkanInstance::CreateInstance()
     SetZeroVulkanStruct(InstanceCreateInfo, VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO);
     InstanceCreateInfo.enabledExtensionCount = InstanceExtensions.size();
     InstanceCreateInfo.enabledLayerCount = 0;
-    InstanceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames.data();
+    InstanceCreateInfo.ppEnabledExtensionNames = EnabledExtensionNames;
     InstanceCreateInfo.ppEnabledLayerNames = nullptr;
 
     VkResult Result = vkCreateInstance(&InstanceCreateInfo, nullptr, &Instance);
