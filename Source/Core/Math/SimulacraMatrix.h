@@ -3,9 +3,7 @@
 //
 
 
-#ifndef SIMULACRAENGINE_SIMULACRAMATRIX_H
-#define SIMULACRAENGINE_SIMULACRAMATRIX_H
-
+#pragma once
 
 #include "../Sys/SimulacraEngineTypes.h"
 #include "../Sys/SimulacraEngineDefines.h"
@@ -57,6 +55,5 @@ private:
 #include "SimulacraMatrix.inl"
 
 
-#endif //SIMULACRAENGINE_SIMULACRAMATRIX_H
 
 

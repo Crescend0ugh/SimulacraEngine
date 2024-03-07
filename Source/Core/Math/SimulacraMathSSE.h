@@ -19,10 +19,16 @@ typedef __m128d v2d;   // vector 2 doubles
 
 namespace SMath::SSE
 {
+
     v4f sin_ps(v4f X)
     {
         v4f x, y, z;
 
         //Finds the absolute value of this register by doing a bitwise and operation with the inverse of the sign mask
+    }
+
+    v4f add(v4f X, v4f Y)
+    {
+	return _mm_add_ps(X, Y);
     }
 }

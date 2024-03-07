@@ -7,8 +7,9 @@
 #include "../../Application/SimulacraApplication.h"
 #include "../../Application/Windows/SimulacraWindowsApplication.h"
 #include "../../RHI/Vulkan/Public/SimulacraVulkanRHI.h"
-#include <ctime>
+#include "../Globals.h"
 
+#include <ctime>
 
 
 
@@ -16,18 +17,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 
 
+    SApplication Application = SWindowsApplication();
+    SVulkanRHI       *RHI         = new SVulkanRHI();
 
-    SApplicationBase* Application = SApplication::CreateApplication();
-     SVulkanRHI* RHI = new SVulkanRHI();
-     RHI->Init();
-     while(true)
-     {
-         Application->PumpMessages();
 
-         RHI->DrawFrame();
-     }
 
-    delete Application;
+    AllocConsole();
+
+
+
+    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
+    RHI->Init();
+    while (!ShouldExitEngine)
+    {
+        Application.PumpMessages();
+        RHI->DrawFrame();
+    }
+
     std::cout << "Works\n";
     return 0;
 }

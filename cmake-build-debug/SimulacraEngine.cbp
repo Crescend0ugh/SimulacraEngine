@@ -4,85 +4,89 @@
 	<Project>
 		<Option title="SimulacraEngine"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SimulacraEngine">
 				<Option output="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/SimulacraEngine.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add option="-D_DEBUG=1"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 SimulacraEngine"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 SimulacraEngine"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SimulacraEngine/fast">
 				<Option output="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/SimulacraEngine.exe" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add option="-D_DEBUG=1"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 SimulacraEngine/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 SimulacraEngine/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -116,13 +120,34 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Containers/SimulacraContainerAllocators.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Globals.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Launcher/Win_Main.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Logging/SimulacraInternalLogging.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Logging/SimulacraInternalLogging.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Logging/SimulacraLogSeverity.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Logging/SimulacraLogging.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Logging/SimulacraLogging.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/SimulacraGameViewport.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/SimulacraGameViewport.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Misc/SimulacraDirectedAcyclic.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Platforms/Linux/SimulacraVulkanLinuxPlatform.cpp">

@@ -19,6 +19,8 @@ public:
 
     static SApplicationBase* CreateApplication();
 
+    void PumpMessages() override;
+
 public:
 
 
@@ -31,11 +33,6 @@ public:
     SWindowsWindow *CreateWindowsWindow();
 
     SWindowBase* GetWindow(int Index) override { return Windows[Index];}
-
-
-protected:
-
-    void PumpMessages() override;
 
 
 private:

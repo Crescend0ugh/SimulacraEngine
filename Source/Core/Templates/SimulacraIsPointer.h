@@ -5,7 +5,10 @@
 #pragma once
 
 
-
+/**
+ *@brief 
+ *
+ **/
 template <typename T>
 struct TIsPointer { static constexpr bool Value = false; };
 
