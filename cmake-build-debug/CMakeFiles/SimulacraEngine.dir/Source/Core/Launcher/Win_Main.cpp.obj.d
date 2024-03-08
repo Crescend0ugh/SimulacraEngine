@@ -379,3 +379,10 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraV
 C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanCommandBuffer.h
 C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RHI/Vulkan/Public/SimulacraVulkanCommands.h
 C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Launcher/../Globals.h
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/thread
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/__msvc_chrono.hpp
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/ratio
+C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/process.h
+C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/corecrt_startup.h
+C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/ucrt/math.h
+C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/vcruntime_startup.h

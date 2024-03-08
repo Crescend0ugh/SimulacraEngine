@@ -24,6 +24,10 @@ add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp Source/RH
         Source/Core/Globals.h
         Source/Core/Globals.h
         Source/Misc/SimulacraDirectedAcyclic.cpp
+        Source/Async/SimulacraJob.cpp
+        Source/Async/SimulacraJob.h
+        Source/Core/Containers/SimulacraRingBuffer.h
+        Source/Async/SimulacraMutex.h
 )
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsApplication.cpp.obj.d"
   "CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.obj"
   "CMakeFiles/SimulacraEngine.dir/Source/Application/Windows/SimulacraWindowsWindow.cpp.obj.d"
+  "CMakeFiles/SimulacraEngine.dir/Source/Async/SimulacraJob.cpp.obj"
+  "CMakeFiles/SimulacraEngine.dir/Source/Async/SimulacraJob.cpp.obj.d"
   "CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj"
   "CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj.d"
   "CMakeFiles/SimulacraEngine.dir/Source/Core/Logging/SimulacraInternalLogging.cpp.obj"

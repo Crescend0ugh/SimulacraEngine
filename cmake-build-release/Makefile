@@ -214,6 +214,30 @@ Source\Application\Windows\SimulacraWindowsWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Application\Windows\SimulacraWindowsWindow.cpp.s
 .PHONY : Source\Application\Windows\SimulacraWindowsWindow.cpp.s
 
+Source\Async\SimulacraJob.obj: Source\Async\SimulacraJob.cpp.obj
+.PHONY : Source\Async\SimulacraJob.obj
+
+# target to build an object file
+Source\Async\SimulacraJob.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj
+.PHONY : Source\Async\SimulacraJob.cpp.obj
+
+Source\Async\SimulacraJob.i: Source\Async\SimulacraJob.cpp.i
+.PHONY : Source\Async\SimulacraJob.i
+
+# target to preprocess a source file
+Source\Async\SimulacraJob.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.i
+.PHONY : Source\Async\SimulacraJob.cpp.i
+
+Source\Async\SimulacraJob.s: Source\Async\SimulacraJob.cpp.s
+.PHONY : Source\Async\SimulacraJob.s
+
+# target to generate assembly for a file
+Source\Async\SimulacraJob.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.s
+.PHONY : Source\Async\SimulacraJob.cpp.s
+
 Source\Core\Launcher\Win_Main.obj: Source\Core\Launcher\Win_Main.cpp.obj
 .PHONY : Source\Core\Launcher\Win_Main.obj
 
@@ -715,6 +739,9 @@ help:
 	@echo ... Source/Application/Windows/SimulacraWindowsWindow.obj
 	@echo ... Source/Application/Windows/SimulacraWindowsWindow.i
 	@echo ... Source/Application/Windows/SimulacraWindowsWindow.s
+	@echo ... Source/Async/SimulacraJob.obj
+	@echo ... Source/Async/SimulacraJob.i
+	@echo ... Source/Async/SimulacraJob.s
 	@echo ... Source/Core/Launcher/Win_Main.obj
 	@echo ... Source/Core/Launcher/Win_Main.i
 	@echo ... Source/Core/Launcher/Win_Main.s

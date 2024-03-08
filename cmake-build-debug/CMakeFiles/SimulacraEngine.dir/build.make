@@ -538,6 +538,26 @@ CMakeFiles\SimulacraEngine.dir\Source\Misc\SimulacraDirectedAcyclic.cpp.s: cmake
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SimulacraEngine.dir\Source\Misc\SimulacraDirectedAcyclic.cpp.s /c C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Misc\SimulacraDirectedAcyclic.cpp
 <<
 
+CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj: CMakeFiles\SimulacraEngine.dir\flags.make
+CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj: C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Async\SimulacraJob.cpp
+CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj: CMakeFiles\SimulacraEngine.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Async/SimulacraJob.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj.d --working-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug --filter-prefix="Note: including file: " -- C:\PROGRA~1\MICROS~4\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj /FdCMakeFiles\SimulacraEngine.dir\ /FS -c C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Async\SimulacraJob.cpp
+<<
+
+CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SimulacraEngine.dir/Source/Async/SimulacraJob.cpp.i"
+	C:\PROGRA~1\MICROS~4\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe > CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Async\SimulacraJob.cpp
+<<
+
+CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Async/SimulacraJob.cpp.s"
+	C:\PROGRA~1\MICROS~4\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.s /c C:\Users\avsom\CLionProjects\SimulacraEngine\Source\Async\SimulacraJob.cpp
+<<
+
 # Object files for target SimulacraEngine
 SimulacraEngine_OBJECTS = \
 "CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj" \
@@ -563,7 +583,8 @@ SimulacraEngine_OBJECTS = \
 "CMakeFiles\SimulacraEngine.dir\Source\RHI\Vulkan\Private\SimulacraVulkanCommands.cpp.obj" \
 "CMakeFiles\SimulacraEngine.dir\Source\Core\Logging\SimulacraInternalLogging.cpp.obj" \
 "CMakeFiles\SimulacraEngine.dir\Source\Core\Logging\SimulacraLogging.cpp.obj" \
-"CMakeFiles\SimulacraEngine.dir\Source\Misc\SimulacraDirectedAcyclic.cpp.obj"
+"CMakeFiles\SimulacraEngine.dir\Source\Misc\SimulacraDirectedAcyclic.cpp.obj" \
+"CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj"
 
 # External object files for target SimulacraEngine
 SimulacraEngine_EXTERNAL_OBJECTS =
@@ -592,10 +613,11 @@ SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\Source\RHI\Vulkan\Private\Si
 SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\Source\Core\Logging\SimulacraInternalLogging.cpp.obj
 SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\Source\Core\Logging\SimulacraLogging.cpp.obj
 SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\Source\Misc\SimulacraDirectedAcyclic.cpp.obj
+SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\Source\Async\SimulacraJob.cpp.obj
 SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\build.make
 SimulacraEngine.exe: C:\VulkanSDK\1.3.261.1\Lib\vulkan-1.lib
 SimulacraEngine.exe: CMakeFiles\SimulacraEngine.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable SimulacraEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable SimulacraEngine.exe"
 	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\SimulacraEngine.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100226~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MICROS~4\2022\COMMUN~1\VC\Tools\MSVC\1438~1.331\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\SimulacraEngine.dir\objects1.rsp @<<
  /out:SimulacraEngine.exe /implib:SimulacraEngine.lib /pdb:C:\Users\avsom\CLionProjects\SimulacraEngine\cmake-build-debug\SimulacraEngine.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:windows  C:\VulkanSDK\1.3.261.1\Lib\vulkan-1.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
