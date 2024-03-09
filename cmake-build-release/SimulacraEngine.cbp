@@ -120,6 +120,9 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Async/SimulacraJob.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Async/SimulacraJobQueue.h">
+			<Option target="SimulacraEngine"/>
+		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Async/SimulacraMutex.h">
 			<Option target="SimulacraEngine"/>
 		</Unit>

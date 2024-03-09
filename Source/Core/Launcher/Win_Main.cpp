@@ -25,15 +25,15 @@ void StupidFunction()
 
 }
 
-void SimpleWork()
+int main()
 {
-    int x = 1+1;
-    std::cout << "Done\n";
+    std::cout << "Stuff\n";
 }
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
+
 
 
     SApplication Application = SWindowsApplication();
