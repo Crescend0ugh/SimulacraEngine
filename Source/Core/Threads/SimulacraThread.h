@@ -1,0 +1,14 @@
+//
+// Created by avsom on 3/10/2024.
+//
+
+#ifndef SIMULACRAENGINE_SIMULACRATHREAD_H
+#define SIMULACRAENGINE_SIMULACRATHREAD_H
+
+
+class SThread
+{
+};
+
+
+#endif //SIMULACRAENGINE_SIMULACRATHREAD_H

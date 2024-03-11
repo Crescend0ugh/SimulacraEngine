@@ -8,44 +8,33 @@
 #include "../../Application/Windows/SimulacraWindowsApplication.h"
 #include "../../RHI/Vulkan/Public/SimulacraVulkanRHI.h"
 #include "../Globals.h"
+#include "../Containers/SimulacraRingBuffer.h"
+#include "../../Async/SimulacraJob.h"
 #include <thread>
 
 #include <ctime>
 
 
-void StupidFunction()
-{
-    for(int i = 0; i < 10000000; i++)
-    {
-        void* StupidLocalVariable = malloc(1024*4);
-        free(StupidLocalVariable);
-    }
+#define NUM_PROCESSORS
 
-    std::cout << "Done stupid work\n";
 
-}
-
-int main()
-{
-    std::cout << "Stuff\n";
-}
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-
-
-
-    SApplication Application = SWindowsApplication();
-    SVulkanRHI       *RHI         = new SVulkanRHI();
-
-
-
     AllocConsole();
     freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
+    JobSystem System;
+    System.Startup();
+    System.Shutdown();
 
-    unsigned int n = std::thread::hardware_concurrency();
-    std::cout << n << " concurrent threads are supported.\n";
+    SApplication Application = SWindowsApplication();
+    SVulkanRHI   *RHI        = new SVulkanRHI();
+
+
+
+
+
 
     RHI->Init();
     while (!ShouldExitEngine)
@@ -55,8 +44,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
 
     std::cout << "Works\n";
-
-
 
 
     return 0;

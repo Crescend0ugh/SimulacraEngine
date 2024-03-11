@@ -5,42 +5,87 @@
 #pragma once
 
 
-typedef void SEntryPoint(void *Params);
+#include <atomic>
+#include <thread>
+#include "../Core/Sys/Precompiled.h"
+#include "../Core/Containers/SimulacraRingBuffer.h"
+#include <windows.h>
 
-enum class EPriority
+
+
+ const size_t StackSize     = 3;
+ const size_t FiberPoolSize = 160;
+ const size_t JobQueueSize  = 256;
+
+
+struct Fiber
 {
-    LOW,
-    NORMAL,
-    HIGH,
-    CRITICAL
+    typedef LPVOID PFIBER;
+    PFIBER         Handle;
 };
 
-struct SCounter
+
+class JobSystem
 {
+
+public:
+
+    void Startup();
+
+    void Shutdown();
+
+    typedef void EntryPoint(void *Params);
+
+    enum class EPriority : int8
+    {
+        LOW,
+        NORMAL,
+        HIGH,
+        CRITICAL
+    };
+
+    struct Counter
+    {
+        std::atomic<int32> Count;
+    };
+
+
+    void FreeCounter(Counter *Counter);
+
+
+    struct JobDeclaration
+    {
+        EntryPoint *StartAddress;
+        void       *Params;
+        Counter    *Counter;
+        EPriority  Priority;
+    };
+
+    void KickJob(const JobDeclaration &Decl);
+
+    inline void KickJobs(int Count, const JobDeclaration *Decls)
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            KickJob(Decls[i]);
+        }
+    };
+
+    void WaitForCounter();
+
+    void KickJobAndWait(const JobDeclaration &Decl);
+
+    void KickJobsAndWait(int Count, const JobDeclaration *Decls);
+
+private:
+
+    SRingBuffer<JobDeclaration, JobQueueSize> *QueueLowPriority      = nullptr;
+    SRingBuffer<JobDeclaration, JobQueueSize> *QueueNormalPriority   = nullptr;
+    SRingBuffer<JobDeclaration, JobQueueSize> *QueueHighPriority     = nullptr;
+    SRingBuffer<JobDeclaration, JobQueueSize> *QueueCriticalPriority = nullptr;
+    SRingBuffer<Fiber, FiberPoolSize>         *FiberPool             = nullptr;
+    std::vector<std::thread>                  WorkerThreads;
+    std::unordered_map<Counter*, Fiber*>        WaitList;
+
+
 };
-
-SCounter *AllocCounter();
-
-void FreeCounter(SCounter *Counter);
-
-
-struct SJobDeclaration
-{
-    SEntryPoint *EntryPoint;
-    void        *Params;
-    EPriority Priority;
-    SCounter *Counter;
-};
-
-void KickJob(const SJobDeclaration &Decl);
-
-void KickJobs(int Count, const SJobDeclaration *Decls);
-
-void WaitForCounter();
-
-void KickJobAndWait(const SJobDeclaration &Decl);
-
-void KickJobsAndWait(int Count, const SJobDeclaration *Decls);
-
-
-

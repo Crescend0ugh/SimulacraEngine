@@ -5,67 +5,60 @@
 #pragma once
 
 #include <mutex>
+#include <cassert>
+#include <optional>
 
-template<typename ElementType, size_t QueueSize>
+template<typename InElementType, size_t InCapacity>
 struct SRingBuffer
 {
+    typedef InElementType ElementType;
 
-    SRingBuffer() = default;
-
-    ~SRingBuffer()
+    void Enqueue(ElementType InElement)
     {
-        for (ElementType& Element : Data)
+        std::lock_guard<std::mutex> Guard(Mutex);
+        size_t Next = (Head + 1) % Capacity;
+        assert(!IsFull());
+        Data[Head] = (InElement);
+        Head = Next;
+        Filled = Head == Tail;
+    }
+
+    std::optional<ElementType> Dequeue()
+    {
+        Filled = false;
+
+        if (Head != Tail || IsFull())
         {
-            delete Element;
-
+            std::lock_guard<std::mutex> Guard(Mutex);
+            ElementType ReturnElement = Data[Tail];
+            Tail = (Tail + 1) % Capacity;
+            return ReturnElement;
         }
+
+        return std::nullopt;
     }
 
-
-    void Enqueue()
-    {
-
-    };
-
-    void Dequeue()
-    {
-
-    };
-
-    bool IsEmpty()
-    {
-
-    }
+    size_t Size() const
+    { return Head - Tail; }
 
     bool IsFull()
     {
-
+        return Filled;
     }
-
-    void Reset()
-    {
-
-        std::lock_guard<std::mutex> lock(Mutex);
-        Head = Tail;
-        Filled = false;
-
-    }
-
-    ElementType& operator[](size_t Index)
-    {
-        
-    }
-
 
 private:
 
 
-    ElementType Data[QueueSize];
-    std::mutex Mutex;
-    size_t Head = 0;
-    size_t Tail = 0;
-    const size_t MaxLength = QueueSize;
-    bool Filled;
+    ElementType &operator[](size_t Index)
+    { return Data[Index]; }
+
+
+    ElementType  Data[InCapacity];
+    size_t       Head     = 0;
+    size_t       Tail     = 0;
+    std::mutex   Mutex;
+    const size_t Capacity = InCapacity;
+    bool         Filled   = false;
 
 };
 

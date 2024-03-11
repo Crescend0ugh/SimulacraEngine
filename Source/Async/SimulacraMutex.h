@@ -7,8 +7,6 @@
 #include <atomic>
 #include "../Core/Sys/SimulacraEngineTypes.h"
 
-struct SMutex
+struct SSpinLock
 {
-
-    std::atomic<uint8> State;
 };
