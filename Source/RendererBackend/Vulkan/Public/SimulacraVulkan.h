@@ -14,9 +14,9 @@
 #include <vulkan/vulkan.h>
 
 // Forward declarations
-class vulkan_instance;
-class vulkan_device;
-class vulkan_queue;
+struct vulkan_instance;
+struct vulkan_device;
+struct vulkan_queue;
 
 
 

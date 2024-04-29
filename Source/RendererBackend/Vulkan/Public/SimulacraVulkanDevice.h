@@ -5,9 +5,8 @@
 #pragma once
 
 
-#include "SimulacraVulkan.h"
 #include "SimulacraVulkanQueue.h"
-#include "SimulacraVulkanInstance.h"
+
 
 class vulkan_device
 {
@@ -24,8 +23,8 @@ public:
     vulkan_queue compute_queue_;
     vulkan_queue transfer_queue_;
 
-    void select_phsyical_device(const vulkan_instance& instance);
-    void intialize_logical_device();
+    void select_physical_device(const vulkan_instance& instance);
+    void initialize_logical_device();
 
 private:
 

@@ -7,20 +7,25 @@
 #include "SimulacraVulkan.h"
 
 
-
-
 struct vulkan_swapchain
 {
 
-    uint32 acquire_next_image();
+    vulkan_swapchain();
+    ~vulkan_swapchain();
+    vulkan_swapchain(const vulkan_swapchain& other) = delete;
+    vulkan_swapchain& operator=(const vulkan_swapchain& other) = delete;
+    vulkan_swapchain(vulkan_swapchain&& other) noexcept = default;
+    vulkan_swapchain& operator=(vulkan_swapchain&& other) noexcept = default;
+
 
 
 private:
-    VkDevice           device_;
 
-    VkPresentModeKHR   present_mode_;
-    VkSurfaceFormatKHR surface_format_;
-    VkExtent2D         extent_;
+    VkSurfaceFormatKHR choose_surface_format();
+    VkPresentModeKHR   choose_present_mode();
+    VkExtent2D         choose_extent();
 
-    VkSwapchainKHR     swapchain_;
+    VkSwapchainKHR swapchain_;
+    VkSurfaceKHR   surface_;
+
 };

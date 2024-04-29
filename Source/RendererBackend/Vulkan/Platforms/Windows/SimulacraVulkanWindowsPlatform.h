@@ -5,15 +5,21 @@
 #pragma once
 
 
-
-
 #define VK_USE_PLATFORM_WIN32_KHR
 
 #include "../../Public/SimulacraVulkan.h"
+#include "../../../../Core/Platform/SimulacraWindowsWindow.h"
 
-void create_surface()
+namespace simulacra::vulkan::windows
 {
-    //TODO fill out structure and return created surface
-    VkWin32SurfaceCreateInfoKHR surface_create_info {};
-    surface_create_info.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
-};
+    VkSurfaceKHR create_surface(VkInstance instance, simulacra::windows::window& window)
+    {
+        VkSurfaceKHR                surface;
+        VkWin32SurfaceCreateInfoKHR surface_create_info{};
+        surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+        surface_create_info.hinstance = window.hinstance_;
+        surface_create_info.hwnd      = window.hwnd_;
+        vkCreateWin32SurfaceKHR(instance, &surface_create_info, nullptr, &surface);
+        return surface;
+    };
+}

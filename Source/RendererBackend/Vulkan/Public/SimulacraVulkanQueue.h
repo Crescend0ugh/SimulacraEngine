@@ -10,10 +10,8 @@
 
 struct vulkan_queue
 {
-    vulkan_queue();
-
+    vulkan_queue() = default;
     vulkan_queue(VkDevice device, uint32 family_index, uint32 queue_index);
-
     ~vulkan_queue() = default;
 
     VkQueue handle()       const { return queue_; }

@@ -8,10 +8,20 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(Vulkan REQUIRED)
 
 
-add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanInstance.cpp Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h
+add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanPipeline.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanPipeline.h
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.h
-        Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.h
-        Source/RendererBackend/Vulkan/Private/SimulacraVulkanExtensions.cpp
+        Source/Core/Platform/SimulacraWindowsWindow.h
+        Source/Core/Platform/SimulacraWindowsWindow.h
+        Source/Core/Platform/SimulacraWindows.h
+        Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.h
 
 )
 if (CMAKE_BUILD_TYPE MATCHES Debug)

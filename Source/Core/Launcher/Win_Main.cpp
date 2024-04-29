@@ -18,7 +18,10 @@
 
 int main()
 {
-
+    vulkan_instance instance;
+    vulkan_device device;
+    device.select_physical_device(instance);
+    device.initialize_logical_device();
 
 
     return 0;
