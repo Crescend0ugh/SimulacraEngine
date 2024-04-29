@@ -14,7 +14,7 @@
 //STL
 #include <iostream>
 #include <memory>
-#include <string>
+#include <string>e
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
@@ -40,5 +40,4 @@
 #include "../Containers/SimulacraArray.h"
 
 //Templates
-#include "../Templates/SimulacraIsPointer.h"
 

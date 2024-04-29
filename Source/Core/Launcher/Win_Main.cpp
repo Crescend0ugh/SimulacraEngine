@@ -4,15 +4,11 @@
 
 #include <windows.h>
 
-#include "../../Application/SimulacraApplication.h"
-#include "../../Application/Windows/SimulacraWindowsApplication.h"
-#include "../../RHI/Vulkan/Public/SimulacraVulkanRHI.h"
-#include "../Globals.h"
-#include "../Containers/SimulacraRingBuffer.h"
-#include "../../Async/SimulacraJob.h"
+
 #include <thread>
 
-#include <ctime>
+#include "../../RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h"
+#include "../../RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h"
 
 
 #define NUM_PROCESSORS
@@ -20,30 +16,9 @@
 
 
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+int main()
 {
-    AllocConsole();
-    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
-    JobSystem System;
-    System.Startup();
-    System.Shutdown();
 
-    SApplication Application = SWindowsApplication();
-    SVulkanRHI   *RHI        = new SVulkanRHI();
-
-
-
-
-
-
-    RHI->Init();
-    while (!ShouldExitEngine)
-    {
-        Application.PumpMessages();
-        RHI->DrawFrame();
-    }
-
-    std::cout << "Works\n";
 
 
     return 0;
