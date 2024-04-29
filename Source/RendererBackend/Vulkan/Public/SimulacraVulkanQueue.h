@@ -16,13 +16,13 @@ struct vulkan_queue
 
     ~vulkan_queue() = default;
 
-    VkQueue handle() const { return queue_; }
-    uint32 family_index() const { return family_index_; }
-    uint32 queue_index() const { return queue_index_; }
+    VkQueue handle()       const { return queue_; }
+    uint32  family_index() const { return family_index_; }
+    uint32  queue_index()  const { return queue_index_; }
 
 private:
     VkQueue queue_;
-    uint32 family_index_;
-    uint32 queue_index_;
+    uint32  family_index_;
+    uint32  queue_index_;
     //TODO add device handle
 };

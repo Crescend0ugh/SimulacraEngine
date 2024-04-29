@@ -58,7 +58,7 @@ build CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj: CXX_
   TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
   TARGET_PDB = SimulacraEngine.pdb
 
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanDevice.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanDevice.cpp || cmake_object_order_depends_target_SimulacraEngine
+build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_NDEBUG=1
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
   INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
@@ -76,114 +76,6 @@ build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\Simul
   TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
   TARGET_PDB = SimulacraEngine.pdb
 
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanPipeline.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanPipeline.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanQueue.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanQueue.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanRHI.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanRHI.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanSwapchain.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanSwapchain.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Linux\SimulacraVulkanLinuxPlatform.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Platforms\Linux\SimulacraVulkanLinuxPlatform.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Linux
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\Application\Windows\SimulacraWindowsWindow.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Application\Windows\SimulacraWindowsWindow.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Application\Windows
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\Application\Windows\SimulacraWindowsApplication.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Application\Windows\SimulacraWindowsApplication.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Application\Windows
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\Application\SimulacraApplication.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Application\SimulacraApplication.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Application
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\Application\SimulacraWindow.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Application\SimulacraWindow.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Application
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\Core\SimulacraGameViewport.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\SimulacraGameViewport.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
-build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Release C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp || cmake_object_order_depends_target_SimulacraEngine
-  DEFINES = -D_NDEBUG=1
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -external:IC:\VulkanSDK\1.3.243.0\Include -external:W0
-  OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
-  OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private
-  TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
-  TARGET_PDB = SimulacraEngine.pdb
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SimulacraEngine
@@ -192,7 +84,7 @@ build CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\Simul
 #############################################
 # Link the executable SimulacraEngine.exe
 
-build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanDevice.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanExtensions.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanPipeline.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanQueue.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanRHI.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanSwapchain.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Linux\SimulacraVulkanLinuxPlatform.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\Application\Windows\SimulacraWindowsWindow.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\Application\Windows\SimulacraWindowsApplication.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\Application\SimulacraApplication.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\Application\SimulacraWindow.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\Core\SimulacraGameViewport.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp.obj | C$:\VulkanSDK\1.3.243.0\Lib\vulkan-1.lib
+build SimulacraEngine.exe: CXX_EXECUTABLE_LINKER__SimulacraEngine_Release CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanInstance.cpp.obj CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Private\SimulacraVulkanExtensions.cpp.obj | C$:\VulkanSDK\1.3.243.0\Lib\vulkan-1.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
   LINK_LIBRARIES = C:\VulkanSDK\1.3.243.0\Lib\vulkan-1.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

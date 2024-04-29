@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include "../Core.h"
 
 template<typename ElementType>
 class SArray

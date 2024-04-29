@@ -15,7 +15,12 @@ struct vulkan_swapchain
     uint32 acquire_next_image();
 
 
-    VkPresentModeKHR present_mode_;
+private:
+    VkDevice           device_;
+
+    VkPresentModeKHR   present_mode_;
     VkSurfaceFormatKHR surface_format_;
-    VkExtent2D extent_;
+    VkExtent2D         extent_;
+
+    VkSwapchainKHR     swapchain_;
 };

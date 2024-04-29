@@ -15,7 +15,7 @@ struct vulkan_instance
     vulkan_instance();
     ~vulkan_instance();
 
-    std::vector<vulkan_instance_extension> query_extension_support();
+    [[nodiscard]] std::vector<vulkan_instance_extension> query_extension_support();
     VkInstance get_handle() const { return instance_; }
 private:
 

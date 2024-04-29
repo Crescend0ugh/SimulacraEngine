@@ -8,7 +8,11 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(Vulkan REQUIRED)
 
 
-add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanDevice.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanExtensions.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanPipeline.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanQueue.cpp  Source/RendererBackend/Vulkan/Private/SimulacraVulkanRHI.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanSwapchain.cpp Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp Source/RendererBackend/Vulkan/Platforms/Linux/SimulacraVulkanLinuxPlatform.cpp Source/Application/Windows/SimulacraWindowsWindow.cpp Source/Application/Windows/SimulacraWindowsApplication.cpp Source/Application/SimulacraApplication.cpp Source/Application/SimulacraWindow.cpp Source/Core/SimulacraGameViewport.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanInstance.cpp Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h
+add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp Source/RendererBackend/Vulkan/Private/SimulacraVulkanInstance.cpp Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.h
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.h
+        Source/RendererBackend/Vulkan/Private/SimulacraVulkanExtensions.cpp
+
 )
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
