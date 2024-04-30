@@ -5,12 +5,10 @@
 #pragma once
 
 
-#define VK_USE_PLATFORM_WIN32_KHR
-
 #include "../../Public/SimulacraVulkan.h"
-#include "../../../../Core/Platform/SimulacraWindowsWindow.h"
-
+#include "../../../Core/Platform/SimulacraWindowsWindow.h"
 namespace simulacra::vulkan::windows
+
 {
     VkSurfaceKHR create_surface(VkInstance instance, simulacra::windows::window& window)
     {

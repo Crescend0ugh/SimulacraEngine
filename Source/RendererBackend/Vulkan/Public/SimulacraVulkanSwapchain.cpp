@@ -17,5 +17,5 @@ vulkan_swapchain::vulkan_swapchain()
 
 vulkan_swapchain::~vulkan_swapchain()
 {
-    vkDestroySwapchainKHR(device_, swapchain_, nullptr);
+//    vkDestroySwapchainKHR(device_, swapchain_, nullptr);
 }

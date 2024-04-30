@@ -26,18 +26,3 @@
 #include "SimEngineIncludes.h"
 #include "SimEngineAsserts.h"
 #include "SimulacraEngineTypes.h"
-
-//Platforms
-
-
-//Mem
-
-//Math
-#include "../Math/SimulacraVector.h"
-#include "../Math/SimulacraMatrix.h"
-
-//Containers
-#include "../Containers/SimulacraArray.h"
-
-//Templates
-
