@@ -38,7 +38,6 @@ vulkan_device_extension::vulkan_device_extension(const char *extension_name) : e
 
 vulkan_device_extension::~vulkan_device_extension()
 {
-    delete extension_name_;
 }
 
 bool vulkan_device_extension::is_supported()

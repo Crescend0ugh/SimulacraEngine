@@ -5,6 +5,7 @@
 #include "SimulacraVulkanDevice.h"
 #include "SimulacraVulkanInstance.h"
 #include <optional>
+#include <set>
 
 vulkan_device::vulkan_device()
         : graphics_queue_(), present_queue_(), compute_queue_(), transfer_queue_(), device_(VK_NULL_HANDLE),
@@ -35,6 +36,7 @@ void vulkan_device::select_physical_device(const vulkan_instance& instance)
             result != VK_SUCCESS)
     {
         std::cerr<<"Couldn't find compatible vulkan device or driver\n";
+        terminate();
     } else
     {
         std::cout<<"======= Found "<<physical_device_count<<" physical devices. =======\n\n";
@@ -63,23 +65,15 @@ void vulkan_device::select_physical_device(const vulkan_instance& instance)
     physical_device_ = selected_device;
 }
 
-void vulkan_device::initialize_logical_device()
+void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 {
-    uint32 queue_family_count;
-    vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, nullptr);
-
-    std::vector<VkQueueFamilyProperties> queue_families(queue_family_count);
-
-    vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, queue_families.data());
-
-    std::vector<VkDeviceQueueCreateInfo> queue_create_infos;
 
     std::optional<uint32> graphics_queue_family_index = find_queue_family_index(
             [&](const int& index, const VkQueueFamilyProperties& properties)
             {
                 VkBool32 supported;
                 vkGetPhysicalDeviceSurfaceSupportKHR(physical_device_, index,
-                                                     nullptr, &supported);
+                                                     surface, &supported);
 
                 return (properties.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT && supported == VK_TRUE;
             });
@@ -99,15 +93,32 @@ void vulkan_device::initialize_logical_device()
                        (properties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT;
             });
 
+    assert(graphics_queue_family_index.has_value());
 
+    compute_queue_family_index = compute_queue_family_index.has_value() ? compute_queue_family_index
+                                                                        : graphics_queue_family_index;
 
-    std::vector<float> queue_priorities(queue_create_infos.size());
+    transfer_queue_family_index = transfer_queue_family_index.has_value() ? transfer_queue_family_index
+                                                                          : graphics_queue_family_index;
 
-    for (uint32 i = 0; i < queue_create_infos.size(); i++)
+    std::set<uint32> queue_family_indices;
+
+    queue_family_indices.insert(graphics_queue_family_index.value());
+    queue_family_indices.insert(compute_queue_family_index.value());
+    queue_family_indices.insert(transfer_queue_family_index.value());
+
+    std::vector<VkDeviceQueueCreateInfo> queue_create_infos;
+
+    std::vector<float> queue_priorities;
+
+    for (const uint32& queue_family_index: queue_family_indices)
     {
-        float& queue_priority = queue_priorities[i];
-        queue_priority = 1.0f;
-        queue_create_infos[i].pQueuePriorities = &queue_priority;
+        queue_create_infos.push_back({});
+        queue_priorities.push_back(1);
+        queue_create_infos.back().sType            = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+        queue_create_infos.back().queueFamilyIndex = queue_family_index;
+        queue_create_infos.back().pQueuePriorities = &queue_priorities.back();
+        queue_create_infos.back().queueCount       = 1;
     }
 
     std::vector<const char*> enabled_extension_names;
@@ -132,11 +143,6 @@ void vulkan_device::initialize_logical_device()
         std::cout<<"======= Created Vulkan device! =======\n\n";
     }
 
-    compute_queue_family_index = compute_queue_family_index.has_value() ? compute_queue_family_index
-                                                                        : graphics_queue_family_index;
-
-    transfer_queue_family_index = transfer_queue_family_index.has_value() ? transfer_queue_family_index
-                                                                          : graphics_queue_family_index;
 
     graphics_queue_ = vulkan_queue(device_, graphics_queue_family_index.value(), 0);
     present_queue_  = graphics_queue_;

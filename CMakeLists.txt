@@ -25,6 +25,8 @@ add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.h
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.cpp
         Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.h
 
 )
 if (CMAKE_BUILD_TYPE MATCHES Debug)

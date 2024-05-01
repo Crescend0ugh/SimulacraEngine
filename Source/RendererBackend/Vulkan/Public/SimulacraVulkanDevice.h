@@ -13,6 +13,7 @@
 class vulkan_device {
 
 public:
+
     vulkan_device();
 
     ~vulkan_device();
@@ -21,27 +22,26 @@ public:
 
     void query_supported_features();
 
-
     void select_physical_device(const vulkan_instance &instance);
 
-    void initialize_logical_device();
+    void initialize_logical_device(VkSurfaceKHR surface);
 
-    const VkDevice device() const
+    [[nodiscard]] VkDevice device() const
     { return device_; };
 
-    const VkPhysicalDevice physical_device() const
+    [[nodiscard]] VkPhysicalDevice physical_device() const
     { return physical_device_; }
 
-    const vulkan_queue &graphics_queue() const
+    [[nodiscard]] const vulkan_queue &graphics_queue() const
     { return graphics_queue_; }
 
-    const vulkan_queue &present_queue() const
+    [[nodiscard]] const vulkan_queue &present_queue() const
     { return present_queue_; }
 
-    const vulkan_queue &compute_queue() const
+    [[nodiscard]] const vulkan_queue &compute_queue() const
     { return compute_queue_; }
 
-    const vulkan_queue &transfer_queue() const
+    [[nodiscard]] const vulkan_queue &transfer_queue() const
     { return transfer_queue_; }
 
 private:

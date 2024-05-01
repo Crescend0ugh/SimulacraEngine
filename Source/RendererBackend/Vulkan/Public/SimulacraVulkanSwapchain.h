@@ -12,10 +12,9 @@ struct vulkan_swapchain
 
     vulkan_swapchain();
     ~vulkan_swapchain();
-    vulkan_swapchain(const vulkan_swapchain& other) = delete;
-    vulkan_swapchain& operator=(const vulkan_swapchain& other) = delete;
-    vulkan_swapchain(vulkan_swapchain&& other) noexcept = default;
-    vulkan_swapchain& operator=(vulkan_swapchain&& other) noexcept = default;
+
+
+
 
 
 

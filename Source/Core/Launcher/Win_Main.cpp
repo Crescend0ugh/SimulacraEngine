@@ -16,7 +16,7 @@
 #define NUM_PROCESSORS
 
  bool simulacra::windows::should_exit = false;
-bool bAttachToConsole()
+bool try_attach_to_console()
 {
     if (!AttachConsole(ATTACH_PARENT_PROCESS))
     {
@@ -39,20 +39,20 @@ bool bAttachToConsole()
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 
-    if(!bAttachToConsole())
+    if(!try_attach_to_console())
     {
         AllocConsole();
     }
-    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
-    printf("TEST\n");
-    
+    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
+    freopen_s((FILE **) stdin, "CONIN$", "r", stdin);
+
     simulacra::windows::window test = simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
     vulkan_instance instance;
     vulkan_device device;
     vulkan_surface surface(instance.get_handle(), test);
     device.select_physical_device(instance);
-    device.initialize_logical_device();
+    device.initialize_logical_device(surface.get_handle());
 
     MSG msg;
 

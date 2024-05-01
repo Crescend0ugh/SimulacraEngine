@@ -22,5 +22,5 @@ private:
     VkQueue queue_;
     uint32  family_index_;
     uint32  queue_index_;
-    //TODO add device handle
+    //TODO add device get_handle
 };

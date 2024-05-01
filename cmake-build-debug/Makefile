@@ -142,6 +142,54 @@ Source\Core\Launcher\Win_Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.s
 .PHONY : Source\Core\Launcher\Win_Main.cpp.s
 
+Source\Core\Platform\SimulacraWindowsWindow.obj: Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.obj
+
+# target to build an object file
+Source\Core\Platform\SimulacraWindowsWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
+
+Source\Core\Platform\SimulacraWindowsWindow.i: Source\Core\Platform\SimulacraWindowsWindow.cpp.i
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.i
+
+# target to preprocess a source file
+Source\Core\Platform\SimulacraWindowsWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.i
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.i
+
+Source\Core\Platform\SimulacraWindowsWindow.s: Source\Core\Platform\SimulacraWindowsWindow.cpp.s
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.s
+
+# target to generate assembly for a file
+Source\Core\Platform\SimulacraWindowsWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.s
+.PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.s
+
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.obj: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.obj
+
+# target to build an object file
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
+
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.i: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.i
+
+# target to preprocess a source file
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
+
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.s: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.s
+
+# target to generate assembly for a file
+Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
+
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.obj
 
@@ -286,6 +334,30 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s
 
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.obj
+
+# target to build an object file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
+
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.i
+
+# target to preprocess a source file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
+
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.s
+
+# target to generate assembly for a file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
+
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.obj
 
@@ -310,6 +382,30 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
 
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.obj
+
+# target to build an object file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
+
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.i
+
+# target to preprocess a source file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
+
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.s
+
+# target to generate assembly for a file
+Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
+.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -322,6 +418,12 @@ help:
 	@echo ... Source/Core/Launcher/Win_Main.obj
 	@echo ... Source/Core/Launcher/Win_Main.i
 	@echo ... Source/Core/Launcher/Win_Main.s
+	@echo ... Source/Core/Platform/SimulacraWindowsWindow.obj
+	@echo ... Source/Core/Platform/SimulacraWindowsWindow.i
+	@echo ... Source/Core/Platform/SimulacraWindowsWindow.s
+	@echo ... Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.obj
+	@echo ... Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.i
+	@echo ... Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.s
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.obj
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.i
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.s
@@ -340,9 +442,15 @@ help:
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.obj
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.i
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.s
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.obj
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.i
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.s
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.obj
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.i
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.s
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.obj
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.i
+	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.s
 .PHONY : help
 
 

@@ -20,7 +20,7 @@ struct vulkan_instance_extension
 
 private:
 
-    static  vulkan_instance* instance_;
+    static vulkan_instance* instance_;
     const char *extension_name_;
 };
 
@@ -30,7 +30,7 @@ struct vulkan_device_extension
     explicit vulkan_device_extension(const char* extension_name);
     ~vulkan_device_extension();
     bool is_supported();
-    const char* get_name() const { return extension_name_; }
+    [[nodiscard]] const char* get_name() const { return extension_name_; }
     static std::vector<vulkan_device_extension> required_extensions();
 
 

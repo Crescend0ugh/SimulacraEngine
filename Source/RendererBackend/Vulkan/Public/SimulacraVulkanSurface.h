@@ -13,15 +13,14 @@ class vulkan_surface
 public:
 
     vulkan_surface(VkInstance instance, simulacra::windows::window& window);
+
     ~vulkan_surface();
 
-
-
-
+    [[nodiscard]] inline VkSurfaceKHR get_handle() const { return surface_; }
 private:
 
     VkSurfaceKHR surface_;
-    VkInstance instance_;
+    VkInstance   instance_;
 };
 
 

@@ -14,11 +14,12 @@
 #include "../../../Core/Sys/Precompiled.h"
 #include <vulkan/vulkan.h>
 
+
 // Forward declarations
 struct vulkan_instance;
 struct vulkan_device;
 struct vulkan_queue;
-
+struct vulkan_surface;
 
 
 
