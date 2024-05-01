@@ -28,6 +28,7 @@ std::vector<vulkan_instance_extension> vulkan_instance_extension::required_exten
     std::vector<vulkan_instance_extension> required_extensions;
     //TODO get platform extensions
     required_extensions.emplace_back(VK_KHR_SURFACE_EXTENSION_NAME);
+    required_extensions.emplace_back(VK_KHR_WIN32_SURFACE_EXTENSION_NAME);
     return required_extensions;
 }
 

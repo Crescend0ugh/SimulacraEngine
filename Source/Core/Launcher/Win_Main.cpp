@@ -7,14 +7,15 @@
 
 #include <thread>
 
+#include "../Platform/SimulacraWindowsWindow.h"
 #include "../../RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h"
 #include "../../RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h"
-#include "../Platform/SimulacraWindowsWindow.h"
+#include "../../RendererBackend/Vulkan/Public/SimulacraVulkanSurface.h"
 
 
 #define NUM_PROCESSORS
 
-
+ bool simulacra::windows::should_exit = false;
 bool bAttachToConsole()
 {
     if (!AttachConsole(ATTACH_PARENT_PROCESS))
@@ -45,16 +46,17 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);    freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
     printf("TEST\n");
     
-    simulacra::windows::window test = simulacra::windows::create_window(960, 540, L"Sandbox Window");
+    simulacra::windows::window test = simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
-//    vulkan_instance instance;
-//    vulkan_device device;
-//    device.select_physical_device(instance);
-//    device.initialize_logical_device();
+    vulkan_instance instance;
+    vulkan_device device;
+    vulkan_surface surface(instance.get_handle(), test);
+    device.select_physical_device(instance);
+    device.initialize_logical_device();
 
     MSG msg;
 
-    while(!should_exit)
+    while(!simulacra::windows::should_exit)
     {
         while (PeekMessage(&msg, test.hwnd_, 0, 0, PM_REMOVE))
         {

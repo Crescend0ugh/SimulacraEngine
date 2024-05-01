@@ -19,9 +19,12 @@ add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.h
         Source/Core/Platform/SimulacraWindowsWindow.h
-        Source/Core/Platform/SimulacraWindowsWindow.h
         Source/Core/Platform/SimulacraWindows.h
         Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.h
+        Source/Core/Platform/SimulacraWindowsWindow.cpp
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.h
+        Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.cpp
+        Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
 
 )
 if (CMAKE_BUILD_TYPE MATCHES Debug)

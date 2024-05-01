@@ -11,8 +11,9 @@
 
 namespace simulacra::windows
 {
+    extern bool should_exit;
 
-    static wchar_t window_class_name[] = L"EngineWindow";
+    static char window_class_name[] = "EngineWindow";
 
     struct window_description
     {
@@ -29,44 +30,8 @@ namespace simulacra::windows
         window_description description_;
     };
 
-    window create_window(uint32 width, uint32 height, const  wchar_t* title)
-    {
-        HINSTANCE hinstance = GetModuleHandle(NULL);
+    window create_window(uint32 width, uint32 height, const  char * title);
 
-        WNDCLASS wc{};
-        wc.hInstance = hinstance;
-        wc.lpfnWndProc = WndProc;
-        wc.lpszClassName = window_class_name;
-
-        RegisterClass(&wc);
-
-        uint32      WindowExStyle = 0;
-        const wchar_t* ClassName = window_class_name;
-        const wchar_t* WindowName = title;
-        uint32      WindowStyle = WS_OVERLAPPEDWINDOW;
-        uint32         XPos = CW_USEDEFAULT;
-        uint32         YPos = CW_USEDEFAULT;
-        HWND        HWndParent = nullptr;
-        HMENU       HMenu = nullptr;
-        HINSTANCE   HInstance = hinstance;
-
-        HWND hwnd = CreateWindowEx(
-                WindowExStyle,
-                ClassName,
-                WindowName,
-                WindowStyle,
-                XPos,
-                YPos,
-                width,
-                height,
-                HWndParent,
-                HMenu,
-                HInstance,
-                nullptr
-        );
-
-        return window{hwnd, hinstance, {width, height, XPos, YPos}};
-    }
 
 
 
