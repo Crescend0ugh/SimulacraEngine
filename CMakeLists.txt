@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(Vulkan REQUIRED)
 
 
-add_executable(SimulacraEngine Source/Core/Launcher/Win_Main.cpp
+add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.cpp
         Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.cpp

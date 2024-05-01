@@ -67,7 +67,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/VulkanSDK/1.3.243.0/Include"
+					"path" : "C:/VulkanSDK/1.3.261.1/Include"
 				}
 			],
 			"language" : "CXX",
@@ -102,12 +102,12 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:windows",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\VulkanSDK\\1.3.243.0\\Lib\\vulkan-1.lib",
+				"fragment" : "C:\\VulkanSDK\\1.3.261.1\\Lib\\vulkan-1.lib",
 				"role" : "libraries"
 			},
 			{
