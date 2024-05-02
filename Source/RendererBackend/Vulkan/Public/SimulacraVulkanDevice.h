@@ -15,8 +15,10 @@ class vulkan_device {
 public:
 
     vulkan_device();
-
     ~vulkan_device();
+
+    vulkan_device(const vulkan_device&) = delete;
+    vulkan_device& operator=(const vulkan_device&) = delete;
 
     void query_supported_extensions();
 
@@ -27,7 +29,7 @@ public:
     void initialize_logical_device(VkSurfaceKHR surface);
 
     [[nodiscard]] VkDevice logical_handle() const
-    { return device_; };
+    { return logical_device_; };
 
     [[nodiscard]] VkPhysicalDevice physical_handle() const
     { return physical_device_; }
@@ -46,10 +48,9 @@ public:
 
 private:
 
-
     std::optional<uint32> find_queue_family_index(const std::function<bool(const uint32&, const VkQueueFamilyProperties&)> &criteria);
 
-    VkDevice         device_;
+    VkDevice         logical_device_;
     VkPhysicalDevice physical_device_;
     vulkan_queue     graphics_queue_;
     vulkan_queue     present_queue_;

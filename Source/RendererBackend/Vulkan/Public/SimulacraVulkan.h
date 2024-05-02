@@ -20,6 +20,7 @@ struct vulkan_instance;
 struct vulkan_device;
 struct vulkan_queue;
 struct vulkan_surface;
+struct vulkan_swapchain;
 
 
 

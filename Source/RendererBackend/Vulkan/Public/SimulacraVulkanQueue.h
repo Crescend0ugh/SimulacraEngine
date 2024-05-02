@@ -14,9 +14,9 @@ struct vulkan_queue
     vulkan_queue(VkDevice device, uint32 family_index, uint32 queue_index);
     ~vulkan_queue() = default;
 
-    VkQueue handle()       const { return queue_; }
-    uint32  family_index() const { return family_index_; }
-    uint32  queue_index()  const { return queue_index_; }
+    [[nodiscard]] VkQueue handle()       const { return queue_; }
+    [[nodiscard]] uint32  family_index() const { return family_index_; }
+    [[nodiscard]] uint32  queue_index()  const { return queue_index_; }
 
 private:
     VkQueue queue_;

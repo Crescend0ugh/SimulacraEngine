@@ -8,7 +8,7 @@
 #include <set>
 
 vulkan_device::vulkan_device()
-        : graphics_queue_(), present_queue_(), compute_queue_(), transfer_queue_(), device_(VK_NULL_HANDLE),
+        : graphics_queue_(), present_queue_(), compute_queue_(), transfer_queue_(), logical_device_(VK_NULL_HANDLE),
           physical_device_(VK_NULL_HANDLE)
 {
 
@@ -16,10 +16,10 @@ vulkan_device::vulkan_device()
 
 vulkan_device::~vulkan_device()
 {
-    vkDestroyDevice(device_, nullptr);
+    vkDestroyDevice(logical_device_, nullptr);
 }
 
-void vulkan_device::query_supported_extensions()
+void vulkan_device:: query_supported_extensions()
 {
 
 }
@@ -62,7 +62,6 @@ void vulkan_device::select_physical_device(const vulkan_instance &instance)
 
 void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 {
-
     std::optional<uint32> graphics_queue_family_index = find_queue_family_index(
             [&](const int &index, const VkQueueFamilyProperties &properties)
             {
@@ -114,6 +113,11 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 
     std::vector<const char *> enabled_extension_names;
 
+    for (const vulkan_device_extension& device_extension : vulkan_device_extension::required_extensions())
+    {
+        enabled_extension_names.push_back(device_extension.get_name());
+    }
+
     VkDeviceCreateInfo device_create_info{};
     device_create_info.sType                   = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
     device_create_info.enabledExtensionCount   = enabled_extension_names.size();
@@ -123,22 +127,18 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
     device_create_info.pQueueCreateInfos       = queue_create_infos.data();
     device_create_info.queueCreateInfoCount    = queue_create_infos.size();
 
-
-    if (const VkResult result = vkCreateDevice(physical_device_, &device_create_info, nullptr, &device_); result !=
-                                                                                                          VK_SUCCESS) {
+    if (const VkResult result = vkCreateDevice(physical_device_, &device_create_info, nullptr, &logical_device_); result !=
+                                                                                                                  VK_SUCCESS) {
         std::cerr << "Couldn't create Vulkan logical_handle.\n";
         terminate();
     } else {
         std::cout << "======= Created Vulkan logical_handle! =======\n\n";
     }
 
-
-    graphics_queue_ = vulkan_queue(device_, graphics_queue_family_index.value(), 0);
+    graphics_queue_ = vulkan_queue(logical_device_, graphics_queue_family_index.value(), 0);
     present_queue_  = graphics_queue_;
-    compute_queue_  = vulkan_queue(device_, compute_queue_family_index.value(), 0);
-    transfer_queue_ = vulkan_queue(device_, transfer_queue_family_index.value(), 0);
-
-
+    compute_queue_  = vulkan_queue(logical_device_, compute_queue_family_index.value(), 0);
+    transfer_queue_ = vulkan_queue(logical_device_, transfer_queue_family_index.value(), 0);
 }
 
 

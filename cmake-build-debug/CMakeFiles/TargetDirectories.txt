@@ -1,3 +1,4 @@
+C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/SimulacraLibrary.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/SimulacraEngine.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

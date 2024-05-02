@@ -17,6 +17,7 @@ public:
     ~vulkan_surface();
 
     [[nodiscard]] inline VkSurfaceKHR get_handle() const { return surface_; }
+
 private:
 
     VkSurfaceKHR surface_;

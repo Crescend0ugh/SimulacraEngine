@@ -12,13 +12,32 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
             break;
 
         case WM_SIZING:
-            std::cout << "sizing\n";
-    }
+            switch (wparam)
+            {
+                case WMSZ_BOTTOM:
+                    break;
+                case WMSZ_BOTTOMLEFT:
+                    break;
+                case WMSZ_BOTTOMRIGHT:
+                    break;
+                case WMSZ_LEFT:
+                    break;
+                case WMSZ_RIGHT:
+                    break;
+                case WMSZ_TOP:
+                    break;
+                case WMSZ_TOPLEFT:
+                    break;
+                case WMSZ_TOPRIGHT:
+                    break;
+            }
 
+
+    }
     return DefWindowProc(hwnd, msg, wparam, lparam);
 }
 
-simulacra::windows::window simulacra::windows::create_window(uint32 width, uint32 height, const char *title)
+simulacra::windows::window simulacra::windows::create_window(uint32 width, uint32 height, const char* title)
 {
     HINSTANCE hinstance = GetModuleHandle(NULL);
 
@@ -29,15 +48,15 @@ simulacra::windows::window simulacra::windows::create_window(uint32 width, uint3
 
     RegisterClass(&wc);
 
-    uint32 WindowExStyle = 0;
-    const char *ClassName  = window_class_name;
-    const char *WindowName = title;
-    uint32    WindowStyle = WS_OVERLAPPEDWINDOW;
-    uint32    XPos        = CW_USEDEFAULT;
-    uint32    YPos        = CW_USEDEFAULT;
-    HWND      HWndParent  = nullptr;
-    HMENU     HMenu       = nullptr;
-    HINSTANCE HInstance   = hinstance;
+    uint32    WindowExStyle = 0;
+    const char* ClassName   = window_class_name;
+    const char* WindowName  = title;
+    uint32    WindowStyle   = WS_OVERLAPPEDWINDOW;
+    uint32    XPos          = CW_USEDEFAULT;
+    uint32    YPos          = CW_USEDEFAULT;
+    HWND      HWndParent    = nullptr;
+    HMENU     HMenu         = nullptr;
+    HINSTANCE HInstance     = hinstance;
 
     HWND hwnd = CreateWindowEx(
             WindowExStyle,
