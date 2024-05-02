@@ -26,10 +26,10 @@ public:
 
     void initialize_logical_device(VkSurfaceKHR surface);
 
-    [[nodiscard]] VkDevice device() const
+    [[nodiscard]] VkDevice logical_handle() const
     { return device_; };
 
-    [[nodiscard]] VkPhysicalDevice physical_device() const
+    [[nodiscard]] VkPhysicalDevice physical_handle() const
     { return physical_device_; }
 
     [[nodiscard]] const vulkan_queue &graphics_queue() const

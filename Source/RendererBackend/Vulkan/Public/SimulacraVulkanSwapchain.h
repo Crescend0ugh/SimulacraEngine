@@ -15,16 +15,13 @@ struct vulkan_swapchain
 
 
 
-
-
-
 private:
 
-    VkSurfaceFormatKHR choose_surface_format();
-    VkPresentModeKHR   choose_present_mode();
-    VkExtent2D         choose_extent();
+    [[nodiscard]] VkSurfaceFormatKHR choose_surface_format() const;
+    [[nodiscard]] VkPresentModeKHR   choose_present_mode(const VkPresentModeKHR desired_present_mode) const;
+    [[nodiscard]] VkExtent2D         choose_extent() const;
 
     VkSwapchainKHR swapchain_;
     VkSurfaceKHR   surface_;
-
+    vulkan_device* device_;
 };

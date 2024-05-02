@@ -28,18 +28,16 @@ void vulkan_device::query_supported_features()
 {
 }
 
-void vulkan_device::select_physical_device(const vulkan_instance& instance)
+void vulkan_device::select_physical_device(const vulkan_instance &instance)
 {
     uint32 physical_device_count;
 
     if (const VkResult result = vkEnumeratePhysicalDevices(instance.get_handle(), &physical_device_count, nullptr);
-            result != VK_SUCCESS)
-    {
-        std::cerr<<"Couldn't find compatible vulkan device or driver\n";
+            result != VK_SUCCESS) {
+        std::cerr << "Couldn't find compatible vulkan logical_handle or driver\n";
         terminate();
-    } else
-    {
-        std::cout<<"======= Found "<<physical_device_count<<" physical devices. =======\n\n";
+    } else {
+        std::cout << "======= Found " << physical_device_count << " physical devices. =======\n\n";
     }
 
     std::vector<VkPhysicalDevice> physical_devices(physical_device_count);
@@ -47,18 +45,15 @@ void vulkan_device::select_physical_device(const vulkan_instance& instance)
 
     VkPhysicalDevice selected_device = VK_NULL_HANDLE;
 
-    for (const VkPhysicalDevice& i: physical_devices)
-    {
+    for (const VkPhysicalDevice &i: physical_devices) {
         VkPhysicalDeviceProperties PhysicalDeviceProperties;
         vkGetPhysicalDeviceProperties(i, &PhysicalDeviceProperties);
-        if (PhysicalDeviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU)
-        {
+        if (PhysicalDeviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
             selected_device = i;
         }
     }
 
-    if (selected_device == VK_NULL_HANDLE)
-    {
+    if (selected_device == VK_NULL_HANDLE) {
         selected_device = physical_devices[0];
     }
 
@@ -69,7 +64,7 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 {
 
     std::optional<uint32> graphics_queue_family_index = find_queue_family_index(
-            [&](const int& index, const VkQueueFamilyProperties& properties)
+            [&](const int &index, const VkQueueFamilyProperties &properties)
             {
                 VkBool32 supported;
                 vkGetPhysicalDeviceSurfaceSupportKHR(physical_device_, index,
@@ -79,14 +74,14 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
             });
 
     std::optional<uint32> compute_queue_family_index = find_queue_family_index(
-            [&](const int& index, const VkQueueFamilyProperties& properties)
+            [&](const int &index, const VkQueueFamilyProperties &properties)
             {
                 return (properties.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT &&
                        (properties.queueFlags & VK_QUEUE_GRAPHICS_BIT) != VK_QUEUE_GRAPHICS_BIT;
             });
 
     std::optional<uint32> transfer_queue_family_index = find_queue_family_index(
-            [&](const int& index, const VkQueueFamilyProperties& properties)
+            [&](const int &index, const VkQueueFamilyProperties &properties)
             {
                 return (properties.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT &&
                        (properties.queueFlags & VK_QUEUE_COMPUTE_BIT) != VK_QUEUE_COMPUTE_BIT &&
@@ -101,18 +96,14 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
     transfer_queue_family_index = transfer_queue_family_index.has_value() ? transfer_queue_family_index
                                                                           : graphics_queue_family_index;
 
-    std::set<uint32> queue_family_indices;
-
-    queue_family_indices.insert(graphics_queue_family_index.value());
-    queue_family_indices.insert(compute_queue_family_index.value());
-    queue_family_indices.insert(transfer_queue_family_index.value());
+    std::set<uint32> queue_family_indices = {graphics_queue_family_index.value(), compute_queue_family_index.value(),
+                                             transfer_queue_family_index.value()};
 
     std::vector<VkDeviceQueueCreateInfo> queue_create_infos;
 
     std::vector<float> queue_priorities;
 
-    for (const uint32& queue_family_index: queue_family_indices)
-    {
+    for (const uint32 &queue_family_index: queue_family_indices) {
         queue_create_infos.push_back({});
         queue_priorities.push_back(1);
         queue_create_infos.back().sType            = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
@@ -121,7 +112,7 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
         queue_create_infos.back().queueCount       = 1;
     }
 
-    std::vector<const char*> enabled_extension_names;
+    std::vector<const char *> enabled_extension_names;
 
     VkDeviceCreateInfo device_create_info{};
     device_create_info.sType                   = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
@@ -134,13 +125,11 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 
 
     if (const VkResult result = vkCreateDevice(physical_device_, &device_create_info, nullptr, &device_); result !=
-                                                                                                          VK_SUCCESS)
-    {
-        std::cerr<<"Couldn't create Vulkan device.\n";
+                                                                                                          VK_SUCCESS) {
+        std::cerr << "Couldn't create Vulkan logical_handle.\n";
         terminate();
-    } else
-    {
-        std::cout<<"======= Created Vulkan device! =======\n\n";
+    } else {
+        std::cout << "======= Created Vulkan logical_handle! =======\n\n";
     }
 
 
@@ -154,18 +143,16 @@ void vulkan_device::initialize_logical_device(VkSurfaceKHR surface)
 
 
 std::optional<uint32> vulkan_device::find_queue_family_index(
-        const std::function<bool(const uint32&, const VkQueueFamilyProperties&)>& criteria)
+        const std::function<bool(const uint32 &, const VkQueueFamilyProperties &)> &criteria)
 {
     uint32 queue_family_count;
     vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, nullptr);
     std::vector<VkQueueFamilyProperties> queue_families(queue_family_count);
     vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, queue_families.data());
 
-    for (int current_index = 0; current_index < queue_families.size(); current_index++)
-    {
-        VkQueueFamilyProperties& current_index_family = queue_families[current_index];
-        if (criteria(current_index, current_index_family))
-        {
+    for (int current_index = 0; current_index < queue_families.size(); current_index++) {
+        VkQueueFamilyProperties &current_index_family = queue_families[current_index];
+        if (criteria(current_index, current_index_family)) {
             return current_index;
         }
     }
