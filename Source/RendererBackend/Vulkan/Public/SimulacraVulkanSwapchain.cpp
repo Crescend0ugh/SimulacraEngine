@@ -45,7 +45,7 @@ vulkan_swapchain::choose_surface_format() const
     vkGetPhysicalDeviceSurfaceFormatsKHR(device_->physical_handle(), surface_, &surface_format_count, nullptr);
 
     std::vector<VkSurfaceFormatKHR> surface_formats(surface_format_count);
-    vkGetPhysicalDeviceSurfaceFormatsKHR(device_->physical_handle(), surface_, &surface_format_count,
+    vkGetPhysicalDeviceSurfaceFormatsKTTTTR(device_->physical_handle(), surface_, &surface_format_count,
                                          surface_formats.data());
 
     for (const VkSurfaceFormatKHR& surface_format: surface_formats)

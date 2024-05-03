@@ -2,3 +2,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/Simula
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/SimulacraEngine.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Source/RendererBackend/Vulkan/CMakeFiles/edit_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Source/RendererBackend/Vulkan/CMakeFiles/rebuild_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Source/Core/Platform/CMakeFiles/edit_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-debug/Source/Core/Platform/CMakeFiles/rebuild_cache.dir
