@@ -11,7 +11,7 @@
 #include "../../RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h"
 #include "../../RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h"
 #include "../../RendererBackend/Vulkan/Public/SimulacraVulkanSurface.h"
-
+#include "../../RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.h"
 
 #define NUM_PROCESSORS
 
@@ -53,7 +53,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     vulkan_surface surface(instance.get_handle(), test);
     device.select_physical_device(instance);
     device.initialize_logical_device(surface.get_handle());
-
+    vulkan_swapchain swapchain(&device, surface.get_handle(), test.description_.width_, test.description_.height_, VK_NULL_HANDLE);
     MSG msg;
 
     while(!simulacra::windows::should_exit)

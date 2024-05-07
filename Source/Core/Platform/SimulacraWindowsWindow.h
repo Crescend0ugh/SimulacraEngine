@@ -11,6 +11,8 @@
 
 namespace simulacra::windows
 {
+
+    //TODO REMOVE THIS AND ADD TO A ENGINE GLOBALS FILE
     extern bool should_exit;
 
     static char window_class_name[] = "EngineWindow";

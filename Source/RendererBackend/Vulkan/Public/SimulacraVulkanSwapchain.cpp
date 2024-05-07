@@ -9,21 +9,40 @@
 #include "SimulacraVulkanSwapchain.h"
 
 #include <utility>
+#include <algorithm>
 #include "SimulacraVulkanDevice.h"
 
 
-vulkan_swapchain::vulkan_swapchain(const vulkan_device* device, const simulacra::windows::window window)
+vulkan_swapchain::vulkan_swapchain(vulkan_device* device, VkSurfaceKHR surface, uint32 width, uint32 height,
+                                   VkSwapchainKHR old_swapchain) : device_(device), surface_(surface),
+                                                                   swapchain_(VK_NULL_HANDLE),
+                                                                   surface_format_({}), extent_({})
 {
 
-    VkSurfaceFormatKHR surface_format = choose_surface_format();
-    VkExtent2D         extent         = choose_extent();
 
     VkSwapchainCreateInfoKHR swapchain_create_info{};
-    swapchain_create_info.sType           = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
-    swapchain_create_info.surface         = surface_;
-    swapchain_create_info.oldSwapchain    = VK_NULL_HANDLE;
-    swapchain_create_info.imageFormat     = surface_format.format;
-    swapchain_create_info.imageColorSpace = surface_format.colorSpace;
+
+    swapchain_create_info.sType            = VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR;
+    swapchain_create_info.surface          = surface_;
+    swapchain_create_info.minImageCount    = choose_min_image_count();
+    swapchain_create_info.imageFormat      = choose_surface_format().format;
+    swapchain_create_info.imageColorSpace  = choose_surface_format().colorSpace;
+    swapchain_create_info.imageExtent      = choose_extent(width, height);
+    swapchain_create_info.imageArrayLayers = 1;
+    swapchain_create_info.imageUsage       = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+    swapchain_create_info.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
+    swapchain_create_info.preTransform     = choose_pre_transform();
+    swapchain_create_info.compositeAlpha   = choose_composite_alpha();
+    swapchain_create_info.presentMode      = choose_present_mode();
+    swapchain_create_info.clipped          = VK_TRUE;
+    swapchain_create_info.oldSwapchain     = old_swapchain;
+
+    VkResult result = vkCreateSwapchainKHR(device_->logical_handle(), &swapchain_create_info, nullptr, &swapchain_);
+    std::cout<<(result != VK_SUCCESS ? "Failed to create swapchain\n" : "Created swapchain\n");
+
+    images_ = get_swapchain_images();
+    image_views_ = create_image_views();
+
 }
 
 vulkan_swapchain& vulkan_swapchain::operator=(vulkan_swapchain&& other) noexcept
@@ -45,12 +64,16 @@ vulkan_swapchain::choose_surface_format() const
     vkGetPhysicalDeviceSurfaceFormatsKHR(device_->physical_handle(), surface_, &surface_format_count, nullptr);
 
     std::vector<VkSurfaceFormatKHR> surface_formats(surface_format_count);
-    vkGetPhysicalDeviceSurfaceFormatsKTTTTR(device_->physical_handle(), surface_, &surface_format_count,
+    vkGetPhysicalDeviceSurfaceFormatsKHR(device_->physical_handle(), surface_, &surface_format_count,
                                          surface_formats.data());
 
     for (const VkSurfaceFormatKHR& surface_format: surface_formats)
     {
-
+        if ((surface_format.colorSpace == VK_COLORSPACE_SRGB_NONLINEAR_KHR) &&
+            (surface_format.format == VK_FORMAT_B8G8R8A8_SRGB))
+        {
+            return surface_format;
+        }
     }
 
     return surface_formats[0];
@@ -60,10 +83,11 @@ VkPresentModeKHR
 vulkan_swapchain::choose_present_mode() const
 {
     uint32 present_mode_count = 0;
-    vkGetPhysicalDeviceSurfacePresentModesKHR(nullptr, surface_, &present_mode_count, nullptr);
+    vkGetPhysicalDeviceSurfacePresentModesKHR(device_->physical_handle(), surface_, &present_mode_count, nullptr);
 
     std::vector<VkPresentModeKHR> present_modes(present_mode_count);
-    vkGetPhysicalDeviceSurfacePresentModesKHR(nullptr, surface_, &present_mode_count, present_modes.data());
+    vkGetPhysicalDeviceSurfacePresentModesKHR(device_->physical_handle(), surface_, &present_mode_count,
+                                              present_modes.data());
 
     for (const VkPresentModeKHR& present_mode: present_modes)
     {
@@ -76,9 +100,13 @@ vulkan_swapchain::choose_present_mode() const
     return VK_PRESENT_MODE_FIFO_KHR;
 }
 
-VkExtent2D vulkan_swapchain::choose_extent() const
+VkExtent2D vulkan_swapchain::choose_extent(uint32 width, uint32 height) const
 {
-    return {};
+    VkSurfaceCapabilitiesKHR surface_capabilities{};
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_->physical_handle(), surface_, &surface_capabilities);
+
+    return surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
+            width, height};
 }
 
 uint64 vulkan_swapchain::acquire_next_image_index()
@@ -89,11 +117,123 @@ uint64 vulkan_swapchain::acquire_next_image_index()
                                                 VK_NULL_HANDLE, VK_NULL_HANDLE,
                                                 &image_index); result != VK_SUCCESS)
     {
-        if(result == VK_SUBOPTIMAL_KHR || result == VK_ERROR_OUT_OF_DATE_KHR)
+        if (result == VK_SUBOPTIMAL_KHR || result == VK_ERROR_OUT_OF_DATE_KHR)
         {
-            std::cerr << "Failed to acquire next image\n";
+            std::cerr<<"Failed to acquire next image\n";
             terminate();
         }
     }
     return image_index;
+}
+
+uint32 vulkan_swapchain::choose_min_image_count() const
+{
+
+    uint32                   desired_image_count = 3;
+    VkSurfaceCapabilitiesKHR surface_capabilities{};
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_->physical_handle(), surface_, &surface_capabilities);
+
+    return surface_capabilities.maxImageCount == 0 ? desired_image_count : std::clamp(desired_image_count,
+                                                                                      surface_capabilities.minImageCount,
+                                                                                      surface_capabilities.maxImageCount);
+}
+
+VkSurfaceTransformFlagBitsKHR vulkan_swapchain::choose_pre_transform() const
+{
+    VkSurfaceCapabilitiesKHR surface_capabilities{};
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_->physical_handle(), surface_, &surface_capabilities);
+
+    return surface_capabilities.supportedTransforms & VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
+           ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR : surface_capabilities.currentTransform;
+
+}
+
+VkCompositeAlphaFlagBitsKHR vulkan_swapchain::choose_composite_alpha() const
+{
+    VkSurfaceCapabilitiesKHR surface_capabilities;
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_->physical_handle(), surface_, &surface_capabilities);
+
+    return surface_capabilities.supportedCompositeAlpha & VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR
+           ? VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR : VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR;
+}
+
+vulkan_swapchain::~vulkan_swapchain()
+{
+    vkDestroySwapchainKHR(device_->logical_handle(), swapchain_, nullptr);
+}
+
+void vulkan_swapchain::present()
+{
+
+}
+
+std::vector<VkImage> vulkan_swapchain::get_swapchain_images()
+{
+    uint32 swapchain_image_count = 0;
+
+    VkResult result = vkGetSwapchainImagesKHR(device_->logical_handle(), swapchain_,
+                                              &swapchain_image_count, nullptr);
+
+    if (swapchain_image_count == 0 || result != VK_SUCCESS)
+    {
+        std::cerr<<"Failed to get swapchain images\n";
+        terminate();
+    }
+    std::vector<VkImage> swapchain_images(swapchain_image_count);
+    result = vkGetSwapchainImagesKHR(device_->logical_handle(), swapchain_, &swapchain_image_count,
+                                     swapchain_images.data());
+
+    if (swapchain_image_count == 0 || result != VK_SUCCESS)
+    {
+        std::cerr<<"Failed to get swapchain images\n";
+        terminate();
+    } else
+    {
+        std::cout<<"Obtained swapchain images\n";
+    }
+    return swapchain_images;
+}
+
+std::vector<VkImageView> vulkan_swapchain::create_image_views()
+{
+    std::vector<VkImageView> image_views(images_.size());
+    image_views.resize(images_.size());
+
+    for (int i = 0; i < image_views.size(); i++)
+    {
+        VkImage    & image      = images_[i];
+        VkImageView& image_view = image_views[i];
+
+        VkImageViewCreateInfo image_view_create_info{};
+        image_view_create_info.sType    = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+        image_view_create_info.image    = image;
+        image_view_create_info.viewType = VK_IMAGE_VIEW_TYPE_2D;
+        image_view_create_info.format   = surface_format_.format;
+        image_view_create_info.components =
+                {
+                        VK_COMPONENT_SWIZZLE_IDENTITY,
+                        VK_COMPONENT_SWIZZLE_IDENTITY,
+                        VK_COMPONENT_SWIZZLE_IDENTITY,
+                        VK_COMPONENT_SWIZZLE_IDENTITY
+                };
+        image_view_create_info.subresourceRange =
+                {
+                        VK_IMAGE_ASPECT_COLOR_BIT,
+                        0,
+                        1,
+                        0,
+                        1
+                };
+
+        VkResult result = vkCreateImageView(device_->logical_handle(), &image_view_create_info, nullptr, &image_view);
+
+        if(result != VK_SUCCESS)
+        {
+            std::cerr << "Failed to create image view\n";
+            terminate();
+        }
+
+    }
+    std::cout << "Created image views\n";
+    return image_views;
 }

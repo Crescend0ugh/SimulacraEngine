@@ -5,7 +5,7 @@
 		<Option title="SimulacraEngine"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="msvc8"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Source\;CMake Files\Source\RendererBackend\;CMake Files\Source\RendererBackend\Vulkan\;CMake Files\Source\Core\;CMake Files\Source\Core\Platform\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/cmake-build-release"/>
@@ -145,74 +145,94 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Launcher/Win_Main.cpp">
 			<Option target="SimulacraEngine"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/SimulacraWindows.h">
-			<Option target="SimulacraLibrary"/>
-		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/SimulacraWindowsWindow.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/SimulacraWindowsWindow.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanPipeline.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanPipeline.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.h">
 			<Option target="SimulacraLibrary"/>
-		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.cpp">
-			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.cpp">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.h">
 			<Option target="SimulacraLibrary"/>
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\RendererBackend\Vulkan\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Core\Platform\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

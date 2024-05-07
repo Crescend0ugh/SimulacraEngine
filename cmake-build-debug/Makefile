@@ -161,6 +161,7 @@ Source\Core\Platform\SimulacraWindowsWindow.obj: Source\Core\Platform\SimulacraW
 # target to build an object file
 Source\Core\Platform\SimulacraWindowsWindow.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
 .PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.obj
 
 Source\Core\Platform\SimulacraWindowsWindow.i: Source\Core\Platform\SimulacraWindowsWindow.cpp.i
@@ -169,6 +170,7 @@ Source\Core\Platform\SimulacraWindowsWindow.i: Source\Core\Platform\SimulacraWin
 # target to preprocess a source file
 Source\Core\Platform\SimulacraWindowsWindow.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.i
 .PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.i
 
 Source\Core\Platform\SimulacraWindowsWindow.s: Source\Core\Platform\SimulacraWindowsWindow.cpp.s
@@ -177,6 +179,7 @@ Source\Core\Platform\SimulacraWindowsWindow.s: Source\Core\Platform\SimulacraWin
 # target to generate assembly for a file
 Source\Core\Platform\SimulacraWindowsWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.s
 .PHONY : Source\Core\Platform\SimulacraWindowsWindow.cpp.s
 
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.obj: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
@@ -185,6 +188,7 @@ Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.o
 # target to build an object file
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.obj
 
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.i: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
@@ -193,6 +197,7 @@ Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.i
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.i
 
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.s: Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
@@ -201,6 +206,7 @@ Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.s
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj
@@ -209,6 +215,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.obj: Source\RendererB
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.i
@@ -217,6 +224,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.i: Source\RendererBac
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.s
@@ -225,6 +233,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.s: Source\RendererBac
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanDevice.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.obj
@@ -233,6 +242,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.obj: Source\Rende
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.i
@@ -241,6 +251,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.i: Source\Rendere
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.s
@@ -249,6 +260,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.s: Source\Rendere
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanExtensions.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.obj
@@ -257,6 +269,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.obj: Source\Rendere
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.i
@@ -265,6 +278,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.i: Source\RendererB
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.s
@@ -273,6 +287,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.s: Source\RendererB
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanInstance.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.obj
@@ -281,6 +296,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.obj: Source\Rendere
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.i
@@ -289,6 +305,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.i: Source\RendererB
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.s
@@ -297,6 +314,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.s: Source\RendererB
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanPipeline.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.obj
@@ -305,6 +323,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.obj: Source\RendererBa
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.i
@@ -313,6 +332,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.i: Source\RendererBack
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.s
@@ -321,31 +341,8 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.s: Source\RendererBack
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanQueue.cpp.s
-
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.obj
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.obj
-
-# target to build an object file
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.obj
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.obj
-
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.i
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.i
-
-# target to preprocess a source file
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.i
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.i
-
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.s
-
-# target to generate assembly for a file
-Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s
-.PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanRHI.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.obj
@@ -353,6 +350,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.obj: Source\Renderer
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
@@ -361,6 +359,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.i: Source\RendererBa
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
@@ -369,6 +368,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.s: Source\RendererBa
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSurface.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj
@@ -377,6 +377,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.obj: Source\Render
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.i
@@ -385,6 +386,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.i: Source\Renderer
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
@@ -393,6 +395,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.s: Source\Renderer
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanSwapchain.cpp.s
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.obj: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
@@ -401,6 +404,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.obj: Source\RendererB
 # target to build an object file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.obj
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.i: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
@@ -409,6 +413,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.i: Source\RendererBac
 # target to preprocess a source file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.i
 
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.s: Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
@@ -417,6 +422,7 @@ Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.s: Source\RendererBac
 # target to generate assembly for a file
 Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
 .PHONY : Source\RendererBackend\Vulkan\Public\SimulacraVulkanWindow.cpp.s
 
 # Help Target
@@ -453,9 +459,6 @@ help:
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.obj
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.i
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.s
-	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.obj
-	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.i
-	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanRHI.s
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.obj
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.i
 	@echo ... Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.s
