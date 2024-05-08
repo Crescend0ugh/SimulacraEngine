@@ -7,7 +7,7 @@
 #include "SimulacraVulkan.h"
 #include "../../../Core/Platform/SimulacraWindowsWindow.h"
 
-class vulkan_surface
+struct vulkan_surface
 {
 
 public:

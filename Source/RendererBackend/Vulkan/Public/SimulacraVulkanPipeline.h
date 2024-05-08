@@ -6,3 +6,14 @@
 
 #include "SimulacraVulkan.h"
 
+struct vulkan_pipeline
+{
+
+};
+
+struct graphics_pipeline : public vulkan_pipeline
+{
+
+};
+
+struct compute_pipeline :

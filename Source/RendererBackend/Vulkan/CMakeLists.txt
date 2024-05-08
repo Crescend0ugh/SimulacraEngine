@@ -7,7 +7,7 @@ target_sources(SimulacraLibrary PUBLIC
         Public/SimulacraVulkanWindow.cpp
         Public/SimulacraVulkanPipeline.cpp
         Public/SimulacraVulkanSwapchain.cpp
-        Public/SimulacraVulkanShader.cpp
+        Public/SimulacraVulkanShaderModule.cpp
         Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
 
 )
