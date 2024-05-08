@@ -7,8 +7,6 @@
 
 
 #include "SimulacraVulkanSwapchain.h"
-
-#include <utility>
 #include <algorithm>
 #include "SimulacraVulkanDevice.h"
 

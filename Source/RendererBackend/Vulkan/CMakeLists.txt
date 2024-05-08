@@ -1,11 +1,14 @@
 target_sources(SimulacraLibrary PUBLIC
-        Public/SimulacraVulkanExtensions.cpp
-        Public/SimulacraVulkanDevice.cpp
-        Public/SimulacraVulkanSwapchain.cpp
         Public/SimulacraVulkanInstance.cpp
+        Public/SimulacraVulkanDevice.cpp
+        Public/SimulacraVulkanExtensions.cpp
         Public/SimulacraVulkanQueue.cpp
-        Public/SimulacraVulkanPipeline.cpp
         Public/SimulacraVulkanSurface.cpp
         Public/SimulacraVulkanWindow.cpp
+        Public/SimulacraVulkanPipeline.cpp
+        Public/SimulacraVulkanSwapchain.cpp
+        Public/SimulacraVulkanShader.cpp
         Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
+
 )
+
