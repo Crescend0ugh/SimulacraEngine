@@ -33,7 +33,7 @@ private:
     [[nodiscard]] VkSurfaceTransformFlagBitsKHR choose_pre_transform() const;
     [[nodiscard]] VkCompositeAlphaFlagBitsKHR   choose_composite_alpha() const;
 
-    [[nodiscard]] std::vector<VkImage> get_swapchain_images();
+    [[nodiscard]] std::vector<VkImage>     get_swapchain_images();
     [[nodiscard]] std::vector<VkImageView> create_image_views();
 
 
