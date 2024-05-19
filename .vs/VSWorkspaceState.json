@@ -9,7 +9,10 @@
     "",
     "\\Source",
     "\\Source\\Core",
-    "\\Source\\Core\\Launcher"
+    "\\Source\\Core\\Launcher",
+    "\\Source\\RendererBackend",
+    "\\Source\\RendererBackend\\Vulkan",
+    "\\Source\\RendererBackend\\Vulkan\\Public"
   ],
   "PreviewInSolutionExplorer": false
 }

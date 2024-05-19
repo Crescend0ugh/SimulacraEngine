@@ -204,7 +204,7 @@
 		{
 			"backtrace" : 5,
 			"compileGroupIndex" : 0,
-			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanShader.cpp",
+			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanShaderModule.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

@@ -8,7 +8,7 @@
 
 struct vulkan_shader_module {
 
-    vulkan_shader_module(vulkan_device *device, std::vector<byte> byte_code);
+    vulkan_shader_module(vulkan_device *device, const std::vector<byte>& byte_code);
 
     ~vulkan_shader_module();
 

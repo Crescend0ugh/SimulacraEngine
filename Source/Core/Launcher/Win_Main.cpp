@@ -16,6 +16,7 @@
 #define NUM_PROCESSORS
 
  bool simulacra::windows::should_exit = false;
+
 bool try_attach_to_console()
 {
     if (!AttachConsole(ATTACH_PARENT_PROCESS))

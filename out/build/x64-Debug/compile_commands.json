@@ -1,0 +1,140 @@
+[
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraLibrary.dir\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp",
+  "output": "CMakeFiles\\SimulacraLibrary.dir\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Launcher\\Win_Main.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Launcher\\Win_Main.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Launcher\\Win_Main.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Launcher\\Win_Main.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanInstance.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanDevice.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanExtensions.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanQueue.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSurface.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanPipeline.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanSwapchain.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Public\\SimulacraVulkanShaderModule.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\RendererBackend\\Vulkan\\Platforms\\Windows\\SimulacraVulkanWindowsPlatform.cpp.obj"
+},
+{
+  "directory": "C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1439~1.335\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -D_DEBUG=1 -external:IC:\\VulkanSDK\\1.3.280.0\\Include -external:W0 /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi /FoCMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp",
+  "file": "C:\\Users\\avsom\\CLionProjects\\SimulacraEngine\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp",
+  "output": "CMakeFiles\\SimulacraEngine.dir\\Source\\Core\\Platform\\SimulacraWindowsWindow.cpp.obj"
+}
+]

@@ -5,7 +5,7 @@
 #include "SimulacraVulkanShaderModule.h"
 #include "SimulacraVulkanDevice.h"
 
-vulkan_shader_module::vulkan_shader_module(vulkan_device *device, std::vector<byte> byte_code) : device_(device), byte_code_(byte_code)
+vulkan_shader_module::vulkan_shader_module(vulkan_device *device, const std::vector<byte>& byte_code) : device_(device), byte_code_(byte_code), shader_module_(VK_NULL_HANDLE)
 {
     VkShaderModuleCreateInfo shader_module_create_info {};
     shader_module_create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
@@ -32,3 +32,4 @@ vulkan_shader_module::~vulkan_shader_module() {
     //TODO ADD DEVICE REF
     vkDestroyShaderModule(nullptr, shader_module_, nullptr);
 }
+    

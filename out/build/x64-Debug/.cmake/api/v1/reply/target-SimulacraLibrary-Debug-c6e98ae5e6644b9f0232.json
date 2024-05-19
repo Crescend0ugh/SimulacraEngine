@@ -1,11 +1,18 @@
 {
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
 	"artifacts" : 
 	[
 		{
-			"path" : "SimulacraEngine.exe"
-		},
-		{
-			"path" : "SimulacraEngine.pdb"
+			"path" : "SimulacraLibrary.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -13,13 +20,16 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
+			"add_library",
+			"add_definitions",
 			"target_link_libraries",
-			"add_definitions"
+			"target_sources"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"Source/RendererBackend/Vulkan/CMakeLists.txt",
+			"Source/Core/Platform/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -29,26 +39,38 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 15,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 27,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 24,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 18,
+				"line" : 24,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 1,
+				"parent" : 4
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1,
+				"parent" : 6
 			}
 		]
 	},
@@ -64,14 +86,14 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 2,
 					"define" : "_DEBUG=1"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "C:/VulkanSDK/1.3.280.0/Include"
 				}
@@ -97,50 +119,13 @@
 				7,
 				8,
 				9,
-				10,
-				11
+				10
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "SimulacraLibrary::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "SimulacraEngine::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:windows",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "SimulacraLibrary.lib",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "C:\\VulkanSDK\\1.3.280.0\\Lib\\vulkan-1.lib",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "SimulacraEngine",
-	"nameOnDisk" : "SimulacraEngine.exe",
+	"id" : "SimulacraLibrary::@6890427a1f51a3e7e1df",
+	"name" : "SimulacraLibrary",
+	"nameOnDisk" : "SimulacraLibrary.lib",
 	"paths" : 
 	{
 		"build" : ".",
@@ -162,85 +147,78 @@
 				7,
 				8,
 				9,
-				10,
-				11
+				10
 			]
 		}
 	],
 	"sources" : 
 	[
 		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Source/Core/Launcher/Win_Main.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanInstance.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanDevice.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanExtensions.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanQueue.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanSurface.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanWindow.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanPipeline.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanSwapchain.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
-			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanShader.cpp",
+			"path" : "Source/RendererBackend/Vulkan/Public/SimulacraVulkanShaderModule.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 7,
 			"compileGroupIndex" : 0,
 			"path" : "Source/Core/Platform/SimulacraWindowsWindow.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }
