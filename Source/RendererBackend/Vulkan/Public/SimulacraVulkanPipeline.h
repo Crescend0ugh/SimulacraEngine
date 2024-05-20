@@ -6,14 +6,25 @@
 
 #include "SimulacraVulkan.h"
 
+struct graphics_pipeline_description
+{
 
+
+    struct blend_attachment
+    {
+        bool blend_enable;
+
+    };
+
+
+};
 
 class graphics_pipeline
 {
 
 public:
 
-    graphics_pipeline();
+    graphics_pipeline(vulkan_device& device, const graphics_pipeline_description& description);
 
     void fill_vertex_input_state();
     void fill_input_assembly_state();
@@ -24,7 +35,6 @@ public:
     void fill_blend_attachment();
     void fill_color_blend_state();
     void fill_dynamic_state_state();
-
 
 
 protected:

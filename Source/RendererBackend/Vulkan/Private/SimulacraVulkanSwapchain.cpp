@@ -6,9 +6,9 @@
 
 
 
-#include "SimulacraVulkanSwapchain.h"
+#include "../Public/SimulacraVulkanSwapchain.h"
 #include <algorithm>
-#include "SimulacraVulkanDevice.h"
+#include "../Public/SimulacraVulkanDevice.h"
 
 
 vulkan_swapchain::vulkan_swapchain(vulkan_device* device, VkSurfaceKHR surface, uint32 width, uint32 height,

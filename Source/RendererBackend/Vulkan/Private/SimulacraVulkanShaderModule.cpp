@@ -2,8 +2,8 @@
 // Created by avsom on 5/7/2024.
 //
 
-#include "SimulacraVulkanShaderModule.h"
-#include "SimulacraVulkanDevice.h"
+#include "../Public/SimulacraVulkanShaderModule.h"
+#include "../Public/SimulacraVulkanDevice.h"
 
 vulkan_shader_module::vulkan_shader_module(vulkan_device *device, const std::vector<byte>& byte_code) : device_(device), byte_code_(byte_code), shader_module_(VK_NULL_HANDLE)
 {

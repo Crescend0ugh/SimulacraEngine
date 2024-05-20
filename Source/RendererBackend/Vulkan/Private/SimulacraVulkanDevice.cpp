@@ -2,8 +2,8 @@
 // Created by avsom on 10/23/2023.
 //
 
-#include "SimulacraVulkanDevice.h"
-#include "SimulacraVulkanInstance.h"
+#include "../Public/SimulacraVulkanDevice.h"
+#include "../Public/SimulacraVulkanInstance.h"
 #include <optional>
 #include <set>
 
