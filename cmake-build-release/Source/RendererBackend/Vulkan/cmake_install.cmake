@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/avsom/CLionProjects/SimulacraEngine/Source/RendererBackend/Vulkan
+# Install script for directory: C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Vulkan
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

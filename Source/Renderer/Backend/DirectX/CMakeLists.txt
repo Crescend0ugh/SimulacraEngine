@@ -1,0 +1,1 @@
+target_link_libraries(SimulacraLibrary d3d12.lib)
