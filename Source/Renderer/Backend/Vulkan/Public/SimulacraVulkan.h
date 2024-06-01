@@ -19,6 +19,7 @@ struct vulkan_device;
 struct vulkan_queue;
 struct vulkan_surface;
 struct vulkan_swapchain;
+struct graphics_pipeline;
 
 enum shader_stages
 {

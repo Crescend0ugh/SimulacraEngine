@@ -12,5 +12,6 @@ target_sources(SimulacraLibrary PRIVATE
         Private/SimulacraVulkanSurface.cpp
         Private/SimulacraVulkanSwapchain.cpp
         Private/SimulacraVulkanPipeline.cpp
+        Private/SimulacraVulkanRenderpass.cpp
 
 )

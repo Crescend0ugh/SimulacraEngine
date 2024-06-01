@@ -8,7 +8,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(Vulkan REQUIRED)
 
 
-add_library(SimulacraLibrary)
+add_library(SimulacraLibrary
+        Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanRenderpass.cpp
+        Source/Renderer/Backend/Vulkan/Public/SimulacraVulkanRenderpass.h)
 add_subdirectory(Source/Renderer/Backend/Vulkan)
 add_subdirectory(Source/Renderer/Backend/DirectX)
 

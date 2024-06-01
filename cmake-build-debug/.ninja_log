@@ -1,13 +1,13 @@
 # ninja log v5
 23	1218	7380402680333409	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Private/SimulacraVulkanSurface.cpp.obj	e1e48dccccdc51da
-714	759	7380882914336246	SimulacraLibrary.lib	9d3c93d03b237f15
-13	943	7380812140748120	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanInstance.cpp.obj	60011690b5d6babc
-759	881	7380882915331201	SimulacraEngine.exe	4bace4628d5661bf
-2	145	7380886597003716	build.ninja	8da3b347fae75a2
-4	1222	7380882849829348	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	dcebb6fe3b44c95f
-6	759	7380882914376529	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	9481406ef9d2dec5
+1312	1363	7387634997734208	SimulacraLibrary.lib	9d3c93d03b237f15
+43	1661	7387385806088322	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanInstance.cpp.obj	60011690b5d6babc
+1363	1497	7387634998877651	SimulacraEngine.exe	4bace4628d5661bf
+2	145	7389154430690369	build.ninja	8da3b347fae75a2
+62	1660	7387385806068269	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	dcebb6fe3b44c95f
+72	1653	7387385805897556	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	9481406ef9d2dec5
 8	1234	7380402680505325	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Private/SimulacraVulkanExtensions.cpp.obj	b4ee5496390e7eb9
-16	1187	7380812143186651	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	c313166256b50c4f
+48	1670	7387385806168423	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	c313166256b50c4f
 39	1113	7380811849381916	CMakeFiles/SimulacraLibrary.dir/Source/Core/Platform/SimulacraWindowsWindow.cpp.obj	83fbfd62be856c5b
 45	1100	7380811849256825	CMakeFiles/SimulacraEngine.dir/Source/Core/Platform/SimulacraWindowsWindow.cpp.obj	495ac3049d721dde
 12	1235	7380402680505325	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Private/SimulacraVulkanInstance.cpp.obj	49c9a48867f9e75b
@@ -16,8 +16,8 @@
 27	1269	7380402680866496	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Private/SimulacraVulkanSwapchain.cpp.obj	5230f24dead0a805
 16	1338	7380402681560250	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Private/SimulacraVulkanDevice.cpp.obj	dad9c4e2c7aece11
 4	1250	7380402680680718	CMakeFiles/SimulacraLibrary.dir/Source/RendererBackend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	ca48e10ca2eee94f
-3	892	7380812140241461	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	510a498fb56f2197
-20	900	7380812140310532	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	a04e954ef4b70a51
-6	987	7380812141159471	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanExtensions.cpp.obj	9723451a6ca28848
-2	714	7380882913919984	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj	c2b415281f737a68
-3	813	7380812271219554	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanSurface.cpp.obj	c2b95503b63d5655
+28	1657	7387385806008095	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	510a498fb56f2197
+52	1656	7387385805937869	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanQueue.cpp.obj	a04e954ef4b70a51
+37	1658	7387385806028274	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanExtensions.cpp.obj	9723451a6ca28848
+4	1311	7387634997276711	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanPipeline.cpp.obj	c2b415281f737a68
+58	1655	7387385805897556	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanSurface.cpp.obj	c2b95503b63d5655
