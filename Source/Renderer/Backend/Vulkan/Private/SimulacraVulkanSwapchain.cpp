@@ -9,6 +9,7 @@
 #include "SimulacraVulkanSwapchain.h"
 #include <algorithm>
 #include "SimulacraVulkanDevice.h"
+#include "SimulacraVulkanRenderpass.h"
 
 
 vulkan_swapchain::vulkan_swapchain(vulkan_device* device, VkSurfaceKHR surface, uint32 width, uint32 height,
@@ -40,6 +41,44 @@ vulkan_swapchain::vulkan_swapchain(vulkan_device* device, VkSurfaceKHR surface, 
 
     images_ = get_swapchain_images();
     image_views_ = create_image_views();
+
+    VkAttachmentDescription attachment_description;
+    attachment_description.format = surface_format_.format;
+    attachment_description.samples = VK_SAMPLE_COUNT_1_BIT;
+    attachment_description.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    attachment_description.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+    attachment_description.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    attachment_description.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    attachment_description.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    attachment_description.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    VkAttachmentReference color_attachment_reference {};
+    color_attachment_reference.attachment = 0;
+    color_attachment_reference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+    VkSubpassDescription subpass_description {};
+    subpass_description.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass_description.colorAttachmentCount = 1;
+    subpass_description.pColorAttachments = &color_attachment_reference;
+
+    VkRenderPassCreateInfo render_pass_create_info {};
+    render_pass_create_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    render_pass_create_info.attachmentCount = 1;
+    render_pass_create_info.pAttachments = &attachment_description;
+    render_pass_create_info.subpassCount = 1;
+    render_pass_create_info.pSubpasses = &subpass_description;
+
+    VkRenderPass render_pass {};
+
+    if(VK_SUCCESS != vkCreateRenderPass(device_->logical_handle(), &render_pass_create_info, nullptr, &render_pass))
+    {
+        std::cout << "failed to create render pass\n";
+    }
+
+    else
+    {
+        std::cout << "Created render pass\n";
+    }
 
 }
 

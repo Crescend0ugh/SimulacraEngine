@@ -54,15 +54,6 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
 
 
-    vulkan_instance instance;
-    vulkan_device device;
-    vulkan_surface surface(instance.get_handle(), test);
-    device.select_physical_device(instance);
-    device.initialize_logical_device(surface.get_handle());
-    vulkan_swapchain swapchain(&device, surface.get_handle(), test.description_.width_, test.description_.height_, VK_NULL_HANDLE);
-    graphics_pipeline gp(device);
-
-
 
 
 

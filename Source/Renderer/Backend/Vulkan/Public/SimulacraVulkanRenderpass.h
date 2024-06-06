@@ -6,22 +6,20 @@
 
 #include "SimulacraVulkan.h"
 
-class render_pass
+struct attachment
 {
-
-public:
-
-
-
-
-    VkRenderPass handle() const { return render_pass_; }
-
-
-
-
-private:
-
-    VkRenderPass render_pass_;
+    VkFormat              format_;
+    VkSampleCountFlagBits sample_count_;
+    VkAttachmentLoadOp    load_op_;
+    VkAttachmentStoreOp   store_op_;
+    VkAttachmentLoadOp    stencil_load_op_;
+    VkAttachmentStoreOp   stencil_store_op_;
+    VkImageLayout         initial_layout_;
+    VkImageLayout         final_layout_;
+};
 
 
+struct render_pass
+{
+    VkRenderPass render_pass;
 };

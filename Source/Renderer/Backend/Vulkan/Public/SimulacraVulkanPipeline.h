@@ -12,26 +12,16 @@
 struct graphics_pipeline_description
 {
 
-
     VkPrimitiveTopology topology_;
-
     VkPolygonMode polygon_mode_;
-
     bool blend_enable_;
-
     bool depth_write_enable_;
     bool depth_test_enable_;
-
     std::vector<VkVertexInputAttributeDescription> vertex_input_attributes_descriptions_;
     std::vector<VkVertexInputBindingDescription>   vertex_input_binding_descriptions_;
 
 };
 
-
-struct vulkan_pipeline_key
-{
-
-};
 
 struct graphics_pipeline
 {
@@ -50,6 +40,7 @@ public:
     graphics_pipeline(graphics_pipeline&& other);
 
 protected:
+
 
 
 private:
