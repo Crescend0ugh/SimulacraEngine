@@ -9,8 +9,6 @@ find_package(Vulkan REQUIRED)
 
 
 add_library(SimulacraLibrary
-        Source/Renderer/Backend/Vulkan/Private/SimulacraVulkanRenderpass.cpp
-        Source/Renderer/Backend/Vulkan/Public/SimulacraVulkanRenderpass.h
         Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp)
 add_subdirectory(Source/Renderer/Backend/Vulkan)
 add_subdirectory(Source/Renderer/Backend/DirectX)

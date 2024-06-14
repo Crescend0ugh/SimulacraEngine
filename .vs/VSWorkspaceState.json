@@ -10,9 +10,12 @@
     "\\Source",
     "\\Source\\Core",
     "\\Source\\Core\\Launcher",
-    "\\Source\\RendererBackend",
-    "\\Source\\RendererBackend\\Vulkan",
-    "\\Source\\RendererBackend\\Vulkan\\Public"
+    "\\Source\\Renderer",
+    "\\Source\\Renderer\\Backend",
+    "\\Source\\Renderer\\Backend\\Vulkan",
+    "\\Source\\Renderer\\Backend\\Vulkan\\Private",
+    "\\Source\\Renderer\\Backend\\Vulkan\\Public"
   ],
+  "SelectedNode": "\\cmake-build-release",
   "PreviewInSolutionExplorer": false
 }

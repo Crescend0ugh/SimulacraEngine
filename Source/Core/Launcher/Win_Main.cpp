@@ -8,11 +8,7 @@
 #include <thread>
 
 #include "../Platform/SimulacraWindowsWindow.h"
-#include "SimulacraVulkanInstance.h"
-#include "SimulacraVulkanDevice.h"
-#include "SimulacraVulkanSurface.h"
-#include "SimulacraVulkanSwapchain.h"
-#include "SimulacraVulkanPipeline.h"
+#include "SimulacraVulkan.h"
 
 #define NUM_PROCESSORS
 
@@ -51,18 +47,11 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     simulacra::windows::window test = simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
 
-
-
-
-
-
-
-
-
-
-
+    vulkan_renderer vk_renderer {};
+    vk_renderer.init();
 
     MSG msg;
+    
 
     while(!simulacra::windows::should_exit)
     {
@@ -72,7 +61,10 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+
+
     }
 
+    vk_renderer.shutdown();
     return 0;
 }

@@ -1,0 +1,4 @@
+C:/Users/avsom/CLionProjects/SimulacraEngine/build/CMakeFiles/SimulacraLibrary.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/build/CMakeFiles/SimulacraEngine.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/build/CMakeFiles/ZERO_CHECK.dir

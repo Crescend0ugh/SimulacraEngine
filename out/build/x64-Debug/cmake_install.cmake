@@ -34,7 +34,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug/Source/RendererBackend/Vulkan/cmake_install.cmake")
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug/Source/Renderer/Backend/Vulkan/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/out/build/x64-Debug/Source/Renderer/Backend/DirectX/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

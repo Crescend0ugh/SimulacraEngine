@@ -5,14 +5,7 @@ target_include_directories(SimulacraLibrary PUBLIC Platforms)
 target_sources(SimulacraLibrary PRIVATE
 
         Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
-        Private/SimulacraVulkanExtensions.cpp
-        Private/SimulacraVulkanInstance.cpp
-        Private/SimulacraVulkanDevice.cpp
-        Private/SimulacraVulkanQueue.cpp
-        Private/SimulacraVulkanSurface.cpp
-        Private/SimulacraVulkanSwapchain.cpp
-        Private/SimulacraVulkanPipeline.cpp
-        Private/SimulacraVulkanRenderpass.cpp
+
         Private/SimulacraVulkan.cpp
 
 )
