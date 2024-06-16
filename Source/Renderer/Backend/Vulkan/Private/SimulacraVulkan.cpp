@@ -147,20 +147,20 @@ void vulkan_renderer::release_surface()
 
 void vulkan_renderer::create_swapchain()
 {
-    VkSwapchainCreateInfoKHR swapchain_create_info_khr {};
+    VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
     swapchain_create_info_khr.sType = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
 }
 
 void vulkan_renderer::recreate_swapchain()
 {
-    VkSwapchainCreateInfoKHR swapchain_create_info_khr {};
-    swapchain_create_info_khr.sType = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
+    VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
+    swapchain_create_info_khr.sType        = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
     //TODO pass in old vulkan_swapchain
     swapchain_create_info_khr.oldSwapchain = VK_NULL_HANDLE;
 
 }
 
-void vulkan_renderer::release_swapchain(vulkan_swapchain& swapchain)
+void vulkan_renderer::release_swapchain(vulkan_swapchain &swapchain)
 {
     vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
 }
@@ -212,8 +212,8 @@ void vulkan_renderer::release_framebuffer(VkFramebuffer &framebuffer)
 
 void vulkan_renderer::create_command_pool(uint32 queue_family_index)
 {
-    VkCommandPoolCreateInfo command_pool_create_info {};
-    command_pool_create_info.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
+    VkCommandPoolCreateInfo command_pool_create_info{};
+    command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
     //TODO fill this out properly
@@ -224,10 +224,10 @@ void vulkan_renderer::create_command_pool(uint32 queue_family_index)
 void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 {
 
-    VkCommandBufferAllocateInfo command_buffer_allocate_info {};
-    command_buffer_allocate_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-    command_buffer_allocate_info.commandPool = command_pool;
-    command_buffer_allocate_info.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+    VkCommandBufferAllocateInfo command_buffer_allocate_info{};
+    command_buffer_allocate_info.sType              = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+    command_buffer_allocate_info.commandPool        = command_pool;
+    command_buffer_allocate_info.level              = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
     command_buffer_allocate_info.commandBufferCount = 1;
 
     //TODO fill this out properly
@@ -237,7 +237,7 @@ void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 
 void vulkan_renderer::begin_command_buffer(const VkCommandBuffer command_buffer)
 {
-    VkCommandBufferBeginInfo command_buffer_begin_info {};
+    VkCommandBufferBeginInfo command_buffer_begin_info{};
     command_buffer_begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
     vkBeginCommandBuffer(command_buffer, &command_buffer_begin_info);
@@ -262,7 +262,7 @@ void vulkan_renderer::create_queue(uint32 queue_family_index, uint32 queue_index
 
 void vulkan_renderer::submit_to_queue()
 {
-    VkSubmitInfo submit_info {};
+    VkSubmitInfo submit_info{};
     submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
 
 }
@@ -274,7 +274,7 @@ void vulkan_renderer::release_render_pass()
 
 void vulkan_renderer::begin_render_pass()
 {
-    VkRenderPassBeginInfo render_pass_begin_info {};
+    VkRenderPassBeginInfo render_pass_begin_info{};
     render_pass_begin_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
 }
 
