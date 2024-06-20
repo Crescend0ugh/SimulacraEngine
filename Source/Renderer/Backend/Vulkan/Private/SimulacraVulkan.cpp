@@ -16,7 +16,6 @@ void vulkan_renderer::shutdown()
 {
     release_device();
     release_instance();
-
 }
 
 void vulkan_renderer::create_instance()
@@ -131,7 +130,6 @@ void vulkan_renderer::create_device()
 
 void vulkan_renderer::release_device()
 {
-    VkDevice test = VK_NULL_HANDLE;
     vkDestroyDevice(device_.logical_device_, nullptr);
 }
 
@@ -235,13 +233,13 @@ void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 
 }
 
-void vulkan_renderer::begin_command_buffer(const VkCommandBuffer command_buffer)
+void vulkan_renderer::begin_command_buffer( VkCommandBuffer command_buffer)
 {
     VkCommandBufferBeginInfo command_buffer_begin_info{};
     command_buffer_begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
     vkBeginCommandBuffer(command_buffer, &command_buffer_begin_info);
-
+    
 }
 
 void vulkan_renderer::end_command_buffer(const VkCommandBuffer command_buffer)
@@ -285,7 +283,6 @@ void vulkan_renderer::end_render_pass()
 
 void vulkan_renderer::reset_command_pool()
 {
-
 }
 
 void vulkan_renderer::free_command_pool()
