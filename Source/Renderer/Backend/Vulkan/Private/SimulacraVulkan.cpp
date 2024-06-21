@@ -9,6 +9,8 @@ void vulkan_renderer::init()
     create_instance();
     select_physical_device();
     create_device();
+    create_command_pool(graphics_queue_.queue_family_index_);
+
 
 }
 
