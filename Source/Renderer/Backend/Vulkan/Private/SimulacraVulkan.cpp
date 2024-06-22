@@ -2,6 +2,7 @@
 // Created by avsom on 6/5/2024.
 //
 
+#include <set>
 #include "SimulacraVulkan.h"
 
 void vulkan_renderer::init()
@@ -117,14 +118,89 @@ void vulkan_renderer::select_physical_device()
 
 void vulkan_renderer::create_device()
 {
-    std::optional<uint32> graphics_queue_family;
-    std::optional<uint32> compute_queue_family;
-    std::optional<uint32> transfer_queue_family;
+    std::optional<uint32> graphics_queue_family_index;
+    std::optional<uint32> present_queue_family_index;
+    std::optional<uint32> compute_queue_family_index;
+    std::optional<uint32> transfer_queue_family_index;
 
     uint32 queue_family_count = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(device_.physical_device_, &queue_family_count, nullptr);
     std::vector<VkQueueFamilyProperties> queue_families(queue_family_count);
     vkGetPhysicalDeviceQueueFamilyProperties(device_.physical_device_, &queue_family_count, queue_families.data());
+
+    for (int index = 0; index < queue_families.size(); index++) {
+        VkQueueFamilyProperties queue_family = queue_families[index];
+
+        if ((queue_family.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT) {
+            graphics_queue_family_index = index;
+        } else if ((queue_family.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT) {
+            compute_queue_family_index = index;
+        } else if ((queue_family.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT) {
+            transfer_queue_family_index = index;
+        }
+
+    }
+
+    assert(graphics_queue_family_index.has_value());
+
+    compute_queue_family_index  = compute_queue_family_index.has_value() ? compute_queue_family_index
+                                                                         : graphics_queue_family_index;
+    transfer_queue_family_index = transfer_queue_family_index.has_value() ? transfer_queue_family_index
+                                                                          : graphics_queue_family_index;
+
+    std::set<uint32> queue_family_indices = {graphics_queue_family_index.value(), compute_queue_family_index.value(),
+                                             transfer_queue_family_index.value()};
+
+    std::vector<VkDeviceQueueCreateInfo> queue_create_infos;
+    std::vector<float>                   queue_priorities;
+
+    for (const uint32 &queue_family_index: queue_family_indices) {
+        queue_create_infos.push_back({});
+        queue_priorities.push_back(1);
+        queue_create_infos.back().sType            = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+        queue_create_infos.back().queueFamilyIndex = queue_family_index;
+        queue_create_infos.back().pQueuePriorities = &queue_priorities.back();
+        queue_create_infos.back().queueCount       = 1;
+    }
+
+    std::vector<const char*> enabled_extension_names;
+
+//    for (const vulkan_device_extension& device_extension : vulkan_device_extension::required_extensions())
+//    {
+//        enabled_extension_names.push_back(device_extension.get_name());
+//    }
+
+    VkDeviceCreateInfo device_create_info{};
+    device_create_info.sType                   = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+    device_create_info.enabledExtensionCount   = enabled_extension_names.size();
+    device_create_info.enabledLayerCount       = 0;
+    device_create_info.pEnabledFeatures        = nullptr;
+    device_create_info.ppEnabledExtensionNames = enabled_extension_names.data();
+    device_create_info.pQueueCreateInfos       = queue_create_infos.data();
+    device_create_info.queueCreateInfoCount    = queue_create_infos.size();
+
+    if (const VkResult result = vkCreateDevice(device_.physical_device_, &device_create_info, nullptr,
+                                               &device_.logical_device_); result !=
+                                                                          VK_SUCCESS) {
+        std::cerr << "Couldn't create Vulkan logical_handle.\n";
+        terminate();
+    } else {
+        std::cout << "======= Created Vulkan logical_handle! =======\n\n";
+    }
+
+
+    vkGetDeviceQueue(device_.logical_device_, graphics_queue_family_index.value(), 0, &graphics_queue_.queue_);
+    graphics_queue_.queue_family_index_ = graphics_queue_family_index.value();
+    graphics_queue_.queue_index_ = 0;
+    present_queue_ = graphics_queue_;
+
+    vkGetDeviceQueue(device_.logical_device_, compute_queue_family_index.value(), 0, &compute_queue_.queue_);
+    compute_queue_.queue_family_index_ = compute_queue_family_index.value();
+    compute_queue_.queue_index_ = 0;
+
+    vkGetDeviceQueue(device_.logical_device_, transfer_queue_family_index.value(), 0, &transfer_queue_.queue_);
+    transfer_queue_.queue_family_index_ = transfer_queue_family_index.value();
+    transfer_queue_.queue_index_ = 0;
 
 
 }
@@ -216,8 +292,14 @@ void vulkan_renderer::create_command_pool(uint32 queue_family_index)
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
-    //TODO fill this out properly
-    vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, nullptr);
+    VkCommandPool command_pool{};
+    VkResult result = vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, &command_pool);
+
+    if(result == VK_SUCCESS)
+    {
+        std::cout << "Created command pool\n";
+    }
+
 }
 
 
@@ -235,13 +317,13 @@ void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 
 }
 
-void vulkan_renderer::begin_command_buffer( VkCommandBuffer command_buffer)
+void vulkan_renderer::begin_command_buffer(VkCommandBuffer command_buffer)
 {
     VkCommandBufferBeginInfo command_buffer_begin_info{};
     command_buffer_begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
     vkBeginCommandBuffer(command_buffer, &command_buffer_begin_info);
-    
+
 }
 
 void vulkan_renderer::end_command_buffer(const VkCommandBuffer command_buffer)
