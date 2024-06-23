@@ -223,6 +223,7 @@ void vulkan_renderer::release_surface()
 
 void vulkan_renderer::create_swapchain()
 {
+
     VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
     swapchain_create_info_khr.sType = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
 }
@@ -264,8 +265,7 @@ void vulkan_renderer::create_render_pass()
 {
 }
 
-void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
-                                         uint32 width, uint32 height, uint32 layers)
+void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;

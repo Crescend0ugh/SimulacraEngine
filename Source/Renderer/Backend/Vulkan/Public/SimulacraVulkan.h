@@ -92,111 +92,78 @@ private:
 
 public:
     void init();
-
     void shutdown();
 
     void create_queue(uint32 queue_family_index, uint32 queue_index);
-
     void submit_to_queue();
 
     void create_surface();
-
     void release_surface();
 
     void create_swapchain();
-
     void recreate_swapchain();
-
     void release_swapchain(vulkan_swapchain &swapchain);
-
     void acquire_next_image_from_swapchain();
-
     void present_image_from_swapchain();
 
     void create_pipeline(const vulkan_graphics_pipeline_description &pipeline_description);
-
     void release_pipeline();
 
     void create_render_pass();
-
     void release_render_pass();
-
     void begin_render_pass();
-
     void end_render_pass();
 
-    void create_framebuffer(VkRenderPass render_pass,
-                            const std::vector<VkImageView> &attachment_views,
-                            uint32 width, uint32 height, uint32 layers);
-
+    void create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers);
     void release_framebuffer(VkFramebuffer &framebuffer);
 
     void create_command_pool(uint32 queue_family_index);
 
     void reset_command_pool();
-
     void free_command_pool();
 
     void create_command_buffer(VkCommandPool command_pool);
-
     void reset_command_buffer(VkCommandBuffer command_buffer);
-
     void begin_command_buffer(VkCommandBuffer command_buffer);
-
     void end_command_buffer(VkCommandBuffer command_buffer);
 
     void command_draw();
-
     void command_draw_indexed();
-
     void command_draw_indirect();
-
     void command_draw_indexed_indirect();
 
     void create_buffer();
-
     void release_buffer();
 
     void* buffer_map();
-
-    void buffer_unmap();
+    void  buffer_unmap();
 
     void command_copy_buffer();
-
     void command_copy_image();
-
     void command_copy_buffer_to_image();
-
     void command_copy_image_to_buffer();
 
     void create_semaphore();
-
     void release_semaphore();
 
     void create_fence();
-
     void release_fence();
-
     void wait_for_fences();
-
     void reset_fence();
 
 private:
     void create_instance();
-
     void release_instance();
 
     void select_physical_device();
-
     void create_device();
-
     void release_device();
 
     void create_pipeline_manager();
-
     void release_pipeline_manager();
 
 private:
+
     VkInstance               instance_;
     uint32                   api_version_;
     std::vector<const char*> requested_instance_extensions_;
