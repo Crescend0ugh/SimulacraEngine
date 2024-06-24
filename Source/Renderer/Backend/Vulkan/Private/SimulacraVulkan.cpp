@@ -3,6 +3,7 @@
 //
 
 #include <set>
+#include <vulkan/vulkan_core.h>
 #include "SimulacraVulkan.h"
 
 void vulkan_renderer::init()
@@ -205,15 +206,20 @@ void vulkan_renderer::create_device()
 
 }
 
-
 void vulkan_renderer::release_device()
 {
     vkDestroyDevice(device_.logical_device_, nullptr);
 }
 
-void vulkan_renderer::create_surface()
+void vulkan_renderer::create_surface(void* window_handle)
 {
+    VkWin32SurfaceCreateInfoKHR surface_create_info{};
+    surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+    surface_create_info.hwnd      = static_cast<HWND>(window_handle);
+    surface_create_info.hinstance = GetModuleHandle(nullptr);
 
+    //TODO fill this out properly
+    vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, nullptr);
 }
 
 void vulkan_renderer::release_surface()
@@ -261,11 +267,14 @@ void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint3
             surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
                     width, height};
 
-    VkSurfaceTransformFlagBitsKHR pre_transform = surface_capabilities.supportedTransforms & VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
-                                                      ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR : surface_capabilities.currentTransform;
+    VkSurfaceTransformFlagBitsKHR pre_transform = surface_capabilities.supportedTransforms &
+                                                  VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
+                                                  ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
+                                                  : surface_capabilities.currentTransform;
 
-    VkCompositeAlphaFlagBitsKHR composite_alpha = surface_capabilities.supportedCompositeAlpha & VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR
-                                                  ? VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR : VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR;
+    VkCompositeAlphaFlagBitsKHR composite_alpha =
+                                        surface_capabilities.supportedCompositeAlpha & VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR
+                                        ? VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR : VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR;
 
     VkPresentModeKHR present_mode;
 
@@ -278,11 +287,9 @@ void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint3
 
     bool found_desired_present_mode = false;
 
-    for (const VkPresentModeKHR& mode: present_modes)
-    {
-        if (mode == VK_PRESENT_MODE_MAILBOX_KHR)
-        {
-            present_mode =  mode;
+    for (const VkPresentModeKHR &mode: present_modes) {
+        if (mode == VK_PRESENT_MODE_MAILBOX_KHR) {
+            present_mode               = mode;
             found_desired_present_mode = true;
         }
     }
@@ -303,9 +310,10 @@ void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint3
     swapchain_create_info.presentMode      = present_mode;
     swapchain_create_info.clipped          = VK_TRUE;
     swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
-
     //TODO fill this out properly (needs a reference to the swapchain handle to be filled out)
     vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, nullptr);
+
+
 
 }
 
@@ -323,9 +331,19 @@ void vulkan_renderer::release_swapchain(vulkan_swapchain &swapchain)
     vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
 }
 
+void vulkan_renderer::acquire_next_image(VkSwapchainKHR swapchain)
+{
+    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, )
+}
+
+void vulkan_renderer::present_image(VkSwapchainKHR swapchain)
+{
+
+}
+
 void vulkan_renderer::create_pipeline_manager()
 {
-    
+
 }
 
 void vulkan_renderer::release_pipeline_manager()
@@ -344,6 +362,7 @@ void vulkan_renderer::release_pipeline()
 
 void vulkan_renderer::create_render_pass()
 {
+
 }
 
 void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
@@ -361,7 +380,6 @@ void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::ve
     //TODO fill this out propertly
     vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, nullptr);
 }
-
 
 void vulkan_renderer::release_framebuffer(VkFramebuffer &framebuffer)
 {
@@ -383,7 +401,6 @@ void vulkan_renderer::create_command_pool(uint32 queue_family_index)
     }
 
 }
-
 
 void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 {
@@ -545,7 +562,6 @@ void vulkan_renderer::reset_fence()
 {
 //    vkResetFences()
 }
-
 
 
 

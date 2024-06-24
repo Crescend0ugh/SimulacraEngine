@@ -50,6 +50,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     vulkan_renderer vk_renderer {};
     vk_renderer.init();
 
+
     MSG msg;
     
 

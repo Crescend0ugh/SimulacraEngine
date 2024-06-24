@@ -46,7 +46,6 @@ private:
         VkSurfaceFormatKHR         surface_format_;
         std::vector<VkImage>       images_;
         std::vector<VkImageView>   image_views_;
-        std::vector<VkFramebuffer> frame_buffers_;
         uint32                     frame_index;
     };
 
@@ -97,14 +96,14 @@ public:
     void create_queue(uint32 queue_family_index, uint32 queue_index);
     void submit_to_queue();
 
-    void create_surface();
+    void create_surface(void* window_handle);
     void release_surface();
 
     void create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height);
     void recreate_swapchain();
     void release_swapchain(vulkan_swapchain &swapchain);
-    void acquire_next_image_from_swapchain();
-    void present_image_from_swapchain();
+    void acquire_next_image(VkSwapchainKHR swapchain);
+    void present_image(VkSwapchainKHR swapchain);
 
     void create_pipeline(const vulkan_graphics_pipeline_description &pipeline_description);
     void release_pipeline();
