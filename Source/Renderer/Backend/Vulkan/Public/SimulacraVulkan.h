@@ -100,7 +100,7 @@ public:
     void create_surface();
     void release_surface();
 
-    void create_swapchain();
+    void create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height);
     void recreate_swapchain();
     void release_swapchain(vulkan_swapchain &swapchain);
     void acquire_next_image_from_swapchain();

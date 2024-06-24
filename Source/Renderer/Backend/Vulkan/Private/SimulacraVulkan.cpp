@@ -191,16 +191,16 @@ void vulkan_renderer::create_device()
 
     vkGetDeviceQueue(device_.logical_device_, graphics_queue_family_index.value(), 0, &graphics_queue_.queue_);
     graphics_queue_.queue_family_index_ = graphics_queue_family_index.value();
-    graphics_queue_.queue_index_ = 0;
+    graphics_queue_.queue_index_        = 0;
     present_queue_ = graphics_queue_;
 
     vkGetDeviceQueue(device_.logical_device_, compute_queue_family_index.value(), 0, &compute_queue_.queue_);
     compute_queue_.queue_family_index_ = compute_queue_family_index.value();
-    compute_queue_.queue_index_ = 0;
+    compute_queue_.queue_index_        = 0;
 
     vkGetDeviceQueue(device_.logical_device_, transfer_queue_family_index.value(), 0, &transfer_queue_.queue_);
     transfer_queue_.queue_family_index_ = transfer_queue_family_index.value();
-    transfer_queue_.queue_index_ = 0;
+    transfer_queue_.queue_index_        = 0;
 
 
 }
@@ -221,11 +221,92 @@ void vulkan_renderer::release_surface()
 
 }
 
-void vulkan_renderer::create_swapchain()
+void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
 {
 
-    VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
-    swapchain_create_info_khr.sType = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
+    VkSurfaceCapabilitiesKHR surface_capabilities{};
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_.physical_device_, surface, &surface_capabilities);
+
+    uint32 desired_image_count = 3;
+    uint32 min_image_count     =
+                   surface_capabilities.maxImageCount == 0 ? desired_image_count : std::clamp(desired_image_count,
+                                                                                              surface_capabilities.minImageCount,
+                                                                                              surface_capabilities.maxImageCount);
+
+    uint32 surface_format_count = 0;
+
+    vkGetPhysicalDeviceSurfaceFormatsKHR(device_.physical_device_, surface, &surface_format_count, nullptr);
+
+    std::vector<VkSurfaceFormatKHR> surface_formats(surface_format_count);
+    vkGetPhysicalDeviceSurfaceFormatsKHR(device_.physical_device_, surface, &surface_format_count,
+                                         surface_formats.data());
+
+    VkSurfaceFormatKHR surface_format{};
+
+    bool found_desired_surface_format = false;
+
+    for (const VkSurfaceFormatKHR &format: surface_formats) {
+        if ((format.colorSpace == VK_COLORSPACE_SRGB_NONLINEAR_KHR) &&
+            (format.format == VK_FORMAT_B8G8R8A8_SRGB)) {
+            surface_format               = format;
+            found_desired_surface_format = true;
+        }
+    }
+
+    surface_format = found_desired_surface_format ? surface_format : surface_formats[0];
+
+    VkExtent2D image_extent;
+
+    image_extent =
+            surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
+                    width, height};
+
+    VkSurfaceTransformFlagBitsKHR pre_transform = surface_capabilities.supportedTransforms & VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
+                                                      ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR : surface_capabilities.currentTransform;
+
+    VkCompositeAlphaFlagBitsKHR composite_alpha = surface_capabilities.supportedCompositeAlpha & VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR
+                                                  ? VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR : VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR;
+
+    VkPresentModeKHR present_mode;
+
+    uint32 present_mode_count = 0;
+    vkGetPhysicalDeviceSurfacePresentModesKHR(device_.physical_device_, surface, &present_mode_count, nullptr);
+
+    std::vector<VkPresentModeKHR> present_modes(present_mode_count);
+    vkGetPhysicalDeviceSurfacePresentModesKHR(device_.physical_device_, surface, &present_mode_count,
+                                              present_modes.data());
+
+    bool found_desired_present_mode = false;
+
+    for (const VkPresentModeKHR& mode: present_modes)
+    {
+        if (mode == VK_PRESENT_MODE_MAILBOX_KHR)
+        {
+            present_mode =  mode;
+            found_desired_present_mode = true;
+        }
+    }
+
+    present_mode = found_desired_present_mode ? present_mode : VK_PRESENT_MODE_FIFO_KHR;
+
+    VkSwapchainCreateInfoKHR swapchain_create_info{};
+    swapchain_create_info.sType            = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
+    swapchain_create_info.surface          = surface;
+    swapchain_create_info.minImageCount    = min_image_count;
+    swapchain_create_info.imageFormat      = surface_format.format;
+    swapchain_create_info.imageColorSpace  = surface_format.colorSpace;
+    swapchain_create_info.imageExtent      = image_extent;
+    swapchain_create_info.imageArrayLayers = 1;
+    swapchain_create_info.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
+    swapchain_create_info.preTransform     = pre_transform;
+    swapchain_create_info.compositeAlpha   = composite_alpha;
+    swapchain_create_info.presentMode      = present_mode;
+    swapchain_create_info.clipped          = VK_TRUE;
+    swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
+
+    //TODO fill this out properly (needs a reference to the swapchain handle to be filled out)
+    vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, nullptr);
+
 }
 
 void vulkan_renderer::recreate_swapchain()
@@ -244,7 +325,7 @@ void vulkan_renderer::release_swapchain(vulkan_swapchain &swapchain)
 
 void vulkan_renderer::create_pipeline_manager()
 {
-
+    
 }
 
 void vulkan_renderer::release_pipeline_manager()
@@ -265,7 +346,8 @@ void vulkan_renderer::create_render_pass()
 {
 }
 
-void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers)
+void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
+                                         uint32 width, uint32 height, uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -293,10 +375,10 @@ void vulkan_renderer::create_command_pool(uint32 queue_family_index)
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
     VkCommandPool command_pool{};
-    VkResult result = vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, &command_pool);
+    VkResult      result = vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr,
+                                               &command_pool);
 
-    if(result == VK_SUCCESS)
-    {
+    if (result == VK_SUCCESS) {
         std::cout << "Created command pool\n";
     }
 
