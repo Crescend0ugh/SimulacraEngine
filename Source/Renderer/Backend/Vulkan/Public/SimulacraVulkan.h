@@ -89,6 +89,12 @@ private:
         VkPhysicalDevice physical_device_;
     };
 
+   struct frame
+   {
+       VkSemaphore image_acquired_semaphore_;
+       VkSemaphore image_rendered_semaphore_;
+       
+   };
 public:
     void init();
     void shutdown();
@@ -118,7 +124,7 @@ public:
 
     void create_command_pool(uint32 queue_family_index);
 
-    void reset_command_pool();
+    void reset_command_pool(VkCommandPool command_pool);
     void free_command_pool();
 
     void create_command_buffer(VkCommandPool command_pool);

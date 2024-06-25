@@ -464,8 +464,9 @@ void vulkan_renderer::end_render_pass()
 //    vkCmdEndRenderPass();
 }
 
-void vulkan_renderer::reset_command_pool()
+void vulkan_renderer::reset_command_pool(VkCommandPool command_pool)
 {
+    vkResetCommandPool(device_.logical_device_, command_pool, 0);
 }
 
 void vulkan_renderer::free_command_pool()
@@ -475,7 +476,6 @@ void vulkan_renderer::free_command_pool()
 
 void vulkan_renderer::command_draw()
 {
-//    vkCmdDraw()
 }
 
 void vulkan_renderer::command_draw_indexed()
