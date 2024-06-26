@@ -89,12 +89,13 @@ private:
         VkPhysicalDevice physical_device_;
     };
 
-   struct frame
+   struct frame_data
    {
        VkSemaphore image_acquired_semaphore_;
        VkSemaphore image_rendered_semaphore_;
-       
+       VkFence     in_flight_fence_;
    };
+
 public:
     void init();
     void shutdown();
@@ -123,7 +124,6 @@ public:
     void release_framebuffer(VkFramebuffer &framebuffer);
 
     void create_command_pool(uint32 queue_family_index);
-
     void reset_command_pool(VkCommandPool command_pool);
     void free_command_pool();
 
@@ -182,7 +182,7 @@ private:
     vulkan_queue transfer_queue_;
 
     bool has_async_compute_queue;
-    bool has_transfer_queue;
+    bool has_dedicated_transfer_queue;
 
     vulkan_pipeline_manager pipeline_manager_;
 };

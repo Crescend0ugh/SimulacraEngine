@@ -224,7 +224,7 @@ void vulkan_renderer::create_surface(void* window_handle)
 
 void vulkan_renderer::release_surface()
 {
-
+    vkDestroySurfaceKHR(instance_, nullptr, nullptr);
 }
 
 void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
@@ -333,12 +333,14 @@ void vulkan_renderer::release_swapchain(vulkan_swapchain &swapchain)
 
 void vulkan_renderer::acquire_next_image(VkSwapchainKHR swapchain)
 {
-    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, )
+    //TODO fill out with reference to this frames semaphore and frame index to be updates
+    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, 0);
 }
 
 void vulkan_renderer::present_image(VkSwapchainKHR swapchain)
 {
-
+    VkPresentInfoKHR present_info {};
+    present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 }
 
 void vulkan_renderer::create_pipeline_manager()
