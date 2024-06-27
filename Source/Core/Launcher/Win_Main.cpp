@@ -50,7 +50,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     vulkan_renderer vk_renderer {};
     vk_renderer.init();
 
-
+    vk_renderer.create_surface(test.hwnd_);
     MSG msg;
     
 

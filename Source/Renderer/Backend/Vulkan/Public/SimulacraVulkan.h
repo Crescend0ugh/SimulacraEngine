@@ -4,10 +4,10 @@
 
 #pragma once
 
-#define VK_USE_PLATFORM_WIN32_KHR
 
 // Include Vulkan and Core includes
 #include "../../../../Core/Sys/Precompiled.h"
+#define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
 
 // Forward declarations
@@ -175,6 +175,9 @@ private:
 
     vulkan_device            device_;
     std::vector<const char*> requested_device_extensions_;
+
+    std::vector<vulkan_swapchain> swapchains_;
+    std::vector<vulkan_surface> surfaces_;
 
     vulkan_queue present_queue_;
     vulkan_queue graphics_queue_;
