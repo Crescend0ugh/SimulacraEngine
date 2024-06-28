@@ -23,31 +23,25 @@ enum shader_stages
     vertex, pixel, count = 2
 };
 
-class vulkan_renderer
+class VulkanRenderer
 {
 
 private:
-    struct vulkan_queue
+    struct VulkanQueue
     {
         VkQueue queue_;
         uint32  queue_family_index_;
         uint32  queue_index_;
     };
 
-    struct vulkan_surface
+    struct VulkanViewport
     {
         VkSurfaceKHR surface_;
+        void*        window_handle;
+        uint32       size_x;
+        uint32       size_y;
     };
 
-    struct vulkan_swapchain
-    {
-        VkSwapchainKHR             vk_swapchain_;
-        VkSurfaceKHR               vk_surface_;
-        VkSurfaceFormatKHR         surface_format_;
-        std::vector<VkImage>       images_;
-        std::vector<VkImageView>   image_views_;
-        uint32                     frame_index;
-    };
 
     struct vulkan_pipeline
     {
@@ -55,7 +49,7 @@ private:
         VkPipelineLayout pipeline_layout_;
     };
 
-    struct vulkan_pipeline_manager
+    struct VulkanPipelineManager
     {
         struct pipeline_cache
         {
@@ -70,7 +64,7 @@ private:
         size_t                                      total_size_ = 0;
     };
 
-    struct vulkan_graphics_pipeline_description
+    struct VulkanGraphicsPipelineDesc
     {
         VkPrimitiveTopology topology_;
         VkPolygonMode       polygon_mode_;
@@ -83,13 +77,13 @@ private:
                             vertex_input_binding_descriptions_;
     };
 
-    struct vulkan_device
+    struct VulkanDevice
     {
         VkDevice         logical_device_;
         VkPhysicalDevice physical_device_;
     };
 
-   struct frame_data
+   struct FrameResources
    {
        VkSemaphore image_acquired_semaphore_;
        VkSemaphore image_rendered_semaphore_;
@@ -103,16 +97,16 @@ public:
     void create_queue(uint32 queue_family_index, uint32 queue_index);
     void submit_to_queue();
 
-    void create_surface(void* window_handle);
-    void release_surface();
-
     void create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height);
     void recreate_swapchain();
     void release_swapchain(vulkan_swapchain &swapchain);
-    void acquire_next_image(VkSwapchainKHR swapchain);
+    void acquire_next_image_from_swapchain(VkSwapchainKHR swapchain);
     void present_image(VkSwapchainKHR swapchain);
 
-    void create_pipeline(const vulkan_graphics_pipeline_description &pipeline_description);
+    void create_viewport(void* window_handle);
+    void release_viewport(uint32 viewport_index);
+
+    void create_pipeline(const VulkanGraphicsPipelineDesc &pipeline_description);
     void release_pipeline();
 
     void create_render_pass();
@@ -128,9 +122,9 @@ public:
     void free_command_pool();
 
     void create_command_buffer(VkCommandPool command_pool);
-    void reset_command_buffer(VkCommandBuffer command_buffer);
     void begin_command_buffer(VkCommandBuffer command_buffer);
     void end_command_buffer(VkCommandBuffer command_buffer);
+    void reset_command_buffer(VkCommandBuffer command_buffer);
 
     void command_draw();
     void command_draw_indexed();
@@ -151,12 +145,12 @@ public:
     void create_semaphore();
     void release_semaphore();
 
-    void create_fence();
+    void create_fence(bool signaled);
     void release_fence();
     void wait_for_fences();
     void reset_fence();
 
-private:
+protected:
     void create_instance();
     void release_instance();
 
@@ -167,25 +161,25 @@ private:
     void create_pipeline_manager();
     void release_pipeline_manager();
 
-private:
+protected:
 
     VkInstance               instance_;
     uint32                   api_version_;
     std::vector<const char*> requested_instance_extensions_;
+    std::vector<const char*> instance_layers_;
 
-    vulkan_device            device_;
+    VulkanDevice             device_;
     std::vector<const char*> requested_device_extensions_;
 
-    std::vector<vulkan_swapchain> swapchains_;
-    std::vector<vulkan_surface> surfaces_;
+    std::vector<VulkanViewport> viewports;
 
-    vulkan_queue present_queue_;
-    vulkan_queue graphics_queue_;
-    vulkan_queue compute_queue_;
-    vulkan_queue transfer_queue_;
+    VulkanQueue present_queue_;
+    VulkanQueue graphics_queue_;
+    VulkanQueue compute_queue_;
+    VulkanQueue transfer_queue_;
 
     bool has_async_compute_queue;
     bool has_dedicated_transfer_queue;
 
-    vulkan_pipeline_manager pipeline_manager_;
+    VulkanPipelineManager pipeline_manager_;
 };

@@ -6,7 +6,7 @@
 #include <vulkan/vulkan_core.h>
 #include "SimulacraVulkan.h"
 
-void vulkan_renderer::init()
+void VulkanRenderer::init()
 {
     create_instance();
     select_physical_device();
@@ -16,13 +16,13 @@ void vulkan_renderer::init()
 
 }
 
-void vulkan_renderer::shutdown()
+void VulkanRenderer::shutdown()
 {
     release_device();
     release_instance();
 }
 
-void vulkan_renderer::create_instance()
+void VulkanRenderer::create_instance()
 {
     VkApplicationInfo application_info{};
     application_info.sType              = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -80,12 +80,12 @@ void vulkan_renderer::create_instance()
 
 }
 
-void vulkan_renderer::release_instance()
+void VulkanRenderer::release_instance()
 {
     vkDestroyInstance(instance_, nullptr);
 }
 
-void vulkan_renderer::select_physical_device()
+void VulkanRenderer::select_physical_device()
 {
     uint32 physical_device_count;
 
@@ -117,7 +117,7 @@ void vulkan_renderer::select_physical_device()
     device_.physical_device_ = selected_device;
 }
 
-void vulkan_renderer::create_device()
+void VulkanRenderer::create_device()
 {
     std::optional<uint32> graphics_queue_family_index;
     std::optional<uint32> present_queue_family_index;
@@ -206,28 +206,30 @@ void vulkan_renderer::create_device()
 
 }
 
-void vulkan_renderer::release_device()
+void VulkanRenderer::release_device()
 {
     vkDestroyDevice(device_.logical_device_, nullptr);
 }
 
-void vulkan_renderer::create_surface(void* window_handle)
+void VulkanRenderer::create_surface(void* window_handle)
 {
     VkWin32SurfaceCreateInfoKHR surface_create_info{};
     surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
 
+    VkSurfaceKHR surface;
     //TODO fill this out properly
-    vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, nullptr);
+    vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &surface);
+    surfaces_.emplace_back(surface);
 }
 
-void vulkan_renderer::release_surface()
+void VulkanRenderer::release_surface()
 {
     vkDestroySurfaceKHR(instance_, nullptr, nullptr);
 }
 
-void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
+void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
 {
 
     VkSurfaceCapabilitiesKHR surface_capabilities{};
@@ -317,7 +319,7 @@ void vulkan_renderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint3
 
 }
 
-void vulkan_renderer::recreate_swapchain()
+void VulkanRenderer::recreate_swapchain()
 {
     VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
     swapchain_create_info_khr.sType        = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
@@ -326,49 +328,59 @@ void vulkan_renderer::recreate_swapchain()
 
 }
 
-void vulkan_renderer::release_swapchain(vulkan_swapchain &swapchain)
+void VulkanRenderer::release_swapchain(vulkan_swapchain &swapchain)
 {
     vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
 }
 
-void vulkan_renderer::acquire_next_image(VkSwapchainKHR swapchain)
+void VulkanRenderer::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
 {
     //TODO fill out with reference to this frames semaphore and frame index to be updates
     vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, 0);
 }
 
-void vulkan_renderer::present_image(VkSwapchainKHR swapchain)
+void VulkanRenderer::present_image(VkSwapchainKHR swapchain)
 {
     VkPresentInfoKHR present_info {};
     present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 }
 
-void vulkan_renderer::create_pipeline_manager()
+void VulkanRenderer::create_viewport(void* window_handle)
+{
+    create_surface(window_handle);
+    create_swapchain()
+}
+
+void VulkanRenderer::release_viewport(uint32 viewport_index)
+{
+
+}
+void VulkanRenderer::create_pipeline_manager()
 {
 
 }
 
-void vulkan_renderer::release_pipeline_manager()
+void VulkanRenderer::release_pipeline_manager()
 {
 
 }
 
-void vulkan_renderer::create_pipeline(const vulkan_graphics_pipeline_description &pipeline_description)
+void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDesc &pipeline_description)
 {
 }
 
-void vulkan_renderer::release_pipeline()
-{
-
-}
-
-void vulkan_renderer::create_render_pass()
+void VulkanRenderer::release_pipeline()
 {
 
 }
 
-void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
-                                         uint32 width, uint32 height, uint32 layers)
+void VulkanRenderer::create_render_pass()
+{
+
+}
+
+void VulkanRenderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
+                                        uint32 width, uint32 height, uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -383,12 +395,12 @@ void vulkan_renderer::create_framebuffer(VkRenderPass render_pass, const std::ve
     vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, nullptr);
 }
 
-void vulkan_renderer::release_framebuffer(VkFramebuffer &framebuffer)
+void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
 {
     vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
 }
 
-void vulkan_renderer::create_command_pool(uint32 queue_family_index)
+void VulkanRenderer::create_command_pool(uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
@@ -404,7 +416,7 @@ void vulkan_renderer::create_command_pool(uint32 queue_family_index)
 
 }
 
-void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
+void VulkanRenderer::create_command_buffer(VkCommandPool command_pool)
 {
 
     VkCommandBufferAllocateInfo command_buffer_allocate_info{};
@@ -418,7 +430,7 @@ void vulkan_renderer::create_command_buffer(VkCommandPool command_pool)
 
 }
 
-void vulkan_renderer::begin_command_buffer(VkCommandBuffer command_buffer)
+void VulkanRenderer::begin_command_buffer(VkCommandBuffer command_buffer)
 {
     VkCommandBufferBeginInfo command_buffer_begin_info{};
     command_buffer_begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -427,143 +439,153 @@ void vulkan_renderer::begin_command_buffer(VkCommandBuffer command_buffer)
 
 }
 
-void vulkan_renderer::end_command_buffer(const VkCommandBuffer command_buffer)
+void VulkanRenderer::end_command_buffer(const VkCommandBuffer command_buffer)
 {
     vkEndCommandBuffer(command_buffer);
 }
 
-void vulkan_renderer::reset_command_buffer(VkCommandBuffer command_buffer)
+void VulkanRenderer::reset_command_buffer(VkCommandBuffer command_buffer)
 {
     //TODO come back to this to check flags
     vkResetCommandBuffer(command_buffer, 0);
 }
 
-void vulkan_renderer::create_queue(uint32 queue_family_index, uint32 queue_index)
+void VulkanRenderer::create_queue(uint32 queue_family_index, uint32 queue_index)
 {
     vkGetDeviceQueue(device_.logical_device_, queue_family_index, queue_index, nullptr);
 }
 
-void vulkan_renderer::submit_to_queue()
+void VulkanRenderer::submit_to_queue()
 {
     VkSubmitInfo submit_info{};
     submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
-
 }
 
-void vulkan_renderer::release_render_pass()
+void VulkanRenderer::release_render_pass()
 {
 
 }
 
-void vulkan_renderer::begin_render_pass()
+void VulkanRenderer::begin_render_pass()
 {
     VkRenderPassBeginInfo render_pass_begin_info{};
     render_pass_begin_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
 }
 
-void vulkan_renderer::end_render_pass()
+void VulkanRenderer::end_render_pass()
 {
 //    vkCmdEndRenderPass();
 }
 
-void vulkan_renderer::reset_command_pool(VkCommandPool command_pool)
+void VulkanRenderer::reset_command_pool(VkCommandPool command_pool)
 {
     vkResetCommandPool(device_.logical_device_, command_pool, 0);
 }
 
-void vulkan_renderer::free_command_pool()
+void VulkanRenderer::free_command_pool()
 {
 
 }
 
-void vulkan_renderer::command_draw()
+void VulkanRenderer::command_draw()
 {
 }
 
-void vulkan_renderer::command_draw_indexed()
+void VulkanRenderer::command_draw_indexed()
 {
 //    vkCmdDrawIndexed()
 }
 
-void vulkan_renderer::command_draw_indirect()
+void VulkanRenderer::command_draw_indirect()
 {
 //    vkCmdDrawIndirect()
 }
 
-void vulkan_renderer::command_draw_indexed_indirect()
+void VulkanRenderer::command_draw_indexed_indirect()
 {
 //    vkCmdDrawIndexedIndirect()
 }
 
-void vulkan_renderer::create_buffer()
-{
-
-}
-
-void vulkan_renderer::release_buffer()
+void VulkanRenderer::create_buffer()
 {
 }
 
-void* vulkan_renderer::buffer_map()
+void VulkanRenderer::release_buffer()
+{
+}
+
+void* VulkanRenderer::buffer_map()
 {
 //    vkMapMemory()
     return nullptr;
 }
 
-void vulkan_renderer::buffer_unmap()
+void VulkanRenderer::buffer_unmap()
 {
 //    vkUnmapMemory()
 }
 
-void vulkan_renderer::command_copy_buffer()
+void VulkanRenderer::command_copy_buffer()
 {
 //    vkCmdCopyBuffer()
 }
 
-void vulkan_renderer::command_copy_image()
+void VulkanRenderer::command_copy_image()
 {
 //    vkCmdCopyImage()
 }
 
-void vulkan_renderer::command_copy_buffer_to_image()
+void VulkanRenderer::command_copy_buffer_to_image()
 {
 //    vkCmdCopyBufferToImage()
 }
 
-void vulkan_renderer::command_copy_image_to_buffer()
+void VulkanRenderer::command_copy_image_to_buffer()
 {
 //    vkCmdCopyImageToBuffer()
 }
 
-void vulkan_renderer::create_semaphore()
+void VulkanRenderer::create_semaphore()
 {
-//    vkCreateSemaphore()
+    VkSemaphoreCreateInfo semaphore_create_info {};
+    semaphore_create_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+
+    VkSemaphore semaphore;
+    vkCreateSemaphore(device_.logical_device_, &semaphore_create_info, nullptr, &semaphore);
 }
 
-void vulkan_renderer::release_semaphore()
+
+void VulkanRenderer::release_semaphore()
 {
 //    vkDestroySemaphore()
 }
 
-void vulkan_renderer::create_fence()
+void VulkanRenderer::create_fence(bool signaled)
 {
-//    vkCreateFence()
+    VkFenceCreateInfo fence_create_info {};
+    fence_create_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+    fence_create_info.flags = signaled ? VK_FENCE_CREATE_SIGNALED_BIT : 0;
+
+    VkFence fence;
+    vkCreateFence(device_.logical_device_, &fence_create_info, nullptr, &fence);
+
 }
 
-void vulkan_renderer::release_fence()
+void VulkanRenderer::release_fence()
 {
 //    vkDestroyFence()
 }
 
-void vulkan_renderer::wait_for_fences()
+void VulkanRenderer::wait_for_fences()
 {
 //    vkWaitForFences()
 }
 
-void vulkan_renderer::reset_fence()
+void VulkanRenderer::reset_fence()
 {
 //    vkResetFences()
 }
+
 
 
 
