@@ -8,7 +8,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
     switch (msg)
     {
         case WM_CLOSE:
-            simulacra::windows::should_exit = true;
+            Simulacra::windows::should_exit = true;
             break;
 
         case WM_SIZING:
@@ -37,7 +37,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
     return DefWindowProc(hwnd, msg, wparam, lparam);
 }
 
-simulacra::windows::window simulacra::windows::create_window(uint32 width, uint32 height, const char* title)
+Simulacra::windows::window Simulacra::windows::create_window(uint32 width, uint32 height, const char* title)
 {
     HINSTANCE hinstance = GetModuleHandle(NULL);
 

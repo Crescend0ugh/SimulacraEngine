@@ -10,14 +10,6 @@
 #define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
 
-// Forward declarations
-struct vulkan_instance;
-struct vulkan_device;
-struct vulkan_queue;
-struct vulkan_surface;
-struct VulkanSwapchain;
-struct graphics_pipeline;
-
 
 #define VK_ASSERT_SUCCESS(statement) \
 {VkResult result = statement;  \
@@ -85,17 +77,17 @@ private:
         size_t                                      total_size_ = 0;
     };
 
-    struct VulkanGraphicsPipelineDesc
+    struct VulkanGraphicsPipelineDescription
     {
-        VkPrimitiveTopology topology_;
-        VkPolygonMode       polygon_mode_;
-        bool                blend_enable_;
-        bool                depth_write_enable_;
-        bool                depth_test_enable_;
-        std::vector<VkVertexInputAttributeDescription>
-                            vertex_input_attributes_descriptions_;
-        std::vector<VkVertexInputBindingDescription>
-                            vertex_input_binding_descriptions_;
+        VkPrimitiveTopology                            topology_;
+        VkPolygonMode                                  polygon_mode_;
+        bool                                           blend_enable_;
+        bool                                           depth_write_enable_;
+        bool                                           depth_test_enable_;
+        std::vector<VkVertexInputAttributeDescription> vertex_input_attributes_descriptions_;
+        std::vector<VkVertexInputBindingDescription>   vertex_input_binding_descriptions_;
+        VkRenderPass                                   render_pass_;
+
     };
 
     struct VulkanDevice
@@ -106,9 +98,10 @@ private:
 
    struct FrameResources
    {
-       VkSemaphore image_acquired_semaphore_;
-       VkSemaphore image_rendered_semaphore_;
-       VkFence     in_flight_fence_;
+       std::vector<VkCommandPool> command_pools_;
+       VkSemaphore                image_acquired_semaphore_;
+       VkSemaphore                image_rendered_semaphore_;
+       VkFence                    in_flight_fence_;
    };
 
 public:
@@ -127,22 +120,22 @@ public:
     void create_viewport(void* window_handle);
     void release_viewport(uint32 viewport_index);
 
-    void create_pipeline(const VulkanGraphicsPipelineDesc &pipeline_description);
+    void create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description);
     void release_pipeline();
 
     void create_render_pass();
-    void release_render_pass();
+    void release_render_pass(VkRenderPass render_pass);
     void begin_render_pass();
     void end_render_pass();
 
     void create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers);
     void release_framebuffer(VkFramebuffer &framebuffer);
 
-    void create_command_pool(uint32 queue_family_index);
+    void create_command_pool(VkCommandPool command_pool, uint32 queue_family_index);
     void reset_command_pool(VkCommandPool command_pool);
     void free_command_pool();
 
-    void create_command_buffer(VkCommandPool command_pool);
+    void create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool);
     void begin_command_buffer(VkCommandBuffer command_buffer);
     void end_command_buffer(VkCommandBuffer command_buffer);
     void reset_command_buffer(VkCommandBuffer command_buffer);
@@ -171,6 +164,7 @@ public:
     void wait_for_fences();
     void reset_fence();
 
+    void test_draw_frame();
 protected:
     void create_instance();
     void release_instance();
@@ -192,8 +186,8 @@ protected:
     VulkanDevice             device_;
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
-    VulkanViewport viewport;
-    VulkanSwapchain swapchain;
+    VulkanViewport              viewport;
+    VulkanSwapchain             swapchain_;
     std::vector<FrameResources> per_frame_resources;
 
     VulkanQueue present_queue_;

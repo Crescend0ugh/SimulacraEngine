@@ -11,7 +11,8 @@ void VulkanRenderer::init()
     create_instance();
     select_physical_device();
     create_device();
-    create_command_pool(graphics_queue_.queue_family_index_);
+    VkCommandPool command_pool {};
+    create_command_pool(command_pool, graphics_queue_.queue_family_index_);
 
 }
 
@@ -266,20 +267,20 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
     swapchain_create_info.presentMode      = present_mode;
     swapchain_create_info.clipped          = VK_TRUE;
     swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
-    //TODO fill this out properly (needs a reference to the swapchain handle to be filled out)
+    //TODO fill this out properly (needs a reference to the swapchain_ handle to be filled out)
     VK_ASSERT_SUCCESS(
-            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, &swapchain.vk_swapchain_))
+            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, &swapchain_.vk_swapchain_))
 
-    swapchain.surface_format_ = surface_format;
-    swapchain.vk_surface_     = surface;
+    swapchain_.surface_format_ = surface_format;
+    swapchain_.vk_surface_     = surface;
 
     uint32 swapchain_image_count = 0;
-    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain.vk_swapchain_, &swapchain_image_count, nullptr);
-    swapchain.images_.resize(swapchain_image_count);
-    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain.vk_swapchain_, &swapchain_image_count,
-                            swapchain.images_.data());
+    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain_.vk_swapchain_, &swapchain_image_count, nullptr);
+    swapchain_.images_.resize(swapchain_image_count);
+    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain_.vk_swapchain_, &swapchain_image_count,
+                            swapchain_.images_.data());
 
-    for (const VkImage &swapchain_image: swapchain.images_) {
+    for (const VkImage &swapchain_image: swapchain_.images_) {
         VkImageViewCreateInfo image_view_create_info{};
         image_view_create_info.sType                           = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
         image_view_create_info.image                           = swapchain_image;
@@ -298,7 +299,7 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
         VkImageView image_view;
 
         VK_ASSERT_SUCCESS(vkCreateImageView(device_.logical_device_, &image_view_create_info, nullptr, &image_view))
-        swapchain.image_views_.push_back(image_view);
+        swapchain_.image_views_.push_back(image_view);
     }
 }
 
@@ -357,8 +358,79 @@ void VulkanRenderer::release_pipeline_manager()
 
 }
 
-void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDesc &pipeline_description)
+void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description)
 {
+    vulkan_pipeline pipeline;
+
+    VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
+    graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+    //TODO fill out members of graphics pipeline create info with proper settings
+    graphics_pipeline_create_info.pInputAssemblyState;
+
+    VkPipelineVertexInputStateCreateInfo vertex_input_state_create_info{};
+    vertex_input_state_create_info.sType                           = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+    vertex_input_state_create_info.vertexBindingDescriptionCount   = 0;
+    vertex_input_state_create_info.pVertexBindingDescriptions      = nullptr;
+    vertex_input_state_create_info.vertexAttributeDescriptionCount = 0;
+    vertex_input_state_create_info.pVertexAttributeDescriptions    = nullptr;
+
+    VkPipelineInputAssemblyStateCreateInfo input_assembly_state_create_info{};
+    input_assembly_state_create_info.sType                  = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
+    input_assembly_state_create_info.topology               = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
+    input_assembly_state_create_info.primitiveRestartEnable = VK_FALSE;
+
+    VkPipelineRasterizationStateCreateInfo rasterization_state_create_info{};
+    rasterization_state_create_info.sType                   = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
+    rasterization_state_create_info.depthClampEnable        = VK_FALSE;
+    rasterization_state_create_info.rasterizerDiscardEnable = VK_FALSE;
+    rasterization_state_create_info.polygonMode             = VK_POLYGON_MODE_FILL;
+    rasterization_state_create_info.lineWidth               = 1.0f;
+    rasterization_state_create_info.cullMode                = VK_CULL_MODE_BACK_BIT;
+    rasterization_state_create_info.frontFace               = VK_FRONT_FACE_CLOCKWISE;
+    rasterization_state_create_info.depthBiasEnable         = VK_FALSE;
+    rasterization_state_create_info.depthBiasConstantFactor = 0.0f;
+    rasterization_state_create_info.depthBiasClamp          = 0.0f;
+    rasterization_state_create_info.depthBiasSlopeFactor    = 0.0f;
+
+    VkPipelineMultisampleStateCreateInfo multisample_state_create_info{};
+    multisample_state_create_info.sType                 = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO;
+    multisample_state_create_info.sampleShadingEnable   = VK_FALSE;
+    multisample_state_create_info.rasterizationSamples  = VK_SAMPLE_COUNT_1_BIT;
+    multisample_state_create_info.minSampleShading      = 1.0f;
+    multisample_state_create_info.pSampleMask           = nullptr;
+    multisample_state_create_info.alphaToCoverageEnable = VK_FALSE;
+    multisample_state_create_info.alphaToOneEnable      = VK_FALSE;
+
+    VkPipelineDepthStencilStateCreateInfo depth_stencil_state_create_info{};
+    depth_stencil_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_DEPTH_STENCIL_STATE_CREATE_INFO;
+
+    VkPipelineColorBlendAttachmentState color_blend_attachment_state{};
+    color_blend_attachment_state.colorWriteMask =
+            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
+    color_blend_attachment_state.blendEnable = VK_FALSE;
+
+    VkPipelineColorBlendStateCreateInfo color_blend_state_create_info {};
+    color_blend_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
+    color_blend_state_create_info.logicOpEnable = VK_FALSE;
+    color_blend_state_create_info.logicOp = VK_LOGIC_OP_COPY;
+    color_blend_state_create_info.attachmentCount = 1;
+    color_blend_state_create_info.pAttachments = &color_blend_attachment_state;
+
+    VkPipelineLayoutCreateInfo pipeline_layout_create_info {};
+    pipeline_layout_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+    pipeline_layout_create_info.setLayoutCount = 0;
+    pipeline_layout_create_info.pSetLayouts = nullptr;
+    pipeline_layout_create_info.pushConstantRangeCount = 0;
+    pipeline_layout_create_info.pPushConstantRanges = nullptr;
+
+    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr, &pipeline.pipeline_layout_); result != VK_SUCCESS)
+    {
+        std::cerr << "Failed to create pipeline layout!\n";
+        terminate();
+    }
+    std::cout << "Created pipeline layout\n";
+
+
 }
 
 void VulkanRenderer::release_pipeline()
@@ -399,17 +471,16 @@ void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
     vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
 }
 
-void VulkanRenderer::create_command_pool(uint32 queue_family_index)
+void VulkanRenderer::create_command_pool(VkCommandPool command_pool, uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
-    VkCommandPool command_pool{};
     VK_ASSERT_SUCCESS(vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, &command_pool));
 }
 
-void VulkanRenderer::create_command_buffer(VkCommandPool command_pool)
+void VulkanRenderer::create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool)
 {
 
     VkCommandBufferAllocateInfo command_buffer_allocate_info{};
@@ -419,7 +490,7 @@ void VulkanRenderer::create_command_buffer(VkCommandPool command_pool)
     command_buffer_allocate_info.commandBufferCount = 1;
 
     //TODO fill this out properly
-    vkAllocateCommandBuffers(device_.logical_device_, &command_buffer_allocate_info, nullptr);
+    vkAllocateCommandBuffers(device_.logical_device_, &command_buffer_allocate_info, &command_buffer);
 
 }
 
@@ -452,11 +523,12 @@ void VulkanRenderer::submit_to_queue()
 {
     VkSubmitInfo submit_info{};
     submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+
 }
 
-void VulkanRenderer::release_render_pass()
+void VulkanRenderer::release_render_pass(VkRenderPass render_pass)
 {
-
+    vkDestroyRenderPass(device_.logical_device_, render_pass, nullptr);
 }
 
 void VulkanRenderer::begin_render_pass()
@@ -577,6 +649,21 @@ void VulkanRenderer::wait_for_fences()
 void VulkanRenderer::reset_fence()
 {
 //    vkResetFences()
+}
+
+void VulkanRenderer::test_draw_frame()
+{
+    vkWaitForFences(device_.logical_device_, 1, nullptr, VK_TRUE, UINT64_MAX);
+    vkResetFences(device_.logical_device_, 1, nullptr);
+
+    acquire_next_image_from_swapchain(swapchain_.vk_swapchain_);
+
+    VkCommandBuffer command_buffer;
+    VkCommandPool command_pool;
+    create_command_pool(command_pool, graphics_queue_.queue_family_index_);
+    create_command_buffer(command_buffer, command_pool);
+
+
 }
 
 

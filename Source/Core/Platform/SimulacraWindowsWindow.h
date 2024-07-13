@@ -9,7 +9,7 @@
 #include "SimulacraWindows.h"
 #include "../Sys/SimulacraEngineTypes.h"
 
-namespace simulacra::windows
+namespace Simulacra::windows
 {
 
     //TODO REMOVE THIS AND ADD TO A ENGINE GLOBALS FILE

@@ -12,7 +12,7 @@
 
 #define NUM_PROCESSORS
 
- bool simulacra::windows::should_exit = false;
+ bool Simulacra::windows::should_exit = false;
 
 bool try_attach_to_console()
 {
@@ -44,7 +44,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
     freopen_s((FILE **) stdin, "CONIN$", "r", stdin);
 
-    simulacra::windows::window test = simulacra::windows::create_window(960, 540, "Sandbox Window");
+    Simulacra::windows::window test = Simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
 
     VulkanRenderer vk_renderer {};
@@ -54,7 +54,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     MSG msg;
     
 
-    while(!simulacra::windows::should_exit)
+    while(!Simulacra::windows::should_exit)
     {
         while (PeekMessage(&msg, test.hwnd_, 0, 0, PM_REMOVE))
         {
