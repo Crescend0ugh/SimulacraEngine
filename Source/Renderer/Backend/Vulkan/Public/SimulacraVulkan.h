@@ -123,7 +123,7 @@ public:
     void create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description);
     void release_pipeline();
 
-    void create_render_pass();
+    void create_render_pass(VkRenderPass * render_pass);
     void release_render_pass(VkRenderPass render_pass);
     void begin_render_pass();
     void end_render_pass();
@@ -131,7 +131,7 @@ public:
     void create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers);
     void release_framebuffer(VkFramebuffer &framebuffer);
 
-    void create_command_pool(VkCommandPool command_pool, uint32 queue_family_index);
+    void create_command_pool(VkCommandPool * command_pool, uint32 queue_family_index);
     void reset_command_pool(VkCommandPool command_pool);
     void free_command_pool();
 

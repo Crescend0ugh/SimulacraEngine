@@ -12,7 +12,10 @@ void VulkanRenderer::init()
     select_physical_device();
     create_device();
     VkCommandPool command_pool {};
-    create_command_pool(command_pool, graphics_queue_.queue_family_index_);
+    create_command_pool(&command_pool, graphics_queue_.queue_family_index_);
+    VkRenderPass render_pass;
+    create_render_pass(&render_pass);
+
 
 }
 
@@ -438,16 +441,36 @@ void VulkanRenderer::release_pipeline()
 
 }
 
-void VulkanRenderer::create_render_pass()
+void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
 {
+
+    VkAttachmentDescription color_attachment{};
+    color_attachment.format = swapchain_.surface_format_.format;
+    color_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
+    color_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    color_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+    color_attachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    color_attachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
+    color_attachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    color_attachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    VkAttachmentReference color_attachment_reference{};
+    color_attachment_reference.attachment = 0;
+    color_attachment_reference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+
+    VkSubpassDescription subpass{};
+    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.colorAttachmentCount = 1;
+    subpass.pColorAttachments = &color_attachment_reference;
+
     VkRenderPassCreateInfo render_pass_create_info {};
     render_pass_create_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
-    render_pass_create_info.attachmentCount;
-    render_pass_create_info.pAttachments;
-    render_pass_create_info.dependencyCount;
-    render_pass_create_info.pDependencies;
-    render_pass_create_info.subpassCount;
-    render_pass_create_info.pSubpasses;
+    render_pass_create_info.attachmentCount = 1;
+    render_pass_create_info.pAttachments = &color_attachment;
+    render_pass_create_info.subpassCount = 1;
+    render_pass_create_info.pSubpasses = &subpass;
+
+    VK_ASSERT_SUCCESS(vkCreateRenderPass(device_.logical_device_, &render_pass_create_info, nullptr, render_pass))
 }
 
 void VulkanRenderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
@@ -471,13 +494,13 @@ void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
     vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
 }
 
-void VulkanRenderer::create_command_pool(VkCommandPool command_pool, uint32 queue_family_index)
+void VulkanRenderer::create_command_pool(VkCommandPool * command_pool, uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
-    VK_ASSERT_SUCCESS(vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, &command_pool));
+    VK_ASSERT_SUCCESS(vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, command_pool));
 }
 
 void VulkanRenderer::create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool)
@@ -660,7 +683,6 @@ void VulkanRenderer::test_draw_frame()
 
     VkCommandBuffer command_buffer;
     VkCommandPool command_pool;
-    create_command_pool(command_pool, graphics_queue_.queue_family_index_);
     create_command_buffer(command_buffer, command_pool);
 
 
