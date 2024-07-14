@@ -48,9 +48,8 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     ShowWindow(test.hwnd_, SW_SHOW);
 
     VulkanRenderer vk_renderer {};
-    vk_renderer.init();
+    vk_renderer.init(test.hwnd_);
 
-    vk_renderer.create_viewport(test.hwnd_);
     MSG msg;
     
 

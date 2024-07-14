@@ -56,7 +56,7 @@ private:
     };
 
 
-    struct vulkan_pipeline
+    struct VulkanPipeline
     {
         VkPipeline       pipeline_;
         VkPipelineLayout pipeline_layout_;
@@ -72,8 +72,8 @@ private:
             VkPipelineCache    pipeline_cache_;
         };
 
-        std::unordered_map<uint32, vulkan_pipeline> pipelines_;
-        std::vector<pipeline_cache>                 pipeline_caches_;
+        std::unordered_map<uint32, VulkanPipeline> pipelines_;
+        std::vector<pipeline_cache>                pipeline_caches_;
         size_t                                      total_size_ = 0;
     };
 
@@ -96,7 +96,7 @@ private:
         VkPhysicalDevice physical_device_;
     };
 
-   struct FrameResources
+   struct FrameContext
    {
        std::vector<VkCommandPool> command_pools_;
        VkSemaphore                image_acquired_semaphore_;
@@ -105,7 +105,7 @@ private:
    };
 
 public:
-    void init();
+    void init(void* win_hand);
     void shutdown();
 
     void create_queue(uint32 queue_family_index, uint32 queue_index);
@@ -128,7 +128,9 @@ public:
     void begin_render_pass();
     void end_render_pass();
 
-    void create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height, uint32 layers);
+    void create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
+                            const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
+                            uint32 layers);
     void release_framebuffer(VkFramebuffer &framebuffer);
 
     void create_command_pool(VkCommandPool * command_pool, uint32 queue_family_index);
@@ -178,6 +180,17 @@ protected:
 
 protected:
 
+    struct RendererTestStruct
+    {
+        VulkanSwapchain             swapchain_;
+        VulkanViewport             viewport_;
+        std::vector<FrameContext>  per_frame_resources_;
+        VkRenderPass               render_pass_;
+        std::vector<VkFramebuffer> framebuffers_;
+        VulkanPipeline             pipeline_;
+
+    };
+
     VkInstance               instance_;
     uint32                   api_version_;
     std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME};
@@ -186,9 +199,8 @@ protected:
     VulkanDevice             device_;
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
-    VulkanViewport              viewport;
-    VulkanSwapchain             swapchain_;
-    std::vector<FrameResources> per_frame_resources;
+    RendererTestStruct test_struct_;
+
 
     VulkanQueue present_queue_;
     VulkanQueue graphics_queue_;

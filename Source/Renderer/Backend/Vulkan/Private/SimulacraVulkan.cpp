@@ -6,15 +6,19 @@
 #include <vulkan/vulkan_core.h>
 #include "SimulacraVulkan.h"
 
-void VulkanRenderer::init()
+void VulkanRenderer::init(void* win_hand)
 {
     create_instance();
     select_physical_device();
     create_device();
+    create_viewport(win_hand);
     VkCommandPool command_pool {};
     create_command_pool(&command_pool, graphics_queue_.queue_family_index_);
     VkRenderPass render_pass;
     create_render_pass(&render_pass);
+    test_struct_.framebuffers_.resize(test_struct_.swapchain_.images_.size());
+    create_framebuffer(&test_struct_.framebuffers_[0], render_pass, test_struct_.swapchain_.image_views_, test_struct_.viewport_.width_,
+                       test_struct_.viewport_.height_, 1);
 
 
 }
@@ -270,20 +274,20 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
     swapchain_create_info.presentMode      = present_mode;
     swapchain_create_info.clipped          = VK_TRUE;
     swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
-    //TODO fill this out properly (needs a reference to the swapchain_ handle to be filled out)
+    //TODO fill this out properly (needs a reference to the test_struct_.swapchain_ handle to be filled out)
     VK_ASSERT_SUCCESS(
-            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, &swapchain_.vk_swapchain_))
+            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, &test_struct_.swapchain_.vk_swapchain_))
 
-    swapchain_.surface_format_ = surface_format;
-    swapchain_.vk_surface_     = surface;
+    test_struct_.swapchain_.surface_format_ = surface_format;
+    test_struct_.swapchain_.vk_surface_     = surface;
 
     uint32 swapchain_image_count = 0;
-    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain_.vk_swapchain_, &swapchain_image_count, nullptr);
-    swapchain_.images_.resize(swapchain_image_count);
-    vkGetSwapchainImagesKHR(device_.logical_device_, swapchain_.vk_swapchain_, &swapchain_image_count,
-                            swapchain_.images_.data());
+    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count, nullptr);
+    test_struct_.swapchain_.images_.resize(swapchain_image_count);
+    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count,
+                            test_struct_.swapchain_.images_.data());
 
-    for (const VkImage &swapchain_image: swapchain_.images_) {
+    for (const VkImage &swapchain_image: test_struct_.swapchain_.images_) {
         VkImageViewCreateInfo image_view_create_info{};
         image_view_create_info.sType                           = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
         image_view_create_info.image                           = swapchain_image;
@@ -302,16 +306,12 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
         VkImageView image_view;
 
         VK_ASSERT_SUCCESS(vkCreateImageView(device_.logical_device_, &image_view_create_info, nullptr, &image_view))
-        swapchain_.image_views_.push_back(image_view);
+        test_struct_.swapchain_.image_views_.push_back(image_view);
     }
 }
 
 void VulkanRenderer::recreate_swapchain()
 {
-    VkSwapchainCreateInfoKHR swapchain_create_info_khr{};
-    swapchain_create_info_khr.sType        = VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR;
-    //TODO pass in old VulkanSwapchain
-    swapchain_create_info_khr.oldSwapchain = VK_NULL_HANDLE;
 
 }
 
@@ -339,10 +339,10 @@ void VulkanRenderer::create_viewport(void* window_handle)
     surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
-    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &viewport.surface_))
+    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
 
 
-    create_swapchain(viewport.surface_, viewport.width_, viewport.height_);
+    create_swapchain(test_struct_.viewport_.surface_, test_struct_.viewport_.width_, test_struct_.viewport_.height_);
 
 }
 
@@ -363,7 +363,6 @@ void VulkanRenderer::release_pipeline_manager()
 
 void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description)
 {
-    vulkan_pipeline pipeline;
 
     VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
     graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
@@ -426,13 +425,14 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     pipeline_layout_create_info.pushConstantRangeCount = 0;
     pipeline_layout_create_info.pPushConstantRanges = nullptr;
 
-    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr, &pipeline.pipeline_layout_); result != VK_SUCCESS)
+    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr, &test_struct_.pipeline_.pipeline_layout_); result != VK_SUCCESS)
     {
         std::cerr << "Failed to create pipeline layout!\n";
         terminate();
     }
     std::cout << "Created pipeline layout\n";
 
+    graphics_pipeline_create_info.
 
 }
 
@@ -445,7 +445,7 @@ void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
 {
 
     VkAttachmentDescription color_attachment{};
-    color_attachment.format = swapchain_.surface_format_.format;
+    color_attachment.format = test_struct_.swapchain_.surface_format_.format;
     color_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
     color_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
     color_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
@@ -473,8 +473,9 @@ void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
     VK_ASSERT_SUCCESS(vkCreateRenderPass(device_.logical_device_, &render_pass_create_info, nullptr, render_pass))
 }
 
-void VulkanRenderer::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views,
-                                        uint32 width, uint32 height, uint32 layers)
+void VulkanRenderer::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
+                                        const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
+                                        uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -486,7 +487,7 @@ void VulkanRenderer::create_framebuffer(VkRenderPass render_pass, const std::vec
     framebuffer_create_info.renderPass      = render_pass;
 
     //TODO fill this out propertly
-    vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, nullptr);
+    vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, framebuffer);
 }
 
 void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
@@ -679,11 +680,7 @@ void VulkanRenderer::test_draw_frame()
     vkWaitForFences(device_.logical_device_, 1, nullptr, VK_TRUE, UINT64_MAX);
     vkResetFences(device_.logical_device_, 1, nullptr);
 
-    acquire_next_image_from_swapchain(swapchain_.vk_swapchain_);
-
-    VkCommandBuffer command_buffer;
-    VkCommandPool command_pool;
-    create_command_buffer(command_buffer, command_pool);
+    acquire_next_image_from_swapchain(test_struct_.swapchain_.vk_swapchain_);
 
 
 }
