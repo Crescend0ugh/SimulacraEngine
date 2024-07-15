@@ -23,86 +23,83 @@ else                         \
 }}\
 
 
+struct VulkanQueue
+{
+    VkQueue queue_;
+    uint32  queue_family_index_;
+    uint32  queue_index_;
+};
 
+struct VulkanSwapchain
+{
+    VkSwapchainKHR             vk_swapchain_;
+    VkSurfaceKHR               vk_surface_;
+    VkSurfaceFormatKHR         surface_format_;
+    std::vector<VkImage>       images_;
+    std::vector<VkImageView>   image_views_;
+    uint32                     frame_index;
+};
+
+struct VulkanViewport
+{
+    VkSurfaceKHR surface_;
+    void*        window_handle;
+    uint32 width_;
+    uint32 height_;
+};
+
+
+struct VulkanPipeline
+{
+    VkPipeline       pipeline_;
+    VkPipelineLayout pipeline_layout_;
+};
+
+struct VulkanPipelineManager
+{
+    struct pipeline_cache
+    {
+        std::string        file_name_;
+        size_t             pipeline_cache_size_ = 0;
+        std::vector<uint8> data_;
+        VkPipelineCache    pipeline_cache_;
+    };
+
+    std::unordered_map<uint32, VulkanPipeline> pipelines_;
+    std::vector<pipeline_cache>                pipeline_caches_;
+    size_t                                      total_size_ = 0;
+};
+
+struct VulkanGraphicsPipelineDescription
+{
+    VkPrimitiveTopology                            topology_;
+    VkPolygonMode                                  polygon_mode_;
+    bool                                           blend_enable_;
+    bool                                           depth_write_enable_;
+    bool                                           depth_test_enable_;
+    std::vector<VkVertexInputAttributeDescription> vertex_input_attributes_descriptions_;
+    std::vector<VkVertexInputBindingDescription>   vertex_input_binding_descriptions_;
+    VkRenderPass                                   render_pass_;
+
+};
+
+struct VulkanDevice
+{
+    VkDevice         logical_device_;
+    VkPhysicalDevice physical_device_;
+};
+
+struct FrameContext
+{
+    std::vector<VkCommandPool> command_pools_;
+    VkSemaphore                image_acquired_semaphore_;
+    VkSemaphore                image_rendered_semaphore_;
+    VkFence                    in_flight_fence_;
+};
 
 
 class VulkanRenderer
 {
-
-private:
-    struct VulkanQueue
-    {
-        VkQueue queue_;
-        uint32  queue_family_index_;
-        uint32  queue_index_;
-    };
-
-    struct VulkanSwapchain
-    {
-        VkSwapchainKHR             vk_swapchain_;
-        VkSurfaceKHR               vk_surface_;
-        VkSurfaceFormatKHR         surface_format_;
-        std::vector<VkImage>       images_;
-        std::vector<VkImageView>   image_views_;
-        uint32                     frame_index;
-    };
-
-    struct VulkanViewport
-    {
-        VkSurfaceKHR surface_;
-        void*        window_handle;
-        uint32 width_;
-        uint32 height_;
-    };
-
-
-    struct VulkanPipeline
-    {
-        VkPipeline       pipeline_;
-        VkPipelineLayout pipeline_layout_;
-    };
-
-    struct VulkanPipelineManager
-    {
-        struct pipeline_cache
-        {
-            std::string        file_name_;
-            size_t             pipeline_cache_size_ = 0;
-            std::vector<uint8> data_;
-            VkPipelineCache    pipeline_cache_;
-        };
-
-        std::unordered_map<uint32, VulkanPipeline> pipelines_;
-        std::vector<pipeline_cache>                pipeline_caches_;
-        size_t                                      total_size_ = 0;
-    };
-
-    struct VulkanGraphicsPipelineDescription
-    {
-        VkPrimitiveTopology                            topology_;
-        VkPolygonMode                                  polygon_mode_;
-        bool                                           blend_enable_;
-        bool                                           depth_write_enable_;
-        bool                                           depth_test_enable_;
-        std::vector<VkVertexInputAttributeDescription> vertex_input_attributes_descriptions_;
-        std::vector<VkVertexInputBindingDescription>   vertex_input_binding_descriptions_;
-        VkRenderPass                                   render_pass_;
-
-    };
-
-    struct VulkanDevice
-    {
-        VkDevice         logical_device_;
-        VkPhysicalDevice physical_device_;
-    };
-
-   struct FrameContext
-   {
-       std::vector<VkCommandPool> command_pools_;
-       VkSemaphore                image_acquired_semaphore_;
-       VkSemaphore                image_rendered_semaphore_;
-       VkFence                    in_flight_fence_;
-   };
 
 public:
     void init(void* win_hand);
@@ -200,7 +197,6 @@ protected:
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
     RendererTestStruct test_struct_;
-
 
     VulkanQueue present_queue_;
     VulkanQueue graphics_queue_;

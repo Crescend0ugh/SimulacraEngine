@@ -12,12 +12,14 @@ void VulkanRenderer::init(void* win_hand)
     select_physical_device();
     create_device();
     create_viewport(win_hand);
-    VkCommandPool command_pool {};
+    VkCommandPool command_pool{};
     create_command_pool(&command_pool, graphics_queue_.queue_family_index_);
     VkRenderPass render_pass;
     create_render_pass(&render_pass);
     test_struct_.framebuffers_.resize(test_struct_.swapchain_.images_.size());
-    create_framebuffer(&test_struct_.framebuffers_[0], render_pass, test_struct_.swapchain_.image_views_, test_struct_.viewport_.width_,
+    //TODO this is wrong should not use all the image views just one
+    create_framebuffer(&test_struct_.framebuffers_[0], render_pass, test_struct_.swapchain_.image_views_,
+                       test_struct_.viewport_.width_,
                        test_struct_.viewport_.height_, 1);
 
 
@@ -276,13 +278,15 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
     swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
     //TODO fill this out properly (needs a reference to the test_struct_.swapchain_ handle to be filled out)
     VK_ASSERT_SUCCESS(
-            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr, &test_struct_.swapchain_.vk_swapchain_))
+            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr,
+                                 &test_struct_.swapchain_.vk_swapchain_))
 
     test_struct_.swapchain_.surface_format_ = surface_format;
     test_struct_.swapchain_.vk_surface_     = surface;
 
     uint32 swapchain_image_count = 0;
-    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count, nullptr);
+    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count,
+                            nullptr);
     test_struct_.swapchain_.images_.resize(swapchain_image_count);
     vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count,
                             test_struct_.swapchain_.images_.data());
@@ -317,7 +321,7 @@ void VulkanRenderer::recreate_swapchain()
 
 void VulkanRenderer::release_swapchain(VulkanSwapchain &swapchain)
 {
-
+    vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
 }
 
 void VulkanRenderer::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
@@ -339,7 +343,8 @@ void VulkanRenderer::create_viewport(void* window_handle)
     surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
-    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
+    VK_ASSERT_SUCCESS(
+            vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
 
 
     create_swapchain(test_struct_.viewport_.surface_, test_struct_.viewport_.width_, test_struct_.viewport_.height_);
@@ -411,28 +416,27 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
             VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
     color_blend_attachment_state.blendEnable = VK_FALSE;
 
-    VkPipelineColorBlendStateCreateInfo color_blend_state_create_info {};
-    color_blend_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
-    color_blend_state_create_info.logicOpEnable = VK_FALSE;
-    color_blend_state_create_info.logicOp = VK_LOGIC_OP_COPY;
+    VkPipelineColorBlendStateCreateInfo color_blend_state_create_info{};
+    color_blend_state_create_info.sType           = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
+    color_blend_state_create_info.logicOpEnable   = VK_FALSE;
+    color_blend_state_create_info.logicOp         = VK_LOGIC_OP_COPY;
     color_blend_state_create_info.attachmentCount = 1;
-    color_blend_state_create_info.pAttachments = &color_blend_attachment_state;
+    color_blend_state_create_info.pAttachments    = &color_blend_attachment_state;
 
-    VkPipelineLayoutCreateInfo pipeline_layout_create_info {};
-    pipeline_layout_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipeline_layout_create_info.setLayoutCount = 0;
-    pipeline_layout_create_info.pSetLayouts = nullptr;
+    VkPipelineLayoutCreateInfo pipeline_layout_create_info{};
+    pipeline_layout_create_info.sType                  = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+    pipeline_layout_create_info.setLayoutCount         = 0;
+    pipeline_layout_create_info.pSetLayouts            = nullptr;
     pipeline_layout_create_info.pushConstantRangeCount = 0;
-    pipeline_layout_create_info.pPushConstantRanges = nullptr;
+    pipeline_layout_create_info.pPushConstantRanges    = nullptr;
 
-    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr, &test_struct_.pipeline_.pipeline_layout_); result != VK_SUCCESS)
-    {
+    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr,
+                                                 &test_struct_.pipeline_.pipeline_layout_); result != VK_SUCCESS) {
         std::cerr << "Failed to create pipeline layout!\n";
         terminate();
     }
     std::cout << "Created pipeline layout\n";
 
-    graphics_pipeline_create_info.
 
 }
 
@@ -445,34 +449,35 @@ void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
 {
 
     VkAttachmentDescription color_attachment{};
-    color_attachment.format = test_struct_.swapchain_.surface_format_.format;
-    color_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
-    color_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-    color_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
-    color_attachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+    color_attachment.format         = test_struct_.swapchain_.surface_format_.format;
+    color_attachment.samples        = VK_SAMPLE_COUNT_1_BIT;
+    color_attachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
+    color_attachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
+    color_attachment.stencilLoadOp  = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
     color_attachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-    color_attachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-    color_attachment.finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+    color_attachment.initialLayout  = VK_IMAGE_LAYOUT_UNDEFINED;
+    color_attachment.finalLayout    = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
 
     VkAttachmentReference color_attachment_reference{};
     color_attachment_reference.attachment = 0;
-    color_attachment_reference.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+    color_attachment_reference.layout     = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
 
     VkSubpassDescription subpass{};
-    subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
+    subpass.pipelineBindPoint    = VK_PIPELINE_BIND_POINT_GRAPHICS;
     subpass.colorAttachmentCount = 1;
-    subpass.pColorAttachments = &color_attachment_reference;
+    subpass.pColorAttachments    = &color_attachment_reference;
 
-    VkRenderPassCreateInfo render_pass_create_info {};
-    render_pass_create_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+    VkRenderPassCreateInfo render_pass_create_info{};
+    render_pass_create_info.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
     render_pass_create_info.attachmentCount = 1;
-    render_pass_create_info.pAttachments = &color_attachment;
-    render_pass_create_info.subpassCount = 1;
-    render_pass_create_info.pSubpasses = &subpass;
+    render_pass_create_info.pAttachments    = &color_attachment;
+    render_pass_create_info.subpassCount    = 1;
+    render_pass_create_info.pSubpasses      = &subpass;
 
     VK_ASSERT_SUCCESS(vkCreateRenderPass(device_.logical_device_, &render_pass_create_info, nullptr, render_pass))
 }
 
+//TODO this shoudn't be a vector pass in ref to views and count
 void VulkanRenderer::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
                                         const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
                                         uint32 layers)
@@ -486,8 +491,7 @@ void VulkanRenderer::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass
     framebuffer_create_info.layers          = layers;
     framebuffer_create_info.renderPass      = render_pass;
 
-    //TODO fill this out propertly
-    vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, framebuffer);
+    VK_ASSERT_SUCCESS(vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, framebuffer))
 }
 
 void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
@@ -495,7 +499,7 @@ void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
     vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
 }
 
-void VulkanRenderer::create_command_pool(VkCommandPool * command_pool, uint32 queue_family_index)
+void VulkanRenderer::create_command_pool(VkCommandPool* command_pool, uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
