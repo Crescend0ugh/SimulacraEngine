@@ -4,6 +4,7 @@
 
 #include <set>
 #include <vulkan/vulkan_core.h>
+#include <fstream>
 #include "SimulacraVulkan.h"
 
 void VulkanRenderer::init(void* win_hand)
@@ -16,17 +17,33 @@ void VulkanRenderer::init(void* win_hand)
     create_command_pool(&command_pool, graphics_queue_.queue_family_index_);
     VkRenderPass render_pass;
     create_render_pass(&render_pass);
-    test_struct_.framebuffers_.resize(test_struct_.swapchain_.images_.size());
-    //TODO this is wrong should not use all the image views just one
-    create_framebuffer(&test_struct_.framebuffers_[0], render_pass, test_struct_.swapchain_.image_views_,
-                       test_struct_.viewport_.width_,
-                       test_struct_.viewport_.height_, 1);
+    test_struct_.framebuffers_.reserve(test_struct_.swapchain_.image_views_.size());
+    for(const VkImageView& image_view : test_struct_.swapchain_.image_views_)
+    {
+        test_struct_.framebuffers_.push_back({});
+        std::vector<VkImageView> view = {image_view};
+        create_framebuffer(&test_struct_.framebuffers_.back(), render_pass, view, test_struct_.viewport_.width_, test_struct_.viewport_.height_, 1);
 
+    }
 
+    create_shader_module();
 }
 
 void VulkanRenderer::shutdown()
 {
+    for(FrameContext& frame_context : test_struct_.per_frame_resources_)
+    {
+        release_semaphore(frame_context.image_rendered_semaphore_);
+        release_semaphore(frame_context.image_acquired_semaphore_);
+        release_fence(frame_context.in_flight_fence_);
+        for(VkCommandPool& command_pool : frame_context.command_pools_)
+        {
+            free_command_pool(command_pool);
+        }
+
+
+    }
+
 
     release_device();
     release_instance();
@@ -168,7 +185,6 @@ void VulkanRenderer::create_device()
     device_create_info.pQueueCreateInfos       = queue_create_infos.data();
     device_create_info.queueCreateInfoCount    = queue_create_infos.size();
     VK_ASSERT_SUCCESS(vkCreateDevice(device_.physical_device_, &device_create_info, nullptr, &device_.logical_device_))
-
 
     vkGetDeviceQueue(device_.logical_device_, graphics_queue_family_index.value(), 0, &graphics_queue_.queue_);
     graphics_queue_.queue_family_index_ = graphics_queue_family_index.value();
@@ -372,7 +388,47 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
     graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     //TODO fill out members of graphics pipeline create info with proper settings
-    graphics_pipeline_create_info.pInputAssemblyState;
+
+    VkViewport viewport{};
+    viewport.x = 0.0f;
+    viewport.y = 0.0f;
+    viewport.width = test_struct_.viewport_.width_;
+    viewport.height = test_struct_.viewport_.height_;
+    viewport.minDepth = 0.0f;
+    viewport.maxDepth = 1.0f;
+
+    VkRect2D scissor{};
+    scissor.offset = {0,0};
+    scissor.extent = {test_struct_.viewport_.width_, test_struct_.viewport_.height_};
+
+    std::vector<VkDynamicState> dynamic_states = {VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR};
+
+    VkPipelineDynamicStateCreateInfo dynamic_state_create_info{};
+    dynamic_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
+    dynamic_state_create_info.dynamicStateCount = dynamic_states.size();
+
+    VkPipelineViewportStateCreateInfo viewport_state_create_info{};
+    viewport_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+    viewport_state_create_info.viewportCount = 1;
+    viewport_state_create_info.pViewports = &viewport;
+    viewport_state_create_info.scissorCount = 1;
+    viewport_state_create_info.pScissors = &scissor;
+
+
+    VkPipelineShaderStageCreateInfo vertex_shader_stage_create_info {};
+    VkPipelineShaderStageCreateInfo fragment_shader_stage_create_info {};
+
+    vertex_shader_stage_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    vertex_shader_stage_create_info.stage = VK_SHADER_STAGE_VERTEX_BIT;
+    vertex_shader_stage_create_info.module = test_struct_.vertex_shader_module_;
+    vertex_shader_stage_create_info.pName = "main";
+
+    fragment_shader_stage_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    fragment_shader_stage_create_info.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
+    fragment_shader_stage_create_info.module = test_struct_.fragment_shader_module_;
+    fragment_shader_stage_create_info.pName = "main";
+
+    VkPipelineShaderStageCreateInfo shader_stages[] = {vertex_shader_stage_create_info, fragment_shader_stage_create_info};
 
     VkPipelineVertexInputStateCreateInfo vertex_input_state_create_info{};
     vertex_input_state_create_info.sType                           = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -437,6 +493,25 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     }
     std::cout << "Created pipeline layout\n";
 
+
+    graphics_pipeline_create_info.stageCount = 2;
+    graphics_pipeline_create_info.pStages = shader_stages;
+    graphics_pipeline_create_info.pVertexInputState = &vertex_input_state_create_info;
+    graphics_pipeline_create_info.pInputAssemblyState = &input_assembly_state_create_info;
+    graphics_pipeline_create_info.pViewportState = &viewport_state_create_info;
+    graphics_pipeline_create_info.pRasterizationState = &rasterization_state_create_info;
+    graphics_pipeline_create_info.pMultisampleState = &multisample_state_create_info;
+    graphics_pipeline_create_info.pDepthStencilState = nullptr;
+    graphics_pipeline_create_info.pColorBlendState = &color_blend_state_create_info;
+    graphics_pipeline_create_info.pDynamicState = &dynamic_state_create_info;
+    graphics_pipeline_create_info.layout = test_struct_.pipeline_.pipeline_layout_;
+    graphics_pipeline_create_info.renderPass = test_struct_.render_pass_;
+    graphics_pipeline_create_info.subpass = 0;
+    graphics_pipeline_create_info.basePipelineHandle = VK_NULL_HANDLE;
+    graphics_pipeline_create_info.basePipelineIndex = -1;
+
+    VK_ASSERT_SUCCESS(vkCreateGraphicsPipelines(device_.logical_device_, VK_NULL_HANDLE, 1, &graphics_pipeline_create_info,
+                                                nullptr, &test_struct_.pipeline_.pipeline_))
 
 }
 
@@ -575,7 +650,7 @@ void VulkanRenderer::reset_command_pool(VkCommandPool command_pool)
     vkResetCommandPool(device_.logical_device_, command_pool, 0);
 }
 
-void VulkanRenderer::free_command_pool()
+void VulkanRenderer::free_command_pool(VkCommandPool &command_pool)
 {
 
 }
@@ -648,7 +723,7 @@ void VulkanRenderer::create_semaphore()
 }
 
 
-void VulkanRenderer::release_semaphore()
+void VulkanRenderer::release_semaphore(VkSemaphore &semaphore)
 {
 //    vkDestroySemaphore()
 }
@@ -664,7 +739,7 @@ void VulkanRenderer::create_fence(bool signaled)
 
 }
 
-void VulkanRenderer::release_fence()
+void VulkanRenderer::release_fence(VkFence &fence)
 {
 //    vkDestroyFence()
 }
@@ -685,6 +760,48 @@ void VulkanRenderer::test_draw_frame()
     vkResetFences(device_.logical_device_, 1, nullptr);
 
     acquire_next_image_from_swapchain(test_struct_.swapchain_.vk_swapchain_);
+
+
+}
+
+void VulkanRenderer::create_shader_module()
+{
+    auto read_file = [](const char* file_name)
+    {
+        std::ifstream file(file_name, std::ios::ate | std::ios::binary);
+
+        if(!file.is_open())
+        {
+            std::cerr << "failed to open file";
+            terminate();
+        }
+
+        size_t file_size = (size_t ) file.tellg();
+
+        std::vector<char> buffer(file_size);
+        file.seekg(0);
+        file.read(buffer.data(), file_size);
+        file.close();
+        return buffer;
+    };
+
+    std::vector<char> vertex_shader_code = read_file("../../Shaders/SpirV/vert.spv");
+    std::vector<char> fragment_shader_code = read_file("../../Shaders/SpirV/frag.spv");
+
+    VkShaderModuleCreateInfo vertex_shader_module_create_info {};
+    VkShaderModuleCreateInfo fragment_shader_module_create_info {};
+
+    vertex_shader_module_create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    vertex_shader_module_create_info.pCode = reinterpret_cast<uint32*>(vertex_shader_code.data());
+    vertex_shader_module_create_info.codeSize = vertex_shader_code.size();
+
+    fragment_shader_module_create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    fragment_shader_module_create_info.pCode = reinterpret_cast<uint32*>(fragment_shader_code.data());
+    fragment_shader_module_create_info.codeSize = fragment_shader_code.size();
+
+    VK_ASSERT_SUCCESS(vkCreateShaderModule(device_.logical_device_, &vertex_shader_module_create_info, nullptr, &test_struct_.vertex_shader_module_))
+    VK_ASSERT_SUCCESS(vkCreateShaderModule(device_.logical_device_, &fragment_shader_module_create_info, nullptr, &test_struct_.fragment_shader_module_))
+
 
 
 }

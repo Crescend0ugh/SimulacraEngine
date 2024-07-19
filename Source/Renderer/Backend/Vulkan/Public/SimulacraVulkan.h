@@ -48,7 +48,6 @@ struct VulkanViewport
     uint32 height_;
 };
 
-
 struct VulkanPipeline
 {
     VkPipeline       pipeline_;
@@ -92,6 +91,7 @@ struct VulkanDevice
 struct FrameContext
 {
     std::vector<VkCommandPool> command_pools_;
+    VkFramebuffer              framebuffer_;
     VkSemaphore                image_acquired_semaphore_;
     VkSemaphore                image_rendered_semaphore_;
     VkFence                    in_flight_fence_;
@@ -132,7 +132,7 @@ public:
 
     void create_command_pool(VkCommandPool * command_pool, uint32 queue_family_index);
     void reset_command_pool(VkCommandPool command_pool);
-    void free_command_pool();
+    void free_command_pool(VkCommandPool &command_pool);
 
     void create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool);
     void begin_command_buffer(VkCommandBuffer command_buffer);
@@ -156,12 +156,14 @@ public:
     void command_copy_image_to_buffer();
 
     void create_semaphore();
-    void release_semaphore();
+    void release_semaphore(VkSemaphore &semaphore);
 
     void create_fence(bool signaled);
-    void release_fence();
+    void release_fence(VkFence &fence);
     void wait_for_fences();
     void reset_fence();
+
+    void create_shader_module();
 
     void test_draw_frame();
 protected:
@@ -185,6 +187,8 @@ protected:
         VkRenderPass               render_pass_;
         std::vector<VkFramebuffer> framebuffers_;
         VulkanPipeline             pipeline_;
+        VkShaderModule             vertex_shader_module_;
+        VkShaderModule             fragment_shader_module_;
 
     };
 
