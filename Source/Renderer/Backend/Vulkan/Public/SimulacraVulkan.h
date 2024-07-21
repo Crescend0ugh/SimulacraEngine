@@ -181,7 +181,7 @@ protected:
 
     struct RendererTestStruct
     {
-        VulkanSwapchain             swapchain_;
+        VulkanSwapchain            swapchain_;
         VulkanViewport             viewport_;
         std::vector<FrameContext>  per_frame_resources_;
         VkRenderPass               render_pass_;
@@ -189,6 +189,7 @@ protected:
         VulkanPipeline             pipeline_;
         VkShaderModule             vertex_shader_module_;
         VkShaderModule             fragment_shader_module_;
+        VkCommandPool              command_pool;
 
     };
 

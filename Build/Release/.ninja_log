@@ -1,0 +1,16 @@
+# ninja log v6
+21	705	7430557803599855	CMakeFiles/SimulacraEngine.dir/Source/Core/Platform/SimulacraWindowsWindow.cpp.obj	e15efab503b4feaf
+13	706	7430557803519107	CMakeFiles/SimulacraLibrary.dir/Source/Core/Platform/SimulacraWindowsWindow.cpp.obj	399e1c431857341d
+8	800	7430557803468667	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	ede3efc465c8fccf
+17	936	7430557803559142	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	d5e17cfee1a0c29c
+4	1107	7430557803428656	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp.obj	943b59d79c7f885f
+1107	1155	7430557814461222	SimulacraLibrary.lib	195b040fd8de55c8
+1155	1250	7430557814930431	SimulacraEngine.exe	e68e03568dbfad1c
+6	1175	7431898060515495	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp.obj	943b59d79c7f885f
+1176	1219	7431898072205818	SimulacraLibrary.lib	195b040fd8de55c8
+1219	1341	7431898072652306	SimulacraEngine.exe	e68e03568dbfad1c
+5	1114	7431899279883739	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp.obj	943b59d79c7f885f
+1115	1169	7431899290984615	SimulacraLibrary.lib	195b040fd8de55c8
+1169	1275	7431899291520973	SimulacraEngine.exe	e68e03568dbfad1c
+4	856	7431916642083210	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	d5e17cfee1a0c29c
+857	941	7431916650605196	SimulacraEngine.exe	e68e03568dbfad1c

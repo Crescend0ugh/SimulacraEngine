@@ -13,20 +13,20 @@ void VulkanRenderer::init(void* win_hand)
     select_physical_device();
     create_device();
     create_viewport(win_hand);
-    VkCommandPool command_pool{};
-    create_command_pool(&command_pool, graphics_queue_.queue_family_index_);
-    VkRenderPass render_pass;
-    create_render_pass(&render_pass);
+    create_command_pool(&test_struct_.command_pool, graphics_queue_.queue_family_index_);
+    create_render_pass(&test_struct_.render_pass_);
     test_struct_.framebuffers_.reserve(test_struct_.swapchain_.image_views_.size());
     for(const VkImageView& image_view : test_struct_.swapchain_.image_views_)
     {
         test_struct_.framebuffers_.push_back({});
         std::vector<VkImageView> view = {image_view};
-        create_framebuffer(&test_struct_.framebuffers_.back(), render_pass, view, test_struct_.viewport_.width_, test_struct_.viewport_.height_, 1);
+        create_framebuffer(&test_struct_.framebuffers_.back(), test_struct_.render_pass_, view, test_struct_.viewport_.width_, test_struct_.viewport_.height_, 1);
 
     }
 
     create_shader_module();
+    VulkanGraphicsPipelineDescription desc;
+    create_pipeline(desc);
 }
 
 void VulkanRenderer::shutdown()
@@ -359,9 +359,9 @@ void VulkanRenderer::create_viewport(void* window_handle)
     surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
-    VK_ASSERT_SUCCESS(
-            vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
-
+    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
+    test_struct_.viewport_.width_ = 960;
+    test_struct_.viewport_.height_ = 540;
 
     create_swapchain(test_struct_.viewport_.surface_, test_struct_.viewport_.width_, test_struct_.viewport_.height_);
 
@@ -385,8 +385,7 @@ void VulkanRenderer::release_pipeline_manager()
 void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description)
 {
 
-    VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
-    graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+
     //TODO fill out members of graphics pipeline create info with proper settings
 
     VkViewport viewport{};
@@ -406,6 +405,7 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     VkPipelineDynamicStateCreateInfo dynamic_state_create_info{};
     dynamic_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
     dynamic_state_create_info.dynamicStateCount = dynamic_states.size();
+    dynamic_state_create_info.pDynamicStates = dynamic_states.data();
 
     VkPipelineViewportStateCreateInfo viewport_state_create_info{};
     viewport_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
@@ -493,7 +493,8 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     }
     std::cout << "Created pipeline layout\n";
 
-
+    VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
+    graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
     graphics_pipeline_create_info.stageCount = 2;
     graphics_pipeline_create_info.pStages = shader_stages;
     graphics_pipeline_create_info.pVertexInputState = &vertex_input_state_create_info;
@@ -510,8 +511,7 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
     graphics_pipeline_create_info.basePipelineHandle = VK_NULL_HANDLE;
     graphics_pipeline_create_info.basePipelineIndex = -1;
 
-    VK_ASSERT_SUCCESS(vkCreateGraphicsPipelines(device_.logical_device_, VK_NULL_HANDLE, 1, &graphics_pipeline_create_info,
-                                                nullptr, &test_struct_.pipeline_.pipeline_))
+    vkCreateGraphicsPipelines(device_.logical_device_, VK_NULL_HANDLE, 1, &graphics_pipeline_create_info, nullptr, &test_struct_.pipeline_.pipeline_);
 
 }
 
