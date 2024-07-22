@@ -7,12 +7,12 @@
 #include <fstream>
 #include "SimulacraVulkan.h"
 
-void VulkanRenderer::init(void* win_hand)
+void VulkanRHI::init(void* win_hand)
 {
     create_instance();
     select_physical_device();
     create_device();
-    create_viewport(win_hand);
+    create_viewport(win_hand, 0, 0);
     create_command_pool(&test_struct_.command_pool, graphics_queue_.queue_family_index_);
     create_render_pass(&test_struct_.render_pass_);
     test_struct_.framebuffers_.reserve(test_struct_.swapchain_.image_views_.size());
@@ -29,7 +29,7 @@ void VulkanRenderer::init(void* win_hand)
     create_pipeline(desc);
 }
 
-void VulkanRenderer::shutdown()
+void VulkanRHI::shutdown()
 {
     for(FrameContext& frame_context : test_struct_.per_frame_resources_)
     {
@@ -49,7 +49,7 @@ void VulkanRenderer::shutdown()
     release_instance();
 }
 
-void VulkanRenderer::create_instance()
+void VulkanRHI::create_instance()
 {
     VkApplicationInfo application_info{};
     application_info.sType              = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -71,7 +71,7 @@ void VulkanRenderer::create_instance()
     std::unordered_set<const char*>    supported_extension_names;
 
     VK_ASSERT_SUCCESS(
-            vkEnumerateInstanceExtensionProperties(nullptr, &instance_extension_count, supported_extensions.data()));
+            vkEnumerateInstanceExtensionProperties(nullptr, &instance_extension_count, supported_extensions.data()))
 
 
     for (const VkExtensionProperties &properties: supported_extensions) {
@@ -89,12 +89,12 @@ void VulkanRenderer::create_instance()
     VK_ASSERT_SUCCESS(vkCreateInstance(&instance_create_info, nullptr, &instance_))
 }
 
-void VulkanRenderer::release_instance()
+void VulkanRHI::release_instance()
 {
     vkDestroyInstance(instance_, nullptr);
 }
 
-void VulkanRenderer::select_physical_device()
+void VulkanRHI::select_physical_device()
 {
     uint32 physical_device_count;
     VK_ASSERT_SUCCESS(vkEnumeratePhysicalDevices(instance_, &physical_device_count, nullptr))
@@ -119,7 +119,7 @@ void VulkanRenderer::select_physical_device()
     device_.physical_device_ = selected_device;
 }
 
-void VulkanRenderer::create_device()
+void VulkanRHI::create_device()
 {
 
     std::optional<uint32> graphics_queue_family_index;
@@ -200,13 +200,14 @@ void VulkanRenderer::create_device()
     transfer_queue_.queue_index_        = 0;
 }
 
-void VulkanRenderer::release_device()
+void VulkanRHI::release_device()
 {
     vkDestroyDevice(device_.logical_device_, nullptr);
+    device_.logical_device_ = VK_NULL_HANDLE;
 }
 
 
-void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
+void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
 {
 
 
@@ -244,10 +245,11 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
 
     VkExtent2D image_extent;
 
-    image_extent =
-            surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
+    image_extent = surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
                     width, height};
 
+    test_struct_.viewport_.width_ = image_extent.width;
+    test_struct_.viewport_.height_ = image_extent.height;
     VkSurfaceTransformFlagBitsKHR pre_transform = surface_capabilities.supportedTransforms &
                                                   VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
                                                   ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
@@ -330,29 +332,32 @@ void VulkanRenderer::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32
     }
 }
 
-void VulkanRenderer::recreate_swapchain()
+void VulkanRHI::recreate_swapchain()
 {
 
 }
 
-void VulkanRenderer::release_swapchain(VulkanSwapchain &swapchain)
+void VulkanRHI::release_swapchain(VulkanSwapchain &swapchain)
 {
     vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
+    swapchain.vk_swapchain_ = VK_NULL_HANDLE;
 }
 
-void VulkanRenderer::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
+void VulkanRHI::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
 {
     //TODO fill out with reference to this frames semaphore and frame index to be updates
-    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, 0);
+    uint32 image_index;
+    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, &image_index);
+
 }
 
-void VulkanRenderer::present_image(VkSwapchainKHR swapchain)
+void VulkanRHI::present_image(VkSwapchainKHR swapchain)
 {
     VkPresentInfoKHR present_info{};
     present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 }
 
-void VulkanRenderer::create_viewport(void* window_handle)
+void VulkanRHI::create_viewport(void* window_handle, uint32 width, uint32 height)
 {
 
     VkWin32SurfaceCreateInfoKHR surface_create_info{};
@@ -360,29 +365,29 @@ void VulkanRenderer::create_viewport(void* window_handle)
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
     VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
-    test_struct_.viewport_.width_ = 960;
-    test_struct_.viewport_.height_ = 540;
+    test_struct_.viewport_.width_ = width;
+    test_struct_.viewport_.height_ = height;
 
     create_swapchain(test_struct_.viewport_.surface_, test_struct_.viewport_.width_, test_struct_.viewport_.height_);
 
 }
 
-void VulkanRenderer::release_viewport(uint32 viewport_index)
+void VulkanRHI::release_viewport(uint32 viewport_index)
 {
 
 }
 
-void VulkanRenderer::create_pipeline_manager()
+void VulkanRHI::create_pipeline_manager()
 {
 
 }
 
-void VulkanRenderer::release_pipeline_manager()
+void VulkanRHI::release_pipeline_manager()
 {
 
 }
 
-void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description)
+void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description)
 {
 
 
@@ -515,12 +520,12 @@ void VulkanRenderer::create_pipeline(const VulkanGraphicsPipelineDescription &pi
 
 }
 
-void VulkanRenderer::release_pipeline()
+void VulkanRHI::release_pipeline()
 {
 
 }
 
-void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
+void VulkanRHI::create_render_pass(VkRenderPass* render_pass)
 {
 
     VkAttachmentDescription color_attachment{};
@@ -553,9 +558,9 @@ void VulkanRenderer::create_render_pass(VkRenderPass* render_pass)
 }
 
 //TODO this shoudn't be a vector pass in ref to views and count
-void VulkanRenderer::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
-                                        const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
-                                        uint32 layers)
+void VulkanRHI::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
+                                   const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
+                                   uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -569,12 +574,12 @@ void VulkanRenderer::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass
     VK_ASSERT_SUCCESS(vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, framebuffer))
 }
 
-void VulkanRenderer::release_framebuffer(VkFramebuffer &framebuffer)
+void VulkanRHI::release_framebuffer(VkFramebuffer &framebuffer)
 {
     vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
 }
 
-void VulkanRenderer::create_command_pool(VkCommandPool* command_pool, uint32 queue_family_index)
+void VulkanRHI::create_command_pool(VkCommandPool* command_pool, uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
@@ -583,7 +588,7 @@ void VulkanRenderer::create_command_pool(VkCommandPool* command_pool, uint32 que
     VK_ASSERT_SUCCESS(vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, command_pool));
 }
 
-void VulkanRenderer::create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool)
+void VulkanRHI::create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool)
 {
 
     VkCommandBufferAllocateInfo command_buffer_allocate_info{};
@@ -597,7 +602,7 @@ void VulkanRenderer::create_command_buffer(VkCommandBuffer command_buffer, VkCom
 
 }
 
-void VulkanRenderer::begin_command_buffer(VkCommandBuffer command_buffer)
+void VulkanRHI::begin_command_buffer(VkCommandBuffer command_buffer)
 {
     VkCommandBufferBeginInfo command_buffer_begin_info{};
     command_buffer_begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -606,114 +611,114 @@ void VulkanRenderer::begin_command_buffer(VkCommandBuffer command_buffer)
 
 }
 
-void VulkanRenderer::end_command_buffer(const VkCommandBuffer command_buffer)
+void VulkanRHI::end_command_buffer(const VkCommandBuffer command_buffer)
 {
     vkEndCommandBuffer(command_buffer);
 }
 
-void VulkanRenderer::reset_command_buffer(VkCommandBuffer command_buffer)
+void VulkanRHI::reset_command_buffer(VkCommandBuffer command_buffer)
 {
     //TODO come back to this to check flags
     vkResetCommandBuffer(command_buffer, 0);
 }
 
-void VulkanRenderer::create_queue(uint32 queue_family_index, uint32 queue_index)
+void VulkanRHI::create_queue(uint32 queue_family_index, uint32 queue_index)
 {
     vkGetDeviceQueue(device_.logical_device_, queue_family_index, queue_index, nullptr);
 }
 
-void VulkanRenderer::submit_to_queue()
+void VulkanRHI::submit_to_queue()
 {
     VkSubmitInfo submit_info{};
     submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
 
 }
 
-void VulkanRenderer::release_render_pass(VkRenderPass render_pass)
+void VulkanRHI::release_render_pass(VkRenderPass render_pass)
 {
     vkDestroyRenderPass(device_.logical_device_, render_pass, nullptr);
 }
 
-void VulkanRenderer::begin_render_pass()
+void VulkanRHI::begin_render_pass()
 {
     VkRenderPassBeginInfo render_pass_begin_info{};
     render_pass_begin_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
 }
 
-void VulkanRenderer::end_render_pass()
+void VulkanRHI::end_render_pass()
 {
 //    vkCmdEndRenderPass();
 }
 
-void VulkanRenderer::reset_command_pool(VkCommandPool command_pool)
+void VulkanRHI::reset_command_pool(VkCommandPool command_pool)
 {
     vkResetCommandPool(device_.logical_device_, command_pool, 0);
 }
 
-void VulkanRenderer::free_command_pool(VkCommandPool &command_pool)
+void VulkanRHI::free_command_pool(VkCommandPool &command_pool)
 {
 
 }
 
-void VulkanRenderer::command_draw()
+void VulkanRHI::command_draw()
 {
 }
 
-void VulkanRenderer::command_draw_indexed()
+void VulkanRHI::command_draw_indexed()
 {
 //    vkCmdDrawIndexed()
 }
 
-void VulkanRenderer::command_draw_indirect()
+void VulkanRHI::command_draw_indirect()
 {
 //    vkCmdDrawIndirect()
 }
 
-void VulkanRenderer::command_draw_indexed_indirect()
+void VulkanRHI::command_draw_indexed_indirect()
 {
 //    vkCmdDrawIndexedIndirect()
 }
 
-void VulkanRenderer::create_buffer()
+void VulkanRHI::create_buffer()
 {
 }
 
-void VulkanRenderer::release_buffer()
+void VulkanRHI::release_buffer()
 {
 }
 
-void* VulkanRenderer::buffer_map()
+void* VulkanRHI::buffer_map()
 {
 //    vkMapMemory()
     return nullptr;
 }
 
-void VulkanRenderer::buffer_unmap()
+void VulkanRHI::buffer_unmap()
 {
 //    vkUnmapMemory()
 }
 
-void VulkanRenderer::command_copy_buffer()
+void VulkanRHI::command_copy_buffer()
 {
 //    vkCmdCopyBuffer()
 }
 
-void VulkanRenderer::command_copy_image()
+void VulkanRHI::command_copy_image()
 {
 //    vkCmdCopyImage()
 }
 
-void VulkanRenderer::command_copy_buffer_to_image()
+void VulkanRHI::command_copy_buffer_to_image()
 {
 //    vkCmdCopyBufferToImage()
 }
 
-void VulkanRenderer::command_copy_image_to_buffer()
+void VulkanRHI::command_copy_image_to_buffer()
 {
 //    vkCmdCopyImageToBuffer()
 }
 
-void VulkanRenderer::create_semaphore()
+void VulkanRHI::create_semaphore()
 {
     VkSemaphoreCreateInfo semaphore_create_info{};
     semaphore_create_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
@@ -723,12 +728,12 @@ void VulkanRenderer::create_semaphore()
 }
 
 
-void VulkanRenderer::release_semaphore(VkSemaphore &semaphore)
+void VulkanRHI::release_semaphore(VkSemaphore &semaphore)
 {
 //    vkDestroySemaphore()
 }
 
-void VulkanRenderer::create_fence(bool signaled)
+void VulkanRHI::create_fence(bool signaled)
 {
     VkFenceCreateInfo fence_create_info{};
     fence_create_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
@@ -739,22 +744,22 @@ void VulkanRenderer::create_fence(bool signaled)
 
 }
 
-void VulkanRenderer::release_fence(VkFence &fence)
+void VulkanRHI::release_fence(VkFence &fence)
 {
 //    vkDestroyFence()
 }
 
-void VulkanRenderer::wait_for_fences()
+void VulkanRHI::wait_for_fences()
 {
 //    vkWaitForFences()
 }
 
-void VulkanRenderer::reset_fence()
+void VulkanRHI::reset_fence()
 {
 //    vkResetFences()
 }
 
-void VulkanRenderer::test_draw_frame()
+void VulkanRHI::test_draw_frame()
 {
     vkWaitForFences(device_.logical_device_, 1, nullptr, VK_TRUE, UINT64_MAX);
     vkResetFences(device_.logical_device_, 1, nullptr);
@@ -764,7 +769,7 @@ void VulkanRenderer::test_draw_frame()
 
 }
 
-void VulkanRenderer::create_shader_module()
+void VulkanRHI::create_shader_module()
 {
     auto read_file = [](const char* file_name)
     {

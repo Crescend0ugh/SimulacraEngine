@@ -44,8 +44,9 @@ struct VulkanViewport
 {
     VkSurfaceKHR surface_;
     void*        window_handle;
-    uint32 width_;
-    uint32 height_;
+    uint32       width_;
+    uint32       height_;
+
 };
 
 struct VulkanPipeline
@@ -98,10 +99,11 @@ struct FrameContext
 };
 
 
-class VulkanRenderer
+class VulkanRHI
 {
 
 public:
+    
     void init(void* win_hand);
     void shutdown();
 
@@ -114,7 +116,7 @@ public:
     void acquire_next_image_from_swapchain(VkSwapchainKHR swapchain);
     void present_image(VkSwapchainKHR swapchain);
 
-    void create_viewport(void* window_handle);
+    void create_viewport(void* window_handle, uint32 width, uint32 height);
     void release_viewport(uint32 viewport_index);
 
     void create_pipeline(const VulkanGraphicsPipelineDescription &pipeline_description);
@@ -179,37 +181,17 @@ protected:
 
 protected:
 
-    struct RendererTestStruct
-    {
-        VulkanSwapchain            swapchain_;
-        VulkanViewport             viewport_;
-        std::vector<FrameContext>  per_frame_resources_;
-        VkRenderPass               render_pass_;
-        std::vector<VkFramebuffer> framebuffers_;
-        VulkanPipeline             pipeline_;
-        VkShaderModule             vertex_shader_module_;
-        VkShaderModule             fragment_shader_module_;
-        VkCommandPool              command_pool;
+    VkInstance                   instance_;
+    VkDevice                     device_;
+    VkPhysicalDevice             physical_device_;
+    std::vector<VulkanQueue>     queues_;
+    std::vector<FrameContext>    frame_resources_;
+    std::vector<VulkanSwapchain> swapchains_;
+    std::vector<VulkanViewport>  viewports_;
+    VkRenderPass                 render_pass_;
 
-    };
 
-    VkInstance               instance_;
-    uint32                   api_version_;
     std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME};
-    std::vector<const char*> instance_layers_;
-
-    VulkanDevice             device_;
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
-    RendererTestStruct test_struct_;
-
-    VulkanQueue present_queue_;
-    VulkanQueue graphics_queue_;
-    VulkanQueue compute_queue_;
-    VulkanQueue transfer_queue_;
-
-    bool has_async_compute_queue_;
-    bool has_dedicated_transfer_queue_;
-
-    VulkanPipelineManager pipeline_manager_;
 };

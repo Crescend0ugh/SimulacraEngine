@@ -47,7 +47,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     Simulacra::windows::window test = Simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
 
-    VulkanRenderer vk_renderer {};
+    VulkanRHI vk_renderer {};
     vk_renderer.init(test.hwnd_);
 
     MSG msg;
