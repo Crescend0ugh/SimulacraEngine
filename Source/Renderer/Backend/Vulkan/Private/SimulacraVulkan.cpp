@@ -34,7 +34,7 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.in_flight_fence_          = create_fence(true);
         frame_resource.command_pools_.resize(QueueIndex::Max);
         frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
-        frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics]);
+        command_buffers_[i] = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics]);
     }
 }
 
@@ -335,7 +335,7 @@ uint32 VulkanRHI::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
 {
     //TODO fill out with reference to this frames semaphore and frame index to be updates
     uint32 image_index;
-    VK_ASSERT_SUCCESS(vkAcquireNextImageKHR(logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, &image_index));
+    VK_ASSERT_SUCCESS(vkAcquireNextImageKHR(logical_device_, swapchain, UINT64_MAX, frame_resources_[viewport_.frame_].image_acquired_semaphore_, nullptr, &image_index));
     return image_index;
 }
 
@@ -635,15 +635,24 @@ void VulkanRHI::release_render_pass(VkRenderPass render_pass)
     vkDestroyRenderPass(logical_device_, render_pass, nullptr);
 }
 
-void VulkanRHI::begin_render_pass()
+void VulkanRHI::command_begin_render_pass(VkCommandBuffer command_buffer, VkRenderPass render_pass,
+                                          VkFramebuffer framebuffer, VkExtent2D extent)
 {
+    VkClearValue clear_color = {{{0.0f, 0.0f, 0.0f, 1.0f}}};
     VkRenderPassBeginInfo render_pass_begin_info{};
     render_pass_begin_info.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+    render_pass_begin_info.renderPass = render_pass;
+    render_pass_begin_info.framebuffer = framebuffer;
+    render_pass_begin_info.renderArea.extent = extent;
+    render_pass_begin_info.renderArea.offset = {0,0};
+    render_pass_begin_info.clearValueCount = 1;
+    render_pass_begin_info.pClearValues = &clear_color;
+    vkCmdBeginRenderPass(command_buffer, &render_pass_begin_info, VK_SUBPASS_CONTENTS_INLINE);
 }
 
-void VulkanRHI::end_render_pass()
+void VulkanRHI::command_end_render_pass(VkCommandBuffer command_buffer)
 {
-//    vkCmdEndRenderPass();
+    vkCmdEndRenderPass(command_buffer);
 }
 
 void VulkanRHI::reset_command_pool(VkCommandPool command_pool)
@@ -756,12 +765,6 @@ void VulkanRHI::reset_fence()
 //    vkResetFences()
 }
 
-void VulkanRHI::test_draw_frame()
-{
-    uint32 image_index = acquire_next_image_from_swapchain(viewport_.swapchain_.vk_swapchain_);
-
-}
-
 void VulkanRHI::create_shader_module()
 {
     auto read_file = [](const char* file_name) {
@@ -803,6 +806,44 @@ void VulkanRHI::create_shader_module()
 
 }
 
+void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame_index)
+{
+    begin_command_buffer(buffer);
+    command_begin_render_pass(buffer, render_pass_, frame_resources_[frame_index].framebuffer_, {viewport_.width_, viewport_.height_});
+    vkCmdBindPipeline(buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline_.pipeline_);
+    VkViewport viewport{};
+    viewport.x = 0.0f;
+    viewport.y = 0.0f;
+    viewport.width = static_cast<float>(viewport_.width_);
+    viewport.height = static_cast<float>(viewport_.height_);
+    viewport.minDepth = 0.0f;
+    viewport.maxDepth = 1.0f;
+    vkCmdSetViewport(buffer, 0, 1, &viewport);
+
+    VkRect2D scissor{};
+    scissor.offset = {0,0};
+    scissor.extent = {viewport_.width_, viewport_.height_};
+    vkCmdSetScissor(buffer, 0, 1, &scissor);
+    vkCmdDraw(buffer, 3, 1, 0 ,0);
+    vkCmdEndRenderPass(buffer);
+    end_command_buffer(buffer);
+}
+
+
+void VulkanRHI::test_draw_frame()
+{
+    FrameContext& current_frame_context = frame_resources_[viewport_.frame_];
+    vkWaitForFences(logical_device_, 1, &current_frame_context.in_flight_fence_, VK_TRUE, UINT64_MAX);
+    vkResetFences(logical_device_, 1, &current_frame_context.in_flight_fence_);
+    uint32 image_index = acquire_next_image_from_swapchain(viewport_.swapchain_.vk_swapchain_);
+    vkResetCommandBuffer(command_buffers_[viewport_.frame_], 0);
+    test_record_command_buffers(command_buffers_[viewport_.frame_], image_index);
+    VkSubmitInfo submit_info{};
+    submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    submit_info.waitSemaphoreCount = 1;
+    submit_info.pWaitSemaphores = &current_frame_context.image_acquired_semaphore_;
+    submit_info.pWaitDstStageMask = 
+}
 
 
 

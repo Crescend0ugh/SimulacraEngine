@@ -37,7 +37,6 @@ struct VulkanSwapchain
     VkSurfaceFormatKHR         surface_format_;
     std::vector<VkImage>       images_;
     std::vector<VkImageView>   image_views_;
-    uint32                     frame_index;
 };
 
 struct VulkanViewport
@@ -47,6 +46,7 @@ struct VulkanViewport
     void*        window_handle;
     uint32       width_;
     uint32       height_;
+    uint32      frame_;
 };
 
 struct VulkanPipeline
@@ -86,7 +86,6 @@ struct VulkanGraphicsPipelineDescription
 struct FrameContext
 {
     std::vector<VkCommandPool> command_pools_;
-    VkCommandBuffer            command_buffer_;
     VkFramebuffer              framebuffer_;
     VkSemaphore                image_acquired_semaphore_;
     VkSemaphore                image_rendered_semaphore_;
@@ -134,8 +133,9 @@ public:
 
     void create_render_pass(VkRenderPass * render_pass);
     void release_render_pass(VkRenderPass render_pass);
-    void begin_render_pass();
-    void end_render_pass();
+    void command_begin_render_pass(VkCommandBuffer command_buffer, VkRenderPass render_pass,
+                                   VkFramebuffer framebuffer, VkExtent2D extent);
+    void command_end_render_pass(VkCommandBuffer command_buffer);
 
     VkFramebuffer
     create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width,
@@ -178,6 +178,7 @@ public:
 
     void create_shader_module();
 
+    void test_record_command_buffers(VkCommandBuffer buffer, uint32 frame_index);
     void test_draw_frame();
 
 protected:
@@ -202,6 +203,7 @@ protected:
     VulkanQueue compute_queue;
 //    std::vector<VulkanQueue>  queues_;
     std::vector<FrameContext> frame_resources_;
+    std::vector<VkCommandBuffer> command_buffers_;
     VulkanViewport            viewport_;
     VulkanPipeline            pipeline_;
     VkRenderPass              render_pass_;
