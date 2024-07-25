@@ -60,6 +60,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
             // Translate the message and dispatch it to WindowProc()
             TranslateMessage(&msg);
             DispatchMessage(&msg);
+            vk_renderer.test_draw_frame();
         }
 
 

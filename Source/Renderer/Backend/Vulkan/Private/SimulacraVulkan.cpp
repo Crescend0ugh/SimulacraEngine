@@ -19,7 +19,7 @@ void VulkanRHI::init(void* win_hand)
     create_render_pass(&render_pass_);
     VulkanGraphicsPipelineDescription description;
     create_pipeline(description);
-
+    command_buffers_.resize(frame_resources_.size());
     for (int i = 0; i < frame_resources_.size(); i++) {
         FrameContext& frame_resource = frame_resources_[i];
         std::vector<VkImageView> image_view = {viewport_.swapchain_.image_views_[i]};
@@ -538,12 +538,21 @@ void VulkanRHI::create_render_pass(VkRenderPass* render_pass)
     subpass.colorAttachmentCount = 1;
     subpass.pColorAttachments    = &color_attachment_reference;
 
+    VkSubpassDependency dependency{};
+    dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+    dependency.srcAccessMask = 0;
+    dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+    dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+
+
     VkRenderPassCreateInfo render_pass_create_info{};
     render_pass_create_info.sType           = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
     render_pass_create_info.attachmentCount = 1;
     render_pass_create_info.pAttachments    = &color_attachment;
     render_pass_create_info.subpassCount    = 1;
     render_pass_create_info.pSubpasses      = &subpass;
+    render_pass_create_info.dependencyCount = 1;
+    render_pass_create_info.pDependencies = &dependency;
 
     VK_ASSERT_SUCCESS(vkCreateRenderPass(logical_device_, &render_pass_create_info, nullptr, render_pass))
 }
@@ -840,9 +849,29 @@ void VulkanRHI::test_draw_frame()
     test_record_command_buffers(command_buffers_[viewport_.frame_], image_index);
     VkSubmitInfo submit_info{};
     submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+
+    VkSemaphore wait_semaphores[] = {current_frame_context.image_acquired_semaphore_};
+    VkPipelineStageFlags wait_stages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+    VkSemaphore signal_semaphores[] = {current_frame_context.image_rendered_semaphore_};
     submit_info.waitSemaphoreCount = 1;
-    submit_info.pWaitSemaphores = &current_frame_context.image_acquired_semaphore_;
-    submit_info.pWaitDstStageMask = 
+    submit_info.pWaitSemaphores = wait_semaphores;
+    submit_info.pWaitDstStageMask = wait_stages;
+    submit_info.commandBufferCount = 1;
+    submit_info.pCommandBuffers = &command_buffers_[viewport_.frame_];
+    submit_info.signalSemaphoreCount = 1;
+    submit_info.pSignalSemaphores = signal_semaphores;
+    VK_ASSERT_SUCCESS(vkQueueSubmit(graphics_queue.queue_, 1, &submit_info, current_frame_context.in_flight_fence_))
+    VkPresentInfoKHR present_info{};
+    present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+    present_info.waitSemaphoreCount = 1;
+    present_info.pWaitSemaphores = signal_semaphores;
+    VkSwapchainKHR swapchains[] = {viewport_.swapchain_.vk_swapchain_};
+    present_info.swapchainCount = 1;
+    present_info.pSwapchains = swapchains;
+    present_info.pImageIndices = &image_index;
+    present_info.pResults = nullptr;
+    vkQueuePresentKHR(graphics_queue.queue_, &present_info);
+    viewport_.frame_ = (viewport_.frame_ + 1) % frame_resources_.size();
 }
 
 
