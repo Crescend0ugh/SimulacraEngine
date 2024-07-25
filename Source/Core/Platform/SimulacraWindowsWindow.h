@@ -33,6 +33,7 @@ namespace Simulacra::windows
     };
 
     window create_window(uint32 width, uint32 height, const  char * title);
+    void get_window_dimensions(HWND handle, uint32& width, uint32& height);
 
 
 

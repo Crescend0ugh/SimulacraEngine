@@ -5,15 +5,13 @@
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {
-    switch (msg)
-    {
+    switch (msg) {
         case WM_CLOSE:
             Simulacra::windows::should_exit = true;
             break;
 
         case WM_SIZING:
-            switch (wparam)
-            {
+            switch (wparam) {
                 case WMSZ_BOTTOM:
                     break;
                 case WMSZ_BOTTOMLEFT:
@@ -48,15 +46,15 @@ Simulacra::windows::window Simulacra::windows::create_window(uint32 width, uint3
 
     RegisterClass(&wc);
 
-    uint32    WindowExStyle = 0;
-    const char* ClassName   = window_class_name;
-    const char* WindowName  = title;
-    uint32    WindowStyle   = WS_OVERLAPPEDWINDOW;
-    uint32    XPos          = CW_USEDEFAULT;
-    uint32    YPos          = CW_USEDEFAULT;
-    HWND      HWndParent    = nullptr;
-    HMENU     HMenu         = nullptr;
-    HINSTANCE HInstance     = hinstance;
+    uint32 WindowExStyle = 0;
+    const char* ClassName  = window_class_name;
+    const char* WindowName = title;
+    uint32    WindowStyle = WS_OVERLAPPEDWINDOW;
+    uint32    XPos        = CW_USEDEFAULT;
+    uint32    YPos        = CW_USEDEFAULT;
+    HWND      HWndParent  = nullptr;
+    HMENU     HMenu       = nullptr;
+    HINSTANCE HInstance   = hinstance;
 
     HWND hwnd = CreateWindowEx(
             WindowExStyle,
@@ -74,4 +72,12 @@ Simulacra::windows::window Simulacra::windows::create_window(uint32 width, uint3
     );
 
     return window{hwnd, hinstance, {width, height, XPos, YPos}};
+}
+
+void Simulacra::windows::get_window_dimensions(HWND handle, uint32 &width, uint32 &height)
+{
+    RECT rect;
+    GetWindowRect(handle, &rect);
+    width  = rect.right - rect.left;
+    height = rect.bottom - rect.top;
 }

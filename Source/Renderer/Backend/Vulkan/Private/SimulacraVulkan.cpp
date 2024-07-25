@@ -6,43 +6,40 @@
 #include <vulkan/vulkan_core.h>
 #include <fstream>
 #include "SimulacraVulkan.h"
+#include "../../../../Core/Platform/SimulacraWindowsWindow.h"
 
 void VulkanRHI::init(void* win_hand)
 {
     create_instance();
     select_physical_device();
     create_device();
-    create_viewport(win_hand, 0, 0);
-    create_command_pool(&test_struct_.command_pool, graphics_queue_.queue_family_index_);
-    create_render_pass(&test_struct_.render_pass_);
-    test_struct_.framebuffers_.reserve(test_struct_.swapchain_.image_views_.size());
-    for(const VkImageView& image_view : test_struct_.swapchain_.image_views_)
-    {
-        test_struct_.framebuffers_.push_back({});
-        std::vector<VkImageView> view = {image_view};
-        create_framebuffer(&test_struct_.framebuffers_.back(), test_struct_.render_pass_, view, test_struct_.viewport_.width_, test_struct_.viewport_.height_, 1);
 
-    }
-
+    create_viewport(win_hand);
     create_shader_module();
-    VulkanGraphicsPipelineDescription desc;
-    create_pipeline(desc);
+    create_render_pass(&render_pass_);
+    VulkanGraphicsPipelineDescription description;
+    create_pipeline(description);
+
+    for (int i = 0; i < frame_resources_.size(); i++) {
+        FrameContext& frame_resource = frame_resources_[i];
+        std::vector<VkImageView> image_view = {viewport_.swapchain_.image_views_[i]};
+        frame_resource.framebuffer_ = create_framebuffer(
+                render_pass_,
+                image_view,
+                viewport_.width_,
+                viewport_.height_,
+                1);
+        frame_resource.image_acquired_semaphore_ = create_semaphore();
+        frame_resource.image_rendered_semaphore_ = create_semaphore();
+        frame_resource.in_flight_fence_          = create_fence(true);
+        frame_resource.command_pools_.resize(QueueIndex::Max);
+        frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
+        frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics]);
+    }
 }
 
 void VulkanRHI::shutdown()
 {
-    for(FrameContext& frame_context : test_struct_.per_frame_resources_)
-    {
-        release_semaphore(frame_context.image_rendered_semaphore_);
-        release_semaphore(frame_context.image_acquired_semaphore_);
-        release_fence(frame_context.in_flight_fence_);
-        for(VkCommandPool& command_pool : frame_context.command_pools_)
-        {
-            free_command_pool(command_pool);
-        }
-
-
-    }
 
 
     release_device();
@@ -116,65 +113,67 @@ void VulkanRHI::select_physical_device()
         selected_device = physical_devices[0];
     }
 
-    device_.physical_device_ = selected_device;
+    physical_device_ = selected_device;
 }
 
 void VulkanRHI::create_device()
 {
-
-    std::optional<uint32> graphics_queue_family_index;
-    std::optional<uint32> present_queue_family_index;
-    std::optional<uint32> compute_queue_family_index;
-    std::optional<uint32> transfer_queue_family_index;
-
     uint32 queue_family_count = 0;
-    vkGetPhysicalDeviceQueueFamilyProperties(device_.physical_device_, &queue_family_count, nullptr);
+    vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, nullptr);
 
     std::vector<VkQueueFamilyProperties> queue_families(queue_family_count);
+    std::vector<uint32>                  queue_offsets(queue_family_count);
+    std::vector<std::vector<float>>      queue_priorities(queue_family_count);
 
-    vkGetPhysicalDeviceQueueFamilyProperties(device_.physical_device_, &queue_family_count, queue_families.data());
-
-    for (int index = 0; index < queue_families.size(); index++) {
-        VkQueueFamilyProperties queue_family = queue_families[index];
-
-        if ((queue_family.queueFlags & VK_QUEUE_GRAPHICS_BIT) == VK_QUEUE_GRAPHICS_BIT) {
-            graphics_queue_family_index = index;
-        } else if ((queue_family.queueFlags & VK_QUEUE_COMPUTE_BIT) == VK_QUEUE_COMPUTE_BIT) {
-            compute_queue_family_index = index;
-        } else if ((queue_family.queueFlags & VK_QUEUE_TRANSFER_BIT) == VK_QUEUE_TRANSFER_BIT) {
-            transfer_queue_family_index = index;
+    vkGetPhysicalDeviceQueueFamilyProperties(physical_device_, &queue_family_count, queue_families.data());
+    auto find_valid_queue = [&](
+            VulkanQueue &queue,
+            VkQueueFlags require_bits,
+            VkQueueFlags exclude_bits,
+            float priority,
+            bool should_support_present) -> bool {
+        for (int index = 0; index < queue_families.size(); index++) {
+            VkQueueFamilyProperties &queue_family = queue_families[index];
+            if ((queue_family.queueFlags & require_bits) != 0 && (queue_family.queueFlags & exclude_bits) == 0) {
+                queue.index_        = queue_offsets[index];
+                queue.family_index_ = index;
+                queue_offsets[index]++;
+                queue_priorities[index].push_back(priority);
+                return true;
+            }
         }
+        return false;
+    };
 
+    if(!find_valid_queue(graphics_queue, VK_QUEUE_GRAPHICS_BIT, 0, 1.0f, true))
+    {
+        std::cerr << "Failed to find graphics queue family";
     }
 
-    assert(graphics_queue_family_index.has_value());
+    if(!find_valid_queue(compute_queue, VK_QUEUE_COMPUTE_BIT, VK_QUEUE_GRAPHICS_BIT, 1.0f, false) &&
+       !find_valid_queue(compute_queue, VK_QUEUE_COMPUTE_BIT | VK_QUEUE_GRAPHICS_BIT, 0, 1.0f, false))
+    {
+        compute_queue = graphics_queue;
+    }
 
-    compute_queue_family_index  = compute_queue_family_index.has_value() ? compute_queue_family_index
-                                                                         : graphics_queue_family_index;
-    transfer_queue_family_index = transfer_queue_family_index.has_value() ? transfer_queue_family_index
-                                                                          : graphics_queue_family_index;
-
-    std::set<uint32> queue_family_indices = {graphics_queue_family_index.value(), compute_queue_family_index.value(),
-                                             transfer_queue_family_index.value()};
+    if(!find_valid_queue(transfer_queue, VK_QUEUE_TRANSFER_BIT, VK_QUEUE_COMPUTE_BIT | VK_QUEUE_GRAPHICS_BIT, 1.0f, false) &&
+       !find_valid_queue(transfer_queue, VK_QUEUE_TRANSFER_BIT | VK_QUEUE_COMPUTE_BIT, VK_QUEUE_GRAPHICS_BIT, 1.0f, false))
+    {
+        transfer_queue = compute_queue;
+    }
 
     std::vector<VkDeviceQueueCreateInfo> queue_create_infos;
-    std::vector<float>                   queue_priorities;
-
-    for (const uint32 &queue_family_index: queue_family_indices) {
-        queue_create_infos.push_back({});
-        queue_priorities.push_back(1);
-        queue_create_infos.back().sType            = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
-        queue_create_infos.back().queueFamilyIndex = queue_family_index;
-        queue_create_infos.back().pQueuePriorities = &queue_priorities.back();
-        queue_create_infos.back().queueCount       = 1;
+    for (int queue_family_index = 0; queue_family_index < queue_family_count; queue_family_index++) {
+        if(queue_offsets[queue_family_index] != 0)
+        {
+            VkDeviceQueueCreateInfo queue_create_info {};
+            queue_create_info.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+            queue_create_info.queueFamilyIndex = queue_family_index;
+            queue_create_info.pQueuePriorities = queue_priorities[queue_family_index].data();
+            queue_create_info.queueCount = queue_offsets[queue_family_index];
+            queue_create_infos.push_back(queue_create_info);
+        }
     }
-
-    std::vector<const char*> enabled_extension_names;
-
-//    for (const vulkan_device_extension& device_extension : vulkan_device_extension::required_extensions())
-//    {
-//        enabled_extension_names.push_back(device_extension.get_name());
-//    }
 
     VkDeviceCreateInfo device_create_info{};
     device_create_info.sType                   = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
@@ -184,35 +183,25 @@ void VulkanRHI::create_device()
     device_create_info.ppEnabledExtensionNames = requested_device_extensions_.data();
     device_create_info.pQueueCreateInfos       = queue_create_infos.data();
     device_create_info.queueCreateInfoCount    = queue_create_infos.size();
-    VK_ASSERT_SUCCESS(vkCreateDevice(device_.physical_device_, &device_create_info, nullptr, &device_.logical_device_))
+    VK_ASSERT_SUCCESS(vkCreateDevice(physical_device_, &device_create_info, nullptr, &logical_device_))
 
-    vkGetDeviceQueue(device_.logical_device_, graphics_queue_family_index.value(), 0, &graphics_queue_.queue_);
-    graphics_queue_.queue_family_index_ = graphics_queue_family_index.value();
-    graphics_queue_.queue_index_        = 0;
-    present_queue_ = graphics_queue_;
-
-    vkGetDeviceQueue(device_.logical_device_, compute_queue_family_index.value(), 0, &compute_queue_.queue_);
-    compute_queue_.queue_family_index_ = compute_queue_family_index.value();
-    compute_queue_.queue_index_        = 0;
-
-    vkGetDeviceQueue(device_.logical_device_, transfer_queue_family_index.value(), 0, &transfer_queue_.queue_);
-    transfer_queue_.queue_family_index_ = transfer_queue_family_index.value();
-    transfer_queue_.queue_index_        = 0;
+    vkGetDeviceQueue(logical_device_, graphics_queue.family_index_, graphics_queue.index_, &graphics_queue.queue_);
+    vkGetDeviceQueue(logical_device_, compute_queue.family_index_, compute_queue.index_, &compute_queue.queue_);
+    vkGetDeviceQueue(logical_device_, transfer_queue.family_index_, transfer_queue.index_, &transfer_queue.queue_);
 }
 
 void VulkanRHI::release_device()
 {
-    vkDestroyDevice(device_.logical_device_, nullptr);
-    device_.logical_device_ = VK_NULL_HANDLE;
+    vkDestroyDevice(logical_device_, nullptr);
+    logical_device_ = VK_NULL_HANDLE;
 }
 
-
-void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 height)
+void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 &width, uint32 &height)
 {
 
-
+    VulkanSwapchain          swapchain{};
     VkSurfaceCapabilitiesKHR surface_capabilities{};
-    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device_.physical_device_, surface, &surface_capabilities);
+    vkGetPhysicalDeviceSurfaceCapabilitiesKHR(physical_device_, surface, &surface_capabilities);
 
     uint32 desired_image_count = 3;
 
@@ -223,10 +212,10 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 heig
 
     uint32 surface_format_count = 0;
 
-    vkGetPhysicalDeviceSurfaceFormatsKHR(device_.physical_device_, surface, &surface_format_count, nullptr);
+    vkGetPhysicalDeviceSurfaceFormatsKHR(physical_device_, surface, &surface_format_count, nullptr);
 
     std::vector<VkSurfaceFormatKHR> surface_formats(surface_format_count);
-    vkGetPhysicalDeviceSurfaceFormatsKHR(device_.physical_device_, surface, &surface_format_count,
+    vkGetPhysicalDeviceSurfaceFormatsKHR(physical_device_, surface, &surface_format_count,
                                          surface_formats.data());
 
     VkSurfaceFormatKHR surface_format{};
@@ -245,11 +234,12 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 heig
 
     VkExtent2D image_extent;
 
-    image_extent = surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
+    image_extent =
+            surface_capabilities.currentExtent.width != UINT32_MAX ? surface_capabilities.currentExtent : VkExtent2D{
                     width, height};
 
-    test_struct_.viewport_.width_ = image_extent.width;
-    test_struct_.viewport_.height_ = image_extent.height;
+    width  = image_extent.width;
+    height = image_extent.height;
     VkSurfaceTransformFlagBitsKHR pre_transform = surface_capabilities.supportedTransforms &
                                                   VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
                                                   ? VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR
@@ -262,10 +252,10 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 heig
     VkPresentModeKHR present_mode;
 
     uint32 present_mode_count = 0;
-    vkGetPhysicalDeviceSurfacePresentModesKHR(device_.physical_device_, surface, &present_mode_count, nullptr);
+    vkGetPhysicalDeviceSurfacePresentModesKHR(physical_device_, surface, &present_mode_count, nullptr);
 
     std::vector<VkPresentModeKHR> present_modes(present_mode_count);
-    vkGetPhysicalDeviceSurfacePresentModesKHR(device_.physical_device_, surface, &present_mode_count,
+    vkGetPhysicalDeviceSurfacePresentModesKHR(physical_device_, surface, &present_mode_count,
                                               present_modes.data());
 
     bool found_desired_present_mode = false;
@@ -295,21 +285,17 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 heig
     swapchain_create_info.clipped          = VK_TRUE;
     swapchain_create_info.oldSwapchain     = VK_NULL_HANDLE;
     //TODO fill this out properly (needs a reference to the test_struct_.swapchain_ handle to be filled out)
-    VK_ASSERT_SUCCESS(
-            vkCreateSwapchainKHR(device_.logical_device_, &swapchain_create_info, nullptr,
-                                 &test_struct_.swapchain_.vk_swapchain_))
+    VK_ASSERT_SUCCESS(vkCreateSwapchainKHR(logical_device_, &swapchain_create_info, nullptr, &swapchain.vk_swapchain_))
 
-    test_struct_.swapchain_.surface_format_ = surface_format;
-    test_struct_.swapchain_.vk_surface_     = surface;
+    swapchain.surface_format_ = surface_format;
+    swapchain.vk_surface_     = surface;
 
     uint32 swapchain_image_count = 0;
-    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count,
-                            nullptr);
-    test_struct_.swapchain_.images_.resize(swapchain_image_count);
-    vkGetSwapchainImagesKHR(device_.logical_device_, test_struct_.swapchain_.vk_swapchain_, &swapchain_image_count,
-                            test_struct_.swapchain_.images_.data());
+    vkGetSwapchainImagesKHR(logical_device_, swapchain.vk_swapchain_, &swapchain_image_count, nullptr);
+    swapchain.images_.resize(swapchain_image_count);
+    vkGetSwapchainImagesKHR(logical_device_, swapchain.vk_swapchain_, &swapchain_image_count, swapchain.images_.data());
 
-    for (const VkImage &swapchain_image: test_struct_.swapchain_.images_) {
+    for (const VkImage &swapchain_image: swapchain.images_) {
         VkImageViewCreateInfo image_view_create_info{};
         image_view_create_info.sType                           = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
         image_view_create_info.image                           = swapchain_image;
@@ -327,9 +313,11 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 width, uint32 heig
 
         VkImageView image_view;
 
-        VK_ASSERT_SUCCESS(vkCreateImageView(device_.logical_device_, &image_view_create_info, nullptr, &image_view))
-        test_struct_.swapchain_.image_views_.push_back(image_view);
+        VK_ASSERT_SUCCESS(vkCreateImageView(logical_device_, &image_view_create_info, nullptr, &image_view))
+        swapchain.image_views_.push_back(image_view);
     }
+    frame_resources_.resize(swapchain.images_.size());
+    viewport_.swapchain_ = swapchain;
 }
 
 void VulkanRHI::recreate_swapchain()
@@ -339,16 +327,16 @@ void VulkanRHI::recreate_swapchain()
 
 void VulkanRHI::release_swapchain(VulkanSwapchain &swapchain)
 {
-    vkDestroySwapchainKHR(device_.logical_device_, swapchain.vk_swapchain_, nullptr);
+    vkDestroySwapchainKHR(logical_device_, swapchain.vk_swapchain_, nullptr);
     swapchain.vk_swapchain_ = VK_NULL_HANDLE;
 }
 
-void VulkanRHI::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
+uint32 VulkanRHI::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
 {
     //TODO fill out with reference to this frames semaphore and frame index to be updates
     uint32 image_index;
-    vkAcquireNextImageKHR(device_.logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, &image_index);
-
+    VK_ASSERT_SUCCESS(vkAcquireNextImageKHR(logical_device_, swapchain, UINT64_MAX, nullptr, nullptr, &image_index));
+    return image_index;
 }
 
 void VulkanRHI::present_image(VkSwapchainKHR swapchain)
@@ -357,18 +345,19 @@ void VulkanRHI::present_image(VkSwapchainKHR swapchain)
     present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 }
 
-void VulkanRHI::create_viewport(void* window_handle, uint32 width, uint32 height)
+void VulkanRHI::create_viewport(void* window_handle)
 {
 
+    viewport_.window_handle = window_handle;
     VkWin32SurfaceCreateInfoKHR surface_create_info{};
     surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
     surface_create_info.hwnd      = static_cast<HWND>(window_handle);
     surface_create_info.hinstance = GetModuleHandle(nullptr);
-    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &test_struct_.viewport_.surface_))
-    test_struct_.viewport_.width_ = width;
-    test_struct_.viewport_.height_ = height;
 
-    create_swapchain(test_struct_.viewport_.surface_, test_struct_.viewport_.width_, test_struct_.viewport_.height_);
+    Simulacra::windows::get_window_dimensions((HWND) window_handle, viewport_.width_, viewport_.height_);
+
+    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &viewport_.surface_))
+    create_swapchain(viewport_.surface_, viewport_.width_, viewport_.height_);
 
 }
 
@@ -394,46 +383,47 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
     //TODO fill out members of graphics pipeline create info with proper settings
 
     VkViewport viewport{};
-    viewport.x = 0.0f;
-    viewport.y = 0.0f;
-    viewport.width = test_struct_.viewport_.width_;
-    viewport.height = test_struct_.viewport_.height_;
+    viewport.x        = 0.0f;
+    viewport.y        = 0.0f;
+    viewport.width    = viewport_.width_;
+    viewport.height   = viewport_.height_;
     viewport.minDepth = 0.0f;
     viewport.maxDepth = 1.0f;
 
     VkRect2D scissor{};
-    scissor.offset = {0,0};
-    scissor.extent = {test_struct_.viewport_.width_, test_struct_.viewport_.height_};
+    scissor.offset = {0, 0};
+    scissor.extent = {viewport_.width_, viewport_.height_};
 
     std::vector<VkDynamicState> dynamic_states = {VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR};
 
     VkPipelineDynamicStateCreateInfo dynamic_state_create_info{};
-    dynamic_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
+    dynamic_state_create_info.sType             = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
     dynamic_state_create_info.dynamicStateCount = dynamic_states.size();
-    dynamic_state_create_info.pDynamicStates = dynamic_states.data();
+    dynamic_state_create_info.pDynamicStates    = dynamic_states.data();
 
     VkPipelineViewportStateCreateInfo viewport_state_create_info{};
-    viewport_state_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+    viewport_state_create_info.sType         = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
     viewport_state_create_info.viewportCount = 1;
-    viewport_state_create_info.pViewports = &viewport;
-    viewport_state_create_info.scissorCount = 1;
-    viewport_state_create_info.pScissors = &scissor;
+    viewport_state_create_info.pViewports    = &viewport;
+    viewport_state_create_info.scissorCount  = 1;
+    viewport_state_create_info.pScissors     = &scissor;
 
 
-    VkPipelineShaderStageCreateInfo vertex_shader_stage_create_info {};
-    VkPipelineShaderStageCreateInfo fragment_shader_stage_create_info {};
+    VkPipelineShaderStageCreateInfo vertex_shader_stage_create_info{};
+    VkPipelineShaderStageCreateInfo fragment_shader_stage_create_info{};
 
-    vertex_shader_stage_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-    vertex_shader_stage_create_info.stage = VK_SHADER_STAGE_VERTEX_BIT;
-    vertex_shader_stage_create_info.module = test_struct_.vertex_shader_module_;
-    vertex_shader_stage_create_info.pName = "main";
+    vertex_shader_stage_create_info.sType  = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    vertex_shader_stage_create_info.stage  = VK_SHADER_STAGE_VERTEX_BIT;
+    vertex_shader_stage_create_info.module = vertex_shader_module_;
+    vertex_shader_stage_create_info.pName  = "main";
 
-    fragment_shader_stage_create_info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-    fragment_shader_stage_create_info.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-    fragment_shader_stage_create_info.module = test_struct_.fragment_shader_module_;
-    fragment_shader_stage_create_info.pName = "main";
+    fragment_shader_stage_create_info.sType  = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+    fragment_shader_stage_create_info.stage  = VK_SHADER_STAGE_FRAGMENT_BIT;
+    fragment_shader_stage_create_info.module = fragment_shader_module_;
+    fragment_shader_stage_create_info.pName  = "main";
 
-    VkPipelineShaderStageCreateInfo shader_stages[] = {vertex_shader_stage_create_info, fragment_shader_stage_create_info};
+    VkPipelineShaderStageCreateInfo shader_stages[] = {vertex_shader_stage_create_info,
+                                                       fragment_shader_stage_create_info};
 
     VkPipelineVertexInputStateCreateInfo vertex_input_state_create_info{};
     vertex_input_state_create_info.sType                           = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
@@ -491,32 +481,33 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
     pipeline_layout_create_info.pushConstantRangeCount = 0;
     pipeline_layout_create_info.pPushConstantRanges    = nullptr;
 
-    if (VkResult result = vkCreatePipelineLayout(device_.logical_device_, &pipeline_layout_create_info, nullptr,
-                                                 &test_struct_.pipeline_.pipeline_layout_); result != VK_SUCCESS) {
+    if (VkResult result = vkCreatePipelineLayout(logical_device_, &pipeline_layout_create_info, nullptr,
+                                                 &pipeline_.pipeline_layout_); result != VK_SUCCESS) {
         std::cerr << "Failed to create pipeline layout!\n";
         terminate();
     }
     std::cout << "Created pipeline layout\n";
 
     VkGraphicsPipelineCreateInfo graphics_pipeline_create_info{};
-    graphics_pipeline_create_info.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
-    graphics_pipeline_create_info.stageCount = 2;
-    graphics_pipeline_create_info.pStages = shader_stages;
-    graphics_pipeline_create_info.pVertexInputState = &vertex_input_state_create_info;
+    graphics_pipeline_create_info.sType               = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+    graphics_pipeline_create_info.stageCount          = 2;
+    graphics_pipeline_create_info.pStages             = shader_stages;
+    graphics_pipeline_create_info.pVertexInputState   = &vertex_input_state_create_info;
     graphics_pipeline_create_info.pInputAssemblyState = &input_assembly_state_create_info;
-    graphics_pipeline_create_info.pViewportState = &viewport_state_create_info;
+    graphics_pipeline_create_info.pViewportState      = &viewport_state_create_info;
     graphics_pipeline_create_info.pRasterizationState = &rasterization_state_create_info;
-    graphics_pipeline_create_info.pMultisampleState = &multisample_state_create_info;
-    graphics_pipeline_create_info.pDepthStencilState = nullptr;
-    graphics_pipeline_create_info.pColorBlendState = &color_blend_state_create_info;
-    graphics_pipeline_create_info.pDynamicState = &dynamic_state_create_info;
-    graphics_pipeline_create_info.layout = test_struct_.pipeline_.pipeline_layout_;
-    graphics_pipeline_create_info.renderPass = test_struct_.render_pass_;
-    graphics_pipeline_create_info.subpass = 0;
-    graphics_pipeline_create_info.basePipelineHandle = VK_NULL_HANDLE;
-    graphics_pipeline_create_info.basePipelineIndex = -1;
+    graphics_pipeline_create_info.pMultisampleState   = &multisample_state_create_info;
+    graphics_pipeline_create_info.pDepthStencilState  = nullptr;
+    graphics_pipeline_create_info.pColorBlendState    = &color_blend_state_create_info;
+    graphics_pipeline_create_info.pDynamicState       = &dynamic_state_create_info;
+    graphics_pipeline_create_info.layout              = pipeline_.pipeline_layout_;
+    graphics_pipeline_create_info.renderPass          = render_pass_;
+    graphics_pipeline_create_info.subpass             = 0;
+    graphics_pipeline_create_info.basePipelineHandle  = VK_NULL_HANDLE;
+    graphics_pipeline_create_info.basePipelineIndex   = -1;
 
-    vkCreateGraphicsPipelines(device_.logical_device_, VK_NULL_HANDLE, 1, &graphics_pipeline_create_info, nullptr, &test_struct_.pipeline_.pipeline_);
+    vkCreateGraphicsPipelines(logical_device_, VK_NULL_HANDLE, 1, &graphics_pipeline_create_info, nullptr,
+                              &pipeline_.pipeline_);
 
 }
 
@@ -529,7 +520,7 @@ void VulkanRHI::create_render_pass(VkRenderPass* render_pass)
 {
 
     VkAttachmentDescription color_attachment{};
-    color_attachment.format         = test_struct_.swapchain_.surface_format_.format;
+    color_attachment.format         = viewport_.swapchain_.surface_format_.format;
     color_attachment.samples        = VK_SAMPLE_COUNT_1_BIT;
     color_attachment.loadOp         = VK_ATTACHMENT_LOAD_OP_CLEAR;
     color_attachment.storeOp        = VK_ATTACHMENT_STORE_OP_STORE;
@@ -554,13 +545,13 @@ void VulkanRHI::create_render_pass(VkRenderPass* render_pass)
     render_pass_create_info.subpassCount    = 1;
     render_pass_create_info.pSubpasses      = &subpass;
 
-    VK_ASSERT_SUCCESS(vkCreateRenderPass(device_.logical_device_, &render_pass_create_info, nullptr, render_pass))
+    VK_ASSERT_SUCCESS(vkCreateRenderPass(logical_device_, &render_pass_create_info, nullptr, render_pass))
 }
 
 //TODO this shoudn't be a vector pass in ref to views and count
-void VulkanRHI::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass render_pass,
-                                   const std::vector<VkImageView> &attachment_views, uint32 width, uint32 height,
-                                   uint32 layers)
+VkFramebuffer
+VulkanRHI::create_framebuffer(VkRenderPass render_pass, const std::vector<VkImageView> &attachment_views, uint32 width,
+                              uint32 height, uint32 layers)
 {
     VkFramebufferCreateInfo framebuffer_create_info{};
     framebuffer_create_info.sType           = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -571,24 +562,28 @@ void VulkanRHI::create_framebuffer(VkFramebuffer* framebuffer, VkRenderPass rend
     framebuffer_create_info.layers          = layers;
     framebuffer_create_info.renderPass      = render_pass;
 
-    VK_ASSERT_SUCCESS(vkCreateFramebuffer(device_.logical_device_, &framebuffer_create_info, nullptr, framebuffer))
+    VkFramebuffer framebuffer;
+    VK_ASSERT_SUCCESS(vkCreateFramebuffer(logical_device_, &framebuffer_create_info, nullptr, &framebuffer))
+    return framebuffer;
 }
 
 void VulkanRHI::release_framebuffer(VkFramebuffer &framebuffer)
 {
-    vkDestroyFramebuffer(device_.logical_device_, framebuffer, nullptr);
+    vkDestroyFramebuffer(logical_device_, framebuffer, nullptr);
 }
 
-void VulkanRHI::create_command_pool(VkCommandPool* command_pool, uint32 queue_family_index)
+VkCommandPool VulkanRHI::create_command_pool(uint32 queue_family_index)
 {
     VkCommandPoolCreateInfo command_pool_create_info{};
     command_pool_create_info.sType            = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
     command_pool_create_info.queueFamilyIndex = queue_family_index;
 
-    VK_ASSERT_SUCCESS(vkCreateCommandPool(device_.logical_device_, &command_pool_create_info, nullptr, command_pool));
+    VkCommandPool command_pool;
+    VK_ASSERT_SUCCESS(vkCreateCommandPool(logical_device_, &command_pool_create_info, nullptr, &command_pool));
+    return command_pool;
 }
 
-void VulkanRHI::create_command_buffer(VkCommandBuffer command_buffer, VkCommandPool command_pool)
+VkCommandBuffer VulkanRHI::create_command_buffer(VkCommandPool command_pool)
 {
 
     VkCommandBufferAllocateInfo command_buffer_allocate_info{};
@@ -598,8 +593,9 @@ void VulkanRHI::create_command_buffer(VkCommandBuffer command_buffer, VkCommandP
     command_buffer_allocate_info.commandBufferCount = 1;
 
     //TODO fill this out properly
-    vkAllocateCommandBuffers(device_.logical_device_, &command_buffer_allocate_info, &command_buffer);
-
+    VkCommandBuffer command_buffer;
+    vkAllocateCommandBuffers(logical_device_, &command_buffer_allocate_info, &command_buffer);
+    return command_buffer;
 }
 
 void VulkanRHI::begin_command_buffer(VkCommandBuffer command_buffer)
@@ -624,7 +620,7 @@ void VulkanRHI::reset_command_buffer(VkCommandBuffer command_buffer)
 
 void VulkanRHI::create_queue(uint32 queue_family_index, uint32 queue_index)
 {
-    vkGetDeviceQueue(device_.logical_device_, queue_family_index, queue_index, nullptr);
+    vkGetDeviceQueue(logical_device_, queue_family_index, queue_index, nullptr);
 }
 
 void VulkanRHI::submit_to_queue()
@@ -636,7 +632,7 @@ void VulkanRHI::submit_to_queue()
 
 void VulkanRHI::release_render_pass(VkRenderPass render_pass)
 {
-    vkDestroyRenderPass(device_.logical_device_, render_pass, nullptr);
+    vkDestroyRenderPass(logical_device_, render_pass, nullptr);
 }
 
 void VulkanRHI::begin_render_pass()
@@ -652,7 +648,7 @@ void VulkanRHI::end_render_pass()
 
 void VulkanRHI::reset_command_pool(VkCommandPool command_pool)
 {
-    vkResetCommandPool(device_.logical_device_, command_pool, 0);
+    vkResetCommandPool(logical_device_, command_pool, 0);
 }
 
 void VulkanRHI::free_command_pool(VkCommandPool &command_pool)
@@ -718,13 +714,14 @@ void VulkanRHI::command_copy_image_to_buffer()
 //    vkCmdCopyImageToBuffer()
 }
 
-void VulkanRHI::create_semaphore()
+VkSemaphore VulkanRHI::create_semaphore()
 {
     VkSemaphoreCreateInfo semaphore_create_info{};
     semaphore_create_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
 
     VkSemaphore semaphore;
-    VK_ASSERT_SUCCESS(vkCreateSemaphore(device_.logical_device_, &semaphore_create_info, nullptr, &semaphore));
+    VK_ASSERT_SUCCESS(vkCreateSemaphore(logical_device_, &semaphore_create_info, nullptr, &semaphore));
+    return semaphore;
 }
 
 
@@ -733,15 +730,15 @@ void VulkanRHI::release_semaphore(VkSemaphore &semaphore)
 //    vkDestroySemaphore()
 }
 
-void VulkanRHI::create_fence(bool signaled)
+VkFence VulkanRHI::create_fence(bool signaled)
 {
     VkFenceCreateInfo fence_create_info{};
     fence_create_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
     fence_create_info.flags = signaled ? VK_FENCE_CREATE_SIGNALED_BIT : 0;
 
     VkFence fence;
-    VK_ASSERT_SUCCESS(vkCreateFence(device_.logical_device_, &fence_create_info, nullptr, &fence));
-
+    VK_ASSERT_SUCCESS(vkCreateFence(logical_device_, &fence_create_info, nullptr, &fence));
+    return fence;
 }
 
 void VulkanRHI::release_fence(VkFence &fence)
@@ -761,27 +758,21 @@ void VulkanRHI::reset_fence()
 
 void VulkanRHI::test_draw_frame()
 {
-    vkWaitForFences(device_.logical_device_, 1, nullptr, VK_TRUE, UINT64_MAX);
-    vkResetFences(device_.logical_device_, 1, nullptr);
-
-    acquire_next_image_from_swapchain(test_struct_.swapchain_.vk_swapchain_);
-
+    uint32 image_index = acquire_next_image_from_swapchain(viewport_.swapchain_.vk_swapchain_);
 
 }
 
 void VulkanRHI::create_shader_module()
 {
-    auto read_file = [](const char* file_name)
-    {
+    auto read_file = [](const char* file_name) {
         std::ifstream file(file_name, std::ios::ate | std::ios::binary);
 
-        if(!file.is_open())
-        {
+        if (!file.is_open()) {
             std::cerr << "failed to open file";
             terminate();
         }
 
-        size_t file_size = (size_t ) file.tellg();
+        size_t file_size = (size_t) file.tellg();
 
         std::vector<char> buffer(file_size);
         file.seekg(0);
@@ -790,23 +781,24 @@ void VulkanRHI::create_shader_module()
         return buffer;
     };
 
-    std::vector<char> vertex_shader_code = read_file("../../Shaders/SpirV/vert.spv");
+    std::vector<char> vertex_shader_code   = read_file("../../Shaders/SpirV/vert.spv");
     std::vector<char> fragment_shader_code = read_file("../../Shaders/SpirV/frag.spv");
 
-    VkShaderModuleCreateInfo vertex_shader_module_create_info {};
-    VkShaderModuleCreateInfo fragment_shader_module_create_info {};
+    VkShaderModuleCreateInfo vertex_shader_module_create_info{};
+    VkShaderModuleCreateInfo fragment_shader_module_create_info{};
 
-    vertex_shader_module_create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    vertex_shader_module_create_info.pCode = reinterpret_cast<uint32*>(vertex_shader_code.data());
+    vertex_shader_module_create_info.sType    = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    vertex_shader_module_create_info.pCode    = reinterpret_cast<uint32*>(vertex_shader_code.data());
     vertex_shader_module_create_info.codeSize = vertex_shader_code.size();
 
-    fragment_shader_module_create_info.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-    fragment_shader_module_create_info.pCode = reinterpret_cast<uint32*>(fragment_shader_code.data());
+    fragment_shader_module_create_info.sType    = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+    fragment_shader_module_create_info.pCode    = reinterpret_cast<uint32*>(fragment_shader_code.data());
     fragment_shader_module_create_info.codeSize = fragment_shader_code.size();
 
-    VK_ASSERT_SUCCESS(vkCreateShaderModule(device_.logical_device_, &vertex_shader_module_create_info, nullptr, &test_struct_.vertex_shader_module_))
-    VK_ASSERT_SUCCESS(vkCreateShaderModule(device_.logical_device_, &fragment_shader_module_create_info, nullptr, &test_struct_.fragment_shader_module_))
-
+    VK_ASSERT_SUCCESS(
+            vkCreateShaderModule(logical_device_, &vertex_shader_module_create_info, nullptr, &vertex_shader_module_))
+    VK_ASSERT_SUCCESS(vkCreateShaderModule(logical_device_, &fragment_shader_module_create_info, nullptr,
+                                           &fragment_shader_module_))
 
 
 }
