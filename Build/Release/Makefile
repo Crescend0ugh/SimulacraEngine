@@ -206,29 +206,53 @@ Source\Renderer\Backend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
 .PHONY : Source\Renderer\Backend\Vulkan\Platforms\Windows\SimulacraVulkanWindowsPlatform.cpp.s
 
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.obj: Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.obj
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.obj
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.obj: Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.obj
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.obj
 
 # target to build an object file
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.obj
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.obj
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.obj
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.obj
 
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.i: Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.i
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.i
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.i: Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.i
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.i
 
 # target to preprocess a source file
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.i
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.i
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.i
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.i
 
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.s: Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.s
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.s
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.s: Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.s
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.s
 
 # target to generate assembly for a file
-Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.s
-.PHONY : Source\Renderer\Backend\Vulkan\Private\SimulacraVulkan.cpp.s
+Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraEngine.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.s
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.s
+
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.obj: Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.obj
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.obj
+
+# target to build an object file
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.obj
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.obj
+
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.i: Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.i
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.i
+
+# target to preprocess a source file
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.i
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.i
+
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.s: Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.s
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.s
+
+# target to generate assembly for a file
+Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SimulacraLibrary.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SimulacraLibrary.dir\Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.s
+.PHONY : Source\Renderer\Backend\Vulkan\Private\VulkanRHI.cpp.s
 
 # Help Target
 help:
@@ -249,9 +273,12 @@ help:
 	@echo ... Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.obj
 	@echo ... Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.i
 	@echo ... Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.s
-	@echo ... Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.obj
-	@echo ... Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.i
-	@echo ... Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.s
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.obj
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.i
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.s
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanRHI.obj
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanRHI.i
+	@echo ... Source/Renderer/Backend/Vulkan/Private/VulkanRHI.s
 .PHONY : help
 
 

@@ -5,6 +5,6 @@
 #pragma once
 
 
-#include "../../Public/SimulacraVulkan.h"
+#include "../../Public/VulkanRHI.h"
 #include "../../../../Core/Platform/SimulacraWindowsWindow.h"
 

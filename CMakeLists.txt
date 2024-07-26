@@ -9,14 +9,16 @@ find_package(Vulkan REQUIRED)
 
 
 add_library(SimulacraLibrary
-        Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp)
+        Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp)
 add_subdirectory(Source/Renderer/Backend/Vulkan)
 add_subdirectory(Source/Renderer/Backend/DirectX)
 
 add_subdirectory(Source/Core/Platform)
+add_subdirectory(Source/Core)
 
 add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
-)
+        Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp
+        Source/Renderer/Backend/Vulkan/Public/VulkanMemoryAllocator.h)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)

@@ -8,7 +8,7 @@
 #include <thread>
 
 #include "../Platform/SimulacraWindowsWindow.h"
-#include "SimulacraVulkan.h"
+#include "VulkanRHI.h"
 
 #define NUM_PROCESSORS
 

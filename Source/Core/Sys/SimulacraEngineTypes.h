@@ -7,21 +7,18 @@
 
 #include "SimEngineAsserts.h"
 
-
-typedef unsigned char byte;
-typedef unsigned short word;
-typedef unsigned int dword;
-typedef unsigned int uint;
-
-
-typedef signed char int8;
-typedef unsigned char uint8;
-typedef signed short int16;
-typedef unsigned short uint16;
-typedef signed int int32;
-typedef unsigned int uint32;
-typedef long long int64;
-typedef unsigned long long uint64;
+using byte = unsigned char;
+using word = unsigned short;
+using dword = unsigned int;
+using uint = unsigned int;
+using int8 = signed char ;
+using uint8 = unsigned char ;
+using int16 = signed short ;
+using uint16 = unsigned short ;
+using int32 = signed int ;
+using uint32 = unsigned int ;
+using int64 = long long ;
+using uint64 = unsigned long long;
 
 assert_sizeof(int8, 1);
 assert_sizeof(uint8,1);

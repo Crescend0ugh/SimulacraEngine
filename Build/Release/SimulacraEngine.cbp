@@ -27,6 +27,7 @@
 					<Add option="-D_NDEBUG=1"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms"/>
+					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\ATLMFC\include"/>
@@ -55,6 +56,7 @@
 					<Add option="-D_NDEBUG=1"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms"/>
+					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\ATLMFC\include"/>
@@ -83,6 +85,7 @@
 					<Add option="-D_NDEBUG=1"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms"/>
+					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\ATLMFC\include"/>
@@ -111,6 +114,7 @@
 					<Add option="-D_NDEBUG=1"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public"/>
 					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms"/>
+					<Add directory="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core"/>
 					<Add directory="C:/VulkanSDK/1.3.261.1/Include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include"/>
 					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\ATLMFC\include"/>
@@ -167,8 +171,14 @@
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.h">
 			<Option target="SimulacraLibrary"/>
 		</Unit>
-		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/SimulacraVulkan.cpp">
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp">
+			<Option target="SimulacraEngine"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp">
 			<Option target="SimulacraLibrary"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/VulkanMemoryAllocator.h">
+			<Option target="SimulacraEngine"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -178,6 +188,9 @@
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/DirectX/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Source\Renderer\Backend\DirectX\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Core\"/>
 		</Unit>
 		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Source\Core\Platform\"/>

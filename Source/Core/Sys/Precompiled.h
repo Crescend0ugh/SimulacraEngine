@@ -28,3 +28,9 @@
 #include "SimEngineIncludes.h"
 #include "SimEngineAsserts.h"
 #include "SimulacraEngineTypes.h"
+
+#include "Math/Vector2.h"
+#include "Math/Vector.h"
+#include "Math/Vector4.h"
+#include "Math/Matrix.h"
+

@@ -6,6 +6,6 @@ target_sources(SimulacraLibrary PRIVATE
 
         Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
 
-        Private/SimulacraVulkan.cpp
+        Private/VulkanRHI.cpp
 
 )
