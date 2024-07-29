@@ -18,6 +18,8 @@ void VulkanRHI::init(void* win_hand)
     create_shader_module();
     create_render_pass(&render_pass_);
     VulkanGraphicsPipelineDescription description;
+    description.vertex_input_binding_descriptions_.push_back(Vertex::get_binding_description());
+    description.vertex_input_attributes_descriptions_ = Vertex::get_attribute_descriptions();
     create_pipeline(description);
     command_buffers_.resize(frame_resources_.size());
     for (int i = 0; i < frame_resources_.size(); i++) {
@@ -284,7 +286,7 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 &width, uint32 &he
     swapchain_create_info.presentMode      = present_mode;
     swapchain_create_info.clipped          = VK_TRUE;
     swapchain_create_info.oldSwapchain     = old_swapchain;
-    //TODO fill this out properly (needs a reference to the test_struct_.swapchain_ handle to be filled out)
+
     VK_ASSERT_SUCCESS(vkCreateSwapchainKHR(logical_device_, &swapchain_create_info, nullptr, &swapchain.vk_swapchain_))
 
     swapchain.surface_format_ = surface_format;
@@ -433,7 +435,6 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
     viewport_state_create_info.scissorCount  = 1;
     viewport_state_create_info.pScissors     = &scissor;
 
-
     VkPipelineShaderStageCreateInfo vertex_shader_stage_create_info{};
     VkPipelineShaderStageCreateInfo fragment_shader_stage_create_info{};
 
@@ -452,10 +453,10 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
 
     VkPipelineVertexInputStateCreateInfo vertex_input_state_create_info{};
     vertex_input_state_create_info.sType                           = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-    vertex_input_state_create_info.vertexBindingDescriptionCount   = 0;
-    vertex_input_state_create_info.pVertexBindingDescriptions      = nullptr;
-    vertex_input_state_create_info.vertexAttributeDescriptionCount = 0;
-    vertex_input_state_create_info.pVertexAttributeDescriptions    = nullptr;
+    vertex_input_state_create_info.vertexBindingDescriptionCount   = pipeline_description.vertex_input_binding_descriptions_.size();
+    vertex_input_state_create_info.pVertexBindingDescriptions      = pipeline_description.vertex_input_binding_descriptions_.data();
+    vertex_input_state_create_info.vertexAttributeDescriptionCount = pipeline_description.vertex_input_attributes_descriptions_.size();
+    vertex_input_state_create_info.pVertexAttributeDescriptions    = pipeline_description.vertex_input_attributes_descriptions_.data();
 
     VkPipelineInputAssemblyStateCreateInfo input_assembly_state_create_info{};
     input_assembly_state_create_info.sType                  = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
@@ -629,7 +630,6 @@ VkCommandBuffer VulkanRHI::create_command_buffer(VkCommandPool command_pool)
     command_buffer_allocate_info.level              = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
     command_buffer_allocate_info.commandBufferCount = 1;
 
-    //TODO fill this out properly
     VkCommandBuffer command_buffer;
     vkAllocateCommandBuffers(logical_device_, &command_buffer_allocate_info, &command_buffer);
     return command_buffer;
@@ -662,8 +662,8 @@ void VulkanRHI::create_queue(uint32 queue_family_index, uint32 queue_index)
 
 void VulkanRHI::submit_to_queue()
 {
-    VkSubmitInfo submit_info{};
-    submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+    //TODO implement this method
+//    vkQueueSubmit()
 
 }
 

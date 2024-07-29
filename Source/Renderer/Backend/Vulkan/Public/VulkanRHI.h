@@ -108,6 +108,15 @@ enum class ShaderStages
     Max
 };
 
+struct VertexAttribute
+{
+    uint32   offset_;
+    uint32   attribute_index_;
+    VkFormat vertex_format_;
+    uint32   binding_index_;
+};
+
+
 class VulkanRHI
 {
 
@@ -198,20 +207,19 @@ protected:
 
 protected:
 
-    VkInstance                instance_;
-    VkDevice                  logical_device_;
-    VkPhysicalDevice          physical_device_;
-    VulkanQueue graphics_queue;
-    VulkanQueue transfer_queue;
-    VulkanQueue compute_queue;
-//    std::vector<VulkanQueue>  queues_;
-    std::vector<FrameContext> frame_resources_;
+    VkInstance                   instance_;
+    VkDevice                     logical_device_;
+    VkPhysicalDevice             physical_device_;
+    VulkanQueue                  graphics_queue;
+    VulkanQueue                  transfer_queue;
+    VulkanQueue                  compute_queue;
+    std::vector<FrameContext>    frame_resources_;
     std::vector<VkCommandBuffer> command_buffers_;
-    VulkanViewport            viewport_;
-    VulkanPipeline            pipeline_;
-    VkRenderPass              render_pass_;
-    VkShaderModule            vertex_shader_module_;
-    VkShaderModule            fragment_shader_module_;
+    VulkanViewport               viewport_;
+    VulkanPipeline               pipeline_;
+    VkRenderPass                 render_pass_;
+    VkShaderModule               vertex_shader_module_;
+    VkShaderModule               fragment_shader_module_;
 
     std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME};
     std::vector<const char*> instance_layers;
@@ -223,10 +231,36 @@ struct Vertex
 {
     Vector2F position_;
     Vector3F color_;
-};
 
+    static VkVertexInputBindingDescription get_binding_description()
+    {
+        VkVertexInputBindingDescription binding_description{};
+        binding_description.binding = 0;
+        binding_description.stride = sizeof(Vertex);
+        binding_description.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
+        return binding_description;
+    }
+
+    static std::vector<VkVertexInputAttributeDescription> get_attribute_descriptions()
+    {
+        std::vector<VkVertexInputAttributeDescription> attribute_descriptions{};
+        attribute_descriptions.reserve(2);
+        attribute_descriptions[0].binding = 0;
+        attribute_descriptions[0].location = 0;
+        attribute_descriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
+        attribute_descriptions[0].offset = offsetof(Vertex, position_);
+        attribute_descriptions[1].binding = 0;
+        attribute_descriptions[1].location = 1;
+        attribute_descriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;
+        attribute_descriptions[1].offset = offsetof(Vertex, color_);
+        return attribute_descriptions;
+    }
+
+};
+//TODO get rid of this later
 const std::vector<Vertex> vertices = {
         {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
         {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
         {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
 };
+
