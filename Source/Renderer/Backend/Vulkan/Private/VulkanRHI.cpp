@@ -13,7 +13,6 @@ void VulkanRHI::init(void* win_hand)
     create_instance();
     select_physical_device();
     create_device();
-
     create_viewport(win_hand);
     create_shader_module();
     create_render_pass(&render_pass_);
@@ -38,6 +37,7 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
         command_buffers_[i] = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics]);
     }
+    memory_allocator_.init(physical_device_);
 }
 
 void VulkanRHI::shutdown()
@@ -180,9 +180,9 @@ void VulkanRHI::create_device()
     VkDeviceCreateInfo device_create_info{};
     device_create_info.sType                   = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
     device_create_info.enabledExtensionCount   = requested_device_extensions_.size();
+    device_create_info.ppEnabledExtensionNames = requested_device_extensions_.data();
     device_create_info.enabledLayerCount       = 0;
     device_create_info.pEnabledFeatures        = nullptr;
-    device_create_info.ppEnabledExtensionNames = requested_device_extensions_.data();
     device_create_info.pQueueCreateInfos       = queue_create_infos.data();
     device_create_info.queueCreateInfoCount    = queue_create_infos.size();
     VK_ASSERT_SUCCESS(vkCreateDevice(physical_device_, &device_create_info, nullptr, &logical_device_))

@@ -9,7 +9,7 @@
 #include "../../../../Core/Sys/Precompiled.h"
 #define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
-
+#include "VulkanMemoryAllocator.h"
 
 #define VK_ASSERT_SUCCESS(statement) \
 {VkResult result = statement;  \
@@ -210,6 +210,7 @@ protected:
     VkInstance                   instance_;
     VkDevice                     logical_device_;
     VkPhysicalDevice             physical_device_;
+    VulkanMemoryAllocator        memory_allocator_;
     VulkanQueue                  graphics_queue;
     VulkanQueue                  transfer_queue;
     VulkanQueue                  compute_queue;
@@ -221,9 +222,9 @@ protected:
     VkShaderModule               vertex_shader_module_;
     VkShaderModule               fragment_shader_module_;
 
-    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME};
+    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME, VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME};
     std::vector<const char*> instance_layers;
-    std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+    std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_EXT_MEMORY_BUDGET_EXTENSION_NAME};
 
 };
 
@@ -245,6 +246,7 @@ struct Vertex
     {
         std::vector<VkVertexInputAttributeDescription> attribute_descriptions{};
         attribute_descriptions.reserve(2);
+        attribute_descriptions.resize(2);
         attribute_descriptions[0].binding = 0;
         attribute_descriptions[0].location = 0;
         attribute_descriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
