@@ -6,7 +6,7 @@
 
 
 // Include Vulkan and Core includes
-#include "../../../../Core/Sys/Precompiled.h"
+#include "../Core/Sys/Precompiled.h"
 #define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
 #include "VulkanMemoryAllocator.h"
@@ -209,9 +209,9 @@ protected:
 
     VkInstance                   instance_;
     VkDevice                     logical_device_;
-    VkPhysicalDevice             physical_device_;
-    VulkanMemoryAllocator        memory_allocator_;
-    VulkanQueue                  graphics_queue;
+    VkPhysicalDevice            physical_device_;
+    VulkanDeviceMemoryAllocator memory_allocator_;
+    VulkanQueue                 graphics_queue;
     VulkanQueue                  transfer_queue;
     VulkanQueue                  compute_queue;
     std::vector<FrameContext>    frame_resources_;
