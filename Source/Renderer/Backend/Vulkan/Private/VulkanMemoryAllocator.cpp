@@ -4,15 +4,15 @@
 
 #include "VulkanMemoryAllocator.h"
 
-VulkanDeviceMemoryAllocator::VulkanDeviceMemoryAllocator()
+VulkanMemoryAllocator::VulkanMemoryAllocator()
 {
 }
 
-VulkanDeviceMemoryAllocator::~VulkanDeviceMemoryAllocator()
+VulkanMemoryAllocator::~VulkanMemoryAllocator()
 {
 }
 
-void VulkanDeviceMemoryAllocator::init(VkPhysicalDevice physical_device)
+void VulkanMemoryAllocator::init(VkPhysicalDevice physical_device)
 {
     physical_device_ = physical_device;
     VkPhysicalDeviceMemoryProperties2 memory_properties_2{};
@@ -37,26 +37,34 @@ void VulkanDeviceMemoryAllocator::init(VkPhysicalDevice physical_device)
             }
         }
     }
+
+
 }
 
 void shutdown()
 {
 }
 
-void VulkanDeviceMemoryAllocator::alloc()
+VulkanDeviceAllocation VulkanMemoryAllocator::alloc()
 {
-    VkMemoryAllocateInfo memory_allocate_info{};
-    memory_allocate_info.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
-    memory_allocate_info.allocationSize;
-    memory_allocate_info.memoryTypeIndex;
 }
 
-void VulkanDeviceMemoryAllocator::free()
+void VulkanMemoryAllocator::free(VulkanDeviceAllocation device_allocation)
 {
 
 }
 
-void VulkanDeviceMemoryAllocator::realloc()
+void VulkanMemoryAllocator::realloc()
+{
+
+}
+
+void VulkanMemoryAllocator::shutdown()
+{
+
+}
+
+void VulkanMemoryAllocator::alloc_pooled(uint32 size)
 {
 
 }
