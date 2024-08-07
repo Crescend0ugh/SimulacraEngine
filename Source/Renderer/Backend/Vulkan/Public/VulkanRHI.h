@@ -4,7 +4,7 @@
 
 #pragma once
 
-
+//TODO purge this file of dirty std types
 // Include Vulkan and Core includes
 #include "../Core/Sys/Precompiled.h"
 #define VK_USE_PLATFORM_WIN32_KHR
@@ -208,26 +208,41 @@ protected:
 protected:
 
     VkInstance                   instance_;
+    //TODO consider encapsulating device information
     VkDevice                     logical_device_;
-    VkPhysicalDevice      physical_device_;
-    VulkanMemoryAllocator memory_allocator_;
-    VulkanQueue           graphics_queue;
+    VkPhysicalDevice             physical_device_;
+
+    //TODO need to figure how to properly initialize this
+    VulkanMemoryAllocator        memory_allocator_;
+
+    //TODO consider having these in an array and using enums to select desired queue type
+    VulkanQueue                  graphics_queue;
     VulkanQueue                  transfer_queue;
     VulkanQueue                  compute_queue;
+
     std::vector<FrameContext>    frame_resources_;
+    //TODO get rid of this later
     std::vector<VkCommandBuffer> command_buffers_;
+    //TODO get rid of this later
     VulkanViewport               viewport_;
+    //TODO get rid of this later
     VulkanPipeline               pipeline_;
+    //TODO get rid of this later
     VkRenderPass                 render_pass_;
+    //TODO get rid of this later
     VkShaderModule               vertex_shader_module_;
+    //TODO get rid of this later
     VkShaderModule               fragment_shader_module_;
-
+    //TODO make a better way to use instance extensions than just declaring an array of names
     std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME, VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME};
+    //TODO make this work...at all
     std::vector<const char*> instance_layers;
+    //TODO make a better way to use device extensions than just declaring an array of names
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_EXT_MEMORY_BUDGET_EXTENSION_NAME};
-
+    //TODO add a vector for device features
 };
 
+//TODO figure out a way to properly declare vertex types
 struct Vertex
 {
     Vector2F position_;

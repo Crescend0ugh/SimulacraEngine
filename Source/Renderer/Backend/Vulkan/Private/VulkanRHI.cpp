@@ -37,7 +37,8 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
         command_buffers_[i] = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics]);
     }
-    memory_allocator_.init(physical_device_);
+
+    memory_allocator_.init(physical_device_, logical_device_);
 }
 
 void VulkanRHI::shutdown()
