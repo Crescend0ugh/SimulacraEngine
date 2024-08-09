@@ -191,7 +191,10 @@ public:
     void create_shader_module();
 
     void test_record_command_buffers(VkCommandBuffer buffer, uint32 frame_index);
+    //TODO get rid of this later
     void test_draw_frame();
+    //TODO get rid of this later
+    void test_create_vertex_buffer();
 
 protected:
 
@@ -239,6 +242,10 @@ protected:
     std::vector<const char*> instance_layers;
     //TODO make a better way to use device extensions than just declaring an array of names
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_EXT_MEMORY_BUDGET_EXTENSION_NAME};
+    //TODO get rid of this later
+    VkBuffer vertex_buffer_;
+    //TODO get rid of this later
+    VkDeviceMemory vertex_buffer_memory_;
     //TODO add a vector for device features
 };
 
@@ -276,8 +283,7 @@ struct Vertex
 };
 //TODO get rid of this later
 const std::vector<Vertex> vertices = {
-        {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+        {{0.0f, -0.5f}, {1.0f, 1.0f, 1.0f}},
         {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
         {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
 };
-

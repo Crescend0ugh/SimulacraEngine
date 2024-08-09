@@ -39,6 +39,7 @@ void VulkanRHI::init(void* win_hand)
     }
 
     memory_allocator_.init(physical_device_, logical_device_);
+    test_create_vertex_buffer();
 }
 
 void VulkanRHI::shutdown()
@@ -849,6 +850,11 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     begin_command_buffer(buffer);
     command_begin_render_pass(buffer, render_pass_, frame_resources_[frame_index].framebuffer_, {viewport_.width_, viewport_.height_});
     vkCmdBindPipeline(buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline_.pipeline_);
+
+    VkBuffer vertex_buffers[] = {vertex_buffer_};
+    VkDeviceSize offsets[] = {0};
+    vkCmdBindVertexBuffers(buffer, 0, 1, vertex_buffers, offsets);
+
     VkViewport viewport{};
     viewport.x = 0.0f;
     viewport.y = 0.0f;
@@ -862,7 +868,7 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     scissor.offset = {0,0};
     scissor.extent = {viewport_.width_, viewport_.height_};
     vkCmdSetScissor(buffer, 0, 1, &scissor);
-    vkCmdDraw(buffer, 3, 1, 0 ,0);
+    vkCmdDraw(buffer, vertices.size(), 1, 0 ,0);
     vkCmdEndRenderPass(buffer);
     end_command_buffer(buffer);
 }
@@ -901,6 +907,28 @@ void VulkanRHI::test_draw_frame()
     present_info.pResults = nullptr;
     vkQueuePresentKHR(graphics_queue.queue_, &present_info);
     viewport_.frame_ = (viewport_.frame_ + 1) % frame_resources_.size();
+}
+
+void VulkanRHI::test_create_vertex_buffer()
+{
+    VkBufferCreateInfo buffer_create_info{};
+    buffer_create_info.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+    buffer_create_info.size = vertices.size()*sizeof(Vertex);
+    buffer_create_info.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
+
+    VK_ASSERT_SUCCESS(vkCreateBuffer(logical_device_, &buffer_create_info, nullptr, &vertex_buffer_))
+    VkMemoryRequirements memory_requirements;
+    vkGetBufferMemoryRequirements(logical_device_, vertex_buffer_, &memory_requirements);
+    uint32 type_index;
+    memory_allocator_.find_memory_type_index(VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, memory_requirements.memoryTypeBits, type_index);
+
+    vertex_buffer_memory_ = memory_allocator_.alloc(type_index, memory_requirements.size);
+    vkBindBufferMemory(logical_device_, vertex_buffer_, vertex_buffer_memory_, 0);
+    void* data;
+    vkMapMemory(logical_device_, vertex_buffer_memory_, 0, buffer_create_info.size, 0, &data);
+    memcpy(data, vertices.data(), buffer_create_info.size);
+    vkUnmapMemory(logical_device_, vertex_buffer_memory_);
+
 }
 
 
