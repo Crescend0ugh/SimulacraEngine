@@ -169,7 +169,8 @@ public:
     void command_draw_indirect();
     void command_draw_indexed_indirect();
 
-    void create_buffer();
+    VkBuffer create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags,
+                           VkDeviceMemory &memory);
     void release_buffer();
 
     void* buffer_map();
@@ -283,7 +284,7 @@ struct Vertex
 };
 //TODO get rid of this later
 const std::vector<Vertex> vertices = {
-        {{0.0f, -0.5f}, {1.0f, 1.0f, 1.0f}},
+        {{0.0f, -0.5f}, {1.0f, 1.0f, 0.0f}},
         {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
         {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
 };

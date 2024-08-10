@@ -35,7 +35,12 @@ void VulkanMemoryAllocator::init(VkPhysicalDevice physical_device, VkDevice devi
             }
         }
     }
+    uint32 memory_type_bits = ~(~0<<memory_properties_.memoryTypeCount);
 
+    uint32 upload_type_index;
+    find_memory_type_index(VK_MEMORY_PROPERTY_HOST_COHERENT_BIT|VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, memory_type_bits, upload_type_index);
+    uint32 device_local_index;
+    find_memory_type_index(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, memory_type_bits, device_local_index);
 
 }
 

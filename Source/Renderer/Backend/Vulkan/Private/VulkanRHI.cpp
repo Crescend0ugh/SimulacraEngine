@@ -723,8 +723,26 @@ void VulkanRHI::command_draw_indexed_indirect()
 //    vkCmdDrawIndexedIndirect()
 }
 
-void VulkanRHI::create_buffer()
+VkBuffer VulkanRHI::create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags,
+                                  VkDeviceMemory &memory)
 {
+    VkBufferCreateInfo buffer_create_info{};
+    buffer_create_info.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+    buffer_create_info.size = size;
+    buffer_create_info.usage = usage_flags;
+
+    VkBuffer buffer;
+
+    VK_ASSERT_SUCCESS(vkCreateBuffer(logical_device_, &buffer_create_info, nullptr, &buffer))
+
+    VkMemoryRequirements memory_requirements;
+    vkGetBufferMemoryRequirements(logical_device_, buffer, &memory_requirements);
+
+    uint32 memory_type_index;
+    memory_allocator_.find_memory_type_index(property_flags, memory_requirements.memoryTypeBits, memory_type_index);
+
+    memory = memory_allocator_.alloc(memory_type_index, memory_requirements.size);
+    return buffer;
 }
 
 void VulkanRHI::release_buffer()
@@ -911,22 +929,13 @@ void VulkanRHI::test_draw_frame()
 
 void VulkanRHI::test_create_vertex_buffer()
 {
-    VkBufferCreateInfo buffer_create_info{};
-    buffer_create_info.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
-    buffer_create_info.size = vertices.size()*sizeof(Vertex);
-    buffer_create_info.usage = VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
 
-    VK_ASSERT_SUCCESS(vkCreateBuffer(logical_device_, &buffer_create_info, nullptr, &vertex_buffer_))
-    VkMemoryRequirements memory_requirements;
-    vkGetBufferMemoryRequirements(logical_device_, vertex_buffer_, &memory_requirements);
-    uint32 type_index;
-    memory_allocator_.find_memory_type_index(VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, memory_requirements.memoryTypeBits, type_index);
-
-    vertex_buffer_memory_ = memory_allocator_.alloc(type_index, memory_requirements.size);
+    uint32 size = vertices.size()*sizeof(Vertex);
+    vertex_buffer_ = create_buffer(size, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, vertex_buffer_memory_);
     vkBindBufferMemory(logical_device_, vertex_buffer_, vertex_buffer_memory_, 0);
     void* data;
-    vkMapMemory(logical_device_, vertex_buffer_memory_, 0, buffer_create_info.size, 0, &data);
-    memcpy(data, vertices.data(), buffer_create_info.size);
+    vkMapMemory(logical_device_, vertex_buffer_memory_, 0, size, 0, &data);
+    memcpy(data, vertices.data(), size);
     vkUnmapMemory(logical_device_, vertex_buffer_memory_);
 
 }
