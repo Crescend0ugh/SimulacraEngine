@@ -760,9 +760,14 @@ void VulkanRHI::buffer_unmap()
 //    vkUnmapMemory()
 }
 
-void VulkanRHI::command_copy_buffer()
+void VulkanRHI::command_copy_buffer(VkCommandBuffer command_buffer, VkBuffer src, VkBuffer dst, VkDeviceSize size)
 {
-//    vkCmdCopyBuffer()
+    
+    VkBufferCopy buffer_copy;
+    buffer_copy.srcOffset = 0;
+    buffer_copy.dstOffset = 0;
+    buffer_copy.size = size;
+    vkCmdCopyBuffer(command_buffer, src, dst, 1, &buffer_copy);
 }
 
 void VulkanRHI::command_copy_image()
@@ -930,13 +935,21 @@ void VulkanRHI::test_draw_frame()
 void VulkanRHI::test_create_vertex_buffer()
 {
 
-    uint32 size = vertices.size()*sizeof(Vertex);
-    vertex_buffer_ = create_buffer(size, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT, vertex_buffer_memory_);
-    vkBindBufferMemory(logical_device_, vertex_buffer_, vertex_buffer_memory_, 0);
+    uint32 size = vertices.size() * sizeof(Vertex);
+    VkDeviceMemory staging_buffer_memory;
+    VkBuffer staging_buffer = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+                                   VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
+                                   staging_buffer_memory);
+
+    vkBindBufferMemory(logical_device_, staging_buffer, staging_buffer_memory, 0);
     void* data;
-    vkMapMemory(logical_device_, vertex_buffer_memory_, 0, size, 0, &data);
+    vkMapMemory(logical_device_, staging_buffer_memory, 0, size, 0, &data);
     memcpy(data, vertices.data(), size);
-    vkUnmapMemory(logical_device_, vertex_buffer_memory_);
+    vkUnmapMemory(logical_device_, staging_buffer_memory);
+
+    vertex_buffer_ = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+                  VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, vertex_buffer_memory_);
+    vkBindBufferMemory(logical_device_, vertex_buffer_, vertex_buffer_memory_, 0);
 
 }
 

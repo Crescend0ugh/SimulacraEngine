@@ -176,7 +176,7 @@ public:
     void* buffer_map();
     void  buffer_unmap();
 
-    void command_copy_buffer();
+    void command_copy_buffer(VkCommandBuffer command_buffer, VkBuffer src, VkBuffer dst, VkDeviceSize size);
     void command_copy_image();
     void command_copy_buffer_to_image();
     void command_copy_image_to_buffer();
