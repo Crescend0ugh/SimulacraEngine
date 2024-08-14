@@ -126,7 +126,11 @@ public:
     void shutdown();
 
     void create_queue(uint32 queue_family_index, uint32 queue_index);
-    void submit_to_queue();
+    //TODO get rid of the std::vector params as they alloc memory which is unnecessary
+    void submit_to_queue(VulkanQueue queue, const std::vector<VkSemaphore> &wait_semaphores,
+                         const std::vector<VkSemaphore> &signal_semaphores,
+                         const std::vector<VkPipelineStageFlags> &wait_dst_stage_mask,
+                         const std::vector<VkCommandBuffer> &command_buffers, VkFence fence = VK_NULL_HANDLE);
 
     void   create_swapchain(VkSurfaceKHR surface, uint32 &width, uint32 &height, VkSwapchainKHR old_swapchain);
     void   recreate_swapchain();
@@ -159,8 +163,9 @@ public:
     void          reset_command_pool(VkCommandPool command_pool);
     void          free_command_pool(VkCommandPool &command_pool);
 
-    VkCommandBuffer create_command_buffer(VkCommandPool command_pool);
-    void            begin_command_buffer(VkCommandBuffer command_buffer);
+    VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
+    void free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
+    void begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
 
@@ -196,6 +201,9 @@ public:
     void test_draw_frame();
     //TODO get rid of this later
     void test_create_vertex_buffer();
+    //TODO get rid of this later
+    void test_create_index_buffer();
+
 
 protected:
 
@@ -246,6 +254,10 @@ protected:
     //TODO get rid of this later
     VkBuffer vertex_buffer_;
     //TODO get rid of this later
+    VkBuffer index_buffer_;
+    //TODO get rid of this later
+     VkDeviceMemory index_buffer_memory_;
+    //TODO get rid of this later
     VkDeviceMemory vertex_buffer_memory_;
     //TODO add a vector for device features
 };
@@ -284,7 +296,12 @@ struct Vertex
 };
 //TODO get rid of this later
 const std::vector<Vertex> vertices = {
-        {{0.0f, -0.5f}, {1.0f, 1.0f, 0.0f}},
-        {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
-        {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
+        {{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+        {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
+        {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
+        {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}
+};
+//TODO get rid of this later
+const std::vector<uint16_t> indices = {
+        0, 1, 2, 2, 3, 0
 };
