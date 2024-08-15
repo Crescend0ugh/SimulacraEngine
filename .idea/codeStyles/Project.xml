@@ -47,6 +47,9 @@
         <rule entity="LOCAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="" style="SNAKE_CASE" suffix="" />
       </rules>
     </Objective-C-extensions>
+    <codeStyleSettings language="Glsl">
+      <option name="SPACE_BEFORE_COLON" value="false" />
+    </codeStyleSettings>
     <codeStyleSettings language="ObjectiveC">
       <option name="CLASS_BRACE_STYLE" value="2" />
       <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />

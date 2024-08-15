@@ -12,7 +12,8 @@
 #include "VulkanMemoryAllocator.h"
 
 #define VK_ASSERT_SUCCESS(statement) \
-{VkResult result = statement;  \
+{                                    \
+VkResult result = statement;  \
 if(result == VK_SUCCESS)     \
 {                            \
 }                            \
@@ -20,7 +21,8 @@ if(result == VK_SUCCESS)     \
 else                         \
 {                            \
     std::cout << #statement << " failed\n";   \
-}}\
+}                                    \
+}\
 
 
 struct VulkanQueue
@@ -41,12 +43,11 @@ struct VulkanSwapchain
 
 struct VulkanViewport
 {
-    VkSurfaceKHR surface_;
+    VkSurfaceKHR    surface_;
     VulkanSwapchain swapchain_;
-    void*        window_handle;
-    uint32       width_;
-    uint32       height_;
-    uint32      frame_;
+    void*           window_handle;
+    uint32          width_;
+    uint32          height_;
 };
 
 struct VulkanPipeline
@@ -83,6 +84,13 @@ struct VulkanGraphicsPipelineDescription
 
 };
 
+struct VulkanBuffer
+{
+    VkBuffer       buffer_;
+    VkDeviceMemory memory_;
+    uint32         size_;
+};
+
 struct FrameContext
 {
     std::vector<VkCommandPool> command_pools_;
@@ -90,6 +98,9 @@ struct FrameContext
     VkSemaphore                image_acquired_semaphore_;
     VkSemaphore                image_rendered_semaphore_;
     VkFence                    in_flight_fence_;
+    VkCommandBuffer            command_buffer_;
+    VulkanBuffer               uniform_buffer_;
+    void*                      uniformed_buffer_mapped_;
 };
 
 enum QueueIndex
@@ -121,7 +132,7 @@ class VulkanRHI
 {
 
 public:
-    
+
     void init(void* win_hand);
     void shutdown();
 
@@ -136,7 +147,8 @@ public:
     void   recreate_swapchain();
     void   release_swapchain(VulkanSwapchain &swapchain);
     uint32 acquire_next_image_from_swapchain(VkSwapchainKHR swapchain);
-    void   present_image(VkSwapchainKHR swapchain);
+    void present_image(VkSwapchainKHR swapchain, uint32 image_index, VkSemaphore* wait_semaphores,
+                       uint32 wait_semaphore_count);
 
     void create_viewport(void* window_handle);
     void release_viewport(uint32 viewport_index);
@@ -178,7 +190,7 @@ public:
                            VkDeviceMemory &memory);
     void release_buffer();
 
-    void* buffer_map();
+    void* buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags);
     void  buffer_unmap();
 
     void command_copy_buffer(VkCommandBuffer command_buffer, VkBuffer src, VkBuffer dst, VkDeviceSize size);
@@ -232,11 +244,12 @@ protected:
     VulkanQueue                  transfer_queue;
     VulkanQueue                  compute_queue;
 
+    uint32                       frame_ = 0;
     std::vector<FrameContext>    frame_resources_;
     //TODO get rid of this later
-    std::vector<VkCommandBuffer> command_buffers_;
-    //TODO get rid of this later
     VulkanViewport               viewport_;
+    //TODO get rid of this later
+     VkDescriptorSetLayout       descriptor_set_layout;
     //TODO get rid of this later
     VulkanPipeline               pipeline_;
     //TODO get rid of this later
@@ -252,14 +265,32 @@ protected:
     //TODO make a better way to use device extensions than just declaring an array of names
     std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_EXT_MEMORY_BUDGET_EXTENSION_NAME};
     //TODO get rid of this later
-    VkBuffer vertex_buffer_;
+    VulkanBuffer vertex_buffer_;
     //TODO get rid of this later
-    VkBuffer index_buffer_;
-    //TODO get rid of this later
-     VkDeviceMemory index_buffer_memory_;
-    //TODO get rid of this later
-    VkDeviceMemory vertex_buffer_memory_;
+    VulkanBuffer index_buffer_;
+
     //TODO add a vector for device features
+
+
+    void create_descriptor_set_layout()
+    {
+        VkDescriptorSetLayoutBinding descriptor_set_layout_binding{};
+        descriptor_set_layout_binding.binding = 0;
+        descriptor_set_layout_binding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptor_set_layout_binding.descriptorCount = 1;
+        descriptor_set_layout_binding.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
+        descriptor_set_layout_binding.pImmutableSamplers = nullptr;
+
+        VkDescriptorSetLayoutCreateInfo descriptor_set_layout_create_info{};
+        descriptor_set_layout_create_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+        descriptor_set_layout_create_info.bindingCount = 1;
+        descriptor_set_layout_create_info.pBindings = &descriptor_set_layout_binding;
+
+        VK_ASSERT_SUCCESS(vkCreateDescriptorSetLayout(logical_device_, &descriptor_set_layout_create_info, nullptr, &descriptor_set_layout))
+
+    }
+
+
 };
 
 //TODO figure out a way to properly declare vertex types
@@ -305,3 +336,11 @@ const std::vector<Vertex> vertices = {
 const std::vector<uint16_t> indices = {
         0, 1, 2, 2, 3, 0
 };
+
+struct UniformBufferObject
+{
+    Matrix4F model;
+    Matrix4F view;
+    Matrix4F projection;
+};
+

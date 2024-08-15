@@ -75,3 +75,9 @@
 7	1296	7452932514243270	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.obj	d8a7ecdeafe90239
 1297	1351	7452932527149000	SimulacraLibrary.lib	c97b9176ac8accee
 1351	1521	7452932527688780	SimulacraEngine.exe	3c1c5c25127e1016
+32	582	7453669625487054	CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.obj	90168e27168a05a3
+20	1158	7453669625364750	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp.obj	9262b1d98171bcaa
+26	1216	7453669625428654	CMakeFiles/SimulacraEngine.dir/Source/Core/Launcher/Win_Main.cpp.obj	6606f039333fb66b
+13	1515	7453669625294690	CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.obj	d8a7ecdeafe90239
+1516	1616	7453669640313252	SimulacraLibrary.lib	c97b9176ac8accee
+1616	1837	7453669641313466	SimulacraEngine.exe	3c1c5c25127e1016

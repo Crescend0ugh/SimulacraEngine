@@ -13,14 +13,15 @@ void VulkanRHI::init(void* win_hand)
     create_instance();
     select_physical_device();
     create_device();
+    memory_allocator_.init(physical_device_, logical_device_);
     create_viewport(win_hand);
     create_shader_module();
     create_render_pass(&render_pass_);
     VulkanGraphicsPipelineDescription description;
     description.vertex_input_binding_descriptions_.push_back(Vertex::get_binding_description());
     description.vertex_input_attributes_descriptions_ = Vertex::get_attribute_descriptions();
+    create_descriptor_set_layout();
     create_pipeline(description);
-    command_buffers_.resize(frame_resources_.size());
     for (int i = 0; i < frame_resources_.size(); i++) {
         FrameContext& frame_resource = frame_resources_[i];
         std::vector<VkImageView> image_view = {viewport_.swapchain_.image_views_[i]};
@@ -35,11 +36,17 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.in_flight_fence_          = create_fence(true);
         frame_resource.command_pools_.resize(QueueIndex::Max);
         frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
-        command_buffers_[i] = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics],
-                                                    VK_COMMAND_BUFFER_LEVEL_PRIMARY);
+        frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics],
+                                                               VK_COMMAND_BUFFER_LEVEL_PRIMARY);
+        frame_resource.uniform_buffer_.buffer_ = create_buffer(sizeof(UniformBufferObject),
+                                                               VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
+                                                               VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT |
+                                                               VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
+                                                               frame_resource.uniform_buffer_.memory_);
+        frame_resource.uniformed_buffer_mapped_ = buffer_map(frame_resource.uniform_buffer_, 0,
+                                                             sizeof(UniformBufferObject), 0);
     }
 
-    memory_allocator_.init(physical_device_, logical_device_);
     test_create_vertex_buffer();
     test_create_index_buffer();
 }
@@ -364,15 +371,24 @@ uint32 VulkanRHI::acquire_next_image_from_swapchain(VkSwapchainKHR swapchain)
 {
     //TODO fill out with reference to this frames semaphore and frame index to be updates
     uint32 image_index;
-    VkResult result = vkAcquireNextImageKHR(logical_device_, swapchain, UINT64_MAX, frame_resources_[viewport_.frame_].image_acquired_semaphore_, nullptr, &image_index);
+    VK_ASSERT_SUCCESS(vkAcquireNextImageKHR(logical_device_, swapchain, UINT64_MAX, frame_resources_[frame_].image_acquired_semaphore_, nullptr, &image_index));
 
     return image_index;
 }
 
-void VulkanRHI::present_image(VkSwapchainKHR swapchain)
+void
+VulkanRHI::present_image(VkSwapchainKHR swapchain, uint32 image_index, VkSemaphore* wait_semaphores,
+                         uint32 wait_semaphore_count)
 {
     VkPresentInfoKHR present_info{};
     present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+    present_info.waitSemaphoreCount = wait_semaphore_count;
+    present_info.pWaitSemaphores = wait_semaphores;
+    present_info.pSwapchains = &swapchain;
+    present_info.swapchainCount = 1;
+    present_info.pImageIndices = &image_index;
+    present_info.pResults = VK_NULL_HANDLE;
+    VK_ASSERT_SUCCESS(vkQueuePresentKHR(graphics_queue.queue_, &present_info))
 }
 
 void VulkanRHI::create_viewport(void* window_handle)
@@ -771,10 +787,11 @@ void VulkanRHI::release_buffer()
 {
 }
 
-void* VulkanRHI::buffer_map()
+void* VulkanRHI::buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags)
 {
-//    vkMapMemory()
-    return nullptr;
+    void* data;
+    VK_ASSERT_SUCCESS(vkMapMemory(logical_device_, buffer.memory_, offset, size, memory_map_flags, &data))
+    return data;
 }
 
 void VulkanRHI::buffer_unmap()
@@ -898,10 +915,10 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     command_begin_render_pass(buffer, render_pass_, frame_resources_[frame_index].framebuffer_, {viewport_.width_, viewport_.height_});
     vkCmdBindPipeline(buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline_.pipeline_);
 
-    VkBuffer vertex_buffers[] = {vertex_buffer_};
+    VkBuffer vertex_buffers[] = {vertex_buffer_.buffer_};
     VkDeviceSize offsets[] = {0};
     vkCmdBindVertexBuffers(buffer, 0, 1, vertex_buffers, offsets);
-    vkCmdBindIndexBuffer(buffer, index_buffer_, 0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindIndexBuffer(buffer, index_buffer_.buffer_, 0, VK_INDEX_TYPE_UINT16);
 
     VkViewport viewport{};
     viewport.x = 0.0f;
@@ -924,66 +941,53 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
 
 void VulkanRHI::test_draw_frame()
 {
-    FrameContext& current_frame_context = frame_resources_[viewport_.frame_];
+    FrameContext& current_frame_context = frame_resources_[frame_];
     vkWaitForFences(logical_device_, 1, &current_frame_context.in_flight_fence_, VK_TRUE, UINT64_MAX);
     vkResetFences(logical_device_, 1, &current_frame_context.in_flight_fence_);
     uint32 image_index = acquire_next_image_from_swapchain(viewport_.swapchain_.vk_swapchain_);
-    vkResetCommandBuffer(command_buffers_[viewport_.frame_], 0);
-    test_record_command_buffers(command_buffers_[viewport_.frame_], viewport_.frame_);
-    VkSubmitInfo submit_info{};
-    submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
-
-
+    vkResetCommandBuffer(current_frame_context.command_buffer_, 0);
+    test_record_command_buffers(current_frame_context.command_buffer_, frame_);
     submit_to_queue(graphics_queue,
                     {current_frame_context.image_acquired_semaphore_},
                     {current_frame_context.image_rendered_semaphore_},
                     {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT},
-                    {command_buffers_[viewport_.frame_]},
+                    {current_frame_context.command_buffer_},
                     current_frame_context.in_flight_fence_);
 
-    VkPresentInfoKHR present_info{};
-    present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
-    present_info.waitSemaphoreCount = 1;
-    present_info.pWaitSemaphores = &current_frame_context.image_rendered_semaphore_;
-    VkSwapchainKHR swapchains[] = {viewport_.swapchain_.vk_swapchain_};
-    present_info.swapchainCount = 1;
-    present_info.pSwapchains = swapchains;
-    present_info.pImageIndices = &image_index;
-    present_info.pResults = nullptr;
-    vkQueuePresentKHR(graphics_queue.queue_, &present_info);
-    viewport_.frame_ = (viewport_.frame_ + 1) % frame_resources_.size();
+    present_image(viewport_.swapchain_.vk_swapchain_, image_index, &current_frame_context.image_rendered_semaphore_, 1);
+    frame_ = (frame_ + 1) % frame_resources_.size();
 }
 
 void VulkanRHI::test_create_vertex_buffer()
 {
 
     uint32 size = vertices.size() * sizeof(Vertex);
-    VkDeviceMemory staging_buffer_memory;
-    VkBuffer staging_buffer = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+    VulkanBuffer staging_buffer{};
+    staging_buffer.buffer_ = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                                    VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
-                                   staging_buffer_memory);
+                                   staging_buffer.memory_);
 
     void* data;
-    vkMapMemory(logical_device_, staging_buffer_memory, 0, size, 0, &data);
+    vkMapMemory(logical_device_, staging_buffer.memory_, 0, size, 0, &data);
     memcpy(data, vertices.data(), size);
-    vkUnmapMemory(logical_device_, staging_buffer_memory);
+    vkUnmapMemory(logical_device_, staging_buffer.memory_);
 
-    vertex_buffer_ = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
-                  VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, vertex_buffer_memory_);
+    vertex_buffer_.buffer_ = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+                  VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, vertex_buffer_.memory_);
 
     VkCommandBuffer copy_command_buffer =
-            create_command_buffer(frame_resources_[viewport_.frame_].command_pools_[QueueIndex::Graphics]);
+            create_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics]);
 
     begin_command_buffer(copy_command_buffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
-    command_copy_buffer(copy_command_buffer, staging_buffer, vertex_buffer_, size);
+    command_copy_buffer(copy_command_buffer, staging_buffer.buffer_, vertex_buffer_.buffer_, size);
     end_command_buffer(copy_command_buffer);
 
     submit_to_queue(graphics_queue, {}, {}, {}, {copy_command_buffer});
     vkQueueWaitIdle(graphics_queue.queue_);
 
-    free_command_buffer(frame_resources_[viewport_.frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
-    vkDestroyBuffer(logical_device_, staging_buffer, nullptr);
-    vkFreeMemory(logical_device_, staging_buffer_memory, nullptr);
+    free_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
+    vkDestroyBuffer(logical_device_, staging_buffer.buffer_, nullptr);
+    vkFreeMemory(logical_device_, staging_buffer.memory_, nullptr);
 }
 
 void VulkanRHI::test_create_index_buffer()
@@ -999,19 +1003,19 @@ void VulkanRHI::test_create_index_buffer()
     memcpy(data, indices.data(), size);
     vkUnmapMemory(logical_device_, staging_buffer_memory);
 
-    index_buffer_ = create_buffer(size, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
-                                  VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, index_buffer_memory_);
+    index_buffer_.buffer_ = create_buffer(size, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+                                  VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, index_buffer_.memory_);
     VkCommandBuffer copy_command_buffer =
-            create_command_buffer(frame_resources_[viewport_.frame_].command_pools_[QueueIndex::Graphics]);
+            create_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics]);
 
     begin_command_buffer(copy_command_buffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
-    command_copy_buffer(copy_command_buffer, staging_buffer, index_buffer_, size);
+    command_copy_buffer(copy_command_buffer, staging_buffer, index_buffer_.buffer_, size);
     end_command_buffer(copy_command_buffer);
 
     submit_to_queue(graphics_queue, {}, {}, {}, {copy_command_buffer});
     vkQueueWaitIdle(graphics_queue.queue_);
 
-    free_command_buffer(frame_resources_[viewport_.frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
+    free_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
     vkDestroyBuffer(logical_device_, staging_buffer, nullptr);
     vkFreeMemory(logical_device_, staging_buffer_memory, nullptr);
 

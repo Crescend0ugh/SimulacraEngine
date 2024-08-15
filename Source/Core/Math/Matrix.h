@@ -12,8 +12,7 @@ namespace Math
         T matrix_[16];
     };
 
-using Matrix4F = Matrix4<float>;
-using Matrix4D = Matrix4<double>;
 
 }
-
+using Matrix4F = Math::Matrix4<float>;
+using Matrix4D = Math::Matrix4<double>;
