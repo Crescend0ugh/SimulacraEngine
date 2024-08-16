@@ -290,6 +290,7 @@ protected:
 
     }
 
+    void update_uniform_buffer(uint32 current_frame_index);
 
 };
 

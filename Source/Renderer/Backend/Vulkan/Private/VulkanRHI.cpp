@@ -3,11 +3,12 @@
 //
 
 #include <set>
-#include <vulkan/vulkan_core.h>
 #include <fstream>
 #include "VulkanRHI.h"
 #include "../../../../Core/Platform/SimulacraWindowsWindow.h"
 #include "Math/Vector.h"
+#include <chrono>
+
 void VulkanRHI::init(void* win_hand)
 {
     create_instance();
@@ -1019,6 +1020,19 @@ void VulkanRHI::test_create_index_buffer()
     vkDestroyBuffer(logical_device_, staging_buffer, nullptr);
     vkFreeMemory(logical_device_, staging_buffer_memory, nullptr);
 
+}
+
+void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
+{
+    static std::chrono::time_point start_time = std::chrono::high_resolution_clock::now();
+
+    std::chrono::time_point current_time = std::chrono::high_resolution_clock::now();
+    float elapsed_time = std::chrono::duration<float, std::chrono::seconds::period>(current_time-start_time).count();
+
+    UniformBufferObject ubo{};
+    ubo.model      = Matrix4F::rotate(Matrix4F::identity(), elapsed_time*90.0f*3.14f/180.0f, Vector3F(0.0f, 0.0f, 1.0f));
+//    ubo.view       = Matrix4F::make_look_at(Vector3F(2.0f, 2.0f, 2.0f), );
+    ubo.projection = Matrix4F::make_perspective();
 }
 
 

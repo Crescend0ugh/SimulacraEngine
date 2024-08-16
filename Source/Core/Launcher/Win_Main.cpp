@@ -51,7 +51,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     vk_renderer.init(test.hwnd_);
 
     MSG msg;
-    
+
 
     while(!Simulacra::windows::should_exit)
     {
