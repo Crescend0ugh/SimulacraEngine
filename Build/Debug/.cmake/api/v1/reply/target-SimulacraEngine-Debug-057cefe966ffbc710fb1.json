@@ -37,7 +37,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 44,
 				"parent" : 0
 			},
 			{
@@ -61,7 +61,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 25,
+				"line" : 36,
 				"parent" : 0
 			}
 		]
@@ -95,6 +95,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-src/glm/.."
 				},
 				{
 					"backtrace" : 2,

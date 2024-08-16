@@ -10,3 +10,7 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CM
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CMakeFiles/rebuild_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/rebuild_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build/CMakeFiles/edit_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build/CMakeFiles/rebuild_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build/glm/CMakeFiles/edit_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build/glm/CMakeFiles/rebuild_cache.dir

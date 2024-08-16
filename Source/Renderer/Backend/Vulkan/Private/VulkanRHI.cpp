@@ -21,8 +21,6 @@ void VulkanRHI::init(void* win_hand)
     VulkanGraphicsPipelineDescription description;
     description.vertex_input_binding_descriptions_.push_back(Vertex::get_binding_description());
     description.vertex_input_attributes_descriptions_ = Vertex::get_attribute_descriptions();
-    create_descriptor_set_layout();
-    create_pipeline(description);
     for (int i = 0; i < frame_resources_.size(); i++) {
         FrameContext& frame_resource = frame_resources_[i];
         std::vector<VkImageView> image_view = {viewport_.swapchain_.image_views_[i]};
@@ -39,6 +37,12 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
         frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics],
                                                                VK_COMMAND_BUFFER_LEVEL_PRIMARY);
+
+    }
+
+    test_create_vertex_buffer();
+    test_create_index_buffer();
+    for (auto & frame_resource : frame_resources_) {
         frame_resource.uniform_buffer_.buffer_ = create_buffer(sizeof(UniformBufferObject),
                                                                VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
                                                                VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT |
@@ -48,8 +52,10 @@ void VulkanRHI::init(void* win_hand)
                                                              sizeof(UniformBufferObject), 0);
     }
 
-    test_create_vertex_buffer();
-    test_create_index_buffer();
+    create_descriptor_set_layout();
+    create_descriptor_pool();
+    create_descriptor_sets();
+    create_pipeline(description);
 }
 
 void VulkanRHI::shutdown()
@@ -523,8 +529,8 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
 
     VkPipelineLayoutCreateInfo pipeline_layout_create_info{};
     pipeline_layout_create_info.sType                  = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-    pipeline_layout_create_info.setLayoutCount         = 0;
-    pipeline_layout_create_info.pSetLayouts            = nullptr;
+    pipeline_layout_create_info.setLayoutCount         = 1;
+    pipeline_layout_create_info.pSetLayouts            = &descriptor_set_layout;
     pipeline_layout_create_info.pushConstantRangeCount = 0;
     pipeline_layout_create_info.pPushConstantRanges    = nullptr;
 
@@ -934,6 +940,8 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     scissor.offset = {0,0};
     scissor.extent = {viewport_.width_, viewport_.height_};
     vkCmdSetScissor(buffer, 0, 1, &scissor);
+    vkCmdBindDescriptorSets(buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline_.pipeline_layout_, 0, 1, &descriptor_sets[frame_index], 0,
+                            nullptr);
     vkCmdDrawIndexed(buffer, static_cast<uint32_t>(indices.size()), 1, 0, 0, 0);
     vkCmdEndRenderPass(buffer);
     end_command_buffer(buffer);
@@ -948,6 +956,7 @@ void VulkanRHI::test_draw_frame()
     uint32 image_index = acquire_next_image_from_swapchain(viewport_.swapchain_.vk_swapchain_);
     vkResetCommandBuffer(current_frame_context.command_buffer_, 0);
     test_record_command_buffers(current_frame_context.command_buffer_, frame_);
+    update_uniform_buffer(frame_);
     submit_to_queue(graphics_queue,
                     {current_frame_context.image_acquired_semaphore_},
                     {current_frame_context.image_rendered_semaphore_},
@@ -1030,9 +1039,54 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     float elapsed_time = std::chrono::duration<float, std::chrono::seconds::period>(current_time-start_time).count();
 
     UniformBufferObject ubo{};
-    ubo.model      = Matrix4F::rotate(Matrix4F::identity(), elapsed_time*90.0f*3.14f/180.0f, Vector3F(0.0f, 0.0f, 1.0f));
-//    ubo.view       = Matrix4F::make_look_at(Vector3F(2.0f, 2.0f, 2.0f), );
-    ubo.projection = Matrix4F::make_perspective();
+    ubo.model =       glm::rotate(glm::mat4(1.0f), elapsed_time * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    ubo.view =        glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
+    ubo.projection =  glm::perspective(glm::radians(45.0f), viewport_.width_ / (float) viewport_.height_, 0.1f, 10.0f);
+    memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
+}
+
+void VulkanRHI::create_descriptor_pool()
+{
+    VkDescriptorPoolSize descriptor_pool_size{};
+    descriptor_pool_size.type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+    descriptor_pool_size.descriptorCount = frame_resources_.size();
+    VkDescriptorPoolCreateInfo descriptor_pool_create_info{};
+    descriptor_pool_create_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+    descriptor_pool_create_info.poolSizeCount = 1;
+    descriptor_pool_create_info.pPoolSizes = &descriptor_pool_size;
+    descriptor_pool_create_info.maxSets = frame_resources_.size();
+    VK_ASSERT_SUCCESS(vkCreateDescriptorPool(logical_device_, &descriptor_pool_create_info, nullptr, &descriptor_pool));
+
+}
+
+void VulkanRHI::create_descriptor_sets()
+{
+    std::vector<VkDescriptorSetLayout> layouts(frame_resources_.size(), descriptor_set_layout);
+    VkDescriptorSetAllocateInfo descriptor_set_allocate_info{};
+    descriptor_set_allocate_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+    descriptor_set_allocate_info.descriptorPool = descriptor_pool;
+    descriptor_set_allocate_info.descriptorSetCount = frame_resources_.size();
+    descriptor_set_allocate_info.pSetLayouts = layouts.data();
+    descriptor_sets.resize(frame_resources_.size());
+    VK_ASSERT_SUCCESS(vkAllocateDescriptorSets(logical_device_, &descriptor_set_allocate_info, descriptor_sets.data()))
+
+    for(uint32 i = 0; i < frame_resources_.size(); i++)
+    {
+        VkDescriptorBufferInfo buffer_info{};
+        buffer_info.buffer = frame_resources_[i].uniform_buffer_.buffer_;
+        buffer_info.offset = 0;
+        buffer_info.range = sizeof(UniformBufferObject);
+
+        VkWriteDescriptorSet descriptor_write{};
+        descriptor_write.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptor_write.dstSet = descriptor_sets[i];
+        descriptor_write.dstBinding = 0;
+        descriptor_write.dstArrayElement = 0;
+        descriptor_write.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        descriptor_write.descriptorCount = 1;
+        descriptor_write.pBufferInfo = &buffer_info;
+        vkUpdateDescriptorSets(logical_device_, 1, &descriptor_write, 0, nullptr);
+    }
 }
 
 

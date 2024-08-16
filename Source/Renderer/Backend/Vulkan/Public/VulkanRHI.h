@@ -10,6 +10,9 @@
 #define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
 #include "VulkanMemoryAllocator.h"
+#include <glm/mat4x4.hpp> // glm::mat4
+#include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
+#include <glm/ext/matrix_clip_space.hpp>
 
 #define VK_ASSERT_SUCCESS(statement) \
 {                                    \
@@ -250,6 +253,8 @@ protected:
     VulkanViewport               viewport_;
     //TODO get rid of this later
      VkDescriptorSetLayout       descriptor_set_layout;
+     //TODO get rid of this later
+     VkDescriptorPool            descriptor_pool;
     //TODO get rid of this later
     VulkanPipeline               pipeline_;
     //TODO get rid of this later
@@ -267,7 +272,9 @@ protected:
     //TODO get rid of this later
     VulkanBuffer vertex_buffer_;
     //TODO get rid of this later
-    VulkanBuffer index_buffer_;
+    VulkanBuffer                 index_buffer_;
+    //TODO get rid of this later
+    std::vector<VkDescriptorSet> descriptor_sets;
 
     //TODO add a vector for device features
 
@@ -290,7 +297,11 @@ protected:
 
     }
 
+    //TODO get rid of this later
     void update_uniform_buffer(uint32 current_frame_index);
+    void create_descriptor_pool();
+    void create_descriptor_sets();
+
 
 };
 
@@ -340,8 +351,8 @@ const std::vector<uint16_t> indices = {
 
 struct UniformBufferObject
 {
-    Matrix4F model;
-    Matrix4F view;
-    Matrix4F projection;
+    glm::mat4 model;
+    glm::mat4 view;
+    glm::mat4 projection;
 };
 

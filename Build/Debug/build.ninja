@@ -106,7 +106,7 @@ build cmake_object_order_depends_target_SimulacraEngine: phony || cmake_object_o
 build CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Debug C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Launcher\Win_Main.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_DEBUG=1
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
-  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
+  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -IC:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-src\glm\.. -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher
   TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
@@ -115,7 +115,7 @@ build CMakeFiles\SimulacraEngine.dir\Source\Core\Launcher\Win_Main.cpp.obj: CXX_
 build CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Debug C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Private\VulkanMemoryAllocator.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_DEBUG=1
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
-  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
+  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -IC:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-src\glm\.. -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private
   TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
@@ -124,7 +124,7 @@ build CMakeFiles\SimulacraEngine.dir\Source\Renderer\Backend\Vulkan\Private\Vulk
 build CMakeFiles\SimulacraEngine.dir\Source\Core\Platform\SimulacraWindowsWindow.cpp.obj: CXX_COMPILER__SimulacraEngine_unscanned_Debug C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Platform\SimulacraWindowsWindow.cpp || cmake_object_order_depends_target_SimulacraEngine
   DEFINES = -D_DEBUG=1
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++17 -MDd -Zi
-  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
+  INCLUDES = -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Public -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\Platforms -IC:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core -IC:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-src\glm\.. -external:IC:\VulkanSDK\1.3.280.0\Include -external:W0
   OBJECT_DIR = CMakeFiles\SimulacraEngine.dir
   OBJECT_FILE_DIR = CMakeFiles\SimulacraEngine.dir\Source\Core\Platform
   TARGET_COMPILE_PDB = CMakeFiles\SimulacraEngine.dir\
@@ -286,6 +286,62 @@ build Source\Core\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 build Source\Core\rebuild_cache: phony Source\Core\CMakeFiles\rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\glm-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-build && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\glm-build\edit_cache: phony _deps\glm-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\glm-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-build && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\avsom\CLionProjects\SimulacraEngine -BC:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\glm-build\rebuild_cache: phony _deps\glm-build\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\glm-build\glm\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-build\glm && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\glm-build\glm\edit_cache: phony _deps\glm-build\glm\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\glm-build\glm\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug\_deps\glm-build\glm && "C:\Program Files\JetBrains\CLion 2024.1.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\avsom\CLionProjects\SimulacraEngine -BC:\Users\avsom\CLionProjects\SimulacraEngine\Build\Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\glm-build\glm\rebuild_cache: phony _deps\glm-build\glm\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build SimulacraEngine: phony SimulacraEngine.exe
@@ -300,7 +356,7 @@ build SimulacraLibrary: phony SimulacraLibrary.lib
 #############################################
 # Folder: C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug
 
-build all: phony SimulacraLibrary.lib SimulacraEngine.exe Source\Renderer\Backend\Vulkan\all Source\Renderer\Backend\DirectX\all Source\Core\Platform\all Source\Core\all
+build all: phony SimulacraLibrary.lib SimulacraEngine.exe Source\Renderer\Backend\Vulkan\all Source\Renderer\Backend\DirectX\all Source\Core\Platform\all Source\Core\all _deps\glm-build\all
 
 # =============================================================================
 
@@ -331,20 +387,34 @@ build Source\Renderer\Backend\DirectX\all: phony
 build Source\Renderer\Backend\Vulkan\all: phony
 
 # =============================================================================
+
+#############################################
+# Folder: C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build
+
+build _deps\glm-build\all: phony _deps\glm-build\glm\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-build/glm
+
+build _deps\glm-build\glm\all: phony
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindVulkan.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Users\avsom\CLionProjects\SimulacraEngine\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Platform\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\DirectX\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\CMakeLists.txt CMakeCache.txt CMakeFiles\3.28.1\CMakeCCompiler.cmake CMakeFiles\3.28.1\CMakeCXXCompiler.cmake CMakeFiles\3.28.1\CMakeRCCompiler.cmake CMakeFiles\3.28.1\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FetchContent.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindGit.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindVulkan.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Users\avsom\CLionProjects\SimulacraEngine\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Platform\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\DirectX\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\CMakeLists.txt CMakeCache.txt CMakeFiles\3.28.1\CMakeCCompiler.cmake CMakeFiles\3.28.1\CMakeCXXCompiler.cmake CMakeFiles\3.28.1\CMakeRCCompiler.cmake CMakeFiles\3.28.1\CMakeSystem.cmake _deps\glm-src\CMakeLists.txt _deps\glm-src\glm\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindVulkan.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Users\avsom\CLionProjects\SimulacraEngine\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Platform\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\DirectX\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\CMakeLists.txt CMakeCache.txt CMakeFiles\3.28.1\CMakeCCompiler.cmake CMakeFiles\3.28.1\CMakeCXXCompiler.cmake CMakeFiles\3.28.1\CMakeRCCompiler.cmake CMakeFiles\3.28.1\CMakeSystem.cmake: phony
+build C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FetchContent.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindGit.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\FindVulkan.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2024.1.3\bin\cmake\win\x64\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Users\avsom\CLionProjects\SimulacraEngine\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Core\Platform\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\DirectX\CMakeLists.txt C$:\Users\avsom\CLionProjects\SimulacraEngine\Source\Renderer\Backend\Vulkan\CMakeLists.txt CMakeCache.txt CMakeFiles\3.28.1\CMakeCCompiler.cmake CMakeFiles\3.28.1\CMakeCXXCompiler.cmake CMakeFiles\3.28.1\CMakeRCCompiler.cmake CMakeFiles\3.28.1\CMakeSystem.cmake _deps\glm-src\CMakeLists.txt _deps\glm-src\glm\CMakeLists.txt: phony
 
 
 #############################################

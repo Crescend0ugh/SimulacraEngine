@@ -26,12 +26,29 @@ namespace Math
             sqrt(x * x + y * y + z * z);
         }
 
+        T dot(const Vector<T>& other)
+        {
+            return x*other.x+y*other.y+z*other.z;
+        }
+
         Vector<T> cross(const Vector<T> &other)
         {
             return Vector<T>(y * other.z - z * other.y,
                              z * other.x - x * other.z,
                              x * other.y - y * other.x);
         }
+
+
+        Vector<T> operator+(const Vector<T>& other)
+        {
+            return Vector<T>(x+other.x, y+other.y, z+other.z);
+        }
+
+        Vector<T> operator-(const Vector<T>& other)
+        {
+            return Vector<T>(x-other.x, y-other.y, z-other.z);
+        }
+
 
         T x;
         T y;
