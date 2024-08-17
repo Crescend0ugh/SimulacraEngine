@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="glm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Build\;CMake Files\Build\Release\;CMake Files\Build\Release\_deps\;CMake Files\Build\Release\_deps\glm-src\;CMake Files\Build\Release\_deps\glm-src\glm\;CMake Files\Source\;CMake Files\Source\Renderer\;CMake Files\Source\Renderer\Backend\;CMake Files\Source\Renderer\Backend\Vulkan\;CMake Files\Source\Renderer\Backend\DirectX\;CMake Files\Source\Core\;CMake Files\Source\Core\Platform\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Release\_deps\glm-build\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Release\_deps\glm-build\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Release\_deps\glm-build\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\avsom\CLionProjects\SimulacraEngine\Build\Release\_deps\glm-build\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Build\Release\_deps\glm-src\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-src/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Build\Release\_deps\glm-src\glm\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Renderer\Backend\Vulkan\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Renderer/Backend/DirectX/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Renderer\Backend\DirectX\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Core\"/>
+		</Unit>
+		<Unit filename="C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core/Platform/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Source\Core\Platform\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
