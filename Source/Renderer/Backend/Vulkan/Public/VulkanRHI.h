@@ -308,7 +308,7 @@ protected:
 //TODO figure out a way to properly declare vertex types
 struct Vertex
 {
-    Vector2F position_;
+    Vector3F position_;
     Vector3F color_;
 
     static VkVertexInputBindingDescription get_binding_description()
@@ -339,10 +339,10 @@ struct Vertex
 };
 //TODO get rid of this later
 const std::vector<Vertex> vertices = {
-        {{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-        {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
-        {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
-        {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}
+        {{-0.5f, -0.5f, 0}, {1.0f, 0.0f, 0.0f}},
+        {{0.5f, -0.5f, 0}, {0.0f, 1.0f, 0.0f}},
+        {{0.5f, 0.5f, 0}, {0.0f, 0.0f, 1.0f}},
+        {{-0.5f, 0.5f, 0}, {1.0f, 1.0f, 1.0f}}
 };
 //TODO get rid of this later
 const std::vector<uint16_t> indices = {
@@ -351,8 +351,9 @@ const std::vector<uint16_t> indices = {
 
 struct UniformBufferObject
 {
-    glm::mat4 model;
-    glm::mat4 view;
-    glm::mat4 projection;
+    Matrix4F model;
+    Matrix4F view;
+    Matrix4F projection;
+
 };
 

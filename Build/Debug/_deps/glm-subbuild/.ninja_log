@@ -1,0 +1,21 @@
+# ninja log v6
+2	66	7456649220234452	glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	3a13dc7ac4d3995
+2	66	7456649220234452	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	3a13dc7ac4d3995
+67	8759	7456649307167532	glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	6a7fc1d418eaab63
+67	8759	7456649307167532	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	6a7fc1d418eaab63
+8759	8885	7456649307207568	glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	9121cf78c49aa4a8
+8759	8885	7456649307207568	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	9121cf78c49aa4a8
+8886	8975	7456649309258501	glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	2d434487fa6a0271
+8886	8975	7456649309258501	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	2d434487fa6a0271
+8975	9040	7456649309860918	glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	10c0db0e8990ee6e
+8975	9040	7456649309860918	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	10c0db0e8990ee6e
+9041	9093	7456649310507103	glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	7c00c69fe84292a3
+9041	9093	7456649310507103	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	7c00c69fe84292a3
+9093	9156	7456649311126150	glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	31f6a8904ca81826
+9093	9156	7456649311126150	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	31f6a8904ca81826
+9156	9211	7456649311692063	glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	6698d3f13101e3eb
+9156	9211	7456649311692063	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	6698d3f13101e3eb
+9211	9271	7456649312262951	CMakeFiles/glm-populate-complete	ee2e2beecd7c5eb6
+9211	9271	7456649312262951	glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	ee2e2beecd7c5eb6
+9211	9271	7456649312262951	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/CMakeFiles/glm-populate-complete	ee2e2beecd7c5eb6
+9211	9271	7456649312262951	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	ee2e2beecd7c5eb6

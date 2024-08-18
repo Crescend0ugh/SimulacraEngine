@@ -1039,9 +1039,11 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     float elapsed_time = std::chrono::duration<float, std::chrono::seconds::period>(current_time-start_time).count();
 
     UniformBufferObject ubo{};
-    ubo.model =       glm::rotate(glm::mat4(1.0f), elapsed_time * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-    ubo.view =        glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f));
-    ubo.projection =  glm::perspective(glm::radians(45.0f), viewport_.width_ / (float) viewport_.height_, 0.1f, 10.0f);
+    float aspect_ratio = viewport_.width_ / (float) viewport_.height_;
+
+    ubo.model = Matrix4F::identity();
+    ubo.view = Matrix4F::look_at_rh({2,2,2}, {0,0,0},{0,0,-1});
+    ubo.projection = Matrix4F ::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 10.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
 

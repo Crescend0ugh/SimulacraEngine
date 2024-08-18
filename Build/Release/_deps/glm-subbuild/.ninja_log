@@ -1,0 +1,21 @@
+# ninja log v6
+2	67	7456649219578458	glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	69502eeadea7f0b
+2	67	7456649219578458	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	69502eeadea7f0b
+67	8243	7456649301362548	glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	6dde71e9b5cb8f2f
+67	8243	7456649301362548	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	6dde71e9b5cb8f2f
+8243	8384	7456649301402546	glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	12f296b11586714a
+8243	8384	7456649301402546	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	12f296b11586714a
+8384	8433	7456649303191024	glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	f18037a4dff9d376
+8384	8433	7456649303191024	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	f18037a4dff9d376
+8433	8505	7456649303957302	glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	d35d698804b9047c
+8433	8505	7456649303957302	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	d35d698804b9047c
+8505	8551	7456649304421309	glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	f3a026b42f4a43b1
+8505	8551	7456649304421309	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	f3a026b42f4a43b1
+8551	8606	7456649304981685	glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	af264c05dcb8b0d0
+8551	8606	7456649304981685	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	af264c05dcb8b0d0
+8606	8652	7456649305416552	glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	82f3f5c8280aaa20
+8606	8652	7456649305416552	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	82f3f5c8280aaa20
+8653	8735	7456649306238213	CMakeFiles/glm-populate-complete	52484b790bf2723a
+8653	8735	7456649306238213	glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	52484b790bf2723a
+8653	8735	7456649306238213	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/CMakeFiles/glm-populate-complete	52484b790bf2723a
+8653	8735	7456649306238213	C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	52484b790bf2723a

@@ -9,9 +9,14 @@ namespace Math
     template<typename T>
     struct Vector4
     {
+
+        Vector4<T>() = default;
+        Vector4<T>(T x, T y, T z, T w) : x(x), y(y), z(z), w(w) {};
+
         T x;
         T y;
         T z;
+        T w;
     };
 
 }
