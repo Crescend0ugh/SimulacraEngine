@@ -3,9 +3,6 @@ target_link_libraries(SimulacraLibrary
 target_include_directories(SimulacraLibrary PUBLIC Public)
 target_include_directories(SimulacraLibrary PUBLIC Platforms)
 target_sources(SimulacraLibrary PRIVATE
-
         Platforms/Windows/SimulacraVulkanWindowsPlatform.cpp
-
         Private/VulkanRHI.cpp
-
 )

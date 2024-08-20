@@ -53,6 +53,10 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     MSG msg;
 
 
+    static std::chrono::time_point start_time = std::chrono::high_resolution_clock::now();
+
+
+
     while(!Simulacra::windows::should_exit)
     {
         while (PeekMessage(&msg, test.hwnd_, 0, 0, PM_REMOVE))
@@ -63,6 +67,12 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
         }
         vk_renderer.test_draw_frame();
 
+        std::chrono::time_point current_time = std::chrono::high_resolution_clock::now();
+        float elapsed_time = std::chrono::duration<float, std::chrono::seconds::period>(current_time-start_time).count();
+        if(elapsed_time>10)
+        {
+            exit(0);
+        }
 
     }
 

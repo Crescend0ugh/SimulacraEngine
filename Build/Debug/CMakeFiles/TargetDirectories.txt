@@ -14,3 +14,5 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CM
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CMakeFiles/rebuild_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/rebuild_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/ThirdParty/CMakeFiles/edit_cache.dir
+C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/ThirdParty/CMakeFiles/rebuild_cache.dir

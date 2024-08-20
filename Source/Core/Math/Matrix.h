@@ -3,6 +3,9 @@
 //
 
 #pragma once
+#include <glm/mat4x4.hpp> // glm::mat4
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/string_cast.hpp>
 
 namespace Math
 {
@@ -43,58 +46,100 @@ namespace Math
             };
         }
 
-        __forceinline Matrix4<T> inverse()
+        bool is_invertable()
+        {
+
+        }
+
+        __forceinline Matrix4<T> get_inverse()
         {
             return {};
         }
 
-        static __forceinline Matrix4<T>
-        look_at_rh(Vector3<T> eye, Vector3<T> target, Vector3<T> up_axis)
+        __forceinline void invert();
+
+        static __forceinline Matrix4<T> look_at_rh(Vector3<T> eye, Vector3<T> target, Vector3<T> up_axis)
         {
-            const Vector3<T> forward = (target-eye).get_normal();
-            const Vector3<T> right = forward.cross(up_axis).get_normal();
-            const Vector3<T> up = right.cross(forward);
-            Matrix4<T> result{};
-            result.matrix[0][0] = right.x;
-            result.matrix[1][0] = right.y;
-            result.matrix[2][0] = right.z;
-            result.matrix[3][0] =-right.dot( eye);
+            const Vector3<T> forward = (target).get_normal();
+            const Vector3<T> right = up_axis.cross(forward).get_normal();
+            const Vector3<T> up = forward.cross(right);
 
-            result.matrix[0][1] = up.x;
-            result.matrix[1][1] = up.y;
-            result.matrix[2][1] = up.z;
-            result.matrix[3][1] =-up.dot(eye);
 
-            result.matrix[0][2] =-forward.x;
-            result.matrix[1][2] =-forward.y;
-            result.matrix[2][2] =-forward.z;
-            result.matrix[3][2] = forward.dot( eye);
-
-            result.matrix[0][3] = 0;
-            result.matrix[1][3] = 0;
-            result.matrix[2][3] = 0;
-            result.matrix[3][3] = 1;
-
-            return result;
+            return
+                    {
+                            {right.x, up.x, forward.x, 0},
+                            {right.y, up.y, forward.y, 0},
+                            {right.z, up.z, forward.z, 0},
+                            {-right.dot(eye), -up.dot(eye), -forward.dot(eye), 1}
+                    };
         }
+
 
 
         static __forceinline Matrix4<T> perspective_rh(T fovy, T aspect_ratio, T near, T far)
         {
-            const T tan_half_fovy = tan(fovy/2);
-            Matrix4<T> result {};
-            result.matrix[0][0] = static_cast<T>(1) / (aspect_ratio * tan_half_fovy);
-            result.matrix[1][1] = static_cast<T>(1) / (tan_half_fovy);
-            result.matrix[2][2] = - (far + near) / (far - near);
-            result.matrix[2][3] = - static_cast<T>(1);
-            result.matrix[3][2] = - (static_cast<T>(2) * far * near) / (far - near);
-            return result;
+            const T cotan_half_fovy = 1/(tan(fovy/2));
+
+//            Result[0][0] = static_cast<T>(1) / (aspect * tanHalfFovy);
+//            Result[1][1] = static_cast<T>(1) / (tanHalfFovy);
+//            Result[2][2] = - (zFar + zNear) / (zFar - zNear);
+//            Result[2][3] = - static_cast<T>(1);
+//            Result[3][2] = - (static_cast<T>(2) * zFar * zNear) / (zFar - zNear);
+
+            return
+            {
+                    {cotan_half_fovy/aspect_ratio, 0, 0, 0},
+                    {0, cotan_half_fovy, 0, 0},
+                    {0, 0, far/(near-far), -1},
+                    {0, 0, (near*far)/(near-far), 0},
+
+            };
+
+        }
+
+        static __forceinline Matrix4<T> orthographic_rh()
+        {
 
         }
 
         static __forceinline Matrix4<T> rotate(Matrix4<T> matrix, float radians, Vector3<T> axis)
         {
             return {};
+        }
+
+        std::basic_string<char> to_string()
+        {
+            std::basic_string<char> result;
+            result.append("Matrix4x4: [\n");
+            for(int i = 0; i < 4; ++i)
+            {
+                result.append("{ ");
+                for(int j = 0; j < 4; j++)
+                {
+                    result.append(std::to_string(matrix[i][j]));
+                    result.append(" ");
+                }
+                result.append("}\n");
+            }
+            result.append("]");
+            return result;
+        }
+
+        static __forceinline bool matches_glm(Matrix4<float> matrix, glm::mat4 glm_matrix)
+        {
+
+            for(int i = 0; i < 4; ++i)
+            {
+                for(int j = 0; j < 4; ++j)
+                {
+                    if(glm_matrix[i][j]!=matrix.matrix[i][j])
+                    {
+                        std::cout << glm::to_string(glm_matrix) << "\n" << matrix.to_string();
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         __forceinline float determinant()

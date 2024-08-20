@@ -8,6 +8,8 @@
 #include "../../../../Core/Platform/SimulacraWindowsWindow.h"
 #include "Math/Vector.h"
 #include <chrono>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 void VulkanRHI::init(void* win_hand)
 {
@@ -33,9 +35,8 @@ void VulkanRHI::init(void* win_hand)
         frame_resource.image_acquired_semaphore_ = create_semaphore();
         frame_resource.image_rendered_semaphore_ = create_semaphore();
         frame_resource.in_flight_fence_          = create_fence(true);
-        frame_resource.command_pools_.resize(QueueIndex::Max);
-        frame_resource.command_pools_[QueueIndex::Graphics] = create_command_pool(graphics_queue.family_index_);
-        frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pools_[QueueIndex::Graphics],
+        frame_resource.command_pool = create_command_pool(graphics_queue.family_index_);
+        frame_resource.command_buffer_ = create_command_buffer(frame_resource.command_pool,
                                                                VK_COMMAND_BUFFER_LEVEL_PRIMARY);
 
     }
@@ -497,7 +498,7 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
     rasterization_state_create_info.polygonMode             = VK_POLYGON_MODE_FILL;
     rasterization_state_create_info.lineWidth               = 1.0f;
     rasterization_state_create_info.cullMode                = VK_CULL_MODE_BACK_BIT;
-    rasterization_state_create_info.frontFace               = VK_FRONT_FACE_CLOCKWISE;
+    rasterization_state_create_info.frontFace               = VK_FRONT_FACE_COUNTER_CLOCKWISE;
     rasterization_state_create_info.depthBiasEnable         = VK_FALSE;
     rasterization_state_create_info.depthBiasConstantFactor = 0.0f;
     rasterization_state_create_info.depthBiasClamp          = 0.0f;
@@ -806,6 +807,47 @@ void VulkanRHI::buffer_unmap()
 //    vkUnmapMemory()
 }
 
+VulkanImage VulkanRHI::create_image()
+{
+    int image_width, image_height, channels;
+    stbi_uc* pixels = stbi_load("Content/texture.jpg", &image_width, &image_height, &channels, STBI_rgb_alpha);
+    VkDeviceSize image_size = image_width*image_height*4;
+
+    assert(pixels);
+
+    VulkanBuffer staging_buffer{};
+    staging_buffer.buffer_ = create_buffer(image_size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, staging_buffer.memory_);
+
+    void* data = buffer_map(staging_buffer, 0, image_size, 0);
+    memcpy(data, pixels, static_cast<size_t >(image_size));
+    vkUnmapMemory(logical_device_, staging_buffer.memory_);
+    stbi_image_free(pixels);
+
+    VulkanImage image{};
+    VkImageCreateInfo image_create_info{};
+    image_create_info.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+    image_create_info.imageType = VK_IMAGE_TYPE_2D;
+    image_create_info.extent.width = image_width;
+    image_create_info.extent.height = image_height;
+    image_create_info.extent.depth = 1;
+    image_create_info.mipLevels = 1;
+    image_create_info.arrayLayers = 1;
+    image_create_info.format = VK_FORMAT_R8G8B8_SRGB;
+    image_create_info.tiling = VK_IMAGE_TILING_OPTIMAL;
+    image_create_info.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+    image_create_info.usage = VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT;
+    image_create_info.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+    image_create_info.samples = VK_SAMPLE_COUNT_1_BIT;
+    image_create_info.flags = 0;
+    VK_ASSERT_SUCCESS(vkCreateImage(logical_device_, &image_create_info, nullptr, &image.image))
+    return {};
+}
+
+void VulkanRHI::release_image(VulkanImage &image)
+{
+
+}
+
 void VulkanRHI::command_copy_buffer(VkCommandBuffer command_buffer, VkBuffer src, VkBuffer dst, VkDeviceSize size)
 {
 
@@ -929,9 +971,9 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
 
     VkViewport viewport{};
     viewport.x = 0.0f;
-    viewport.y = 0.0f;
+    viewport.y = static_cast<float>(viewport_.height_);
     viewport.width = static_cast<float>(viewport_.width_);
-    viewport.height = static_cast<float>(viewport_.height_);
+    viewport.height = -static_cast<float>(viewport_.height_);
     viewport.minDepth = 0.0f;
     viewport.maxDepth = 1.0f;
     vkCmdSetViewport(buffer, 0, 1, &viewport);
@@ -986,7 +1028,7 @@ void VulkanRHI::test_create_vertex_buffer()
                   VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, vertex_buffer_.memory_);
 
     VkCommandBuffer copy_command_buffer =
-            create_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics]);
+            create_command_buffer(frame_resources_[frame_].command_pool);
 
     begin_command_buffer(copy_command_buffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
     command_copy_buffer(copy_command_buffer, staging_buffer.buffer_, vertex_buffer_.buffer_, size);
@@ -995,7 +1037,7 @@ void VulkanRHI::test_create_vertex_buffer()
     submit_to_queue(graphics_queue, {}, {}, {}, {copy_command_buffer});
     vkQueueWaitIdle(graphics_queue.queue_);
 
-    free_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
+    free_command_buffer(frame_resources_[frame_].command_pool, copy_command_buffer);
     vkDestroyBuffer(logical_device_, staging_buffer.buffer_, nullptr);
     vkFreeMemory(logical_device_, staging_buffer.memory_, nullptr);
 }
@@ -1016,7 +1058,7 @@ void VulkanRHI::test_create_index_buffer()
     index_buffer_.buffer_ = create_buffer(size, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
                                   VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, index_buffer_.memory_);
     VkCommandBuffer copy_command_buffer =
-            create_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics]);
+            create_command_buffer(frame_resources_[frame_].command_pool);
 
     begin_command_buffer(copy_command_buffer, VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
     command_copy_buffer(copy_command_buffer, staging_buffer, index_buffer_.buffer_, size);
@@ -1025,7 +1067,7 @@ void VulkanRHI::test_create_index_buffer()
     submit_to_queue(graphics_queue, {}, {}, {}, {copy_command_buffer});
     vkQueueWaitIdle(graphics_queue.queue_);
 
-    free_command_buffer(frame_resources_[frame_].command_pools_[QueueIndex::Graphics], copy_command_buffer);
+    free_command_buffer(frame_resources_[frame_].command_pool, copy_command_buffer);
     vkDestroyBuffer(logical_device_, staging_buffer, nullptr);
     vkFreeMemory(logical_device_, staging_buffer_memory, nullptr);
 
@@ -1041,9 +1083,11 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     UniformBufferObject ubo{};
     float aspect_ratio = viewport_.width_ / (float) viewport_.height_;
 
+
+//    assert(Matrix4F::matches_glm(test, glm_test));
     ubo.model = Matrix4F::identity();
-    ubo.view = Matrix4F::look_at_rh({2,2,2}, {0,0,0},{0,0,-1});
-    ubo.projection = Matrix4F ::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 10.0f);
+    ubo.view = Matrix4F::look_at_rh({2.f+elapsed_time,2,2}, {.57,.57,.57},{0,0,1});
+    ubo.projection = Matrix4F::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 10000.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
 
@@ -1090,6 +1134,8 @@ void VulkanRHI::create_descriptor_sets()
         vkUpdateDescriptorSets(logical_device_, 1, &descriptor_write, 0, nullptr);
     }
 }
+
+
 
 
 

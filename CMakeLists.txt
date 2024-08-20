@@ -25,11 +25,13 @@ add_subdirectory(Source/Renderer/Backend/DirectX)
 
 add_subdirectory(Source/Core/Platform)
 add_subdirectory(Source/Core)
+add_subdirectory(Source/ThirdParty)
 
 add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
         Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp
         Source/Renderer/Backend/Vulkan/Public/VulkanMemoryAllocator.h
-        Source/Core/Math/Math.h)
+        Source/Core/Math/Math.h
+        Source/Renderer/Backend/Vulkan/Public/VulkanResources.h)
 
 
 

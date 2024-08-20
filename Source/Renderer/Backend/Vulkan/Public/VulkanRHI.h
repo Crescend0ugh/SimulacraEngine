@@ -13,7 +13,6 @@
 #include <glm/mat4x4.hpp> // glm::mat4
 #include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
 #include <glm/ext/matrix_clip_space.hpp>
-
 #define VK_ASSERT_SUCCESS(statement) \
 {                                    \
 VkResult result = statement;  \
@@ -94,9 +93,15 @@ struct VulkanBuffer
     uint32         size_;
 };
 
+struct VulkanImage
+{
+    VkImage image;
+    VkImageView image_view;
+};
+
 struct FrameContext
 {
-    std::vector<VkCommandPool> command_pools_;
+    VkCommandPool              command_pool;
     VkFramebuffer              framebuffer_;
     VkSemaphore                image_acquired_semaphore_;
     VkSemaphore                image_rendered_semaphore_;
@@ -192,6 +197,9 @@ public:
     VkBuffer create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags,
                            VkDeviceMemory &memory);
     void release_buffer();
+
+    VulkanImage create_image();
+    void        release_image(VulkanImage& image);
 
     void* buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags);
     void  buffer_unmap();
