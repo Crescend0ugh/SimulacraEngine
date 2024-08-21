@@ -18,8 +18,7 @@ FetchContent_MakeAvailable(glm)
 find_package(Vulkan REQUIRED)
 
 
-add_library(SimulacraLibrary
-        Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp)
+add_library(SimulacraLibrary)
 add_subdirectory(Source/Renderer/Backend/Vulkan)
 add_subdirectory(Source/Renderer/Backend/DirectX)
 
@@ -27,11 +26,7 @@ add_subdirectory(Source/Core/Platform)
 add_subdirectory(Source/Core)
 add_subdirectory(Source/ThirdParty)
 
-add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp
-        Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp
-        Source/Renderer/Backend/Vulkan/Public/VulkanMemoryAllocator.h
-        Source/Core/Math/Math.h
-        Source/Renderer/Backend/Vulkan/Public/VulkanResources.h)
+add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp)
 
 
 

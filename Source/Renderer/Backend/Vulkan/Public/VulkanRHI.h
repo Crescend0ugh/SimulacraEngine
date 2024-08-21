@@ -6,26 +6,11 @@
 
 //TODO purge this file of dirty std types
 // Include Vulkan and Core includes
-#include "../Core/Sys/Precompiled.h"
+#include "Sys/Precompiled.h"
 #define VK_USE_PLATFORM_WIN32_KHR
-#include <vulkan/vulkan.h>
+#include "VulkanCommon.h"
 #include "VulkanMemoryAllocator.h"
-#include <glm/mat4x4.hpp> // glm::mat4
-#include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
-#include <glm/ext/matrix_clip_space.hpp>
-#define VK_ASSERT_SUCCESS(statement) \
-{                                    \
-VkResult result = statement;  \
-if(result == VK_SUCCESS)     \
-{                            \
-}                            \
-                             \
-else                         \
-{                            \
-    std::cout << #statement << " failed\n";   \
-}                                    \
-}\
-
+#include "VulkanResources.h"
 
 struct VulkanQueue
 {
@@ -86,18 +71,6 @@ struct VulkanGraphicsPipelineDescription
 
 };
 
-struct VulkanBuffer
-{
-    VkBuffer       buffer_;
-    VkDeviceMemory memory_;
-    uint32         size_;
-};
-
-struct VulkanImage
-{
-    VkImage image;
-    VkImageView image_view;
-};
 
 struct FrameContext
 {
@@ -155,7 +128,7 @@ public:
     void   recreate_swapchain();
     void   release_swapchain(VulkanSwapchain &swapchain);
     uint32 acquire_next_image_from_swapchain(VkSwapchainKHR swapchain);
-    void present_image(VkSwapchainKHR swapchain, uint32 image_index, VkSemaphore* wait_semaphores,
+    void   present_image(VkSwapchainKHR swapchain, uint32 image_index, VkSemaphore* wait_semaphores,
                        uint32 wait_semaphore_count);
 
     void create_viewport(void* window_handle);
@@ -184,8 +157,8 @@ public:
     void          free_command_pool(VkCommandPool &command_pool);
 
     VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
-    void free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
-    void begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
+    void            free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
+    void            begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
 
@@ -194,17 +167,17 @@ public:
     void command_draw_indirect();
     void command_draw_indexed_indirect();
 
-    VkBuffer create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags,
-                           VkDeviceMemory &memory);
-    void release_buffer();
+    VulkanBuffer create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags);
+    void         release_buffer();
 
-    VulkanImage create_image();
+    VulkanImage create_image(uint32 width, uint32 height, VkFormat format, VkImageTiling image_tiling,
+                             VkImageUsageFlags usage, VkMemoryPropertyFlags properties);
     void        release_image(VulkanImage& image);
 
     void* buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags);
-    void  buffer_unmap();
+    void  buffer_unmap(VulkanBuffer buffer);
 
-    void command_copy_buffer(VkCommandBuffer command_buffer, VkBuffer src, VkBuffer dst, VkDeviceSize size);
+    void command_copy_buffer(VkCommandBuffer command_buffer, VulkanBuffer src, VulkanBuffer dst, VkDeviceSize size);
     void command_copy_image();
     void command_copy_buffer_to_image();
     void command_copy_image_to_buffer();
@@ -272,11 +245,16 @@ protected:
     //TODO get rid of this later
     VkShaderModule               fragment_shader_module_;
     //TODO make a better way to use instance extensions than just declaring an array of names
-    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME, VK_KHR_SURFACE_EXTENSION_NAME, VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME};
+    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME,
+                                                               VK_KHR_SURFACE_EXTENSION_NAME,
+                                                               VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME, };
     //TODO make this work...at all
     std::vector<const char*> instance_layers;
     //TODO make a better way to use device extensions than just declaring an array of names
-    std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_EXT_MEMORY_BUDGET_EXTENSION_NAME};
+    std::vector<const char*> requested_device_extensions_ = { VK_KHR_SWAPCHAIN_EXTENSION_NAME,
+                                                              VK_EXT_MEMORY_BUDGET_EXTENSION_NAME,
+                                                              VK_KHR_MAINTENANCE1_EXTENSION_NAME
+    };
     //TODO get rid of this later
     VulkanBuffer vertex_buffer_;
     //TODO get rid of this later
@@ -309,6 +287,9 @@ protected:
     void update_uniform_buffer(uint32 current_frame_index);
     void create_descriptor_pool();
     void create_descriptor_sets();
+
+    //TODO get rid of this later
+
 
 
 };

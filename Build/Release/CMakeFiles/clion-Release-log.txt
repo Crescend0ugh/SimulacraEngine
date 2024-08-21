@@ -15,6 +15,6 @@ CMake Deprecation Warning at Build/Release/_deps/glm-src/CMakeLists.txt:2 (cmake
   CMake that the project does not need compatibility with older versions.
 
 
--- Configuring done (1.4s)
--- Generating done (0.0s)
+-- Configuring done (0.7s)
+-- Generating done (0.2s)
 -- Build files have been written to: C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release

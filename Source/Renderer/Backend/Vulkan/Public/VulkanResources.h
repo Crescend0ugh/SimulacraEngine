@@ -1,25 +1,21 @@
 //
-// Created by avsom on 8/20/2024.
+// Created by avsom on 8/21/2024.
 //
 
 #pragma once
 
+#include "VulkanCommon.h"
+
+
 struct VulkanBuffer
 {
-
+    VkBuffer       buffer;
+    VkDeviceMemory memory;
 };
 
 struct VulkanImage
 {
-
-};
-
-struct ImageCreateInfo
-{
-
-};
-
-struct BufferCreateInfo
-{
-
+    VkImage image;
+    VkImageView image_view;
+    VkDeviceMemory memory;
 };
