@@ -7,7 +7,6 @@
 //TODO purge this file of dirty std types
 // Include Vulkan and Core includes
 #include "Sys/Precompiled.h"
-#define VK_USE_PLATFORM_WIN32_KHR
 #include "VulkanCommon.h"
 #include "VulkanMemoryAllocator.h"
 #include "VulkanResources.h"

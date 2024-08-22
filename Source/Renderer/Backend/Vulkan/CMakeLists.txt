@@ -1,3 +1,4 @@
+
 target_link_libraries(SimulacraLibrary
         Vulkan::Vulkan)
 target_include_directories(SimulacraLibrary PUBLIC Public)
@@ -7,4 +8,5 @@ target_sources(SimulacraLibrary PRIVATE
         Private/VulkanRHI.cpp
         Private/VulkanMemoryAllocator.cpp
         Private/VulkanResources.cpp
+        Private/VulkanSwapchain.cpp
 )

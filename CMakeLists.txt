@@ -29,7 +29,6 @@ add_subdirectory(Source/ThirdParty)
 add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp)
 
 
-
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
 endif ()
