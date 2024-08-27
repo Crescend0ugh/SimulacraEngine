@@ -151,7 +151,7 @@ public:
                                      uint32 layers);
     void          release_framebuffer(VkFramebuffer &framebuffer);
 
-    VkCommandPool create_command_pool(uint32 queue_family_index);
+    VkCommandPool create_command_pool(uint32 queue_family_index, VkCommandPoolCreateFlags flags = 0);
     void          reset_command_pool(VkCommandPool command_pool);
     void          free_command_pool(VkCommandPool &command_pool);
 
@@ -181,6 +181,8 @@ public:
     void command_copy_buffer_to_image();
     void command_copy_image_to_buffer();
 
+    void transition_image_layout(VkImage image, VkFormat format, VkImageLayout old_layout, VkImageLayout new_layout);
+
     VkSemaphore create_semaphore();
     void        release_semaphore(VkSemaphore &semaphore);
 
@@ -198,6 +200,8 @@ public:
     void test_create_vertex_buffer();
     //TODO get rid of this later
     void test_create_index_buffer();
+    //TODO get rid of this later
+    void test_create_texture_image();
 
 
 protected:
@@ -226,6 +230,8 @@ protected:
     VulkanQueue                  graphics_queue;
     VulkanQueue                  transfer_queue;
     VulkanQueue                  compute_queue;
+
+    VkCommandPool                scratch_pool;
 
     uint32                       frame_ = 0;
     std::vector<FrameContext>    frame_resources_;
@@ -260,7 +266,8 @@ protected:
     VulkanBuffer                 index_buffer_;
     //TODO get rid of this later
     std::vector<VkDescriptorSet> descriptor_sets;
-
+    //TODO get rid of this later
+    VulkanImage texture_image;
     //TODO add a vector for device features
 
 

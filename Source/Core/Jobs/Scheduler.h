@@ -12,11 +12,6 @@ struct Scheduler
 
 private:
 
-    void   launch_task();
-    void   execute_task();
-    void   worker_main();
-    uint32 get_worker_count();
-
 
 
 private:

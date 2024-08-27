@@ -155,7 +155,7 @@ RECENT REVISION HISTORY:
 // to the pixel data, or NULL on an allocation failure or if the image is
 // corrupt or invalid. The pixel data consists of *y scanlines of *x pixels,
 // with each pixel consisting of N interleaved 8-bit components; the first
-// pixel pointed to is top-left-most in the image. There is no padding between
+// pixel pointed to is bottom-left-most in the image. There is no padding between
 // image scanlines or between pixels, regardless of format. The number of
 // components N is 'desired_channels' if desired_channels is non-zero, or
 // *channels_in_file otherwise. If desired_channels is non-zero,
@@ -514,7 +514,7 @@ STBIDEF void stbi_set_unpremultiply_on_load(int flag_true_if_should_unpremultipl
 // or just pass them through "as-is"
 STBIDEF void stbi_convert_iphone_png_to_rgb(int flag_true_if_should_convert);
 
-// flip the image vertically, so the first pixel in the output array is the bottom left
+// flip the image vertically, so the first pixel in the output array is the top left
 STBIDEF void stbi_set_flip_vertically_on_load(int flag_true_if_should_flip);
 
 // as above, but only applies to images loaded on the thread that calls the function
@@ -1197,7 +1197,7 @@ static stbi_uc *stbi__convert_16_to_8(stbi__uint16 *orig, int w, int h, int chan
    if (reduced == NULL) return stbi__errpuc("outofmem", "Out of memory");
 
    for (i = 0; i < img_len; ++i)
-      reduced[i] = (stbi_uc)((orig[i] >> 8) & 0xFF); // top half of each byte is sufficient approx of 16->8 bit scaling
+      reduced[i] = (stbi_uc)((orig[i] >> 8) & 0xFF); // bottom half of each byte is sufficient approx of 16->8 bit scaling
 
    STBI_FREE(orig);
    return reduced;
@@ -2101,7 +2101,7 @@ stbi_inline static int stbi__jpeg_huff_decode(stbi__jpeg *j, stbi__huffman *h)
 
    if (j->code_bits < 16) stbi__grow_buffer_unsafe(j);
 
-   // look at the top FAST_BITS and determine what symbol ID it is,
+   // look at the bottom FAST_BITS and determine what symbol ID it is,
    // if the code is <= FAST_BITS
    c = (j->code_buffer >> (32 - FAST_BITS)) & ((1 << FAST_BITS)-1);
    k = h->fast[c];
@@ -4225,7 +4225,7 @@ static int stbi__zhuffman_decode_slowpath(stbi__zbuf *a, stbi__zhuffman *z)
 {
    int b,s,k;
    // not resolved by fast table, so compute it the slow way
-   // use jpeg approach, which requires MSbits at top
+   // use jpeg approach, which requires MSbits at bottom
    k = stbi__bit_reverse(a->code_buffer, 16);
    for (s=STBI__ZFAST_BITS+1; ; ++s)
       if (k < z->maxcode[s])

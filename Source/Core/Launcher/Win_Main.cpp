@@ -9,8 +9,7 @@
 
 #include "../Platform/SimulacraWindowsWindow.h"
 #include "VulkanRHI.h"
-
-#define NUM_PROCESSORS
+#include "Jobs/Scheduler.h"
 
  bool Simulacra::windows::should_exit = false;
 
