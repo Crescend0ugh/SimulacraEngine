@@ -171,6 +171,7 @@ public:
 
     VulkanImage create_image(uint32 width, uint32 height, VkFormat format, VkImageTiling image_tiling,
                              VkImageUsageFlags usage, VkMemoryPropertyFlags properties);
+    VkImageView create_image_view(VkImage image, VkFormat format);
     void        release_image(VulkanImage& image);
 
     void* buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags);
@@ -178,10 +179,11 @@ public:
 
     void command_copy_buffer(VkCommandBuffer command_buffer, VulkanBuffer src, VulkanBuffer dst, VkDeviceSize size);
     void command_copy_image();
-    void command_copy_buffer_to_image();
+    void command_copy_buffer_to_image(VkCommandBuffer command_buffer, VulkanBuffer buffer, VulkanImage image,
+                                      uint32 width, uint32 height);
     void command_copy_image_to_buffer();
 
-    void transition_image_layout(VkImage image, VkFormat format, VkImageLayout old_layout, VkImageLayout new_layout);
+    void transition_image_layout(VulkanImage image, VkFormat format, VkImageLayout old_layout, VkImageLayout new_layout);
 
     VkSemaphore create_semaphore();
     void        release_semaphore(VkSemaphore &semaphore);
@@ -202,6 +204,11 @@ public:
     void test_create_index_buffer();
     //TODO get rid of this later
     void test_create_texture_image();
+    //TODO get rid of this later
+    void test_create_texture_image_view();
+    //TODO get rid of this later
+    void test_create_texture_sampler();
+
 
 
 protected:
@@ -269,7 +276,7 @@ protected:
     //TODO get rid of this later
     VulkanImage texture_image;
     //TODO add a vector for device features
-
+    VkPhysicalDeviceFeatures features;
 
     void create_descriptor_set_layout()
     {
@@ -280,10 +287,19 @@ protected:
         descriptor_set_layout_binding.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
         descriptor_set_layout_binding.pImmutableSamplers = nullptr;
 
+        VkDescriptorSetLayoutBinding sampler_layout_binding{};
+        sampler_layout_binding.binding = 1;
+        sampler_layout_binding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        sampler_layout_binding.descriptorCount = 1;
+        sampler_layout_binding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        sampler_layout_binding.pImmutableSamplers = nullptr;
+
+        VkDescriptorSetLayoutBinding bindings[] = {descriptor_set_layout_binding, sampler_layout_binding};
+
         VkDescriptorSetLayoutCreateInfo descriptor_set_layout_create_info{};
         descriptor_set_layout_create_info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-        descriptor_set_layout_create_info.bindingCount = 1;
-        descriptor_set_layout_create_info.pBindings = &descriptor_set_layout_binding;
+        descriptor_set_layout_create_info.bindingCount = 2;
+        descriptor_set_layout_create_info.pBindings = bindings;
 
         VK_ASSERT_SUCCESS(vkCreateDescriptorSetLayout(logical_device_, &descriptor_set_layout_create_info, nullptr, &descriptor_set_layout))
 

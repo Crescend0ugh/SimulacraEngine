@@ -18,4 +18,5 @@ struct VulkanImage
     VkImage image;
     VkImageView image_view;
     VkDeviceMemory memory;
+    VkSampler sampler;
 };
