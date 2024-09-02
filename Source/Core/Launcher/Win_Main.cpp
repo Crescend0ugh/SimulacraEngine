@@ -2,7 +2,6 @@
 #define UNICODE
 #endif
 
-#include <windows.h>
 
 
 #include <thread>
@@ -35,7 +34,6 @@ bool try_attach_to_console()
 
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
-
     if(!try_attach_to_console())
     {
         AllocConsole();

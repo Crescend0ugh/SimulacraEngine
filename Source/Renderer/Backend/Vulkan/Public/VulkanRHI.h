@@ -6,10 +6,13 @@
 
 //TODO purge this file of dirty std types
 // Include Vulkan and Core includes
-#include "Sys/Precompiled.h"
+#include "Core.h"
 #include "VulkanCommon.h"
 #include "VulkanMemoryAllocator.h"
 #include "VulkanResources.h"
+#include "Mesh.h"
+
+
 
 struct VulkanQueue
 {
@@ -113,22 +116,23 @@ class VulkanRHI
 
 public:
 
+
     void init(void* win_hand);
     void shutdown();
 
     void create_queue(uint32 queue_family_index, uint32 queue_index);
-    //TODO get rid of the std::vector params as they alloc memory which is unnecessary
-    void submit_to_queue(VulkanQueue queue, const std::vector<VkSemaphore> &wait_semaphores,
-                         const std::vector<VkSemaphore> &signal_semaphores,
-                         const std::vector<VkPipelineStageFlags> &wait_dst_stage_mask,
-                         const std::vector<VkCommandBuffer> &command_buffers, VkFence fence = VK_NULL_HANDLE);
+    void submit_to_queue(VulkanQueue queue,
+                         span<const VkSemaphore> wait_semaphores,
+                         span<const VkSemaphore> signal_semaphores,
+                         span<const VkPipelineStageFlags> wait_dst_stage_mask,
+                         span<const VkCommandBuffer> command_buffers,
+                         VkFence fence = VK_NULL_HANDLE);
 
     void   create_swapchain(VkSurfaceKHR surface, uint32 &width, uint32 &height, VkSwapchainKHR old_swapchain);
     void   recreate_swapchain();
     void   release_swapchain(VulkanSwapchain &swapchain);
     uint32 acquire_next_image_from_swapchain(VkSwapchainKHR swapchain);
-    void   present_image(VkSwapchainKHR swapchain, uint32 image_index, VkSemaphore* wait_semaphores,
-                       uint32 wait_semaphore_count);
+    void   present_image(VkSwapchainKHR swapchain, uint32 image_index, span<const VkSemaphore> wait_semaphores);
 
     void create_viewport(void* window_handle);
     void release_viewport(uint32 viewport_index);
@@ -157,9 +161,13 @@ public:
 
     VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
     void            free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
+    VkCommandBuffer create_and_begin_scratch_buffer();
+    void end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
     void            begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
+
+
 
     void command_draw();
     void command_draw_indexed();
@@ -167,11 +175,11 @@ public:
     void command_draw_indexed_indirect();
 
     VulkanBuffer create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags);
-    void         release_buffer();
+    void release_buffer(VkCommandPool command_pool, VkCommandBuffer &command_buffer);
 
     VulkanImage create_image(uint32 width, uint32 height, VkFormat format, VkImageTiling image_tiling,
                              VkImageUsageFlags usage, VkMemoryPropertyFlags properties);
-    VkImageView create_image_view(VkImage image, VkFormat format);
+    VkImageView create_image_view(VkImage image, VkFormat format, VkImageAspectFlags aspect);
     void        release_image(VulkanImage& image);
 
     void* buffer_map(VulkanBuffer buffer, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags memory_map_flags);
@@ -208,6 +216,14 @@ public:
     void test_create_texture_image_view();
     //TODO get rid of this later
     void test_create_texture_sampler();
+    //TODO get rid of this later
+    void test_create_depth_resources();
+    //TODO get rid of this later
+    VkFormat find_supported_format(const std::vector<VkFormat> &desired_formats,
+                                   VkImageTiling tiling,
+                                   VkFormatFeatureFlags features
+                                   );
+    bool has_stencil_component(VkFormat format);
 
 
 
@@ -275,8 +291,12 @@ protected:
     std::vector<VkDescriptorSet> descriptor_sets;
     //TODO get rid of this later
     VulkanImage texture_image;
+    //TODO get rid of this later
+    VkSampler sampler;
     //TODO add a vector for device features
     VkPhysicalDeviceFeatures features;
+
+    VulkanImage depth_image;
 
     void create_descriptor_set_layout()
     {
@@ -310,61 +330,40 @@ protected:
     void create_descriptor_pool();
     void create_descriptor_sets();
 
+
     //TODO get rid of this later
+    void load_mesh();
 
 
 
 };
 
-//TODO figure out a way to properly declare vertex types
-struct Vertex
-{
-    Vector3F position_;
-    Vector3F color_;
+//TODO figure out a way to properly declare positions types
 
-    static VkVertexInputBindingDescription get_binding_description()
-    {
-        VkVertexInputBindingDescription binding_description{};
-        binding_description.binding = 0;
-        binding_description.stride = sizeof(Vertex);
-        binding_description.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
-        return binding_description;
-    }
 
-    static std::vector<VkVertexInputAttributeDescription> get_attribute_descriptions()
-    {
-        std::vector<VkVertexInputAttributeDescription> attribute_descriptions{};
-        attribute_descriptions.reserve(2);
-        attribute_descriptions.resize(2);
-        attribute_descriptions[0].binding = 0;
-        attribute_descriptions[0].location = 0;
-        attribute_descriptions[0].format = VK_FORMAT_R32G32_SFLOAT;
-        attribute_descriptions[0].offset = offsetof(Vertex, position_);
-        attribute_descriptions[1].binding = 0;
-        attribute_descriptions[1].location = 1;
-        attribute_descriptions[1].format = VK_FORMAT_R32G32B32_SFLOAT;
-        attribute_descriptions[1].offset = offsetof(Vertex, color_);
-        return attribute_descriptions;
-    }
-
-};
-//TODO get rid of this later
 const std::vector<Vertex> vertices = {
-        {{-0.5f, -0.5f, 0}, {1.0f, 0.0f, 0.0f}},
-        {{0.5f, -0.5f, 0}, {0.0f, 1.0f, 0.0f}},
-        {{0.5f, 0.5f, 0}, {0.0f, 0.0f, 1.0f}},
-        {{-0.5f, 0.5f, 0}, {1.0f, 1.0f, 1.0f}}
+        {{-0.5f, -0.5f, 0.0f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
+        {{0.5f, -0.5f, 0.0f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
+        {{0.5f, 0.5f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
+        {{-0.5f, 0.5f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}},
+
+        {{-0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
+        {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
+        {{0.5f, 0.5f, -0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
+        {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}}
 };
-//TODO get rid of this later
+
 const std::vector<uint16_t> indices = {
-        0, 1, 2, 2, 3, 0
+        0, 1, 2, 2, 3, 0,
+        4, 5, 6, 6, 7, 4
 };
+
+
 
 struct UniformBufferObject
 {
     Matrix4F model;
     Matrix4F view;
     Matrix4F projection;
-
 };
 

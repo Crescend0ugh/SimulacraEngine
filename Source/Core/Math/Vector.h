@@ -12,6 +12,8 @@ namespace Math
     struct Vector3
     {
 
+        Vector3<T>() = default;
+
         Vector3(T x, T y, T z) : x(x), y(y), z(z)
         {};
 
@@ -55,5 +57,8 @@ namespace Math
         T z;
     };
 }
-using Vector3D = Math::Vector3<double>;
-using Vector3F = Math::Vector3<float>;
+using Vector3d = Math::Vector3<double>;
+using Vector3f = Math::Vector3<float>;
+using Vector3i = Math::Vector3<int>;
+using Vector3u = Math::Vector3<uint32>;
+

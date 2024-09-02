@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 #include "SimulacraWindows.h"
-#include "../Sys/SimulacraEngineTypes.h"
+#include "CoreTypes.h"
 
 namespace Simulacra::windows
 {

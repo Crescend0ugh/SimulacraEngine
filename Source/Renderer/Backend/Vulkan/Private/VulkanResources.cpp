@@ -61,4 +61,3 @@ VulkanImage VulkanRHI::create_image(uint32 width, uint32 height, VkFormat format
 
     return image;
 }
-

@@ -104,7 +104,19 @@ namespace Math
 
         static __forceinline Matrix4<T> rotate(Matrix4<T> matrix, float radians, Vector3<T> axis)
         {
-            return {};
+
+        }
+
+        static __forceinline Matrix4<T> translate(T x, T y, T z)
+        {
+            return
+                    {
+                            {1.0, 0.0, 0.0, 0},
+                            {0.0, 1.0, 0.0, 0},
+                            {0.0, 0.0, 1.0, 0},
+                            {x,   y,   z,   1},
+
+                    };
         }
 
         std::basic_string<char> to_string()

@@ -5,7 +5,7 @@
 #pragma once
 
 #include <vulkan/vulkan.h>
-#include "../Core/Sys/Precompiled.h"
+#include "Core.h"
 
 
 struct VulkanDeviceAllocation

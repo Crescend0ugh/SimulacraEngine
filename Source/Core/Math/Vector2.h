@@ -11,9 +11,8 @@ namespace Math
     {
         T x;
         T y;
-        T z;
     };
 
 }
 using Vector2D = Math::Vector2<double>;
-using Vector2F = Math::Vector2<float>;
+using Vector2f = Math::Vector2<float>;
