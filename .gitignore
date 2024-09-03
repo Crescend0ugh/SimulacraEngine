@@ -2,4 +2,3 @@ compile.bat
 .json
 .cache
 *.ipch
-*.obj
