@@ -50,10 +50,10 @@ void VulkanRHI::init(void* win_hand)
 
     }
 
+    load_mesh();
 
     test_create_vertex_buffer();
     test_create_index_buffer();
-    load_mesh();
     for (auto &frame_resource: frame_resources_) {
         frame_resource.uniform_buffer_          = create_buffer(sizeof(UniformBufferObject),
                                                                 VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
@@ -117,6 +117,7 @@ void VulkanRHI::create_instance()
     instance_create_info.enabledLayerCount       = 0;
     instance_create_info.ppEnabledExtensionNames = requested_instance_extensions_.data();
     instance_create_info.ppEnabledLayerNames     = nullptr;
+    instance_create_info.pApplicationInfo = &application_info;
 
     VK_ASSERT_SUCCESS(vkCreateInstance(&instance_create_info, nullptr, &instance_))
 }
@@ -957,7 +958,7 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     VkBuffer     vertex_buffers[] = {vertex_buffer_.buffer};
     VkDeviceSize offsets[]        = {0};
     vkCmdBindVertexBuffers(buffer, 0, 1, vertex_buffers, offsets);
-    vkCmdBindIndexBuffer(buffer, index_buffer_.buffer, 0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindIndexBuffer(buffer, index_buffer_.buffer, 0, VK_INDEX_TYPE_UINT32);
 
     VkViewport viewport{};
     viewport.x        = 0.0f;
@@ -1020,7 +1021,7 @@ void VulkanRHI::test_draw_frame()
 void VulkanRHI::test_create_vertex_buffer()
 {
 
-    uint32       size = vertices.size() * sizeof(Vertex);
+    uint64       size = vertices.size() * sizeof(Vertex);
     VulkanBuffer staging_buffer{};
     staging_buffer = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                                    VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
@@ -1044,6 +1045,8 @@ void VulkanRHI::test_create_vertex_buffer()
 void VulkanRHI::test_create_index_buffer()
 {
     VkDeviceSize size           = indices.size() * sizeof(indices[0]);
+
+
     VulkanBuffer staging_buffer = create_buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                                                 VK_MEMORY_PROPERTY_HOST_COHERENT_BIT |
                                                 VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
@@ -1074,9 +1077,9 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     UniformBufferObject ubo{};
     float               aspect_ratio = viewport_.width_ / (float) viewport_.height_;
 
-    ubo.model      = Matrix4F::identity();
-    ubo.view       = Matrix4F::look_at_rh({2, 2, 2}, {.57, .57, .57}, {0, 0, 1});
-    ubo.projection = Matrix4F::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 10.0f);
+    ubo.model      = Matrix4F::translate(0,0,0.5f*sin(elapsed_time*3));
+    ubo.view       = Matrix4F::look_at_rh({200, 200, 200}, {.57, .57, .57}, {0, 0, 1});
+    ubo.projection = Matrix4F::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 1000.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
 
@@ -1352,8 +1355,20 @@ bool VulkanRHI::has_stencil_component(VkFormat format)
 
 void VulkanRHI::load_mesh()
 {
-    OBJData result;
-    assert(OBJImporter::load_file("../../Content/sphere.obj", result));
+    OBJ::OBJData result;
+    OBJ::OBJImporter::load_file("../../Content/sponza.obj", result);
+    for(const OBJ::OBJFace& face : result.faces)
+    {
+        for(const OBJ::OBJIndex& index : face)
+        {
+            Vertex vertex{};
+            vertex.position_ = result.attributes.positions[index.position_index-1];
+            vertex.texture_coordinates_ = result.attributes.texture_coordinates[index.texture_coordinate_index-1];
+            vertex.color_ = {1,0,0};
+            vertices.push_back(vertex);
+            indices.push_back(indices.size());
+        }
+    }
 }
 
 

@@ -2,10 +2,6 @@ C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles/SimulacraL
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles/SimulacraEngine.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles/rebuild_cache.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-build/CMakeFiles/edit_cache.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-build/CMakeFiles/rebuild_cache.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-build/glm/CMakeFiles/edit_cache.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/_deps/glm-build/glm/CMakeFiles/rebuild_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Renderer/Backend/Vulkan/CMakeFiles/edit_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Renderer/Backend/Vulkan/CMakeFiles/rebuild_cache.dir
 C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Renderer/Backend/DirectX/CMakeFiles/edit_cache.dir

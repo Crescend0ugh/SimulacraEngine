@@ -162,7 +162,7 @@ public:
     VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
     void            free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
     VkCommandBuffer create_and_begin_scratch_buffer();
-    void end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
+    void            end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
     void            begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
@@ -287,6 +287,11 @@ protected:
     VulkanBuffer vertex_buffer_;
     //TODO get rid of this later
     VulkanBuffer                 index_buffer_;
+
+
+    std::vector<Vertex> vertices;
+    std::vector<uint32> indices;
+
     //TODO get rid of this later
     std::vector<VkDescriptorSet> descriptor_sets;
     //TODO get rid of this later
@@ -341,22 +346,6 @@ protected:
 //TODO figure out a way to properly declare positions types
 
 
-const std::vector<Vertex> vertices = {
-        {{-0.5f, -0.5f, 0.0f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{0.5f, -0.5f, 0.0f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-        {{-0.5f, 0.5f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}},
-
-        {{-0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, -0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-        {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}}
-};
-
-const std::vector<uint16_t> indices = {
-        0, 1, 2, 2, 3, 0,
-        4, 5, 6, 6, 7, 4
-};
 
 
 

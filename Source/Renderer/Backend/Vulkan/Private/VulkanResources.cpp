@@ -8,6 +8,7 @@
 VulkanBuffer VulkanRHI::create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags)
 {
 
+
     VulkanBuffer buffer{};
 
     VkBufferCreateInfo buffer_create_info{};

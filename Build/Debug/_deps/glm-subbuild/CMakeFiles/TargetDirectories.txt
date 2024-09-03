@@ -1,3 +1,0 @@
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/CMakeFiles/glm-populate.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/CMakeFiles/edit_cache.dir
-C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/_deps/glm-subbuild/CMakeFiles/rebuild_cache.dir
