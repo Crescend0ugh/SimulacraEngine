@@ -8,6 +8,14 @@
 #include <string>
 #include <fstream>
 
+struct OBJIndex
+{
+    uint32 position_index;
+    uint32 texture_coordinate_index;
+    uint32 vertex_normal_index;
+};
+
+using OBJFace = std::vector<OBJIndex>;
 
 struct OBJData
 {
@@ -15,7 +23,7 @@ struct OBJData
     std::vector<Vector3f> positions;
     std::vector<Vector2f> texture_coordinates;
     std::vector<Vector3f> vertex_normals;
-    std::vector<std::array<Vector3u, 3>> faces;
+    std::vector<OBJFace>  faces;
 };
 
 
@@ -83,11 +91,11 @@ private:
             }
             case face: {
                 const char* formatting_string = "f %lu/%lu/%lu %lu/%lu/%lu %lu/%lu/%lu";
-                std::array<Vector3u, 3> face;
+                OBJFace face(3);
                 sscanf_s(line, formatting_string,
-                         &face[0].x, &face[0].y, &face[0].z,
-                         &face[1].x, &face[1].y, &face[1].z,
-                         &face[2].x, &face[2].y, &face[2].z);
+                         &face[0].position_index, &face[0].texture_coordinate_index, &face[0].vertex_normal_index,
+                         &face[1].position_index, &face[1].texture_coordinate_index, &face[1].vertex_normal_index,
+                         &face[2].position_index, &face[2].texture_coordinate_index, &face[2].vertex_normal_index);
 
                 result.faces.push_back(face);
                 break;

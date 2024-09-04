@@ -45,20 +45,6 @@ struct VulkanPipeline
     VkPipelineLayout pipeline_layout_;
 };
 
-struct VulkanPipelineManager
-{
-    struct pipeline_cache
-    {
-        std::string        file_name_;
-        size_t             pipeline_cache_size_ = 0;
-        std::vector<uint8> data_;
-        VkPipelineCache    pipeline_cache_;
-    };
-
-    std::unordered_map<uint32, VulkanPipeline> pipelines_;
-    std::vector<pipeline_cache>                pipeline_caches_;
-    size_t                                      total_size_ = 0;
-};
 
 struct VulkanGraphicsPipelineDescription
 {
@@ -162,7 +148,7 @@ public:
     VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
     void            free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
     VkCommandBuffer create_and_begin_scratch_buffer();
-    void end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
+    void            end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
     void            begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
@@ -336,27 +322,13 @@ protected:
 
 
 
+    std::vector<Vertex> vertices;
+    std::vector<uint32> indices;    
+
 };
 
 //TODO figure out a way to properly declare positions types
 
-
-const std::vector<Vertex> vertices = {
-        {{-0.5f, -0.5f, 0.0f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{0.5f, -0.5f, 0.0f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, 0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-        {{-0.5f, 0.5f, 0.0f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}},
-
-        {{-0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{0.5f, -0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{0.5f, 0.5f, -0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-        {{-0.5f, 0.5f, -0.5f}, {1.0f, 1.0f, 1.0f}, {0.0f, 1.0f}}
-};
-
-const std::vector<uint16_t> indices = {
-        0, 1, 2, 2, 3, 0,
-        4, 5, 6, 6, 7, 4
-};
 
 
 

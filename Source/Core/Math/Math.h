@@ -5,6 +5,9 @@
 #pragma once
 #include <math.h>
 
+#define PI 3.1415926535897932f
+#define DOUBLE_PI  3.1415926535897932
+
 namespace Math
 {
     __forceinline float sqrt(float f)
@@ -26,4 +29,10 @@ namespace Math
     {
         return 1.0/ sqrt(d);
     }
+
+    __forceinline float radians(float degrees)
+    {
+        return degrees * PI / 180.f;
+    }
+
 }

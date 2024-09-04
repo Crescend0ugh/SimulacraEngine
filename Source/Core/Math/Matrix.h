@@ -3,9 +3,7 @@
 //
 
 #pragma once
-#include <glm/mat4x4.hpp> // glm::mat4
-#define GLM_ENABLE_EXPERIMENTAL
-#include <glm/gtx/string_cast.hpp>
+
 
 namespace Math
 {
@@ -137,22 +135,7 @@ namespace Math
             return result;
         }
 
-        static __forceinline bool matches_glm(Matrix4<float> matrix, glm::mat4 glm_matrix)
-        {
 
-            for(int i = 0; i < 4; ++i)
-            {
-                for(int j = 0; j < 4; ++j)
-                {
-                    if(glm_matrix[i][j]!=matrix.matrix[i][j])
-                    {
-                        std::cout << glm::to_string(glm_matrix) << "\n" << matrix.to_string();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
 
         __forceinline float determinant()
         {

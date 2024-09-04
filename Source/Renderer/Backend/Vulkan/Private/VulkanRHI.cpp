@@ -51,9 +51,9 @@ void VulkanRHI::init(void* win_hand)
     }
 
 
+    load_mesh();
     test_create_vertex_buffer();
     test_create_index_buffer();
-    load_mesh();
     for (auto &frame_resource: frame_resources_) {
         frame_resource.uniform_buffer_          = create_buffer(sizeof(UniformBufferObject),
                                                                 VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
@@ -957,7 +957,7 @@ void VulkanRHI::test_record_command_buffers(VkCommandBuffer buffer, uint32 frame
     VkBuffer     vertex_buffers[] = {vertex_buffer_.buffer};
     VkDeviceSize offsets[]        = {0};
     vkCmdBindVertexBuffers(buffer, 0, 1, vertex_buffers, offsets);
-    vkCmdBindIndexBuffer(buffer, index_buffer_.buffer, 0, VK_INDEX_TYPE_UINT16);
+    vkCmdBindIndexBuffer(buffer, index_buffer_.buffer, 0, VK_INDEX_TYPE_UINT32);
 
     VkViewport viewport{};
     viewport.x        = 0.0f;
@@ -1076,7 +1076,7 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
 
     ubo.model      = Matrix4F::identity();
     ubo.view       = Matrix4F::look_at_rh({2, 2, 2}, {.57, .57, .57}, {0, 0, 1});
-    ubo.projection = Matrix4F::perspective_rh(glm::radians(45.0f), aspect_ratio, 0.1f, 10.0f);
+    ubo.projection = Matrix4F::perspective_rh(Math::radians(45.f), aspect_ratio, 0.1f, 10.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
 
@@ -1353,7 +1353,22 @@ bool VulkanRHI::has_stencil_component(VkFormat format)
 void VulkanRHI::load_mesh()
 {
     OBJData result;
-    assert(OBJImporter::load_file("../../Content/sphere.obj", result));
+    OBJImporter::load_file("../../Content/weird_sphere.obj", result);
+    for(const OBJFace& face : result.faces)
+    {
+       for(const OBJIndex& index : face)
+       {
+           Vertex vertex{};
+           vertex.position_ = result.positions[index.position_index-1];
+           vertex.texture_coordinates_ = result.texture_coordinates[index.texture_coordinate_index-1];
+           vertex.normal = result.vertex_normals[index.vertex_normal_index-1];
+           vertex.color_ = {1,1,1};
+           vertices.push_back(vertex);
+           indices.push_back(indices.size());
+       }
+
+    }
+
 }
 
 
