@@ -1074,7 +1074,7 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     UniformBufferObject ubo{};
     float               aspect_ratio = viewport_.width_ / (float) viewport_.height_;
 
-    ubo.model      = Matrix4F::identity();
+    ubo.model      = Matrix4F::translate(0,0, sin(elapsed_time));
     ubo.view       = Matrix4F::look_at_rh({2, 2, 2}, {.57, .57, .57}, {0, 0, 1});
     ubo.projection = Matrix4F::perspective_rh(Math::radians(45.f), aspect_ratio, 0.1f, 10.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
@@ -1353,7 +1353,7 @@ bool VulkanRHI::has_stencil_component(VkFormat format)
 void VulkanRHI::load_mesh()
 {
     OBJData result;
-    OBJImporter::load_file("../../Content/weird_sphere.obj", result);
+    OBJImporter::load_file("../../Content/square.obj", result);
     for(const OBJFace& face : result.faces)
     {
        for(const OBJIndex& index : face)

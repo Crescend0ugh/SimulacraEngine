@@ -12,7 +12,7 @@ layout(location = 1) in vec3 inNormals;
 layout(location = 3) in vec2 inTexCoord;
 layout(location = 2) in vec3 inColor;
 
-layout(location = 0) out vec3 fragColor;
+layout(location = 0) out vec3 fragPosition;
 layout(location = 1) out vec2 fragTexCoord;
 layout(location = 2) out vec3 fragNormals;
 
@@ -21,9 +21,9 @@ float map(float value, float min1, float max1, float min2, float max2) {
 }
 
 void main() {
-    gl_Position = ubo.projection * ubo.view * ubo.model * vec4(inPosition, 1.0);
-    fragColor = inPosition*0.5+0.5;
+    vec4 positionWorld =  ubo.model * vec4(inPosition, 1.0);
+    gl_Position = ubo.projection * ubo.view * positionWorld;
+    fragPosition = vec3(positionWorld);
     fragTexCoord = inTexCoord;
-
-    fragNormals = inNormals*0.5+0.5;
+    fragNormals = inNormals;
 }
