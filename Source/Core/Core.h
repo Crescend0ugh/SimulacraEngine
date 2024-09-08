@@ -29,8 +29,8 @@
 #include "CoreDefines.h"
 #include "CoreTypes.h"
 
+#include "Math/Color.h"
 #include "Math/Vector2.h"
 #include "Math/Vector.h"
 #include "Math/Vector4.h"
 #include "Math/Matrix.h"
-
