@@ -14,14 +14,7 @@ public:
     MetalRHI();
 
     ~MetalRHI();
-
-    virtual void draw_primitives();
     
-    virtual void draw_primitives_indexed();
-
-    virtual void draw_primitives_indirect();
-
-    virtual void draw_primitives_indexed_indirect();
 
     virtual void create_buffer();
 
