@@ -3,8 +3,13 @@
 //
 
 #pragma once
-#define VK_USE_PLATFORM_WIN32_KHR
+
 #include <vulkan/vulkan.h>
+
+#include "Vulkan/Platforms/Mac/VulkanMacPlatform.h"
+#ifdef WIN32
+#include "Windows/VulkanWindowsPlatform"
+#endif
 
 #define VK_ASSERT_SUCCESS(statement) \
 {                                    \

@@ -1,0 +1,16 @@
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles/SimulacraLibrary.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles/SimulacraEngine.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Renderer/Backend/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Renderer/Backend/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Platform/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Application/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Application/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Task/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Task/CMakeFiles/rebuild_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/ThirdParty/CMakeFiles/edit_cache.dir
+/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/ThirdParty/CMakeFiles/rebuild_cache.dir

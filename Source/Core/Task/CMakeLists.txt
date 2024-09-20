@@ -1,0 +1,1 @@
+target_sources(SimulacraLibrary PRIVATE TasksTest.cpp)

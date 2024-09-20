@@ -1,1 +1,2 @@
-target_sources(SimulacraLibrary PUBLIC SimulacraWindowsWindow.cpp)
+target_include_directories(SimulacraLibrary PUBLIC Mac)
+

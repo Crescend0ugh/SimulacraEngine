@@ -33,7 +33,7 @@ namespace Math
             matrix[3][0] = w.x;  matrix[3][1] = w.y;  matrix[3][2] = w.z;  matrix[3][3] = w.w;
         }
 
-        static __forceinline Matrix4<T> identity()
+        static forceinline Matrix4<T> identity()
         {
             return
             {
@@ -49,14 +49,14 @@ namespace Math
 
         }
 
-        __forceinline Matrix4<T> get_inverse()
+        forceinline Matrix4<T> get_inverse()
         {
             return {};
         }
 
-        __forceinline void invert();
+        forceinline void invert();
 
-        static __forceinline Matrix4<T> look_at_rh(Vector3<T> eye, Vector3<T> target, Vector3<T> up_axis)
+        static forceinline Matrix4<T> look_at_rh(Vector3<T> eye, Vector3<T> target, Vector3<T> up_axis)
         {
             const Vector3<T> forward = (target).get_normal();
             const Vector3<T> right = up_axis.cross(forward).get_normal();
@@ -74,7 +74,7 @@ namespace Math
 
 
 
-        static __forceinline Matrix4<T> perspective_rh(T fovy, T aspect_ratio, T near, T far)
+        static forceinline Matrix4<T> perspective_rh(T fovy, T aspect_ratio, T near, T far)
         {
             const T cotan_half_fovy = 1/(tan(fovy/2));
 
@@ -95,17 +95,17 @@ namespace Math
 
         }
 
-        static __forceinline Matrix4<T> orthographic_rh()
+        static forceinline Matrix4<T> orthographic_rh()
         {
 
         }
 
-        static __forceinline Matrix4<T> rotate(Matrix4<T> matrix, float radians, Vector3<T> axis)
+        static forceinline Matrix4<T> rotate(Matrix4<T> matrix, float radians, Vector3<T> axis)
         {
 
         }
 
-        static __forceinline Matrix4<T> translate(T x, T y, T z)
+        static forceinline Matrix4<T> translate(T x, T y, T z)
         {
             return
                     {
@@ -137,7 +137,7 @@ namespace Math
 
 
 
-        __forceinline float determinant()
+        forceinline float determinant()
         {
 
         };

@@ -6,6 +6,7 @@
 
 #include "Math.h"
 
+
 namespace Math
 {
     template<typename T>
@@ -23,7 +24,7 @@ namespace Math
             return Vector3<T>(x * scale_factor, y * scale_factor, z * scale_factor);
         }
 
-        __forceinline T magnitude() const
+        forceinline T magnitude() const
         {
             sqrt(x * x + y * y + z * z);
         }

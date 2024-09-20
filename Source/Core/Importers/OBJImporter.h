@@ -85,14 +85,14 @@ private:
         switch (attribute) {
             case position: {
                 Vector3f position;
-                sscanf_s(line, "v %f %f %f", &position.x, &position.y, &position.z);
+                sscanf(line, "v %f %f %f", &position.x, &position.y, &position.z);
                 result.positions.push_back(position);
                 break;
             }
             case face: {
                 const char* formatting_string = "f %lu/%lu/%lu %lu/%lu/%lu %lu/%lu/%lu";
                 OBJFace face(3);
-                sscanf_s(line, formatting_string,
+                sscanf(line, formatting_string,
                          &face[0].position_index, &face[0].texture_coordinate_index, &face[0].vertex_normal_index,
                          &face[1].position_index, &face[1].texture_coordinate_index, &face[1].vertex_normal_index,
                          &face[2].position_index, &face[2].texture_coordinate_index, &face[2].vertex_normal_index);
@@ -102,13 +102,13 @@ private:
             }
             case vertex_normal: {
                 Vector3f vertex_normal;
-                sscanf_s(line, "vn %f %f %f", &vertex_normal.x, &vertex_normal.y, &vertex_normal.z);
+                sscanf(line, "vn %f %f %f", &vertex_normal.x, &vertex_normal.y, &vertex_normal.z);
                 result.vertex_normals.push_back(vertex_normal);
                 break;
             }
             case texture_coordinate:
                 Vector2f texture_coordinate;
-                sscanf_s(line, "vt %f %f", &texture_coordinate.x, &texture_coordinate.y);
+                sscanf(line, "vt %f %f", &texture_coordinate.x, &texture_coordinate.y);
                 result.texture_coordinates.push_back(texture_coordinate);
                 break;
             case comment:

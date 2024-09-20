@@ -6,19 +6,19 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 
-find_package(Vulkan REQUIRED)
 
-
-add_library(SimulacraLibrary)
-add_subdirectory(Source/Renderer/Backend/Vulkan)
-add_subdirectory(Source/Renderer/Backend/DirectX)
-
+add_library(SimulacraLibrary Source/Core/Main/Mac/MacMain.mm)
+add_subdirectory(Source/Renderer/Backend)
 add_subdirectory(Source/Core/Platform)
 add_subdirectory(Source/Core)
 add_subdirectory(Source/ThirdParty)
 
-add_executable(SimulacraEngine WIN32 Source/Core/Launcher/Win_Main.cpp)
-
+IF (APPLE)
+    add_executable(SimulacraEngine MACOSX_BUNDLE Source/Core/Main/Mac/MacMain.mm)
+ENDIF ()
+IF (WINDOWS)
+    add_executable(SimulacraEngine WIN32 Source/Core/Main/Windows/WindowsMain.cpp)
+ENDIF ()
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
@@ -26,7 +26,5 @@ endif ()
 if (CMAKE_BUILD_TYPE MATCHES Release)
     add_definitions(-D_NDEBUG=1)
 endif ()
-
-
 
 target_link_libraries(SimulacraEngine SimulacraLibrary)

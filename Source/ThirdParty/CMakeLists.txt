@@ -1,1 +1,2 @@
+target_include_directories(SimulacraLibrary PUBLIC Metal-cpp)
 target_include_directories(SimulacraLibrary PUBLIC stb)

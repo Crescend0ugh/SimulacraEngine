@@ -34,3 +34,5 @@
 #include "Math/Vector.h"
 #include "Math/Vector4.h"
 #include "Math/Matrix.h"
+
+#include "Platform/Platform.h"
