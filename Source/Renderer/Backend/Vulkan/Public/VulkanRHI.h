@@ -13,6 +13,22 @@
 #include "Mesh.h"
 
 
+#define VK_ASSERT_SUCCESS(statement) \
+{                                    \
+VkResult result = statement;  \
+if(result == VK_SUCCESS)     \
+{                            \
+}                            \
+                             \
+else                         \
+{                            \
+    std::cout << #statement << " failed\n";   \
+}                                    \
+}\
+
+
+
+
 
 struct VulkanQueue
 {
@@ -148,7 +164,7 @@ public:
     VkCommandBuffer create_command_buffer(VkCommandPool command_pool, VkCommandBufferLevel level = VK_COMMAND_BUFFER_LEVEL_PRIMARY);
     void            free_command_buffer(VkCommandPool command_pool, VkCommandBuffer& command_buffer);
     VkCommandBuffer create_and_begin_scratch_buffer();
-    void            end_and_free_scratch_buffer(VkCommandBuffer command_buffer);
+    void            end_and_submit_scratch_buffer(VkCommandBuffer command_buffer);
     void            begin_command_buffer(VkCommandBuffer command_buffer, VkCommandBufferUsageFlags usage_flags = 0);
     void            end_command_buffer(VkCommandBuffer command_buffer);
     void            reset_command_buffer(VkCommandBuffer command_buffer);
@@ -208,7 +224,7 @@ public:
     VkFormat find_supported_format(const std::vector<VkFormat> &desired_formats,
                                    VkImageTiling tiling,
                                    VkFormatFeatureFlags features
-                                   );
+    );
     bool has_stencil_component(VkFormat format);
 
 
@@ -247,9 +263,9 @@ protected:
     //TODO get rid of this later
     VulkanViewport               viewport_;
     //TODO get rid of this later
-     VkDescriptorSetLayout       descriptor_set_layout;
-     //TODO get rid of this later
-     VkDescriptorPool            descriptor_pool;
+    VkDescriptorSetLayout       descriptor_set_layout;
+    //TODO get rid of this later
+    VkDescriptorPool            descriptor_pool;
     //TODO get rid of this later
     VulkanPipeline               pipeline_;
     //TODO get rid of this later
@@ -259,7 +275,7 @@ protected:
     //TODO get rid of this later
     VkShaderModule               fragment_shader_module_;
     //TODO make a better way to use instance extensions than just declaring an array of names
-    std::vector<const char*> requested_instance_extensions_ = {
+    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME,
                                                                VK_KHR_SURFACE_EXTENSION_NAME,
                                                                VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME, };
     //TODO make this work...at all
@@ -323,7 +339,7 @@ protected:
 
 
     std::vector<Vertex> vertices;
-    std::vector<uint32> indices;    
+    std::vector<uint32> indices;
 
 };
 
@@ -338,4 +354,3 @@ struct UniformBufferObject
     Matrix4F view;
     Matrix4F projection;
 };
-

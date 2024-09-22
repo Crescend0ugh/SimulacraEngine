@@ -1,8 +1,8 @@
-# Install script for directory: /Users/adithya_somashekhar/CLionProjects/SimulacraEngine
+# Install script for directory: C:/Users/avsom/CLionProjects/SimulacraEngine
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SimulacraEngine")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,29 +32,24 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Renderer/Backend/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Release/Source/Renderer/Backend/cmake_install.cmake")
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Core/Platform/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Release/Source/Core/Platform/cmake_install.cmake")
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/Core/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Release/Source/Core/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Release/Source/ThirdParty/cmake_install.cmake")
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/Source/ThirdParty/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

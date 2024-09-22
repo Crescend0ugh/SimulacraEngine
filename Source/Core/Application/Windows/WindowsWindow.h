@@ -6,6 +6,7 @@
 
 
 #include "Platform/Windows/WindowsPlatformInclude.h"
+#include <unordered_map>
 #include "CoreTypes.h"
 
 namespace Simulacra::windows
@@ -24,14 +25,33 @@ namespace Simulacra::windows
         uint32 y_;
     };
 
-    struct window
+    struct Window
     {
         HWND               hwnd_;
         HINSTANCE          hinstance_;
         window_description description_;
+
+        static bool find_window_by_handle(const HWND& hwnd, Window& window)
+        {
+            std::unordered_map<HWND, Window>::const_iterator iterator = windows.find(hwnd);
+            if(iterator == windows.end())
+            {
+                return false;
+            }
+
+            else
+            {
+                window = iterator->second;
+                return true;
+            }
+
+        };
+
+    private:
+        static std::unordered_map<HWND, Window> windows;
     };
 
-    window create_window(uint32 width, uint32 height, const  char * title);
+    Window create_window(uint32 width, uint32 height, const  char * title);
     void get_window_dimensions(HWND handle, uint32& width, uint32& height);
 
 

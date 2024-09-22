@@ -4,8 +4,7 @@
 
 #pragma once
 #include <Application/Window.h>
-#include <AppKit/AppKit.h>
-#include <Foundation/Foundation.h>
+#include "Platform/Mac/MacPlatformInclude.h"
 #include "CocoaWindow.h"
 
 class MacWindow : public Window

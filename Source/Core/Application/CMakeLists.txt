@@ -4,8 +4,6 @@ if (APPLE)
             "-framework Foundation"
     )
     target_sources(SimulacraLibrary PRIVATE Mac/MacWindow.mm Mac/MacApplicationDelegate.mm Mac/CocoaWindow.mm )
-
-
 endif ()
 
 if (WIN32)

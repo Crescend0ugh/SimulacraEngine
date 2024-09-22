@@ -10,27 +10,27 @@
 
 namespace Math
 {
-    static constexpr forceinline float sqrt(float f)
+    static forceinline float sqrt(float f)
     {
         return ::sqrtf(f);
     }
 
-    static constexpr forceinline double sqrt(double d)
+    static forceinline double sqrt(double d)
     {
         return ::sqrt(d);
     }
 
-    static constexpr forceinline float inv_sqrt(float f)
+    static forceinline float inv_sqrt(float f)
     {
         return 1.0f/sqrtf(f);
     }
 
-    static constexpr forceinline double inv_sqrt(double d)
+    static forceinline double inv_sqrt(double d)
     {
         return 1.0/sqrt(d);
     }
 
-    static constexpr forceinline float radians(float degrees)
+    static forceinline float radians(float degrees)
     {
         return degrees * PI/180.f;
     }

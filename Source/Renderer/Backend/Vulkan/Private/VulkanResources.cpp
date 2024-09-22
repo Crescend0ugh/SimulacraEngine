@@ -2,8 +2,8 @@
 // Created by avsom on 8/21/2024.
 //
 
-#include "VulkanResources.h"
 #include "VulkanRHI.h"
+#include "VulkanResources.h"
 
 VulkanBuffer VulkanRHI::create_buffer(VkDeviceSize size, VkBufferUsageFlags usage_flags, VkMemoryPropertyFlags property_flags)
 {

@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <AppKit/AppKit.h>
-#include <Foundation/Foundation.h>
+#include "Platform/Mac/MacPlatformInclude.h"
 @interface CocoaWindow : NSWindow<NSWindowDelegate>
 @end

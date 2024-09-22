@@ -6,16 +6,15 @@
 
 #include "VulkanCommon.h"
 
-//TODO save this for later when multiple apis are needed
-//struct ImageCreationInfo
-//{
-//    uint32                width;
-//    uint32                height;
-//    VkFormat              format;
-//    VkImageTiling         tiling;
-//    VkImageUsageFlags     usage;
-//    VkMemoryPropertyFlags properties;
-//};
+struct VulkanImage
+{
+
+    VkImage image;
+    VkImageView image_view;
+    VkDeviceMemory memory;
+};
+
+
 
 struct VulkanBuffer
 {
@@ -24,16 +23,3 @@ struct VulkanBuffer
     VkBuffer       buffer;
     VkDeviceMemory memory;
 };
-
-struct VulkanImage
-{
-    VulkanImage() : image(VK_NULL_HANDLE), image_view(VK_NULL_HANDLE), memory(VK_NULL_HANDLE)
-    {}
-
-
-    VkImage image;
-    VkImageView image_view;
-    VkDeviceMemory memory;
-
-};
-

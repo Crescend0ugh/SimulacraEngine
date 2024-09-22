@@ -38,7 +38,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
     return DefWindowProc(hwnd, msg, wparam, lparam);
 }
 
-Simulacra::windows::window Simulacra::windows::create_window(uint32 width, uint32 height, const char* title)
+Simulacra::windows::Window Simulacra::windows::create_window(uint32 width, uint32 height, const char* title)
 {
     HINSTANCE hinstance = GetModuleHandle(NULL);
 
@@ -74,7 +74,7 @@ Simulacra::windows::window Simulacra::windows::create_window(uint32 width, uint3
             nullptr
     );
 
-    return window{hwnd, hinstance, {width, height, XPos, YPos}};
+    return Window{hwnd, hinstance, {width, height, XPos, YPos}};
 }
 
 void Simulacra::windows::get_window_dimensions(HWND handle, uint32 &width, uint32 &height)

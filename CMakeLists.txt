@@ -7,16 +7,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 
-add_library(SimulacraLibrary Source/Core/Main/Mac/MacMain.mm)
+add_library(SimulacraLibrary )
 add_subdirectory(Source/Renderer/Backend)
 add_subdirectory(Source/Core/Platform)
 add_subdirectory(Source/Core)
 add_subdirectory(Source/ThirdParty)
 
-IF (APPLE)
-    add_executable(SimulacraEngine MACOSX_BUNDLE Source/Core/Main/Mac/MacMain.mm)
-ENDIF ()
-IF (WINDOWS)
+IF (WIN32)
     add_executable(SimulacraEngine WIN32 Source/Core/Main/Windows/WindowsMain.cpp)
 ENDIF ()
 

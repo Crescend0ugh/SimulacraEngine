@@ -1,8 +1,8 @@
 find_package(Vulkan REQUIRED)
 target_link_libraries(SimulacraLibrary Vulkan::Vulkan)
-target_include_directories(SimulacraLibrary PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(SimulacraLibrary PUBLIC Vulkan/Public)
-target_sources(SimulacraLibrary PRIVATE
+target_include_directories(SimulacraLibrary PUBLIC Vulkan/Platforms/Windows)
+target_sources(SimulacraLibrary PUBLIC
         Vulkan/Private/VulkanRHI.cpp
         Vulkan/Private/VulkanMemoryAllocator.cpp
         Vulkan/Private/VulkanResources.cpp
@@ -15,6 +15,4 @@ if (APPLE)
     target_link_libraries(SimulacraLibrary "-framework MetalKit")
     target_link_libraries(SimulacraLibrary "-framework MetalFX")
     target_link_libraries(SimulacraLibrary "-framework QuartzCore")
-
-
 endif ()

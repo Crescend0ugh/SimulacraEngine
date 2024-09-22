@@ -6,9 +6,8 @@
 
 #include <thread>
 
-#include "../Platform/SimulacraWindowsWindow.h"
+#include "Application/Windows/WindowsWindow.h"
 #include "VulkanRHI.h"
-#include "Jobs/Scheduler.h"
 
  bool Simulacra::windows::should_exit = false;
 
@@ -41,7 +40,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
     freopen_s((FILE **) stdout, "CONOUT$", "w", stdout);
     freopen_s((FILE **) stdin, "CONIN$", "r", stdin);
 
-    Simulacra::windows::window test = Simulacra::windows::create_window(960, 540, "Sandbox Window");
+    Simulacra::windows::Window test = Simulacra::windows::create_window(960, 540, "Sandbox Window");
     ShowWindow(test.hwnd_, SW_SHOW);
 
     VulkanRHI vk_renderer {};

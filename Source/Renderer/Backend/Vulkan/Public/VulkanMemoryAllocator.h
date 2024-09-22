@@ -28,7 +28,7 @@ public:
     void init(VkPhysicalDevice physical_device, VkDevice device);
 
     VkDeviceMemory alloc(uint32 memory_type_index, VkDeviceSize size);
-    bool find_memory_type_index(VkMemoryPropertyFlags desired_memory_properties,
+    bool           find_memory_type_index(VkMemoryPropertyFlags desired_memory_properties,
                                 uint32 desired_memory_type_bits, uint32 &memory_type_index);
 
 

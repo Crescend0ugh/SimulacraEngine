@@ -1,8 +1,8 @@
-# Install script for directory: /Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Source/Core
+# Install script for directory: C:/Users/avsom/CLionProjects/SimulacraEngine/Source/Core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SimulacraEngine")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,18 +32,13 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Application/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Application/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/adithya_somashekhar/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Task/cmake_install.cmake")
+  include("C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Debug/Source/Core/Task/cmake_install.cmake")
 endif()
 

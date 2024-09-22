@@ -5,6 +5,7 @@
 #pragma once
 
 #include "Core.h"
+#include "VulkanResources.h"
 
 struct Vertex
 {
@@ -52,9 +53,3 @@ struct Vertex
 
 };
 
-struct TestMesh
-{
-  std::vector<Vertex> vertices;
-  std::vector<uint16> indices;
-  VulkanBuffer        buffer;
-};
