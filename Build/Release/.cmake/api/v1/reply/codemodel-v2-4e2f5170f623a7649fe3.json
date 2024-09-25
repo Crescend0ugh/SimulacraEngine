@@ -1,0 +1,153 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						6
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "Source/Renderer/Backend",
+					"jsonFile" : "directory-Source.Renderer.Backend-Release-66ef81630f73691830bd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Source/Renderer/Backend"
+				},
+				{
+					"build" : "Source/Core/Platform",
+					"jsonFile" : "directory-Source.Core.Platform-Release-b8ce58270848df4e0e09.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Source/Core/Platform"
+				},
+				{
+					"build" : "Source/Core",
+					"childIndexes" : 
+					[
+						4,
+						5
+					],
+					"jsonFile" : "directory-Source.Core-Release-a8e43b4ad7f01bf46f3f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Source/Core"
+				},
+				{
+					"build" : "Source/Core/Application",
+					"jsonFile" : "directory-Source.Core.Application-Release-ecb1a4a41d13cad835c6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "Source/Core/Application"
+				},
+				{
+					"build" : "Source/Core/Task",
+					"jsonFile" : "directory-Source.Core.Task-Release-c918b0afdf3f7505d5ac.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "Source/Core/Task"
+				},
+				{
+					"build" : "Source/ThirdParty",
+					"jsonFile" : "directory-Source.ThirdParty-Release-be375b99ea0a9821999a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Source/ThirdParty"
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "SimulacraEngine",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SimulacraEngine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SimulacraEngine-Release-cf0beda2a408d1bbe4ae.json",
+					"name" : "SimulacraEngine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SimulacraLibrary::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SimulacraLibrary-Release-6009c9a5eb94917fdb43.json",
+					"name" : "SimulacraLibrary",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/avsom/CLionProjects/SimulacraEngine/Build/Release",
+		"source" : "C:/Users/avsom/CLionProjects/SimulacraEngine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

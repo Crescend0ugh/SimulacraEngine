@@ -1074,7 +1074,7 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     float               aspect_ratio = viewport_.width_ / (float) viewport_.height_;
 
     ubo.model      = Matrix4F::translate(0,0, 0);
-    ubo.view       = Matrix4F::look_at_rh({2,2,2}, {.57, .57, .57}, {0, 0, 1});
+    ubo.view       = Matrix4F::look_at_rh({200,200,200}, {.57, .57, .57}, {0, 0, 1});
     ubo.projection = Matrix4F::perspective_rh(Math::radians(45.f), aspect_ratio, 0.1f, 1000.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
@@ -1352,7 +1352,7 @@ bool VulkanRHI::has_stencil_component(VkFormat format)
 void VulkanRHI::load_mesh()
 {
     OBJData result;
-    OBJImporter::load_file("../../Content/sphere.obj", result);
+    OBJImporter::load_file("../../Content/sponza.obj", result);
     for(const OBJFace& face : result.faces)
     {
         for(const OBJIndex& index : face)

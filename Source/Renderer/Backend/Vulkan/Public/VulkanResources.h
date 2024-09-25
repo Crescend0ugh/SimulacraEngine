@@ -14,7 +14,17 @@ struct VulkanImage
     VkDeviceMemory memory;
 };
 
+struct FramebufferAttachment
+{
+    VulkanImage image;
+    VkFormat    format;
+};
 
+struct Framebuffer
+{
+    uint32 width, height;
+    std::vector<FramebufferAttachment> framebuffer_attachments;
+};
 
 struct VulkanBuffer
 {
@@ -23,3 +33,4 @@ struct VulkanBuffer
     VkBuffer       buffer;
     VkDeviceMemory memory;
 };
+

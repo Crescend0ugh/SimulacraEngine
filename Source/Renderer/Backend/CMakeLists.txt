@@ -7,6 +7,7 @@ target_sources(SimulacraLibrary PUBLIC
         Vulkan/Private/VulkanMemoryAllocator.cpp
         Vulkan/Private/VulkanResources.cpp
         Vulkan/Private/VulkanSwapchain.cpp
+        Vulkan/VulkanDeferredRenderer.cpp
 )
 if (APPLE)
     target_include_directories(SimulacraLibrary PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
