@@ -1,3 +1,4 @@
+
 find_package(Vulkan REQUIRED)
 target_link_libraries(SimulacraLibrary Vulkan::Vulkan)
 target_include_directories(SimulacraLibrary PUBLIC Vulkan/Public)

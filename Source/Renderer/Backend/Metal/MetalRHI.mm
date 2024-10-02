@@ -5,169 +5,115 @@
 #include "MetalRHI.h"
 
 
-MetalRHI::MetalRHI()
+id MetalRHI::create_buffer(uint64 size, MTLResourceOptions options)
 {
-    device = MTLCreateSystemDefaultDevice();
-    metal_layer = [CAMetalLayer layer];
-    metal_layer.device = (__bridge id <MTLDevice>) device;
-    metal_layer.pixelFormat = MTLPixelFormatBGRA8Unorm;
-    window = MacWindow();
-    window.initialize(800, 450);
-    NSWindow* cocoa_handle = static_cast<NSWindow*>(window.native_handle());
-    cocoa_handle.contentView.layer = metal_layer;
-    cocoa_handle.contentView.wantsLayer = YES;
-    test_create_triangle();
-    test_create_default_library();
+    id <MTLBuffer> buffer;
+    return [device newBufferWithLength:size options:options];
+}
 
+void MetalRHI::build_buffers()
+{
+    const size_t positionsDataSize = vertex_count * sizeof( simd::float3 );
+    const size_t colorDataSize = vertex_count * sizeof( simd::float3 );
+
+    position_buffer = [device newBufferWithLength:positionsDataSize options:MTLStorageModeManaged];
+    color_buffer = [device newBufferWithLength:positionsDataSize options:MTLStorageModeManaged];
+
+    memcpy( position_buffer.contents, positions, positionsDataSize );
+    memcpy( color_buffer.contents, colors, colorDataSize );
+
+    [position_buffer didModifyRange:NSMakeRange( 0, position_buffer.length)];
+    [color_buffer didModifyRange:NSMakeRange( 0, color_buffer.length)];
+
+}
+
+void MetalRHI::draw_frame(MTKView* view)
+{
+    NSAutoreleasePool* autorelease_pool = [[NSAutoreleasePool alloc] init];
+
+    id<MTLCommandBuffer> command_buffer = [command_queue commandBuffer];
+    MTLRenderPassDescriptor* render_pass_descriptor = [view currentRenderPassDescriptor];
+    id<MTLRenderCommandEncoder> encoder = [command_buffer renderCommandEncoderWithDescriptor:render_pass_descriptor];
+
+
+    [encoder setRenderPipelineState:pipeline_state];
+    [encoder setVertexBuffer:position_buffer offset:0 atIndex:0];
+    [encoder setVertexBuffer:color_buffer offset:0 atIndex:1];
+    [encoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:3];
+    [encoder endEncoding];
+    [command_buffer presentDrawable:[view currentDrawable]];
+    [command_buffer commit];
+    [autorelease_pool release];
+}
+
+void MetalRHI::build_shaders()
+{
+    NSError* error = nullptr;
+    id <MTLLibrary> library = [device newLibraryWithFile:@"../../../../../Shaders/metal/triangle.metallib" error:&error];
+    if (!library) {
+        [NSException raise:@"Failed to read shaders" format:@"%@", [error localizedDescription]];
+    }
+
+    MTLRenderPipelineDescriptor* pipeline_descriptor = [[MTLRenderPipelineDescriptor alloc] init];
+    pipeline_descriptor.vertexFunction = [library newFunctionWithName:@"vertexFunction"];
+    pipeline_descriptor.fragmentFunction = [library newFunctionWithName:@"fragmentFunction"];;
+    pipeline_descriptor.colorAttachments[0].pixelFormat = MTLPixelFormat::MTLPixelFormatBGRA8Unorm;
+    pipeline_state = [device newRenderPipelineStateWithDescriptor:pipeline_descriptor error:&error];
+    if (!pipeline_state) {
+        [NSException raise:@"Failed to create pipeline state" format:@"%@", [error localizedDescription]];
+    }
+
+    [pipeline_descriptor release];
+    shader_library = library;
+}
+
+MetalRHI::MetalRHI(id <MTLDevice> device) : device([device retain])
+{
+    command_queue = [device newCommandQueue];
+    build_shaders();
+    build_buffers();
 }
 
 MetalRHI::~MetalRHI()
 {
+    [shader_library release];
+    [argument_buffer release];
+    [pipeline_state release];
+    [command_queue release];
     [device release];
 }
 
-void MetalRHI::create_buffer()
-{
-    std::cout << "Lol";
-}
-
-void MetalRHI::release_buffer()
-{
-
-}
-
-void MetalRHI::create_texture()
-{
-
-}
-
-void MetalRHI::release_texture()
-{
-
-}
-
-void MetalRHI::copy_buffer()
-{
-
-}
-
-void MetalRHI::copy_image()
-{
-
-}
-
-void MetalRHI::copy_buffer_to_image()
-{
-
-}
-
-void MetalRHI::copy_image_to_buffer()
-{
-
-}
-
-void MetalRHI::create_render_pass()
-{
-
-}
-
-void MetalRHI::create_semaphore()
-{
-
-}
-
-void MetalRHI::create_fence()
-{
-
-}
-
-void MetalRHI::release_fence()
-{
-
-}
-
-void MetalRHI::release_semaphore()
-{
-
-}
-
-void MetalRHI::test_create_triangle()
-{
-    simd::float3 vertices[] =
-            {
-                    {-0.5f, -0.5f, 0.0f},
-                    {0.5f,  -0.5f, 0.0f},
-                    {0.0f,  0.5f,  0.0f}
-            };
-    triangle_buffer = [device newBufferWithBytes:&vertices length:sizeof(vertices) options:MTLResourceStorageModeShared];
-}
-
-void MetalRHI::test_create_default_library()
-{
-    NSError *libraryError = NULL;
-
-    id <MTLLibrary> myLibrary = [device newLibraryWithFile:@"../../../../../Shaders/metal/triangle.metallib" error:&libraryError];
-    if (!myLibrary) {
-        NSLog(@"Library error: %@", libraryError);
-    }
-
-
-}
-
-void MetalRHI::test_create_command_queue()
-{
-    command_queue = [device newCommandQueue];
-}
-
-void MetalRHI::test_create_render_pipeline()
-{
-    id<MTLFunction> vertex_shader = [default_metal_library newFunctionWithName:@"vertexShader"];
-    id<MTLFunction> fragment_shader = [default_metal_library newFunctionWithName:@"fragmentShader"];
-    assert(vertex_shader);
-    assert(fragment_shader);
-    MTLRenderPipelineDescriptor* render_pipeline_descriptor = [[MTLRenderPipelineDescriptor alloc] init];
-    [render_pipeline_descriptor setLabel:@"Triangle Rendering Pipeline"];
-    [render_pipeline_descriptor setVertexFunction:vertex_shader];
-    [render_pipeline_descriptor setFragmentFunction:fragment_shader];
-    assert(render_pipeline_descriptor);
-    MTLPixelFormat pixel_format = metal_layer.pixelFormat;
-    render_pipeline_descriptor.colorAttachments[0].pixelFormat = pixel_format;
+@implementation MetalManager
+- (id)init {
     NSError* error;
-    render_pipeline  = [device newRenderPipelineStateWithDescriptor:render_pipeline_descriptor error:&error];
-    [render_pipeline_descriptor release];
+    NSRect frame = NSMakeRect(0, 0, 640, 480);
+    window = [[NSWindow alloc] initWithContentRect:frame
+              styleMask:NSWindowStyleMaskClosable | NSWindowStyleMaskTitled
+                                           backing:NSBackingStoreBuffered defer:NO];
+
+    id<MTLDevice> device = MTLCreateSystemDefaultDevice();
+    MTKView* view = [[MTKView alloc] initWithFrame:frame device:device];
+    [view setDelegate:self];
+    [window center];
+    [window setContentView:view];
+    [window makeKeyAndOrderFront:NSApp];
+
+    metal = new MetalRHI(device);
+    return self;
 }
 
-void MetalRHI::encode_render_command()
+- (void)drawInMTKView:(MTKView*)view
 {
-
+    metal->draw_frame(view);
 }
 
-void MetalRHI::send_render_command()
+-(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)theApplication
 {
-
+    return YES;
 }
 
-void MetalRHI::draw()
-{
 
-}
+@end
 
-void MetalRHI::draw_primitives()
-{
-    e
-}
 
-void MetalRHI::draw_primitives_indexed()
-{
 
-}
-
-void MetalRHI::draw_primitives_indirect()
-{
-
-}
-
-void MetalRHI::draw_primitives_indexed_indirect()
-{
-
-}

@@ -275,7 +275,7 @@ protected:
     //TODO get rid of this later
     VkShaderModule               fragment_shader_module_;
     //TODO make a better way to use instance extensions than just declaring an array of names
-    std::vector<const char*> requested_instance_extensions_ = {VK_KHR_WIN32_SURFACE_EXTENSION_NAME,
+    std::vector<const char*> requested_instance_extensions_ = {
                                                                VK_KHR_SURFACE_EXTENSION_NAME,
                                                                VK_KHR_GET_PHYSICAL_DEVICE_PROPERTIES_2_EXTENSION_NAME, };
     //TODO make this work...at all

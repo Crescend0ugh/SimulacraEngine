@@ -5,12 +5,8 @@
 #include <set>
 #include <fstream>
 #include "VulkanRHI.h"
-#include "Application/Windows/WindowsWindow.h"
 #include "Math/Vector.h"
 #include <chrono>
-
-#define STB_IMAGE_IMPLEMENTATION
-
 #include <stb_image.h>
 #include "Importers/OBJImporter.h"
 
@@ -95,7 +91,7 @@ void VulkanRHI::create_instance()
 
     if (instance_extension_count == 0) {
         printf("failed to retrieve instance extensions!");
-        terminate();
+        std::terminate();
     }
 
     std::vector<VkExtensionProperties> supported_extensions(instance_extension_count);
@@ -103,8 +99,9 @@ void VulkanRHI::create_instance()
 
     VK_ASSERT_SUCCESS(
             vkEnumerateInstanceExtensionProperties(nullptr, &instance_extension_count, supported_extensions.data()))
-
-
+    for (const char* extension_name : VulkanPlatform::get_platform_extensions()) {
+        requested_instance_extensions_.emplace_back(extension_name);
+    }
     for (const VkExtensionProperties &properties: supported_extensions) {
         supported_extension_names.emplace(properties.extensionName);
     }
@@ -340,20 +337,7 @@ void VulkanRHI::create_swapchain(VkSurfaceKHR surface, uint32 &width, uint32 &he
 
 void VulkanRHI::recreate_swapchain()
 {
-    vkDeviceWaitIdle(logical_device_);
-    Simulacra::windows::get_window_dimensions((HWND) viewport_.window_handle, viewport_.width_, viewport_.height_);
-    create_swapchain(viewport_.surface_, viewport_.width_, viewport_.height_, viewport_.swapchain_.vk_swapchain_);
-    release_swapchain(viewport_.swapchain_);
-    for (int i = 0; i < frame_resources_.size(); i++) {
-        FrameContext             &frame_resource = frame_resources_[i];
-        std::vector<VkImageView> image_view      = {viewport_.swapchain_.image_views_[i]};
-        frame_resource.framebuffer_ = create_framebuffer(
-                render_pass_,
-                image_view,
-                viewport_.width_,
-                viewport_.height_,
-                1);
-    }
+
 }
 
 void VulkanRHI::release_swapchain(VulkanSwapchain &swapchain)
@@ -398,17 +382,8 @@ void VulkanRHI::create_viewport(void* window_handle)
 {
 
     viewport_.window_handle = window_handle;
-    VkWin32SurfaceCreateInfoKHR surface_create_info{};
-    surface_create_info.sType     = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
-    surface_create_info.hwnd      = static_cast<HWND>(window_handle);
-    surface_create_info.hinstance = GetModuleHandle(nullptr);
-
-    Simulacra::windows::get_window_dimensions((HWND) window_handle, viewport_.width_, viewport_.height_);
-
-    VK_ASSERT_SUCCESS(vkCreateWin32SurfaceKHR(instance_, &surface_create_info, nullptr, &viewport_.surface_))
+    viewport_.surface_ = VulkanPlatform::create_surface(instance_, window_handle);
     create_swapchain(viewport_.surface_, viewport_.width_, viewport_.height_, nullptr);
-
-
 }
 
 void VulkanRHI::release_viewport(uint32 viewport_index)
@@ -542,7 +517,7 @@ void VulkanRHI::create_pipeline(const VulkanGraphicsPipelineDescription &pipelin
     if (VkResult result = vkCreatePipelineLayout(logical_device_, &pipeline_layout_create_info, nullptr,
                                                  &pipeline_.pipeline_layout_); result != VK_SUCCESS) {
         std::cerr << "Failed to create pipeline layout!\n";
-        terminate();
+        std::terminate();
     }
     std::cout << "Created pipeline layout\n";
 
@@ -912,7 +887,7 @@ void VulkanRHI::create_shader_module()
 
         if (!file.is_open()) {
             std::cerr << "failed to open file";
-            terminate();
+            std::terminate();
         }
 
         size_t file_size = (size_t) file.tellg();
@@ -1150,7 +1125,7 @@ void VulkanRHI::test_create_texture_image()
     VkDeviceSize image_size = texture_width * texture_height * 4;
     if (!pixels) {
         std::cerr << "Failed to load texture image";
-        terminate();
+        std::terminate();
     }
 
     VulkanBuffer staging_buffer = create_buffer(image_size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
@@ -1231,7 +1206,7 @@ VulkanRHI::transition_image_layout(VulkanImage image, VkFormat format, VkImageLa
         destination_stage = VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
     } else {
         std::cerr << "Unsupported layout transition\n";
-        terminate();
+        std::terminate();
     }
 
     vkCmdPipelineBarrier(transition_command_buffer,
@@ -1340,7 +1315,7 @@ VkFormat VulkanRHI::find_supported_format(const std::vector<VkFormat> &desired_f
 
     }
     std::cerr << "Couldn't find supported depth format\n";
-    terminate();
+    std::terminate();
 
 }
 

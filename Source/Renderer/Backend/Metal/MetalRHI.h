@@ -1,68 +1,49 @@
 #include <Core.h>
-#include <Foundation/Foundation.h>
-#include <Metal/Metal.h>
 #include "HardwareInterface.h"
+#include <Metal/MetalCppInclude.h>
+#include <Metal/MetalInclude.h>
 #include <Application/Mac/MacWindow.h>
-#include <QuartzCore/QuartzCore.h>
+#include <Metal/MetalShaderTypes.h>
 #include <simd/simd.h>
+#include <Metal/MetalResources.h>
 
-class MetalRHI : public HardwareInterface
+
+class MetalRHI
 {
+
 
 public:
 
-    MetalRHI();
-
+    explicit MetalRHI(id<MTLDevice> device);
     ~MetalRHI();
-    
-
-    virtual void create_buffer();
-
-    virtual void release_buffer();
-
-    virtual void create_texture();
-
-    virtual void release_texture();
-
-    virtual void copy_buffer();
-
-    virtual void copy_image();
-
-    virtual void copy_buffer_to_image();
-
-    virtual void copy_image_to_buffer();
-
-    virtual void create_render_pass();
-
-    virtual void create_semaphore();
-
-    virtual void create_fence();
-
-    virtual void release_fence();
-
-    virtual void release_semaphore();
+    id _Nullable create_buffer(uint64 size, MTLResourceOptions options);
+    void draw_frame(MTKView* view);
+    void build_buffers();
+    void build_shaders();
 
 private:
-
-    void test_create_triangle();
-    void test_create_default_library();
-    void test_create_command_queue();
-    void test_create_render_pipeline();
-    void encode_render_command();
-    void send_render_command();
-    void draw();
-
-
-
-
     id<MTLDevice> device;
-    CAMetalLayer* metal_layer;
-    id<CAMetalDrawable> metal_drawable;
-    id<MTLLibrary> default_metal_library;
-    id<MTLCommandQueue> command_queue;
-    id<MTLCommandBuffer> command_buffer;
-    id<MTLRenderPipelineState> render_pipeline;
-    id<MTLBuffer> triangle_buffer;
-    MacWindow window;
-
+    id<MTLCommandQueue> command_queue{};
+    id<MTLRenderPipelineState> pipeline_state{};
+    id<MTLBuffer> position_buffer{};
+    id<MTLBuffer> color_buffer{};
+    id<MTLBuffer> argument_buffer{};
+    id<MTLLibrary> shader_library{};
 };
+
+@interface MetalManager : NSObject<NSApplicationDelegate, MTKViewDelegate>
+{
+    NSWindow* window;
+    MetalRHI* metal;
+};
+@end
+
+
+const static uint32       vertex_count = 3;
+const static simd::float3 positions[]  = {{-0.5f, -0.5f, 0.0f},
+                                          {0.5f,  -0.5f, 0.0f},
+                                          {0.0f,  0.5f,  0.0f}};
+const static simd::float3 colors[]     = {{1, 0, 0},
+                                          {0, 1, 0},
+                                          {0, 0, 1}};
+

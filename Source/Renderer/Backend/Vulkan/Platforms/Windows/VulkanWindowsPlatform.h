@@ -8,7 +8,7 @@
 #include "VulkanRHI.h"
 #include "Application/Windows/WindowsWindow.h"
 
-namespace VulkanWindowsPlatform
+class VulkanWindowsPlatform
 {
     static std::vector<const char*> get_platform_extension()
     { return {VK_KHR_WIN32_SURFACE_EXTENSION_NAME}; };

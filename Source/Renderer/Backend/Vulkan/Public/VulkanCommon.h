@@ -4,12 +4,12 @@
 
 #pragma once
 
-#define VK_USE_PLATFORM_WIN32_KHR
 #include <vulkan/vulkan.h>
-#ifdef MACOS
+#ifdef __APPLE__
 #include "Vulkan/Platforms/Mac/VulkanMacPlatform.h"
 #endif
 #ifdef WIN32
+#define VK_USE_PLATFORM_WIN32_KHR
 #include "VulkanWindowsPlatform.h"
 #endif
 

@@ -6,17 +6,13 @@
 
 #include "Application/Mac/MacWindow.h"
 #include "Metal/MetalRHI.h"
+#include "VulkanRHI.h"
+#include <MacPlatformInclude.h>
 
-int32 main()
-{
+int main(int argc, const char * argv[]) {
     [NSApplication sharedApplication];
-
-    MetalRHI metal_RHI;
-    MacWindow mac_window;
-    mac_window.initialize(800,450);
-    std::cout << "App";
+    MetalManager* manager = [[MetalManager alloc] init];
+    [NSApp setDelegate:manager];
     [NSApp run];
-
     return 0;
 }
-

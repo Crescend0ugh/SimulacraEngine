@@ -12,6 +12,7 @@
     </codeStyleSettings>
     <codeStyleSettings language="ObjectiveC">
       <option name="CLASS_BRACE_STYLE" value="2" />
+      <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
     </codeStyleSettings>
   </code_scheme>
 </component>

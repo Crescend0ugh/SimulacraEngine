@@ -17,6 +17,9 @@ IF (WIN32)
     add_executable(SimulacraEngine WIN32 Source/Core/Main/Windows/WindowsMain.cpp)
 ENDIF ()
 
+
+    add_executable(SimulacraEngine MACOSX_BUNDLE Source/Core/Main/Mac/MacMain.mm)
+
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)
 endif ()

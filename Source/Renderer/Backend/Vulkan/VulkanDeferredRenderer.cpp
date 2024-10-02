@@ -6,11 +6,8 @@
 
 VulkanDeferredRenderer::VulkanDeferredRenderer()
 {
-    Simulacra::windows::Window window = Simulacra::windows::create_window(1000,800, "Vulkan Test Deferred Renderer Window");
-    rhi.init(window.hwnd_);
 }
 
 VulkanDeferredRenderer::~VulkanDeferredRenderer()
 {
-    rhi.shutdown();
 }

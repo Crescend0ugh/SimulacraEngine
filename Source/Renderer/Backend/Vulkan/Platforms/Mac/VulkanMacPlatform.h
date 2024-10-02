@@ -4,14 +4,16 @@
 
 #pragma once
 
+#define VK_USE_PLATFORM_MACOS_MVK
 #include "Core.h"
 #include "VulkanCommon.h"
 #include "vulkan/vulkan_macos.h"
 
-#define VK_USE_PLATFORM_MACOS_MVK
-namespace VulkanMacPlatform
+
+class VulkanMacPlatform
 {
-    static std::vector<const char*> get_platform_extension()
+public:
+    static std::vector<const char*> get_platform_extensions()
     { return {VK_MVK_MACOS_SURFACE_EXTENSION_NAME}; };
 
     static VkSurfaceKHR create_surface(VkInstance instance, void* view)
@@ -24,3 +26,5 @@ namespace VulkanMacPlatform
         return surface;
     }
 };
+
+using VulkanPlatform = VulkanMacPlatform;
