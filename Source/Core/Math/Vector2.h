@@ -16,3 +16,4 @@ namespace Math
 }
 using Vector2D = Math::Vector2<double>;
 using Vector2f = Math::Vector2<float>;
+using Vector2i = Math::Vector2<int>;

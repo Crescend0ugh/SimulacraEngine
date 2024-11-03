@@ -83,10 +83,24 @@ CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Main/Mac/MacMain.mm -o CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.s
 
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o: CMakeFiles/SimulacraEngine.dir/flags.make
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/ForwardRenderer.mm
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/ForwardRenderer.mm
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/ForwardRenderer.mm > CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.i
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/ForwardRenderer.mm -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.s
+
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemo
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanReso
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwap
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRend
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalRHI.mm
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalRHI.mm
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.s: cmak
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o: CMakeFiles/SimulacraEngine.dir/flags.make
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalImplementation.cpp
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalImplementation.cpp
 
 CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.i: cmake_force
@@ -181,21 +195,68 @@ CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalImplementation.cpp -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.s
 
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o: CMakeFiles/SimulacraEngine.dir/flags.make
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalManager.mm
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalManager.mm
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalManager.mm > CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.i
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalManager.mm -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.s
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o: CMakeFiles/SimulacraEngine.dir/flags.make
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalResources.mm
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalResources.mm
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalResources.mm > CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.i
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalResources.mm -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.s
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o: CMakeFiles/SimulacraEngine.dir/flags.make
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalPipeline.mm
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o: CMakeFiles/SimulacraEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o -MF CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o.d -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalPipeline.mm
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalPipeline.mm > CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.i
+
+CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalPipeline.mm -o CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.s
+
 # Object files for target SimulacraEngine
 SimulacraEngine_OBJECTS = \
 "CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.o" \
+"CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanSwapchain.cpp.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o" \
 "CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o" \
-"CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o"
+"CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o" \
+"CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o" \
+"CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o" \
+"CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o"
 
 # External object files for target SimulacraEngine
 SimulacraEngine_EXTERNAL_OBJECTS =
 
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.o
+SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanRHI.cpp.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/Private/VulkanResources.cpp.o
@@ -203,11 +264,14 @@ SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.d
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.o
+SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o
+SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o
+SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/build.make
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: libSimulacraLibrary.a
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: /usr/local/lib/libvulkan.dylib
 SimulacraEngine.app/Contents/MacOS/SimulacraEngine: CMakeFiles/SimulacraEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable SimulacraEngine.app/Contents/MacOS/SimulacraEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable SimulacraEngine.app/Contents/MacOS/SimulacraEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SimulacraEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

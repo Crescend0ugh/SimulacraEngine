@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 add_library(SimulacraLibrary )
-add_subdirectory(Source/Renderer/Backend)
+add_subdirectory(Source/Renderer)
 add_subdirectory(Source/Core/Platform)
 add_subdirectory(Source/Core)
 add_subdirectory(Source/ThirdParty)
@@ -19,6 +19,10 @@ ENDIF ()
 
 
     add_executable(SimulacraEngine MACOSX_BUNDLE Source/Core/Main/Mac/MacMain.mm)
+
+    # Signing
+
+    # Generate scheme files for Xcode
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_definitions(-D_DEBUG=1)

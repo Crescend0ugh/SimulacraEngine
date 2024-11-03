@@ -30,6 +30,8 @@ public:
 
     virtual void* native_handle();
 
+    forceinline CocoaWindow* get_cocoa_handle() { return handle; }
+
     virtual forceinline bool is_open();
 
 private:

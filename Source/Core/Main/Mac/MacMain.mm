@@ -5,9 +5,10 @@
 
 
 #include "Application/Mac/MacWindow.h"
-#include "Metal/MetalRHI.h"
-#include "VulkanRHI.h"
+#include <ForwardRenderer.h>
+#include <Metal/MetalManager.h>
 #include <MacPlatformInclude.h>
+#include <filesystem>
 
 int main(int argc, const char * argv[]) {
     [NSApplication sharedApplication];

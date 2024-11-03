@@ -959,6 +959,8 @@ CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/print \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__tree \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/unordered_set \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Container/ArrayView.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/CoreDefines.h \
@@ -2053,6 +2055,7 @@ CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextViewportLayoutController.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSAdaptiveImageGlyph.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Application/Mac/CocoaWindow.h \
+  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/ForwardRenderer.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalRHI.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/HardwareInterface.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalCppInclude.h \
@@ -2315,23 +2318,27 @@ CMakeFiles/SimulacraEngine.dir/Source/Core/Main/Mac/MacMain.mm.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CATransformLayer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CAValueFunction.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalShaderTypes.h \
+  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalMath.h \
   /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalResources.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/VulkanRHI.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/VulkanCommon.h \
-  /usr/local/include/vulkan/vulkan.h \
-  /usr/local/include/vulkan/vk_platform.h \
-  /usr/local/include/vulkan/vulkan_core.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h264std.h \
-  /usr/local/include/vk_video/vulkan_video_codecs_common.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h264std_encode.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h265std.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h265std_encode.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h264std_decode.h \
-  /usr/local/include/vk_video/vulkan_video_codec_h265std_decode.h \
-  /usr/local/include/vk_video/vulkan_video_codec_av1std.h \
-  /usr/local/include/vk_video/vulkan_video_codec_av1std_decode.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms/Mac/VulkanMacPlatform.h \
-  /usr/local/include/vulkan/vulkan_macos.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/VulkanMemoryAllocator.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/VulkanResources.h \
-  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public/Mesh.h
+  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalPipeline.h \
+  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/RendererTypes.h \
+  /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Metal/MetalManager.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__chrono/file_clock.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/u8path.h

@@ -1048,9 +1048,9 @@ void VulkanRHI::update_uniform_buffer(uint32 current_frame_index)
     UniformBufferObject ubo{};
     float               aspect_ratio = viewport_.width_ / (float) viewport_.height_;
 
-    ubo.model      = Matrix4F::translate(0,0, 0);
-    ubo.view       = Matrix4F::look_at_rh({200,200,200}, {.57, .57, .57}, {0, 0, 1});
-    ubo.projection = Matrix4F::perspective_rh(Math::radians(45.f), aspect_ratio, 0.1f, 1000.0f);
+    ubo.model      = matrix4f::translate(0, 0, 0);
+    ubo.view       = matrix4f::look_at_rh({200, 200, 200}, {.57, .57, .57}, {0, 0, 1});
+    ubo.projection = matrix4f::perspective_rh(Math::radians(45.f), aspect_ratio, 0.1f, 1000.0f);
     memcpy(frame_resources_[current_frame_index].uniformed_buffer_mapped_, &ubo, sizeof(ubo));
 }
 

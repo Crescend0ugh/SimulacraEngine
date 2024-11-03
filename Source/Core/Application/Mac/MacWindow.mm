@@ -13,10 +13,14 @@ MacWindow::~MacWindow()
 
 void MacWindow::initialize(uint32 width, uint32 height)
 {
-    this->width = width;
+    this->width  = width;
     this->height = height;
-    NSRect frame = NSMakeRect(300,200, width, height);
-    handle = [[CocoaWindow alloc] initWithContentRect:frame styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskResizable | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable  backing:NSBackingStoreBuffered defer:NO];
+    NSRect frame = NSMakeRect(300, 200, width, height);
+    handle = [[CocoaWindow alloc] initWithContentRect:frame
+                                            styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskResizable |
+                                                      NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable
+                                              backing:NSBackingStoreBuffered
+                                                defer:NO];
     handle.contentView.autoresizesSubviews = true;
     [handle setBackgroundColor:[NSColor windowBackgroundColor]];
     [handle makeKeyAndOrderFront:NSApp];
@@ -33,17 +37,18 @@ void MacWindow::move()
 
 void MacWindow::minimize()
 {
-
+    [handle miniaturize:nil];
 }
 
 void MacWindow::maximize()
 {
-
 }
 
 void MacWindow::show_window(bool should_show)
 {
-
+    if (should_show) {
+        [handle makeKeyAndOrderFront:nil];
+    }
 }
 
 void* MacWindow::native_handle()

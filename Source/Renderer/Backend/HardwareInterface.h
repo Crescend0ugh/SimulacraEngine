@@ -5,6 +5,27 @@
 #pragma once
 
 
+enum BufferUsage
+{
+
+};
+
+enum TextureUsage
+{
+
+};
+struct BufferCreateInfo
+{
+    size_t      size;
+    BufferUsage usage;
+};
+
+struct TextureCreateInfo
+{
+    size_t       size;
+    TextureUsage texture_usage;
+};
+
 
 class HardwareInterface
 {

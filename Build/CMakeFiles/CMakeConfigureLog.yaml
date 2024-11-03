@@ -1,0 +1,1012 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Darwin - 24.0.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Command line invocation:
+          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+      
+      User defaults from command line:
+          IDEPackageSupportUseBuiltinSCM = YES
+      
+      ComputeTargetDependencyGraph
+      note: Building targets in dependency order
+      note: Target dependency graph (1 target)
+          Target 'CompilerIdC' in project 'CompilerIdC' (no dependencies)
+      
+      GatherProvisioningInputs
+      
+      CreateBuildDescription
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+      
+      Build description signature: b7ad700ccc145ddc166da0761d46d65b
+      Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/./XCBuildData/b7ad700ccc145ddc166da0761d46d65b.xcbuilddata
+      CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.xcodeproj
+          builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+      
+      ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.xcodeproj
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+      Base directory status changed. Regenerating...
+      
+      CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/EagerLinkingTBDs/Debug
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.xcodeproj
+          builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/EagerLinkingTBDs/Debug
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC-d9d24303ac0ea36fa2bc7f98aeea5fe3-VFS/all-product-headers.yaml
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.xcodeproj
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC-d9d24303ac0ea36fa2bc7f98aeea5fe3-VFS/all-product-headers.yaml
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-project-headers.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-project-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.DependencyMetadataFileList (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.DependencyMetadataFileList
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-own-target-headers.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-own-target-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-generated-files.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-generated-files.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-target-headers.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-target-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-non-framework-target-headers.hmap (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-non-framework-target-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/Entitlements.plist (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/Entitlements.plist
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+      -target arm64-apple-macos15.0 -fpascal-strings -Os -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g '-fvisibility=hidden' -iquote /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-generated-files.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-own-target-headers.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-all-target-headers.hmap -iquote /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC-project-headers.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CompilerIdC.LinkFileList (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CompilerIdC.LinkFileList
+      
+      ProcessProductPackaging "" /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          
+          Entitlements:
+          
+          {
+          "com.apple.application-identifier" = "";
+          "com.apple.security.get-task-allow" = 1;
+      }
+          
+          builtin-productPackagingUtility -entitlements -format xml -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent
+      
+      ProcessProductPackagingDER /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent.der (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          /usr/bin/derq query -f xml -i /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent.der --raw
+      
+      CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CMakeCCompilerId.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          
+          Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+          
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.dia -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CMakeCCompilerId.c -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CMakeCCompilerId.o
+      
+      Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC normal (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -Os -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CompilerIdC.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CompilerIdC_lto.o -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/arm64/CompilerIdC_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC
+      
+      PhaseScriptExecution Run\\ Script /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          /bin/sh -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+      GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+      ARCHS=arm64
+      
+      CodeSign /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          
+          Signing Identity:     "Sign to Run Locally"
+          
+          /usr/bin/codesign --force --sign - --entitlements /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.xcent --timestamp\\=none --generate-entitlement-der /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC
+      
+      RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC (in target 'CompilerIdC' from project 'CompilerIdC')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC
+          builtin-RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC
+      
+      warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'CompilerIdC' from project 'CompilerIdC')
+      note: Run script build phase 'Run Script' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'CompilerIdC' from project 'CompilerIdC')
+      ** BUILD SUCCEEDED **
+      
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC"
+      
+      The C compiler identification is AppleClang, found in:
+        /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdC/CompilerIdC
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Command line invocation:
+          /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+      
+      User defaults from command line:
+          IDEPackageSupportUseBuiltinSCM = YES
+      
+      ComputeTargetDependencyGraph
+      note: Building targets in dependency order
+      note: Target dependency graph (1 target)
+          Target 'CompilerIdCXX' in project 'CompilerIdCXX' (no dependencies)
+      
+      GatherProvisioningInputs
+      
+      CreateBuildDescription
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c++ -c /dev/null
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+      
+      ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+      
+      Build description signature: afd0adffdd274c8edbcd9bfca2b3716d
+      Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/./XCBuildData/afd0adffdd274c8edbcd9bfca2b3716d.xcbuilddata
+      CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.xcodeproj
+          builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+      
+      ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.xcodeproj
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+      
+      CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/EagerLinkingTBDs/Debug
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.xcodeproj
+          builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/EagerLinkingTBDs/Debug
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX-cab83bf49ed2df1b1ab81a78cb182d1a-VFS/all-product-headers.yaml
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.xcodeproj
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX-cab83bf49ed2df1b1ab81a78cb182d1a-VFS/all-product-headers.yaml
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-own-target-headers.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-own-target-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.DependencyMetadataFileList (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.DependencyMetadataFileList
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-project-headers.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-project-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-target-headers.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-target-headers.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-generated-files.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-generated-files.hmap
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX.LinkFileList (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX.LinkFileList
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+      -target arm64-apple-macos15.0 -fpascal-strings -Os -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g '-fvisibility=hidden' -fvisibility-inlines-hidden -iquote /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-generated-files.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-own-target-headers.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-target-headers.hmap -iquote /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-project-headers.hmap -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/Entitlements.plist (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/Entitlements.plist
+      
+      WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-non-framework-target-headers.hmap (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX-all-non-framework-target-headers.hmap
+      
+      ProcessProductPackaging "" /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          
+          Entitlements:
+          
+          {
+          "com.apple.application-identifier" = "";
+          "com.apple.security.get-task-allow" = 1;
+      }
+          
+          builtin-productPackagingUtility -entitlements -format xml -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent
+      
+      ProcessProductPackagingDER /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent.der (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          /usr/bin/derq query -f xml -i /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent.der --raw
+      
+      CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CMakeCXXCompilerId.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          
+          Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+          
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.dia -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CMakeCXXCompilerId.o
+      
+      Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX normal (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -Os -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX_lto.o -Xlinker -no_adhoc_codesign -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/arm64/CompilerIdCXX_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX
+      
+      PhaseScriptExecution Run\\ Script /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          /bin/sh -c /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+      GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+      ARCHS=arm64
+      
+      CodeSign /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          
+          Signing Identity:     "Sign to Run Locally"
+          
+          /usr/bin/codesign --force --sign - --entitlements /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.xcent --timestamp\\=none --generate-entitlement-der /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX
+      
+      RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+          cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX
+          builtin-RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX
+      
+      warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+      note: Run script build phase 'Run Script' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'CompilerIdCXX' from project 'CompilerIdCXX')
+      ** BUILD SUCCEEDED **
+      
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX"
+      
+      The CXX compiler identification is AppleClang, found in:
+        /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/3.31.0-rc1/CompilerIdCXX/CompilerIdCXX
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi"
+      binary: "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi'
+        
+        Run Build Command(s): /usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_ba5ef -parallelizeTargets -configuration Debug -hideShellScriptEnvironment
+        Command line invocation:
+            /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_ba5ef -parallelizeTargets -configuration Debug -hideShellScriptEnvironment
+        
+        User defaults from command line:
+            HideShellScriptEnvironment = YES
+            IDEPackageSupportUseBuiltinSCM = YES
+        
+        ComputeTargetDependencyGraph
+        note: Building targets in dependency order
+        note: Target dependency graph (1 target)
+            Target 'cmTC_ba5ef' in project 'CMAKE_TRY_COMPILE' (no dependencies)
+        
+        GatherProvisioningInputs
+        
+        CreateBuildDescription
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+        
+        Build description signature: 036f3deb0aa586e26a00fce2ececb66e
+        Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/XCBuildData/036f3deb0aa586e26a00fce2ececb66e.xcbuilddata
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build
+        
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+        
+        ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+        
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/cmTC_ba5ef.DependencyMetadataFileList (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/cmTC_ba5ef.DependencyMetadataFileList
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+        -target arm64-apple-macos15.0 -fpascal-strings -O0 '-DCMAKE_INTDIR="Debug"' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+        
+        CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            
+            Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+            
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -v -Wl,-v @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o
+        Apple clang version 16.0.0 (clang-1600.0.26.3)
+        Target: arm64-apple-macos15.0
+        Thread model: posix
+        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.0 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.d -skip-unused-modulemap-deps -MT dependencies -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -D "CMAKE_INTDIR=\\"Debug\\"" -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -O0 -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi -ferror-limit 19 -fmacro-backtrace-limit=0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fpascal-strings -fmax-type-align=16 -fcommon -fdiagnostics-show-note-include-stack -serialize-diagnostic-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.dia -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o -x c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 16.0.0 (clang-1600.0.26.3) default target arm64-apple-darwin24.0.0
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug (framework directory)
+         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include
+         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        
+        Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef normal (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -Xlinker -no_deduplicate -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef
+        Apple clang version 16.0.0 (clang-1600.0.26.3)
+        Target: arm64-apple-macos15.0
+        Thread model: posix
+        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+        @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+        BUILD 13:29:00 Aug  9 2024
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+        Library search paths:
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift
+        Framework search paths:
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks
+        
+        RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi
+            builtin-RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef
+        
+        ** BUILD SUCCEEDED **
+        
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:113 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        end of search list found
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        implicit include dirs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_ba5ef -parallelizeTargets -configuration Debug -hideShellScriptEnvironment]
+        ignore line: [Command line invocation:]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_ba5ef -parallelizeTargets -configuration Debug -hideShellScriptEnvironment]
+        ignore line: []
+        ignore line: [User defaults from command line:]
+        ignore line: [    HideShellScriptEnvironment = YES]
+        ignore line: [    IDEPackageSupportUseBuiltinSCM = YES]
+        ignore line: []
+        ignore line: [ComputeTargetDependencyGraph]
+        ignore line: [note: Building targets in dependency order]
+        ignore line: [note: Target dependency graph (1 target)]
+        ignore line: [    Target 'cmTC_ba5ef' in project 'CMAKE_TRY_COMPILE' (no dependencies)]
+        ignore line: []
+        ignore line: [GatherProvisioningInputs]
+        ignore line: []
+        ignore line: [CreateBuildDescription]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details]
+        ignore line: []
+        ignore line: [Build description signature: 036f3deb0aa586e26a00fce2ececb66e]
+        ignore line: [Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/XCBuildData/036f3deb0aa586e26a00fce2ececb66e.xcbuilddata]
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build]
+        ignore line: []
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+        ignore line: []
+        ignore line: [ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache]
+        ignore line: []
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/cmTC_ba5ef.DependencyMetadataFileList (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/cmTC_ba5ef.DependencyMetadataFileList]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp]
+        ignore line: [-target arm64-apple-macos15.0 -fpascal-strings -O0 '-DCMAKE_INTDIR="Debug"' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+        ignore line: []
+        ignore line: [CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi]
+        ignore line: [    ]
+        ignore line: [    Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp]
+        ignore line: [    ]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -v -Wl -v @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.3)]
+        ignore line: [Target: arm64-apple-macos15.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.0 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.d -skip-unused-modulemap-deps -MT dependencies -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -D "CMAKE_INTDIR=\\"Debug\\"" -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -O0 -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdebug-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi -ferror-limit 19 -fmacro-backtrace-limit=0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fpascal-strings -fmax-type-align=16 -fcommon -fdiagnostics-show-note-include-stack -serialize-diagnostic-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.dia -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/CMakeCCompilerABI.o -x c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.3) default target arm64-apple-darwin24.0.0]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/include"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources-normal/arm64"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources/arm64"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/DerivedSources"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug (framework directory)]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: []
+        ignore line: [Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef normal (in target 'cmTC_ba5ef' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -Xlinker -no_deduplicate -v -Wl -v -Wl -search_paths_first -Wl -headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.3)]
+        ignore line: [Target: arm64-apple-macos15.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+        reduced line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+                  to: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-no_deduplicate] ==> ignore
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.0] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk] ==> ignore
+          arg [-O0] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug/cmTC_ba5ef] ==> ignore
+          arg [-L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug] ==> dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug]
+          arg [-reproducible] ==> ignore
+          arg [-filelist] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef.LinkFileList] ==> ignore
+          arg [-object_path_lto] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o] ==> obj [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o]
+          arg [-no_deduplicate] ==> ignore
+          arg [-v] ==> ignore
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-dependency_info] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_dependency_info.dat] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+          arg [-F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug] ==> ignore
+        linker tool for 'C': /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+        Library search paths: [;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        Framework search paths: [;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+        remove lib [System]
+        remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug], skipping non-system directory
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug], skipping non-system directory
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug], skipping non-system directory
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib]
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        collapse framework dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/EagerLinkingTBDs/Debug], skipping non-system directory
+        collapse framework dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/Debug], skipping non-system directory
+        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-e2EQAi/build/cmTC_ba5ef.build/Debug/Objects-normal/arm64/cmTC_ba5ef_lto.o]
+        implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" "-v"
+      @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+      BUILD 13:29:00 Aug  9 2024
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+      LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+      TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2"
+      binary: "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2'
+        
+        Run Build Command(s): /usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_99bd8 -parallelizeTargets -configuration Debug -hideShellScriptEnvironment
+        Command line invocation:
+            /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_99bd8 -parallelizeTargets -configuration Debug -hideShellScriptEnvironment
+        
+        User defaults from command line:
+            HideShellScriptEnvironment = YES
+            IDEPackageSupportUseBuiltinSCM = YES
+        
+        ComputeTargetDependencyGraph
+        note: Building targets in dependency order
+        note: Target dependency graph (1 target)
+            Target 'cmTC_99bd8' in project 'CMAKE_TRY_COMPILE' (no dependencies)
+        
+        GatherProvisioningInputs
+        
+        CreateBuildDescription
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c++ -c /dev/null
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+        
+        ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null
+        
+        Build description signature: 773b8c0ce2a76d91c5c3ffcafb6446e2
+        Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/XCBuildData/773b8c0ce2a76d91c5c3ffcafb6446e2.xcbuilddata
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build
+        
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+        
+        ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache
+        
+        CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj
+            builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/cmTC_99bd8.DependencyMetadataFileList (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/cmTC_99bd8.DependencyMetadataFileList
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList
+        
+        WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+        -target arm64-apple-macos15.0 '-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG' -fpascal-strings -O0 '-DCMAKE_INTDIR="Debug"' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+        
+        CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            
+            Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+            
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -v -Wl,-v @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o
+        Apple clang version 16.0.0 (clang-1600.0.26.3)
+        Target: arm64-apple-macos15.0
+        Thread model: posix
+        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.0 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.d -skip-unused-modulemap-deps -MT dependencies -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -D _LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG -D "CMAKE_INTDIR=\\"Debug\\"" -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -O0 -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2 -ferror-limit 19 -fmacro-backtrace-limit=0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fpascal-strings -fmax-type-align=16 -fcommon -fdiagnostics-show-note-include-stack -serialize-diagnostic-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.dia -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 16.0.0 (clang-1600.0.26.3) default target arm64-apple-darwin24.0.0
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64"
+        ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug (framework directory)
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1
+         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include
+         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        
+        Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 normal (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -Xlinker -no_deduplicate -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8
+        Apple clang version 16.0.0 (clang-1600.0.26.3)
+        Target: arm64-apple-macos15.0
+        Thread model: posix
+        InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+        @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+        BUILD 13:29:00 Aug  9 2024
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+        Library search paths:
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift
+        Framework search paths:
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug
+        	/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks
+        
+        RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')
+            cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2
+            builtin-RegisterExecutionPolicyException /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8
+        
+        ** BUILD SUCCEEDED **
+        
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:113 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1]
+          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        end of search list found
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        implicit include dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_99bd8 -parallelizeTargets -configuration Debug -hideShellScriptEnvironment]
+        ignore line: [Command line invocation:]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project CMAKE_TRY_COMPILE.xcodeproj build -target cmTC_99bd8 -parallelizeTargets -configuration Debug -hideShellScriptEnvironment]
+        ignore line: []
+        ignore line: [User defaults from command line:]
+        ignore line: [    HideShellScriptEnvironment = YES]
+        ignore line: [    IDEPackageSupportUseBuiltinSCM = YES]
+        ignore line: []
+        ignore line: [ComputeTargetDependencyGraph]
+        ignore line: [note: Building targets in dependency order]
+        ignore line: [note: Target dependency graph (1 target)]
+        ignore line: [    Target 'cmTC_99bd8' in project 'CMAKE_TRY_COMPILE' (no dependencies)]
+        ignore line: []
+        ignore line: [GatherProvisioningInputs]
+        ignore line: []
+        ignore line: [CreateBuildDescription]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c++ -c /dev/null]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details]
+        ignore line: []
+        ignore line: [ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -x c -c /dev/null]
+        ignore line: []
+        ignore line: [Build description signature: 773b8c0ce2a76d91c5c3ffcafb6446e2]
+        ignore line: [Build description path: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/XCBuildData/773b8c0ce2a76d91c5c3ffcafb6446e2.xcbuilddata]
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build]
+        ignore line: []
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+        ignore line: []
+        ignore line: [ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -o /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache]
+        ignore line: []
+        ignore line: [CreateBuildDirectory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/CMAKE_TRY_COMPILE.xcodeproj]
+        ignore line: [    builtin-create-build-directory /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/cmTC_99bd8.DependencyMetadataFileList (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/cmTC_99bd8.DependencyMetadataFileList]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList]
+        ignore line: []
+        ignore line: [WriteAuxiliaryFile /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2]
+        ignore line: [    write-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp]
+        ignore line: [-target arm64-apple-macos15.0 '-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG' -fpascal-strings -O0 '-DCMAKE_INTDIR="Debug"' -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -g -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64 -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+        ignore line: []
+        ignore line: [CompileC /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2]
+        ignore line: [    ]
+        ignore line: [    Using response file: /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp]
+        ignore line: [    ]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -fmessage-length\\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -v -Wl -v @/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.d --serialize-diagnostics /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.dia -c /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.3)]
+        ignore line: [Target: arm64-apple-macos15.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"]
+        ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.0 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debug-info-kind=standalone -dwarf-version=5 -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16 -dependency-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.d -skip-unused-modulemap-deps -MT dependencies -ivfsstatcache /var/folders/1w/jyn1lx_x13l78081qzf3yjtm0000gn/C/com.apple.DeveloperTools/16.0-16A242d/Xcode/SDKStatCaches.noindex/macosx15.0-24A336-b74dfec4bc4e9d23bc944d435a01a688.sdkstatcache -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -D _LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG -D "CMAKE_INTDIR=\\"Debug\\"" -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64 -I /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include -internal-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -O0 -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2 -ferror-limit 19 -fmacro-backtrace-limit=0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fpascal-strings -fmax-type-align=16 -fcommon -fdiagnostics-show-note-include-stack -serialize-diagnostic-file /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.dia -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/CMakeCXXCompilerABI.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.3) default target arm64-apple-darwin24.0.0]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/include"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources-normal/arm64"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources/arm64"]
+        ignore line: [ignoring nonexistent directory "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/DerivedSources"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug (framework directory)]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include/c++/v1]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: []
+        ignore line: [Ld /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 normal (in target 'cmTC_99bd8' from project 'CMAKE_TRY_COMPILE')]
+        ignore line: [    cd /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2]
+        ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -Xlinker -reproducible -target arm64-apple-macos15.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -Xlinker -object_path_lto -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -Xlinker -no_deduplicate -v -Wl -v -Wl -search_paths_first -Wl -headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.3)]
+        ignore line: [Target: arm64-apple-macos15.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
+        reduced line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+                  to: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+        link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -no_deduplicate -dynamic -arch arm64 -platform_version macos 15.0.0 15.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -O0 -mllvm -enable-linkonceodr-outlining -o /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8 -L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug -reproducible -filelist /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList -object_path_lto /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o -no_deduplicate -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a -F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-no_deduplicate] ==> ignore
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.0] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk] ==> ignore
+          arg [-O0] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug/cmTC_99bd8] ==> ignore
+          arg [-L/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug] ==> dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug]
+          arg [-reproducible] ==> ignore
+          arg [-filelist] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8.LinkFileList] ==> ignore
+          arg [-object_path_lto] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o] ==> obj [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o]
+          arg [-no_deduplicate] ==> ignore
+          arg [-v] ==> ignore
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-dependency_info] ==> ignore
+          arg [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_dependency_info.dat] ==> ignore
+          arg [-lc++] ==> lib [c++]
+          arg [-lSystem] ==> lib [System]
+          arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+          arg [-F/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug] ==> ignore
+        linker tool for 'CXX': /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+        Library search paths: [;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        Framework search paths: [;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug;/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+        remove lib [System]
+        remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug], skipping non-system directory
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug], skipping non-system directory
+        collapse library dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug], skipping non-system directory
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib]
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        collapse framework dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/EagerLinkingTBDs/Debug], skipping non-system directory
+        collapse framework dir [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug] ==> [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/Debug], skipping non-system directory
+        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+        implicit libs: [c++]
+        implicit objs: [/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/CMakeFiles/CMakeScratch/TryCompile-Ksh0P2/build/cmTC_99bd8.build/Debug/Objects-normal/arm64/cmTC_99bd8_lto.o]
+        implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/usr/lib/swift]
+        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" "-v"
+      @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+      BUILD 13:29:00 Aug  9 2024
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+      LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+      TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.8)
+...

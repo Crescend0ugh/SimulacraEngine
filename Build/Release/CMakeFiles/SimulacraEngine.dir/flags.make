@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = -D_NDEBUG=1
 
-CXX_INCLUDES = -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms/Windows -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Platform/Mac -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/ThirdParty/Metal-cpp -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/ThirdParty/stb -isystem /usr/local/include
+CXX_INCLUDES = -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Public -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/Vulkan/Platforms/Windows -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Platform/Mac -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/ThirdParty/Metal-cpp -I/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/ThirdParty/stb -isystem /usr/local/include
 
 CXX_FLAGSarm64 = -O3 -DNDEBUG -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
 

@@ -1,0 +1,7 @@
+Target dependency graph (3 targets)
+Target 'SimulacraEngine' in project 'SimulacraEngine'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'SimulacraEngine'
+➜ Explicit dependency on target 'SimulacraLibrary' in project 'SimulacraEngine'
+Target 'SimulacraLibrary' in project 'SimulacraEngine'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'SimulacraEngine'
+Target 'ZERO_CHECK' in project 'SimulacraEngine' (no dependencies)

@@ -350,7 +350,7 @@ protected:
 
 struct UniformBufferObject
 {
-    Matrix4F model;
-    Matrix4F view;
-    Matrix4F projection;
+    matrix4f model;
+    matrix4f view;
+    matrix4f projection;
 };

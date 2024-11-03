@@ -65,14 +65,14 @@ CMAKE_BINARY_DIR = /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build
 # The main recursive "all" target.
 all: CMakeFiles/SimulacraLibrary.dir/all
 all: CMakeFiles/SimulacraEngine.dir/all
-all: Source/Renderer/Backend/all
+all: Source/Renderer/all
 all: Source/Core/Platform/all
 all: Source/Core/all
 all: Source/ThirdParty/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: Source/Renderer/Backend/preinstall
+preinstall: Source/Renderer/preinstall
 preinstall: Source/Core/Platform/preinstall
 preinstall: Source/Core/preinstall
 preinstall: Source/ThirdParty/preinstall
@@ -81,7 +81,7 @@ preinstall: Source/ThirdParty/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/SimulacraLibrary.dir/clean
 clean: CMakeFiles/SimulacraEngine.dir/clean
-clean: Source/Renderer/Backend/clean
+clean: Source/Renderer/clean
 clean: Source/Core/Platform/clean
 clean: Source/Core/clean
 clean: Source/ThirdParty/clean
@@ -151,19 +151,19 @@ Source/Core/Task/clean:
 .PHONY : Source/Core/Task/clean
 
 #=============================================================================
-# Directory level rules for directory Source/Renderer/Backend
+# Directory level rules for directory Source/Renderer
 
 # Recursive "all" directory target.
-Source/Renderer/Backend/all:
-.PHONY : Source/Renderer/Backend/all
+Source/Renderer/all:
+.PHONY : Source/Renderer/all
 
 # Recursive "preinstall" directory target.
-Source/Renderer/Backend/preinstall:
-.PHONY : Source/Renderer/Backend/preinstall
+Source/Renderer/preinstall:
+.PHONY : Source/Renderer/preinstall
 
 # Recursive "clean" directory target.
-Source/Renderer/Backend/clean:
-.PHONY : Source/Renderer/Backend/clean
+Source/Renderer/clean:
+.PHONY : Source/Renderer/clean
 
 #=============================================================================
 # Directory level rules for directory Source/ThirdParty
@@ -187,12 +187,12 @@ Source/ThirdParty/clean:
 CMakeFiles/SimulacraLibrary.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target SimulacraLibrary"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles --progress-num=14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Built target SimulacraLibrary"
 .PHONY : CMakeFiles/SimulacraLibrary.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SimulacraLibrary.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimulacraLibrary.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 0
 .PHONY : CMakeFiles/SimulacraLibrary.dir/rule
@@ -213,12 +213,12 @@ CMakeFiles/SimulacraLibrary.dir/clean:
 CMakeFiles/SimulacraEngine.dir/all: CMakeFiles/SimulacraLibrary.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target SimulacraEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target SimulacraEngine"
 .PHONY : CMakeFiles/SimulacraEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SimulacraEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimulacraEngine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Build/Release/CMakeFiles 0
 .PHONY : CMakeFiles/SimulacraEngine.dir/rule

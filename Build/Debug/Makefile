@@ -289,6 +289,60 @@ Source/Renderer/Backend/Metal/MetalImplementation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalImplementation.cpp.s
 .PHONY : Source/Renderer/Backend/Metal/MetalImplementation.cpp.s
 
+Source/Renderer/Backend/Metal/MetalManager.o: Source/Renderer/Backend/Metal/MetalManager.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.o
+
+# target to build an object file
+Source/Renderer/Backend/Metal/MetalManager.mm.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.mm.o
+
+Source/Renderer/Backend/Metal/MetalManager.i: Source/Renderer/Backend/Metal/MetalManager.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.i
+
+# target to preprocess a source file
+Source/Renderer/Backend/Metal/MetalManager.mm.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalManager.mm.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.mm.i
+
+Source/Renderer/Backend/Metal/MetalManager.s: Source/Renderer/Backend/Metal/MetalManager.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.s
+
+# target to generate assembly for a file
+Source/Renderer/Backend/Metal/MetalManager.mm.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalManager.mm.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalManager.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalManager.mm.s
+
+Source/Renderer/Backend/Metal/MetalPipeline.o: Source/Renderer/Backend/Metal/MetalPipeline.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.o
+
+# target to build an object file
+Source/Renderer/Backend/Metal/MetalPipeline.mm.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.mm.o
+
+Source/Renderer/Backend/Metal/MetalPipeline.i: Source/Renderer/Backend/Metal/MetalPipeline.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.i
+
+# target to preprocess a source file
+Source/Renderer/Backend/Metal/MetalPipeline.mm.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.mm.i
+
+Source/Renderer/Backend/Metal/MetalPipeline.s: Source/Renderer/Backend/Metal/MetalPipeline.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.s
+
+# target to generate assembly for a file
+Source/Renderer/Backend/Metal/MetalPipeline.mm.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalPipeline.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalPipeline.mm.s
+
 Source/Renderer/Backend/Metal/MetalRHI.o: Source/Renderer/Backend/Metal/MetalRHI.mm.o
 .PHONY : Source/Renderer/Backend/Metal/MetalRHI.o
 
@@ -315,6 +369,33 @@ Source/Renderer/Backend/Metal/MetalRHI.mm.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalRHI.mm.s
 .PHONY : Source/Renderer/Backend/Metal/MetalRHI.mm.s
+
+Source/Renderer/Backend/Metal/MetalResources.o: Source/Renderer/Backend/Metal/MetalResources.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.o
+
+# target to build an object file
+Source/Renderer/Backend/Metal/MetalResources.mm.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.o
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.mm.o
+
+Source/Renderer/Backend/Metal/MetalResources.i: Source/Renderer/Backend/Metal/MetalResources.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.i
+
+# target to preprocess a source file
+Source/Renderer/Backend/Metal/MetalResources.mm.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalResources.mm.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.i
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.mm.i
+
+Source/Renderer/Backend/Metal/MetalResources.s: Source/Renderer/Backend/Metal/MetalResources.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.s
+
+# target to generate assembly for a file
+Source/Renderer/Backend/Metal/MetalResources.mm.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/Backend/Metal/MetalResources.mm.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Metal/MetalResources.mm.s
+.PHONY : Source/Renderer/Backend/Metal/MetalResources.mm.s
 
 Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.o: Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.cpp.o
 .PHONY : Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.o
@@ -451,6 +532,33 @@ Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.s
 .PHONY : Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.cpp.s
 
+Source/Renderer/ForwardRenderer.o: Source/Renderer/ForwardRenderer.mm.o
+.PHONY : Source/Renderer/ForwardRenderer.o
+
+# target to build an object file
+Source/Renderer/ForwardRenderer.mm.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/ForwardRenderer.mm.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.o
+.PHONY : Source/Renderer/ForwardRenderer.mm.o
+
+Source/Renderer/ForwardRenderer.i: Source/Renderer/ForwardRenderer.mm.i
+.PHONY : Source/Renderer/ForwardRenderer.i
+
+# target to preprocess a source file
+Source/Renderer/ForwardRenderer.mm.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/ForwardRenderer.mm.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.i
+.PHONY : Source/Renderer/ForwardRenderer.mm.i
+
+Source/Renderer/ForwardRenderer.s: Source/Renderer/ForwardRenderer.mm.s
+.PHONY : Source/Renderer/ForwardRenderer.s
+
+# target to generate assembly for a file
+Source/Renderer/ForwardRenderer.mm.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraLibrary.dir/build.make CMakeFiles/SimulacraLibrary.dir/Source/Renderer/ForwardRenderer.mm.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimulacraEngine.dir/build.make CMakeFiles/SimulacraEngine.dir/Source/Renderer/ForwardRenderer.mm.s
+.PHONY : Source/Renderer/ForwardRenderer.mm.s
+
 Source/ThirdParty/Metal-cpp/MetalImplementation.o: Source/ThirdParty/Metal-cpp/MetalImplementation.cpp.o
 .PHONY : Source/ThirdParty/Metal-cpp/MetalImplementation.o
 
@@ -527,9 +635,18 @@ help:
 	@echo "... Source/Renderer/Backend/Metal/MetalImplementation.o"
 	@echo "... Source/Renderer/Backend/Metal/MetalImplementation.i"
 	@echo "... Source/Renderer/Backend/Metal/MetalImplementation.s"
+	@echo "... Source/Renderer/Backend/Metal/MetalManager.o"
+	@echo "... Source/Renderer/Backend/Metal/MetalManager.i"
+	@echo "... Source/Renderer/Backend/Metal/MetalManager.s"
+	@echo "... Source/Renderer/Backend/Metal/MetalPipeline.o"
+	@echo "... Source/Renderer/Backend/Metal/MetalPipeline.i"
+	@echo "... Source/Renderer/Backend/Metal/MetalPipeline.s"
 	@echo "... Source/Renderer/Backend/Metal/MetalRHI.o"
 	@echo "... Source/Renderer/Backend/Metal/MetalRHI.i"
 	@echo "... Source/Renderer/Backend/Metal/MetalRHI.s"
+	@echo "... Source/Renderer/Backend/Metal/MetalResources.o"
+	@echo "... Source/Renderer/Backend/Metal/MetalResources.i"
+	@echo "... Source/Renderer/Backend/Metal/MetalResources.s"
 	@echo "... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.o"
 	@echo "... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.i"
 	@echo "... Source/Renderer/Backend/Vulkan/Private/VulkanMemoryAllocator.s"
@@ -545,6 +662,9 @@ help:
 	@echo "... Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.o"
 	@echo "... Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.i"
 	@echo "... Source/Renderer/Backend/Vulkan/VulkanDeferredRenderer.s"
+	@echo "... Source/Renderer/ForwardRenderer.o"
+	@echo "... Source/Renderer/ForwardRenderer.i"
+	@echo "... Source/Renderer/ForwardRenderer.s"
 	@echo "... Source/ThirdParty/Metal-cpp/MetalImplementation.o"
 	@echo "... Source/ThirdParty/Metal-cpp/MetalImplementation.i"
 	@echo "... Source/ThirdParty/Metal-cpp/MetalImplementation.s"

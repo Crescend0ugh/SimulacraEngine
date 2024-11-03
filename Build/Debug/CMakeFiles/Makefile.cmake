@@ -40,7 +40,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/CMakeLists.txt"
   "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Platform/CMakeLists.txt"
   "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Core/Task/CMakeLists.txt"
-  "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/Backend/CMakeLists.txt"
+  "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/Renderer/CMakeLists.txt"
   "/Users/adithyasomashekhar/CLionProjects/SimulacraEngine/Source/ThirdParty/CMakeLists.txt"
   )
 
@@ -56,7 +56,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "SimulacraEngine.app/Contents/Info.plist"
   "SimulacraEngine.app/Contents/Info.plist"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Source/Renderer/Backend/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Source/Renderer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Source/Core/Platform/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Source/Core/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Source/Core/Application/CMakeFiles/CMakeDirectoryInformation.cmake"

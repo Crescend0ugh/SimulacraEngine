@@ -5,8 +5,8 @@
 #include "MacApplicationDelegate.h"
 
 @implementation MacApplicationDelegate
--(void)applicationWillFinishLaunching:(NSNotification*)notification
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication*)theApplication
 {
-
+    return YES;
 }
 @end

@@ -1,2 +1,2 @@
-xcrun metal -c metal/triangle.metal -o metal/triangle.air
-xcrun metallib metal/triangle.air -o metal/triangle.metallib
+xcrun metal -c ForwardRendering/metal/triangle.metal -o ForwardRendering/metal/triangle.air
+xcrun metallib ForwardRendering/metal/triangle.air -o ForwardRendering/metal/triangle.metallib
